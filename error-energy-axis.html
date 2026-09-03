@@ -143,7 +143,7 @@ tr.grp td{background:var(--sunk);font-family:"Spline Sans Mono",monospace;font-s
 <header>
   <p class="eyebrow">Layer 2 · A computed figure</p>
   <h1>The Cost of <em>Being Right</em></h1>
-  <p class="lede">Three canonical bounds — published in 1948, 1961 and 2015 — all measure energy in units of <span class="mono">kT</span>, and are cited by communities that do not read each other. Put on one axis, every substrate that stores, transmits or checks information lands somewhere on the same scale.</p>
+  <p class="lede">Three canonical bounds — published in 1948, 1961 and 2015 — all measure energy in units of <span class="mono">kT</span>, and can be reduced to one another. Put on one axis, every substrate that stores, transmits or checks information lands somewhere on the same scale.</p>
   <div class="meta">
     <span>Compiled 3 September 2026</span>
     <span>kT(300 K) = 4.14 × 10⁻²¹ J</span>
@@ -334,8 +334,10 @@ tr.grp td{background:var(--sunk);font-family:"Spline Sans Mono",monospace;font-s
 </section>
 
 <section style="margin-bottom:0">
-  <h2>Why this figure did not already exist</h2>
-  <p class="dek">The measurement, not the argument.</p>
+  <h2>How disconnected the literatures actually are</h2>
+  <p class="dek">The measurement, not the argument &mdash; and a correction to an earlier version of this page.</p>
+
+  <p style="background:var(--sunk);border-left:3px solid var(--engineered);padding:16px 20px;max-width:none"><strong>Correction.</strong> An earlier version of this page claimed no cross-substrate energy-per-bit axis existed. That is false: <code>"Landauer" AND (neuron OR synapse OR brain)</code> returns <strong>575</strong> papers, including <em>Using the Maximum Entropy Method to Obtain an Optimal Bits-Per-Joule Neuron</em>. The connection is well established. What may still be novel is this <em>particular</em> combination &mdash; molecular, neural, CMOS, superconducting and communication substrates together, with the per-decade quantities separated onto their own band &mdash; but the absence claim was wrong and has been removed.</p>
 
   <p>All 1,463 papers citing the founding kinetic-proofreading paper were pulled and their reference lists intersected against Shannon.</p>
 
@@ -355,7 +357,7 @@ tr.grp td{background:var(--sunk);font-family:"Spline Sans Mono",monospace;font-s
 
   <p>For contrast, DNA data storage — where the comparison <em>is</em> routinely made — co-cites error-correcting codes at <strong>5.4%</strong>, ten times the proofreading rate, and reports its results as a fraction of Shannon capacity. That is what a field with a shared axis sounds like.</p>
 
-  <p style="margin-bottom:0"><strong>So this is not a gap that lacks a name. It lacks a citation path.</strong> Three canonical bounds — 1948, 1961, 2015 — all in kT, cited by communities that do not read one another.</p>
+  <p style="margin-bottom:0"><strong>The narrower claim that survives:</strong> within the proofreading literature specifically, the coding-theory formalism is absent &mdash; measured by intersecting 416 reference lists, not by string matching. Three canonical bounds, 1948, 1961 and 2015, all in kT. Some pairs of these communities read each other. That particular pair does not.</p>
 </section>
 
 </div>

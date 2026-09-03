@@ -373,15 +373,51 @@ sides**, including:
 
 A zero survives only if it survives all of them.
 
+
+### Three failure modes, not one
+
+The synonym trap turned out to be the mildest of four ways a zero can be fake. A systematic
+re-run of this project's zeros collapsed two findings and downgraded a third.
+
+1. **Punctuation and tokenization.** `"Miner's rule" AND "bone"` returns 0. `"Miner rule"`
+   returns 2 and `"Palmgren-Miner"` returns 6. **The original zero was an apostrophe
+   artifact** - not a synonym problem at all.
+2. **Homographs.** `"multifunctionality"` is owned by both ecology and materials science with
+   different meanings. Querying the bare word returns 9,570 hits that are entirely materials
+   science. A careless check would "refute" a finding that is actually real.
+3. **Proper-noun narrowness.** `"Paxos"` is one algorithm's name, not a literature. Anchoring
+   a query on it measures the name. This is what killed G27.
+4. **Synonyms**, the original case.
+
+### The rule, hardened
+
+**Any zero anchored on a proper noun, a possessive, or a word both fields own is invalid by
+default.** Before reporting a zero:
+
+- Run a **calibration query** proving each side is findable at all (e.g. `"dynamic soaring"
+  AND "albatross"` -> 101 confirms the soaring side is searchable, so its zeros mean
+  something).
+- Run the concept under **every name**, including eponymous, descriptive, hyphenated and
+  possessive-free forms.
+- Prefer **reference-list intersection** over string matching wherever the citer count is
+  tractable. The most robust finding in this project (G25) was measured by pulling 1,463
+  citers and intersecting their bibliographies. String queries cannot be trusted at this
+  level of consequence.
+
 ### Which prior findings are safe
 
-| Finding | Robustness |
+Re-run completed. Results:
+
+| Finding | Verdict |
 |---|---|
-| Alexander mixed chains vs stress-strength interference | **Strong** — all 46 citing works individually inspected |
-| Multifunctionality | **Strong** — five independent query formulations, all zero |
-| Peak-to-average vs metabolic scope | **Strong** — true co-citation, plus a 159-work internal control |
-| Criticality as design | **Strong** — reference-list audit, not a term query |
-| The rest | **Re-run required** |
+| G25 proofreading vs coding theory | **HOLDS** — reference-list intersection, 1,463 citers pulled |
+| G1 gradient coupling | **HOLDS** — 9 of 10 alternate formulations still zero, calibration passed |
+| G6 multifunctionality | **HOLDS** — every ecology term against every engineering term is 0 |
+| G19 Alexander vs stress-strength | **HOLDS** — all 46 citing works individually inspected |
+| G18 peak-to-average vs metabolic scope | **HOLDS** — true co-citation plus a 159-work control |
+| G4 criticality as design | **DOWNGRADED** — 99 papers link Hopf bifurcation to the cochlea. A single-review omission, not a field gap |
+| **G27 collective decision** | **WITHDRAWN** — 26 hits in the original query, 551 under synonyms |
+| **The energy-per-bit axis claim** | **WITHDRAWN** — 575 papers link Landauer to neural systems |
 
 ### Positive controls now available
 

@@ -40,7 +40,7 @@ Thermochemical storage has cyclic stability. Citation networks barely overlap.
 Thermochemical storage, where a celebrated result reads "stable for at least ten cycles"
 while organic flow chemistries quote fade below 0.001% per cycle.
 
-### G4 · Criticality as a design strategy
+### G4 · Criticality as a design strategy - **DOWNGRADED**
 Hair cells self-tune to a Hopf bifurcation for divergent gain. Parametric amplifiers are
 biased just below threshold. Same law, two vocabularies — √G·B = κ and gain ∝ f^(−2/3).
 
@@ -48,8 +48,14 @@ biased just below threshold. Same law, two vocabularies — √G·B = κ and gai
 criticality cites **zero** engineering, laser, MEMS or superconducting work. The amplifier
 papers cite **zero** hair-cell work. The only bridge traces to one researcher's biography.
 
-**Shared missing object:** a theory of optimal *distance* from threshold. Cortex sits at
-m̂ ≈ 0.98, not 1. Amplifiers are biased just below. One question, asked twice.
+**Downgraded from a field-level gap to a single-review omission.** A re-run found **99
+papers** linking Hopf bifurcation to the cochlea, plus titles such as *Self-tuned regenerative
+amplification and the Hopf bifurcation*. The reference-list audit of that one 578-reference
+review may still be accurate, but the claim that criticality-as-design is unconnected across
+fields is false.
+
+**What survives:** a theory of optimal *distance* from threshold. Cortex sits at m ~ 0.98,
+not 1. Amplifiers are biased just below. That specific question still appears unasked.
 
 ### G5 · No dimensionless repair number
 Biology quantifies repair as a **rate**. Engineering quantifies healing as an **amplitude
@@ -85,14 +91,21 @@ response that survives when the actuation path is cut.*
 **Hazard:** control-theoretic "passivity" is a homonym — a closed-loop dissipation
 property fully compatible with active control.
 
-### G8 · Energy per bit, one axis
+### G8 · Energy per bit, one axis - **WITHDRAWN**
 Neuroscience counts ATP molecules per bit. Chip design counts femtojoules per operation.
 Biophysics counts kT per methylation cycle. Superconducting logic counts zeptojoules per
 gate at 4 K. Nobody normalizes to kT.
 
-The closest published attempt covers molecular biology and supercomputers only — no
-neurons, no reversible logic, no neuromorphic. The definitive theory review supplies the
-machinery and no numbers.
+**This finding is withdrawn.** `"Landauer" AND (neuron OR synapse OR brain)` returns **575**
+papers, including titles such as *Using the Maximum Entropy Method to Obtain an Optimal
+Bits-Per-Joule Neuron* and *Communication consumes 35 times more energy than computation in
+the human cortex*. That is precisely the connection the finding claimed did not exist, and at
+575 papers it is not a niche.
+
+**What survives:** the *specific figure* built in this project - molecular, neural, CMOS,
+superconducting and communication substrates on one kT-normalized axis with a per-decade band
+separated out - may still be novel in that combination. But the claim "no cross-substrate
+energy-per-bit axis exists" is false and has been removed from the figure.
 
 ### G9 · Discrepancy base rate
 No cross-domain literature treats persistent inter-method disagreement as a class. The one
@@ -360,7 +373,7 @@ build a detectability scalar for crypsis before the comparison could even be pos
 *(Coverage caveat: 169 of 509 reference lists available. Zero of 169 is strong but not
 proof.)*
 
-### G27 - Collective decision: the cleanest zero in the project
+### G27 - Collective decision - **WITHDRAWN**
 Swarm intelligence and distributed-systems consensus both solve "reach agreement across
 unreliable distributed agents."
 
@@ -372,7 +385,13 @@ unreliable distributed agents."
 | ACO and Seeley 1999 | 1, and it is an ACO paper reaching sideways |
 | *Internal control:* Seeley 1999 and Seeley 2012 | 33 |
 
-Zero co-citing papers among 3,433 Paxos citers and over 9,000 ACO citers.
+**This finding is withdrawn.** A systematic re-run found `"ant colony optimization" AND
+"honeybee"` returns **26 in the original, unmodified query** - and 551 under synonyms. The
+bridge is explicitly present: papers exist titled *A Distributed Consensus Model for
+House-Hunting in Temnothorax Ant Colonies* and *Efficient Swarm Consensus: RLR vs Raft*.
+
+Only the literal string "Paxos" is isolated, **because Paxos is one algorithm's proper noun,
+not a literature.** The zero measured a name. See METHOD.md 11.
 
 **The unread formalism:** the speed-accuracy tradeoff is explicit on both sides - quorum
 thresholds and dance-decay tuning in bees, latency bounds in consensus protocols. But the
@@ -719,6 +738,9 @@ information.
 | Frugality asymmetry | **Claim did not survive.** Reproductive effort runs ~25% of an annual energy budget. Conflated numerosity with cost per unit, then with total share. Biology is not profligate with reproduction — it is expensive, which is what life-history theory is about |
 | Meteor vs Galileo contrast | **Wrong as stated.** The Galileo Project does publish calibration, a 41% acceptance rate and 36% detection efficiency. The real contrast is capability - multi-station astrometry gives range, an infrared array does not |
 | Crypsis as a forgotten bridge | **Wrong.** 0 of 169 camouflage papers cite either founding text of signal detection theory. Nothing was borrowed and lost; the fields measure different things. Reclassified NOT YET A SHARED OBJECT |
+| G27, collective decision | **Withdrawn.** 26 hits in the original query. The zero was anchored on Paxos, an algorithm name rather than a literature |
+| The energy-per-bit axis claim | **Withdrawn.** 575 papers connect Landauer to neural systems. The specific figure may survive; the absence claim does not |
+| G4, criticality | **Downgraded.** 99 papers link Hopf bifurcation to the cochlea. A single-review omission, not a field gap |
 | Hessdalen citation | An agent invented a paper attribution. See `METHOD.md` §4 |
 
 ---
