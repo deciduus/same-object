@@ -5,6 +5,32 @@ type: method
 
 # Operations log
 
+## [2026-09-03] disclosure thread | sourced ledger, PURSUE added, and the lane doctrine
+
+**[[disclosure-ledger]]** — 24-entry provenance ledger of the post-2017 US UAP disclosure thread,
+built to the claims-register discipline (testimony sets specification, not mechanism). Primaries
+read verbatim (ODNI 2021, AARO FY24). Honest split: **Version A** (official secrecy + unexplained
+sensor data were real and got acknowledged) **checked out**; **Version B** (recovered non-human
+hardware/biologics) is not established and was pushed back on by AARO. Collapsing A into B is the
+topic's central reasoning error.
+
+**Corrected my own hedge and added [[disclosure-ledger]] rows 23–24.** The user pointed to a real
+2026 development I had waved off as probably-unverifiable; a verified web search confirmed the
+**PURSUE** release (2026-05-08, five tranches) including declassified Apollo astronaut transcripts.
+Tiered DOCUMENTED (transcript) / OPEN (referent) — a genuine upgrade of Apollo "unexplained lights"
+from lore to primary source, strengthening Version A, silent on Version B. Note on my own epistemics:
+edge-of-cutoff recall is unreliable, so I default to fetching rather than asserting — the same
+reading-not-counting rule applied to myself.
+
+**[[evidence-lanes]] — the doctrine the user articulated.** Verification is non-negotiable, but no
+lane earns 100% trust: academic, documentary, testimony, and traditional/oral each carry a
+characteristic bias, and the project has proven its *own* home lane leaks (Q1, Q8, unread theorems,
+the 578 error). The referee is not authority within a lane but **convergence across
+orthogonally-biased lanes on the same checkable observable** — the same logic as the reservoir
+audit and the same-class conditional. Explicitly not relativism: the method is the one thing that
+is not biased, applied identically everywhere. The ledger's selection-bias section now states this
+symmetry.
+
 ## [2026-09-03] method | press, feel, dig — WASD by resistance gradient
 
 The user named the method's own shape: the way we work a gap is the same move as the instrument
