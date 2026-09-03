@@ -8,6 +8,21 @@ type: method
 Append-only. One line per structural change to the vault. Format:
 `## [YYYY-MM-DD] operation | description`
 
+## [2026-09-03] unblocked | citation-intersection was never actually blocked
+
+Recorded as blocked because OpenAlex and Semantic Scholar both returned 429 with hours-long
+Retry-After. **Wrong conclusion.** Three other providers work, verified live:
+
+- **Crossref** returns full reference lists with DOIs — 71 refs, 70 with DOIs, on the spot check
+- **OpenCitations COCI** returns both citers and references, and agreed with Crossref at 71
+- **Europe PMC** returns citers by PMID — 49 on the same work
+
+Two independently assembled sources agreeing is the verification. See [[citation-sources]].
+
+The lesson generalises and is now a rule: **a blocked API is not a blocked method.** Never mark
+something `not-assessed` on one vendor's failure without checking whether another answers the
+same question.
+
 ## [2026-09-03] re-read batch | eight gaps read in full, six damaged
 
 Fanned out on the eight `string-protocol` survivors. **Two held, six narrowed. None overturned.**

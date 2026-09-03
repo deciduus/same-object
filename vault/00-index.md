@@ -100,6 +100,8 @@ field that needs it does not read.**
 ## Method
 
 - [[co-citation-audit]] — the measurement that made this checkable
+- [[citation-sources]] — **a blocked API is not a blocked method.** Four providers, three working
+- [[reading-not-counting]] — the full-text-read grade, and why it ranks below counting
 - [[homographs]] — twelve words owned by more than one field. Never anchor a zero on these
 - [[one-way-borrowing]] — export direction tells you nothing about import direction
 - [[positive-controls]] — known-closed pairs, run alongside claims. The signal separates cleanly
@@ -110,7 +112,8 @@ field that needs it does not read.**
 ## Open work
 
 1. **[[citation-intersection]] the eight now read in full.** Reading and counting fail
-   differently — see [[reading-not-counting]]. Blocked while the citation APIs rate-limit.
+   differently — see [[reading-not-counting]]. **Unblocked**: OpenAlex and Semantic Scholar are
+   rate-limited, but Crossref, OpenCitations and Europe PMC all work. See [[citation-sources]].
 2. **Derive the minimum detectable inclination for an active granular sensor** — the restated
    [[G11-plant-gravisensing]]. A Berg-Purcell-shaped calculation against an *active* bath at
    T_eff ≈ 10 T. All the measured inputs are published; the calculation is not.
