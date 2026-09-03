@@ -103,18 +103,38 @@ curve fit, not an experiment.** Cheapest real test on the list.
 
 ## Now unlocked by the metric
 
-### 7. A cyclically driven thermodynamic harvester
+### ~~7. A cyclically driven thermodynamic harvester~~ — **DO NOT BUILD**
 
-[[C8-momentum-harvesting-metric]] found the corner while proving something else. The
-Kedem–Caplan bound `q` assumes **the coupling point does not move.** A harvester whose coupling
-point is deliberately driven through the gradient is therefore **not bounded by `q` at all**.
+**Killed by its own before-building clause, which is the register working as intended.**
 
-Nobody has built or analysed one. It sits exactly where this project's founding intuition points
-— arrangement, not magnitude — and it is the first item here that is a *device* rather than a
-measurement.
+That clause said: *derive what replaces `q` first, and confirm the bound actually differs rather
+than reappearing in another form.* [[C9-moving-coupling-point]] did the derivation. **The bound
+reappears**, and the device converges to the stationary thermoelectric it was meant to beat —
+from below.
 
-**Before building:** derive what replaces `q` for a moving coupling point, and confirm the bound
-actually differs rather than reappearing in another form. That is a calculation, not a workshop.
+Three strict inequalities, all the same direction:
+
+| | |
+|---|---|
+| Advected heat | `ZT_eff = ZT/(1 + (1−ε)·Pe)` — motion carries heat forward regardless of how it is labelled |
+| Drag | `γv²`, quadratic, against a pump term only linear in `v` |
+| Contact make/break | one cycle costs **≈64 seconds of full-power output** |
+
+Worked case: Bi₂Te₃, static max efficiency **2.64%**. At 1 mm/s with no regenerator, **0.70%** —
+a 3.8× fall before any drag is charged. Staying within 10% of static needs `(1−ε)v ≤ 25 µm/s`.
+
+The two constraints collapse into one trap: **contact losses force slow cycling, slow cycling
+forces `Pe → 0`, and slow cycling is a stationary device.**
+
+**And it is thermoacoustics, known three ways over.** Travelling-wave thermoacoustics is
+explicitly a Lagrangian Stirling-like cycle with the medium displaced along the gradient. A 2014
+paper on a *rotating thermoelectric device* had already found performance depends on ZT "and an
+additional dimensionless parameter" — that parameter is `Pe`. Someone arrived twelve years ago.
+
+**What to keep:** `ZT_eff = ZT/(1 + (1−ε)·Pe)` is a one-line statement of why **the regenerator
+is the whole game.** That is worth more than the device would have been.
+
+**Cost of finding out: one calculation.** Cost of not doing it: a workshop and a season.
 
 ### 8. Run the reservoir audit
 

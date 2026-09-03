@@ -86,6 +86,7 @@ Not catalogue entries. Numbers this project produced.
 - [[C1-availability-living-tissue]] — photosystem II = 0.883, cortical bone = 0.984. **A leaf is less available than a power grid.**
 - [[C2-probabilistic-safety-factors]] — for bone, failure probability is set by tissue variability, not locomotor variability
 - [[C3-energy-error-axis]] — every information substrate on one kT-normalized axis
+- [[C9-moving-coupling-point]] — **a clean negative, and the register earned its keep.** The bound survives, the device is a Stirling engine with a bad regenerator, and a 2014 paper got there first. One calculation instead of a season in a workshop
 - [[C8-momentum-harvesting-metric]] — **the founding question, answered.** Σ = P/(F·Δu), exact and bounded in [0,1] with no linearity assumed. Spans soaring, sails and tethers; reproduces the known minimum-shear condition as a check
 - [[C7-discrepancy-catalogue]] — 39 cases. The headline fraction is **not** a base rate and the note says so; the finding that survives is a conditional, in [[Q7-same-class-prediction]]
 - [[C5-charnov-gittins]] — **the strongest result in the project.** Charnov's rule *is* the Gittins index, as an identity in two lines. A 2024 paper re-derived it in foraging notation without ever naming Gittins

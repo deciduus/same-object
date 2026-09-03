@@ -19,6 +19,15 @@ status: open
 | Optimal stopping rule | Stopping theory | Green **1984**, in foraging vocabulary | [[G28-marginal-value-gittins]] |
 | The Charnov ≡ Gittins identity | [[C5-charnov-gittins]] | a 2024 paper, zero occurrences of "Gittins" | [[G28-marginal-value-gittins]] |
 | Ordinal passivity ladder | IAEA 1991 | exoskeletons, structural control, façades | [[G7-how-passive]] |
+| Moving-coupling-point figure of merit | Bezsudnov & Snarskii **2014** | **this project, 2026** | [[C9-moving-coupling-point]] |
+
+**The last row is us.** [[C8-momentum-harvesting-metric]] proposed that a moving coupling point
+escapes the `q` bound and would need a new parameter. A 2014 paper on a rotating thermoelectric
+device had already found performance depends on ZT "and an additional dimensionless parameter" —
+the thermal Péclet number. **Twelve-year lag, arrived at independently.**
+
+That is the sixth instance, and the first one where this project is the *rediscoverer* rather
+than the observer. Worth recording plainly: the pattern is not something other fields do.
 
 ## Why this is the more interesting object
 

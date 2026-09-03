@@ -277,10 +277,24 @@ branch is a *steady-state* device, and its `q` is a material property. The momen
 is dominated by *cyclic* devices whose performance is a trajectory functional. Nobody
 appears to have asked what a **cyclically-driven thermodynamic harvester** looks like — a
 device that traverses a thermal or chemical gradient on a closed path rather than bridging
-it statically. On this analysis its performance would not be bounded by `q` at all, because
-`q` is derived under exactly the steady-state assumption such a device abandons. That is a
-[[what-closes-a-gap]]-shaped follow-on and METHOD §8 in its purest form: **the thing the
-Kedem–Caplan derivation silently held fixed is that the coupling point does not move.**
+it statically.
+
+> **REFUTED 2026-09-03 by [[C9-moving-coupling-point]]. The two sentences that stood here are
+> struck.** They claimed such a device would not be bounded by `q`, because `q` silently holds
+> the coupling point fixed.
+>
+> **`q` does not assume a static coupling point. It assumes a set of conjugate pairs.** Moving
+> the coupling point adds the mechanical pair `(F, v)` — the very pair §3.2 of this document
+> established is legitimate — so the Onsager matrix goes 2×2 → 3×3 and the optimum still
+> collapses to a coefficient: the degree of coupling of the **Schur complement**.
+>
+> The error is instructive. §3.2 proved that `(F, v)` is a conjugate pair, and §5 then reasoned
+> as though it were outside the formalism. **The refutation was already inside this document.**
+
+What survives is the useful half: `ZT_eff = ZT / (1 + (1−ε)·Pe)`, with `Pe = vL/α_th` a thermal
+Péclet number and `ε` regenerator effectiveness. Motion degrades the figure of merit unless the
+regenerator recovers it. **The regenerator is the whole game** — which is exactly what
+thermoacoustics has always said.
 
 ---
 
