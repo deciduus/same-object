@@ -621,6 +621,67 @@ not because "environment affects nuclei" is a free pass.
 
 ---
 
+## Computed results (Layer 2)
+
+Not catalogue entries. Numbers this project produced.
+
+### C1 · Availability of living tissue — first computation of its kind
+
+**The derivation, which is the actual result.** For a two-state system,
+
+    A = MTBF/(MTBF + MTTR) = (1/k_damage) / [(1/k_damage) + (1/k_repair)] = k_repair/(k_repair + k_damage)
+
+Engineering's availability formula and the photosystem repair steady state are **not
+analogous — they are identically the same expression.** That is a derivation, not a
+coincidence, and it closes the formal half of G5.
+
+**Computed from published rate constants:**
+
+| System | Damage rate / MTBF | Repair rate / MTTR | **A** |
+|---|---|---|---|
+| Data centre, "five nines" | — | 5.3 min/yr | 0.99999 |
+| US power grid, normal ops | — | ~2 h/yr | 0.9998 |
+| US power grid, all events | — | 11 h/yr | 0.9987 |
+| Commercial aviation dispatch | — | — | 0.995 |
+| **Cortical bone** | 5%/yr turnover, MTBF 20 yr | 17-week remodeling period | **0.984** |
+| **Trabecular bone** | 20%/yr turnover, MTBF 5 yr | same | **0.939** |
+| **Photosystem II, 20 C** | k_PI = 2.70e-4 /s (MTBF 61.7 min) | k_REC = 20.4e-4 /s (MTTR 8.2 min) | **0.883** |
+| Photosystem II, 35 C heat stress | k_PI ~ 4.1-5.0e-4 /s | k_REC ~ 6.4-9.9e-4 /s | **0.56-0.71** |
+| Photosystem II, 5 C cold stress | k_PI ~ 3.0-3.1e-4 /s | k_REC ~ 2.5-2.8e-4 /s | **0.45-0.48** |
+
+**A leaf is less available than a power grid.** That sentence was previously unwriteable
+because nobody had computed the left-hand side.
+
+**Caveats, all load-bearing:**
+
+1. **Population, not unit.** A leaf holds ~1e8 photosystems; nothing is ever "down," a
+   *fraction* is down. So biological A is an **expected functional fraction**, not a
+   probability the system works. Those coincide for large ensembles — **but only if units
+   fail independently.** Correlated damage breaks the identity, which is exactly what the
+   35 C row shows: heat hits every unit at once and A collapses to 0.56.
+2. **Down-while-repaired holds for PSII, not for bone.** A photoinactivated PSII genuinely
+   evolves zero oxygen until D1 is replaced — the binary assumption is true at unit level,
+   which is why PSII is the clean case. A resorption cavity degrades stiffness rather than
+   eliminating it, so bone's 0.984 should be read as **"1.6% of tissue volume is in the
+   remodeling space"** and treated as a lower bound.
+3. **Continuous, not episodic.** Repair is a steady-state flux. Mathematically fine — the
+   two-state Markov model never required episodicity — but it kills the managerial reading
+   of MTTR as "time the technician spends."
+4. **Gut epithelium left blank deliberately.** A 3-5 day turnover is not damage-plus-repair;
+   it is **scheduled replacement before failure**. The engineering analogue is
+   MTBF-extension policy, not availability. Forcing A onto it would be the "merely cute"
+   failure mode this computation was built to avoid.
+
+**Verdict:** rigorous for PSII, defensible for bone as remodeling-space fraction, not
+meaningful for scheduled-replacement tissues. Also verified: PSII repair costs ~24,000 ATP
+per complex, up to 4.6% of gross photophosphorylation.
+
+**Open:** DNA repair half-times could not be sourced; that row stays blank. No paper reports
+a steady-state functional PSII fraction *as such* — every value above is computed here from
+published rate-constant pairs.
+
+---
+
 ## Closed / refuted
 
 | Item | Status |

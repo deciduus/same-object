@@ -28,11 +28,14 @@ or apparatus, and it is where a real contribution first becomes possible.
 ### Arithmetic — hours to days
 Published numbers, one formula, a result nobody has computed.
 
-1. **Availability for living tissue.** A = MTBF/(MTBF+MTTR), which is structurally
+1. ~~**Availability for living tissue.**~~ **DONE** - see FINDINGS.md C1. PSII = 0.883,
+   cortical bone = 0.984, and the engineering formula proved *identical* to the photosystem
+   steady state rather than merely analogous. Original entry: A = MTBF/(MTBF+MTTR), which is structurally
    identical to the photosystem repair steady state k_REP/(k_REP+k_PI). Repair rates for
    PSII, bone remodeling and gut epithelium turnover are all published. **Nobody has ever
    computed an availability number for a biological tissue.** See G5.
-2. **The kT-normalized energy-per-bit axis.** Every figure exists, in four incompatible
+2. **The kT-normalized energy-per-bit axis.** IN PROGRESS - figure built and published,
+   verification of the molecular values and the Shannon-Landauer identity pending. Every figure exists, in four incompatible
    unit systems — ATP molecules per bit, femtojoules per operation, kT per methylation
    cycle, zeptojoules per gate. Converting them to one axis is unit arithmetic. The result
    is the figure that does not exist. See G8.
