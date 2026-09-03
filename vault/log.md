@@ -39,7 +39,27 @@ split.
 parametric amplifier, cortex). The parametric-amp field already states `B·√G = const`; it
 transfers unchanged to cochlea and cortex, neither of which writes it.
 
-One of the five-fan (hormesis biphasic fit) still running.
+**[[C19-hormesis-biphasic-fit]] narrows [[G23-hormesis-formalism]].** The parameterised biphasic
+curve — the deliverable G23 said was absent — was fitted from shot-peening dose sweeps. **Window
+width ≥15× (≈73× fitted) meets biology's 10–20×**; the amplitude ceiling matches biology's 30–60%
+*once the response axis is matched* to fatigue strength (AA 7075 +82% verified), and the Basquin
+exponent `N∝σ⁻¹⁰` is the translation to the order-of-magnitude-larger fatigue-*life* gains. Narrows
+toward partial closure; not a full close (two ceilings, no single theorem).
+
+**[[C20-release-the-constant]] turns move [[M6-vary-what-was-held-fixed]] into an integer
+operator — and it re-derives gecko contact-splitting blind.** A capability is constant-bound when
+a Π-group carries a lone fixed constant; the operator adds a column carrying that constant's
+signature so it re-enters a tunable ratio, and emits the dimensional signature the new quantity
+must have. Run blind on the gecko matrix (`σ_c ∝ (Ew/R)^½`, `R ∝ √A` → `A^{−1/4}`), it emits
+"add a length independent of A" — exactly the sub-contact radius, recovering the Arzt–Gorb–
+Spolenak `√n` law. On a kT wall it emits the active-drive `kT_eff` escape. Honest limit: it
+returns the *dimension* a fix must have, not that a fix exists — separating a real impossibility
+(ratio of two fixed constants, e.g. Schmidt) from a lead. Makes [[G22-scale-transfer-triage]]'s
+triage the actionable, finite search G22 said nobody had built.
+
+**Five-fan complete.** Pressed five nodes; the resistance wrote five different verbs — Q7
+*hardened*, G3 *bridged*, G4 *narrowed to a real invariant*, G23 *narrowed toward closure*, M6
+*formalised into an operator that validated blind*. Not one verb was assigned in advance.
 
 ## [2026-09-03] headline hardened | four unread theorems citation-tested, all survive
 

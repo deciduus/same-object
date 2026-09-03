@@ -74,5 +74,12 @@ lattice arithmetic on the Smith-normal-form basis. Worked case: `Pe/Re = Sc` has
 independently — a capability governed by their ratio is constant-bound, by construction. G21 and
 G22 are now tied through one object.
 
+**And the triage is now an actionable operator: [[C20-release-the-constant]].** For a
+constant-bound capability, the operator emits the **dimensional signature** a new quantity would
+need to unlock it — a finite, computable search over "what you'd have to add." It re-derives
+gecko contact-splitting blind from the matrix, and separates a **real impossibility** (a group
+that is a ratio of two fixed constants) from a **lead** (a releasing signature with no known
+physical realisation). This is the screening step this gap said no one had built.
+
 **The empirical test:** gecko adhesion scales as A^(-1/4). A *negative* exponent — intrinsically
 anti-scaling, not merely hard to manufacture.

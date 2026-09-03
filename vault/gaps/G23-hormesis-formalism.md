@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C19-hormesis-biphasic-fit]]"]
 uses-move: ["[[M2-use-the-noise]]"]
 rests-on: []
 tags: [node/gap, crosses/vocabulary, evidence/full-text-read, standing/narrowed]
@@ -53,6 +53,31 @@ Corroborated independently in
 with a stated optimum at **≤5 min for S60 shots**. That is a stimulatory window with a turnover
 into damage — a biphasic dose-response, discovered and named independently. Engineering has the
 *shape*.
+
+## The curve was fitted, and the two missing numbers now exist: [[C19-hormesis-biphasic-fit]]
+
+The deliverable G23 said was absent — a **parameterised** biphasic curve with a ceiling and a
+window — was extracted from published shot-peening dose sweeps.
+
+| Number | Engineering (fitted) | Biology (toxicology) |
+|---|---|---|
+| **Window width** | **≥15× measured, ~73× fitted** | 10–20× |
+| **Amplitude ceiling** (fatigue *strength*) | +20–80% (AA 7075: **+82%** verified) | 30–60% |
+| Amplitude ceiling (fatigue *life*) | +400–800% | — |
+
+**The window width is the strong bridge** — engineering lands on the same decade scale as
+biology, arrived at independently. The ceiling **overlaps biology only when the response axis is
+matched** to a direct strength measure; raw fatigue-*life* gains are an order of magnitude larger,
+and the **Basquin exponent (`N ∝ σ⁻¹⁰`) is the translation rule** between strength and life —
+structurally the same amplification by which a small physiological gain becomes a large lifespan
+gain in organismal hormesis.
+
+**Verdict: narrows strongly toward partial closure.** The parameterised curve now exists and,
+matched on axis, transfers into biology's regime. It does *not* fully close — two materials gave
+two ceilings, no single theorem fixing a shared figure of merit (per [[what-closes-a-gap]]). And
+a real mechanistic difference surfaced: shot peening's descending limb is surface **damage**
+competing against a *monotone* residual-stress benefit — the beneficial variable never itself
+peaks — so the engineering window is wider and shallower than a toxicological one.
 
 ## What survives, and it is the sharper half
 

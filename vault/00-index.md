@@ -65,6 +65,8 @@ numbers, Buckingham Π-groups, citation intersection.
 - [[specification-instruments]] — the template, and why it is antifragile rather than predictive
 - [[reservoir-audit]] — energy–momentum. Validated 5/5, first open case [[C11-flyby-reservoir-audit]]
 - [[information-audit]] — entropy. Validated **3/3** on measured Maxwell-demon experiments, naming the sink each time; ties [[G25-proofreading-coding]] to the same ledger
+- [[C20-release-the-constant]] — **the move M6 as an integer operator.** It re-derives gecko contact-splitting *blind* from the dimension matrix, and makes [[G22-scale-transfer-triage]]'s triage an actionable, finite search
+- [[C19-hormesis-biphasic-fit]] — the two numbers engineering never wrote down. **Window width ≥15× matches biology's 10–20×**; ceiling matches once the response axis is matched. Narrows [[G23-hormesis-formalism]]
 - [[C17-offset-from-threshold]] — "distance from threshold" is a near-tautology; the real shared invariant is **gain × bandwidth**, conserved along the offset axis in all three classes. Narrows [[G4-criticality-as-design]]
 - [[C16-same-class-catalogue]] — **the best prediction, hardened.** 24-case same-class sample, **16 systematics / 0 new-physics**, no counterexample — the redshift-clock danger case survives the define-class-first rule
 - [[C18-durability-axis]] — the durability bridge is the **Weibull shape β**, not a cycle count. New result: flow batteries fail like enzymes (β≈1), Li-ion is the outlier

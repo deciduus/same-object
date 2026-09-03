@@ -184,6 +184,11 @@
   },
   "active": "f8e74697011e4c94",
   "lastOpenFiles": [
+    "00-index.md.tmp.48688.1eb4aaf82ae9",
+    "gaps/G23-hormesis-formalism.md.tmp.48688.6d611a2183a4",
+    "computed/C19-hormesis-biphasic-fit.md",
+    "computed/C20-release-the-constant.md",
+    "computed/C20-release-the-constant.md.tmp.48688.40a0bf9cd681",
     "log.md.tmp.48688.ca134b7b9a16",
     "computed/C17-offset-from-threshold.md",
     "computed/C17-offset-from-threshold.md.tmp.48688.b620bf70d47c",
@@ -196,9 +201,6 @@
     "computed/C18-durability-axis.md",
     "log.md.tmp.48688.80e2c69b2f1a",
     "00-index.md.tmp.48688.c9cc931edf7c",
-    "theorems/hill-number-multifunctionality.md.tmp.48688.ffc1dabb2b51",
-    "theorems/stress-strength-interference.md.tmp.48688.4887048328d9",
-    "theorems/stress-strength-interference.md.tmp.48688.d6eff4e8f104",
     "computed/C13-unread-theorem-audit.md",
     "computed/C15-metastability-metric.md",
     "computed/C14-degree-of-passivity.md",
@@ -218,8 +220,6 @@
     "questions/Q6-negative-results-in-the-vault.md",
     "questions/Q5-restless-patches.md",
     "questions/Q4-healing-needs-a-new-law.md",
-    "questions/Q3-theory-cited-hardware-omitted.md",
-    "questions/Q2-independent-rediscovery.md",
     "Untitled.canvas"
   ]
 }
