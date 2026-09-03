@@ -180,13 +180,13 @@ not.
 
 ## 6. Reading the crossovers against each other
 
-Empirical transition values, provenance stated per [[METHOD]] §4:
+Empirical transition values, provenance stated per `METHOD.md` §4:
 
 - **Froude 0.16** (hull-speed / stern-wave crossover), **0.5–0.6** (surface-wave amplitude max),
   **2–4** (trot→gallop): carried from [[G21-dimensionless-regime-map]], Vogel *Comparative
   Biomechanics* read in full text (`evidence: full-text-read`, quoted verbatim in the gap note).
 - **Pe = 1 at ~10 µm** (motor transport beats diffusion; diffusion time x²/D, motors ~1 µm/s): carried
-  from G21 and [[METHOD]] §9 worked crossovers, same full-text provenance.
+  from G21 and `METHOD.md` §9 worked crossovers, same full-text provenance.
 - No transition value is invented here; the geometry below uses only these plus textbook constants.
 
 **Where do a Froude and a Péclet transition coincide?** Solve Fr = Fr_c together with Pe = 1:
