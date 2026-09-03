@@ -155,6 +155,54 @@ previous stated error bar, connected explicitly to overconfidence psychology. Es
 never followed up. The fine structure constant makes it live: two atom-interferometry
 measurements, same class of technique, disagree at **5.4σ**.
 
+### G18 · Peak vs average / turndown vs metabolic scope
+Engineering measures capacity factor, turndown ratio and part-load efficiency. Physiology
+measures factorial aerobic scope. Same ratio, two vocabularies.
+
+**Co-citation: 0, twice** (metabolic scope ↔ peak-to-average-power; symmorphosis ↔ same),
+against an internal biology **control of 159 works**. An empty crossing, not sparse data.
+
+Sharper: biology already uses the phrases "peak-to-average" and "capacity factor" in its
+own sense, with no awareness of the engineering literature using them.
+
+Real numbers: gas peaker plants 13.9% capacity factor; average car driven ~4% of the time;
+humans cannot sustain more than ~2.5× basal indefinitely.
+
+**Neither side has the other's axis.** Engineering lacks duration-dependence; physiology
+lacks the efficiency penalty. Nobody has written efficiency as a joint function of load
+fraction and duration.
+
+### G19 · Safety factor, derived independently twice
+Alexander's *A Theory of Mixed Chains Applied to Safety Factors in Biological Systems*
+(1997) — how much excess capacity a series system needs when its links vary. **46
+citations, all comparative biomechanics** (all fetched and checked).
+
+Engineering's **stress–strength interference theory dates to 1967 — 753 works.** Load
+distribution, strength distribution, probability of interference in a weakest-link series
+system. **The same object**, with a thirty-year head start. **Zero crossings either way.**
+
+The trade runs both directions: engineering offers biology a *probabilistic* safety factor
+— precisely the objection raised against symmorphosis since Garland & Huey 1987. Biology
+offers engineering the duration axis and the **remodeling option** — a link that thickens
+under load, which stress–strength interference cannot express because its strengths are
+fixed at manufacture.
+
+**Caveat:** symmorphosis itself is contested — only ~28 works total, with critiques at 100
+and 79 citations against the canon's 483. Importing "enough but not too much" into
+engineering imports a disputed claim.
+
+### G20 · Resize vs throttle
+Engineering fixes capacity at build time and runs below it. Biology rebuilds capacity to
+match demand — mitochondrial density, muscle mass, capillary networks, gut lining.
+
+Co-citation: symmorphosis ↔ design margin = **0**; symmorphosis ↔ engineering design = 2.
+A thin genuine bridge exists in cloud elasticity ("auto-scaling" ∧ "biologically inspired"
+= 45, one small cluster), but it carries no quantities — no fold-change, no timescale, no
+cost of remodeling.
+
+**The unmeasured quantity:** the cost and latency of a capacity change. Biology pays it in
+ATP and weeks; engineering pays it in capex and years. No shared axis.
+
 ---
 
 ## Key findings with numbers
@@ -265,6 +313,7 @@ information.
 | Enzymes "not consumed" | Wrong. 10³–10⁷ turnovers, then scrapped |
 | G apparatus transplant | Two agents disagreed on rebuild vs transplant; balance of evidence and the paper title favour **transplant**. Flagged, not settled |
 | Loihi energy figure | Quoted 23.6 pJ/SOP — not in the primary paper. Removed |
+| Frugality asymmetry | **Claim did not survive.** Reproductive effort runs ~25% of an annual energy budget. Conflated numerosity with cost per unit, then with total share. Biology is not profligate with reproduction — it is expensive, which is what life-history theory is about |
 | Hessdalen citation | An agent invented a paper attribution. See `METHOD.md` §4 |
 
 ---
@@ -274,6 +323,8 @@ information.
 - Does the gradient-coupling formalism extend beyond linear response to reach dynamic
   soaring and sails?
 - What sets the ~10⁶ × Landauer floor, if not reliability?
-- Is metabolic scope the same quantity as turndown ratio? *(survey in progress)*
-- Is "resize rather than throttle" a real distinction with numbers behind it?
-  *(survey in progress)*
+- Does the Alexander / stress-strength bridge actually close, and what does a probabilistic
+  safety factor do to the symmorphosis debate?
+- What is the cost and latency of a capacity change, on a shared axis?
+- Which design principles are scale-invariant vs constant-bound? *(survey in progress)*
+- What patterns a giant single cell, with no cellular machinery to do it? *(survey in progress)*

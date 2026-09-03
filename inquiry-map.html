@@ -170,7 +170,7 @@ button.save:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 <header>
   <div>
     <h1>Gradient Coupling Atlas</h1>
-    <div class="sub">62 nodes · observation → principle → gap → experiment</div>
+    <div class="sub">64 nodes · observation → principle → gap → experiment</div>
   </div>
   <div class="filters" id="filters"></div>
 </header>
@@ -426,6 +426,16 @@ const N = [
  k:"near (10¹–10³×): ATP 17, methylation 42, AQFP ~3.5\nfar (10⁶–10¹⁰×): synapse, CMOS, neuromorphic\nTrueNorth: 26 pJ/event → 9.1 × 10⁹",
  links:["e7"],
  s:["Kempes, Wolpert, Cohen & Pérez-Mercader, Phil. Trans. R. Soc. A 375 (2017)","Wolpert, J. Phys. A 52, 193001 (2019)"]},
+{id:"g19",t:"gap",l:"Peak vs average",h:"Zero, against a 159-work control",
+ d:"Engineering measures <strong>capacity factor, turndown ratio, part-load efficiency</strong>. Physiology measures <strong>factorial aerobic scope</strong> — max over basal. Same ratio, two vocabularies.<br><br>True co-citation between the metabolic-scope and peak-to-average-power literatures: <strong>zero</strong>, twice. The internal biology control returns <strong>159</strong> works — so this is an empty crossing, not sparse data.<br><br>Sharper still: biology already uses the words 'peak-to-average' and 'capacity factor', in its own sense, with no awareness of the engineering literature using them.<br><br>Neither side has the other's axis. Engineering lacks duration-dependence; physiology lacks the efficiency penalty. <strong>Nobody has written efficiency as a joint function of load fraction and duration.</strong>",
+ k:"gas peaker: 13.9% capacity factor\naverage car driven ~4% of the time\nhumans: ~2.5× basal, sustained indefinitely",
+ links:["g20","e7"],
+ s:["Hammond & Diamond, Nature 386, 457 (1997)","EIA Electric Power Annual, Table 4.08.A"]},
+{id:"g20",t:"gap",l:"Safety factor, derived twice",h:"The cleanest unread theorem",
+ d:"Alexander's <em>Theory of Mixed Chains Applied to Safety Factors in Biological Systems</em> (1997) asks how much excess capacity a series system needs when its links vary. <strong>46 citations — all of them comparative biomechanics.</strong> Alligator limb bones, crab claw cuticle, intestinal lactase.<br><br>Engineering has had <strong>stress–strength interference theory since 1967 — 753 works.</strong> Load distribution, strength distribution, probability of interference in a weakest-link series system. <strong>The same object.</strong> Alexander appears to have derived it from scratch, thirty years late. Zero crossings either way.<br><br>The trade runs both directions: engineering offers biology a <em>probabilistic</em> safety factor — exactly the objection raised against symmorphosis since 1987. Biology offers engineering the duration axis and the <em>remodeling option</em>, a link that thickens under load. Stress–strength interference has no such thing; its strengths are fixed at manufacture.",
+ k:"Alexander 1997: 46 cites, 0 engineering\nstress–strength: 753 works, 0 biological\n30-year head start, unread",
+ links:["f13"],
+ s:["Alexander, J. Theor. Biol. (1997)","Garland & Huey (1987) — the symmorphosis critique"]},
 {id:"g9",t:"gap",l:"Classical-gravity noise floor",h:"Highest expected value",
  d:"Proving gravity is quantum was supposed to need masses eight orders heavier than any superposition ever made. A 2026 result derives a <strong>model-independent minimum noise floor</strong> any classical-gravity theory must inject. Measure below it and you have shown Newtonian gravity is entangling — no superposition required.",
  k:"turns coherence problem into noise problem\nexisting torsion / levitated hardware\nmodel-independent",
