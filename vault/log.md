@@ -8,6 +8,31 @@ type: method
 Append-only. One line per structural change to the vault. Format:
 `## [YYYY-MM-DD] operation | description`
 
+## [2026-09-03] citation-intersection | both survivors tested at the hardest standard
+
+Run on Crossref + OpenCitations per [[citation-sources]]. **Both hold.**
+
+**[[G6-multifunctionality]] — intersection 0** across six anchor pairings, coverage 77.5–100%,
+and widened: 172 engineering citers cite zero references from eight core ecology journals, 861
+ecology citers cite zero from six composites journals. **No contact either direction across
+1,033 works.** Positive control Byrnes × Jost = **17**, reproduced exactly by both sources —
+and it is the right control, because it is a metric formalism *being* imported into a
+multifunctionality literature. The pipeline detects that event. It does not happen here.
+
+**This is the only entry in the project to survive both standards**, which fail differently.
+
+**[[G28-marginal-value-gittins]] — intersection 5 of 1,013 (0.49%)** against a positive control
+of **22.2%**, a factor of 45. Both sources returned the identical five DOIs. All five inspected;
+**zero are real bridges.**
+
+But one sentence is now false: *"operations research and behavioural ecology have no direct
+contact at all."* **Griebling et al., *Animal Behaviour* (2026) cites Charnov, Gittins 1979 and
+the Gittins 2011 book.** Direct contact, newly emergent. Restated as vanishingly thin rather
+than absent, and added to the outstanding checks.
+
+Also corrected: the old **181 / 11.7%** Sutton & Barto control came from OpenAlex and returns
+**24** here, because the book has no proper DOI. Method-dependent; the 24 is not carried forward.
+
 ## [2026-09-03] re-read batch two | G20 overturned, G22 upgraded, G4 audit finally run
 
 **[[G20-resize-vs-throttle]] overturned.** Textbook anchoring on the originating field's term.

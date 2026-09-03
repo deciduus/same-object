@@ -2,8 +2,8 @@
 id: G28
 name: G28-marginal-value-gittins
 type: gap
-standing: live
-evidence: full-text-read
+standing: narrowed
+evidence: citation-intersection
 contact-surface: 8
 crosses: nothing
 crosses-rank: 0
@@ -15,20 +15,24 @@ mutual-with: []
 computed-in: ["[[C5-charnov-gittins]]"]
 uses-move: []
 rests-on: []
-tags: [node/gap, crosses/nothing, evidence/full-text-read, standing/live]
+tags: [node/gap, crosses/nothing, evidence/citation-intersection, standing/narrowed]
 last-checked: 2026-09-03
-note: "Held under the full-text re-read. Averbeck 2015 formalises bandits and foraging in one MDP framework and names both objects without relating them; Charnov not cited."
+note: "Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs control 22.2% - a factor of 45. But 'no direct contact at all' is now false: Griebling 2026 cites both."
 ---
 
 # Marginal value theorem and the Gittins index
 
-**STANDING: LIVE** · evidence: full-text-read · contact surface: 8 · last checked 2026-09-03
+**STANDING: NARROWED** · evidence: citation-intersection · contact surface: 8 · last checked 2026-09-03
 
 > Charnov's rule: leave a depleting patch when the marginal intake rate drops to the average
 > for the habitat.
 >
 > The Gittins index generalises the same optimality condition to the stochastic case.
-> **Charnov's rule is its deterministic, zero-switching-cost limit.** No paper states that.
+> **Charnov's rule is not merely its limit — it is the same object.** No paper states that.
+>
+> *Wording corrected: this read "its deterministic, zero-switching-cost limit." See
+> [[C5-charnov-gittins]] — τ is a zero-reward prefix inside the outside arm, and the licensing
+> condition is non-revisitability.*
 
 ## Why this entry forced a new field in [[relationship-description]]
 
@@ -40,9 +44,12 @@ decision neuroscience — *Optimally frugal foraging*, *Raccoons optimally forag
 information*, *Cortical Circuits for Adaptive Foraging Decisions*, *How the threat of losses
 makes people explore more than the promise of gains*.
 
-So the topology is: **operations research and behavioural ecology have no direct contact at
-all.** They are joined only by a third field that reads both and tells neither. That is a
-specific structure, and no number expresses it.
+So the topology is: **operations research and behavioural ecology are joined almost entirely by
+a third field that reads both and tells neither.** That is a specific structure, and no number
+expresses it.
+
+*(This paragraph originally read "no direct contact at all." Corrected above — Griebling et al.
+2026 is direct contact, newly emergent.)*
 
 ## The control that makes it sharp
 
@@ -90,6 +97,44 @@ data on animals actually solving the problem.
 Survived the full alternate-name gauntlet under the hardened protocol: patch leaving,
 optimal foraging, patch residence time, against optimal stopping, secretary problem, index
 policy, scheduling. All zero or irrelevant.
+
+## The citation intersection: 5 of 1,013, and one sentence must go
+
+Anchors are the primary works themselves — Charnov `10.1016/0040-5809(76)90040-x` and Gittins
+`10.1111/j.2517-6161.1979.tb01068.x`, no proxy substitution needed. **OpenCitations and
+Crossref returned the identical five DOIs.**
+
+| Check | Result |
+|---|---|
+| Intersection | **5 of 1,013 Gittins citers — 0.49%** |
+| Coverage | 1,006/1,010 citers (99.4%) had DOI-bearing reference lists |
+| **Positive control: Gittins × Auer 2002** | **225 — 22.2%.** A factor of **45** |
+| Control: Charnov × Auer 2002 | 3 (0.08%) — so the isolation is not an artifact of Gittins 1979's age |
+
+**All five inspected. Zero are real bridges.** Bhat/Bénichou/Redner 2018 (*Phys. Rev. E*, read
+in full) cites both in separate background lists and never uses the phrase "marginal value
+theorem."
+
+Lejarraga & Hertwig 2016, read in full, is the sharp near-miss — **the gap restated by someone
+who could not see it.** It says no general optimal solution to the explore/exploit tradeoff has
+been proposed, *"(but see Gittins, 1979)"*, and separately uses Charnov's rule. Both objects, in
+one paper, unconnected. Again.
+
+### The sentence that is now false
+
+The note said **"operations research and behavioural ecology have no direct contact at all."**
+**That is no longer true.** Griebling et al., *Animal Behaviour* (2026) cites Charnov 1976,
+Gittins 1979 **and** the Gittins 2011 book — direct ecology → operations-research contact.
+Not obtained; **an outstanding check**, alongside Houston & McNamara 1999.
+
+**Restated:** contact is *newly emergent and vanishingly thin* — 0.49% against a 22.2% control —
+and no work read in full states the equivalence.
+
+### Correction to an old control
+
+The **181 / 11.7%** Gittins × Sutton & Barto figure in the control table above came from OpenAlex. The
+same query here returns **24**, because the book has no proper DOI. **Do not carry 24 forward**,
+and treat the 181 as method-dependent.
 
 ## The equivalence has now been written: [[C5-charnov-gittins]]
 

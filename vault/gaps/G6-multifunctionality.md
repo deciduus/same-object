@@ -3,7 +3,7 @@ id: G6
 name: G6-multifunctionality
 type: gap
 standing: live
-evidence: full-text-read
+evidence: citation-intersection
 contact-surface: 0
 crosses: word
 crosses-rank: 1
@@ -17,15 +17,42 @@ uses-move: []
 rests-on: ["[[hill-number-multifunctionality]]"]
 tags: [node/gap, crosses/word, evidence/full-text-read, standing/live]
 last-checked: 2026-09-03
-note: "Read both formalisms. Ecology calls its index domain-neutral; a 2020 engineering paper hunting a better metric cites zero ecology. The 0.25 figure is UNVERIFIED - read cells give 1.15-1.17."
+note: "Survived both standards. Intersection 0 across six anchor pairings at 77-100% coverage; 1,033 works, no contact either direction. Control Byrnes x Jost = 17, reproduced by both sources."
 ---
 
 # Multifunctionality
 
-**STANDING: LIVE** · evidence: full-text-read · contact surface: 0 · last checked 2026-09-03
+**STANDING: LIVE** · evidence: citation-intersection · contact surface: 0 · last checked 2026-09-03
 
-> Two mature quantified formalisms share one word and nothing else. **Survived the full-text
-> re-read intact** — one of the few that did.
+> Two mature quantified formalisms share one word and nothing else. **The only entry in the
+> project to survive both standards** — full-text reading and citation intersection, which fail
+> differently. See [[reading-not-counting]].
+
+## The citation intersection: zero, with strong coverage
+
+Run on six anchor pairings — Byrnes 2023 and Byrnes 2014 against Snyder 2015, the 2020 residual
+performance paper, and O'Brien 2011. **OpenCitations set-overlap and an independent Crossref
+reference-list scan, in both directions, both return zero.**
+
+| Check | Result |
+|---|---|
+| **Intersection, all six pairings** | **0** |
+| Coverage (COCI citers / Crossref cited-by) | 77.5%–100% |
+| Citers fetched with DOI-bearing reference lists | 172/172 engineering, 846/861 ecology |
+| 172 engineering citers → any of 8 core ecology journals | **0** |
+| 861 ecology citers → Multifunctional Materials, J. Composite Materials, 4 composites journals | **0** |
+
+**No contact in either direction across 1,033 works.** Coverage this high is what makes a zero
+a finding rather than an absence of data.
+
+### The positive control is the load-bearing part
+
+**Byrnes 2014 × Jost 2006 = 17**, reproduced exactly by both sources. That control matters more
+than the others because it *is* a metric formalism being imported into a multifunctionality
+literature — precisely the event whose absence is claimed on the engineering side. The pipeline
+detects that event when it happens. It does not happen here.
+
+Also: Byrnes 2014 × Hector & Bagchi = 243 (28.8%); Snyder × O'Brien = 27 (34.2%).
 
 ## What the re-read added
 

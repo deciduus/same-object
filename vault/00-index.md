@@ -64,12 +64,12 @@ Not catalogue entries. Numbers this project produced.
 ### Live
 - [[G19-safety-factor-derived-twice]] — *citation-intersection* — All 46 citing works individually inspected. Symmorphosis itself is contested (~28 works).
 - [[G25-proofreading-coding]] — *citation-intersection* — 1,463 citers pulled and bibliographies intersected. The project's strongest finding.
-- [[G6-multifunctionality]] — *full-text-read* — **Survived the re-read intact.** A 2020 engineering paper hunting a better multifunctionality metric cites zero ecology.
+- [[G6-multifunctionality]] — *citation-intersection* — **The only entry to survive both standards.** Intersection 0 across six pairings, 1,033 works, coverage 77–100%. Control reproduces at 17.
 - [[G22-scale-transfer-triage]] — *full-text-read* — **Upgraded to live.** Perricone 2021 searched directly: Buckingham 0, dimensionless 0, screening 0. The paper asks for the guidelines, so it cannot be them.
-- [[G28-marginal-value-gittins]] — *full-text-read* — **Held.** Averbeck 2015 has bandits and foraging in one MDP framework and never relates them; Charnov not cited.
 
 ### Narrowed
 - [[G11-plant-gravisensing]] — *full-text-read* — Restored and restated. The withdrawal misdescribed its own source; the original claim was off by 100x. Neither was catchable by counting.
+- [[G28-marginal-value-gittins]] — *citation-intersection* — Holds and narrows. 0.49% against a 22.2% control, a factor of 45 — but "no direct contact at all" is now false: Griebling 2026 cites both.
 - [[G17-overconfident-uncertainties]] — *citation-intersection* — Restored with correction. A citation is not a follow-up. Specimen case for the symmetry rule.
 - [[G1-gradient-coupling]] — *full-text-read* — Thermodynamic branch is already unified and in active use. Gap survives only across the momentum branch: soaring, sails, tethers.
 - [[G2-metastability-metric]] — *full-text-read* — Biology-side absence was false. Cross-class axis still missing, and may be missing because it is hard: PCM is non-Arrhenius.
