@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C4-inclination-sensing-limit]]"]
 uses-move: ["[[M1-manufacture-contrast]]", "[[M2-use-the-noise]]"]
 rests-on: []
 tags: [node/gap, crosses/metaphor, evidence/full-text-read, standing/narrowed]
@@ -108,6 +108,46 @@ amplitude, and the integration time. That is a Berg–Purcell-shaped question ag
 Neither literature has run the calculation. Physics of active matter has the effective-temperature
 formalism; plant biology has the measured `T_eff ≈ 10 T`, `θ_c ≈ 10°`, and `Pe⁻¹ ≈ 5×10⁻³`.
 The numbers and the method are in two different rooms.
+
+## Attempted, and it produced a sharper question: [[C4-inclination-sensing-limit]]
+
+A single statocyte comes out at **δθ_min ≈ 11°** — **above** the thresholdless response plants
+actually show. The single-cell model fails, which forces pooling across `M` statocytes.
+
+**M is now resolved: 48**, not the 12 previously carried as UNVERIFIED. Blancaflor, Fasano &
+Gilroy 1998 ([PMC35160](https://pmc.ncbi.nlm.nih.gov/articles/PMC35160/), read in full — and
+it is *Arabidopsis*, not maize) states 3 stories × 4 files in section, each 2-D cell 4 deep. The
+old figure was a median-section undercount by exactly 4×. Pooled δθ_min moves from 0.95° to
+**0.48°**.
+
+**Graded ablation data exist** — 9 treatments, 4 surviving-cell counts — and the presentation
+time fits a power law well: `b = 1.20 ± 0.12`, `R² = 0.980` on geometric means. `b = 0` is dead
+at 10σ.
+
+### But the test does not discriminate, and my earlier claim was wrong
+
+`τ_p ∝ M⁻¹` is **also** the prediction of plain deterministic linear summation — signals add,
+fixed threshold, no noise, no square root anywhere. **Blancaflor stimulated only at 90°**, and
+the exponent that separates the two models is the *angular* one: pooling gives
+`δθ_min ∝ M^−½`, linear summation gives `∝ M⁻¹`.
+
+I said this was "one re-analysis away from testing." **That was wrong.** The measurement that
+discriminates was never made. Corrected in C4.
+
+### And equal-weight pooling is already falsified
+
+Within-M scatter exceeds the residual about the power law. At fixed `M = 16`, presentation time
+runs 2.62 → 7.13 min depending only on **which** story survives. Ablating all 16 cells of S3
+costs 10% of presentation time; all 16 of S2 costs 200%. **Cell identity dominates cell count.**
+
+### The experiment that would settle it
+
+Ablate to `M = {48, 32, 24, 16}`, stimulate at θ = 5/10/20/40/90°, regress curvature rate on
+sin θ, extract θ_min. **Pooling predicts a ratio of 1.73; linear summation predicts 3.00.**
+Falsified outside 1.25–2.5. About 500 roots.
+
+**Prior art: none.** Cross-cell averaging appears in Bérut 2018 only as *their measurement
+procedure*, never as the plant's mechanism.
 
 ## What would close it
 

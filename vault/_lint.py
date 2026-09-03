@@ -51,6 +51,9 @@ def main():
         docs[p] = (stem, front(text), text)
 
     for p, (stem, fm, text) in docs.items():
+        if text.startswith("﻿"):
+            errs.append(f"{p}: UTF-8 BOM at start of file — breaks frontmatter parsing. "
+                        f"Written by PowerShell Set-Content; rewrite without a BOM")
         t = fm.get("type")
         if not t:
             errs.append(f"{p}: no type")

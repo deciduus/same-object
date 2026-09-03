@@ -309,3 +309,304 @@ Ranked:
 ---
 
 Links: [[G11-plant-gravisensing]] · [[M2-use-the-noise]]
+
+---
+
+## Testing the pooling prediction
+
+*Added 2026-09-03. §8 reading (1) predicted that if the plant beats the single-cell bound by
+pooling over `M` statocytes, then `δθ_min ∝ M^{-1/2}`, and it named the test: the columella
+ablation series. That series was run. This section retrieves it, resolves `M`, fits the
+scaling, and reports where the test is and is not decisive.*
+
+### 11.1 `M` is resolved: **48** for the Arabidopsis columella
+
+The source is the ablation paper itself, which states the 3-D geometry explicitly.
+
+> "Transmission-detector images obtained from the confocal microscope of the root cap of a
+> 3-d-old Arabidopsis seedling showed three horizontal stories and four vertical files of
+> columella cells"
+
+> "In two dimensions, the columella cells (numbered) are typically organized into three
+> horizontal stories and four vertical files."
+
+> "S1, cells 9–12; S2, cells 5–8; and S3, cells 1–4"
+
+> "a single columella cell ablation in two dimensions is actually a total of four cells
+> ablated one on top of another. A single-story ablation is actually a total of 16 ablated
+> cells"
+
+**VERIFIED** — https://pmc.ncbi.nlm.nih.gov/articles/PMC35160/ (Blancaflor, Fasano & Gilroy
+1998, *Plant Physiol* 116:213–222, "Mapping the functional roles of cap cells in the response
+of Arabidopsis primary roots to gravity"). Article identity independently confirmed via
+`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=35160` and
+`https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&resultType=core&query=EXT_ID:9449842`
+(PMID 9449842). Note: Europe PMC lists this article as **not** open access and serves no full
+text for it; the numbers below come from the NCBI PMC HTML, which was reachable this session
+for PMC35160 (it was **not** reachable for PMC5960325, which required the eutils route).
+
+    16 cells per story × 3 stories  →  M = 48 statocytes
+
+This **replaces the UNVERIFIED "12" in §6**, which was a 2-D median-section count (3 × 4) and
+undercounted by exactly the factor 4 of the Z-direction. Consequences for §8 reading (1):
+
+    δθ_min = 11° / (√M · √(τ_memory/τ)) = 11° / (√48 × 3.34) = 0.48°
+
+not 0.95°. Sub-degree sensitivity is comfortably reachable *if* pooling is real.
+
+**Correction to the brief that commissioned this section:** the graded ablation study is
+**Arabidopsis**, not maize. Blancaflor, Fasano & Gilroy also published the same dataset as
+"Laser ablation of root cap cells: implications for models of graviperception", *Adv Space
+Res* 1999 (PMID 11542616, abstract only — **VERIFIED abstract**, full text not obtained, via
+the Europe PMC `EXT_ID:11542616` core record). It is a restatement, not new data. No second,
+independent graded columella-ablation series was found.
+
+### 11.2 What was measured: presentation time, not threshold angle
+
+To answer the key question directly: **nobody measured a threshold angle as a function of
+statocyte number.** Blancaflor et al. measured three things — curvature time course, final
+angle, and **presentation time** (minimum 90° stimulus duration producing a response). All
+stimulation was at **90°**. There is no angular series.
+
+But presentation time is *not* useless here, because the pooling model makes a definite
+prediction for it. From §4, at fixed angle and fixed detection criterion:
+
+    SNR ∝ α √M · sin θ · √(τ/τ_c) = const   ⟹   τ_p ∝ M⁻¹
+
+So the pooling hypothesis, applied to this experiment, predicts **`τ_p × M = constant`** —
+exponent **1**, not 1/2. (The 1/2 lives in the angle; the presentation time is the square of
+the angular sensitivity.) That is testable with the published numbers.
+
+### 11.3 The data
+
+Figure 4 legend, quoted verbatim from the fetch:
+
+> "A, Inner versus outer story ablations. Presentation time was 1.16 min for control roots,
+> 1.28 min for S3/tip cell ablations, and 7.13 min for S1/S2 cell ablations. B, Individual
+> story ablations. Presentation time was 2.55 min for S1 cell ablations and 3.53 min for S2
+> cell ablations. C, Individual stories intact. The presentation time was 2.62 min for roots
+> with only S2 cells intact and 4.85 min for roots with S1 cells intact. D, Central columella
+> versus flank columella cell ablations. Presentation time was 4.07 min for roots with the
+> central columella cells ablated and 1.91 min for roots with the flank columella cells
+> ablated. ... Each data point represents a mean ± se of 15 to 30 roots."
+
+Converting ablation treatment to surviving statocyte count `M` using 16 cells/story, and
+2-of-4 files (× 3 stories × 4 deep = 24 cells) for the central/flank split:
+
+| Treatment (ablated) | Surviving `M` | `τ_p` (min) | Regression `r` |
+|---|---|---|---|
+| none (control) | 48 | 1.16 | 0.99 |
+| S3 + tip cells | 32 | 1.28 | 0.99 |
+| S1 | 32 | 2.55 | 0.99 |
+| S2 | 32 | 3.53 | 0.96 |
+| flank files | 24 | 1.91 | 0.95 |
+| central files | 24 | 4.07 | 0.98 |
+| S1 + S2 (S3 intact) | 16 | 7.13 | 0.99 |
+| S1 + S3 (S2 intact) | 16 | 2.62 | 0.97 |
+| S2 + S3 (S1 intact) | 16 | 4.85 | 0.87 |
+
+Internal consistency check: the abstract states the S1+S2 ablation gave "a presentation time
+6-fold longer than the controls". 7.13/1.16 = **6.1**. Passes.
+
+Also from the paper, and important for what follows: **a single-cell ablation did nothing.**
+
+> "a single line of columella cells in S2 along the Z axis (i.e. a total of four cells: two
+> flank and two central columella cells)" — no measurable reduction.
+
+Removing 4 of 48 cells (8%) is below the noise of the assay. Pooling predicts a 9% change in
+`τ_p` — undetectable, so this is consistent but carries no information.
+
+### 11.4 The fit
+
+Model `τ_p = A · M^{−b}`. Ordinary least squares on `ln τ_p` vs `ln M`.
+
+**All nine points:**
+
+    b = 1.13 ± 0.40   (1 s.e.)      R² = 0.53      residual s = 0.44 in ln units (±55%)
+
+**Geometric means at each of the four distinct `M`:**
+
+    b = 1.20 ± 0.12                 R² = 0.980     residual s = 0.097 in ln units (±10%)
+
+| `M` | geo-mean `τ_p` (min) | fit `M^{−1.20}` | resid | pure `M⁻¹` from control | resid |
+|---|---|---|---|---|---|
+| 48 | 1.16 | 1.24 | −6.3% | 1.16 | (anchor) |
+| 32 | 2.26 | 2.01 | +12% | 1.74 | +30% |
+| 24 | 2.79 | 2.84 | −2.0% | 2.32 | +20% |
+| 16 | 4.49 | 4.63 | −2.9% | 3.48 | +29% |
+
+**Verdict on the fit.** The pooling exponent `b = 1` is **not rejected**: it is 1.7 s.e. from
+the group-mean estimate, and its worst residual over a 3× range of `M` is +30%. The
+no-pooling null `b = 0` is 10 s.e. away and dead. The parallel-sensors picture therefore
+survives its first quantitative contact with data, with a mild systematic pull toward a
+slightly *steeper* exponent (~1.2).
+
+**Verdict on what the fit hides, which matters more.** At fixed `M` the spread is enormous:
+
+| `M` | `τ_p` range | ratio |
+|---|---|---|
+| 32 | 1.28 – 3.53 | **2.8×** |
+| 24 | 1.91 – 4.07 | **2.1×** |
+| 16 | 2.62 – 7.13 | **2.7×** |
+
+The within-`M` scatter (pooled s = 0.52 in ln units) is **larger** than the residual scatter
+about the power law (s = 0.44). In plain terms: **which** cells you remove matters more than
+**how many**. Removing all 16 of S3 costs 10% of the presentation time; removing all 16 of S2
+costs 200%. Statocytes are not interchangeable, and equal-weight pooling is wrong as stated.
+
+The paper says why, and its explanation is mechanical rather than statistical:
+
+> "the central cells of story 2 contributed the most to root gravitropism. These cells also
+> exhibited the largest amyloplast sedimentation velocities."
+
+So the honest model is **weighted** pooling, `SNR ∝ √(Σᵢ wᵢ)` with `wᵢ` set by each cell's
+statolith mobility. That has enough free parameters to fit four group means and is therefore
+not falsifiable on this dataset. I am not fitting it.
+
+### 11.5 The degeneracy that makes this test non-decisive
+
+This is the load-bearing caveat and it kills the temptation to declare victory.
+
+`τ_p ∝ M⁻¹` is **not** a signature of pooling. A completely deterministic model — each
+statocyte emits an auxin-asymmetry signal, the signals sum linearly, and the root responds
+when the accumulated dose crosses a fixed threshold — predicts exactly `τ_p ∝ M⁻¹` with no
+noise, no averaging and no `√` anywhere. Both models pass §11.4 identically. **The
+presentation-time series cannot separate them.**
+
+The angular series can, and that is precisely why it is the missing experiment:
+
+| Model | `δθ_min(M)` | `τ_p(M)` |
+|---|---|---|
+| Statistical pooling (Berg–Purcell over `M` cells) | `∝ M^{−1/2}` | `∝ M⁻¹` |
+| Deterministic linear summation, fixed dose threshold | `∝ M⁻¹` | `∝ M⁻¹` |
+| No pooling (one dominant cell) | `∝ M⁰` | `∝ M⁰` |
+
+The two live models **differ by a factor of 2 in the angular exponent and not at all in the
+temporal one.** Blancaflor et al. measured the exponent that does not discriminate.
+
+### 11.6 The experiment that would settle it
+
+Blancaflor's ablation protocol crossed with Chauvet's angular protocol. Nothing new is needed.
+
+**Design.** Arabidopsis primary roots, laser-ablate to leave `M ∈ {48, 32, 24, 16}` — i.e.
+control, S3-ablated, flank-ablated, and S1+S3-ablated (S2 intact). Use the *S2-intact* arm at
+`M = 16` rather than S3-intact, because §11.4 shows S3 is nearly inert and would confound cell
+count with cell quality. Hold the ablated *fraction of S2* constant across arms if possible;
+if not, report it, because it is the dominant nuisance variable.
+
+**Measure.** Not presentation time. Stimulate at a fixed, long duration (≥ `τ_memory` = 13 min,
+so integration is saturated and only the angle is limiting) at each of θ = 5°, 10°, 20°, 40°,
+90°. Measure initial curvature rate. Fit the sine law, `rate = k sin θ`, and extract the angle
+at which curvature becomes indistinguishable from zero — the same regression-to-`y = 0`
+construction Blancaflor already used for time, applied to angle. Call it `θ_min(M)`.
+
+**Predicted numbers.** Normalising to the control arm:
+
+| `M` | pooling, `√(48/M)` | linear summation, `48/M` | absolute `θ_min` if control is 0.48° |
+|---|---|---|---|
+| 48 | 1.00 | 1.00 | 0.48° / 0.48° |
+| 32 | 1.22 | 1.50 | 0.59° / 0.72° |
+| 24 | 1.41 | 2.00 | 0.68° / 0.96° |
+| 16 | **1.73** | **3.00** | **0.83° / 1.44°** |
+
+The absolute column uses §11.1; it is model-dependent and the *ratios* are the real prediction.
+
+**Falsification, stated in advance.**
+
+- `θ_min(16)/θ_min(48) ≥ 2.5` → **pooling is falsified**; the system is a deterministic linear
+  summer and the Berg–Purcell framing of C4 is the wrong idealisation.
+- `θ_min(16)/θ_min(48) ≤ 1.25` → **pooling is also falsified**, in the other direction: the
+  cells are not independent samples, or one cell dominates, or the noise is correlated across
+  cells (which would be its own finding — correlated active noise does not average).
+- `1.5 ≤ ratio ≤ 2.0` → pooling survives.
+- Any measurable `θ_min > 0` in the control arm falsifies Chauvet's no-threshold claim and
+  refutes the premise of this whole note. That is a useful side result either way.
+
+**Power.** The two live predictions differ by 73% at `M = 16`. Blancaflor's presentation-time
+regressions reached `r = 0.87–0.99` with n = 15–30 roots per point. A 73% effect is far above
+that noise; ~25 roots × 5 angles × 4 arms ≈ 500 roots, one experiment.
+
+### 11.7 Has anyone proposed statocyte pooling before?
+
+**Not found, and I searched for it specifically.** Roughly ten queries across Europe PMC
+full-text and web search — `"number of statocytes"`, `"statocyte" AND ("signal averaging" OR
+"pooling")`, averaging/ensemble/noise-reduction phrasings, and Berg–Purcell-anchored variants
+(the last per METHOD §11's warning about anchoring on the originating field's term). Returns
+were Meroz & Bastien 2014, Miyamoto 2007, Bérut 2018 and reviews — none proposing across-cell
+averaging as a sensitivity mechanism.
+
+The one genuinely close hit is worth recording precisely, because it is a *methodological*
+statement that lands one inference short of the hypothesis:
+
+> "While θ(t) for a single pile exhibits large fluctuations due to the small number of
+> statoliths per pile, the averaged value of the pile angle over several cells is
+> well-defined."
+
+Bérut et al. 2018, **VERIFIED** via
+`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=5960325` (the
+`pmc.ncbi.nlm.nih.gov` HTML and the Europe PMC `PMC5960325/fullTextXML` route both failed this
+session — captcha and 404 respectively).
+
+They observe that the single-cell signal is too noisy to read and that averaging over cells
+recovers it — which is C4 §8 reading (1) in miniature — but they invoke it as *their own
+measurement procedure*, not as *the plant's*. A Europe PMC search shows theirs is the only
+indexed work containing the phrase "number of statocytes," and it gives no count.
+
+**Status: NOT YET A SHARED OBJECT** (METHOD §11 taxonomy). The physics of cellular sensing has
+the `M^{−1/2}` machinery; the plant literature has the ablation series and the sine law; the
+one paper that touches both uses the averaging as an instrument rather than a hypothesis.
+
+### 11.8 Standing after this section
+
+| Claim | Before | After |
+|---|---|---|
+| `M` for Arabidopsis columella | UNVERIFIED, guessed 12 | **VERIFIED = 48** |
+| `δθ_min` with pooling + `τ_memory` | 0.95° | **0.48°** |
+| Graded ablation data exist | assumed | **Yes — 9 treatments, 4 distinct `M`** |
+| Threshold angle vs `M` measured | assumed re-analysable | **No. Never measured. All stimulation at 90°** |
+| `τ_p ∝ M⁻¹` | untested | **b = 1.20 ± 0.12, R² = 0.98 on group means; b = 1 not rejected** |
+| Pooling confirmed | — | **No.** Test is degenerate with deterministic linear summation |
+| Equal-weight pooling | implicit | **Falsified.** 2.1–2.8× spread in `τ_p` at fixed `M` |
+| Anyone proposed pooling | unknown | **No published proposal found** |
+
+The §8 sentence "the experiment is one re-analysis away" was **wrong** and is corrected here:
+the required observable was never recorded, so it is one *experiment* away, not one
+re-analysis. The experiment is §11.6 and costs about 500 roots.
+
+### 11.9 Inputs added
+
+| Quantity | Value | Status | Source |
+|---|---|---|---|
+| Columella stories | 3 | **VERIFIED** | https://pmc.ncbi.nlm.nih.gov/articles/PMC35160/ |
+| Columella files (2-D) | 4 | **VERIFIED** | same |
+| Cells per story (3-D) | 16 | **VERIFIED** | same |
+| **`M`, total statocytes** | **48** | **VERIFIED** | same |
+| Presentation times, 9 treatments | table §11.3 | **VERIFIED** | same |
+| Curvature rates / final angles, 10 treatments | Table II | **VERIFIED** | same |
+| Central S2 cells have largest amyloplast sedimentation velocity | qualitative | **VERIFIED** | same + PMID 11542616 abstract |
+| Adv Space Res 1999 restatement | same dataset | **VERIFIED (abstract only)** | https://www.ebi.ac.uk/europepmc/webservices/rest/search?format=json&resultType=core&query=EXT_ID:11542616 |
+| Cross-cell averaging quote | Bérut 2018 | **VERIFIED** | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=5960325 |
+| Threshold angle vs `M` | — | **DOES NOT EXIST** | ~10 queries, §11.7 |
+| Statolith `v_sed` absolute value | — | still **UNVERIFIED** | Blancaflor reports *relative* velocities only; no absolute figure obtained |
+
+Assumptions specific to this section, stated:
+
+**A8 — the `M` bookkeeping.** Story ablations map cleanly (16 cells each, stated by the
+authors). The **central/flank** split does not: the paper classifies files in 2-D and the
+ablation removes all four Z-positions, so I take flank = files 1,4 = 24 cells and central =
+files 2,3 = 24 cells. If the Z-outermost cells are functionally "flank" too, the two `M = 24`
+points are mis-assigned. Dropping both `M = 24` points changes the group-mean fit to
+`b = 1.19` — negligible, so the fit does not rest on this.
+
+**A9 — presentation time as an inverse-SNR proxy.** `τ_p` is the *stimulus* duration, which
+maps to the integration window `τ` in §4 only if the cell integrates for exactly as long as it
+is stimulated and forgets nothing. `τ_memory = 13 min` exceeds every `τ_p` here (1.2–7.1 min),
+so this is at least self-consistent, but it is an assumption.
+
+**A10 — ablation is clean.** Laser-ablated cells are assumed to remove sensing capacity without
+wounding responses, altered auxin transport geometry, or damage to neighbours. The paper's own
+S3 result argues against full cleanliness: ablating S3 barely changed presentation time but
+*did* inhibit bending, which the authors attribute to blocked signal **translocation** rather
+than lost perception. Any `M`-scaling fit therefore mixes sensing loss with transport damage.
+This is the weakest step in §11.4 and is worse than the statistics.
+

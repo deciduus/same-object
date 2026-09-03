@@ -53,7 +53,9 @@ Not catalogue entries. Numbers this project produced.
 - [[C1-availability-living-tissue]] — photosystem II = 0.883, cortical bone = 0.984. **A leaf is less available than a power grid.**
 - [[C2-probabilistic-safety-factors]] — for bone, failure probability is set by tissue variability, not locomotor variability
 - [[C3-energy-error-axis]] — every information substrate on one kT-normalized axis
-- [[C4-inclination-sensing-limit]] — **the derivation does not close at one cell**, and that is the result: it forces statocyte pooling, which is falsifiable against an existing ablation series
+- [[C5-charnov-gittins]] — **the strongest result in the project.** Charnov's rule *is* the Gittins index, as an identity in two lines. A 2024 paper re-derived it in foraging notation without ever naming Gittins
+- [[C6-damage-healing-ratio]] — **Ha = k_r/k_d.** The missing object in [[G5-repair-number]], written down, with no prior art. Three systems on one axis; two rows left empty because the data do not exist
+- [[C4-inclination-sensing-limit]] — **the derivation does not close at one cell.** It forces pooling; the existing ablation data cannot discriminate pooling from linear summation, because the discriminating angle was never measured. A ~500-root experiment would settle it
 
 ## Gaps
 
@@ -63,6 +65,7 @@ Not catalogue entries. Numbers this project produced.
 - [[G19-safety-factor-derived-twice]] — *citation-intersection* — All 46 citing works individually inspected. Symmorphosis itself is contested (~28 works).
 - [[G25-proofreading-coding]] — *citation-intersection* — 1,463 citers pulled and bibliographies intersected. The project's strongest finding.
 - [[G6-multifunctionality]] — *full-text-read* — **Survived the re-read intact.** A 2020 engineering paper hunting a better multifunctionality metric cites zero ecology.
+- [[G22-scale-transfer-triage]] — *full-text-read* — **Upgraded to live.** Perricone 2021 searched directly: Buckingham 0, dimensionless 0, screening 0. The paper asks for the guidelines, so it cannot be them.
 - [[G28-marginal-value-gittins]] — *full-text-read* — **Held.** Averbeck 2015 has bandits and foraging in one MDP framework and never relates them; Charnov not cited.
 
 ### Narrowed
@@ -73,15 +76,15 @@ Not catalogue entries. Numbers this project produced.
 - [[G3-cycle-life]] — *full-text-read* — One leg bridged by name in PNAS. Surviving leg: catalysis durability against energy storage, 0 both ways.
 - [[G5-repair-number]] — *full-text-read* — The zero survived the homograph. "No time in it" did not. The missing object is the ratio, not the rate.
 - [[G7-how-passive]] — *full-text-read* — The ladder is reinvented in at least four fields, not nuclear-only. No field has a number, so the metric gap is sharper.
-- [[G4-criticality-as-design]] — *single-review* — Field-level claim false. The 578-reference review's zero-engineering bibliography may still hold as a single-review omission.
-- [[G12-latch-fatigue]] — *string-protocol* — Restored and narrowed. A spring is not a latch. Cycles-to-failure for a latch contact surface remains unmeasured.
-- [[G20-resize-vs-throttle]] — *string-protocol* — Biology does not lack the framing. Surviving gap: that formalism never reached computing or mechanical engineering.
-- [[G21-dimensionless-regime-map]] — *string-protocol* — Narrowed to: no tabulated regime map with crossover conditions. Buckingham is a surname homograph.
-- [[G22-scale-transfer-triage]] — *string-protocol* — Two agents read Perricone 2021 differently; the full-text read is better evidence. Surviving: no formal Pi-group screening step.
+- [[G4-criticality-as-design]] — *full-text-read* — The bibliography was finally opened: 595 refs, **no titles at all**, so every prior characterisation of it read data that is not there.
+- [[G21-dimensionless-regime-map]] — *full-text-read* — The previous narrowing rested on typography. Absent: one Pi-space co-locating organisms and processes.
+- [[G12-latch-fatigue]] — *full-text-read* — **Held in the strongest form.** The 2023 JEB review names re-usability and explicitly defers it. The latch paper measures one cycle, on dried specimens.
 - [[G23-hormesis-formalism]] — *full-text-read* — Shot peening names its own descending limb. Surviving: nobody parameterises the curve, and the mechanochemistry work reports one operating point.
-- [[G9-discrepancy-base-rate]] — *string-protocol* — Half wrong: metrology dark-uncertainty and epidemiological triangulation cover the class. The base rate itself has never been computed.
+- [[G9-discrepancy-base-rate]] — *full-text-read* — Bailey 2017 computed the distribution of discrepancy MAGNITUDES over 41,000 measurements. The distribution of OUTCOMES is still uncomputed.
+- [[G21-dimensionless-regime-map]] — *full-text-read* — The previous narrowing rested on typography. Vogel gives crossovers in prose. Absent: one Pi-space co-locating organisms and processes.
 
 ### Overturned
+- [[G20-resize-vs-throttle]] — *full-text-read* — Computing has the symmorphosis question with formulas, under the name *over-provisioning accuracy*. And safety factors are native to mechanical engineering — the direction was inverted.
 - [[G27-collective-decision]] — *string-protocol* — Overturned. The zero was anchored on Paxos, an algorithm name rather than a literature. Message complexity may still be untested.
 - [[G8-energy-per-bit-axis]] — *string-protocol* — Overturned. The specific figure in C3 may still be novel; the absence claim was not.
 

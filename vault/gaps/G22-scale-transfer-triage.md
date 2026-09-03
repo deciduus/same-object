@@ -2,8 +2,8 @@
 id: G22
 name: G22-scale-transfer-triage
 type: gap
-standing: narrowed
-evidence: string-protocol
+standing: live
+evidence: full-text-read
 contact-surface: 9
 crosses: vocabulary
 crosses-rank: 3
@@ -15,28 +15,44 @@ mutual-with: []
 computed-in: []
 uses-move: ["[[M6-vary-what-was-held-fixed]]"]
 rests-on: []
-tags: [node/gap, crosses/vocabulary, evidence/string-protocol, standing/narrowed]
+tags: [node/gap, crosses/vocabulary, evidence/full-text-read, standing/live]
 last-checked: 2026-09-03
-note: "Two agents read Perricone 2021 differently; the full-text read is better evidence. Surviving: no formal Pi-group screening step."
+note: "Disagreement adjudicated on the full text: Buckingham 0, dimensionless 0, screening 0. The paper asks for the guidelines, so it cannot be them. Holds."
 ---
 
 # Scale-transfer triage in biomimetics
 
-**STANDING: NARROWED** · evidence: string-protocol · contact surface: 9 · last checked 2026-09-03
+**STANDING: LIVE** · evidence: full-text-read · contact surface: 9 · last checked 2026-09-03
 
 > Is there a **screening step** that tests whether a mechanism survives the scale change before you copy it?
 
-## Recorded disagreement, not resolved
+## The disagreement is now adjudicated — for the first agent
 
-Two agents read Perricone et al., *Organismal Design and Biomimetics: A Problem of Scale* (2021)
-differently:
+Two agents had read Perricone et al., *Organismal Design and Biomimetics: A Problem of Scale*
+(2021) differently: one found no screening procedure, the other read the paper's thesis *as*
+the triage. A third pass pulled the full text independently
+([PMC8544225](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8544225/fullTextXML),
+129k characters) and searched it directly.
 
-- The first **fetched the full text** and reported no Buckingham Pi analysis, no decision tree or
-  algorithm, and quoted the authors saying universal scaling guidelines are *"far from being
-  identified."*
-- The second read its thesis as being the triage itself.
+| Term | Occurrences |
+|---|---|
+| Buckingham | **0** |
+| dimensionless | **0** |
+| decision | **0** |
+| criteri- | **0** |
+| screening | **0** |
+| protocol | **0** |
 
-**The full-text read is better evidence**, so this is narrowed rather than withdrawn.
+And the paper's own closing sentence:
+
+> "Future research should be carried out to establish some guidelines in the scaling transfer
+> for each field of knowledge"
+
+**A paper asking for the thing cannot be the thing.** The second agent mistook *naming the
+problem* for *supplying the procedure* — a distinct failure from the anchoring error that
+damaged the other entries, and worth naming separately.
+
+The gap **holds** rather than merely narrowing.
 
 The 9-paper Buckingham intersection reproduces but is a **proper-noun artifact** — the field does
 this work without ever writing the name. See [[failure-modes]] mode 3.

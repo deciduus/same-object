@@ -3,7 +3,7 @@ id: G12
 name: G12-latch-fatigue
 type: gap
 standing: narrowed
-evidence: string-protocol
+evidence: full-text-read
 contact-surface: 3
 crosses: data
 crosses-rank: 5
@@ -15,14 +15,14 @@ mutual-with: []
 computed-in: []
 uses-move: ["[[M3-separate-timescales]]"]
 rests-on: ["[[LaMSA-latch]]"]
-tags: [node/gap, crosses/data, evidence/string-protocol, standing/narrowed]
+tags: [node/gap, crosses/data, evidence/full-text-read, standing/narrowed]
 last-checked: 2026-09-03
-note: "Restored and narrowed. A spring is not a latch. Cycles-to-failure for a latch contact surface remains unmeasured."
+note: "Held on full-text read. The 2023 JEB LaMSA review names re-usability and defers it; the click-beetle latch paper measures one cycle on dried specimens."
 ---
 
 # No cycles-to-failure number for a biological latch
 
-**STANDING: NARROWED** · evidence: string-protocol · contact surface: 3 · last checked 2026-09-03
+**STANDING: NARROWED** · evidence: full-text-read · contact surface: 3 · last checked 2026-09-03
 
 > Latch-mediated spring actuation beats muscle power density by orders of magnitude by
 > decoupling slow loading from fast release. The springs and geometry are well modelled.
@@ -68,6 +68,45 @@ Not the cuticle. The interface that stores and releases.
 Supporting: repeated trap-jaw ant strikes show **no decline in peak velocity** — fatigue
 appears in the muscle motor, not in the spring or latch. So the latch outlasts the
 measurement, and nobody has run it to failure.
+
+## The full-text re-read: held, in the strongest available form
+
+**The field names the property and explicitly defers it.** From the 2023 *J. Exp. Biol.* LaMSA
+review ([jeb245262](https://journals.biologists.com/jeb/article/226/Suppl_1/jeb245262/306259/)),
+read in full:
+
+> "The intriguing distinctions among single-use, re-useable, re-settable LaMSA mechanisms are
+> considered elsewhere"
+
+Checked ABSENT in that review: cycles sustained before failure, wear patterns on latch contact
+surfaces, latch fatigue, degradation over repeated use. **A named absence in a named source is
+the strongest form this evidence can take** — better than a zero count, because it is the field
+itself saying so.
+
+**The most latch-specific paper measures one cycle.** The 2019 click-beetle latch paper
+([jeb196683](https://journals.biologists.com/jeb/article/222/12/jeb196683/20388/)), read in
+full, measures hinge morphology, mechanics and force during a **single** latching cycle on
+**desiccated** specimens — a limitation the authors flag themselves. Checked ABSENT: wear,
+damage, repeated use, cycle counts, durability.
+
+A deliberate synonym hunt was run — wear, tribology, abrasion, contact fatigue, damage
+accumulation, durability, reusability, resettability, end-of-life — precisely the failure mode
+that damaged six of the previous eight entries. It found nothing on the biology side.
+
+**And engineering has the formalism.** Mechanical-latch cycle life is routine; there is a US
+patent titled *Method to detect end-of-life in latches*. So this is [[one-way-borrowing]]
+waiting to happen: engineering has both the number and the method, biology has neither applied
+to a latch contact.
+
+### One live risk, not closed
+
+Bolmin et al., *PNAS* 118:e2014569118 (2021) is reported in secondary sources to say click
+beetles click repeatedly "without apparent external damage." **UNVERIFIED** — PNAS 403s and the
+paper is not open access in Europe PMC. If that sentence is real it is a *qualitative* durability
+statement, which would **soften but not overturn** the claim: "no apparent damage" is not a
+cycles-to-failure number.
+
+Also **UNVERIFIED**: the trap-jaw ant claim below carries no URL and was not re-checked.
 
 ## What would change it
 

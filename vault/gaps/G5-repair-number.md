@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: ["[[C1-availability-living-tissue]]"]
+computed-in: ["[[C1-availability-living-tissue]]", "[[C6-damage-healing-ratio]]"]
 uses-move: []
 rests-on: ["[[availability-formula]]", "[[kirkwood-disposable-soma]]"]
 tags: [node/gap, crosses/metaphor, evidence/full-text-read, standing/narrowed]
@@ -83,6 +83,34 @@ expression of the form `k_REC/(k_REC + k_PI)`**. Its framing is a rate inequalit
 > photoinactivation exceeds the rate of PSII repair."
 
 An inequality, not a normalised fraction. **C1 stands as computing something new.**
+
+## The missing object has now been written: [[C6-damage-healing-ratio]]
+
+`Ha = k_r/k_d`, a healing Damköhler number, derived from the two-state master equation with a
+unique globally-stable fixed point `A = Ha/(1+Ha)`. It reduces to `MTBF/(MTBF+MTTR)` in one
+line, and `x ↦ x/(1+x)` is the same Möbius compression as `q² = ZT/(1+ZT)` in
+[[kedem-caplan]]. **Prior art: none found.** Damköhler has no healing variant; every published
+self-healing "rate" is an amplitude, not a rate.
+
+Three systems are populated with verified numbers on one axis. **Two rows are deliberately
+empty** — self-healing polymer and self-healing concrete — because no paper pairs a damage rate
+with a healing rate for the same specimen.
+
+### Why nobody wrote it, and it is not conceptual
+
+**It is experimental.** Forming `Ha` needs both rates measured on one specimen. Biology has a
+way to get them separately — lincomycin blocks D1 synthesis, isolating `k_PI`. Materials science
+has **no way to suppress healing while loading**, so only the composite amplitude is observable.
+
+That reframes the gap and names the next measurement: **vitrimer bond exchange is gated at the
+topology-freezing temperature `T_v`.** Load below it, then above it. The control exists.
+
+### And a defect in the engineering law fell out
+
+Setting `ḣ = 0` in Das & Kumari's evolution law gives `D²(1−h) = 0`, so `h → 1` always.
+**Continuum damage-healing mechanics has no interior steady state in the healing variable at
+all**, because nothing un-heals. Healing there is a ratchet, not a rate balance. That is a
+defect in the constitutive law, found by trying to use it.
 
 ## Provisional
 

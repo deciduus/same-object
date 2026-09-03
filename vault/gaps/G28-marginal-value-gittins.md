@@ -12,7 +12,7 @@ mediator: neuroeconomics
 borrows-from: []
 lends-to: ["[[G9-discrepancy-base-rate]]"]
 mutual-with: []
-computed-in: []
+computed-in: ["[[C5-charnov-gittins]]"]
 uses-move: []
 rests-on: []
 tags: [node/gap, crosses/nothing, evidence/full-text-read, standing/live]
@@ -90,6 +90,57 @@ data on animals actually solving the problem.
 Survived the full alternate-name gauntlet under the hardened protocol: patch leaving,
 optimal foraging, patch residence time, against optimal stopping, secretary problem, index
 policy, scheduling. All zero or irrelevant.
+
+## The equivalence has now been written: [[C5-charnov-gittins]]
+
+**It is an identity, not an analogy**, and it is two lines.
+
+- **Current patch.** Its Gittins index is the maximum forward chord slope of `g` from `t`.
+  Under Charnov's concavity assumption the supremum is attained as `s → 0⁺`, so `ν(t) = g'(t)`.
+- **Outside option.** Bundle travel plus a fresh patch into one *habitat arm*, rewarding `0` on
+  `[0, τ)` then `g'(u − τ)`. Its index is `sup_t g(t)/(τ + t) = R*`.
+
+So **Charnov's maximisation over residence time literally is the supremum over stopping times
+in the Gittins definition**, and `R*` is the index of the arm you would switch to. "Leave when
+the current index drops to the alternative's" gives `g'(t) = R*` exactly.
+
+### Both versions of the switching-cost quarrel were half right
+
+τ is **neither** a switching cost **nor** zero. It is a **zero-reward prefix absorbed inside the
+outside arm.** The bandit genuinely is a zero-switching-cost bandit — the original wording was
+right about that — and τ still survives into the answer — the correction was right about that.
+The condition neither identified is the real licence: **patches must be non-revisitable.**
+
+A repair to the proposed route as well: Whittle's retirement reward `M` is a *stock*, and
+`M* = R*/δ → ∞` undiscounted. The bridge object is **`δM`, not `M`**. And the limit can be
+skipped entirely — the problem is regenerative, so renewal-reward gives the average-reward index
+directly.
+
+### Where it breaks — in exactly the three places bandit theory already knows
+
+Each maps onto a real foraging complication: **patch renewal** (restless bandit, arms not
+frozen), **revisitable patches** (no index policy is optimal under switching costs),
+**non-stationary habitat**. Discounting does *not* break it; it generalises.
+
+### Two results fell out that were not asked for
+
+Non-concave gain curves make naive MVT wrong while **the index self-corrects to the concave
+hull.** And for *informative* patches the index exceeds the immediate rate by a signed
+exploration bonus, **predicting over-staying** — which is the documented empirical anomaly
+(Nonacs 2001, 26 studies). That turns the equivalence into a discriminating experiment.
+
+### The near-miss that proves the gap
+
+A 2024 bioRxiv generalised-MVT paper derives `g'(t*) = λ·EV`. **That is Whittle's `ν = δM`.**
+The paper contains zero occurrences of Gittins, Whittle or bandit. Someone re-derived the
+identity in foraging notation without knowing it existed — which simultaneously **validates the
+algebra** and **demonstrates the gap.**
+
+Geana, Wilson, Daw & Cohen (2016) is arguably better-placed than Averbeck: it contrasts MVT and
+"bandit" paradigms explicitly and never names Gittins.
+
+**Novelty is stated as "appears unwritten," carrying its weight honestly:** Houston & McNamara
+(1999) and Gittins–Glazebrook–Weber were not obtained.
 
 ## The full-text re-read: holds, with one correction
 

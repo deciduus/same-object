@@ -8,6 +8,61 @@ type: method
 Append-only. One line per structural change to the vault. Format:
 `## [YYYY-MM-DD] operation | description`
 
+## [2026-09-03] re-read batch two | G20 overturned, G22 upgraded, G4 audit finally run
+
+**[[G20-resize-vs-throttle]] overturned.** Textbook anchoring on the originating field's term.
+Computing has the symmorphosis question with formulas, under **over-provisioning accuracy**
+(arXiv:1905.10270) — and the word "safety" appears zero times in that paper. Worse, safety
+factors are *native* to mechanical engineering, so "never reached mechanical engineering"
+inverted the direction of travel.
+
+**[[G4-criticality-as-design]]: we had characterised a bibliography we never opened.** The
+Muñoz *RMP* reference list was finally extracted. **595 refs, not 578** — and **it carries no
+article titles at all**, only venues. Every prior subject-keyword characterisation of it was
+reading data that does not exist. Five IEEE entries, so "zero engineering" is false as worded.
+The review cites Stoop's theory papers and omits his cochlea *hardware*.
+
+**[[G22-scale-transfer-triage]] upgraded to live.** The two-agent disagreement was adjudicated
+by pulling Perricone 2021 and searching it directly: Buckingham 0, dimensionless 0, screening 0,
+protocol 0. The paper's closing line asks for the guidelines, so it cannot be them. New named
+failure: mistaking *naming the problem* for *supplying the procedure*.
+
+## [2026-09-03] hygiene | lint now rejects a UTF-8 BOM
+
+A PowerShell `Set-Content` rewrite prepended a BOM, which silently broke frontmatter parsing —
+the note reported `no type` while looking perfectly correct in an editor. Caught by the lint
+only because `type` is required. Now checked explicitly.
+
+## [2026-09-03] closed by construction | C5 and C6 write two missing objects
+
+First time this project produced theorems rather than catalogue entries. Both were attempts to
+**close** a gap by writing the algebra, per [[what-closes-a-gap]].
+
+**[[C5-charnov-gittins]] — the strongest result here.** Charnov's marginal value theorem *is*
+the Gittins index, as an identity in two lines. Charnov's maximisation over residence time is
+literally the supremum over stopping times in the index definition. The travel time τ is neither
+a switching cost nor zero; it is a zero-reward prefix inside the outside arm, licensed by
+patches being non-revisitable. A 2024 bioRxiv paper derives `g'(t*) = λ·EV`, which is Whittle's
+`ν = δM`, with zero occurrences of Gittins — independent rediscovery that validates the algebra
+and demonstrates the gap at once.
+
+**[[C6-damage-healing-ratio]].** `Ha = k_r/k_d` with fixed point `A = Ha/(1+Ha)`, reducing to
+`MTBF/(MTBF+MTTR)`. No prior art. Two by-products beat the group itself: the reason nobody wrote
+it is **experimental** — materials science cannot suppress healing while loading — and setting
+`ḣ = 0` in the Das & Kumari law gives `h → 1` always, so continuum damage-healing mechanics has
+**no interior steady state in the healing variable**. A defect found by trying to use the law.
+
+## [2026-09-03] correction | my own claim about the ablation test was wrong
+
+I wrote that the pooling prediction was "one re-analysis away" from a test against Blancaflor
+1998. **It is not.** `τ_p ∝ M⁻¹` is equally the prediction of plain linear summation; the models
+separate only in the *angular* exponent, and that stimulation was done at 90° only. The
+discriminating measurement was never made. Corrected in [[C4-inclination-sensing-limit]].
+
+Also: `M` resolved to **48**, not 12 — the old figure was a median-section undercount by exactly
+4×. And equal-weight pooling is falsified outright: at fixed `M = 16`, presentation time runs
+2.62 to 7.13 min depending only on which story survives. **Cell identity dominates cell count.**
+
 ## [2026-09-03] unblocked | citation-intersection was never actually blocked
 
 Recorded as blocked because OpenAlex and Semantic Scholar both returned 429 with hours-long
