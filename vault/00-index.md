@@ -64,6 +64,8 @@ numbers, Buckingham Π-groups, citation intersection.
 - [[specification-instruments]] — the template, and why it is antifragile rather than predictive
 - [[reservoir-audit]] — energy–momentum. Validated 5/5, first open case [[C11-flyby-reservoir-audit]]
 - [[information-audit]] — entropy. Validated **3/3** on measured Maxwell-demon experiments, naming the sink each time; ties [[G25-proofreading-coding]] to the same ledger
+- [[C14-degree-of-passivity]] — the passivity metric, built. **Narrows [[G7-how-passive]]**: a portable energy number exists, but the ladder is the Boolean square B² and the number is blind to its second axis
+- [[C15-metastability-metric]] — attempted and **killed by the prefactor** (C9-style). τ₀ spans 20 orders; salvage is a 2-D map where **biology buys lifetime in the prefactor, chemistry in the barrier**
 - [[C12-pi-space-lattice]] — the discrete one. Buckingham's Π-groups as an **integer kernel**; **closes the surviving half of [[G21-dimensionless-regime-map]] by construction** and makes [[G22-scale-transfer-triage]]'s criterion lattice arithmetic
 
 ## Doors opened

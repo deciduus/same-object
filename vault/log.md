@@ -5,6 +5,28 @@ type: method
 
 # Operations log
 
+## [2026-09-03] Layer-2 batch | two gaps given constructions, both instructive
+
+**[[C14-degree-of-passivity]] narrows [[G7-how-passive]].** The naive "fraction of response
+surviving" is broken (exceeds 1 for protective devices; the subtraction is meaningless under
+nonlinearity). Recast as a cycle-averaged **energy** fraction, `P` is portable. And the ladder
+is the **Boolean square B²** on two independent bits — *injects energy?* and *needs a signal?*
+Exoskeleton "quasi-passive" and structural "semi-active" are the **same cell**; cell (1,0) is
+unnamed in every field; "hybrid" is a sum, not a rung. No total order carries a width-2 lattice,
+so each field linearised it differently — the same failure as [[C12-pi-space-lattice]]. `P`
+closes the energy axis (control theory's passivity index is its rigorous twin there) but is blind
+to the signal axis. Narrows, does not close.
+
+**[[C15-metastability-metric]] kills the [[G2-metastability-metric]] unifier — cleanly.** The
+"6 kJ/mol buys 10×" arithmetic silently drops the prefactor `ln τ₀`. Backed out from real data,
+τ₀ spans **~20 orders**: TST period for MOST, 10⁻² s for seeds, no kT at all for nuclear isomers,
+non-Arrhenius for PCM. No single number on `exp(ΔG/kT)` can span them. Salvage: a 2-D map holds
+the two thermally-activated classes and separates them by prefactor, not barrier — **biology buys
+lifetime in the prefactor, chemistry in the barrier.** A C9-style negative.
+
+Both are Layer-2 constructions per [[strategy]]: take a gap, build the missing object, and read
+what the attempt reveals. One narrowed, one produced a clean impossibility plus a salvage.
+
 ## [2026-09-03] instruments at the antifragile level | two more built, one gap closed
 
 The user named the through-line: the reservoir audit is a **specification instrument** — an

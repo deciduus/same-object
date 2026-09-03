@@ -12,12 +12,12 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C15-metastability-metric]]"]
 uses-move: ["[[M6-vary-what-was-held-fixed]]"]
 rests-on: []
 tags: [node/gap, crosses/nothing, evidence/full-text-read, standing/narrowed]
 last-checked: 2026-09-03
-note: "Biology-side absence is false: seed ageing uses Arrhenius Ea ~55 kJ/mol and glassy-state trapping. Cross-class axis still missing; MOST work states both variables and cites no other class."
+note: "Single figure of merit killed by the prefactor (C15): tau_0 spans ~20 orders. Salvage: a 2D map separates chemistry (barrier) from biology (prefactor). Nuclear and PCM don't embed at all."
 ---
 
 # No metastability figure of merit
@@ -58,6 +58,33 @@ phase-change, not latent heat. Only other photoswitches.
 
 A field that states its own two-variable target and never looks sideways is the gap in one
 document.
+
+## The construction was attempted, and the unifier is dead: [[C15-metastability-metric]]
+
+**A single figure of merit cannot span the five classes. The prefactor kills it** — a clean
+C9-style negative, the hidden term restored with real numbers.
+
+The candidate `M = ρ_E · ln(τ/τ_op)` rests on `τ = τ₀·exp(ΔG/kT)`, so lifetime enters as
+`ln τ = ΔG/kT + ln τ₀`. The note's "every ~6 kJ/mol buys 10×" arithmetic is right about
+`ΔG/kT` and **silently drops `ln τ₀`.** Backed out from real data, `τ₀` spans **~20 orders of
+magnitude** and is not derivable from any shared physics:
+
+| Class | Backed-out prefactor τ₀ | Set by |
+|---|---|---|
+| Molecular solar thermal | 10⁻¹²–10⁻¹³ s — the TST `h/kT` period | transition-state theory (the *only* class where the phonon assumption holds) |
+| Biological dormancy (seeds) | **10⁻² s** — macroscopic, ~10¹¹× a phonon | whatever slow process gates seed ageing |
+| Phase-change | none — **non-Arrhenius**, ΔG itself T-dependent | cooperative glass dynamics |
+| Nuclear isomers | ~10⁻²² s, and **no kT at all** | K-/spin-forbiddenness |
+
+So `ΔG` alone does not determine `τ`, and no dimensionless number built on `exp(ΔG/kT)` can span
+the classes. This confirms and sharpens the caution below.
+
+**The one salvageable finding.** A 2-D `(ΔG, ln τ₀)` map holds the two thermally-activated
+classes — chemistry and biological dormancy — and separates them **by prefactor (~11 orders),
+not by barrier.** That is a real, quotable statement: **biology buys lifetime in the prefactor,
+chemistry in the barrier** — which is why a 55 kJ/mol seed outlives a 120 kJ/mol chemical store.
+Nuclear and PCM do not embed in the plane at all. The map is informative within the Arrhenius
+subset and uninformative as a five-class unifier.
 
 ## A caution the re-read raised: the unification may itself fail
 

@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C14-degree-of-passivity]]"]
 uses-move: ["[[M4-change-the-actor]]"]
 tags: [node/gap, crosses/metaphor, evidence/full-text-read, standing/narrowed]
 rests-on: []
@@ -55,6 +55,34 @@ engineering? — is REFUTED by reading.** At least three other fields built one 
 
 Only the exoskeleton case meets the symmetry rule on its own. It is enough to demote the
 "best find" framing.
+
+## The metric was built, and it narrows the gap: [[C14-degree-of-passivity]]
+
+**A portable number exists — but only on one of the two axes.** The naive "fraction of response
+surviving" is broken (for protective devices it exceeds 1 by sign inversion, and the subtraction
+is meaningless under nonlinearity). Recast as a **cycle-averaged energy fraction** — actuator
+energy metered directly, never inferred — it is well-defined and portable across a stride, a
+load cycle, a thermal cycle.
+
+**And the ladder is a lattice, confirmed — the Boolean square B².** Two independent bits:
+*(1) does it inject non-conservative energy?* and *(2) does it need a control signal?* That
+explains everything:
+
+- Exoskeleton **quasi-passive** and structural **semi-active** are **the same cell** (0,1) — two
+  names for one lattice position. The G7 phenomenon at single-cell resolution.
+- Cell (1,0) — injects energy, needs no signal (open-loop) — is real and **unnamed in every
+  field.**
+- "Hybrid" is a *sum* of (0,0)+(1,1), not a rung.
+
+No total order can carry a width-2 lattice, so each field linearised the square along a
+different diagonal — the **same linearisation failure as [[C12-pi-space-lattice]]**, stated here
+as an order-dimension result.
+
+**Verdict: narrows.** The energy number `P` closes the energy axis (and control theory's
+passivity index turns out to be its rigorous twin on that same axis — a half-synonym, not the
+false friend the homograph register assumed). But `P` is blind to the signal axis: a
+passive-dynamic walker (0,0) and a semi-active MR damper (0,1) both score `P ≈ 1` yet differ in
+kind. **Fully closing G7 needs `P` plus a second portable bit for the signal axis.**
 
 ## Why this makes the gap stronger
 

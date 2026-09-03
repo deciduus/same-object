@@ -184,6 +184,11 @@
   },
   "active": "f8e74697011e4c94",
   "lastOpenFiles": [
+    "log.md.tmp.48688.bf9340c49ada",
+    "gaps/G2-metastability-metric.md.tmp.48688.27ae01036749",
+    "gaps/G7-how-passive.md.tmp.48688.194c82ad515f",
+    "computed/C15-metastability-metric.md",
+    "computed/C14-degree-of-passivity.md",
     "strategy.md",
     "strategy.md.tmp.48688.df862475611f",
     "gaps/G25-proofreading-coding.md.tmp.48688.92e57b902568",
@@ -196,10 +201,8 @@
     "log.md.tmp.48688.4b9222e437c6",
     "buildable.md.tmp.48688.ea4938c3bf96",
     "questions/Q4-healing-needs-a-new-law.md.tmp.48688.8925ea05a91b",
-    "computed/C6-damage-healing-ratio.md.tmp.48688.7d5392375901",
     "computed/C11-flyby-reservoir-audit.md",
     "computed/C10-healing-curve-fit.md",
-    "buildable.md.tmp.48688.a3f2018c2401",
     "method/reservoir-audit.md",
     "computed/C9-moving-coupling-point.md",
     "questions/Q9-fuel-free-is-an-assumption.md",
@@ -217,9 +220,6 @@
     "computed/C5-charnov-gittins.md",
     "computed/C6-damage-healing-ratio.md",
     "method/citation-sources.md",
-    "computed/C4-inclination-sensing-limit.md",
-    "00-index.md",
-    "log.md",
     "Untitled.canvas"
   ]
 }
