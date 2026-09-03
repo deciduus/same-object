@@ -193,6 +193,7 @@ not the amount.
 | 03 · Separate timescales | Don't build a faster actuator; decouple slow loading from fast release |
 | 04 · Change the actor | When a theorem blocks the route, swap the category of the thing doing the work |
 | 05 · Work inside the noise | Three postures — suppress, exploit, redistribute. Each community knows one. |
+| 06 · Vary what was held fixed | A bound is rarely wrong; the list of things its derivation silently held fixed usually is. Full treatment in §8 |
 
 Engineering culture defaults to raising signal or lowering noise. Both are magnitude
 moves. Evolution cannot turn up the power, so it searches arrangement instead — which is
@@ -210,7 +211,25 @@ why it keeps finding these first.
 - **Ask them to correct the premise.** Several briefs contained errors that agents caught
   precisely because they were told to.
 - **Watch for placeholder returns.** An agent that reports "I'll wait for the surveys to
-  land" has not done the work. Send it back.
+  land" or "waiting on the four research agents" has not done the work. **Three occurrences
+  so far.** Every one reported a plausible-sounding status and wrote no file.
+
+  **Check the artefact, not the report.** The tell is always the same: the summary reads like
+  progress, and the deliverable does not exist on disk. Verify the file before believing a
+  completion.
+
+  **The cause is delegation.** A capable agent given a large brief spawns sub-agents and
+  reports on their behalf. So write the prohibition into the brief: *do not use the Agent
+  tool; do the searching and fetching yourself; write the file yourself.*
+
+  **When sending it back, give a priority order.** The failure recurs when the brief is
+  large enough to feel unfinishable. Say explicitly which part to sacrifice — "fifteen
+  well-sourced rows beat forty guessed ones, and the bias section is worth more than extra
+  rows." An agent that knows what to drop does the rest rather than stalling.
+
+- **Give partial-failure an honest home.** Every brief should name a marker for *checked and
+  could not resolve* — `UNRESOLVED-IN-SOURCES`, `UNVERIFIED`, `ABSENT`. Without one, an agent
+  facing an unanswerable item either guesses or stops. With one, the gap becomes data.
 
 ---
 
