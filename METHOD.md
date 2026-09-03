@@ -398,6 +398,21 @@ re-run of this project's zeros collapsed two findings and downgraded a third.
    a bridge population. **Only 2-phrase conjunctions are trustworthy.** Treat any 4-way OR
    result as unusable without title inspection.
 
+### The recurring mechanism, named
+
+After nineteen findings re-tested, one failure dominates:
+
+> **Anchoring on the term the *originating* field uses, rather than the term the *target*
+> field uses.**
+
+"Buckingham" (the target field does the work without the name), "gravitropism" (the physics
+literature says gravisensing), "Berg-Purcell" (nobody outside chemoreception uses it) - each
+produced a clean, confident, **wrong** zero.
+
+**Corollary rule:** any zero anchored on a proper noun should be treated as unverified until
+re-tested by citation intersection. On this project's evidence the prior for such a finding
+surviving is **well under one half**.
+
 ### The homograph register
 
 Words confirmed to be owned by more than one field. Never anchor a zero on any of these:
@@ -412,6 +427,10 @@ Words confirmed to be owned by more than one field. Never anchor a zero on any o
 | metastability | physics/chemistry; **ADC circuit design**; tumour dormancy; supramolecular polymerization |
 | multifunctionality | ecology; materials science |
 | quorum sensing | microbiology; social-insect collective decision |
+| Buckingham | the Pi theorem; **a developmental biologist's surname** |
+| LaMSA | latch-mediated spring actuation; CaMKII text; a **sociolinguistics** corpus |
+| click beetle | the insect; **pheromone trap literature** |
+| index policy | operations research; crop-insurance rainfall indices |
 
 ### The rule, hardened
 
@@ -439,6 +458,15 @@ Re-run completed. Results:
 | G6 multifunctionality | **HOLDS** — every ecology term against every engineering term is 0 |
 | G19 Alexander vs stress-strength | **HOLDS** — all 46 citing works individually inspected |
 | G18 peak-to-average vs metabolic scope | **HOLDS** — true co-citation plus a 159-work control |
+| G28 marginal value theorem vs Gittins | **HOLDS** - survived the full alternate-name gauntlet |
+| G2, G3, G5, G7, G23 | **HOLD** - see batch one |
+| G9 discrepancy base rate | **WEAKENED** - the class half is covered by metrology and epidemiology; the base-rate half survives |
+| G20 resize vs throttle | **WEAKENED** - symmorphosis *is* a design-margin formalism |
+| G21 dimensionless regime map | **WEAKENED** - narrow to "no tabulated map with crossover conditions" |
+| G22 scale-transfer triage | **WEAKENED** - agents disagree; see FINDINGS |
+| **G11 plant gravisensing limits** | **COLLAPSED** - synonym artifact; the thermal-threshold analysis exists |
+| **G12 latch cycles-to-failure** | **COLLAPSED** - S-N curves published for locust cuticle |
+| **G17 overconfident uncertainties** | **COLLAPSED** - 279 citations, with a direct quantitative follow-up |
 | G4 criticality as design | **DOWNGRADED** — 99 papers link Hopf bifurcation to the cochlea. A single-review omission, not a field gap |
 | **G27 collective decision** | **WITHDRAWN** — 26 hits in the original query, 551 under synonyms |
 | **The energy-per-bit axis claim** | **WITHDRAWN** — 575 papers link Landauer to neural systems |

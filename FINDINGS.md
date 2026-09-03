@@ -124,8 +124,15 @@ into an inflated error bar rather than interrogate it. Philosophy has the sharpe
 statement of the hole: the standard defence is *robustness* — agreement across methods
 validates — and there is no corresponding account of what to do when they disagree.
 
-Nobody has built the catalogue, computed the base rate, or asked which features at time t
-predicted each outcome. **No apparatus. All public data.**
+**WEAKENED - half of this was wrong.** Two literatures already treat inter-method
+discrepancy as a class: metrology's **dark uncertainty** work (which models excess
+between-method scatter as a class-level random effect) and **epidemiological triangulation**
+(reasoning from agreement between methods with unrelated bias structures).
+
+**What survives, and it is the important half:** nobody has computed the base rate. Every
+query aimed at *how often such disagreements resolved to systematics versus new physics*
+returns zero, and the dark-uncertainty literature inflates error bars rather than asking
+historically what the discrepancies turned out to be. **No apparatus. All public data.**
 
 ### G10 · Sub-38.6 µm gravity
 Below 38.6 µm, gravity at its own strength has never been tested. Below 1 µm, a force a
@@ -139,10 +146,18 @@ A single statolith displacement costs only ~2–3 k_BT — marginally above ther
 limits-to-sensing analysis exists for chemoreception and photon counting. **No equivalent
 paper exists for plant gravity sensing.** Physics set up, analysis missing.
 
-### G12 · Latch cycles-to-failure
+### G12 · Latch cycles-to-failure - **WITHDRAWN**
 Trap-jaw ant strikes show no decline in peak velocity over repeated use; fatigue appears in
-the muscle, not the latch. **No paper gives a cycles-to-failure number for any biological
-latch.** A measurement gap, not a hidden result.
+the muscle, not the latch.
+
+**WITHDRAWN.** Dirks, Parle & Taylor, "Fatigue of insect cuticle," *J. Exp. Biol.* 216:1924
+(2013) gives explicit force-controlled cyclic-loading **S-N curves** - cycles to failure
+against applied cyclic stress - for locust hind tibiae and hind wings. Tibiae failed at
+100,000 cycles at 76% of ultimate strength; wings at 46%. **The locust hind leg is the
+canonical latch-mediated spring system.**
+
+Narrow residual: nobody has cycled a *latch contact surface* under strike loading
+specifically. That is a much smaller claim than the one made.
 
 ### G13 · Measure a negative energy density
 Negative energy density is routinely made — that is the Casimir effect. Dynamical Casimir
@@ -171,7 +186,7 @@ must inject. Measure below it and you have shown Newtonian gravity is entangling
 superposition required. Converts an eight-orders-of-magnitude coherence problem into a
 force-noise problem on an ordinary mass.
 
-### G17 · Uncertainties are overconfident
+### G17 · Uncertainties are overconfident - **WITHDRAWN**
 A 1986 study found reported uncertainties in fundamental constants systematically
 underestimate actual error — successive recommended values routinely fall outside the
 previous stated error bar, connected explicitly to overconfidence psychology. Essentially
@@ -233,7 +248,7 @@ thin base either way.
 **The unmeasured quantity still stands:** the cost and latency of a capacity change. Biology
 pays it in ATP and weeks; engineering pays it in capex and years. No shared axis.
 
-### G21 · No unified dimensionless regime map for biology
+### G21 · No unified dimensionless regime map - **WEAKENED**
 No single published figure or framework places organisms and processes in
 dimensionless-number space across physics domains. Verified against the two most likely
 candidates: a 2026 *Physics Today* feature on dimensionless numbers in biology offers
@@ -242,7 +257,15 @@ scale review organizes by physics domain and uses Reynolds "descriptively rather
 systematically." The canonical books are fluid-media only — no optics, acoustics, thermal
 noise or information.
 
-### G22 · Scale-transfer triage — narrow but real
+**WEAKENED.** Vogel, "Exposing Life's Limits with Dimensionless Numbers," *Physics Today*
+51(11):22 (1998) is an explicitly cross-domain framework spanning locomotion, respiration
+and circulation. The claim must narrow to: **no *tabulated* regime map with crossover
+conditions**, and none placing processes alongside organisms in a single Pi-space.
+
+Also: `"Buckingham"` is contaminated by a developmental biologist's surname and must not be
+used as a search handle.
+
+### G22 · Scale-transfer triage - **WEAKENED, agents disagree**
 Biomimetics uses the word "scaling" in **9,960** works. The intersection with
 Buckingham-theorem terminology is **9** — all single-application engineering papers, **zero
 methodology**. Terminological overlap without a methodological one.
@@ -252,8 +275,23 @@ references, contains **no Buckingham Pi analysis**, and states in its own words 
 universal scaling guidelines are "far from being identified," with "no decision tree or
 algorithm."
 
-The unclaimed piece is the criterion in `METHOD.md` §9 applied as a pre-transfer screening
-step. Honest framing: methodology packaging on 111-year-old machinery, not a discovery.
+**Two agents read the same paper differently, and the disagreement is recorded rather than
+resolved.** Perricone et al., "Organismal Design and Biomimetics: A Problem of Scale,"
+*Biomimetics* 6(4):56 (2021):
+
+- The **first agent fetched the full text** and reported no Buckingham Pi analysis, no
+  decision tree or algorithm, and quoted the authors' own statement that universal scaling
+  guidelines are "far from being identified."
+- The **second agent** read its thesis - that scaling rules must be considered in biomimetic
+  transfer, surveyed across mechanics, optics, electricity and acoustics - as being the
+  triage itself.
+
+The full-text read is the better evidence, so this is recorded as **weakened, not
+collapsed**. The 9-paper Buckingham intersection reproduces but is a **proper-noun
+artifact**: the field does this work without ever writing the name.
+
+**What survives:** no formal Pi-group screening checklist as a numbered design step. A much
+weaker claim than "none methodological."
 
 ### Positive control · mortality laws and reliability theory — CLOSED
 Biology's Gompertz law and engineering's Weibull distribution are the same hazard function.
@@ -855,6 +893,10 @@ information.
 | G27, collective decision | **Withdrawn.** 26 hits in the original query. The zero was anchored on Paxos, an algorithm name rather than a literature |
 | The energy-per-bit axis claim | **Withdrawn.** 575 papers connect Landauer to neural systems. The specific figure may survive; the absence claim does not |
 | G4, criticality | **Downgraded.** 99 papers link Hopf bifurcation to the cochlea. A single-review omission, not a field gap |
+| G11 plant gravisensing | **Withdrawn.** Synonym artifact - the field says gravisensing, and the thermal-threshold calculation exists |
+| G12 latch cycles-to-failure | **Withdrawn.** S-N curves published for locust cuticle in 2013 |
+| G17 overconfident uncertainties | **Withdrawn.** 279 citations including a direct quantitative follow-up. String matching would have confirmed it; the citation graph destroyed it |
+| G21, G22, G9 | **Weakened.** Each overstated; narrower claims survive in all three |
 | Hessdalen citation | An agent invented a paper attribution. See `METHOD.md` §4 |
 
 ---
