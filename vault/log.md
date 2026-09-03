@@ -22,6 +22,20 @@ article titles at all**, only venues. Every prior subject-keyword characterisati
 reading data that does not exist. Five IEEE entries, so "zero engineering" is false as worded.
 The review cites Stoop's theory papers and omits his cochlea *hardware*.
 
+**Propagation traced and corrected.** The 578 figure was tracked back through the session
+transcript to a research agent's report, and from there to my own relay of it as *"directly
+publishable as-is... needs nothing but a database query"* — asserted without ever opening the
+bibliography. It had reached **five files**: `FINDINGS.md`, `README.md`, `METHOD.md`,
+`vault/method/co-citation-audit.md` and the published `inquiry-map.html`. All corrected except
+the artifact, which needs a republish.
+
+The criticality audit is **withdrawn from the "publishable as-is" list** in all three places
+that carried it. Two remain.
+
+`METHOD.md` §2 and [[co-citation-audit]] now carry a hard precondition: fetch the reference
+list itself, check which fields it contains, and state which field you classified on. A
+title-free bibliography cannot support a claim about subject matter.
+
 **[[G22-scale-transfer-triage]] upgraded to live.** The two-agent disagreement was adjudicated
 by pulling Perricone 2021 and searching it directly: Buckingham 0, dimensionless 0, screening 0,
 protocol 0. The paper's closing line asks for the guidelines, so it cannot be them. New named

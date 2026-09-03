@@ -89,8 +89,10 @@ needs a theorem — and in six cases the theorem already exists, unread.
 
 Requiring no apparatus, no funding, no access:
 
-- **Co-citation audits.** Three tables are publishable as-is — gradient harvesting,
-  multifunctionality, and the 578-reference criticality audit.
+- **Co-citation audits.** Two tables are publishable as-is — gradient harvesting and
+  multifunctionality. A third, the criticality reference audit, was listed here and is
+  **withdrawn**: its reference count was wrong and the bibliography it characterised has no
+  article titles in it. See `METHOD.md` §2.
 - **The discrepancy base rate.** Build the catalogue of persistent inter-method
   disagreements, compute what fraction resolved to systematics versus new physics, and
   test which features predicted each outcome. Every input is public.

@@ -44,18 +44,36 @@ while organic flow chemistries quote fade below 0.001% per cycle.
 Hair cells self-tune to a Hopf bifurcation for divergent gain. Parametric amplifiers are
 biased just below threshold. Same law, two vocabularies — √G·B = κ and gain ∝ f^(−2/3).
 
-**Reference audit:** a 578-reference *Rev. Mod. Phys.* colloquium on biological
-criticality cites **zero** engineering, laser, MEMS or superconducting work. The amplifier
-papers cite **zero** hair-cell work. The only bridge traces to one researcher's biography.
-
 **Downgraded from a field-level gap to a single-review omission.** A re-run found **99
 papers** linking Hopf bifurcation to the cochlea, plus titles such as *Self-tuned regenerative
-amplification and the Hopf bifurcation*. The reference-list audit of that one 578-reference
-review may still be accurate, but the claim that criticality-as-design is unconnected across
-fields is false.
+amplification and the Hopf bifurcation*. The claim that criticality-as-design is unconnected
+across fields is false.
 
-**What survives:** a theory of optimal *distance* from threshold. Cortex sits at m ~ 0.98,
-not 1. Amplifiers are biased just below. That specific question still appears unasked.
+**Reference audit — CORRECTED.** It was reported here as *"a 578-reference Rev. Mod. Phys.
+colloquium citing zero engineering, laser, MEMS or superconducting work"*, and promoted as
+publishable as-is. The PDF was finally extracted (Muñoz, *RMP* 90:031001, via
+arXiv:1712.04499):
+
+- **595 references, not 578.**
+- **The bibliography has no article titles at all** — only venues. Every subject-keyword
+  characterisation of it was reading data that is not there.
+- **Five IEEE entries**, so "zero engineering" is false as worded. Zero laser / MEMS /
+  superconducting / photonic / sensor entries *by venue* is true.
+- The review cites Stoop's Hopf-bifurcation theory papers (PRL 2003, PRL 2016) and omits his
+  **cochlea hardware** — a sharper and stranger finding than a blanket absence.
+
+The unverified figure had propagated into five files before anyone opened the source. See
+`METHOD.md` §2 for the precondition now imposed on reference-list audits.
+
+**Also refuted:** the surviving sentence "that specific question appears unasked." *Sensors*
+11:5808 asks it as one question — *"The aim in the design of natural and artificial sensors is
+mainly the implementation of signal sensitivity... Behaviors of that sort are common in systems
+close to bifurcations."* Engineering's name for the class is **Lur'e systems**, a term this
+project never searched.
+
+**What survives:** only the missing *shared figure of merit* for offset from threshold. Cortex
+sits at m ≈ 0.98, not 1; amplifiers are biased just below. Both fields know to sit near the
+bifurcation. Neither has a number saying how far, comparable across the two.
 
 ### G5 · No dimensionless repair number
 Biology quantifies repair as a **rate**. Engineering quantifies healing as an **amplitude

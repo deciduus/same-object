@@ -68,15 +68,27 @@ Run against OpenAlex (`api.openalex.org`) or Crossref (`api.crossref.org`) — b
 free, unmetered, and do not require a general web search budget.
 
 Also useful: **reference-list audits.** Take a major review in field A and count how many
-of its references come from field B. A 578-reference *Reviews of Modern Physics*
-colloquium on biological criticality cites zero engineering work. That single number
-carries more weight than any amount of argument.
+of its references come from field B. That single number carries more weight than any
+amount of argument — which is exactly why it must be verified before it is quoted.
 
-Three tables from this project are publishable as-is with nothing but these queries:
+**Hard precondition, learned the expensive way.** This project reported a *Reviews of Modern
+Physics* colloquium on biological criticality as having **578 references, zero from
+engineering**, and promoted it as publishable. When the PDF was finally extracted it had
+**595 references**, and **the bibliography carries no article titles at all** — only venues.
+The subject characterisation had been reading a field that is not in the data, and five IEEE
+entries make "zero engineering" false as worded. The unverified number had propagated into five
+files before anyone opened the source.
+
+So: fetch the reference list itself, check which fields it actually contains, and state which
+field you classified on. "Zero engineering *by venue*" is supportable. "Zero engineering" is a
+claim about subject matter that a title-free bibliography cannot carry.
+
+Two tables from this project are publishable as-is with nothing but these queries:
 
 - The gradient-harvesting zero table
 - The multifunctionality zero table
-- The 578-reference criticality audit
+
+The criticality audit was listed here as a third. **It is withdrawn.**
 
 ---
 
