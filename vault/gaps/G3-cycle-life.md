@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C18-durability-axis]]"]
 uses-move: ["[[M3-separate-timescales]]"]
 rests-on: []
 tags: [node/gap, crosses/formalism, evidence/full-text-read, standing/narrowed]
@@ -63,6 +63,28 @@ Energy storage. Both sides calibrate strongly and the intersection is noise:
 **Restated gap:** no shared durability axis between turnover-number catalysis — biological and
 industrial, already unified — and cyclic energy storage: battery cycle life, capacity fade,
 thermochemical cyclic stability.
+
+## The construction: the shared axis is a failure-law shape, not a cycle count ([[C18-durability-axis]])
+
+A single cycle count `N_fail` does **not** span the two legs — it hides the failure law.
+Enzymes die by a **discrete per-cycle catastrophe**, `N_fail = 1/p` where `p` is the enzymology
+partition ratio (TTN *is* the partition ratio) — a memoryless, constant-hazard process. Li-ion
+cells die by **cumulative wear-out**, `N_fail = tolerance/f`, a threshold crossing. The same
+`N_fail ≈ 500` encodes a flat-hazard lottery in one and a synchronized wall in the other. Same
+number, two different reliability distributions — the [[stress-strength-interference]]
+discrete-vs-continuous split again.
+
+**The bridge that does span both is the Weibull shape parameter β.** `β = 1` (constant hazard,
+exponential) is the enzyme signature — first-order thermal deactivation *is* `β = 1`. Li-ion is
+`β > 1` (wear-out; ~12.7 reported for one cell, VERIFIED-via-search only). β is dimensionless,
+spans both legs, and classifies by **failure physics, not by field.**
+
+**The new result it produced:** organic flow-battery reactants degrade by **calendar-time
+chemical decay, β ≈ 1** — the *same failure law as enzyme death*, not Li-ion's. So the bridge
+reclassifies flow-battery chemistry **with** enzymes and isolates Li-ion electrode wear as the
+outlier. Nobody has drawn both β values on one plot — battery-side β fits are routine, enzyme-side
+β is left implicit in bulk decay curves. So G3 **narrows to: same count, different failure law,
+and the shared coordinate is β.**
 
 ## Two things the reading added
 

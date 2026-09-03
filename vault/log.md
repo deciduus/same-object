@@ -5,6 +5,33 @@ type: method
 
 # Operations log
 
+## [2026-09-03] method | press, feel, dig — WASD by resistance gradient
+
+The user named the method's own shape: the way we work a gap is the same move as the instrument
+([[reservoir-audit]]) and the founding engine — press, feel where it resists, dig where it
+gives. Sharpened to a WASD analogy: don't choose a heading, tap each button, read the resistance
+gradient, follow it. **The project studies coupling to a gradient and proceeds by coupling to a
+resistance gradient** — the map runs the territory's algorithm. [[press-feel-dig]].
+
+Operational change adopted: task agents with an **object and a set of buttons, not a verb.** The
+verb (build/narrow/kill/harden) is an output read off the resistance. Evidence: every strong
+result this session came from verb-agnostic "build it or prove it can't" briefs.
+
+## [2026-09-03] Layer-2 five-fan | Q7 hardened, G3 bridged
+
+**[[C16-same-class-catalogue]] hardens [[Q7-same-class-prediction]] to N=16.** A 24-case
+same-class sample built to hunt a counterexample found none: 16 systematics, 1 fluctuation, 0
+new-physics. The flagged danger case — gravitational-redshift clock comparisons — survives,
+because the redshift is a computed correction applied *before* any residual is called a
+discrepancy. The conditional holds and stays bias-immune. (Tenth-order QED corrected to ~5σ.)
+
+**[[C18-durability-axis]] narrows [[G3-cycle-life]] and produces a bridge.** A cycle count hides
+the failure law; the shared coordinate is the **Weibull shape β** — β=1 enzyme catastrophe
+(memoryless), β>1 Li-ion wear-out. New result: organic flow-battery reactants fail by
+calendar-time chemical decay, **β≈1, the same law as enzyme death** — reclassified with enzymes,
+isolating Li-ion as the outlier. Ties to [[stress-strength-interference]]'s discrete-vs-continuous
+split. Three of the five-fan still running.
+
 ## [2026-09-03] headline hardened | four unread theorems citation-tested, all survive
 
 [[C13-unread-theorem-audit]]. After [[kedem-caplan]] collapsed under an actual check, the other

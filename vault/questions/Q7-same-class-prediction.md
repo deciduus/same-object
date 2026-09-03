@@ -45,7 +45,28 @@ The interesting open cases are the **different-class** ones with an independent 
 a side. That reprioritises the whole watch list, and it is the first time this project's
 catalogue has told us where *not* to look.
 
-## An independent seam strengthened it, and found no counterexample
+## Hardened to N=16, and the danger case survived: [[C16-same-class-catalogue]]
+
+A dedicated 24-case same-class sample (17 closed, 7 open) was built specifically to hunt a
+counterexample. **None found.** Closed tally: **16 SYSTEMATICS, 1 FLUCTUATION, 0 NEW-PHYSICS.**
+
+**The flagged danger case held.** Gravitational-redshift clock comparisons are the one place a
+same-class "disagreement" is real physics — and they do *not* break the conditional, because the
+height/potential difference is a **computed correction applied before** any residual is called a
+discrepancy. It is a designed measurement of a known effect, excluded by the pre-registered rule
+that known effects are not unexplained disagreements. No historical case surfaced where a clock
+disagreement was first blamed on a systematic and later proved a real redshift.
+
+**This is exactly the discipline the conditional requires:** "same-class disagreement" must
+exclude known/designed effects, and the class must be assigned on technique before the outcome
+is known. Four cases (HUST-G torsion modes, electronic-H transitions, W-mass, Hubble ladders)
+are flagged genuinely ambiguous. The redshift case is documented as the single real vulnerability,
+and it is closed by the define-the-class-first rule.
+
+Correction carried in: the tenth-order QED discrepancy is **~5σ** (Volkov vs AHKN), not the 4.8σ
+this note previously cited.
+
+## An earlier independent seam had already strengthened it
 
 A separate metrology-and-constants pass, run without reference to this conditional, produced
 **four more closed same-class cases. All four resolved to systematics:**
