@@ -42,6 +42,16 @@ The predicted structure, to be tested against the ledger, not assumed:
 > holds across the corpus, it is a real finding *about the landscape* — and it locates where the
 > checkable signal is.
 
+**Tested against the ledger: [[C22-ledger-faceting]].** The prediction **holds qualitatively, not
+statistically** — the sample is too small to claim more. Firsthand-*data/documentary* confirms at
+~69%, firsthand-*observation* at only ~17%, secondhand/hearsay at 0/2. But 16 of the 24 rows are
+institutional *documents*, so the witness-claim subset is only **N ≈ 9**, and in that subset the
+*referent* confirms in **0 of 9** — firsthand sightings sit "acknowledged but unexplained,"
+secondhand/hearsay recovery claims are uncorroborated or refuted. So the honest reading is the
+landscape one: **firsthand sensor-data gets acknowledged; secondhand recovery/biologics claims
+stay open.** Suggestive, not conclusive — the access-basis spine is directionally confirmed and
+the N is too small to weight it further.
+
 ## The minable questions (the deliverable)
 
 Once faceted, the pile answers questions no single case can:

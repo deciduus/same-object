@@ -5,6 +5,26 @@ type: method
 
 # Operations log
 
+## [2026-09-03] corpus mined | ledger faceted, primaries archived, prediction holds only weakly
+
+[[C22-ledger-faceting]]. All 24 ledger entries faceted on the seven [[testimony-taxonomy]] axes.
+**The access-basis prediction holds qualitatively, not statistically**: firsthand-data/documentary
+confirms ~69%, firsthand-observation ~17%, secondhand/hearsay 0/2 — but 16 of 24 rows are
+institutional documents, so the witness-claim subset is **N≈9**, and there the *referent* confirms
+**0 of 9**. Honest landscape reading: firsthand sensor-data gets acknowledged; secondhand
+recovery/biologics claims stay open. Too small to weight further.
+
+Q1 sort of open items: **checked-and-unresolved** = Fravor/Graves (expensive unfunded multi-sensor
+check); **unfalsifiable/unfundable-from-outside** = Grusch, Nell, Gallaudet, Mellon, Stratton
+(classification-gated).
+
+Primary text archived to `vault/sources/` (verbatim via pdftotext): **ODNI 2021** (Wayback mirror,
+archive.dni.gov 403'd), **Gallaudet 2024 testimony**, **2023 House Oversight hearing transcript**
+(GPO 118-53, carrying Grusch's verbatim "I was informed" secondhand framing). **AARO FY2024 could
+not be fetched** on any route (403 everywhere, no Wayback) — recorded as blocked, nothing
+reconstructed. PURSUE portal 403'd; a clearly-labelled SECONDARY extract saved instead. Raw PDFs
+gitignored under `sources/raw/`; extracts committed under `vault/sources/` (excluded from lint).
+
 ## [2026-09-03] honest scorecard | [[novelty-audit]] grades the whole vault
 
 Every substantive result graded, bias set toward the lower grade. ~50 gradable results:

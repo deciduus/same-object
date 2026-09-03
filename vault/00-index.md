@@ -172,6 +172,7 @@ is still invisible to it.
 - [[reservoir-audit]] — **validated five for five, and it reproduces Pioneer to 7%.** Run in 1998 it would not have named the cause; it would have said a thermal explanation needs 3.2% anisotropy — a number a model can check
 - [[evidence-lanes]] — **no lane gets 100% trust.** Every lane (academic included) has a characteristic bias; the referee is method + convergence across orthogonally-biased lanes, not authority within one
 - [[disclosure-ledger]] — sourced provenance ledger of the post-2017 disclosure thread, 24 entries tiered documented/testimonial/refuted. Version A (secrecy + unexplained data) **checked out**; Version B (recovered materiel) did not
+- [[C22-ledger-faceting]] — the ledger faceted on 7 axes and tested. Access-basis prediction holds **qualitatively** (firsthand-data acknowledged, secondhand open) but witness-claim N≈9 is too small to weight. 3 primary docs archived verbatim to `vault/sources/`
 - [[testimony-taxonomy]] — **the mining schema**: seven facets that sort credentialed accounts so structure emerges from the pile; access-basis is the spine, and the small firsthand-data ∩ multi-witness ∩ verified cell is where it upgrades
 - [[symbol-display-testimony]] — a reported UAP glyph display, held as **testimony with a discriminating protocol attached**: what would separate a real code from motion-graphics if a sample existed
 - [[citation-sources]] — **a blocked API is not a blocked method.** Four providers, three working
