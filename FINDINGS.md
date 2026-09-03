@@ -376,6 +376,59 @@ organismal morphology from cell division patterns." Not novel in biology. **Neve
 into design literature as an existence proof about achievable form** — that transfer is
 where any novelty lives.
 
+### How tightly are the constants actually constant?
+The honest answer is regime-dependent, and the weak regimes are much weaker than the
+headline numbers suggest.
+
+| Regime | Bound |
+|---|---|
+| Present-day alpha drift (Yb+ clocks) | **1.0(1.1) x 10^-18 /yr** — effectively closed |
+| alpha over 1.8 Gyr (Oklo reactor) | ~10 ppb, model-dependent at factor 2-3 |
+| alpha at z ~ 0.9 (ALMA molecular) | < 0.55 ppm |
+| **alpha at z ~ 1000 (CMB)** | **(3.6 +/- 3.7) x 10^-3 — five orders weaker** |
+| **Spatial variation across the sky** | **percent-level — three orders weaker than temporal** |
+| **G at nucleosynthesis** | **|dG/G| <~ 5-6%** |
+| G, present day (lunar laser ranging) | (-5.0 +/- 9.6) x 10^-15 /yr — ~3 orders looser than alpha |
+| **Strong field / high density, alpha and mu** | **no constraint exists at all** |
+
+**The structural caveat, which is the most important line in this survey.** The leading
+theory class that predicts varying alpha (Bekenstein-Sandvik-Barrow-Magueijo) has alpha
+becoming constant once Lambda-driven acceleration begins — i.e. now. **So the tightest
+measurement in the field is aimed at exactly the epoch where the leading theory predicts the
+least signal.** A null at 10^-18/yr does not exclude ppm-level variation in the matter era.
+The strongest bound and the strongest prediction are not measuring the same thing.
+
+Also: clock bounds constrain *linear drift*, not oscillation. Oscillatory variation requires
+a separate ultralight-dark-matter analysis, which covers 10^-24 to 10^-17 eV and leaves other
+mass ranges open.
+
+**On varying c.** Since 2019 c is fixed by definition, so the question is not well posed —
+a measurement of c is now a measurement of your length standard. Only **dimensionless**
+ratios carry physical content. "Did c change?" must be recast as "did alpha change?"
+
+**What a detection would mean.** Any constant varying in space or time implies an almost
+massless field coupling to matter. By the same coupling it generically produces
+equivalence-principle violations and fifth forces — which is why torsion-balance and
+atom-interferometry tests constrain varying-constant models without ever measuring alpha.
+This connects directly to G10 (sub-38.6 um gravity).
+
+### More properties that looked intrinsic and were environmental
+Beyond the nuclear cases above:
+
+- **Spontaneous emission lifetime.** Set by the density of electromagnetic modes at the
+  transition frequency, not by the atom. A resonant cavity speeds emission; a waveguide
+  below cutoff or a photonic bandgap can suppress it so far that an excited atom will not
+  decay. Same atom, same matrix element, different boundary conditions. The Lamb shift is
+  the same lesson applied to levels rather than rates.
+- **Mass.** The proton is ~99% binding energy — gluon field energy and confined quark
+  kinetic energy. Mass is not "amount of stuff"; additive mass is a low-binding-energy
+  approximation that works for chemistry and fails for QCD.
+
+**The cautionary counter-case, included deliberately.** Claimed X-ray triggering of the
+hafnium-178m2 isomer was never independently reproduced. The nuclear cases above are
+credible because they were measured in a storage ring with a clean, calculable mechanism —
+not because "environment affects nuclei" is a free pass.
+
 ---
 
 ## Closed / refuted

@@ -316,3 +316,36 @@ unclaimed piece is narrow — the criterion above, applied as a **pre-transfer s
 step**, with crossover scales tabulated in metres. That is methodology packaging on known
 machinery, not a discovery, and should be pitched that way.
 
+---
+
+## 10. What makes a challenge productive
+
+Neither the **size** of a discrepancy nor its **persistence** predicted which way it went.
+
+- OPERA's faster-than-light neutrinos: nominal 6 sigma, dead in ten months to a loose
+  fibre connector.
+- The solar neutrino deficit: a factor of three, survived 34 years, and was real.
+
+What the successful cases had was not a better argument. It was:
+
+> **A measurement whose dominant systematic is independent of the assumption in dispute.**
+
+SNO is the exemplar. Rather than arguing about the solar model, they measured two channels
+**in the same detector** — one flavour-blind (neutral current), one electron-only (charged
+current) — and took the ratio. The contested normalization cancelled. Thirty-four years
+ended with one instrument built to be indifferent to the argument.
+
+Parity is the other template: a theory named a specific test in advance, and someone ran it
+within months.
+
+So the weaker criterion — *propose a mechanism with a measurable signature* — is right but
+incomplete. **Persistence alone was never evidence.** The neutron lifetime puzzle has now
+outlived the entire period during which CP was assumed exact, sits at ~5 sigma, and the
+field's working assumption remains systematics — correctly, on this record, until someone
+builds the orthogonal measurement.
+
+### Applying it here
+
+For any open row in this project, the question is not "how big is the anomaly" but: **what
+measurement would be insensitive to the thing being disputed?** That is the design target.
+
