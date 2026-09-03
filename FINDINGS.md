@@ -699,6 +699,89 @@ per complex, up to 4.6% of gross photophosphorylation.
 a steady-state functional PSII fraction *as such* — every value above is computed here from
 published rate-constant pairs.
 
+### C2 - Probabilistic safety factors for biological structures
+
+Applying engineering's stress-strength interference formalism to Alexander's biological
+cases. Biology has only a deterministic ratio; the formalism yields a probability of
+failure - which is precisely the objection raised against symmorphosis since 1987.
+
+**A find that strengthens G19.** Diamond (2002, J Physiol) states stress-strength
+interference *verbatim* in a physiology journal, with **no reliability-engineering
+citation**:
+
+> "Safety factors serve to minimize the overlap zone (resulting in performance failure)
+> between the low tail of capacity distributions and the high tail of load distributions.
+> Safety factors increase with coefficients of variation of load and capacity, with capacity
+> deterioration with time, and with cost of failure, and decrease with costs of initial
+> construction, maintenance, operation, and opportunity."
+
+He also lists *"safety factors of series systems"* as an unsolved question - which is
+exactly what reliability engineering solved decades earlier. **Biology has the concept,
+stated correctly, and never carried it to a number.**
+
+#### The robust result
+
+**For bone, failure probability is governed by the variability of the tissue, not the
+variability of locomotion.**
+
+With the safety factor held at 3, moving strength CV from 0.10 to 0.30 swings P_f across
+**nine orders of magnitude**. Moving load CV from 0.05 to 0.30 moves it **half an order**.
+Measured locomotor load CV is 0.05-0.11 - small against SF x V_R ~ 0.6.
+
+This holds in both the normal and lognormal models, at every safety factor from 1.4 to 4.1.
+And it points at the term **Alexander's mixed-chain argument de-emphasises**: he reasoned
+that links with more variable *loading* should carry higher safety factors.
+
+#### Worked central case (all inputs verified)
+
+Goat limb bone, SF = 3, load CV 0.11 (measured in vivo), strength CV 0.20 (human rib
+cortical coupons):
+
+| Model | beta | P_f |
+|---|---|---|
+| Normal | 3.28 | 5.2e-4 |
+| Lognormal | 4.79 | 8.2e-7 |
+
+**The model choice decides the answer.** Three orders of magnitude apart, straddling the
+EN 1990 structural target (beta = 3.8, P_f = 7.2e-5) from opposite sides. No biological
+dataset obtainable is powerful enough to test the tail and settle it.
+
+#### What is invalid, flagged rather than deleted
+
+Comparing these to engineering targets is **formally invalid as stated**. Biological P_f
+here is *per load cycle*; EN 1990 is per 50 years, FAA is per flight hour. An animal takes
+1e6-1e7 steps a year, so a per-cycle 5e-4 implies certain fracture within days. Reconciling
+them needs a load-cycle-counting fatigue model - a different formalism.
+
+#### The remodeling objection is the deliverable
+
+Stress-strength interference assumes strength is **fixed at manufacture** and thereafter
+independent of load. In bone it is neither: strength is a *function of the realised load
+history*, with negative feedback. The individual sitting in the weak tail while being loaded
+hard is precisely the one that remodels, so **the interference region is actively depleted.**
+Every P_f above is therefore an upper bound of unknown tightness.
+
+**This inverts the trade.** Reliability engineering's assumption - strength fixed at
+manufacture, degrading monotonically - is the **zero-gain limit of a control loop biology
+runs with positive gain**. A formalism for load-adaptive strength would be a contribution
+*from* biology *to* reliability engineering, not the other way round.
+
+#### Blocked and weak joins, stated plainly
+
+- **Crab claw and intestinal transport: blocked.** Safety factors are published; no variance
+  data obtainable behind paywalls.
+- **Tendon load CV: never obtained.** Its numbers are conditional on an assumed value.
+- **Weakest join:** bone strength CV is human rib; load CV is goat, horse and dog limb. No
+  source gives paired strength and load variability from one population - and that paired
+  measurement is exactly what would settle the question.
+- Alexander 1997's own equations could not be fetched (403 everywhere), so the claim that
+  his model is *formally* isomorphic to stress-strength interference is verified only at the
+  level of stated structure, not at the equation level.
+
+**Verdict:** the specific P_f numbers are not quotable as facts. The sensitivity structure
+is robust across the whole plausible parameter box and is a real, sourced, quantitative
+statement the deterministic safety-factor literature cannot make.
+
 ---
 
 ## Closed / refuted

@@ -43,7 +43,11 @@ Published numbers, one formula, a result nobody has computed.
    each dimensionless group; report where each flips. See METHOD.md §9.
 
 ### Tractable — weeks
-4. **Stress-strength interference applied to Alexander's biological cases.** He gave
+4. ~~**Stress-strength interference applied to Alexander's biological cases.**~~ **DONE** -
+   see FINDINGS.md C2. The robust output is a sensitivity result: for bone, failure
+   probability is governed by tissue variability, not locomotor variability. And the
+   remodeling objection inverted the trade - engineering's fixed-at-manufacture assumption
+   is the zero-gain limit of a loop biology runs with positive gain. Original entry: He gave
    deterministic safety factors for alligator limb bones and crab claw cuticle. The
    engineering formalism yields a *probability of failure* instead — which is precisely the
    objection raised against symmorphosis since 1987. See G19.
