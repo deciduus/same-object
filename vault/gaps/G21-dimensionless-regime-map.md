@@ -12,17 +12,26 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C12-pi-space-lattice]]"]
 uses-move: ["[[M6-vary-what-was-held-fixed]]"]
 rests-on: []
 tags: [node/gap, crosses/vocabulary, evidence/full-text-read, standing/narrowed]
 last-checked: 2026-09-03
-note: "'Tabulated' was the wrong hinge - Vogel gives crossover values in prose (Fr 0.16, 0.5-0.6, 2-4) and never mentions Peclet. Absent: one Pi-space co-locating organisms and processes."
+note: "Surviving half closed by construction: C12 builds the co-located Pi-space as an integer kernel. Froude and Peclet are vectors in one lattice; transport crossovers are lattice-locked."
 ---
 
 # No unified dimensionless regime map
 
 **STANDING: NARROWED** · evidence: full-text-read · contact surface: 1 · last checked 2026-09-03
+
+> **Surviving half closed by construction, 2026-09-03: [[C12-pi-space-lattice]].** The absent
+> object was "one Π-space co-locating organisms and processes." Buckingham's theorem makes that
+> the integer kernel of a dimension matrix, and building one — organism quantities and process
+> quantities in a single 3×10 matrix — puts Froude, Reynolds, Péclet and Damköhler in **one
+> rank-7 lattice.** The space exists and is constructible. The residual is no longer "it is
+> absent" but "nobody had built it": the co-location manufactures no coincident-transition
+> organism (Froude and Péclet coincide at L≈0.9 µm where Re≈10⁻³ and Froude is not live), which
+> is itself the finding — the two families occupy disjoint operative regions.
 
 > No single framework places organisms **and processes** in dimensionless-number space so that
 > two different groups' crossovers can be read against each other.

@@ -5,6 +5,31 @@ type: method
 
 # Operations log
 
+## [2026-09-03] instruments at the antifragile level | two more built, one gap closed
+
+The user named the through-line: the reservoir audit is a **specification instrument** — an
+antifragile tool that turns "impossible" into "here is what the missing partner must be." Wrote
+[[specification-instruments]] and built two siblings, one energetic-discrete, one purely discrete.
+
+**[[information-audit]] — the entropy sibling.** Same four steps, conserved quantity = entropy.
+Validated **3/3** on measured experiments (Bérut 2012 Landauer, Toyabe 2010 Maxwell demon, Koski
+2014 Szilard), **naming the sink each time.** Toyabe was its Pioneer: the audit identifies the
+demon's **memory register** as the initially-unnamed sink closing the balance. Then it ties
+[[G25-proofreading-coding]] to the same ledger — proofreading pays `k ln2` per rejected bit out
+of ATP, the exact analogue of memory-erasure cost. (My brief gave the wrong arXiv id for Bérut;
+the agent caught it and used the review with the same numbers.)
+
+**[[C12-pi-space-lattice]] — the discrete one, and it closes a gap.** Buckingham's Π-groups are
+the integer kernel of the dimension matrix. A 3×10 matrix mixing organism and process quantities
+has rank 3 → 7 Π-groups, and Froude, Reynolds, Péclet, Damköhler are **all vectors in one
+lattice.** So [[G21-dimensionless-regime-map]]'s surviving half — "no Π-space co-locates
+organisms and processes" — **closes by construction.** New object: transport crossovers are
+lattice-locked (Π-difference supported only on Schmidt/Prandtl/Lewis constants), which turns
+[[G22-scale-transfer-triage]]'s constant-bound criterion into lattice arithmetic. The two gaps
+are now tied through one integer-lattice object.
+
+Both output files verified on disk before the agents reported done.
+
 ## [2026-09-03] two free buildables run | both compounded
 
 **[[C10-healing-curve-fit]] — the curve fit that tests our own number.** Seven cycled datasets.

@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C12-pi-space-lattice]]"]
 uses-move: ["[[M6-vary-what-was-held-fixed]]"]
 rests-on: []
 tags: [node/gap, crosses/vocabulary, evidence/full-text-read, standing/live]
@@ -65,6 +65,14 @@ this work without ever writing the name. See [[failure-modes]] mode 3.
 
 "Appears alone" is a statement about the *current formulation*, not about impossibility — which
 makes it the input to [[M6-vary-what-was-held-fixed]].
+
+**This criterion is now computable: [[C12-pi-space-lattice]].** In the integer-lattice Π-space,
+two crossovers are **locked** iff the Π-difference vector between them is supported only on
+non-tunable constants. That is exactly "constant appearing alone," turned from a prose test into
+lattice arithmetic on the Smith-normal-form basis. Worked case: `Pe/Re = Sc` has support only on
+`ν` and `D`, so the Reynolds and Péclet crossovers are rigidly locked and cannot be varied
+independently — a capability governed by their ratio is constant-bound, by construction. G21 and
+G22 are now tied through one object.
 
 **The empirical test:** gecko adhesion scales as A^(-1/4). A *negative* exponent — intrinsically
 anti-scaling, not merely hard to manufacture.

@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: ["[[C3-energy-error-axis]]"]
+computed-in: ["[[C3-energy-error-axis]]", "[[information-audit]]"]
 uses-move: []
 rests-on: []
 tags: [node/gap, crosses/nothing, evidence/citation-intersection, standing/live]
@@ -25,6 +25,12 @@ note: "1,463 citers pulled and bibliographies intersected. The project's stronge
 **STANDING: LIVE** · evidence: citation-intersection · contact surface: 16 · last checked 2026-09-03
 
 > Both fields quantify **energy paid per unit error suppression**, in kT. Neither reads the other.
+
+**The bridge is now an exact ledger entry, not a resemblance: [[information-audit]].** A
+proofreading step is measurement-and-discard — the generalized second law run backwards — and
+biology's entropy sink is the **released phosphate**, paying the `k ln2` per rejected bit out of
+ATP's ~20–28 kT. Toyabe's Maxwell-demon memory-erasure cost and a proofreading cycle's ATP cost
+are *the same entry in the same ledger*. That is what this gap has been pointing at.
 
 ## Contact surface — measured properly
 

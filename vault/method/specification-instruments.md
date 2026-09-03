@@ -46,6 +46,7 @@ itself about solar sails and caught it with its own instrument.
 | Instrument | Conserved quantity | Discrete core | Status |
 |---|---|---|---|
 | [[reservoir-audit]] / [[C8-momentum-harvesting-metric]] | energy–momentum | reservoir enumeration | validated 5/5; [[C11-flyby-reservoir-audit]] is the first open case |
+| [[information-audit]] | entropy | sink enumeration; **bits** | validated 3/3, sink named each time |
 | [[Q7-same-class-prediction]] | — (a conditional, not an identity) | the same-class partition | bias-immune, 11/11 |
 | [[citation-intersection]] | — | **set intersection over bibliographies** | the project's evidence standard |
 | [[C5-charnov-gittins]] | optimality | **the Gittins index — a discrete allocation object** | closed by identity |
@@ -71,13 +72,18 @@ reproduce Pioneer has no business being aimed at a flyby.
 
 ## Open instruments being built
 
-- **The information / Landauer audit.** Same shape, conserved quantity = entropy. Any device
-  claiming computation, measurement or sorting below the thermodynamic floor must export the
-  missing entropy somewhere; enumerate the sinks, exclude by availability, specify the residual.
-  Validated against measured Landauer and Maxwell-demon experiments. Sibling of the reservoir
-  audit for bits.
-- **The Π-space as an integer lattice.** Buckingham's theorem says the dimensionless groups are
-  the integer kernel of the dimension matrix. [[G21-dimensionless-regime-map]]'s surviving gap
-  is that no single Π-space co-locates organisms and processes. That space is a *computable
-  lattice object* — build it and read whether a Froude transition and a Péclet transition share
-  an axis. Pure discrete linear algebra meeting a surviving gap.
+- **The information / Landauer audit — BUILT and validated: [[information-audit]].** Conserved
+  quantity = entropy. Validated **three for three** on measured experiments (Bérut 2012 Landauer,
+  Toyabe 2010 Maxwell demon, Koski 2014 single-electron Szilard), **naming the entropy sink each
+  time.** Toyabe was its Pioneer: the audit correctly identifies the demon's **memory register**
+  as the initially-unnamed sink that closes the balance. Then it linked to biology — a
+  proofreading step is measurement-and-discard, and biology pays the `k ln2` per rejected bit out
+  of ATP. That is the unread bridge [[G25-proofreading-coding]] measures.
+- **The Π-space as an integer lattice — BUILT: [[C12-pi-space-lattice]].** A 3×10 dimension
+  matrix mixing organism and process quantities has rank 3, so 7 Π-groups, and Froude, Reynolds,
+  Péclet and Damköhler are **all integer vectors in the one kernel.** That co-located Π-space is
+  constructible, so **the surviving half of [[G21-dimensionless-regime-map]] closes by
+  construction.** New object: the transport crossovers (Re, Pe, Pe_th) are **lattice-locked**
+  (parallel, offset by Schmidt/Prandtl/Lewis constants) while Froude and Damköhler cross them
+  transversally — and "locked" is now computable, giving [[G22-scale-transfer-triage]]'s
+  constant-bound criterion as lattice arithmetic. The two gaps are tied through one object.

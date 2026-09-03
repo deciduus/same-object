@@ -7,6 +7,11 @@ type: computed
 
 > Every substrate that stores, transmits or checks information, on one kT-normalized axis.
 
+**This axis is the ledger that [[information-audit]] audits.** The instrument built from the same
+`kT ln2` identity was validated three for three on measured experiments (Bérut, Toyabe, Koski),
+naming the entropy sink each time. A substrate's position on the axis below is where its
+information cost is *paid*; the audit is what you run when a device claims to sit below the floor.
+
 ## The identity
 
 - Landauer (1961): E >= kT ln2 per bit erased = **0.693 kT**
