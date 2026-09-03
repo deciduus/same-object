@@ -169,6 +169,7 @@ is still invisible to it.
 
 - [[co-citation-audit]] — the measurement that made this checkable
 - [[reservoir-audit]] — **validated five for five, and it reproduces Pioneer to 7%.** Run in 1998 it would not have named the cause; it would have said a thermal explanation needs 3.2% anisotropy — a number a model can check
+- [[symbol-display-testimony]] — a reported UAP glyph display, held as **testimony with a discriminating protocol attached**: what would separate a real code from motion-graphics if a sample existed
 - [[citation-sources]] — **a blocked API is not a blocked method.** Four providers, three working
 - [[reading-not-counting]] — the full-text-read grade, and why it ranks below counting
 - [[homographs]] — twelve words owned by more than one field. Never anchor a zero on these
