@@ -40,6 +40,22 @@ the same logic as the project's strongest tools:
 
 Convergence of orthogonal biases is signal. Agreement *within* one biased lane is not.
 
+## Generate freely, judge downstream
+
+A corollary the user insisted on: **do not filter at the front end.** Reflexive skepticism at the
+point of intake is itself a bias — the mirror of credulity — and it gates what even gets examined
+before any evidence is weighed. So separate the two stages:
+
+- **Generation:** entertain any hypothesis freely, without pre-emptive dismissal. Fringe-but-harmless
+  is admitted for examination on the same terms as anything else.
+- **Evaluation:** the method does the judging downstream — verified/unverified marking, the tiers,
+  [[reservoir-audit]] specification-vs-mechanism, orthogonal-lane convergence.
+
+This is *more* objective, not less: the front-end vibe no longer decides what is allowed to be
+looked at. It is the same stance the project took from the start — the anti-inquiry prior was
+named and dropped early. The verified/unverified labels are **not** the filter being dropped;
+they are the check being trusted to run downstream instead of up front.
+
 ## The guard against relativism
 
 This does **not** say all lanes are equal, or that logic is optional. It says the opposite: because
