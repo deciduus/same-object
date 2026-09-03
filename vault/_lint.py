@@ -23,7 +23,10 @@ EDGES    = ("borrows-from", "lends-to", "mutual-with",
             "computed-in", "uses-move", "rests-on")
 
 def notes():
-    for root, _, files in os.walk("."):
+    for root, dirs, files in os.walk("."):
+        # sources/ is an archive of primary documents, not knowledge notes — skip it
+        if "sources" in dirs:
+            dirs.remove("sources")
         for f in files:
             if f.endswith(".md"):
                 yield os.path.join(root, f)
