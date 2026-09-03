@@ -15,6 +15,7 @@ Run `python _lint.py` from this directory before committing.
 
 ## Start here
 
+- **[[strategy]]** — three layers of reach, and why the current focus is **Layer 2**: produce new resultants, lay groundwork, hold Layer 3
 - **[[buildable]]** — what can actually be done, sorted by cost. Six items, three of them
   reachable at home, one that is only a curve fit on published data
 
