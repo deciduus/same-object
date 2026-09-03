@@ -3,7 +3,7 @@ id: G28
 name: G28-marginal-value-gittins
 type: gap
 standing: live
-evidence: string-protocol
+evidence: full-text-read
 contact-surface: 8
 crosses: nothing
 crosses-rank: 0
@@ -15,14 +15,14 @@ mutual-with: []
 computed-in: []
 uses-move: []
 rests-on: []
-tags: [node/gap, crosses/nothing, evidence/string-protocol, standing/live]
+tags: [node/gap, crosses/nothing, evidence/full-text-read, standing/live]
 last-checked: 2026-09-03
-note: "Survived the full alternate-name gauntlet. Control: Gittins-Sutton&Barto = 181. Never citation-tested."
+note: "Held under the full-text re-read. Averbeck 2015 formalises bandits and foraging in one MDP framework and names both objects without relating them; Charnov not cited."
 ---
 
 # Marginal value theorem and the Gittins index
 
-**STANDING: LIVE** · evidence: string-protocol · contact surface: 8 · last checked 2026-09-03
+**STANDING: LIVE** · evidence: full-text-read · contact surface: 8 · last checked 2026-09-03
 
 > Charnov's rule: leave a depleting patch when the marginal intake rate drops to the average
 > for the habitat.
@@ -91,5 +91,40 @@ Survived the full alternate-name gauntlet under the hardened protocol: patch lea
 optimal foraging, patch residence time, against optimal stopping, secretary problem, index
 policy, scheduling. All zero or irrelevant.
 
-**Not yet tested by [[citation-intersection]]** — this is one of seven survivors whose
-evidence is still string-based. See [[00-index]].
+## The full-text re-read: holds, with one correction
+
+**The best-placed paper in existence does not state the relation.** Averbeck 2015,
+[*PLoS Comput Biol*](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4401555/fullTextXML),
+read in full, formalises bandit, sampling **and** foraging tasks in one MDP framework — and
+names both objects without ever relating them:
+
+> "It is also possible to use Gittins indices to select optimal actions in stationary bandit
+> tasks"
+
+and separately:
+
+> "some foraging tasks have been modeled using the marginal value theorem"
+
+**Charnov is not cited at all.** One paper, both halves in hand, no connection drawn. That is
+the gap in a single document.
+
+Europe PMC confirms the isolation: `"Gittins" AND "Charnov"` → **3**, all psychology and
+neuroscience. `"Gittins index" AND "marginal value theorem"` → **1**, a review adjacency.
+
+**One-way borrowing confirmed and understated.** Srivastava, Reverdy & Leonard 2013, read in
+full: it **never mentions Gittins.** McNamara & Houston 1985 and Green's 1990 field overview
+contain zero Gittins, index or stopping hits.
+
+### Correction to the claim's own wording
+
+The note says Charnov's rule is the Gittins index in the **"zero-switching-cost limit."** That
+is probably wrong on its own terms — **MVT has a switching cost**: the travel time τ. The clean
+reduction more likely runs through **Whittle's retirement reward**, where τ maps to the
+retirement option rather than to zero. *This is a reading, not a sourced claim, and is marked
+as such.* It sharpens what would have to be written, and makes writing it slightly harder.
+
+### Not obtained
+
+Green 1987, Stephens & Krebs 1986, and Houston & McNamara 1999 are books that could not be
+obtained. **The last is the most likely place for a stated relation to be hiding**, and this
+entry stays provisional on it.

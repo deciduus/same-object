@@ -33,6 +33,25 @@ Group 7 is last on purpose. Node size cannot be bound to a property in Obsidian,
 **evidence strength has to be carried by colour**, and it only survives if nothing repaints
 over it.
 
+## If the core graph stops being enough
+
+Obsidian itself is closed-source and cannot be modified. The plugin API is the only route, and
+it is the one every impressive graph online is actually using.
+
+| Plugin | What it adds that core cannot do |
+|---|---|
+| [Extended Graph](https://github.com/ElsaTam/obsidian-extended-graph) | **node size, shape and images bound to properties**; filter by property; saved views; SVG export |
+| [Juggl](https://github.com/HEmile/juggl) | a separate interactive graph with per-node styling |
+| [3D Graph](https://www.obsidianstats.com/plugins/3d-graph) | three dimensions. Mostly decorative |
+
+**Extended Graph lifts the constraint that forced the colour ordering above.** With it,
+`evidence` can drive **node size** and `standing` can drive colour, which is the honest
+mapping: strength is a magnitude, standing is a category.
+
+Nothing here is needed yet, and none of it is installed. The vault is plain markdown, so it
+can also be read by a script or a custom dashboard if a gap ever demands one — Obsidian is one
+reader of the data, not the format.
+
 ## What the layout should show
 
 If the schema is honest, the graph clusters by literature and not by folder. The gaps with

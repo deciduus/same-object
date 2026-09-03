@@ -27,9 +27,10 @@ Run `python _lint.py` from this directory before committing.
 too, strongest first: **citation-intersection, full-text-read, string-protocol, single-review,
 not-assessed.** Both are enforced by the lint. Prose lives in `note`, never in a machine field.
 
-`full-text-read` means the primary sources were **read**, not counted — the standard the
-symmetry rule demands of a withdrawal. It caught two errors in one entry that no count could
-have: see [[G11-plant-gravisensing]].
+`full-text-read` means the primary sources were **read**, not counted — see
+[[reading-not-counting]] for what the grade requires and why it ranks *below* citation
+intersection. It caught two errors in one entry that no count could have:
+[[G11-plant-gravisensing]].
 
 **String-protocol findings have survived under half the time when re-tested by
 [[citation-intersection]].** Weight accordingly.
@@ -52,6 +53,7 @@ Not catalogue entries. Numbers this project produced.
 - [[C1-availability-living-tissue]] — photosystem II = 0.883, cortical bone = 0.984. **A leaf is less available than a power grid.**
 - [[C2-probabilistic-safety-factors]] — for bone, failure probability is set by tissue variability, not locomotor variability
 - [[C3-energy-error-axis]] — every information substrate on one kT-normalized axis
+- [[C4-inclination-sensing-limit]] — **the derivation does not close at one cell**, and that is the result: it forces statocyte pooling, which is falsifiable against an existing ablation series
 
 ## Gaps
 
@@ -60,23 +62,23 @@ Not catalogue entries. Numbers this project produced.
 ### Live
 - [[G19-safety-factor-derived-twice]] — *citation-intersection* — All 46 citing works individually inspected. Symmorphosis itself is contested (~28 works).
 - [[G25-proofreading-coding]] — *citation-intersection* — 1,463 citers pulled and bibliographies intersected. The project's strongest finding.
-- [[G1-gradient-coupling]] — *string-protocol* — 9 of 10 alternate formulations still zero; calibration passed. Never citation-tested.
-- [[G2-metastability-metric]] — *string-protocol* — All four sides calibrate. Barrier language absent from the biology side entirely.
-- [[G23-hormesis-formalism]] — *string-protocol* — Cleanest of its batch. Both sides calibrate strongly. Engineering has the phenomenon without the dose-response formalism.
-- [[G28-marginal-value-gittins]] — *string-protocol* — Survived the full alternate-name gauntlet. Control: Gittins-Sutton&Barto = 181. Never citation-tested.
-- [[G3-cycle-life]] — *string-protocol* — Both sides calibrate strongly. Neglect sits in thermochemical storage, not batteries.
-- [[G5-repair-number]] — *string-protocol* — Strongest zero in its batch. Formal half now closed by C1. Severe homographs: availability, self-healing.
-- [[G6-multifunctionality]] — *string-protocol* — The bare word returns 9,570 hits from the wrong field; a careless check would falsely refute this.
-- [[G7-how-passive]] — *string-protocol* — Holds with one crack. The passivity-ladder sub-claim is UNVERIFIED - needs citation tracing, lookup rate-limited.
+- [[G6-multifunctionality]] — *full-text-read* — **Survived the re-read intact.** A 2020 engineering paper hunting a better multifunctionality metric cites zero ecology.
+- [[G28-marginal-value-gittins]] — *full-text-read* — **Held.** Averbeck 2015 has bandits and foraging in one MDP framework and never relates them; Charnov not cited.
 
 ### Narrowed
 - [[G11-plant-gravisensing]] — *full-text-read* — Restored and restated. The withdrawal misdescribed its own source; the original claim was off by 100x. Neither was catchable by counting.
 - [[G17-overconfident-uncertainties]] — *citation-intersection* — Restored with correction. A citation is not a follow-up. Specimen case for the symmetry rule.
+- [[G1-gradient-coupling]] — *full-text-read* — Thermodynamic branch is already unified and in active use. Gap survives only across the momentum branch: soaring, sails, tethers.
+- [[G2-metastability-metric]] — *full-text-read* — Biology-side absence was false. Cross-class axis still missing, and may be missing because it is hard: PCM is non-Arrhenius.
+- [[G3-cycle-life]] — *full-text-read* — One leg bridged by name in PNAS. Surviving leg: catalysis durability against energy storage, 0 both ways.
+- [[G5-repair-number]] — *full-text-read* — The zero survived the homograph. "No time in it" did not. The missing object is the ratio, not the rate.
+- [[G7-how-passive]] — *full-text-read* — The ladder is reinvented in at least four fields, not nuclear-only. No field has a number, so the metric gap is sharper.
 - [[G4-criticality-as-design]] — *single-review* — Field-level claim false. The 578-reference review's zero-engineering bibliography may still hold as a single-review omission.
 - [[G12-latch-fatigue]] — *string-protocol* — Restored and narrowed. A spring is not a latch. Cycles-to-failure for a latch contact surface remains unmeasured.
 - [[G20-resize-vs-throttle]] — *string-protocol* — Biology does not lack the framing. Surviving gap: that formalism never reached computing or mechanical engineering.
 - [[G21-dimensionless-regime-map]] — *string-protocol* — Narrowed to: no tabulated regime map with crossover conditions. Buckingham is a surname homograph.
 - [[G22-scale-transfer-triage]] — *string-protocol* — Two agents read Perricone 2021 differently; the full-text read is better evidence. Surviving: no formal Pi-group screening step.
+- [[G23-hormesis-formalism]] — *full-text-read* — Shot peening names its own descending limb. Surviving: nobody parameterises the curve, and the mechanochemistry work reports one operating point.
 - [[G9-discrepancy-base-rate]] — *string-protocol* — Half wrong: metrology dark-uncertainty and epidemiological triangulation cover the class. The base rate itself has never been computed.
 
 ### Overturned
@@ -107,7 +109,8 @@ field that needs it does not read.**
 
 ## Open work
 
-1. **[[citation-intersection]] the eight string-protocol survivors.** On present base rates, expect two or three to fall.
+1. **[[citation-intersection]] the eight now read in full.** Reading and counting fail
+   differently — see [[reading-not-counting]]. Blocked while the citation APIs rate-limit.
 2. **Derive the minimum detectable inclination for an active granular sensor** — the restated
    [[G11-plant-gravisensing]]. A Berg-Purcell-shaped calculation against an *active* bath at
    T_eff ≈ 10 T. All the measured inputs are published; the calculation is not.

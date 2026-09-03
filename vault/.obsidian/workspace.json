@@ -11,13 +11,10 @@
             "id": "f8e74697011e4c94",
             "type": "leaf",
             "state": {
-              "type": "bases",
-              "state": {
-                "file": "triage.base",
-                "viewName": "Triage queue"
-              },
-              "icon": "lucide-table",
-              "title": "triage"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ],
@@ -99,7 +96,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "triage.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +114,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "triage.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +156,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "triage.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,21 +184,24 @@
   },
   "active": "f8e74697011e4c94",
   "lastOpenFiles": [
-    "log.md",
-    "log.md.tmp.48688.455f333f37a0",
-    "00-index.md.tmp.48688.d9cd94c2ed80",
+    "log.md.tmp.48688.67ac2354679d",
+    "00-index.md.tmp.48688.1d1f24376e72",
+    "00-index.md.tmp.48688.fda59982ec9f",
+    "00-index.md.tmp.48688.29cab54d1c83",
+    "gaps/G28-marginal-value-gittins.md.tmp.48688.209b6a64b1ae",
+    "gaps/G28-marginal-value-gittins.md.tmp.48688.cb1eac44bc2d",
+    "00-index.md.tmp.48688.9e08853db8aa",
+    "gaps/G6-multifunctionality.md.tmp.48688.131a4878fbbb",
+    "gaps/G1-gradient-coupling.md.tmp.48688.a55b0ab9a2ac",
+    "computed/C4-inclination-sensing-limit.md",
     "00-index.md",
+    "log.md",
     "triage.base",
-    "00-index.md.tmp.48688.14572a66f32b",
-    "00-index.md.tmp.48688.9f0692d74661",
-    "_lint.py.tmp.48688.eb282149de1a",
+    "00-index.md.tmp.48688.72eb17defc1a",
+    "method/reading-not-counting.md",
     "method/graph-view.md",
-    "method/graph-view.md.tmp.48688.9aaf8f12f5f3",
-    "triage.base.tmp.48688.148fb375f076",
-    "gaps/G28-marginal-value-gittins.md.tmp.48688.e6b38d69dd29",
     "method/fine-structure-discrepancy.md",
     "theorems/LaMSA-latch.md",
-    "_lint.py",
     "gaps/G8-energy-per-bit-axis.md",
     "gaps/G27-collective-decision.md",
     "gaps/G20-resize-vs-throttle.md",
@@ -223,8 +220,6 @@
     "gaps/G19-safety-factor-derived-twice.md",
     "gaps/G25-proofreading-coding.md",
     "Untitled.canvas",
-    "computed/C3-energy-error-axis.md",
-    "computed/C2-probabilistic-safety-factors.md",
-    "computed/C1-availability-living-tissue.md"
+    "computed/C3-energy-error-axis.md"
   ]
 }

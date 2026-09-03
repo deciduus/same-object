@@ -8,6 +8,46 @@ type: method
 Append-only. One line per structural change to the vault. Format:
 `## [YYYY-MM-DD] operation | description`
 
+## [2026-09-03] re-read batch | eight gaps read in full, six damaged
+
+Fanned out on the eight `string-protocol` survivors. **Two held, six narrowed. None overturned.**
+
+| Gap | Outcome |
+|---|---|
+| G6, G28 | held |
+| G1 | thermodynamic branch already unified; only the momentum branch survives |
+| G2 | "absent from biology" false — seed ageing uses Arrhenius Ea |
+| G3 | one leg bridged by name in PNAS 2021 |
+| G5 | "no time in it" false — CDHM has healing rate constants |
+| G7 | the ladder is reinvented in four fields, not nuclear-only |
+| G23 | shot peening names its own descending limb |
+
+**Every one of the six was damaged in the same way**: a supporting sentence claimed a field
+lacked a *concept*, when the field had the concept under another name. The surviving claims are
+all about missing **formalism** — a parameterised curve, a dimensionless ratio, a shared axis.
+That is the sharper class of claim, so the batch improved the catalogue rather than shrinking it.
+
+Also corrected: `structural batteries score ~0.25` in G6 is **UNVERIFIED and withdrawn**; papers
+read give 1.15–1.17.
+
+## [2026-09-03] correction | kedem-caplan is not an unread theorem
+
+Catalogued as one. The re-read found it in active use — *Entropy* 25:1575 (2023) applies it to
+thermoelectrics and oxidative phosphorylation together, and arXiv:2403.20209 clones the form
+into a hydronic figure of merit. The "2 co-citers" figure measured traffic between two named
+papers, not whether the result had travelled. It had.
+
+This damages the project's headline pattern for that entry specifically. Recorded rather than
+quietly fixed.
+
+## [2026-09-03] computed | C4, and it does not close
+
+`C4-inclination-sensing-limit`: minimum detectable tilt for a single statocyte comes out
+**≈11°**, which is **above** the observed thresholdless response. The single-cell model fails,
+and that is the result — it forces pooling across statocytes, predicting threshold degrading as
+M^(−1/2). An ablation series that could test it already exists (Blancaflor 1998), analysed for
+presentation time instead.
+
 ## [2026-09-03] correction | G11 statolith energy was wrong by ~100x
 
 The note claimed a single statolith displacement costs **2–3 k_BT**. Recomputed from Bérut
