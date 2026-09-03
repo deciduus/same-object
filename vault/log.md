@@ -5,6 +5,21 @@ type: method
 
 # Operations log
 
+## [2026-09-03] honest scorecard | [[novelty-audit]] grades the whole vault
+
+Every substantive result graded, bias set toward the lower grade. ~50 gradable results:
+**4 NOVEL** (C5 strongest, then the [[Q7-same-class-prediction]]/C16 conditional, C6, C4 hedged),
+**~20 REPACKAGED**, **2 REDISCOVERED** (C9 thermoacoustics, kedem-caplan in active use),
+**~20 LOCATED** (gaps + C15's impossibility), **~8 CORRECTED** (the 578 fix, sail conjugate-pair,
+neutron-lifetime, two citation counts, three overturned zeros, the G11 100× fix).
+
+Honest one-line product: **a method plus a curated catalogue holding a handful of genuine
+bridges — not a body of new physics.** The largest bucket is REPACKAGED; locating a
+well-measured gap is real work but not novelty. Strongest novel: [[C5-charnov-gittins]]. Most at
+risk of being an unrecognised rediscovery: [[C8-momentum-harvesting-metric]] (Greason
+arXiv:2205.14117 read in abstract only). The audit predates C21/C22, which are themselves a
+method-finding and a provenance-faceting, not new-physics claims.
+
 ## [2026-09-03] honest null | Q10's strong reading refuted by its own test
 
 [[C21-rediscovery-clustering]] ran the falsifiable edge Q10 set for itself. **The rediscovered

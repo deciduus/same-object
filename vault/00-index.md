@@ -25,6 +25,7 @@ Run `python _lint.py` from this directory before committing.
 - [[failure-modes]] — five ways a measured zero can be fake, learned by failing all five
 - [[citation-intersection]] — the strongest evidence standard, and its own limits
 - [[precedent]] — this method is Literature-Based Discovery, founded 1986. What is honestly ours
+- [[novelty-audit]] — **the honest scorecard.** Every result graded novel / repackaged / rediscovered / located / corrected, biased toward humility. Real product: a method plus a handful of genuine bridges, not a body of new physics
 
 ## Reading the standings
 
