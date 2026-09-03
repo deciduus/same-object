@@ -1,15 +1,28 @@
 ---
+id: G25
 name: G25-proofreading-coding
 type: gap
-contact-surface: 16 of 416, zero coding-theory content
+standing: live
+evidence: citation-intersection
+contact-surface: 16
 crosses: nothing
-direction: none
+crosses-rank: 0
 topology: disjoint
-evidence: citation intersection
-status: strongest
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: ["[[C3-energy-error-axis]]"]
+uses-move: []
+rests-on: []
+tags: [node/gap, crosses/nothing, evidence/citation-intersection, standing/live]
+last-checked: 2026-09-03
+note: "1,463 citers pulled and bibliographies intersected. The project's strongest finding."
 ---
 
 # Kinetic proofreading and coding theory
+
+**STANDING: LIVE** · evidence: citation-intersection · contact surface: 16 · last checked 2026-09-03
 
 > Both fields quantify **energy paid per unit error suppression**, in kT. Neither reads the other.
 

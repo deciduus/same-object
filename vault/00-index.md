@@ -1,22 +1,34 @@
 ---
 name: 00-index
 type: index
+generated-sections: gaps
 ---
 
 # Gradient Coupling Inquiry
 
 A vault, not a scoreboard. Every entry is a **relationship description** rather than a
-verdict — see [[relationship-description]] for why the previous HOLDS/WEAKENED/COLLAPSED
-taxonomy was retired.
+verdict — see [[relationship-description]] for why the HOLDS/WEAKENED/COLLAPSED taxonomy was
+retired, and [[verdict-scoring]] for what went wrong with it.
 
 Open in Obsidian for the graph view. Everything is plain markdown and git-tracked.
+Run `python _lint.py` from this directory before committing.
 
 ## Start here
 
 - [[relationship-description]] — the six fields every entry is described along
-- [[what-closes-a-gap]] — the strongest single result: a gap closes when someone supplies a *theorem*, not a review
+- [[what-closes-a-gap]] — a gap closes when someone supplies a *theorem*, not a review
 - [[failure-modes]] — five ways a measured zero can be fake, learned by failing all five
+- [[citation-intersection]] — the strongest evidence standard, and its own limits
 - [[precedent]] — this method is Literature-Based Discovery, founded 1986. What is honestly ours
+
+## Reading the standings
+
+`standing` is a **closed vocabulary**: live, narrowed, withdrawn, overturned. `evidence` is
+too: citation-intersection, string-protocol, single-review, not-assessed. Both are enforced by
+the lint. Prose lives in `note`, never in a machine field.
+
+**String-protocol findings have survived under half the time when re-tested by
+[[citation-intersection]].** Weight accordingly.
 
 ## The moves
 
@@ -39,37 +51,61 @@ Not catalogue entries. Numbers this project produced.
 
 ## Gaps
 
-Ordered by evidence strength, not by interest.
+<!-- generated from frontmatter by _idx.py; edit the notes, not this list -->
 
-### Tested by citation intersection — the strong evidence
-- [[G25-proofreading-coding]] — 1,463 citers pulled, bibliographies intersected
-- [[G19-safety-factor-derived-twice]] — all 46 citing works individually inspected
+### Live
+- [[G19-safety-factor-derived-twice]] — *citation-intersection* — All 46 citing works individually inspected. Symmorphosis itself is contested (~28 works).
+- [[G25-proofreading-coding]] — *citation-intersection* — 1,463 citers pulled and bibliographies intersected. The project's strongest finding.
+- [[G1-gradient-coupling]] — *string-protocol* — 9 of 10 alternate formulations still zero; calibration passed. Never citation-tested.
+- [[G2-metastability-metric]] — *string-protocol* — All four sides calibrate. Barrier language absent from the biology side entirely.
+- [[G23-hormesis-formalism]] — *string-protocol* — Cleanest of its batch. Both sides calibrate strongly. Engineering has the phenomenon without the dose-response formalism.
+- [[G28-marginal-value-gittins]] — *string-protocol* — Survived the full alternate-name gauntlet. Control: Gittins-Sutton&Barto = 181. Never citation-tested.
+- [[G3-cycle-life]] — *string-protocol* — Both sides calibrate strongly. Neglect sits in thermochemical storage, not batteries.
+- [[G5-repair-number]] — *string-protocol* — Strongest zero in its batch. Formal half now closed by C1. Severe homographs: availability, self-healing.
+- [[G6-multifunctionality]] — *string-protocol* — The bare word returns 9,570 hits from the wrong field; a careless check would falsely refute this.
+- [[G7-how-passive]] — *string-protocol* — Holds with one crack. The passivity-ladder sub-claim is UNVERIFIED - needs citation tracing, lookup rate-limited.
 
-### Survived the hardened string protocol, not yet citation-tested
-- [[G1-gradient-coupling]] · [[G2-metastability-metric]] · [[G3-cycle-life]] · [[G5-repair-number]] · [[G6-multifunctionality]] · [[G7-how-passive]] · [[G23-hormesis-formalism]] · [[G28-marginal-value-gittins]]
+### Narrowed
+- [[G17-overconfident-uncertainties]] — *citation-intersection* — Restored with correction. A citation is not a follow-up. Specimen case for the symmetry rule.
+- [[G4-criticality-as-design]] — *single-review* — Field-level claim false. The 578-reference review's zero-engineering bibliography may still hold as a single-review omission.
+- [[G12-latch-fatigue]] — *string-protocol* — Restored and narrowed. A spring is not a latch. Cycles-to-failure for a latch contact surface remains unmeasured.
+- [[G20-resize-vs-throttle]] — *string-protocol* — Biology does not lack the framing. Surviving gap: that formalism never reached computing or mechanical engineering.
+- [[G21-dimensionless-regime-map]] — *string-protocol* — Narrowed to: no tabulated regime map with crossover conditions. Buckingham is a surname homograph.
+- [[G22-scale-transfer-triage]] — *string-protocol* — Two agents read Perricone 2021 differently; the full-text read is better evidence. Surviving: no formal Pi-group screening step.
+- [[G9-discrepancy-base-rate]] — *string-protocol* — Half wrong: metrology dark-uncertainty and epidemiological triangulation cover the class. The base rate itself has never been computed.
 
-### Narrowed on re-examination
-- [[G12-latch-fatigue]] — restored and narrowed; a spring is not a latch
-- [[G17-overconfident-uncertainties]] — restored with correction; a citation is not a follow-up
-- [[G9-discrepancy-base-rate]] · [[G21-dimensionless-regime-map]] · [[G22-scale-transfer-triage]] · [[G4-criticality-as-design]] · [[G20-resize-vs-throttle]]
+### Withdrawn
+- [[G11-plant-gravisensing]] — *not-assessed* — Withdrawn as a synonym artifact, but nobody read past the abstract. Third over-withdrawal, NOT yet re-examined.
 
 ### Overturned
-- [[G27-collective-decision]] — the zero was anchored on an algorithm's proper noun
-- [[G8-energy-per-bit-axis]] — 575 papers connect Landauer to neural systems
+- [[G27-collective-decision]] — *string-protocol* — Overturned. The zero was anchored on Paxos, an algorithm name rather than a literature. Message complexity may still be untested.
+- [[G8-energy-per-bit-axis]] — *string-protocol* — Overturned. The specific figure in C3 may still be novel; the absence claim was not.
 
 ## Theorems sitting unread
 
-The dominant pattern in the whole project: **the unifying result already exists, in a
-literature the field that needs it does not read.**
+The dominant pattern in the project: **the unifying result already exists, in a literature the
+field that needs it does not read.**
 
 - [[kedem-caplan]] — degree of coupling (1965); thermoelectric ZT is algebraically a special case
 - [[availability-formula]] — MTBF/(MTBF+MTTR) *is* the photosystem repair steady state
 - [[stress-strength-interference]] — 1967, 753 works; biology re-derived it in 1997
 - [[hill-number-multifunctionality]] — the N-function math engineering needs, in an ecology journal
 - [[kirkwood-disposable-soma]] — 1977, unread by self-healing materials
+- [[LaMSA-latch]] — the design rule exists; the latch itself is uncharacterized
+
+## Method
+
+- [[co-citation-audit]] — the measurement that made this checkable
+- [[homographs]] — twelve words owned by more than one field. Never anchor a zero on these
+- [[one-way-borrowing]] — export direction tells you nothing about import direction
+- [[positive-controls]] — known-closed pairs, run alongside claims. The signal separates cleanly
+- [[fine-structure-discrepancy]] — the sharpest live same-method disagreement in metrology
+- [[graph-view]] — the colour-group order that makes the graph readable. Last group wins
+- [[log]] — append-only record of structural changes to the vault
 
 ## Open work
 
-1. **Citation-intersect the eight untested survivors.** String-query zeros have survived under half the time when tested this way.
-2. **Re-read [[G11-plant-gravisensing]] properly** — the third over-withdrawal, not yet re-examined.
+1. **[[citation-intersection]] the eight string-protocol survivors.** On present base rates, expect two or three to fall.
+2. **Re-read [[G11-plant-gravisensing]] properly** — the third over-withdrawal, still not re-examined.
 3. **Trace citers of the nuclear passivity ladder** — [[G7-how-passive]] sub-claim, rate-limited before completing.
+4. **Extend [[kedem-caplan]] past linear response** — the open research item behind [[G1-gradient-coupling]].

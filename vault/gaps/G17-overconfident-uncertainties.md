@@ -1,16 +1,28 @@
 ---
+id: G17
 name: G17-overconfident-uncertainties
 type: gap
-anchor: "Henrion & Fischhoff 1986, Am. J. Phys. 54:791"
-contact-surface: 279 citations, ~6 substantive in metrology
+standing: narrowed
+evidence: citation-intersection
+contact-surface: 279
 crosses: vocabulary
-direction: one-way, outward
-topology: absorbed by a neighbouring field
-status: restored-with-correction
-previously: withdrawn-2026-09-03
+crosses-rank: 3
+topology: mediated
+mediator: [[G9-discrepancy-base-rate]]
+borrows-from: []
+lends-to: ["[[fine-structure-discrepancy]]"]
+mutual-with: []
+computed-in: []
+uses-move: []
+rests-on: []
+tags: [node/gap, crosses/vocabulary, evidence/citation-intersection, standing/narrowed]
+last-checked: 2026-09-03
+note: "Restored with correction. A citation is not a follow-up. Specimen case for the symmetry rule."
 ---
 
 # Reported uncertainties in physical constants are overconfident
+
+**STANDING: NARROWED** · evidence: citation-intersection · contact surface: 279 · last checked 2026-09-03
 
 > Successive recommended values for fundamental constants routinely fall outside the
 > previous value's stated error bar. The 1986 paper connects this explicitly to the

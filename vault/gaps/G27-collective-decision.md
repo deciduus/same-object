@@ -1,10 +1,28 @@
 ---
+id: G27
 name: G27-collective-decision
 type: gap
-status: overturned
+standing: overturned
+evidence: string-protocol
+contact-surface: 26
+crosses: formalism
+crosses-rank: 4
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: []
+rests-on: []
+tags: [node/gap, crosses/formalism, evidence/string-protocol, standing/overturned]
+last-checked: 2026-09-03
+note: "Overturned. The zero was anchored on Paxos, an algorithm name rather than a literature. Message complexity may still be untested."
 ---
 
 # Collective decision
+
+**STANDING: OVERTURNED — do not cite as a gap** · evidence: string-protocol · contact surface: 26 · last checked 2026-09-03
 
 > Swarm intelligence and distributed-systems consensus both solve *reach agreement across unreliable distributed agents.*
 

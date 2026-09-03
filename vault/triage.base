@@ -1,0 +1,50 @@
+filters:
+  and:
+    - type == "gap"
+formulas:
+  weakest_evidence: 'if(evidence == "string-protocol" or evidence == "not-assessed", "re-test", "")'
+properties:
+  note.contact-surface:
+    displayName: Contact
+  note.crosses-rank:
+    displayName: Crosses
+views:
+  - type: table
+    name: Triage queue
+    order:
+      - file.name
+      - standing
+      - evidence
+      - contact-surface
+      - crosses
+      - topology
+      - formula.weakest_evidence
+    sort:
+      - property: crosses-rank
+        direction: ASC
+      - property: contact-surface
+        direction: ASC
+  - type: table
+    name: Live only
+    filters:
+      and:
+        - standing == "live"
+    order:
+      - file.name
+      - evidence
+      - contact-surface
+      - note
+    sort:
+      - property: evidence
+        direction: ASC
+  - type: table
+    name: Needs citation-intersection
+    filters:
+      and:
+        - evidence != "citation-intersection"
+        - standing != "overturned"
+    order:
+      - file.name
+      - standing
+      - evidence
+      - note

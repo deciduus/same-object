@@ -1,15 +1,28 @@
 ---
+id: G28
 name: G28-marginal-value-gittins
 type: gap
-anchor: "Charnov 1976, Theor. Pop. Biol. (5,424 cites) / Gittins 1979 (1,542 cites)"
-contact-surface: 8 co-citers, all neuroeconomics
-crosses: nothing — the formalism does not transfer
-direction: no direct contact in either direction
-topology: mediated by a third field
-status: holds — survived the full alternate-name gauntlet
+standing: live
+evidence: string-protocol
+contact-surface: 8
+crosses: nothing
+crosses-rank: 0
+topology: mediated
+mediator: neuroeconomics
+borrows-from: []
+lends-to: ["[[G9-discrepancy-base-rate]]"]
+mutual-with: []
+computed-in: []
+uses-move: []
+rests-on: []
+tags: [node/gap, crosses/nothing, evidence/string-protocol, standing/live]
+last-checked: 2026-09-03
+note: "Survived the full alternate-name gauntlet. Control: Gittins-Sutton&Barto = 181. Never citation-tested."
 ---
 
 # Marginal value theorem and the Gittins index
+
+**STANDING: LIVE** · evidence: string-protocol · contact surface: 8 · last checked 2026-09-03
 
 > Charnov's rule: leave a depleting patch when the marginal intake rate drops to the average
 > for the habitat.

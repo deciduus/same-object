@@ -191,6 +191,17 @@
   },
   "active": "f8e74697011e4c94",
   "lastOpenFiles": [
+    "log.md",
+    "method/graph-view.md",
+    "method/graph-view.md.tmp.48688.9aaf8f12f5f3",
+    "triage.base",
+    "triage.base.tmp.48688.148fb375f076",
+    "gaps/G28-marginal-value-gittins.md.tmp.48688.e6b38d69dd29",
+    "method/fine-structure-discrepancy.md",
+    "theorems/LaMSA-latch.md",
+    "_lint.py",
+    "_lint.py.tmp.48688.83818f9bd367",
+    "00-index.md",
     "gaps/G8-energy-per-bit-axis.md",
     "gaps/G27-collective-decision.md",
     "gaps/G20-resize-vs-throttle.md",
@@ -212,11 +223,6 @@
     "computed/C3-energy-error-axis.md",
     "computed/C2-probabilistic-safety-factors.md",
     "computed/C1-availability-living-tissue.md",
-    "theorems/kirkwood-disposable-soma.md",
-    "theorems/hill-number-multifunctionality.md",
-    "theorems/stress-strength-interference.md",
-    "theorems/availability-formula.md",
-    "theorems/kedem-caplan.md",
-    "00-index.md"
+    "theorems/kirkwood-disposable-soma.md"
   ]
 }

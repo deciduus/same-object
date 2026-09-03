@@ -1,10 +1,28 @@
 ---
+id: G4
 name: G4-criticality-as-design
 type: gap
-status: downgraded to a single-review omission
+standing: narrowed
+evidence: single-review
+contact-surface: 99
+crosses: formalism
+crosses-rank: 4
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M2-use-the-noise]]"]
+rests-on: []
+tags: [node/gap, crosses/formalism, evidence/single-review, standing/narrowed]
+last-checked: 2026-09-03
+note: "Field-level claim false. The 578-reference review's zero-engineering bibliography may still hold as a single-review omission."
 ---
 
 # Criticality as a design strategy
+
+**STANDING: NARROWED** · evidence: single-review · contact surface: 99 · last checked 2026-09-03
 
 > Hair cells self-tune to a Hopf bifurcation for divergent gain. Parametric amplifiers are biased just below threshold. Same law, two vocabularies.
 

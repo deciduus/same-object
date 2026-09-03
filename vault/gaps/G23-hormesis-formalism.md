@@ -1,10 +1,28 @@
 ---
+id: G23
 name: G23-hormesis-formalism
 type: gap
-status: holds, cleanest of its batch
+standing: live
+evidence: string-protocol
+contact-surface: 0
+crosses: nothing
+crosses-rank: 0
+topology: disjoint
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M2-use-the-noise]]"]
+rests-on: []
+tags: [node/gap, crosses/nothing, evidence/string-protocol, standing/live]
+last-checked: 2026-09-03
+note: "Cleanest of its batch. Both sides calibrate strongly. Engineering has the phenomenon without the dose-response formalism."
 ---
 
 # Hormesis has no engineering formalism
+
+**STANDING: LIVE** · evidence: string-protocol · contact surface: 0 · last checked 2026-09-03
 
 > Both fields now build stress-responsive strengthening. **Only one has a dose-response formalism for it.**
 

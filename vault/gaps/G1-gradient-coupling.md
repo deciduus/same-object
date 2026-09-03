@@ -1,15 +1,28 @@
 ---
+id: G1
 name: G1-gradient-coupling
 type: gap
-contact-surface: 0 across four pairings
+standing: live
+evidence: string-protocol
+contact-surface: 0
 crosses: nothing
-direction: none
-topology: disjoint clusters
-evidence: string, calibrated, 9 of 10 formulations
-status: holds, untested by citation
+crosses-rank: 0
+topology: disjoint
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M5-work-inside-the-noise]]"]
+rests-on: ["[[kedem-caplan]]"]
+tags: [node/gap, crosses/nothing, evidence/string-protocol, standing/live]
+last-checked: 2026-09-03
+note: "9 of 10 alternate formulations still zero; calibration passed. Never citation-tested."
 ---
 
 # Gradient coupling has no shared figure of merit
+
+**STANDING: LIVE** · evidence: string-protocol · contact surface: 0 · last checked 2026-09-03
 
 > Dynamic soaring, solar sails, tethers, thermoelectrics, osmotic power, evaporation engines and chemiosmosis all extract work by coupling to a pre-existing gradient. **Thermoelectrics have ZT. Nothing spans the class.**
 

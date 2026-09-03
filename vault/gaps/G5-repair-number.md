@@ -1,10 +1,28 @@
 ---
+id: G5
 name: G5-repair-number
 type: gap
-status: holds, untested by citation
+standing: live
+evidence: string-protocol
+contact-surface: 0
+crosses: nothing
+crosses-rank: 0
+topology: disjoint
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: ["[[C1-availability-living-tissue]]"]
+uses-move: []
+rests-on: ["[[availability-formula]]", "[[kirkwood-disposable-soma]]"]
+tags: [node/gap, crosses/nothing, evidence/string-protocol, standing/live]
+last-checked: 2026-09-03
+note: "Strongest zero in its batch. Formal half now closed by C1. Severe homographs: availability, self-healing."
 ---
 
 # No dimensionless repair number
+
+**STANDING: LIVE** · evidence: string-protocol · contact surface: 0 · last checked 2026-09-03
 
 > Biology quantifies repair as a **rate**. Engineering quantifies healing as an **amplitude fraction** with no time in it. Not commensurable.
 

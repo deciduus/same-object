@@ -1,10 +1,28 @@
 ---
+id: G21
 name: G21-dimensionless-regime-map
 type: gap
-status: narrowed
+standing: narrowed
+evidence: string-protocol
+contact-surface: 1
+crosses: vocabulary
+crosses-rank: 3
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M6-vary-what-was-held-fixed]]"]
+rests-on: []
+tags: [node/gap, crosses/vocabulary, evidence/string-protocol, standing/narrowed]
+last-checked: 2026-09-03
+note: "Narrowed to: no tabulated regime map with crossover conditions. Buckingham is a surname homograph."
 ---
 
 # No unified dimensionless regime map
+
+**STANDING: NARROWED** · evidence: string-protocol · contact surface: 1 · last checked 2026-09-03
 
 > No single framework places organisms **and processes** in dimensionless-number space with crossover conditions.
 

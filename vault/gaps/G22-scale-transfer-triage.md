@@ -1,10 +1,28 @@
 ---
+id: G22
 name: G22-scale-transfer-triage
 type: gap
-status: narrowed — agents disagree
+standing: narrowed
+evidence: string-protocol
+contact-surface: 9
+crosses: vocabulary
+crosses-rank: 3
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M6-vary-what-was-held-fixed]]"]
+rests-on: []
+tags: [node/gap, crosses/vocabulary, evidence/string-protocol, standing/narrowed]
+last-checked: 2026-09-03
+note: "Two agents read Perricone 2021 differently; the full-text read is better evidence. Surviving: no formal Pi-group screening step."
 ---
 
 # Scale-transfer triage in biomimetics
+
+**STANDING: NARROWED** · evidence: string-protocol · contact surface: 9 · last checked 2026-09-03
 
 > Is there a **screening step** that tests whether a mechanism survives the scale change before you copy it?
 

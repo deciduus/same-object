@@ -1,10 +1,28 @@
 ---
+id: G6
 name: G6-multifunctionality
 type: gap
-status: holds, untested by citation
+standing: live
+evidence: string-protocol
+contact-surface: 0
+crosses: nothing
+crosses-rank: 0
+topology: disjoint
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: []
+rests-on: ["[[hill-number-multifunctionality]]"]
+tags: [node/gap, crosses/nothing, evidence/string-protocol, standing/live]
+last-checked: 2026-09-03
+note: "The bare word returns 9,570 hits from the wrong field; a careless check would falsely refute this."
 ---
 
 # Multifunctionality
+
+**STANDING: LIVE** · evidence: string-protocol · contact surface: 0 · last checked 2026-09-03
 
 > Two mature quantified formalisms share one word.
 

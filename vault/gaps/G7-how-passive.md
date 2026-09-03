@@ -1,10 +1,28 @@
 ---
+id: G7
 name: G7-how-passive
 type: gap
-status: holds with one crack
+standing: live
+evidence: string-protocol
+contact-surface: 2
+crosses: metaphor
+crosses-rank: 2
+topology: disjoint
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M4-change-the-actor]]"]
+rests-on: []
+tags: [node/gap, crosses/metaphor, evidence/string-protocol, standing/live]
+last-checked: 2026-09-03
+note: "Holds with one crack. The passivity-ladder sub-claim is UNVERIFIED - needs citation tracing, lookup rate-limited."
 ---
 
 # How passive is it?
+
+**STANDING: LIVE** · evidence: string-protocol · contact surface: 2 · last checked 2026-09-03
 
 > Passive dynamic walking, passive radiative cooling, morphological computation, compliant mechanisms — domain-local names, no shared name, no portable metric.
 

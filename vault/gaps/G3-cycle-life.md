@@ -1,10 +1,28 @@
 ---
+id: G3
 name: G3-cycle-life
 type: gap
-status: holds, untested by citation
+standing: live
+evidence: string-protocol
+contact-surface: 4
+crosses: nothing
+crosses-rank: 0
+topology: disjoint
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M3-separate-timescales]]"]
+rests-on: []
+tags: [node/gap, crosses/nothing, evidence/string-protocol, standing/live]
+last-checked: 2026-09-03
+note: "Both sides calibrate strongly. Neglect sits in thermochemical storage, not batteries."
 ---
 
 # No cycle-life framework
+
+**STANDING: LIVE** · evidence: string-protocol · contact surface: 4 · last checked 2026-09-03
 
 > Biology's catalytic-cycles-until-replacement, biocatalysis's total turnover number, battery cycle life and thermochemical cyclic stability are the same quantity under four names.
 

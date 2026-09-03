@@ -1,16 +1,28 @@
 ---
+id: G12
 name: G12-latch-fatigue
 type: gap
-anchor: "Ilton et al. 2018, Science 360:eaao1082"
-contact-surface: 3 relevant papers, all on cuticle rather than latches
-crosses: data — but for the spring, not the latch
-direction: n/a
-topology: adjacent object measured, target object not
-status: restored-and-narrowed
-previously: withdrawn-2026-09-03
+standing: narrowed
+evidence: string-protocol
+contact-surface: 3
+crosses: data
+crosses-rank: 5
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M3-separate-timescales]]"]
+rests-on: ["[[LaMSA-latch]]"]
+tags: [node/gap, crosses/data, evidence/string-protocol, standing/narrowed]
+last-checked: 2026-09-03
+note: "Restored and narrowed. A spring is not a latch. Cycles-to-failure for a latch contact surface remains unmeasured."
 ---
 
 # No cycles-to-failure number for a biological latch
+
+**STANDING: NARROWED** · evidence: string-protocol · contact surface: 3 · last checked 2026-09-03
 
 > Latch-mediated spring actuation beats muscle power density by orders of magnitude by
 > decoupling slow loading from fast release. The springs and geometry are well modelled.

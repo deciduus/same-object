@@ -1,10 +1,28 @@
 ---
+id: G8
 name: G8-energy-per-bit-axis
 type: gap
-status: overturned
+standing: overturned
+evidence: string-protocol
+contact-surface: 575
+crosses: formalism
+crosses-rank: 4
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: ["[[C3-energy-error-axis]]"]
+uses-move: []
+rests-on: []
+tags: [node/gap, crosses/formalism, evidence/string-protocol, standing/overturned]
+last-checked: 2026-09-03
+note: "Overturned. The specific figure in C3 may still be novel; the absence claim was not."
 ---
 
 # The cross-substrate energy-per-bit axis
+
+**STANDING: OVERTURNED — do not cite as a gap** · evidence: string-protocol · contact surface: 575 · last checked 2026-09-03
 
 > Neuroscience counts ATP per bit. Chip design counts femtojoules per operation. Biophysics counts kT per methylation cycle.
 

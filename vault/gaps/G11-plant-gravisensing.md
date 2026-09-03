@@ -1,10 +1,28 @@
 ---
+id: G11
 name: G11-plant-gravisensing
 type: gap
-status: withdrawn — needs re-reading
+standing: withdrawn
+evidence: not-assessed
+contact-surface: 12
+crosses: vocabulary
+crosses-rank: 3
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: []
+uses-move: ["[[M1-manufacture-contrast]]"]
+rests-on: []
+tags: [node/gap, crosses/vocabulary, evidence/not-assessed, standing/withdrawn]
+last-checked: 2026-09-03
+note: "Withdrawn as a synonym artifact, but nobody read past the abstract. Third over-withdrawal, NOT yet re-examined."
 ---
 
 # Limits to plant gravity sensing
+
+**STANDING: WITHDRAWN — do not cite as a gap** · evidence: not-assessed · contact surface: 12 · last checked 2026-09-03
 
 > A single statolith displacement costs only **2-3 k_BT** — marginally above thermal noise.
 

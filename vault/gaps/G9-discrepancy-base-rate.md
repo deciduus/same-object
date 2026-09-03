@@ -1,10 +1,28 @@
 ---
+id: G9
 name: G9-discrepancy-base-rate
 type: gap
-status: narrowed — half was wrong
+standing: narrowed
+evidence: string-protocol
+contact-surface: 7
+crosses: vocabulary
+crosses-rank: 3
+topology: direct
+mediator: 
+borrows-from: []
+lends-to: ["[[fine-structure-discrepancy]]"]
+mutual-with: []
+computed-in: []
+uses-move: []
+rests-on: []
+tags: [node/gap, crosses/vocabulary, evidence/string-protocol, standing/narrowed]
+last-checked: 2026-09-03
+note: "Half wrong: metrology dark-uncertainty and epidemiological triangulation cover the class. The base rate itself has never been computed."
 ---
 
 # The discrepancy base rate
+
+**STANDING: NARROWED** · evidence: string-protocol · contact surface: 7 · last checked 2026-09-03
 
 > **Nobody has computed how often persistent inter-method disagreements resolved to systematics versus new physics.**
 

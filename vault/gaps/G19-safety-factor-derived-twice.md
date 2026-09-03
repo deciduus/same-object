@@ -1,15 +1,28 @@
 ---
+id: G19
 name: G19-safety-factor-derived-twice
 type: gap
-contact-surface: 0 crossings, both directions
+standing: live
+evidence: citation-intersection
+contact-surface: 0
 crosses: nothing
-direction: none
+crosses-rank: 0
 topology: disjoint
-evidence: all 46 citing works inspected
-status: holds
+mediator: 
+borrows-from: []
+lends-to: []
+mutual-with: []
+computed-in: ["[[C2-probabilistic-safety-factors]]"]
+uses-move: []
+rests-on: ["[[stress-strength-interference]]"]
+tags: [node/gap, crosses/nothing, evidence/citation-intersection, standing/live]
+last-checked: 2026-09-03
+note: "All 46 citing works individually inspected. Symmorphosis itself is contested (~28 works)."
 ---
 
 # Safety factor, derived independently twice
+
+**STANDING: LIVE** · evidence: citation-intersection · contact surface: 0 · last checked 2026-09-03
 
 > Alexander (1997) and [[stress-strength-interference]] (1967) are **the same object.** Thirty-year head start, zero crossings.
 

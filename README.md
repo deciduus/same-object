@@ -5,9 +5,15 @@ to say about anomalous propulsion claims. It became something more useful: a rep
 method for locating **cross-domain gaps** — principles that several fields discovered
 independently, quantified in their own vocabulary, and never put on a shared axis.
 
-Twenty-two such gaps are now documented, most with measured co-citation evidence. **Four have a
-unifying theorem already written and sitting unread in an adjacent field** — which has become
-the dominant finding of the project.
+Twenty such gaps are documented in `vault/gaps/`, each with measured co-citation evidence.
+**Six have a unifying theorem already written and sitting unread in an adjacent field** —
+which has become the dominant finding of the project.
+
+Nineteen were then **re-tested against a harder standard**, and roughly half were damaged:
+two overturned, seven narrowed, one withdrawn. That audit, not the original catalogue, is the
+most reliable thing here. Entries carry a `standing` and an `evidence` grade, and
+string-protocol findings have survived under half the time when re-tested by citation
+intersection. Weight accordingly.
 
 A bound is rarely wrong. What is usually wrong is the list of things its derivation held
 fixed without saying so. See `METHOD.md` §8.
@@ -18,6 +24,10 @@ fixed without saying so. See `METHOD.md` §8.
 
 | File | What it is |
 |---|---|
+| `vault/` | The vault. 49 linked markdown notes, plain files, opens in Obsidian. Start at `vault/00-index.md` |
+| `vault/_lint.py` | Schema check. Run from `vault/` before committing |
+| `vault/triage.base` | Obsidian Bases view — the re-test queue, sorted by weakest evidence first |
+| `VISION.md` | The four-layer ladder: literature → computation → hypothesis → experiment |
 | `METHOD.md` | How the inquiry is run — the gap test, the co-citation audit, the claims register, verification discipline |
 | `FINDINGS.md` | Status ledger — confirmed gaps, findings with numbers, closed items, corrections log |
 | `inquiry-map.html` | The living map. Layered graph, 62 nodes, notes persist server-side |
@@ -45,7 +55,7 @@ citation list.
 
 ## The through-line
 
-Five moves recur across every field surveyed, and none of them is *build a stronger
+Six moves recur across every field surveyed, and none of them is *build a stronger
 thing*:
 
 1. **Manufacture contrast** — signal under the noise floor? Create a local disparity that survives it
@@ -71,7 +81,7 @@ Why? Someone gave it a **theorem** that fixed the denominator, and the shared fi
 merit followed within a decade.
 
 Every other gap is missing exactly that. Closing one does not need a review article. It
-needs a theorem — and in three cases the theorem already exists, unread.
+needs a theorem — and in six cases the theorem already exists, unread.
 
 ---
 
