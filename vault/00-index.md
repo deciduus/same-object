@@ -52,6 +52,17 @@ main line is not moving.
 then experiment — applied to the founding question: *simple arrangement beating brute magnitude.*
 [[buildable]] tracks what has actually reached the bottom rung.
 
+## The instrument, and the antifragile move
+
+The through-line the user named: **[[specification-instruments]]** — when you cannot predict the
+unknown, build the exact identity that specifies it. Not a debunker, an antifragile tool that
+returns a tighter specification the stranger the input. Its enumeration and exclusion steps are
+discrete, and its cores keep turning out to be integer-lattice objects — the Gittins index, Hill
+numbers, Buckingham Π-groups, citation intersection.
+
+- [[reservoir-audit]] — energy–momentum. Validated 5/5, first open case [[C11-flyby-reservoir-audit]]
+- [[specification-instruments]] — the template, and why it is antifragile rather than predictive
+
 ## Doors opened
 
 **Damaging a claim usually produces a better one, and this vault had nowhere to put it** — every
