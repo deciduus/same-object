@@ -13,6 +13,19 @@ type: computed
 Writes down the object named missing in [[G5-repair-number]], and populates it. Rests on
 [[availability-formula]]; extends [[C1-availability-living-tissue]] onto engineering systems.
 
+> **UPDATE 2026-09-03 — the curve fit is in, and it narrows Ha's regime.**
+> [[C10-healing-curve-fit]] fit seven cycled datasets. **The rate-balance case (a steady state
+> reached from either side) is supported by none of them.** Healing efficiency decays
+> monotonically with cycle number, so `k_r` is not constant — `Ha` becomes `Ha(N)`, declining,
+> and condition C4 below fails across the envelope. **`Ha` describes at most the first cycle.**
+>
+> The failure is class-dependent: microcapsule and high-crosslink systems decay onto a positive
+> floor (finite repair budget — [[kirkwood-disposable-soma]] vindicated as the right frame, and
+> still uncited), while low-crosslink vitrimers decay to zero (no steady state at all, the
+> empirical echo of the `h → 1` ratchet defect noted in §on the constitutive law). The two empty
+> polymer rows below cannot take a scalar `Ha` — each needs a **cycle label, a depletion
+> parameter, and a class tag** {depletion-floor | finite-quality-to-zero}.
+
 ---
 
 ## 1. Prior art check — none found

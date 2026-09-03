@@ -184,6 +184,12 @@
   },
   "active": "f8e74697011e4c94",
   "lastOpenFiles": [
+    "log.md.tmp.48688.4b9222e437c6",
+    "buildable.md.tmp.48688.ea4938c3bf96",
+    "questions/Q4-healing-needs-a-new-law.md.tmp.48688.8925ea05a91b",
+    "computed/C6-damage-healing-ratio.md.tmp.48688.7d5392375901",
+    "computed/C11-flyby-reservoir-audit.md",
+    "computed/C10-healing-curve-fit.md",
     "buildable.md.tmp.48688.a3f2018c2401",
     "method/reservoir-audit.md",
     "method/reservoir-audit.md.tmp.48688.a2d3d203388b",
@@ -195,11 +201,7 @@
     "gaps/G1-gradient-coupling.md.tmp.48688.5f9e1a96bf7f",
     "gaps/G1-gradient-coupling.md.tmp.48688.e2663893274f",
     "computed/C8-momentum-harvesting-metric.md",
-    "buildable.md.tmp.48688.d2e66eeae189",
-    "00-index.md.tmp.48688.da6a6364cede",
-    "00-index.md.tmp.48688.9cc954fbe228",
     "buildable.md",
-    "buildable.md.tmp.48688.a0a0c813d881",
     "questions/Q8-the-invisible-population.md",
     "questions/Q7-same-class-prediction.md",
     "questions/Q6-negative-results-in-the-vault.md",
@@ -218,8 +220,6 @@
     "method/reading-not-counting.md",
     "method/graph-view.md",
     "method/fine-structure-discrepancy.md",
-    "theorems/LaMSA-latch.md",
-    "gaps/G8-energy-per-bit-axis.md",
     "Untitled.canvas"
   ]
 }

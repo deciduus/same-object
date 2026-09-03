@@ -2,7 +2,7 @@
 name: Q4-healing-needs-a-new-law
 type: question
 arises-from: ["[[G5-repair-number]]", "[[C6-damage-healing-ratio]]"]
-status: open
+status: answered-by-C10
 ---
 
 # What replaces a healing law that cannot reach steady state?
@@ -37,7 +37,28 @@ distinguishable by experiment:
 Only the second gives a genuine rate balance in `h`. The first and third give a decaying
 envelope, which is a different mathematical object with a different steady state.
 
-## Why it might be answerable
+## Answered: [[C10-healing-curve-fit]]
+
+Seven cycled datasets fit. **Candidate 2 — a genuine rate balance reaching a nonzero steady
+state — is supported by none of them.** Healing efficiency decays monotonically with cycle
+number in every series. The correct un-healing term is not a re-damage balance; it is a
+**depleting envelope**, and *which* envelope is material-class-dependent:
+
+| Material class | Winning shape | Un-healing term |
+|---|---|---|
+| Extrinsic microcapsule | decay to a **positive floor** | **candidate 1, depletion** — a finite non-refillable reservoir, stated in the review's own words |
+| Vitrimer, high crosslink / neat imine | decay to a floor (~17–31%) | candidate 1, depletion |
+| Vitrimer, low crosslink | **exponential decay to ~0** | **candidate 3, finite quality** — no steady state |
+
+The load-bearing dataset (PMC11510012, five formulations, VERIFIED verbatim) splits by crosslink
+density: `r ≈ 0.79` clean exponential for the low-crosslink formulations, a sharp drop onto a
+floor for the rest.
+
+**So candidate 1 is real and [[kirkwood-disposable-soma]] is the right frame** — a finite repair
+budget — and it is still uncited by the self-healing literature. That is now confirmed, not
+conjectured.
+
+## Why it was answerable
 
 Cycled self-healing polymer data exists and reports **healing efficiency against cycle number**.
 Those three candidates predict different curve shapes — saturating, linear-decaying, and

@@ -3,6 +3,12 @@ name: reservoir-audit
 type: method
 ---
 
+<!-- FIRST OPEN-CASE RUN: [[C11-flyby-reservoir-audit]], 2026-09-03. The flyby anomaly.
+Excluded, of the reservoirs considered: geomagnetic tether (A≈3e6), drag (A≈30, wrong sign),
+thermal (A≈300, wrong sign, Rievers-verified), tidal (not formable, Δu=0). Sign+non-recurrence
+leave no static reservoir standing. Residual: impulsive 1-9 mN, along-track, scaling as
+2ΩR⊕/c, non-stationary in epoch. -->
+
 # The reservoir audit
 
 > **Σ inverted is a specification instrument, not a verdict instrument.** Run on five systems

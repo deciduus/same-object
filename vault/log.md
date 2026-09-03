@@ -5,6 +5,26 @@ type: method
 
 # Operations log
 
+## [2026-09-03] two free buildables run | both compounded
+
+**[[C10-healing-curve-fit]] — the curve fit that tests our own number.** Seven cycled datasets.
+The rate-balance case ([[Q4-healing-needs-a-new-law]] candidate 2) is supported by **none** of
+them; healing efficiency decays monotonically. So `k_r` is not constant, `Ha` becomes `Ha(N)`,
+and [[C6-damage-healing-ratio]] describes at most the first cycle. The failure is
+class-dependent — microcapsules and high-crosslink vitrimers deplete to a floor (Kirkwood
+confirmed and still uncited), low-crosslink vitrimers decay to zero. This **answered Q4** and
+**re-specified the paid vitrimer measurement**: measure the depletion parameter, not a scalar.
+
+**[[C11-flyby-reservoir-audit]] — the audit's first open case.** Reproduces the flyby empirical
+formula to 1.3%, then excludes every static reservoir on availability: geomagnetic tether
+A≈3×10⁶ (the tempting one — K literally contains Ω — fails hardest), drag A≈30 wrong sign,
+thermal A≈300 wrong sign (Rievers-verified against Rosetta). Sign + non-recurrence leave **no
+static reservoir standing**. Residual specification: 1–9 mN, along-track, scaling as 2ΩR⊕/c,
+non-stationary in epoch — which points at an analysis systematic first.
+
+Neither delegated. Both output files verified on disk before the agent reported done — the
+placeholder check from §7 held.
+
 ## [2026-09-03] schema | a `question` type, because the vault could only record damage
 
 Every machine field measured whether a claim **survives**. There was nowhere to put what a

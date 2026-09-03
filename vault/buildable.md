@@ -88,14 +88,16 @@ first measured `Ha` for an engineered material, and fills a row the table curren
 
 ## Fit a curve to data already published
 
-### 6. Discriminate the three healing laws
+### ~~6. Discriminate the three healing laws~~ — **DONE**
 
-From [[Q4-healing-needs-a-new-law]]. Continuum damage-healing mechanics has no interior steady
-state — nothing un-heals. The three candidate repairs predict **different shapes** for healing
-efficiency against cycle number: saturating, linear-decaying, exponentially-decaying.
+[[C10-healing-curve-fit]]. Seven cycled datasets fit. **Rate balance loses; a depleting envelope
+wins**, class-dependent — microcapsules and high-crosslink vitrimers decay to a floor
+(depletion, Kirkwood confirmed), low-crosslink vitrimers decay to zero. `Ha` becomes `Ha(N)` and
+describes at most the first cycle. Cost: zero. **Unblocked item 5** — the vitrimer measurement
+now has a specific target: measure the depletion parameter, not just a single `Ha`.
 
-Cycled self-healing polymer data reporting exactly that curve is already published. **This is a
-curve fit, not an experiment.** Cheapest real test on the list.
+**Next fetch:** the Toohey microvascular per-cycle table (cert-expired this run) would add a
+fourth material class and firm up the floor values, which three-point series leave fragile.
 
 ---
 
@@ -151,6 +153,12 @@ That is the register's discipline made computable: **specification, never mechan
 Costs nothing but arithmetic. Three conditions are written into the procedure: run the
 availability leg and not only Σ, check the *measurement* before the device, and prefix every
 negative with **"of the reservoirs considered"** — which is structural honesty, not hedging.
+
+**First open-case run done: [[C11-flyby-reservoir-audit]].** The flyby anomaly. Every static
+reservoir excluded — geomagnetic tether hardest at A ≈ 3×10⁶, and both thermal and drag fail on
+*sign* — leaving a specification, not a verdict: **1–9 mN along-track, scaling as 2ΩR⊕/c, and
+non-stationary in epoch** (because later flybys saw nothing). That last property no static field
+can have, which points at an analysis systematic first, per the procedure's own §5.
 
 ## What is not here, and why
 
