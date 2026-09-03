@@ -1,0 +1,404 @@
+<title>Load-Bearing Findings</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#f2f1ec;
+  --panel:#fbfaf7;
+  --sunk:#e8e6df;
+  --ink:#16181d;
+  --ink-2:#454b57;
+  --ink-3:#767d8b;
+  --rule:#d7d4ca;
+  --hair:#e4e1d8;
+  --finding:#1d4f7a;
+  --bio:#1f6b52;
+  --gap:#7b2f6b;
+  --spec:#a8432a;
+  --gold:#8a6410;
+  --accent:var(--finding);
+  --shadow:0 1px 2px rgba(22,24,29,.06),0 12px 32px -18px rgba(22,24,29,.30);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101318;
+    --panel:#171b22;
+    --sunk:#1e232b;
+    --ink:#e9ecf1;
+    --ink-2:#aab2c0;
+    --ink-3:#767f8e;
+    --rule:#2a3039;
+    --hair:#22272f;
+    --finding:#72abe0;
+    --bio:#5cc39c;
+    --gap:#d087c1;
+    --spec:#e0876a;
+    --gold:#d9ab52;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 14px 34px -18px rgba(0,0,0,.85);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101318;--panel:#171b22;--sunk:#1e232b;--ink:#e9ecf1;--ink-2:#aab2c0;--ink-3:#767f8e;
+  --rule:#2a3039;--hair:#22272f;--finding:#72abe0;--bio:#5cc39c;--gap:#d087c1;--spec:#e0876a;--gold:#d9ab52;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 14px 34px -18px rgba(0,0,0,.85);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Atkinson Hyperlegible",-apple-system,system-ui,sans-serif;
+  font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+h1,h2,h3,.eyebrow,.tier-h,.num,.chip,.tag{font-family:"Familjen Grotesk",system-ui,sans-serif}
+.mono,.fig-n,.eq,.stat-n,.stat-u,.prov{font-family:"Roboto Mono",ui-monospace,monospace}
+
+/* ---- masthead ---- */
+header{border-bottom:1px solid var(--rule);padding:64px 0 40px;margin-bottom:8px}
+.eyebrow{
+  font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+}
+.eyebrow::after{content:"";height:1px;flex:1;min-width:40px;background:var(--hair)}
+h1{
+  font-size:clamp(38px,6vw,64px);line-height:1.02;font-weight:700;letter-spacing:-.02em;
+  margin:0 0 22px;text-wrap:balance;
+}
+.lede{
+  font-size:clamp(18px,2.4vw,21px);line-height:1.55;color:var(--ink-2);
+  max-width:62ch;margin:0;
+}
+.lede b{color:var(--ink);font-weight:700}
+.meta{
+  margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;
+  font-family:"Roboto Mono",monospace;font-size:12.5px;color:var(--ink-3);
+}
+.meta span{display:flex;gap:7px;align-items:baseline}
+.meta b{color:var(--ink-2);font-weight:500}
+
+/* ---- headline stat band ---- */
+.band{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--hair);border:1px solid var(--rule);border-radius:14px;overflow:hidden;
+  margin:44px 0 8px;box-shadow:var(--shadow);
+}
+.stat{background:var(--panel);padding:24px 22px 20px}
+.stat-n{font-size:34px;font-weight:600;letter-spacing:-.02em;color:var(--accent);line-height:1;display:block}
+.stat-n .stat-u{font-size:16px;color:var(--ink-3);font-weight:400;letter-spacing:0}
+.stat-l{margin-top:12px;font-size:13.5px;line-height:1.4;color:var(--ink-2)}
+.stat-l b{color:var(--ink);font-weight:700}
+.stat:nth-child(2) .stat-n{color:var(--bio)}
+.stat:nth-child(3) .stat-n{color:var(--gap)}
+.stat:nth-child(4) .stat-n{color:var(--gold)}
+
+/* ---- tier ---- */
+section{padding:52px 0 8px}
+.tier-h{display:flex;align-items:baseline;gap:16px;margin:0 0 6px}
+.tier-k{
+  font-family:"Roboto Mono",monospace;font-size:13px;font-weight:600;color:var(--accent);
+  border:1px solid currentColor;border-radius:5px;padding:2px 8px;line-height:1.3;flex:none;
+}
+.tier-h h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;letter-spacing:-.015em;margin:0;text-wrap:balance}
+.tier-sub{color:var(--ink-3);font-size:15.5px;margin:2px 0 30px;max-width:66ch}
+
+/* ---- finding card ---- */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--panel);border:1px solid var(--hair);border-radius:13px;padding:26px 26px 24px;
+  position:relative;display:flex;flex-direction:column;gap:14px;
+}
+.card.lead{border-left:3px solid var(--accent)}
+.card.bio.lead{border-left-color:var(--bio)}
+.card.gap.lead{border-left-color:var(--gap)}
+.card.spec.lead{border-left-color:var(--spec)}
+.card-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.fig-n{font-size:12.5px;font-weight:600;color:var(--ink-3);letter-spacing:.04em}
+.chip{
+  font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;line-height:1.4;white-space:nowrap;
+}
+.chip.c-find{color:var(--finding);background:color-mix(in srgb,var(--finding) 13%,transparent)}
+.chip.c-bio{color:var(--bio);background:color-mix(in srgb,var(--bio) 14%,transparent)}
+.chip.c-gap{color:var(--gap);background:color-mix(in srgb,var(--gap) 14%,transparent)}
+.chip.c-spec{color:var(--spec);background:color-mix(in srgb,var(--spec) 14%,transparent)}
+.chip.c-gold{color:var(--gold);background:color-mix(in srgb,var(--gold) 16%,transparent)}
+.card h3{font-size:20px;font-weight:600;letter-spacing:-.01em;margin:0;line-height:1.24;text-wrap:balance}
+.card p{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.58}
+.card p b{color:var(--ink);font-weight:700}
+.eq{
+  display:block;background:var(--sunk);border-radius:8px;padding:12px 16px;
+  font-size:15px;font-weight:500;color:var(--ink);overflow-x:auto;white-space:nowrap;
+  border:1px solid var(--hair);
+}
+.eq .c{color:var(--ink-3)}
+.foot{
+  margin-top:2px;padding-top:13px;border-top:1px solid var(--hair);
+  font-family:"Roboto Mono",monospace;font-size:12px;color:var(--ink-3);line-height:1.5;
+}
+.foot b{color:var(--ink-2);font-weight:500}
+.prov{color:var(--spec)}
+
+/* ---- inline data table ---- */
+.dt{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:2px}
+.dt td,.dt th{padding:7px 10px;text-align:left;border-bottom:1px solid var(--hair)}
+.dt th{font-family:"Roboto Mono",monospace;font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3)}
+.dt td:last-child,.dt th:last-child{text-align:right;font-family:"Roboto Mono",monospace;font-variant-numeric:tabular-nums;color:var(--ink)}
+.dt tr:last-child td{border-bottom:0}
+
+/* ---- buildable list ---- */
+.build{display:grid;gap:1px;background:var(--hair);border:1px solid var(--rule);border-radius:13px;overflow:hidden}
+.brow{background:var(--panel);padding:20px 24px;display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:baseline}
+.brow h3{font-size:17.5px;font-weight:600;margin:0;letter-spacing:-.01em}
+.brow .cost{font-family:"Roboto Mono",monospace;font-size:13px;font-weight:600;color:var(--bio);white-space:nowrap}
+.brow p{grid-column:1/-1;margin:2px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.52;max-width:74ch}
+.brow p b{color:var(--ink);font-weight:700}
+
+/* ---- ledger ---- */
+.ledger{background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--spec);border-radius:13px;padding:8px 26px}
+.lrow{padding:16px 0;border-bottom:1px solid var(--hair);display:grid;grid-template-columns:1fr 1fr;gap:4px 26px}
+.lrow:last-child{border-bottom:0}
+.lrow .was{color:var(--spec);font-size:14.5px}
+.lrow .now{color:var(--ink-2);font-size:14.5px}
+.lrow .lbl{font-family:"Roboto Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);display:block;margin-bottom:2px}
+.lrow b{color:var(--ink);font-weight:700}
+
+/* ---- leads ---- */
+.leads{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.lead-c{background:var(--panel);border:1px solid var(--hair);border-radius:12px;padding:22px 22px 20px}
+.lead-c .q{font-family:"Roboto Mono",monospace;font-size:11.5px;color:var(--gap);font-weight:500;letter-spacing:.03em}
+.lead-c h3{font-size:17px;font-weight:600;margin:8px 0 8px;line-height:1.28;letter-spacing:-.01em}
+.lead-c p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.lead-c p b{color:var(--ink);font-weight:700}
+
+footer{border-top:1px solid var(--rule);margin-top:60px;padding:34px 0 70px;color:var(--ink-3);font-size:14px}
+footer p{margin:0 0 8px;max-width:70ch}
+footer .mono{font-size:12.5px}
+
+@media (max-width:820px){
+  .band{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .leads{grid-template-columns:1fr}
+  .lrow{grid-template-columns:1fr}
+  .brow{grid-template-columns:1fr}
+  .brow .cost{justify-self:start}
+}
+@media (prefers-reduced-motion:no-preference){
+  .card,.brow,.lead-c{transition:border-color .18s ease}
+  .card:hover{border-color:var(--rule)}
+}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Gradient-coupling inquiry &middot; state of play</p>
+  <h1>Load-Bearing Findings</h1>
+  <p class="lede">A biomimicry inquiry asked whether nature's <b>arrangement</b> can beat brute magnitude. After a literature audit, a citation-intersection pass, and a round of derivations, this is what actually holds weight &mdash; ranked by how hard it is to knock down, and honest about what was knocked down on the way.</p>
+  <div class="meta">
+    <span><b>68</b> linked notes</span>
+    <span><b>20</b> gaps &middot; 14 re-read in full</span>
+    <span><b>9</b> derivations</span>
+    <span>as of <b>2026-09-03</b></span>
+  </div>
+</header>
+
+<div class="band">
+  <div class="stat">
+    <span class="stat-n">&Sigma; &isin; [0,1]</span>
+    <div class="stat-l"><b>The founding question, answered.</b> One dimensionless number for fuel-free harvesting &mdash; exact, no approximation.</div>
+  </div>
+  <div class="stat">
+    <span class="stat-n">7<span class="stat-u">%</span></span>
+    <div class="stat-l">The reservoir audit <b>reproduces the Pioneer anomaly</b> from 1998-only inputs.</div>
+  </div>
+  <div class="stat">
+    <span class="stat-n">11 / 11</span>
+    <div class="stat-l">Same-class disagreements resolving to error &mdash; a <b>bias-immune conditional</b> that predicts &alpha;.</div>
+  </div>
+  <div class="stat">
+    <span class="stat-n">1 : 2</span>
+    <div class="stat-l">Two <b>theorems written down</b> that no one had stated &mdash; one rediscovered independently in 2024.</div>
+  </div>
+</div>
+
+<!-- TIER 1 -->
+<section>
+  <div class="tier-h"><span class="tier-k">I</span><h2>Written down</h2></div>
+  <p class="tier-sub">Results that close a gap by supplying the missing object &mdash; a theorem or a metric &mdash; rather than merely locating it. The strongest currency the project deals in.</p>
+
+  <div class="grid g2">
+    <div class="card finding lead">
+      <div class="card-top"><span class="fig-n">C5 &middot; computed</span><span class="chip c-find">identity</span></div>
+      <h3>Charnov's rule <i>is</i> the Gittins index</h3>
+      <p>Behavioural ecology's patch-leaving rule (1976) and operations research's bandit index (1979) are the <b>same object</b>, in two lines: Charnov's maximisation over residence time is literally the supremum over stopping times in the index definition.</p>
+      <span class="eq">&nu;(t) = g&prime;(t) = R*<span class="c">&nbsp;&nbsp;// leave when current index meets the alternative's</span></span>
+      <p>The travel time &tau; is neither a switching cost nor zero &mdash; it's a zero-reward prefix inside the outside arm, licensed by patches being non-revisitable. Both earlier guesses were half right.</p>
+      <div class="foot"><b>Confirmed at the hardest standard:</b> citation intersection 5 of 1,013 (0.49%) vs a 22.2% positive control &mdash; factor 45. A 2024 paper re-derived it in foraging notation with <span class="prov">zero</span> occurrences of &ldquo;Gittins.&rdquo;</div>
+    </div>
+
+    <div class="card bio lead">
+      <div class="card-top"><span class="fig-n">C8 &middot; computed</span><span class="chip c-bio">founding question</span></div>
+      <h3>One figure of merit for fuel-free harvesting</h3>
+      <p>Dynamic soaring, solar sails and tethers all extract work from a gradient with no onboard fuel and shared no metric. Now they do &mdash; from an <b>exact identity</b>, so it is bounded by construction, no linearity assumed.</p>
+      <span class="eq">&Sigma; &equiv; P<sub>useful</sub> / (F &middot; &Delta;u)&nbsp;&nbsp;&isin; [0,1]</span>
+      <p>It reproduces the soaring literature's minimum-shear condition from scratch as a check. And it split the class: a <b>kinematic</b> half where only magnitude helps (photon sail = 2v/c), and a <b>trajectory</b> half where arrangement is the only lever. That's the founding intuition made into a criterion.</p>
+      <div class="foot"><b>Corrected our own physics:</b> the note claimed a sail has no conjugate pair. False &mdash; its partner is the radiation field, &Delta;u = c.</div>
+    </div>
+
+    <div class="card finding lead">
+      <div class="card-top"><span class="fig-n">reservoir-audit &middot; method</span><span class="chip c-find">validated 5/5</span></div>
+      <h3>A reservoir audit that specifies, never verdicts</h3>
+      <p>&Sigma; inverts into a tool: a measured value above 1 isn't impossible physics, it's proof a <b>reservoir was misidentified</b>. Point it at a reported anomaly and it returns what the missing partner would have to be &mdash; a mass, a field, a flow, with a required &Delta;u and force.</p>
+      <table class="dt">
+        <tr><th>Pioneer anomaly</th><th>result</th></tr>
+        <tr><td>Solar radiation pressure</td><td>ruled out &middot; A = 6.7</td></tr>
+        <tr><td>Onboard thermal photons</td><td>survives &middot; needs 3.2%</td></tr>
+        <tr><td>Later fitted model (2012)</td><td>3.0% &middot; agree to 7%</td></tr>
+      </table>
+      <p>Run in 1998 it would not have said &ldquo;thermal.&rdquo; It would have said <b>a thermal answer needs 3.2% anisotropy</b> &mdash; a number a model can check. Someone built that model fourteen years later.</p>
+      <div class="foot"><b>The real test is the availability leg,</b> A = (F&middot;&Delta;u)/P<sub>avail</sub>, not &Sigma; alone &mdash; a correction the validation itself forced.</div>
+    </div>
+
+    <div class="card bio lead">
+      <div class="card-top"><span class="fig-n">C6 &middot; computed</span><span class="chip c-bio">no prior art</span></div>
+      <h3>The damage&ndash;healing number</h3>
+      <p>Self-healing materials have healing rates; nobody had formed the dimensionless ratio. Written down, it reduces to reliability engineering's availability &mdash; and to the same M&ouml;bius form as thermoelectric ZT.</p>
+      <span class="eq">Ha = k<sub>r</sub>/k<sub>d</sub>&nbsp;&nbsp;&rarr;&nbsp;&nbsp;A = Ha/(1+Ha) = MTBF/(MTBF+MTTR)</span>
+      <p>The reason nobody wrote it turned out to be <b>experimental, not conceptual</b>: you can't suppress healing while loading &mdash; except in vitrimers, gated by temperature. That names the next measurement. And using the law exposed a defect: set &#7717;&nbsp;=&nbsp;0 and it says healing always finishes.</p>
+      <div class="foot"><b>Three systems on one axis;</b> two rows left deliberately empty because the paired data does not exist.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 2 -->
+<section>
+  <div class="tier-h"><span class="tier-k" style="color:var(--bio)">II</span><h2>Gaps that survived the hardest test</h2></div>
+  <p class="tier-sub">Cross-domain absences confirmed by citation intersection &mdash; pulling every citer of each side and checking whether any bibliography holds both. A zero here is measured, not assumed, and each ran against a known-connected positive control.</p>
+
+  <div class="grid g2">
+    <div class="card bio lead">
+      <div class="card-top"><span class="fig-n">G6</span><span class="chip c-bio">survived both standards</span></div>
+      <h3>Multifunctionality: one word, two formalisms</h3>
+      <p>Ecology's Hill-number multifunctionality and engineering's structural-efficiency metric measure the same thing and share nothing but the word. The <b>only entry to survive both</b> full-text reading and citation intersection.</p>
+      <div class="foot"><b>0</b> across six anchor pairings, 1,033 works, coverage 77&ndash;100%. Control (a metric being imported across) reproduces at <b>17</b>.</div>
+    </div>
+    <div class="card finding">
+      <div class="card-top"><span class="fig-n">G25 &middot; G19</span><span class="chip c-find">citation-intersection</span></div>
+      <h3>Proofreading &amp; symmorphosis</h3>
+      <p>The two original strong findings, each individually inspected. <b>G25</b>: 1,463 citers pulled and bibliographies intersected &mdash; the project's cleanest zero. <b>G19</b>: all 46 citing works read; a safety-factor result derived twice, unaware.</p>
+      <div class="foot"><b>Standard set here:</b> a zero only counts once its positive control separates cleanly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 3 -->
+<section>
+  <div class="tier-h"><span class="tier-k" style="color:var(--gap)">III</span><h2>A falsifiable prediction</h2></div>
+  <p class="tier-sub">The discrepancy catalogue could not give an honest base rate &mdash; selection bias is fatal. But one thing survived that has no denominator to bias.</p>
+
+  <div class="card gap lead">
+    <div class="card-top"><span class="fig-n">Q7 &middot; from C7's 39-case catalogue</span><span class="chip c-gap">bias-immune conditional</span></div>
+    <h3>The fine structure constant will resolve to measurement error</h3>
+    <p>Every closed <b>same-class</b> disagreement in the record &mdash; two implementations of one technique &mdash; resolved to systematics. <b>Eleven for eleven</b>, across two independent passes, no counterexample. A conditional needs no denominator, so the invisible cases can only strengthen it.</p>
+    <table class="dt">
+      <tr><th>Prediction</th><th>status</th></tr>
+      <tr><td>&alpha; &mdash; Cs vs Rb recoil, 5.4&sigma;</td><td>&rarr; systematics</td></tr>
+      <tr><td>10th-order QED coefficient, 4.8&sigma;</td><td>&rarr; systematics</td></tr>
+    </table>
+    <p>Which makes that famous 5.4&sigma; <b>less</b> interesting, not more &mdash; and reprioritises the watch list toward different-class disagreements with an independent relation picking a side. The first time this project has said where <i>not</i> to look.</p>
+    <div class="foot"><b>Dated and falsifiable:</b> a third measurement resolving to real physics kills the conditional and this note with it.</div>
+  </div>
+</section>
+
+<!-- TIER 4 -->
+<section>
+  <div class="tier-h"><span class="tier-k" style="color:var(--spec)">IV</span><h2>Clean negatives that saved the work</h2></div>
+  <p class="tier-sub">A ruled-out path costs one calculation; the wrong build costs a season. These are the ones that paid for the discipline of deriving before building.</p>
+
+  <div class="grid g2">
+    <div class="card spec lead">
+      <div class="card-top"><span class="fig-n">C9 &middot; computed</span><span class="chip c-spec">do not build</span></div>
+      <h3>The moving coupling point does not beat the bound</h3>
+      <p>The idea that driving a converter's coupling point through the gradient escapes the Kedem&ndash;Caplan limit was <b>wrong, and the refutation was inside our own document.</b> Adding motion just adds a conjugate pair; the optimum still collapses to a coefficient.</p>
+      <span class="eq">ZT<sub>eff</sub> = ZT / (1 + (1&minus;&epsilon;)&middot;Pe)&nbsp;&nbsp;&le; ZT</span>
+      <p>It's a Stirling engine with a bad regenerator &mdash; and a 2014 paper on rotating thermoelectrics had already found the extra parameter. <b>Twelve years early.</b></p>
+      <div class="foot"><b>Kept:</b> that one line, saying the regenerator is the whole game &mdash; worth more than the device would have been.</div>
+    </div>
+    <div class="card spec">
+      <div class="card-top"><span class="fig-n">audit &middot; ledger</span><span class="chip c-spec">self-caught</span></div>
+      <h3>Errors we caught in ourselves</h3>
+      <p>The project's credibility rests on these, not despite them. Each was a claim stated as fact, then broken by the project's own method &mdash; usually by being forced to write a number where a word had stood.</p>
+      <div class="foot">
+        &bull; &ldquo;Kedem&ndash;Caplan sits unread&rdquo; &mdash; it's in active use<br>
+        &bull; &ldquo;578 refs, zero engineering&rdquo; &mdash; 595 refs, and <span class="prov">no titles at all</span><br>
+        &bull; neutron lifetime &ldquo;independent relation picks a side&rdquo; &mdash; it doesn't<br>
+        &bull; &ldquo;a sail has no conjugate pair&rdquo; &mdash; the radiation field, &Delta;u = c<br>
+        &bull; &ldquo;tether &rarr; planetary rotation&rdquo; &mdash; wrong below geosynchronous
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 5 -->
+<section>
+  <div class="tier-h"><span class="tier-k" style="color:var(--gold)">V</span><h2>Buildable now</h2></div>
+  <p class="tier-sub">Every row names a measurement nobody has published, tracing to a gap that survived a full-text read. Sorted by what it costs to find out.</p>
+
+  <div class="build">
+    <div class="brow">
+      <h3>Fit the healing curve</h3><span class="cost">$0 &middot; published data</span>
+      <p>The broken healing law's three candidate repairs predict three <b>different curve shapes</b> for efficiency vs cycle number. Data showing that curve is already published. Cheapest real test on the list.</p>
+    </div>
+    <div class="brow">
+      <h3>Run the reservoir audit on an open case</h3><span class="cost">$0 &middot; arithmetic</span>
+      <p>Validated five for five, Pioneer to 7%. Point it at an unresolved report and it returns a <b>specification</b> of the missing reservoir &mdash; required mass, velocity, force &mdash; not a verdict.</p>
+    </div>
+    <div class="brow">
+      <h3>Sweep the dose on a self-strengthening material</h3><span class="cost">~$100</span>
+      <p>Engineering knows the response turns over &mdash; shot peening calls it &ldquo;over-peening&rdquo; &mdash; but the mechanochemistry work reports <b>one operating point.</b> Nobody plotted the amplitude ceiling and window width.</p>
+    </div>
+    <div class="brow">
+      <h3>Salt-hydrate cycling</h3><span class="cost">~$100</span>
+      <p>Thermochemical storage publishes &ldquo;stable for ten cycles&rdquo; while batteries quote fade below 0.001%. Cycle 50+ times; <b>report fade per cycle and per day separately.</b></p>
+    </div>
+    <div class="brow">
+      <h3>Cycle a latch to failure</h3><span class="cost">~$300 &middot; printer + phone</span>
+      <p>Nobody has ever run a latch to failure &mdash; the field's 2023 review defers it; the best paper measures one cycle on a dried specimen. <b>That number does not exist for any latch, biological or printed.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- LEADS -->
+<section>
+  <div class="tier-h"><span class="tier-k" style="color:var(--gap)">&rarr;</span><h2>Open doors</h2></div>
+  <p class="tier-sub">Questions harvested from findings first filed as losses. Damaging a claim usually produces a better one; the vault had nowhere to put that until now.</p>
+
+  <div class="leads">
+    <div class="lead-c">
+      <div class="q">Q9</div>
+      <h3>&ldquo;Fuel-free&rdquo; names our ignorance, not the physics</h3>
+      <p>Absence of fuel we recognise is not absence of a reservoir. &Sigma; > 1 means a partner was misidentified &mdash; and we made that exact error about solar sails before catching it.</p>
+    </div>
+    <div class="lead-c">
+      <div class="q">Q2</div>
+      <h3>Independent rediscovery is countable</h3>
+      <p>The project keeps re-finding one event. <b>Six instances</b> &mdash; and two were the same year (1965/1965), which is a different phenomenon from a 30-year reading gap wearing the same label.</p>
+    </div>
+    <div class="lead-c">
+      <div class="q">Q1</div>
+      <h3>What decides whether a claim gets checked</h3>
+      <p>Number of groups predicts nothing. <b>Cost and publishability of the check</b> predicts everything. DAMA got two purpose-built refutations; Homestake sat twenty years. Both inputs are public.</p>
+    </div>
+    <div class="lead-c">
+      <div class="q">Q8</div>
+      <h3>The invisible population</h3>
+      <p>Metrology has a standard way of <i>not</i> resolving disagreements &mdash; expansion factors, consensus estimators. G's is 3.9. That population is huge, scheduled, and nearly fame-free.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b style="color:var(--ink-2)">Method, in one line.</b> Take two fields that describe the same move, measure how many papers cite both, and read what the number means &mdash; then try to break your own answer.</p>
+  <p class="mono">Every figure here is verified against a fetched source or marked provisional in the vault. &Sigma; = P/(F&middot;&Delta;u), Ha = k<sub>r</sub>/k<sub>d</sub>, ZT<sub>eff</sub> = ZT/(1+(1&minus;&epsilon;)Pe). &mdash; gradient-coupling inquiry, 68 notes, git-tracked.</p>
+</footer>
+</div>
