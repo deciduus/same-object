@@ -49,3 +49,13 @@ a route is blocked, swap the category of the thing doing the work rather than wa
   zero, per [[failure-modes]].
 - **Two sources agreeing is the check.** Crossref and OpenCitations are independently
   assembled, so a match is meaningful.
+
+## Two endpoint traps, found the hard way
+
+- **OpenCitations `/citation-count/<doi>` returned a constant bogus `1`** for a whole session.
+  Do not trust it. Use `/citations/<doi>` and count the returned list instead.
+- **Crossref `?select=reference` returns HTTP 400.** Pull the full record and read
+  `message.reference` from it.
+- **String counts are not citation counts.** A relaxed Crossref match for "753 works" returned
+  ~1.8M. Two catalogued figures (Alexander's "46 citations", the "753 works") were string
+  artifacts, corrected in [[stress-strength-interference]]. Only inspected intersections count.

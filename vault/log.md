@@ -5,6 +5,31 @@ type: method
 
 # Operations log
 
+## [2026-09-03] headline hardened | four unread theorems citation-tested, all survive
+
+[[C13-unread-theorem-audit]]. After [[kedem-caplan]] collapsed under an actual check, the other
+four "unread theorem" claims were tested the same way — inspected citation intersection, not the
+bare co-citer count that sank Kedem-Caplan. **All four are genuinely still-unread. None is in
+active use.** The headline pattern is hardened, not damaged further.
+
+- **Kirkwood** strongest: 0 of 5,075 self-healing citers cite it, 99.4% coverage; reverse sweep
+  0 materials venues among 368 journals.
+- **Hill-number** validated the pipeline: control (Byrnes × Jost) fired at 7, so its 0 is real.
+- **Availability** and **stress-strength** both 0, the former weaker because availability is
+  textbook not a citable paper.
+
+Two more stale vault numbers corrected in passing: Alexander 1997 is **36/39/28 citations, not
+46**, and the engineering "**753 works**" was a string artifact (relaxed match ~1.8M),
+withdrawn. The "0.25" structural-battery figure — already withdrawn in G6 — was still sitting in
+[[hill-number-multifunctionality]] and is now struck there too.
+
+Honest residual: hardened only to the citation-intersection level. A parallel derivation that
+never cites the anchor is invisible to counting; the next move on any is a full-text near-miss
+pass, not another count.
+
+Endpoint traps logged in [[citation-sources]]: OpenCitations `/citation-count/` returned a bogus
+constant 1 all session; Crossref `select=reference` 400s.
+
 ## [2026-09-03] Layer-2 batch | two gaps given constructions, both instructive
 
 **[[C14-degree-of-passivity]] narrows [[G7-how-passive]].** The naive "fraction of response

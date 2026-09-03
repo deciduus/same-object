@@ -145,7 +145,11 @@ Not catalogue entries. Numbers this project produced.
 ## Theorems sitting unread
 
 The dominant pattern in the project: **the unifying result already exists, in a literature the
-field that needs it does not read.**
+field that needs it does not read.** [[C13-unread-theorem-audit]] citation-tested the claim:
+**four of four still genuinely unread** (Kirkwood strongest, 0 of 5,075 citers at 99.4%
+coverage), none in active use like [[kedem-caplan]] turned out to be. The pattern is hardened —
+but only to the citation-intersection level; a parallel derivation that never cites the anchor
+is still invisible to it.
 
 - [[kedem-caplan]] — degree of coupling (1965); thermoelectric ZT is algebraically a special case
 - [[availability-formula]] — MTBF/(MTBF+MTTR) *is* the photosystem repair steady state
