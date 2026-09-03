@@ -349,3 +349,56 @@ builds the orthogonal measurement.
 For any open row in this project, the question is not "how big is the anomaly" but: **what
 measurement would be insensitive to the thing being disputed?** That is the design target.
 
+---
+
+## 11. The synonym trap — a required step
+
+**Discovered the hard way, and it threatens every co-citation claim in this project.**
+
+    "Miner's rule"     AND "bone"  ->  0
+    "Palmgren-Miner"   AND "bone"  ->  6
+
+Identical concept. Different name. **One query manufactures a zero-crossing that does not
+exist.**
+
+### The required step
+
+Before reporting any zero, re-run it against **every common name for the concept on both
+sides**, including:
+
+- Eponymous vs descriptive forms ("Miner's rule" vs "linear damage accumulation")
+- Single-name vs hyphenated-attribution forms ("Miner" vs "Palmgren-Miner")
+- The field's own jargon vs the neighbouring field's term for the same object
+- British/American and older/newer terminology
+
+A zero survives only if it survives all of them.
+
+### Which prior findings are safe
+
+| Finding | Robustness |
+|---|---|
+| Alexander mixed chains vs stress-strength interference | **Strong** — all 46 citing works individually inspected |
+| Multifunctionality | **Strong** — five independent query formulations, all zero |
+| Peak-to-average vs metabolic scope | **Strong** — true co-citation, plus a 159-work internal control |
+| Criticality as design | **Strong** — reference-list audit, not a term query |
+| The rest | **Re-run required** |
+
+### Positive controls now available
+
+Mortality laws vs reliability theory came back **CLOSED**: 218 works co-cite Gompertz and
+Weibull; 35 co-cite Weibull with the reliability-theory-of-aging paper. Against **0** for the
+confirmed finds.
+
+**The signal separates cleanly.** That is what makes the zeros meaningful — and it is why a
+control should be run alongside any new gap claim, not just the claim itself.
+
+### One-way bridges are still gaps
+
+That same control is closed in only one direction. Of 633 works citing the reliability
+theory of aging, **6 are reliability engineering** — under 1%. Biology imported the
+engineering wholesale; engineering never imported back, and so has not adopted biology's
+late-life mortality plateau or heterogeneous-redundancy results.
+
+**Classify every result as TRUE GAP / ONE-WAY BORROWING / CLOSED.** A one-way borrowing is
+a real gap in the unread direction, and it is easy to mistake for a closed one.
+

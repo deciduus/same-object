@@ -225,6 +225,53 @@ algorithm."
 The unclaimed piece is the criterion in `METHOD.md` §9 applied as a pre-transfer screening
 step. Honest framing: methodology packaging on 111-year-old machinery, not a discovery.
 
+### Positive control · mortality laws and reliability theory — CLOSED
+Biology's Gompertz law and engineering's Weibull distribution are the same hazard function.
+**Co-citation: 218** (Gompertz-Weibull) and **35** (Weibull with the reliability theory of
+aging), against **0** for this project's confirmed finds. The signal separates cleanly —
+this is the calibration control.
+
+**But closed one-way.** Of 633 works citing the reliability theory of aging, **6 are
+reliability engineering** — under 1%. The unread direction is engineering never adopting
+biology's late-life mortality plateau or heterogeneous-redundancy results.
+
+**The explanation is worth keeping.** Organisms follow Gompertz because they are born with a
+**high initial damage load**; manufactured devices follow Weibull because they start
+near-defect-free. Same failure law, different initial conditions.
+
+*(Contested: the late-life plateau itself. An age-misreporting rate of 1 in 10,000
+reproduces it artifactually, and French data show continued increase past 105.)*
+
+### G23 · Hormesis has no engineering formalism — an asymmetry, not an absence
+**The original hypothesis was wrong.** Engineering does now build stress-responsive
+strengthening: mechanophore chemistry, and a 2021 polymer gel that self-strengthens under
+vibration with a **66x modulus increase**, localizing along the stress distribution and
+explicitly framed as bone-like.
+
+So the asymmetry is **vocabulary, not capability.** Both fields build adaptive strengthening;
+only biology has the quantitative dose-response apparatus — the ~30-60% amplitude ceiling
+and the 10-20x stimulatory window width.
+
+Co-citation: `"shot peening" AND "hormesis"` = **0**; `"self-healing" AND "hormesis"` = **2**.
+
+Materials scientists building dose-dependent adaptive strengthening are not using hormesis's
+formalism, and hormesis's claim that the amplitude ceiling is "highly conserved and remains
+to be elucidated" is exactly what a mechanophore system could test.
+
+*(Honest note: hormesis is genuinely contested in regulatory toxicology. Do not present it as
+settled.)*
+
+### G24 · Miner's rule vs bone fatigue — thin, and a cautionary tale
+Only **6** works over ~28 years connect linear cumulative-damage fatigue theory to bone.
+Not a zero-crossing, but thin.
+
+The sharper sub-question: **Miner's rule assumes damage is irreversible and additive. Bone
+violates both** — it remodels. The known failure modes of Miner's rule (load-sequence
+effects, non-linearity) mapping onto bone's remodeling response is unexplored, and bone is
+the one tissue that both accumulates fatigue damage and hormetically strengthens against it.
+
+**This candidate produced the synonym-trap discovery.** See `METHOD.md` §11.
+
 ---
 
 ## Key findings with numbers
