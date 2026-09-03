@@ -12,7 +12,8 @@ Checks:
 import io, os, re, sys
 
 STANDING = {"live", "narrowed", "withdrawn", "overturned"}
-EVIDENCE = {"citation-intersection", "string-protocol", "single-review", "not-assessed"}
+EVIDENCE = {"citation-intersection", "full-text-read", "string-protocol",
+            "single-review", "not-assessed"}
 RETIRED  = {"holds", "weakened", "collapsed"}
 TYPES    = {"gap", "move", "method", "theorem", "computed", "index"}
 CROSSES  = {"nothing": 0, "word": 1, "metaphor": 2,

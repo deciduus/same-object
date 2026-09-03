@@ -24,8 +24,12 @@ Run `python _lint.py` from this directory before committing.
 ## Reading the standings
 
 `standing` is a **closed vocabulary**: live, narrowed, withdrawn, overturned. `evidence` is
-too: citation-intersection, string-protocol, single-review, not-assessed. Both are enforced by
-the lint. Prose lives in `note`, never in a machine field.
+too, strongest first: **citation-intersection, full-text-read, string-protocol, single-review,
+not-assessed.** Both are enforced by the lint. Prose lives in `note`, never in a machine field.
+
+`full-text-read` means the primary sources were **read**, not counted — the standard the
+symmetry rule demands of a withdrawal. It caught two errors in one entry that no count could
+have: see [[G11-plant-gravisensing]].
 
 **String-protocol findings have survived under half the time when re-tested by
 [[citation-intersection]].** Weight accordingly.
@@ -66,6 +70,7 @@ Not catalogue entries. Numbers this project produced.
 - [[G7-how-passive]] — *string-protocol* — Holds with one crack. The passivity-ladder sub-claim is UNVERIFIED - needs citation tracing, lookup rate-limited.
 
 ### Narrowed
+- [[G11-plant-gravisensing]] — *full-text-read* — Restored and restated. The withdrawal misdescribed its own source; the original claim was off by 100x. Neither was catchable by counting.
 - [[G17-overconfident-uncertainties]] — *citation-intersection* — Restored with correction. A citation is not a follow-up. Specimen case for the symmetry rule.
 - [[G4-criticality-as-design]] — *single-review* — Field-level claim false. The 578-reference review's zero-engineering bibliography may still hold as a single-review omission.
 - [[G12-latch-fatigue]] — *string-protocol* — Restored and narrowed. A spring is not a latch. Cycles-to-failure for a latch contact surface remains unmeasured.
@@ -73,9 +78,6 @@ Not catalogue entries. Numbers this project produced.
 - [[G21-dimensionless-regime-map]] — *string-protocol* — Narrowed to: no tabulated regime map with crossover conditions. Buckingham is a surname homograph.
 - [[G22-scale-transfer-triage]] — *string-protocol* — Two agents read Perricone 2021 differently; the full-text read is better evidence. Surviving: no formal Pi-group screening step.
 - [[G9-discrepancy-base-rate]] — *string-protocol* — Half wrong: metrology dark-uncertainty and epidemiological triangulation cover the class. The base rate itself has never been computed.
-
-### Withdrawn
-- [[G11-plant-gravisensing]] — *not-assessed* — Withdrawn as a synonym artifact, but nobody read past the abstract. Third over-withdrawal, NOT yet re-examined.
 
 ### Overturned
 - [[G27-collective-decision]] — *string-protocol* — Overturned. The zero was anchored on Paxos, an algorithm name rather than a literature. Message complexity may still be untested.
@@ -106,6 +108,8 @@ field that needs it does not read.**
 ## Open work
 
 1. **[[citation-intersection]] the eight string-protocol survivors.** On present base rates, expect two or three to fall.
-2. **Re-read [[G11-plant-gravisensing]] properly** — the third over-withdrawal, still not re-examined.
+2. **Derive the minimum detectable inclination for an active granular sensor** — the restated
+   [[G11-plant-gravisensing]]. A Berg-Purcell-shaped calculation against an *active* bath at
+   T_eff ≈ 10 T. All the measured inputs are published; the calculation is not.
 3. **Trace citers of the nuclear passivity ladder** — [[G7-how-passive]] sub-claim, rate-limited before completing.
 4. **Extend [[kedem-caplan]] past linear response** — the open research item behind [[G1-gradient-coupling]].

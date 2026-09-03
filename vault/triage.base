@@ -2,7 +2,7 @@ filters:
   and:
     - type == "gap"
 formulas:
-  weakest_evidence: 'if(evidence == "string-protocol" or evidence == "not-assessed", "re-test", "")'
+  weakest_evidence: if(evidence == "string-protocol" or evidence == "not-assessed", "re-test", "")
 properties:
   note.contact-surface:
     displayName: Contact
@@ -33,7 +33,7 @@ views:
       - file.name
       - evidence
       - contact-surface
-      - note
+      - note.note
     sort:
       - property: evidence
         direction: ASC
@@ -47,4 +47,4 @@ views:
       - file.name
       - standing
       - evidence
-      - note
+      - note.note
