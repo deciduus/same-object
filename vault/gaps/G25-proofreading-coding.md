@@ -1,0 +1,50 @@
+---
+name: G25-proofreading-coding
+type: gap
+contact-surface: 16 of 416, zero coding-theory content
+crosses: nothing
+direction: none
+topology: disjoint
+evidence: citation intersection
+status: strongest
+---
+
+# Kinetic proofreading and coding theory
+
+> Both fields quantify **energy paid per unit error suppression**, in kT. Neither reads the other.
+
+## Contact surface — measured properly
+
+All 1,463 papers citing Hopfield's 1974 proofreading paper were pulled and their reference
+lists intersected against Shannon.
+
+| | |
+|---|---|
+| citers with reference lists available | 416 |
+| ...also citing Shannon | **16 (3.8%)** |
+| ...with "Shannon" in the title | **0** |
+| ...mentioning coding theory, channel capacity, LDPC, Hamming | **0 each** |
+| `"proofreading" AND "rate-distortion"` | **0** |
+
+The sixteen cite Shannon for *entropy*, never the channel coding theorem.
+
+**The sharpest detail:** 33 papers in the proofreading literature use the word **"decoding."
+Every one means the ribosome's A-site.** The vocabulary collides exactly; the formalism never
+meets.
+
+## What is specifically absent
+
+The shared axis. Three canonical bounds — 1948, 1961, 2015 — all in kT per nat, differing only
+in whether the nat is transmitted, erased, or discarded. Built out in [[C3-energy-error-axis]].
+
+## Why this is the project's strongest finding
+
+It is the only gap measured by [[citation-intersection]] at full depth, and it survived
+[[failure-modes|synonym re-testing]] intact. Contrast [[positive-controls]]: DNA data storage
+co-cites error-correcting codes at 5.4% and reports results as a fraction of Shannon capacity.
+This has none of the closed-gap signature.
+
+## Next probe
+
+The T-cell discrimination literature, where proofreading models and mutual-information
+estimates of receptor signalling already coexist.
