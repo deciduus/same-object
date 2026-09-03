@@ -1,0 +1,201 @@
+# Method
+
+How this inquiry is run. Written down because the method turned out to be as much the
+output as the findings.
+
+---
+
+## 1. The gap-hunting test
+
+We are looking for one specific thing: **a principle that multiple fields discovered
+independently, quantified in their own vocabulary, with no shared figure of merit and no
+cross-citation.**
+
+The failure mode is obvious and must be guarded against: once you are looking for
+unifying principles, you find them everywhere, because almost any two things can be
+described abstractly enough to sound like the same move. That produces a theory of
+everything that predicts nothing.
+
+A candidate is only a real gap if **all three** hold:
+
+1. **Each field has its own quantified metric.** Not a vibe — a number, measured and
+   published. Catalytic cycles until replacement. Fade per cycle. Turndown ratio.
+2. **The metrics are the same quantity** under different names. You could put them on one
+   axis today without inventing anything.
+3. **The citation networks genuinely do not overlap.** This is checkable, not
+   impressionistic. See §2.
+
+If only (1) holds, it is an analogy. Say so and keep it out of the gaps list.
+
+### The positive control
+
+**Stochastic resonance** is the case where the cross-domain synthesis *did* get written —
+discovered in climate science (~1981), found in crayfish and paddlefish, then engineering,
+then unified in a *Reviews of Modern Physics* article in 1998. That is what a closed gap
+looks like, and it proves the pattern is real.
+
+### What closes a gap
+
+The strongest single result of this project. **Work extracted per bit came back NOT a
+gap** — the metric η = W/(k_BT·I) is shared across colloidal, single-electron, cavity-QED
+and NV-centre platforms, which are directly comparable despite sharing no hardware.
+
+Why? Sagawa and Ueda gave it a **theorem** rather than a convention. Fix the denominator
+and the shared figure of merit follows within a decade.
+
+**Every other gap on the list is missing exactly that.** Closing one does not require a
+review article. It requires a theorem.
+
+And in three cases the theorem already exists, unread in an adjacent field:
+
+| Gap | The unread result |
+|---|---|
+| Gradient coupling | Kedem–Caplan degree of coupling (1965) — provably contains thermoelectric ZT: q² = ZT/(1+ZT) |
+| Repair vs durability | Availability A = MTBF/(MTBF+MTTR) ≡ photosystem steady state k_REP/(k_REP+k_PI) |
+| Repair vs durability | Kirkwood's disposable soma theory (1977) — unread by self-healing materials |
+| Multifunctionality | Ecology's Hill-number N-function formalism — mathematically domain-neutral |
+
+---
+
+## 2. The co-citation audit
+
+The methodological upgrade that turned this from pattern-noticing into measurement.
+
+Take two literatures that describe the same move. Query how many papers cite both.
+**Report the number. Zero is a finding.**
+
+Run against OpenAlex (`api.openalex.org`) or Crossref (`api.crossref.org`) — both are
+free, unmetered, and do not require a general web search budget.
+
+Also useful: **reference-list audits.** Take a major review in field A and count how many
+of its references come from field B. A 578-reference *Reviews of Modern Physics*
+colloquium on biological criticality cites zero engineering work. That single number
+carries more weight than any amount of argument.
+
+Three tables from this project are publishable as-is with nothing but these queries:
+
+- The gradient-harvesting zero table
+- The multifunctionality zero table
+- The 578-reference criticality audit
+
+---
+
+## 3. The claims register
+
+For turning reported behaviors into testable physics. Three columns:
+
+1. **Reported behavior**, stated as a physical observable with units where possible.
+2. **Candidate mechanisms** that produce it, each with real numbers and its scaling law.
+3. **The discriminating measurement** — what separates candidate A from candidate B.
+
+The third column is what makes it a research instrument rather than a list. A row without
+one is a note, not an entry.
+
+### The discipline that makes it work
+
+**Testimony sets the specification. It never sets the mechanism.** That separation is why
+the register stays valid regardless of how any account is eventually assessed — the rows
+are about physics, and physics does not depend on who reported what.
+
+### Three outcomes, all useful
+
+| Outcome | What it means | What you do |
+|---|---|---|
+| Reduces to ordinary physics | The observable carries no discriminating information | Stop spending attention. Record the reduction. |
+| Multiple live candidates | Several mechanisms fit | Run the discriminating protocol |
+| No candidate at any magnitude | Nothing known produces this, and you can say why | The genuine anomaly, now sharply stated |
+
+Enter behaviors only as observables. "Excludes matter at ~1 m in open air" is a row.
+"Uses an unknown energy source" is not — it names an absence, and absences cannot be
+measured.
+
+---
+
+## 4. Verification discipline
+
+Two research failures occurred in this project and both had the same tell: **very
+specific numbers with no URL that produced them.**
+
+- One agent invented a paper attribution.
+- One agent presented unfetched figures as sourced.
+
+### The rule
+
+A figure is quotable only if the source names the fetch that yielded it. Everything else
+is marked `UNVERIFIED` or stays out.
+
+Require every reported number to carry one of:
+
+- `VERIFIED` — fetched this session, with the URL that produced it
+- `UNVERIFIED` — stated from memory or a secondary route, do not publish
+
+When a paywall blocks extraction, the correct answer is "I could not get this," never a
+reconstruction from memory.
+
+### Why this matters beyond hygiene
+
+It is the same principle the discrepancy survey produced: **prior-choice fragility is
+diagnostic.** A number that moves depending on how you obtained it was never a
+measurement. That applies to research pipelines exactly as it applies to torsion balances.
+
+---
+
+## 5. Reading a discrepancy
+
+From the survey of persistent inter-method disagreements. Four features now have
+empirical support:
+
+1. **Same-method disagreements are systematics, essentially always.** Two implementations
+   of one technique disagreeing offers no new physics — only a shared-model error one side
+   got wrong. Caesium vs rubidium recoil (5.4σ). Two gravity methods in one lab (2.7σ).
+2. **Single-group claims resolve against the claimant.** With a corollary: when the
+   measurement is cheap enough for outsiders and outsiders still have not confirmed it
+   after a decade, *the absence is the result.*
+3. **Prior-choice fragility is diagnostic.** A lensing result went from a 2% measurement
+   to an 8% one purely by relaxing an assumption, with no new data.
+4. **The interesting survivors are over-determined.** The neutron lifetime matters because
+   an independent relation over-determines it and picks a side. G is *less* interesting
+   than its 13σ suggests, because nothing over-determines it.
+
+### How discrepancies actually end
+
+Not with better instruments. Deuterium abundance scattered over an order of magnitude in
+the 1990s with rival camps, and resolved through **ruthless target selection and blind
+analysis**. The kilogram resolved because two genuinely different methods were forced to
+agree **as a precondition for redefinition**.
+
+The transferable finding: **institutionalize cross-method agreement as a requirement.**
+
+---
+
+## 6. The analytical frame
+
+Five moves recur across every field surveyed. None of them is "build a stronger thing."
+All five are **structural** rather than **magnitude** moves — they change the arrangement,
+not the amount.
+
+| Move | Statement |
+|---|---|
+| 01 · Manufacture contrast | Signal under the noise floor? Don't amplify — create a local disparity that survives it |
+| 02 · Use the noise | Efficiency is often non-monotonic in noise, with an optimum well above zero |
+| 03 · Separate timescales | Don't build a faster actuator; decouple slow loading from fast release |
+| 04 · Change the actor | When a theorem blocks the route, swap the category of the thing doing the work |
+| 05 · Work inside the noise | Three postures — suppress, exploit, redistribute. Each community knows one. |
+
+Engineering culture defaults to raising signal or lowering noise. Both are magnitude
+moves. Evolution cannot turn up the power, so it searches arrangement instead — which is
+why it keeps finding these first.
+
+---
+
+## 7. Running the agents
+
+- **Fan out on independent roots.** Parallel agents on non-overlapping topics; never two
+  on the same literature.
+- **Ask for the negative result explicitly.** "If no unifying framework exists, say so
+  plainly — that absence is the deliverable." Without this they pad.
+- **Demand co-citation counts** as the primary deliverable, not prose.
+- **Ask them to correct the premise.** Several briefs contained errors that agents caught
+  precisely because they were told to.
+- **Watch for placeholder returns.** An agent that reports "I'll wait for the surveys to
+  land" has not done the work. Send it back.

@@ -1,0 +1,887 @@
+<title>Function, Mechanism, Test</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Karla:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#f4f2ee;
+  --card:#fffefb;
+  --sunk:#e7e3db;
+  --ink:#1a1714;
+  --ink-2:#4b453d;
+  --ink-3:#7d766b;
+  --rule:#c9c2b6;
+  --hair:#ddd8ce;
+  --accent:#9a2d1f;
+  --accent-soft:#f2ded9;
+  --yes:#2c5f3a;
+  --yes-bg:#dde8de;
+  --no:#8f2a20;
+  --no-bg:#f2dedb;
+  --part:#8a6209;
+  --part-bg:#f3e7cd;
+  --cool:#1f4d66;
+  --cool-bg:#dde8ee;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14120f;
+    --card:#1c1a16;
+    --sunk:#242119;
+    --ink:#f0ebe3;
+    --ink-2:#b9b1a4;
+    --ink-3:#877f72;
+    --rule:#3a352c;
+    --hair:#2a2620;
+    --accent:#e0715c;
+    --accent-soft:#3a1b15;
+    --yes:#7dc294;
+    --yes-bg:#152b1d;
+    --no:#e08477;
+    --no-bg:#331813;
+    --part:#dcb055;
+    --part-bg:#33280d;
+    --cool:#79b6d4;
+    --cool-bg:#152932;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14120f;
+  --card:#1c1a16;
+  --sunk:#242119;
+  --ink:#f0ebe3;
+  --ink-2:#b9b1a4;
+  --ink-3:#877f72;
+  --rule:#3a352c;
+  --hair:#2a2620;
+  --accent:#e0715c;
+  --accent-soft:#3a1b15;
+  --yes:#7dc294;
+  --yes-bg:#152b1d;
+  --no:#e08477;
+  --no-bg:#331813;
+  --part:#dcb055;
+  --part-bg:#33280d;
+  --cool:#79b6d4;
+  --cool-bg:#152932;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:"Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px 100px}
+
+.mast{padding:58px 0 0}
+.doctype{
+  font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 22px;
+}
+h1{
+  font-family:"Zilla Slab",Georgia,serif;font-weight:700;
+  font-size:clamp(2.3rem,5.8vw,3.9rem);line-height:1;letter-spacing:-.02em;
+  margin:0 0 20px;text-wrap:balance;
+}
+.lede{font-size:clamp(1.02rem,2.1vw,1.16rem);line-height:1.55;color:var(--ink-2);max-width:60ch;margin:0 0 26px}
+.mast-rule{height:3px;background:var(--ink);margin:0 0 10px}
+.mast-sub{height:1px;background:var(--rule);margin:0 0 14px}
+.mast-meta{
+  display:flex;flex-wrap:wrap;gap:8px 26px;padding-bottom:44px;
+  font-family:"Roboto Mono",monospace;font-size:11px;color:var(--ink-3);letter-spacing:.03em;
+}
+
+section{margin:0 0 62px}
+.sec-head{margin:0 0 26px}
+.sec-tag{
+  font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 7px;
+}
+h2{
+  font-family:"Zilla Slab",Georgia,serif;font-weight:600;
+  font-size:clamp(1.5rem,3.3vw,2.05rem);line-height:1.12;letter-spacing:-.01em;
+  margin:0;text-wrap:balance;
+}
+.sec-dek{color:var(--ink-3);font-size:14.5px;margin:7px 0 0;max-width:66ch}
+p{margin:0 0 16px;max-width:68ch}
+strong{font-weight:700;color:var(--ink)}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+code,.num{font-family:"Roboto Mono",monospace;font-size:.88em}
+code{background:var(--sunk);padding:1px 5px;border-radius:2px}
+
+/* four moves */
+.moves{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:760px){.moves{grid-template-columns:1fr}}
+.move{
+  background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--accent);
+  padding:20px 22px;
+}
+.move-n{
+  font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 8px;
+}
+.move h3{font-family:"Zilla Slab",Georgia,serif;font-size:1.2rem;font-weight:600;margin:0 0 10px;line-height:1.2}
+.move p{font-size:14.5px;color:var(--ink-2);margin:0 0 10px;max-width:none}
+.move p:last-child{margin-bottom:0}
+.move .egs{
+  font-family:"Roboto Mono",monospace;font-size:11.5px;color:var(--ink-3);
+  border-top:1px solid var(--hair);padding-top:9px;line-height:1.5;
+}
+
+/* register */
+.spec{
+  border:1px solid var(--rule);background:var(--card);
+  margin:0 0 26px;
+}
+.spec-head{
+  display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;justify-content:space-between;
+  padding:16px 22px;border-bottom:1px solid var(--rule);background:var(--sunk);
+}
+.spec-id{
+  font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);
+}
+.spec-head h3{font-family:"Zilla Slab",Georgia,serif;font-size:1.25rem;font-weight:600;margin:4px 0 0;line-height:1.2;width:100%}
+.verdict{
+  font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;padding:3px 9px;border-radius:2px;font-weight:500;white-space:nowrap;
+}
+.v-yes{background:var(--yes-bg);color:var(--yes)}
+.v-no{background:var(--no-bg);color:var(--no)}
+.v-part{background:var(--part-bg);color:var(--part)}
+
+.spec-body{padding:20px 22px}
+.zone-lbl{
+  font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 10px;
+}
+.mechs{display:flex;flex-direction:column;gap:0;margin:0 0 22px}
+.mech{
+  display:grid;grid-template-columns:1fr 210px;gap:8px 20px;
+  padding:12px 0;border-top:1px solid var(--hair);align-items:start;
+}
+.mech:first-of-type{border-top:1px solid var(--rule)}
+.mech-name{font-weight:600;font-size:15px;margin:0 0 4px}
+.mech-note{font-size:14px;color:var(--ink-2);margin:0;max-width:none}
+.mech-num{
+  font-family:"Roboto Mono",monospace;font-size:12.5px;color:var(--ink);
+  background:var(--sunk);padding:8px 11px;border-radius:2px;line-height:1.5;
+  font-variant-numeric:tabular-nums;
+}
+@media(max-width:700px){.mech{grid-template-columns:1fr}}
+
+.test{
+  background:var(--accent-soft);border-left:3px solid var(--accent);
+  padding:16px 20px;
+}
+.test p{margin:0;font-size:14.5px;max-width:none}
+.test p+p{margin-top:9px}
+
+/* scaling callout */
+.scaling{
+  background:var(--card);border:1px solid var(--rule);padding:26px 28px;margin:0 0 24px;
+}
+.scaling h3{font-family:"Zilla Slab",Georgia,serif;font-size:1.3rem;font-weight:600;margin:0 0 14px}
+.eq{
+  font-family:"Roboto Mono",monospace;font-size:15px;text-align:center;
+  background:var(--sunk);padding:16px 12px;margin:16px 0;border-radius:2px;
+  overflow-x:auto;white-space:nowrap;
+}
+.eq b{color:var(--accent);font-weight:500}
+
+/* table */
+.tbl-scroll{overflow-x:auto;border:1px solid var(--rule);background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th{
+  font-family:"Roboto Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);text-align:left;font-weight:500;
+  padding:12px 16px;border-bottom:1px solid var(--rule);background:var(--sunk);
+}
+td{padding:12px 16px;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--ink);font-weight:500}
+
+/* protocol */
+.protos{display:flex;flex-direction:column;gap:0}
+.proto{
+  display:grid;grid-template-columns:32px 1fr;gap:16px;
+  padding:15px 0;border-bottom:1px solid var(--hair);
+}
+.proto:first-child{border-top:1px solid var(--rule)}
+.proto-n{font-family:"Roboto Mono",monospace;font-size:12px;color:var(--accent);padding-top:3px}
+.proto h3{font-size:15px;font-weight:700;margin:0 0 4px;font-family:"Karla",sans-serif}
+.proto p{font-size:14.5px;color:var(--ink-2);margin:0;max-width:none}
+.proto .star{
+  display:inline-block;font-family:"Roboto Mono",monospace;font-size:10px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  border:1px solid var(--accent);padding:1px 6px;border-radius:2px;margin-left:8px;vertical-align:2px;
+}
+
+.note{
+  background:var(--cool-bg);border-left:3px solid var(--cool);
+  padding:20px 24px;margin:0 0 24px;
+}
+.note h3{
+  font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--cool);margin:0 0 11px;
+}
+.note p{font-size:14.5px;margin:0 0 11px}
+.note p:last-child{margin-bottom:0}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="doctype">Working register · Reported behavior → candidate mechanism → discriminating test</p>
+  <h1>Function, Mechanism, Test</h1>
+  <p class="lede">A register for turning reported device behaviors into physics you can measure. Provenance sets the specification. It never sets the mechanism. Rows survive regardless of what any account turns out to be worth.</p>
+  <div class="mast-rule"></div>
+  <div class="mast-sub"></div>
+  <div class="mast-meta">
+    <span>Rev. 2 · 3 September 2026</span>
+    <span>5 specs entered · 4 reduced</span>
+    <span>9 discriminating protocols</span>
+    <span>Third of three · biomimicry survey</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">Part I — The organizing principle</p>
+    <h2>Four moves that keep winning</h2>
+    <p class="sec-dek">Extracted from seven literature sweeps across physics, biology, and instrumentation. None of them is "build a stronger thing."</p>
+  </div>
+
+  <p>These recurred independently across fields that do not cite one another. That is the useful finding — not any single result, but that separate disciplines each discovered the same handful of structural moves and none of them named it.</p>
+
+  <div class="moves">
+    <div class="move">
+      <p class="move-n">Move 01</p>
+      <h3>Manufacture contrast</h3>
+      <p>When the signal sits under the noise floor, don't amplify it. Create a local disparity that survives the floor.</p>
+      <p>A plant cell cannot feel its own weight — so it grows a dense starch grain whose displacement costs a few <code>k<sub>B</sub>T</code>. LIGO cannot make the wave bigger — so it squeezes the vacuum and relocates the noise.</p>
+      <p class="egs">Statoliths · squeezed light · magnetosome chains · dense-particle sensing</p>
+    </div>
+    <div class="move">
+      <p class="move-n">Move 02</p>
+      <h3>Use the noise</h3>
+      <p>The engineering reflex is to suppress it. Repeatedly wrong. Transport efficiency and detection thresholds are often <em>non-monotonic</em> in noise, with an optimum well above zero.</p>
+      <p>A statolith pile should jam below a yield angle. Cellular agitation fluidizes it into a continuous angle sensor. Quantum transport peaks at nonzero dephasing, confirmed on three hardware platforms.</p>
+      <p class="egs">ENAQT · active granular fluidization · stochastic resonance · self-tuned criticality</p>
+    </div>
+    <div class="move">
+      <p class="move-n">Move 03</p>
+      <h3>Separate the timescales</h3>
+      <p>Don't build a faster actuator. Decouple slow loading from fast release, and let an instability do the work.</p>
+      <p>Muscle tops out near 500 W/kg; latch-and-spring beats it by orders of magnitude. The fern sporangium needs no crossbar at all — fast elastic recoil and slow viscous return differ enough to act as an escapement, loaded by evaporation at zero metabolic cost.</p>
+      <p class="egs">LaMSA latches · snap-buckling · cavitation catapults · poroelastic bypass</p>
+    </div>
+    <div class="move">
+      <p class="move-n">Move 04</p>
+      <h3>Change what does the work</h3>
+      <p>When a theorem or a scaling law blocks the direct route, swap the category of the thing doing the work rather than pushing harder on it.</p>
+      <p>A mechanical mirror cannot move fast enough for the dynamical Casimir effect — so make the boundary a boundary <em>condition</em> with no mass, and win by twelve orders of magnitude. You cannot spin a medium fast enough for superradiance — so modulate it in time.</p>
+      <p class="egs">Circuit DCE · Floquet rotation · time-varying media · geometry as material</p>
+    </div>
+  </div>
+
+  <p style="margin-top:26px">The common thread is worth stating precisely, because it is the operational form of "innovate like nature." Every one of these is a <strong>structural</strong> move, not a <strong>magnitude</strong> move. Engineering culture defaults to raising signal or lowering noise — both magnitude. Evolution cannot turn up the power, so it searches arrangement instead, which is why it keeps finding these first.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">Part II — The register</p>
+    <h2>Three specifications, entered</h2>
+    <p class="sec-dek">Each behavior stated as an observable, with every candidate mechanism that produces it, its real magnitude, and the measurement that separates candidates.</p>
+  </div>
+
+  <div class="spec">
+    <div class="spec-head">
+      <span class="spec-id">Spec 01</span>
+      <span class="verdict v-no">Not achievable as stated</span>
+      <h3>A field that excludes matter — a region you cannot reach into</h3>
+    </div>
+    <div class="spec-body">
+      <p class="zone-lbl">Candidate mechanisms</p>
+      <div class="mechs">
+        <div class="mech">
+          <div>
+            <p class="mech-name">Flux pinning in a type-II superconductor</p>
+            <p class="mech-note">The closest real experience to an invisible barrier. Quantized vortices pin to material defects, so any translation <em>or rotation</em> costs condensation energy — it resists tilt, unlike ordinary magnetic levitation. Feels like the object is locked into empty space.</p>
+          </div>
+          <div class="mech-num">10–30 N/cm²<br>stiffness 1–20 N/mm<br>needs T &lt; 92 K, cm gaps</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Diamagnetic levitation</p>
+            <p class="mech-note">The only mechanism here that excludes <em>all</em> ordinary matter, because everything has a diamagnetic component. This is the levitating-frog experiment. But it works inside a bore, not in open air.</p>
+          </div>
+          <div class="mech-num">B·∇B ≈ 1400 T²/m<br>≈ 16 T in a 32 mm bore<br>bismuth ≈ 20× easier</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Acoustic levitation / acoustophoretic traps</p>
+            <p class="mech-note">Real and increasingly sophisticated — single-sided holographic traps can hold and steer dozens of particles. But trapped objects must be smaller than half a wavelength, and the pressure is minuscule.</p>
+          </div>
+          <div class="mech-num">≈ 50 Pa at 165 dB<br>= 5 × 10⁻³ N/cm²<br>objects ≲ 4 mm at 40 kHz</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Optical trapping</p>
+            <p class="mech-note">Nobel-winning, and it does not scale — not for engineering reasons but because of the momentum content of light itself. Holding up 100 grams would need ~300 MW, which ablates the object first.</p>
+          </div>
+          <div class="mech-num">3.34 nN per watt<br>hard ceiling = P/c<br>forces 0.1–100 pN</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Plasma window</p>
+            <p class="mech-note">The strongest real case, and genuinely surprising: a wall-stabilized arc holds one atmosphere against high vacuum with no solid window. Arc heating raises viscosity and drops density, choking the flow. But it lives in a cooled channel — and you can put a screwdriver through it.</p>
+          </div>
+          <div class="mech-num">1 atm vs 10⁻⁵ torr<br>~10,000–15,000 K<br>tens of kW, cm aperture</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Shockwave attenuation by transient ionized air</p>
+            <p class="mech-note">A granted patent, physically plausible: sensor-triggered arc heating creates an impedance mismatch that refracts a blast wave. Note carefully what it does <em>not</em> claim — it stops pressure waves, not projectiles. No public demonstration.</p>
+          </div>
+          <div class="mech-num">c<sub>sound</sub> ∝ √T<br>pressure waves only<br>undemonstrated publicly</div>
+        </div>
+      </div>
+
+      <div class="test">
+        <p><strong>Discriminating test — material dependence.</strong> Present the same barrier with four probes: PTFE, aluminium, bismuth, and water. Diamagnetic force scales as χ/ρ, so bismuth responds ~18× more strongly than water. Eddy-current repulsion acts only on conductors. Acoustic force follows acoustic contrast, not conductivity. Gas-dynamic pressure is material-independent.</p>
+        <p>One probe set separates every candidate above. If the barrier acts equally on all four and no large field is present, none of these mechanisms is operating.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-head">
+      <span class="spec-id">Spec 02</span>
+      <span class="verdict v-yes">Achievable — three mechanisms land at 20°</span>
+      <h3>A ~20° rotation of one component switches the main effect on or off</h3>
+    </div>
+    <div class="spec-body">
+      <p style="margin-bottom:18px;font-size:14.5px;color:var(--ink-2)">Note the spec: rotation as a <em>state change</em>, not as a power source. That distinction matters — it removes the magnitude problem entirely, because the rotation gates something already present rather than supplying it. What the spec demands is <strong>sharp angular selectivity</strong>: full output to near-zero across roughly 20°.</p>
+      <p class="zone-lbl">Candidate mechanisms</p>
+      <div class="mechs">
+        <div class="mech">
+          <div>
+            <p class="mech-name">Multipole permanent-magnet flux switch</p>
+            <p class="mech-note">The best all-round fit. A rotor ring of alternating poles over a matching keeper gives coupling that goes as cos(Nφ), so the null sits at 90°/N. Five pole pairs lands at 18°, four at 22.5°. Zero power, latching, mechanical detents at each state, high force density. This is how you build a wire-free rotational switch.</p>
+          </div>
+          <div class="mech-num">output ∝ cos(Nφ)<br>N = 5 → null at 18°<br>N = 4 → null at 22.5°</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Half-wave plate between crossed polarizers</p>
+            <p class="mech-note">An exact 22.5° switch, and beautifully clean. Zero output at 0°, <em>full</em> output at 22.5°, back to zero at 45°. Passive, contactless, no electronics. Extinction is limited only by polarizer quality. Applies only if the gated effect is optical.</p>
+          </div>
+          <div class="mech-num">I = I₀ sin²(2θ)<br>max at exactly 22.5°<br>extinction 10⁻⁵–10⁻⁶</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Stoner–Wohlfarth latched switching</p>
+            <p class="mech-note">The sharpest of the three, and the only true step. The field needed to flip a magnetic element depends on its angle to the applied field along the "astroid" curve — and it is <em>easiest at 45°</em>, a factor-two reduction. Hold the drive at 0.65 of the anisotropy field: at 0° it cannot switch, at 20° it does. Bistable, so the state persists after you let go.</p>
+          </div>
+          <div class="mech-num">h(0°) = 1.00<br>h(20°) = 0.574<br>h(45°) = 0.500 (min)</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Magnetic gear / coupling near pull-out</p>
+            <p class="mech-note">Gates mechanical power rather than a field. Transmitted torque goes as sin(NΔθ) until the poles slip. Nine pole pairs puts the torque peak at 10° and the null at 20°. Robust, but the "off" state slips noisily rather than sitting quiet.</p>
+          </div>
+          <div class="mech-num">T = T_max sin(NΔθ)<br>N = 9 → null at 20°<br>then hysteretic slip</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Nested Halbach cylinders — ruled out</p>
+            <p class="mech-note">The intuitive guess, and wrong. Two concentric arrays give a field that varies with the <em>half</em>-angle, so it is a smooth 180° dial with a single null per revolution. Excellent dynamic range (measured 1.47 T down to under 0.1 T) and near-zero rotation torque — but a 20° turn changes the field by 1.5%, not by everything.</p>
+          </div>
+          <div class="mech-num">B ∝ |cos(φ/2)|<br>20° → 1.5% change<br>null at 180°</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Optical phase matching and Bragg — ruled out the other way</p>
+            <p class="mech-note">These fail by being far <em>too</em> sharp. A 1 cm doubling crystal is dead at ±0.04°; perfect-crystal Bragg selectivity is arcseconds. Volume holographic gratings are the loosest at roughly 3°, and pushing wider breaks the Bragg condition entirely. A witness would describe a knife-edge, not a detent.</p>
+          </div>
+          <div class="mech-num">phase matching ≈ 0.05°<br>crystal Bragg ≈ 0.002°<br>volume grating floor ≈ 3°</div>
+        </div>
+      </div>
+
+      <div class="test">
+        <p><strong>Discriminating test — turn it both ways, then fit the curve.</strong> Record the output against angle over a full revolution at one-degree steps, in both rotation directions.</p>
+        <p><strong>Direction first.</strong> Cosine, sinc² and Darwin forms are all reversible and single-valued. Stoner–Wohlfarth switching and magnetic pole-slip are <strong>hysteretic</strong> — the on-angle and off-angle differ. A latching switch with different thresholds each way is bistable magnetic or mechanical, not optical or diffractive.</p>
+        <p><strong>Then read the exponent.</strong> Fit cos<sup>n</sup>(kφ) and recover k. <code>k = ½</code> means nested Halbach, and the 20° figure is then wrong by a factor of nine. <code>k = 2</code> means a half-wave plate. <code>k = 4–5</code> means a multipole flux switch — and you will also see that many equal nulls per revolution, with detent torque at each one.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-head">
+      <span class="spec-id">Spec 03</span>
+      <span class="verdict v-yes">Achievable — and unremarkable</span>
+      <h3>A localized focal point that visibly bends light in open air</h3>
+    </div>
+    <div class="spec-body">
+      <p class="zone-lbl">Candidate mechanisms</p>
+      <div class="mechs">
+        <div class="mech">
+          <div>
+            <p class="mech-name">Plasma — and the sign is diagnostic</p>
+            <p class="mech-note">Free electrons drive the refractive index <em>below</em> 1, so an overdense plasma is a <strong>diverging</strong> lens. This is the opposite of ordinary refraction and it is the single most useful fact in this spec. Fully ionized air perturbs light ~12× more strongly than air itself, with the opposite sign.</p>
+          </div>
+          <div class="mech-num">n = √(1 − ω<sub>p</sub>²/ω²) &lt; 1<br>ionized air: n ≈ 0.996<br>refractivity ≈ −4 × 10⁻³</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Thermal / density gradient</p>
+            <p class="mech-note">The mundane, high-prior candidate. Any hot object, arc, or exhaust produces a visible free-floating distortion by this alone. It is what a mirage is. A 700 K plume perturbs the index as much as air's entire refractivity.</p>
+          </div>
+          <div class="mech-num">dn/dT ≈ −1 × 10⁻⁶ /K<br>700 K plume → Δn ≈ 4 × 10⁻⁴<br>slow ~Hz shimmer</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Kerr self-focusing and filamentation</p>
+            <p class="mech-note">Dramatic and unmistakable: a thin, straight, free-floating glowing filament that can run for metres to kilometres, often with a coloured conical halo. Beautifully self-consistent with the row above — it is the plasma's sub-unity index that arrests the collapse and clamps the intensity.</p>
+          </div>
+          <div class="mech-num">P<sub>cr</sub> ≈ 3–10 GW at 800 nm<br>clamps at 5 × 10¹³ W/cm²<br>≈ 100 µm core</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Gradient-index metamaterial</p>
+            <p class="mech-note">Real, and the deepest version of geometry-as-material — a coordinate transformation maps directly onto a prescribed permittivity. But it requires a fabricated solid structure and is typically narrowband. Nothing free-floating.</p>
+          </div>
+          <div class="mech-num">requires a physical device<br>narrowband<br>optical demos sub-wavelength</div>
+        </div>
+      </div>
+
+      <div class="test">
+        <p><strong>Discriminating test — image a distant grid through the region, and take a spectrum.</strong> Diverging distortion with no rising plume and no buoyancy asymmetry points to plasma. Diverging or converging with a plume and slow shimmer points to thermal. A sharp filamentary line with a coloured halo points to a Kerr filament — and implies a terawatt-class laser in the line of sight.</p>
+        <p>The spectrum settles it outright: nitrogen second-positive bands at 337, 357 and 380 nm plus the oxygen line at 777 nm identify air plasma unambiguously. Broadband supercontinuum identifies filamentation. A blackbody continuum identifies plain incandescence.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-head">
+      <span class="spec-id">Spec 04</span>
+      <span class="verdict v-yes">Achievable — and it yields a number</span>
+      <h3>Radio at one frequency passes through where other bands are blocked</h3>
+    </div>
+    <div class="spec-body">
+      <p style="margin-bottom:18px;font-size:14.5px;color:var(--ink-2)">This is the best row in the register, because it converts a qualitative report into a measurable quantity. Frequency-selective transmission is not unusual — it is the defining optical property of any plasma, and it has a hard edge rather than a gradual rolloff.</p>
+      <p class="zone-lbl">Candidate mechanisms</p>
+      <div class="mechs">
+        <div class="mech">
+          <div>
+            <p class="mech-name">Plasma cutoff</p>
+            <p class="mech-note">Below the plasma frequency, radio reflects. Above it, radio passes. The transition is sharp, and the frequency is set entirely by electron density. This single effect explains the whole reported behavior.</p>
+          </div>
+          <div class="mech-num">f<sub>p</sub> ≈ 9000 √n<sub>e</sub> Hz<br>(n<sub>e</sub> in cm⁻³)</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">The everyday case — the ionosphere</p>
+            <p class="mech-note">You already depend on this. Shortwave bounces around the world because it sits below cutoff; FM and television go straight up into space because they sit above it. Same medium, opposite behavior, decided purely by frequency.</p>
+          </div>
+          <div class="mech-num">n<sub>e</sub> ≈ 10⁶ cm⁻³<br>cutoff ≈ 9 MHz</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">The engineering case — reentry blackout</p>
+            <p class="mech-note">A returning spacecraft builds a plasma sheath that kills communications. The standard mitigation is to move <em>up</em> in frequency — higher bands punch through where lower ones cannot. That is precisely the reported observation, in a well-documented setting.</p>
+          </div>
+          <div class="mech-num">blocks S-band<br>Ka-band penetrates<br>routine, documented</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">Cavity or aperture cutoff</p>
+            <p class="mech-note">A separate mechanism with a similar signature. Any enclosure passes frequencies above a cutoff set by its dimensions and blocks those below — this is why a microwave oven's door mesh is opaque to 2.45 GHz and transparent to visible light. Geometry alone can produce band selectivity.</p>
+          </div>
+          <div class="mech-num">set by aperture size<br>λ ≳ 2a → blocked<br>no plasma required</div>
+        </div>
+      </div>
+
+      <div class="test">
+        <p><strong>Discriminating test — sweep the frequency and find the edge.</strong> A receiver and a signal generator locate the cutoff directly, and the cutoff <em>is</em> the measurement. Read the electron density straight off it:</p>
+        <p><code>90 MHz → ~10⁸ cm⁻³ &nbsp;·&nbsp; 900 MHz → ~10¹⁰ &nbsp;·&nbsp; 9 GHz → ~10¹²</code></p>
+        <p>To separate plasma cutoff from geometric cutoff: plasma cutoff <strong>moves</strong> as conditions change and disappears when the source is off; aperture cutoff is fixed by the hardware and stays put. One frequency sweep in each state settles it.</p>
+        <p style="margin-top:11px;color:var(--ink-3);font-size:13.5px"><strong>Flag on this row:</strong> plasma cutoff is undergraduate material, in every plasma-physics and antenna textbook. An account in which trained physicists find this surprising is telling you something about the account, not about the physics.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-head">
+      <span class="spec-id">Spec 05</span>
+      <span class="verdict v-part">Weakly diagnostic — but it fixes a scale</span>
+      <h3>Nested geometry: a small source at the focus of a horn inside a dome</h3>
+    </div>
+    <div class="spec-body">
+      <p style="margin-bottom:18px;font-size:14.5px;color:var(--ink-2)">Reported <em>shape</em> is a weak constraint on its own — many things are cone-inside-dome. But geometry does one strongly useful thing: it fixes a characteristic length, and a length predicts a frequency. That turns a description into arithmetic.</p>
+      <p class="zone-lbl">What the shape buys</p>
+      <div class="mechs">
+        <div class="mech">
+          <div>
+            <p class="mech-name">A cone with a cap is a horn</p>
+            <p class="mech-note">The standard geometry for turning something small and localized into directional radiation — horn antennas, acoustic horns, flux concentrators. If the design intent is a directional emitter, this is the shape you would draw.</p>
+          </div>
+          <div class="mech-num">throat sets cutoff<br>mouth sets gain</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">A dome around a source is a reflector or a cavity</p>
+            <p class="mech-note">It either returns things toward the centre or resonates. A dense object at the focus of a reflective shell is a recognizable arrangement across several fields — optical, acoustic, and nuclear.</p>
+          </div>
+          <div class="mech-num">resonates at λ ≈ 2d<br>d = dome diameter</div>
+        </div>
+        <div class="mech">
+          <div>
+            <p class="mech-name">The size-to-band calculation</p>
+            <p class="mech-note">The testable consequence, derived from nothing but reported dimensions. A metre-scale dome resonates in the low hundreds of megahertz. A dinner-plate dome resonates in the gigahertz. This is arithmetic, not inference, and it connects directly to Spec 04.</p>
+          </div>
+          <div class="mech-num">1 m → ~150 MHz<br>0.25 m → ~600 MHz<br>0.05 m → ~3 GHz</div>
+        </div>
+      </div>
+
+      <div class="test">
+        <p><strong>Discriminating test — check the reported band against the reported size.</strong> If a device of stated dimension <em>d</em> is described as emitting or interacting at a frequency, that frequency should sit near c/2d for a cavity, or above the horn's throat cutoff for an emitter. Agreement is weak evidence the description is internally consistent. Disagreement by orders of magnitude is a genuine inconsistency in the account, and costs nothing to check.</p>
+        <p><strong>On the fuel claim specifically:</strong> "a stable superheavy isotope at the focus" has no candidate mechanism — the longest measured moscovium half-life is 0.65 seconds, roughly a hundred atoms have ever existed, and no model predicts a stable Z = 115 nuclide. The <em>functional</em> spec underneath it survives and is the row worth keeping: a small dense source at the focus of a horn inside a reflective shell. That geometry has real physics attached regardless of what sits in the middle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">Part III — Why Spec 01 fails</p>
+    <h2>The exponent that closes the door</h2>
+    <p class="sec-dek">Not an engineering limit. A consequence of how fields couple to neutral matter.</p>
+  </div>
+
+  <div class="scaling">
+    <h3>Every non-contact force on neutral matter is second-order</h3>
+    <p>Neutral matter has no monopole coupling to any field. You must <em>induce</em> a dipole first, and then act on it with a gradient. So the force is second-order in the field, and it depends on the gradient of the square:</p>
+    <div class="eq">F = ∇(α|E|²/2)&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;F = ∇(χV B²/2μ₀)</div>
+    <p>Now compound that with geometry. A field from any localized source falls at least as fast as a dipole, <code>B ∝ 1/r³</code>. Feed that into the expression above and the force on neutral matter falls as:</p>
+    <div class="eq"><b>F ∝ 1/r⁷</b></div>
+    <p>That exponent is the whole story. The 1400 T²/m needed to levitate ordinary matter at 3 cm inside a bore becomes roughly 10⁻² T²/m at 3 metres — <strong>a shortfall of about five orders of magnitude</strong>, and you cannot recover it by raising B, because you would exceed material limits everywhere near the source long before.</p>
+    <p>The two escape routes both close. Radiation pressure is bounded by momentum flux at 3.3 nN per watt. Acoustic pressure is bounded by the onset of shock in air, and needs a standing wave — meaning a second surface, meaning a cavity, meaning not free space.</p>
+    <p style="margin-bottom:0">Everything with real stiffness requires placing a <em>special material</em> in the field: a superconductor, a strong diamagnet. Which means the exclusion zone is a property of the pairing, never of the field alone.</p>
+  </div>
+
+  <div class="note">
+    <h3>What this does and does not settle</h3>
+    <p>It does not say a reported behavior is false. It says that <em>if</em> a matter-excluding barrier operates at standoff distance in open air at ambient temperature, it is not doing so by any known field-matter coupling — which makes it the single load-bearing claim in the whole description, and the one worth designing a measurement around.</p>
+    <p>That is the register working correctly. Two of three specs reduced to ordinary physics, so those observables carry no information and you stop spending attention on them. One did not reduce, and is now stated sharply enough to test.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">Part III½ — The seed principle</p>
+    <h2>Stored energy is cheap. Release control is expensive.</h2>
+    <p class="sec-dek">The generalized version of "a small dense package holding disproportionate energy" — and the reason the stability tradeoff is far softer than intuition says.</p>
+  </div>
+
+  <p>Strip the specific fuel claim and the underlying concept is <strong>metastability</strong>: a system resting in a deep local minimum behind a tall barrier. Stable indefinitely, until something lowers the barrier. This exists at every scale, and the quantitative relation governing all of it is a single expression.</p>
+
+  <div class="scaling">
+    <h3>Why energy density and stability are nearly independent</h3>
+    <p>Lifetime against escape from a metastable state follows the Arrhenius form. At room temperature <code>kT ≈ 2.5 kJ/mol</code>, so:</p>
+    <div class="eq">τ ≈ τ₀ · exp(ΔG<sup>‡</sup>/kT)&nbsp;&nbsp;→&nbsp;&nbsp;<b>every ~6 kJ/mol buys 10× lifetime</b></div>
+    <p>Which means a one-year lifetime needs a barrier of roughly <strong>100 kJ/mol</strong>, and a <em>million</em>-year lifetime needs roughly <strong>135 kJ/mol</strong>. Only 35% more barrier for a million times the endurance.</p>
+    <p><strong>The barrier requirement grows logarithmically with lifetime, while energy density has no upper bound.</strong> So the intuitive tradeoff — more stored energy must mean less stable — is much weaker than it feels. They are close to independent parameters.</p>
+    <p style="margin-bottom:0">Diamond makes this concrete. Its driving force to become graphite is a mere 2.9 kJ/mol, while the barrier to actually doing it is 370–540 kJ/mol. Estimated room-temperature conversion time: about 10⁷⁰ seconds, against a universe roughly 10¹⁷ seconds old. Tiny driving force, enormous barrier, and the two numbers have nothing to do with each other.</p>
+  </div>
+
+  <div class="tbl-scroll" style="margin:0 0 24px">
+    <table>
+      <thead>
+        <tr><th>System</th><th>Energy density</th><th>Stable at room temperature?</th><th>Triggerable?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hafnium-178m2 isomer</td><td class="num">1.33 × 10⁶ MJ/kg</td><td>31-year half-life</td><td><strong>No — claimed, funded, refuted</strong></td></tr>
+        <tr><td>Tantalum-180m isomer</td><td class="num">4.1 × 10⁴ MJ/kg</td><td>&gt; 10¹⁶ years</td><td><strong>No mechanism ever proposed</strong></td></tr>
+        <tr><td>Thorium-229m isomer</td><td class="num">≈ 3.5 MJ/kg</td><td>~29 minutes</td><td>Yes — laser-excited, 2024</td></tr>
+        <tr><td>Hydrogen</td><td class="num">120–142 MJ/kg</td><td>needs containment</td><td>Yes</td></tr>
+        <tr><td><strong>Fat / triacylglycerol</strong></td><td class="num">≈ 37–39 MJ/kg</td><td><strong>decades, in your body</strong></td><td><strong>Yes — enzymatic</strong></td></tr>
+        <tr><td>TNT</td><td class="num">4.6 MJ/kg</td><td>years</td><td>Yes — shock or heat</td></tr>
+        <tr><td>Lithium-ion cell</td><td class="num">0.36–0.95 MJ/kg</td><td>years</td><td>Yes</td></tr>
+        <tr><td>Sodium acetate trihydrate</td><td class="num">0.25 MJ/kg</td><td>months supercooled</td><td>Yes — pure nucleation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Read the fat row against the TNT row.</strong> Fat carries roughly eight times TNT's energy and sits at 37 °C in living tissue for decades. The difference is not energy and not really barrier height — it is that <strong>TNT carries its own oxidizer</strong>. Its reaction is intramolecular, so it is not rate-limited by delivering oxygen and can propagate supersonically. Fat waits on your bloodstream. That is a difference in <em>power</em> density, not energy density, and it is the distinction that matters for design.</p>
+
+  <p><strong>And the scoreboard on triggering is the real lesson.</strong> The two nuclear champions hold 10⁴–10⁶ times more energy than anything chemical and neither can be opened. Hafnium's triggered release was claimed in 1999, funded at roughly $30M, and refuted by an independent experiment at <strong>100,000× the original sensitivity</strong>; Congress zeroed the program. Thorium-229 succeeded in 2024 for the opposite reason — its barrier is only 8.4 eV up, low enough that a laser can simply reach it.</p>
+
+  <div class="test" style="margin:0 0 24px">
+    <p><strong>The design principle, stated properly.</strong> Biology almost never releases stored energy by adding energy. It lowers the barrier — and a catalyst changes only ΔG<sup>‡</sup>, never ΔG. The magnitudes are staggering: one decarboxylase enzyme takes a reaction with an uncatalyzed half-life of <strong>78 million years</strong> and completes it in <strong>18 milliseconds</strong>, a rate enhancement of about 10<sup>17</sup>, using no metals and no cofactors.</p>
+    <p>A hand warmer is the purest illustration. Flexing the metal disc adds essentially zero energy. It supplies a <em>surface</em> — a nucleation site. The barrier is bypassed rather than climbed.</p>
+    <p><strong>One necessary complication:</strong> biology also raises barriers deliberately, which is what dormancy is. So the accurate formulation is stronger than the one-directional version — biology treats barrier height as an independently tunable control variable in <em>both</em> directions, decoupled from the energy itself.</p>
+  </div>
+
+  <p><strong>The most transferable trick is not a barrier at all.</strong> Tardigrades and bacterial spores <strong>vitrify</strong> — the cytoplasm becomes a glass at around 10¹² Pa·s, which arrests every degradative reaction simultaneously. It reverses because nothing was covalently changed: add water, the glass transition drops below ambient, and the whole system restarts at once. Not one tall barrier. A <em>global mobility switch</em>. Bacterial spores go from germinant binding to full rehydration in minutes, with sub-second commitment, and require no ATP to start — because they have essentially none.</p>
+
+  <div class="note">
+    <h3>An unclaimed opening</h3>
+    <p>A dedicated search for cross-domain work on this found none. Energetic materials, nuclear isomers, phase-change storage and biological dormancy each have a mature literature quantifying their own stability–performance tradeoff. <strong>None of them cite each other, and there is no accepted figure of merit combining stored energy density, barrier height relative to kT, and triggerability.</strong></p>
+    <p style="margin-bottom:0">The pieces are all published. The synthesis is not. That is the same pattern as the four moves in Part I — separate fields independently working one principle, with nobody naming it across the boundary.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">Part III¾ — Cycle life</p>
+    <h2>The carrier is a bus, not a tank</h2>
+    <p class="sec-dek">Human energy release is largely one-shot. Biology's is a loop. But the reason is not the one you would guess.</p>
+  </div>
+
+  <p>Burn a hydrocarbon and the carrier is destroyed. Biology almost never does this — and the natural explanation, "biological catalysts aren't consumed," turns out to be <strong>wrong</strong>. The real mechanism is more interesting and more transferable.</p>
+
+  <div class="scaling">
+    <h3>Two corrections that make the idea stronger</h3>
+    <p><strong>Enzymes are consumed.</strong> A 2021 study defined exactly this metric — catalytic cycles until replacement — and measured it across roughly 180 central-metabolism enzymes in three organisms. The range is <strong>10³ to 10⁷ turnovers</strong>, with medians around 30,000–40,000 in yeast and bacteria. Then the enzyme is scrapped.</p>
+    <p>And the usual killer is not heat or wear. It is <strong>mechanism-based inactivation</strong> — the enzyme is damaged by the reaction it catalyzes. Some chemistries are simply more destructive to their own catalyst than others.</p>
+    <p>So biology's strategy is not an immortal catalyst. It is a <strong>cheap catalyst plus a continuous replacement line</strong> — an economic solution, not a durability one. Photosystem II makes this explicit: it replaces its own damaged subunit roughly every 30 minutes rather than attempting to build something that lasts.</p>
+    <p><strong>Rate and lifetime are nearly decoupled.</strong> Carbonic anhydrase runs up to 1.4 million reactions per second. At that rate, a lifetime budget of 10⁷ cycles is <em>ten seconds of work.</em> Speed and endurance are separate design variables, and biology tunes them independently.</p>
+    <p style="margin-bottom:0"><strong>The architecture is the real insight.</strong> The engineered systems that best achieve this — flow batteries, at 10,000 to 27,000 cycles — got there by <strong>separating the carrier from the transducer</strong>. The energy-bearing fluid circulates; the expensive machinery stays fixed and is serviced separately. That is precisely the ATP architecture, and it may matter more than reversibility itself.</p>
+  </div>
+
+  <div class="tbl-scroll" style="margin:0 0 24px">
+    <table>
+      <thead>
+        <tr><th>System</th><th>Usable cycles</th><th>What limits it</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Supercapacitor</td><td class="num">~10⁵–10⁶</td><td>No chemistry to degrade</td></tr>
+        <tr><td>Enzyme, in vivo</td><td class="num">10³–10⁷</td><td>Damaged by its own reaction; replaced continuously</td></tr>
+        <tr><td>Vanadium redox flow</td><td class="num">10,000–27,000</td><td>Stack wears; electrolyte is effectively indefinite</td></tr>
+        <tr><td>Lithium-ion</td><td class="num">1,000–7,000</td><td>Calendar life often binds before cycle life</td></tr>
+        <tr><td><strong>Salt hydrate thermal storage</strong></td><td class="num"><strong>often &lt; 10–100</strong></td><td>Sintering, deliquescence, pore blockage, phase segregation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Read the last row against the rest.</strong> That is where the neglect actually lives. Cycle life is a headline specification in batteries — it is not ignored there. It <em>is</em> ignored in thermochemical and chemical storage, where energy-density chauvinism genuinely dominates. A celebrated salt-hydrate result reads "full cyclability for at least <strong>ten cycles</strong>," while organic flow chemistries are quoting fade below <strong>0.001% per cycle</strong>.</p>
+
+  <div class="test" style="margin:0 0 24px">
+    <p><strong>The hypothesis is already published — by domain experts, about their own field.</strong> A 2026 review of salt-hydrate thermochemical storage states it directly: <em>"marginal gains in theoretical energy density are far less impactful than improvements in cyclic stability, transport properties, and mechanical integrity."</em></p>
+    <p>Worth stealing from the flow-battery literature: they report fade <strong>per cycle</strong> and <strong>per day</strong> as separate numbers, because calendar-time chemical decomposition often dominates cycling damage. Any measurement here should keep those apart.</p>
+  </div>
+
+  <p class="zone-lbl">Soft triggers — how far the principle reaches</p>
+  <div class="mechs" style="margin-bottom:24px">
+    <div class="mech">
+      <div>
+        <p class="mech-name">Rhenium-187 — a factor of a billion</p>
+        <p class="mech-note">Neutral, it has one of the smallest decay energies known, so decay is nearly phase-space forbidden. Strip all 75 electrons and the emitted electron can land in a <em>bound</em> orbital of the daughter instead of the continuum, raising the effective energy release about thirtyfold. Nothing was added to the nucleus. A different door opened.</p>
+      </div>
+      <div class="mech-num">neutral: 4.2 × 10¹⁰ yr<br>fully stripped: 32.9 yr<br>Q: 2.47 keV → ~73 keV</div>
+    </div>
+    <div class="mech">
+      <div>
+        <p class="mech-name">Dysprosium-163 — stable until you strip it</p>
+        <p class="mech-note">The inverse case, and the cleanest proof that the electron shell is a <em>switch</em> on nuclear stability rather than a rate modifier. As a neutral atom the decay is energetically forbidden outright. Remove the electrons and it becomes allowed.</p>
+      </div>
+      <div class="mech-num">neutral: stable<br>fully stripped: 47 days</div>
+    </div>
+    <div class="mech">
+      <div>
+        <p class="mech-name">Chemical environment — real but small</p>
+        <p class="mech-note">The honest ceiling for anything chemically accessible. Beryllium-7 sealed in a fullerene cage shifts by under one percent, and beryllium is the <em>most</em> favorable case in the periodic table. For heavier nuclei the inner shells dominate and chemistry moves the rate by 10⁻⁴ or less. Do not extrapolate from the storage-ring results — a bare relativistic nucleus is not a chemical environment.</p>
+      </div>
+      <div class="mech-num">Be-7 in C₆₀: 0.83%<br>vs gold host: ~1.2%<br>heavy nuclei: ≤ 10⁻⁴</div>
+    </div>
+    <div class="mech">
+      <div>
+        <p class="mech-name">Why tantalum and hafnium stay shut</p>
+        <p class="mech-note">Structural, not technological. Both have high transition multipolarity and high transition energy — exactly the regime where electron-shell coupling cannot reach. Thorium-229 succeeded in 2024 for the opposite reasons: only 8.4 eV up, low multipolarity, within reach of a laser through an electronic bridge. Separately, a 2018 claim of electron-capture triggering did not replicate — an independent isomer-beam experiment found nothing at 500× below the original limit.</p>
+      </div>
+      <div class="mech-num">Hf-178m2 trigger rate<br>≈ 1.5 × 10⁻⁷ s⁻¹<br>Th-229m: 8.4 eV, works</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>A second unclaimed opening — and a $100 experiment</h3>
+    <p>No unified framework treats <strong>usable cycles</strong> as the primary figure of merit across domains. Four literatures each hold one piece: biology has catalytic-cycles-until-replacement, industrial biocatalysis has total turnover number for the same quantity under a different name, batteries have cycle life and fade rate, and thermochemical storage has cyclic stability. The citation networks barely overlap.</p>
+    <p>The tabletop version is genuinely accessible. <strong>Salt hydrate cycling:</strong> calcium chloride or Epsom salt, a toaster oven, a 0.01 g kitchen scale, a thermocouple, a sealed jar. Dehydrate, weigh, rehydrate over water vapor, weigh, log the temperature rise. Plot mass swing and peak ΔT against cycle number for fifty-plus cycles, reporting fade per cycle and per day separately.</p>
+    <p style="margin-bottom:0">Unregulated materials, kitchen equipment, under $100 — and it measures the exact variable the field's own experts say is under-served. That is a rare combination.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">Part IV — What a witness sees</p>
+    <h2>Appearance, by mechanism</h2>
+    <p class="sec-dek">Because reported <em>appearance</em> is the most common input to this register, and it is more diagnostic than it looks.</p>
+  </div>
+
+  <div class="tbl-scroll">
+    <table>
+      <thead>
+        <tr><th>Mechanism</th><th>Visible?</th><th>What it looks like</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Thermal gradient / plume</td>
+          <td>Yes</td>
+          <td>Shimmer and wobble; objects behind it swim and distort; emits no light of its own. The strongest candidate for a reported "heat-haze" distortion.</td>
+        </tr>
+        <tr>
+          <td>Air plasma (arc, corona, RF)</td>
+          <td>Yes</td>
+          <td>Self-luminous blue-violet or pink, a strong <em>diverging</em> distortion around it, and a co-located thermal plume. Gives itself away by ozone smell and RF or audio noise.</td>
+        </tr>
+        <tr>
+          <td>Femtosecond filament</td>
+          <td>Yes, striking</td>
+          <td>A thin straight free-floating glowing white-blue string, sharply localized, often with a coloured conical halo. Looks like nothing mechanical.</td>
+        </tr>
+        <tr>
+          <td>Flux pinning</td>
+          <td>Not optically</td>
+          <td>The object simply hangs, at any tilt, including inverted. No distortion of light. The tell is frost and vapour from the cryogen.</td>
+        </tr>
+        <tr>
+          <td>Diamagnetic levitation</td>
+          <td>Not optically</td>
+          <td>The object hangs — inside a magnet bore. No optical signature at all.</td>
+        </tr>
+        <tr>
+          <td>Acoustic levitation</td>
+          <td>Barely</td>
+          <td>Millimetre particles hanging in a row at fixed half-wavelength spacing; faint distortion at high sound pressure. Strong ultrasonic signature.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:22px">Read the table as a filter. The <strong>only</strong> mechanisms producing a visible, localized, apparently free-floating distortion in open air are a thermal gradient, an air plasma, or a laser filament — and the first two are far more common than the third. A report of "the air bent around it" is therefore consistent with something quite ordinary, and does not by itself indicate anything unusual.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">Part V — Protocols</p>
+    <h2>Eight measurements that separate candidates</h2>
+    <p class="sec-dek">Ordered by information yield per unit effort. Most need equipment you can hold in one hand.</p>
+  </div>
+
+  <div class="protos">
+    <div class="proto">
+      <span class="proto-n">P1</span>
+      <div>
+        <h3>Material-dependence probe set<span class="star">Highest yield</span></h3>
+        <p>Present PTFE, aluminium, bismuth and water to the same barrier and compare. Diamagnetic force scales as χ/ρ (bismuth ≈ 18× water); eddy currents act only on conductors; acoustic force follows acoustic contrast; gas-dynamic pressure is material-independent. One probe set, every candidate separated.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P2</span>
+      <div>
+        <h3>Force–distance curve</h3>
+        <p>Push a non-magnetic, non-conducting, low-susceptibility probe on a load cell and map F(d). A gradient force gives the 1/r⁷ signature. Radiation or acoustic pressure gives a flat force over one wavelength then a sign flip. A gas-dynamic barrier gives roughly constant pressure.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P3</span>
+      <div>
+        <h3>Magnetometry at 0.1–3 m</h3>
+        <p>A fluxgate or Hall survey settles this in seconds. Diamagnetic exclusion at any useful force requires B·∇B on the order of 10³ T²/m locally. Absence of a large field is fatal to the flux-pinning, diamagnetic and plasma-confinement candidates simultaneously.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P4</span>
+      <div>
+        <h3>Optical distortion sign</h3>
+        <p>Image a distant grid or point source through the region. Diverging versus converging, and the presence or absence of a buoyant plume, separates plasma from thermal immediately. This is a camera and a printed target.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P5</span>
+      <div>
+        <h3>Emission spectroscopy</h3>
+        <p>A transmission grating in front of a camera costs tens of dollars. Nitrogen second-positive bands plus the 777 nm oxygen line identify air plasma unambiguously; broadband supercontinuum identifies filamentation; a blackbody curve identifies incandescence.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P6</span>
+      <div>
+        <h3>Thermal imaging and contact temperature</h3>
+        <p>Flux pinning requires below 92 K for the common high-temperature superconductor. An IR camera and a thermocouple confirm or eliminate every cryogenic mechanism at once.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P7</span>
+      <div>
+        <h3>Acoustic and ultrasonic survey</h3>
+        <p>Acoustophoresis at any scale needs above ~155 dB somewhere and a standing wave with fixed half-wavelength node spacing. Measure the node spacing, derive the wavelength, derive the frequency. If it doesn't match, it isn't acoustic.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P8</span>
+      <div>
+        <h3>Output-versus-angle curve, swept both directions<span class="star">Spec 02</span></h3>
+        <p>One-degree steps through a full revolution, clockwise then counter. Hysteresis separates bistable magnetic and mechanical switching from everything optical or diffractive. Then fit cos<sup>n</sup>(kφ): k = ½ is nested Halbach, k = 2 is a half-wave plate, k = 4–5 is a multipole flux switch. Count the nulls per revolution as a cross-check.</p>
+      </div>
+    </div>
+    <div class="proto">
+      <span class="proto-n">P9</span>
+      <div>
+        <h3>Frequency sweep to find the cutoff edge<span class="star">Spec 04</span></h3>
+        <p>A signal generator and a receiver locate the transmission edge, and the edge <em>is</em> the electron density — read it off directly. Repeat with the source off: a plasma cutoff vanishes and moves with conditions, while a geometric aperture cutoff is fixed by the hardware and stays put.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-bottom:0">
+  <div class="sec-head">
+    <p class="sec-tag">Part VI — Using this</p>
+    <h2>How rows get added</h2>
+  </div>
+
+  <p>Enter a behavior only as an <strong>observable</strong>, with units where they exist. "Excludes matter at roughly one metre in open air" is a row. "Uses an unknown energy source" is not — it names an absence, and absences cannot be measured.</p>
+
+  <p>Then fill the two columns that matter. List every mechanism that produces that observable, with its real magnitude and its scaling law. Then name the measurement that separates them. A row without a third column is a note, not a register entry.</p>
+
+  <p>Three outcomes are possible when a row is complete, and all three are useful:</p>
+
+  <div class="tbl-scroll" style="margin:20px 0">
+    <table>
+      <thead>
+        <tr><th>Outcome</th><th>What it means</th><th>What you do</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reduces to ordinary physics</td>
+          <td>The observable is consistent with common mechanisms, so it carries no discriminating information.</td>
+          <td>Stop spending attention on it. Note the reduction so nobody re-litigates it.</td>
+        </tr>
+        <tr>
+          <td>Multiple live candidates</td>
+          <td>Several mechanisms fit and the report doesn't separate them.</td>
+          <td>Run the discriminating protocol. This is where measurement actually pays.</td>
+        </tr>
+        <tr>
+          <td>No candidate at any magnitude</td>
+          <td>Nothing known produces this observable, and you can state the scaling reason why.</td>
+          <td>This is the genuine anomaly, now sharply enough stated to be worth someone's time.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <h3>The discipline that makes this work</h3>
+    <p>Testimony sets the specification. It never sets the mechanism. That separation is what lets the register stay useful no matter how any particular account is eventually assessed — the rows are about physics, and physics does not depend on who reported what.</p>
+    <p>As of this revision the register holds five specs, and <strong>four have reduced.</strong> Light-bending, rotational switching, frequency-selective transmission and the nested geometry all have ordinary mechanisms with real numbers — so those observables carry no discriminating information, and two of them now yield measurements rather than puzzles.</p>
+    <p style="margin-bottom:0">One row remains in the third category: <strong>matter exclusion at standoff distance in open air.</strong> That is a much shorter list than we started with, which is the only honest form of progress here. It also means any future effort has a single clear target instead of five vague ones.</p>
+  </div>
+</section>
+
+</div>

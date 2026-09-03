@@ -1,0 +1,838 @@
+<title>The Unexplored Window</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#eef1f4;
+  --panel:#fbfcfd;
+  --sunk:#e2e7ec;
+  --ink:#12181f;
+  --ink-2:#404d5a;
+  --ink-3:#6f7f8e;
+  --rule:#c6d0da;
+  --hair:#dde4ea;
+  --accent:#b8460f;
+  --accent-soft:#f6e2d8;
+  --deep:#1d3a5c;
+  --deep-soft:#dbe5ef;
+  --open:#8a5a00;
+  --open-bg:#f7e9cd;
+  --solid:#1f5f4a;
+  --solid-bg:#d8e9e1;
+  --contest:#7a2f57;
+  --contest-bg:#f1dce7;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0f1419;
+    --panel:#171e26;
+    --sunk:#1d262f;
+    --ink:#e8eef4;
+    --ink-2:#adbdcb;
+    --ink-3:#7b8c9c;
+    --rule:#2e3b47;
+    --hair:#232e38;
+    --accent:#f0813f;
+    --accent-soft:#3a1f10;
+    --deep:#7fb0e0;
+    --deep-soft:#182a3d;
+    --open:#e0b558;
+    --open-bg:#33280e;
+    --solid:#68bd9c;
+    --solid-bg:#132b23;
+    --contest:#d98cb4;
+    --contest-bg:#301827;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0f1419;
+  --panel:#171e26;
+  --sunk:#1d262f;
+  --ink:#e8eef4;
+  --ink-2:#adbdcb;
+  --ink-3:#7b8c9c;
+  --rule:#2e3b47;
+  --hair:#232e38;
+  --accent:#f0813f;
+  --accent-soft:#3a1f10;
+  --deep:#7fb0e0;
+  --deep-soft:#182a3d;
+  --open:#e0b558;
+  --open-bg:#33280e;
+  --solid:#68bd9c;
+  --solid-bg:#132b23;
+  --contest:#d98cb4;
+  --contest-bg:#301827;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground);color:var(--ink);
+  font-family:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px 100px}
+
+/* masthead */
+.mast{padding:60px 0 30px}
+.kicker{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+}
+h1{
+  font-family:"Fraunces",Georgia,serif;font-weight:700;
+  font-size:clamp(2.4rem,6vw,4.2rem);line-height:.98;letter-spacing:-.022em;
+  margin:0 0 20px;text-wrap:balance;
+}
+.lede{
+  font-family:"Fraunces",Georgia,serif;font-weight:400;
+  font-size:clamp(1.1rem,2.3vw,1.35rem);line-height:1.45;
+  color:var(--ink-2);max-width:56ch;margin:0 0 28px;
+}
+.mast-rule{height:4px;background:var(--ink);margin:0 0 12px}
+.mast-meta{
+  display:flex;flex-wrap:wrap;gap:8px 26px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-3);
+  letter-spacing:.04em;
+}
+
+section{margin:0 0 66px}
+.sec-head{margin:0 0 28px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+.sec-tag{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 8px;
+}
+h2{
+  font-family:"Fraunces",Georgia,serif;font-weight:600;
+  font-size:clamp(1.55rem,3.4vw,2.2rem);line-height:1.1;letter-spacing:-.014em;
+  margin:0;text-wrap:balance;
+}
+.sec-dek{color:var(--ink-3);font-size:14.5px;margin:6px 0 0;max-width:64ch}
+p{margin:0 0 17px;max-width:68ch}
+strong{font-weight:600;color:var(--ink)}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+code{font-family:"JetBrains Mono",monospace;font-size:.88em;background:var(--sunk);padding:1px 5px;border-radius:2px}
+
+/* chart */
+.figure{margin:6px 0 30px}
+.figure svg{display:block;width:100%;height:auto}
+.fig-cap{
+  font-size:13px;color:var(--ink-3);margin:12px 0 0;max-width:74ch;
+  border-left:2px solid var(--rule);padding-left:14px;
+}
+.fig-scroll{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:20px 20px 14px}
+
+/* entries */
+.entries{display:flex;flex-direction:column;gap:0}
+.entry{
+  display:grid;grid-template-columns:1fr 168px;gap:10px 24px;
+  padding:22px 0;border-top:1px solid var(--hair);align-items:start;
+}
+.entry:first-child{border-top:2px solid var(--rule)}
+.entry h3{
+  font-family:"Public Sans",sans-serif;font-size:16.5px;font-weight:600;
+  margin:0 0 7px;line-height:1.3;
+}
+.entry p{font-size:14.5px;color:var(--ink-2);margin:0 0 9px;max-width:none}
+.entry p:last-child{margin-bottom:0}
+.entry .hook{
+  font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--ink);
+  background:var(--sunk);padding:9px 12px;border-radius:2px;margin:10px 0 0;
+  line-height:1.5;
+}
+.meters{display:flex;flex-direction:column;gap:9px;padding-top:3px}
+.meter-lbl{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 3px;
+}
+.meter-track{height:5px;background:var(--sunk);border-radius:1px;overflow:hidden}
+.meter-fill{height:100%;display:block}
+.m-open{background:var(--open)}
+.m-reach{background:var(--deep)}
+@media(max-width:680px){
+  .entry{grid-template-columns:1fr}
+  .meters{flex-direction:row;gap:18px;padding-top:8px}
+  .meters>div{flex:1}
+}
+
+/* tags */
+.tag{
+  display:inline-block;font-family:"JetBrains Mono",monospace;
+  font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 7px;border-radius:2px;font-weight:500;margin:0 0 8px;
+}
+.t-open{background:var(--open-bg);color:var(--open)}
+.t-solid{background:var(--solid-bg);color:var(--solid)}
+.t-contest{background:var(--contest-bg);color:var(--contest)}
+
+/* pull */
+.pull{
+  font-family:"Fraunces",Georgia,serif;font-size:clamp(1.25rem,2.8vw,1.6rem);
+  line-height:1.32;letter-spacing:-.01em;color:var(--ink);
+  border-top:2px solid var(--accent);border-bottom:1px solid var(--rule);
+  padding:22px 0;margin:30px 0;max-width:52ch;
+}
+.pull-src{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-3);
+  letter-spacing:.06em;margin:12px 0 0;text-transform:uppercase;
+}
+
+/* precedent strip */
+.precedent{
+  background:var(--deep-soft);border-left:3px solid var(--deep);
+  padding:22px 26px;margin:0 0 26px;border-radius:0 2px 2px 0;
+}
+.precedent h3{
+  font-family:"Fraunces",Georgia,serif;font-size:1.2rem;font-weight:600;
+  margin:0 0 12px;
+}
+.gaps{display:flex;flex-direction:column;gap:0;margin:16px 0 0}
+.gap-row{
+  display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;
+  padding:9px 0;border-bottom:1px solid var(--rule);
+}
+.gap-row:last-child{border-bottom:none}
+.gap-what{font-size:14px}
+.gap-n{
+  font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:500;
+  color:var(--deep);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+
+/* playbook */
+.play{counter-reset:p;display:flex;flex-direction:column;gap:0}
+.play-item{
+  display:grid;grid-template-columns:auto 1fr;gap:18px;
+  padding:15px 0;border-bottom:1px solid var(--hair);
+}
+.play-item:first-child{border-top:1px solid var(--rule)}
+.play-n{
+  font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);
+  padding-top:3px;
+}
+.play-item h3{font-size:15px;font-weight:600;margin:0 0 4px}
+.play-item p{font-size:14px;color:var(--ink-2);margin:0;max-width:none}
+
+/* bets */
+.bets{display:flex;flex-direction:column;gap:14px}
+.bet{
+  background:var(--panel);border:1px solid var(--rule);border-radius:2px;
+  padding:18px 20px;display:grid;grid-template-columns:34px 1fr;gap:16px;
+}
+.bet-rank{
+  font-family:"Fraunces",Georgia,serif;font-size:1.7rem;font-weight:700;
+  color:var(--accent);line-height:1;
+}
+.bet h3{font-size:15.5px;font-weight:600;margin:0 0 5px}
+.bet p{font-size:14.5px;color:var(--ink-2);margin:0;max-width:none}
+
+/* caveats */
+.caveat{
+  background:var(--accent-soft);border:1px solid var(--accent);
+  border-radius:2px;padding:22px 24px;
+}
+.caveat h3{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 12px;
+}
+.caveat p{font-size:14.5px;margin:0 0 11px}
+.caveat p:last-child{margin-bottom:0}
+
+details{border-top:1px solid var(--rule);margin-top:10px}
+summary{
+  cursor:pointer;padding:14px 0;font-family:"JetBrains Mono",monospace;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);list-style:none;
+}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ "}
+details[open] summary::before{content:"− "}
+.refs{display:flex;flex-direction:column;gap:9px;padding:4px 0 22px;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.refs div{max-width:78ch;padding-left:1.4em;text-indent:-1.4em}
+.refs cite{font-style:italic}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Frontier survey · Where the parameter space is genuinely open</p>
+  <h1>The Unexplored Window</h1>
+  <p class="lede">Seven literature sweeps, pointed at what is <em>not</em> settled. The premise under test: that careful, unglamorous engineering reaches breakthroughs more often than exotic capability does — because the biggest gaps are unexplored for want of attention, not for want of physics.</p>
+  <div class="mast-rule"></div>
+  <div class="mast-meta">
+    <span>Compiled 3 September 2026</span>
+    <span>7 parallel sweeps</span>
+    <span>~200 primary sources</span>
+    <span>Companion to the Gradient Coupling Dossier</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">01 — The centerpiece</p>
+    <h2>Below the width of a hair, nobody has looked</h2>
+    <p class="sec-dek">The short-range gravity exclusion plot, and the enormous volume it leaves open</p>
+  </div>
+
+  <p>A force that acts on mass but isn't gravity is called a <strong>fifth force</strong>. It's a real, funded search program, and its constraints are usually summarized as "nothing found." That summary hides where the searching stopped.</p>
+
+  <div class="figure fig-scroll">
+    <svg viewBox="0 0 720 400" role="img" aria-label="Log-log plot of fifth-force coupling strength alpha versus range lambda, showing the excluded region above the experimental boundary and the open region below, with the alpha equals one frontier at 38.6 micrometres.">
+      <!-- open region fill -->
+      <path d="M80,43.8 L202,119.7 L324,216.4 L446,257.9 L517.6,278.6 L568,306 L690,320 L690,340 L80,340 Z" fill="var(--open-bg)"></path>
+      <!-- excluded region fill -->
+      <path d="M80,43.8 L202,119.7 L324,216.4 L446,257.9 L517.6,278.6 L568,306 L690,320 L690,26 L80,26 Z" fill="var(--sunk)"></path>
+      <!-- grid verticals -->
+      <g stroke="var(--hair)" stroke-width="1">
+        <line x1="80" y1="26" x2="80" y2="340"></line>
+        <line x1="202" y1="26" x2="202" y2="340"></line>
+        <line x1="324" y1="26" x2="324" y2="340"></line>
+        <line x1="446" y1="26" x2="446" y2="340"></line>
+        <line x1="568" y1="26" x2="568" y2="340"></line>
+        <line x1="690" y1="26" x2="690" y2="340"></line>
+      </g>
+      <!-- alpha = 1 line -->
+      <line x1="80" y1="278.6" x2="690" y2="278.6" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4"></line>
+      <text x="86" y="273" fill="var(--accent)" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500">α = 1 — gravity's own strength</text>
+      <!-- dark energy scale marker -->
+      <line x1="559" y1="26" x2="559" y2="340" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="3 3"></line>
+      <text x="553" y="42" fill="var(--deep)" font-family="JetBrains Mono, monospace" font-size="10.5" text-anchor="end">dark-energy scale ≈ 85 µm</text>
+      <!-- boundary curve -->
+      <path d="M80,43.8 L202,119.7 L324,216.4 L446,257.9 L517.6,278.6 L568,306 L690,320" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"></path>
+      <!-- frontier point -->
+      <circle cx="517.6" cy="278.6" r="5.5" fill="var(--accent)"></circle>
+      <text x="510" y="300" fill="var(--ink)" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="500" text-anchor="end">38.6 µm</text>
+      <text x="510" y="315" fill="var(--ink-3)" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="end">Eöt-Wash 2020</text>
+      <!-- region labels -->
+      <text x="180" y="70" fill="var(--ink-2)" font-family="Public Sans, sans-serif" font-size="13.5" font-weight="600">EXCLUDED BY EXPERIMENT</text>
+      <text x="180" y="200" fill="var(--open)" font-family="Public Sans, sans-serif" font-size="13.5" font-weight="600">STILL ALLOWED — never tested</text>
+      <!-- axes -->
+      <line x1="80" y1="340" x2="690" y2="340" stroke="var(--ink)" stroke-width="1.5"></line>
+      <line x1="80" y1="26" x2="80" y2="340" stroke="var(--ink)" stroke-width="1.5"></line>
+      <!-- x labels -->
+      <g fill="var(--ink-3)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">
+        <text x="80" y="358">10 nm</text>
+        <text x="202" y="358">100 nm</text>
+        <text x="324" y="358">1 µm</text>
+        <text x="446" y="358">10 µm</text>
+        <text x="568" y="358">100 µm</text>
+        <text x="690" y="358">1 mm</text>
+      </g>
+      <text x="385" y="382" fill="var(--ink-2)" font-family="Public Sans, sans-serif" font-size="12.5" text-anchor="middle">Range of the new force, λ</text>
+      <!-- y labels -->
+      <g fill="var(--ink-3)" font-family="JetBrains Mono, monospace" font-size="10.5" text-anchor="end">
+        <text x="73" y="34">10¹⁸</text>
+        <text x="73" y="130">10¹¹</text>
+        <text x="73" y="213">10⁵</text>
+        <text x="73" y="254">10²</text>
+        <text x="73" y="283">1</text>
+        <text x="73" y="324">10⁻³</text>
+      </g>
+      <text x="30" y="185" fill="var(--ink-2)" font-family="Public Sans, sans-serif" font-size="12.5" text-anchor="middle" transform="rotate(-90 30 185)">Strength relative to gravity, α</text>
+    </svg>
+    <p class="fig-cap">Boundary traced from published Yukawa-parameter exclusions; per-decade values below 10 µm are order-of-magnitude and should be read off the current compilation before quoting. The α = 1 crossing at 38.6 µm is the verified figure from Lee et al., <cite>Phys. Rev. Lett.</cite> 124, 101101 (2020).</p>
+  </div>
+
+  <p>Read the shaded regions. Everything <em>below</em> the black line is a force that could exist and has never been ruled out. Two facts fall out of that geometry:</p>
+
+  <div class="pull">
+    Below 38.6 µm, gravity at its own strength has never been tested. Below 1 µm, a force a trillion times stronger than gravity would have escaped notice.
+    <p class="pull-src">Eöt-Wash torsion balance limits, 2007 → 2020</p>
+  </div>
+
+  <p>And the frontier is barely moving. In thirteen years the world's best experiment went from 56 µm to 38.6 µm — <strong>a factor of 1.45</strong>. That is not a physics wall. The limiting systematic is <strong>electrostatic patch potentials</strong>: microscopic variations in work function across nominally uniform gold produce a force with almost the same distance signature as the thing being hunted. Below a micron, the Casimir force can't be shielded at all, so every constraint there is a difference measurement resting on a contested theory.</p>
+
+  <p>Note also where the dark-energy length scale sits: about 85 µm, right where the experiments run out. New physics tied to the cosmological constant would naturally appear in exactly the window nobody can reach. Nobody has explained that coincidence.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">02 — Precedent</p>
+    <h2>The reports were never the evidence</h2>
+    <p class="sec-dek">Sprites: a century of dismissed sightings, ended by one camera pointed the right way</p>
+  </div>
+
+  <div class="precedent">
+    <h3>How long the gap actually was</h3>
+    <p style="font-size:14.5px;margin:0">Upper-atmospheric lightning was reported by observers, predicted by a Nobel laureate, and disregarded — until instruments caught it. The delays are documented, not anecdotal.</p>
+    <div class="gaps">
+      <div class="gap-row">
+        <span class="gap-what">First eyewitness report (<cite>Nature</cite>, 1886) → first image (1989)</span>
+        <span class="gap-n">103 years</span>
+      </div>
+      <div class="gap-row">
+        <span class="gap-what">C.T.R. Wilson's theoretical prediction (1925) → confirmation</span>
+        <span class="gap-n">64 years</span>
+      </div>
+      <div class="gap-row">
+        <span class="gap-what">First image → routine science with error bars</span>
+        <span class="gap-n">~5 years</span>
+      </div>
+    </div>
+  </div>
+
+  <p>The details matter more than the headline. The first sprite image was taken on <strong>6 July 1989</strong> by a University of Minnesota team who were <em>testing</em> a low-light TV camera for an unrelated rocket campaign and happened to point it at a distant storm. Serendipity, not search. Space Shuttle payload-bay video was later found to contain sprites recorded years earlier that nobody had recognized.</p>
+
+  <p>What ended the century of argument was not better argument. Sentman and Lyons pointed calibrated, time-stamped, <em>triangulating</em> instruments at the right altitude band and published the error bars. Within five years it was ordinary atmospheric physics.</p>
+
+  <p>And the lesson repeated in 2024. NASA's ALOFT campaign flew instruments through tropical thunderclouds and found they <strong>glow in gamma rays for hours across thousands of square kilometres</strong>, structured at sub-second scales — an entire emission regime unknown thirty years after the first gamma-ray flash discovery, in storms everyone had been watching the whole time.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">03 — Open ground, physics</p>
+    <h2>Experiments nobody has run</h2>
+    <p class="sec-dek">Openness = how unresolved. Reach = how attackable with existing hardware.</p>
+  </div>
+
+  <div class="entries">
+
+    <div class="entry">
+      <div>
+        <span class="tag t-open">Never attempted</span>
+        <h3>Measure a negative energy density directly, and test a quantum energy inequality</h3>
+        <p>Negative energy density is real and routinely made — that's what the Casimir effect is, measured to ~0.5% precision. The dynamical Casimir effect goes further: modulating a boundary condition in a superconducting circuit pulls real, correlated, two-mode-squeezed photon pairs out of the vacuum, confirmed at 50 mK where thermal occupation is 0.008.</p>
+        <p>Nobody has done full Wigner tomography on that output field to reconstruct the local energy density and check it against a Ford–Roman bound.</p>
+        <p class="hook">This would convert quantum energy inequalities from theorems into measured physics. The hardware exists and already works.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:95%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:70%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-open">Highest leverage</span>
+        <h3>Chase a noise floor instead of an entanglement</h3>
+        <p>Proving gravity is quantum was supposed to need masses eight orders of magnitude heavier than any object ever put in superposition. A 2026 result reframes it: classify every classical-gravity model that is Galilean invariant and reproduces Newton on average, and they all must inject a <strong>minimum noise floor</strong> into a gravitating system.</p>
+        <p>Measure below that floor and you have shown Newtonian gravity is entangling — without ever building a superposition.</p>
+        <p class="hook">This turns a coherence problem into a force-noise problem on an ordinary classical mass. Exactly what torsion balances and levitated optomechanics already optimize.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:88%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:82%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-contest">20-year anomaly</span>
+        <h3>Settle the Casimir puzzle with a non-Casimir measurement</h3>
+        <p>Precision Casimir data fits the <em>plasma</em> model of metal response and excludes the <em>Drude</em> model — which is the thermodynamically correct one for a real dissipative metal. Both cannot be right, and the disagreement is decades old and several sigma.</p>
+        <p>A 2025 proposal identifies the culprit as transverse-electric evanescent waves and proposes a decisive test: measure the lateral magnetic field of an oscillating magnetic dipole near a metal surface.</p>
+        <p class="hook">It settles a Casimir controversy without doing a Casimir experiment — and it firms up every sub-micron gravity limit, which all rest on the disputed subtraction.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:80%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:62%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-open">Unperformed</span>
+        <h3>Weigh vacuum energy</h3>
+        <p>Nobody has ever put negative energy on a scale. The Archimedes experiment is purpose-built to do it — a cryogenic balance weighing a stack of Casimir cavities made of layered superconductor, modulating cavity reflectivity by cycling through the transition temperature. Under construction, no result yet.</p>
+        <p class="hook">It tests whether a localized <em>negative</em> energy density gravitates the way general relativity demands. The most fundamental unperformed tabletop experiment in the survey.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:92%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:30%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-contest">Proven loopholes</span>
+        <h3>The energy conditions are proven in a narrower domain than the summary suggests</h3>
+        <p>Two specifics worth holding. For a <strong>non-minimally coupled</strong> scalar field, state-independent quantum energy inequalities <em>provably fail</em> — the energy density is unbounded below for 0 &lt; ξ ≤ 1/4, and conformal coupling at ξ = 1/6 sits inside that range. That is not an exotic corner.</p>
+        <p>And <strong>no quantum energy inequality is known for any interacting theory in four dimensions.</strong> Not λφ⁴, nothing. Free fields and some two-dimensional models only. The literature says so in its own words.</p>
+        <p class="hook">A QEI for any interacting 4D theory would be a landmark, and it is pure theory — no apparatus required.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:97%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:45%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-contest">Replication crisis</span>
+        <h3>Newton's constant is the worst-measured thing in physics, and 2026 made it stranger</h3>
+        <p>CODATA 2018 and CODATA 2022 give the identical value to every digit — eight years of world effort moved nothing. HUST ran two independent methods in the same lab in the same year on the same masses: they disagree by 45 ppm while each claims 11.6 ppm. JILA and HUST are about 13 sigma apart.</p>
+        <p>Then NIST rebuilt the BIPM torsion-balance design at Gaithersburg and ran it with a different team on another continent. It came out <strong>235 ppm below</strong> the 2007 BIPM value — attributed to newly identified systematics: test-mass shape, gas-pressure torque during source-mass motion, autocollimator non-linearity, plus an explicit "dark uncertainty" term for the excess run-to-run scatter.</p>
+        <p class="hook">Read this as metrology, not new physics — the scatter tracks <em>method</em> more than location, and no environmental variable has survived scrutiny. The honest open door is not "G varies with its surroundings" but "nobody yet understands torsion-balance systematics," which the field openly admits.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:90%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:55%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-solid">Moving fast</span>
+        <h3>Route around the impossible with time modulation</h3>
+        <p>Broadband passive invisibility is <em>forbidden</em>, not merely hard — Bode–Fano matching theory bounds any passive linear time-invariant cloak. The escape is to break time-invariance, and that escape turns out to be the same door as vacuum particle creation.</p>
+        <p>Concretely: you cannot spin a medium fast enough for Zel'dovich amplification, so a 2026 <cite>Nature</cite> paper modulated a ring resonator network in time to create an <strong>effective superluminal rotation</strong> — and extracted energy from it. Photonic time crystals and time-reflection at optical frequencies followed in the same window.</p>
+        <p class="hook">When brute force is blocked by a theorem, change what is doing the work. This is the one branch of transformation optics that passes from analogy into real vacuum-state manipulation.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:72%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:58%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-solid">Newly measured</span>
+        <h3>Analog gravity reached the regime real theory cannot handle</h3>
+        <p>Analog black holes in condensates and water tanks let you measure horizon physics with a <em>known</em> microscopic cutoff — which is how the trans-Planckian problem got settled empirically: Hawking-like emission survives modified short-distance dispersion, across three independent platforms.</p>
+        <p>In July 2026 an optical analog measured <strong>backreaction</strong> — and found the process is direct and single-step, not the cascade everyone assumed. Separately, a giant quantum vortex in superfluid helium produced ringdown overtones whose environmental corrections may apply to real LIGO data.</p>
+        <p class="hook">Hard limit worth stating: no analog has an Einstein equation. The correspondence is exact for a field's kinematics on a background and silent about the background's dynamics.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:60%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:35%"></span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">04 — Open ground, biology</p>
+    <h2>Where nature still wins, and why</h2>
+    <p class="sec-dek">The gaps between what organisms do and what we can build — each one a candidate</p>
+  </div>
+
+  <div class="entries">
+
+    <div class="entry">
+      <div>
+        <span class="tag t-contest">Robust result, contested frame</span>
+        <h3>Shape is stored somewhere other than the genome</h3>
+        <p>A <em>transient</em> chemical treatment that shifts membrane voltage produces planaria that regenerate with two heads — indefinitely, through many later regenerations, with an <strong>unaltered genome</strong>. The same approach induced working eyes in frog gut and tail tissue without eye-field transcription factors.</p>
+        <p>The experiments reproduce. The interpretive framework — pattern memory, anatomical setpoints — is genuinely contested in developmental biology. Both things are true.</p>
+        <p class="hook">The falsifiable core: a transient, non-genetic electrical intervention permanently changes the anatomy an organism rebuilds toward. If that generalizes, regenerative medicine's target moves from gene editing to pattern-state control.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:85%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:75%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-solid">Confirmed, under-applied</span>
+        <h3>Noise can increase quantum transport instead of destroying it</h3>
+        <p>Environment-assisted quantum transport: efficiency through a quantum network is <em>non-monotonic</em> in dephasing noise. Zero noise traps excitations in destructive-interference dark states; too much freezes them by the Zeno effect. There is an optimum in between, and biological reorganization energies sit near it.</p>
+        <p>Confirmed experimentally in trapped ions, photonic waveguides, and programmable nanophotonics. It survived the collapse of the photosynthetic-coherence story intact, because it is a claim about noise rather than about long coherence.</p>
+        <p class="hook">The decisive biology experiment is unperformed: mutate a complex off the ENAQT optimum and measure the efficiency loss. And the design rules have barely reached organic photovoltaics or quantum-network routing.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:70%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:65%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-open">Least characterized</span>
+        <h3>The latch</h3>
+        <p>Muscle tops out around 250–500 W/kg. Latch-mediated spring actuation beats it by orders of magnitude by decoupling slow loading from fast release — trap-jaw ants close mandibles at 64 m/s in 0.13 ms, around 10⁵ g; mantis shrimp strike hard enough to cavitate the water and get a second impulse free.</p>
+        <p>The springs and the geometry are well modelled. There is even a design rule: below a critical mass, spring-driven beats motor-driven, with a cascade of limits determining which component binds.</p>
+        <p class="hook">The latch itself — microsecond, low-friction, repeatable, often actively tunable release — is explicitly the least-characterized element in the field. That is a mechanism problem, attackable with 3D printing and a high-speed camera.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:88%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:92%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-open">Unattempted transfer</span>
+        <h3>Nothing we build repairs itself</h3>
+        <p>Photosystem II photodamages its own D1 subunit roughly every 30 minutes and replaces it. Bone remodels continuously. Across the whole survey, the recurring pattern is that we can copy biology's <em>architecture</em> and consistently fail to copy its ambient-condition, self-correcting <em>fabrication</em>.</p>
+        <p>We reproduce nacre's brick-and-mortar geometry but not its self-assembly from seawater at room temperature. We have closed most of the molecular gap on spider silk; the bottleneck is the spinning duct, not the protein.</p>
+        <p class="hook">A material that degrades but rebuilds itself faster than it degrades requires no unresolved physics. It is the largest unattempted biomimetic transfer on the list.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:78%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:60%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-contest">Best quantum-biology target</span>
+        <h3>A protein that protects spin coherence for a microsecond at body temperature</h3>
+        <p>The avian compass requires singlet–triplet coherence surviving ~1 µs in a warm, wet, fluctuating protein, so that a 50 µT field — an energy around 10⁻⁸ kT — can bias reaction yield. Robin cryptochrome is magnetically sensitive in vitro and <em>more</em> sensitive than the non-migratory chicken and pigeon versions, which is hard to explain away.</p>
+        <p>It is not proven. There is no knockout in a migratory songbird, and naive estimates say spin relaxation should destroy the coherence far faster than a microsecond.</p>
+        <p class="hook">If it is real, biology solved at 310 K a problem quantum sensing spends millikelvin cryostats on. Even a partial mechanism would transfer.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:93%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:28%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-solid">Design principle</span>
+        <h3>Biology parks on top of instabilities</h3>
+        <p>Cochlear hair cells self-tune to the edge of a Hopf bifurcation, where response gain diverges, then actively hold themselves there — which is how they detect 0.3 nm displacements, comparable to thermal fluctuation. Cricket hairs detect air displacements at or below kT. Starling flocks show scale-free correlation, with no intrinsic correlation length.</p>
+        <p>Engineering almost universally designs <em>away</em> from instability.</p>
+        <p class="hook">Corrective worth carrying: the primate retina deliberately sits <em>below</em> the single-photon limit, trading sensitivity for contrast fidelity. Biology optimizes a task, not a physics benchmark — knowing where it is suboptimal is as useful as knowing where it excels.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:65%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:70%"></span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">05 — Standing mysteries</p>
+    <h2>Real, recorded, unexplained</h2>
+    <p class="sec-dek">Phenomena with instrumental records and no settled mechanism</p>
+  </div>
+
+  <div class="entries">
+
+    <div class="entry">
+      <div>
+        <span class="tag t-open">Spectral database: N = 1</span>
+        <h3>Ball lightning</h3>
+        <p>In July 2012 a team on the Qinghai Plateau had two slitless spectrographs aimed at ordinary lightning from 0.9 km and accidentally caught a ball lightning event. Luminous diameter ~5 m, travelling ~15 m horizontally. The spectrum showed <strong>neutral silicon, calcium, iron</strong> — soil elements — for the entire lifetime, against ionized nitrogen in the parent stroke.</p>
+        <p>That remains the only natural ball-lightning spectrum ever recorded. And no mechanism explains lifetime, free horizontal motion, and passage through glass together — lab plasmoids get lifetime or mobility, never both.</p>
+        <p class="hook">A transmission grating in front of an existing camera costs tens of dollars and makes a slitless spectrograph. That is the exact configuration that produced the only datum in the field.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:94%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:80%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-contest">90 years unresolved</span>
+        <h3>Sonoluminescence</h3>
+        <p>A collapsing bubble emits picosecond light flashes. Reproducible since 1934, mechanism still argued. The sharp anomaly: spectroscopy of argon in sulphuric acid finds excited states above 13 eV that <strong>cannot be thermally populated</strong> at the measured emission temperature — so the emitting region is hotter and denser than the region being sampled, or the population mechanism isn't thermal.</p>
+        <p>A 2022 measurement reports sub-Poissonian photon statistics by two independent methods. If that holds, no thermal or bremsstrahlung model accounts for it, and the required quantum theory does not exist.</p>
+        <p class="hook">Treat the widely quoted 10⁶ K figures as model-dependent inferences from opacity fitting, not measurements.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:82%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:72%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-open">Sub-breakdown initiation</span>
+        <h3>Sprites still don't start the way they should</h3>
+        <p>Even now that sprites are routine, modelled fields at the observed initiation points are <em>below</em> conventional breakdown. An undisturbed mesosphere shouldn't initiate one. Preionisation inhomogeneities are required, but their origin and size-density spectrum are unknown — the meteoric-dust seed hypothesis has never been confirmed observationally.</p>
+        <p>The charge-moment threshold isn't even a constant: it migrates between roughly +350 and +600 C·km from night to night, and absolute calibration remains unsolved.</p>
+        <p class="hook">Sprite infrasound — "inverted chirps" under 300 km — is measured, poorly modelled, small-N, and a low-cost-instrument problem.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:76%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:66%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <span class="tag t-solid">The model for solving one</span>
+        <h3>Min Min lights — and STEVE</h3>
+        <p>Australia's Min Min lights were solved by <em>reproducing them</em>: an inversion-layer mirage duct carries light from headlights and campfires hundreds of kilometres past the horizon. A cheap field experiment, a decisive result, one paper.</p>
+        <p>STEVE went the other way. Alberta aurora photographers documented a structure nobody had catalogued; a citizen-science pipeline routed it to researchers; a satellite flew through it and confirmed intense subauroral plasma flow. Its green "picket fence" emission mechanism is still open.</p>
+        <p class="hook">Both are proofs that a small group with careful method and good documentation lands real results. One by explaining, one by discovering.</p>
+      </div>
+      <div class="meters">
+        <div><p class="meter-lbl">Openness</p><div class="meter-track"><span class="meter-fill m-open" style="width:40%"></span></div></div>
+        <div><p class="meter-lbl">Reach</p><div class="meter-track"><span class="meter-fill m-reach" style="width:88%"></span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">06 — The playbook</p>
+    <h2>The bottleneck is range, not hardware</h2>
+    <p class="sec-dek">What a small group can build, using prior art that is already published and validated</p>
+  </div>
+
+  <p>Data volume is not the problem. A single week of one field expedition logged over 600 hours of far-infrared. Harvard's all-sky array catalogued about <strong>500,000 objects in five months</strong> — and reported that a substantial ambiguous fraction persists <em>precisely because range is unconstrained by one station</em>.</p>
+
+  <p>That is the whole bottleneck, stated by the people with the most data. Nearly every extraordinary quantity in this literature — radiant powers, accelerations, sizes — is a <strong>range-degenerate inference from single-station imagery</strong>. Angular size, angular speed and apparent brightness are all measured. Distance is assumed. Fix distance and every one of them becomes a physical quantity with an error bar.</p>
+
+  <p>The meteor community already solved the engineering, in the open, with published accuracy figures — <strong>0.78 arcmin astrometry, ±0.1 magnitude photometry, from roughly $200 of parts per station</strong>, on a Raspberry Pi. Copy it wholesale rather than reinventing it.</p>
+
+  <p>The contrast is stark and worth stating plainly. The meteor networks publish astrometric residuals, photometric zero-points, and trajectory uncertainties. Among anomaly-focused programs, <strong>not one of the citizen sensor networks publishes any of the three</strong> — and the longest-running unexplained-lights station has no peer-reviewed calibration paper at all, which is why its headline radiant-power figure carries unquantified distance uncertainty.</p>
+
+  <div class="play">
+    <div class="play-item">
+      <span class="play-n">01</span>
+      <div>
+        <h3>Two stations, 5–20 km baseline, GPS-disciplined clocks</h3>
+        <p>Sub-millisecond timing via PPS. This single change is the highest-return move available, and it is the one thing the long-running unexplained-lights programs have never systematically had.</p>
+      </div>
+    </div>
+    <div class="play-item">
+      <span class="play-n">02</span>
+      <div>
+        <h3>Use the published trajectory solver — don't rewrite it</h3>
+        <p>An uncertainty-propagating Monte Carlo triangulation framework already exists, MIT-licensed, with validated error budgets and automatic estimation of inter-station timing offsets. It turns a two-station detection into a range, a velocity, and an uncertainty. This is the hard part, it is solved, and it is the part every anomaly-focused project has skipped.</p>
+      </div>
+    </div>
+    <div class="play-item">
+      <span class="play-n">03</span>
+      <div>
+        <h3>Recalibrate on <em>every detection</em>, not at install</h3>
+        <p>The single most transferable engineering lesson in the survey. In an ordinary outdoor camera enclosure, thermal expansion produces up to <strong>10 arcmin of pointing drift in one night</strong>, and the photometric zero-point can shift <strong>more than a full magnitude</strong> between dusk and dawn. A calibrate-once architecture silently loses an order of magnitude of accuracy across a multi-year archive — which is exactly why the long-running unexplained-lights programs have brightness estimates nobody can use.</p>
+      </div>
+    </div>
+    <div class="play-item">
+      <span class="play-n">04</span>
+      <div>
+        <h3>Cross-reference aircraft and satellites at detection time, and keep the rejections</h3>
+        <p>Free historical ADS-B and public orbital catalogues. The elegant inversion: Harvard's array uses aircraft positions as its <em>astrometric calibration reference</em>. The confound channel doubles as the ruler. Specular glints from flat satellite panels produce exactly the bright-silent-hovering-then-gone signature that dominates naive datasets.</p>
+      </div>
+    </div>
+    <div class="play-item">
+      <span class="play-n">05</span>
+      <div>
+        <h3>Add a grating, an infrasound channel, and a radiation channel on the same clock</h3>
+        <p>A commodity transmission grating turns one camera into a slitless spectrograph. A muon detector is under $100 in parts and about four hours to build. Spectra and coincidence across modalities collapse ambiguity fast.</p>
+      </div>
+    </div>
+    <div class="play-item">
+      <span class="play-n">06</span>
+      <div>
+        <h3>Write immutable provenance into every frame</h3>
+        <p>Station ID, GPS time, pointing solution, calibration coefficients, firmware hash. A file with no chain of custody establishes nothing regardless of what it shows. Then publish the residuals <em>and</em> the rejections, so "unidentified" is a defined remainder of a stated procedure rather than an absence of effort.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull">
+    The reports were never the evidence. The baseline and the calibration were.
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <p class="sec-tag">07 — Ranked</p>
+    <h2>Where the expected value is</h2>
+    <p class="sec-dek">Weighted for openness against reachability, not for how exciting the headline would be</p>
+  </div>
+
+  <div class="bets">
+    <div class="bet">
+      <span class="bet-rank">1</span>
+      <div>
+        <h3>Chase the classical-gravity noise floor</h3>
+        <p>A sensitivity problem with existing technology, instead of an eight-order-of-magnitude coherence problem. It is model-independent across classical-gravity and entropic formulations, so it isn't a bet on one theory being right.</p>
+      </div>
+    </div>
+    <div class="bet">
+      <span class="bet-rank">2</span>
+      <div>
+        <h3>Wigner tomography of dynamical-Casimir output</h3>
+        <p>Directly measure a negative energy density and test a Ford–Roman inequality. Nobody has done it, the hardware exists, and it converts a class of theorems into measured physics.</p>
+      </div>
+    </div>
+    <div class="bet">
+      <span class="bet-rank">3</span>
+      <div>
+        <h3>Patch-potential control on fibre-free levitated masses</h3>
+        <p>Unlocks three fields at once: Casimir metrology, sub-38.6 µm gravity, and tabletop quantum gravity all share the same limiting systematic. Unglamorous, tractable, and the payoff is a factor, not a percentage.</p>
+      </div>
+    </div>
+    <div class="bet">
+      <span class="bet-rank">4</span>
+      <div>
+        <h3>Two-station calibrated observation with published rejections</h3>
+        <p>Cheap, immediately publishable, and it addresses the stated bottleneck of every serious group in the field. The meteor networks have already proven the stack works at amateur cost.</p>
+      </div>
+    </div>
+    <div class="bet">
+      <span class="bet-rank">5</span>
+      <div>
+        <h3>Characterize the LaMSA latch</h3>
+        <p>The least-understood element of the highest-power-density actuation scheme in biology, attackable with a printer and a high-speed camera, with a live robotics application waiting.</p>
+      </div>
+    </div>
+    <div class="bet">
+      <span class="bet-rank">6</span>
+      <div>
+        <h3>Independent rebuild-and-replicate, as a standing protocol</h3>
+        <p>Reconstructing another lab's apparatus from its design — rather than building a novel one — surfaced systematics the original team had not identified, and did more for the gravitational constant than fifteen years of new instrument designs. It remains rare across precision measurement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-bottom:0">
+  <div class="sec-head">
+    <p class="sec-tag">08 — Honesty</p>
+    <h2>The walls that don't move, and what to verify</h2>
+  </div>
+
+  <div class="caveat">
+    <h3>Three numbers govern feasibility</h3>
+    <p><strong>The Casimir d⁻⁴ scaling.</strong> Negative energy density is real but ranges from about 10⁻⁴ J/m³ at a micron to enormous at a nanometre — where it becomes inseparable from surface physics. The scaling is the entire feasibility story.</p>
+    <p><strong>The Unruh coefficient: 4.06 × 10⁻²¹ K per m/s².</strong> One kelvin needs an acceleration of 2.5 × 10²⁰ m/s². That is why it remains unobserved, and why analog Hawking is in far better shape than analog Unruh.</p>
+    <p><strong>Dynamical Casimir only works when the mirror has no mass.</strong> A real mirror oscillating at 2 GHz gives about one photon per day and needs ~100 MW of drive. The circuit version wins by twelve orders of magnitude because its boundary is a boundary <em>condition</em>. That trick does not obviously generalize to gravitational boundaries.</p>
+  </div>
+
+  <div class="caveat" style="margin-top:18px;background:var(--sunk);border-color:var(--rule)">
+    <h3 style="color:var(--ink-2)">Verify before quoting</h3>
+    <p>The per-decade α exclusions below 10 µm here are order-of-magnitude ladder values and should be read off the current compilation. Several individual gravitational-constant values came from a review table that returned a demonstrably wrong entry — pull them from primaries.</p>
+    <p>Publication status is unconfirmed for two very recent time-reflection preprints. The exact Hawking temperature in the 2019 condensate paper needs reading off the source; a figure quoted mid-survey was wrong and withdrawn.</p>
+    <p>One correction to the companion dossier: a 2026 paper proves new no-go theorems and argues the recent "positive-energy warp drive" results rest on misapplications of general relativity. That row was listed as contested; the case against it is stronger than shown.</p>
+  </div>
+
+  <details>
+    <summary>Key sources</summary>
+    <div class="refs">
+      <div>Lee, J.G., Adelberger, E.G., Cook, T.S., Fleischer, S.M. &amp; Heckel, B.R. "New Test of the Gravitational 1/r² Law at Separations down to 52 µm." <cite>Phys. Rev. Lett.</cite> 124, 101101 (2020). <a href="https://arxiv.org/abs/2002.11761">arXiv:2002.11761</a></div>
+      <div>Kapner, D.J. et al. "Tests of the Gravitational Inverse-Square Law below the Dark-Energy Length Scale." <cite>Phys. Rev. Lett.</cite> 98, 021101 (2007). <a href="https://doi.org/10.1103/PhysRevLett.98.021101">doi:10.1103/PhysRevLett.98.021101</a></div>
+      <div>Schlamminger, S. et al. "Redetermination of the gravitational constant with the BIPM torsion balance at NIST." <cite>Metrologia</cite> 63, 025012 (2026). <a href="https://doi.org/10.1088/1681-7575/ae570f">doi:10.1088/1681-7575/ae570f</a></div>
+      <div>Oppenheim, J., Sparaciari, C., Šoda, B. &amp; Weller-Davies, Z. "Gravitationally induced decoherence vs space-time diffusion." <cite>Nature Communications</cite> 14, 7910 (2023). <a href="https://arxiv.org/abs/2203.01982">arXiv:2203.01982</a></div>
+      <div>Fabiano, G., Fujita, T., Matsumura, A. &amp; Carney, D. "Minimal noise in non-quantized gravity." arXiv:2603.26075 (2026). <a href="https://arxiv.org/abs/2603.26075">arXiv:2603.26075</a></div>
+      <div>Wilson, C.M. et al. "Observation of the dynamical Casimir effect in a superconducting circuit." <cite>Nature</cite> 479, 376 (2011). <a href="https://arxiv.org/abs/1105.4714">arXiv:1105.4714</a></div>
+      <div>Fewster, C.J. &amp; Osterbrink, L.W. "Quantum energy inequalities for the non-minimally coupled scalar field." <cite>J. Phys. A</cite> 41, 025402 (2008). <a href="https://arxiv.org/abs/0708.2450">arXiv:0708.2450</a></div>
+      <div>Klimchitskaya, G.L. &amp; Mostepanenko, V.M. "Casimir Puzzle and Casimir Conundrum." <cite>Universe</cite> 7, 84 (2021). <a href="https://doi.org/10.3390/universe7040084">doi:10.3390/universe7040084</a></div>
+      <div>Nasari, H. et al. "Observation of Floquet rotational superradiance." <cite>Nature</cite> (8 July 2026). <a href="https://doi.org/10.1038/s41586-026-10725-y">doi:10.1038/s41586-026-10725-y</a></div>
+      <div>Procopio, L., Aguero-Santacruz, R., Bermudez, D. &amp; Leonhardt, U. "Backreaction of stimulated Hawking radiation in an optical analogue." <cite>Nature</cite> (1 July 2026). <a href="https://arxiv.org/abs/2607.01118">arXiv:2607.01118</a></div>
+      <div>Cen, J., Yuan, P. &amp; Xue, S. "Observation of the optical and spectral characteristics of ball lightning." <cite>Phys. Rev. Lett.</cite> 112, 035001 (2014). <a href="https://doi.org/10.1103/PhysRevLett.112.035001">doi:10.1103/PhysRevLett.112.035001</a></div>
+      <div>Franz, R.C., Nemzek, R.J. &amp; Winckler, J.R. "Television image of a large upward electrical discharge above a thunderstorm system." <cite>Science</cite> 249, 48 (1990). <a href="https://doi.org/10.1126/science.249.4964.48">doi:10.1126/science.249.4964.48</a></div>
+      <div>Marisaldi, M. et al. "Highly dynamic gamma-ray emissions are common in tropical thunderclouds." <cite>Nature</cite> 634, 57 (2024). <a href="https://doi.org/10.1038/s41586-024-07936-6">doi:10.1038/s41586-024-07936-6</a></div>
+      <div>Vida, D. et al. "The Global Meteor Network — methodology and first results." <cite>MNRAS</cite> 506, 5046 (2021). <a href="https://doi.org/10.1093/mnras/stab2008">doi:10.1093/mnras/stab2008</a></div>
+      <div>Domine, L. et al. "Commissioning an all-sky infrared camera array for detection of airborne objects." <cite>Sensors</cite> 25, 783 (2025). <a href="https://arxiv.org/abs/2411.07956">arXiv:2411.07956</a></div>
+      <div>Vargemezis, G.N. et al. "Contribution of VLF electromagnetic survey to the investigation of Hessdalen lights (Norway)." <cite>J. Applied Geophysics</cite> 226, 105398 (2024). <a href="https://doi.org/10.1016/j.jappgeo.2024.105398">doi:10.1016/j.jappgeo.2024.105398</a></div>
+      <div>MacDonald, E.A. et al. "New science in plain sight: citizen scientists lead to the discovery of optical structure in the upper atmosphere." <cite>Science Advances</cite> 4, eaaq0030 (2018). <a href="https://doi.org/10.1126/sciadv.aaq0030">doi:10.1126/sciadv.aaq0030</a></div>
+      <div>Durant, F. et al. "Long-term, stochastic editing of regenerative anatomy via targeting endogenous bioelectric gradients." <cite>Biophysical Journal</cite> 112, 2231 (2017). <a href="https://doi.org/10.1016/j.bpj.2017.04.011">doi:10.1016/j.bpj.2017.04.011</a></div>
+      <div>Maier, C. et al. "Environment-Assisted Quantum Transport in a 10-qubit Network." <cite>Phys. Rev. Lett.</cite> 122, 050501 (2019). <a href="https://doi.org/10.1103/PhysRevLett.122.050501">doi:10.1103/PhysRevLett.122.050501</a></div>
+      <div>Ilton, M. et al. "The principles of cascading power limits in small, fast biological and engineered systems." <cite>Science</cite> 360, eaao1082 (2018). <a href="https://doi.org/10.1126/science.aao1082">doi:10.1126/science.aao1082</a></div>
+      <div>Xu, J. et al. "Magnetic sensitivity of cryptochrome 4 from a migratory songbird." <cite>Nature</cite> 594, 535 (2021). <a href="https://doi.org/10.1038/s41586-021-03618-1">doi:10.1038/s41586-021-03618-1</a></div>
+      <div>Flannigan, D.J. &amp; Suslick, K.S. "Plasma formation and temperature measurement during single-bubble cavitation." <cite>Nature</cite> 434, 52 (2005). <a href="https://doi.org/10.1038/nature03361">doi:10.1038/nature03361</a></div>
+      <div>Pettigrew, J.D. "The Min Min light and the Fata Morgana." <cite>Clinical and Experimental Optometry</cite> 86, 109 (2003). <a href="https://doi.org/10.1111/j.1444-0938.2003.tb03069.x">doi:10.1111/j.1444-0938.2003.tb03069.x</a></div>
+      <div>Stephan, K.D., Sonnenfeld, R. &amp; Bertoloni, J. "Evaluation of video evidence of possible ball lightning." <cite>QJRMS</cite> 151, e5038 (2025). <a href="https://doi.org/10.1002/qj.5038">doi:10.1002/qj.5038</a></div>
+    </div>
+  </details>
+</section>
+
+</div>
