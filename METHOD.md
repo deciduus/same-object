@@ -402,3 +402,67 @@ late-life mortality plateau or heterogeneous-redundancy results.
 **Classify every result as TRUE GAP / ONE-WAY BORROWING / CLOSED.** A one-way borrowing is
 a real gap in the unread direction, and it is easy to mistake for a closed one.
 
+---
+
+## 12. Precedent — this method has a name, and it is not ours
+
+**Checked deliberately. The result is deflationary and must be carried forward honestly.**
+
+The method is **Literature-Based Discovery (LBD)**, founded by Don R. Swanson in 1986.
+The title of his 1987 paper is essentially this project's thesis statement:
+
+> Swanson, "Two medical literatures that are logically but not bibliographically
+> connected," *JASIS* 38(4):228-233 (1987).
+
+**Non-co-citation as evidence of a real gap is Swanson's founding move**, not a refinement
+we added. He found fish oil for Raynaud's syndrome that way, and it was confirmed in a
+clinical trial in 1989.
+
+### What must be cited, and stop being claimed
+
+| Source | What it already established |
+|---|---|
+| Swanson 1986, *Library Quarterly* 56(2):103; *Perspect. Biol. Med.* 30(1):7 | Undiscovered public knowledge; the fish oil / Raynaud's discovery |
+| Swanson 1987, *JASIS* 38(4):228 | Logically-but-not-bibliographically connected literatures |
+| Small 1973, *JASIS* 24:265 | Co-citation as a measure |
+| Kessler 1963 | Bibliographic coupling |
+| Stirling 2007, *J. R. Soc. Interface* 4 | Rao-Stirling disparity - the standard measure of cognitive distance between fields |
+| Uzzi et al. 2013, *Science* 342:468 | Atypical combinations quantified and shown valuable |
+| Foster, Rzhetsky & Evans 2015, *Am. Sociol. Rev.* 80:875 | The risk/reward tradeoff of bridging strategies |
+| Kostoff, *TFSC* 75:165 (2008) and the LRD series | Explicitly cross-domain, non-biomedical literature-related discovery |
+| **Douard et al. 2025, *Sci. Rep.*, doi 10.1038/s41598-025-15067-9** | **101 million abstracts, engineering-biology topic graph, four validated case studies** |
+| Boulding 1956, *Management Science* 2(3):197 | General Systems Theory - cataloguing cross-disciplinary isomorphisms, seventy years ago |
+
+**We walked into our own synonym trap** (§11). This entire project has been running
+literature-based discovery without using the term. Had the right name been queried at the
+start, the precedent would have surfaced immediately.
+
+### What honestly survives
+
+| Feature | Status |
+|---|---|
+| Cross-disciplinary rather than biomedical | **Underexplored, not new.** Kostoff's LRD branch exists and is cited |
+| Co-citation counts as gap evidence | **Fully standard.** Claim nothing |
+| **Quantified metric on both sides as an entry criterion** | **Defensible.** No LBD method found gates candidates on commensurable quantification |
+| TRUE GAP / ONE-WAY BORROWING / CLOSED | Mildly novel as a stated schema; the field names gap heterogeneity as an open problem |
+| **Positive controls** | **A real contribution** - see below |
+
+### Why the positive controls matter more than expected
+
+After forty years, LBD's canonical set of *experimentally validated* discoveries is roughly
+**two**, both Swanson's own. Kostoff (2007) showed three published LBD "discoveries" were
+not valid discoveries at all, having passed peer review. Moreau (*Bioinformatics* 2023,
+doi 10.1093/bioinformatics/btad090) argues the field "is built on sand" because its
+evaluation rests on a cherry-picked handful of Swanson replications.
+
+Running known-closed pairs as controls — which this project started doing by accident —
+answers that documented, published, recent complaint directly. **That, and the
+quantification filter, are the only two features worth claiming.**
+
+### The honest positioning
+
+An instrument built **on top of** literature-based discovery, not beside it. Working in its
+thin non-biomedical branch, with two methodological additions and a curated standing
+catalogue that does not appear to exist elsewhere — though that last absence rests on about
+fifteen searches, not a systematic review.
+

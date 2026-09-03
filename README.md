@@ -30,6 +30,19 @@ notes added to nodes persist across sessions and can be read back.
 
 ---
 
+## Precedent, stated up front
+
+This method is **Literature-Based Discovery**, founded by Swanson in 1986. Non-co-citation
+as evidence of a connectable gap is his founding move, not our innovation, and an
+engineering-biology version at 101-million-abstract scale was published in 2025.
+
+Two features appear defensible: requiring a **quantified metric on both sides** as an entry
+criterion, and running **positive controls** — which answers a documented 2023 complaint
+that LBD evaluation lacks them. See `METHOD.md` §12 for the full accounting and the
+citation list.
+
+---
+
 ## The through-line
 
 Five moves recur across every field surveyed, and none of them is *build a stronger
