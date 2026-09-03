@@ -17,7 +17,7 @@ uses-move: []
 rests-on: []
 tags: [node/gap, crosses/vocabulary, evidence/string-protocol, standing/narrowed]
 last-checked: 2026-09-03
-note: "Class-level statistics exist (Bailey 2017, 41,000 measurements; metrology dark uncertainty). The distribution of OUTCOMES - systematics vs new physics - is still uncomputed. Henrion 1986 unread."
+note: "Outcome distribution still uncomputed. Our own four discriminating features tested: one refuted (Homestake), three narrowed, and the neutron-lifetime example was wrong on the facts."
 ---
 
 # The discrepancy base rate
@@ -60,19 +60,66 @@ discrepancies became.
 
 Having the phenomenon quantified is not having the base rate.
 
-## Four discriminating features with empirical support
+## Four discriminating features — tested, and three of four damaged
 
-1. **Same-method disagreements are systematics, essentially always.** Caesium versus rubidium
-   recoil at 5.4 sigma; two gravity methods in one lab at 2.7 sigma.
-2. **Single-group claims resolve against the claimant** — with a corollary: when outsiders could
-   check cheaply and have not in a decade, *the absence is the result.*
-3. **Prior-choice fragility is diagnostic.** A lensing result went from 2% to 8% on an
-   assumption change, with no new data.
-4. **The interesting survivors are over-determined.** The neutron lifetime matters because an
-   independent relation picks a side. G is *less* interesting than its 13 sigma suggests,
-   because nothing over-determines it.
+These were stated with one or two supporting examples each and never tested. They have now been
+run against the historical record with a deliberate counterexample hunt.
 
-## The counterexample that matters
+### 1. Same-method disagreements are systematics — SUPPORTED BUT NARROWER
 
-The solar neutrino problem fit this pattern exactly and **did** resolve to new physics. The rate
-is not zero — it is uncomputed and era-biased. Related: [[G17-overconfident-uncertainties]].
+Newton's constant is a **better** confirming case than the ones originally cited:
+torsion-balance-dominated, parts in 10⁴ apart, with no new physics on offer.
+
+But **"same method" is undefined here, and in practice gets assigned after the answer is
+known** — which makes the rule unfalsifiable as used. Under the note's own coarse convention,
+SNO charged-current versus Super-K elastic-scattering counts as same-method, and that
+disagreement was real physics.
+
+### 2. Single-group claims resolve against the claimant — REFUTED
+
+Three vindicated single-group claims: **Homestake**, **CP violation (1964)**, **Wu (1957)**.
+
+**The number of groups predicts nothing.** What predicts is the *cost and motivation of the
+check*.
+
+**The corollary is worse — UNTESTABLE AS STATED, and directionally wrong.** It said that when
+outsiders could check cheaply and have not in a decade, the absence is itself the result. It
+cannot separate *obviously false* from *unfundable*. And its own flagship case refutes its
+premise: **DAMA was checked**, by two purpose-built same-target experiments — ANAIS-112 and
+COSINE-100 — precisely because refuting it was publishable.
+
+### 3. Prior-choice fragility is diagnostic — SUPPORTED BUT NARROWER
+
+TDCOSMO IV (2% → 8–9%, verified), BICEP2 and EDGES all confirm it. But it runs **one direction
+only**: OPERA was prior-robust and wrong; the standard solar model was prior-fragile and right.
+
+**Fragility indicts the number, not the phenomenon.**
+
+### 4. Interesting survivors are over-determined — SUPPORTED BUT NARROWER, and our example was wrong
+
+**The flagship case is factually incorrect.** The note said an independent relation picks a side
+in the neutron lifetime. **It does not.** Meson-decay V_ud favours beam; superallowed 0⁺→0⁺
+V_ud favours bottle. PERKEO III and aSPECT split the same way.
+
+And over-determination predicts **resolvability, not new physics** — it delivered the solar
+answer and dissolved the muon g−2 anomaly equally.
+
+## The reframe that saves three of them
+
+**Three of the four do not classify outcomes at all. They localise where the residual
+uncertainty lives.** Read that way, every counterexample above is consistent with them.
+
+That is a smaller claim and a true one, and it is probably the useful form.
+
+## The counterexample that matters, and now matters twice
+
+The solar neutrino problem fit the pattern exactly and **did** resolve to new physics. The rate
+is not zero — it is uncomputed and era-biased.
+
+**Homestake is also the single strongest counterexample to feature 2**: a single-group claim,
+unreplicated for roughly two decades, whose default explanation for thirty years was a
+systematic in the claimant's own apparatus or in Bahcall's model — and it resolved *for* the
+claimant. This entry already listed solar neutrinos against the base rate. It had not noticed
+the same case falsifies one of its own discriminating features.
+
+Related: [[G17-overconfident-uncertainties]].

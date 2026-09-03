@@ -8,6 +8,33 @@ type: method
 Append-only. One line per structural change to the vault. Format:
 `## [YYYY-MM-DD] operation | description`
 
+## [2026-09-03] our own claims tested | G9's four features, one refuted and one wrong on facts
+
+The first time this project turned the counterexample hunt on **its own reasoning** rather than
+on a literature. Three of four survived only in weakened form.
+
+**Feature 2 — "single-group claims resolve against the claimant" — REFUTED.** Homestake, CP
+violation 1964, and Wu 1957 are all vindicated single-group claims. Number of groups predicts
+nothing; the cost and motivation of the check does. The corollary — a decade of silence means
+the claim is dead — cannot separate *obviously false* from *unfundable*, and its own flagship
+case refutes it: **DAMA was checked**, by ANAIS-112 and COSINE-100, because refuting it was
+publishable.
+
+**Feature 4's flagship example was factually wrong.** We wrote that an independent relation
+picks a side in the neutron lifetime. It does not: meson-decay V_ud favours beam, superallowed
+0⁺→0⁺ V_ud favours bottle, and PERKEO III and aSPECT split the same way.
+
+**Feature 1 is unfalsifiable as used** — "same method" is undefined and gets assigned after the
+answer is known.
+
+**The reframe that saves them:** three of the four do not classify outcomes at all. They
+localise where the residual uncertainty lives. Under that reading every counterexample is
+consistent. Smaller claim, true one.
+
+**And Homestake was already in the note** — listed as the counterexample to the base rate. Nobody
+had noticed it also falsifies one of the note's own features. The instances were catalogued and
+never cross-checked against each other.
+
 ## [2026-09-03] citation-intersection | both survivors tested at the hardest standard
 
 Run on Crossref + OpenCitations per [[citation-sources]]. **Both hold.**
