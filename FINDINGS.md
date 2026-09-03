@@ -203,6 +203,28 @@ cost of remodeling.
 **The unmeasured quantity:** the cost and latency of a capacity change. Biology pays it in
 ATP and weeks; engineering pays it in capex and years. No shared axis.
 
+### G21 · No unified dimensionless regime map for biology
+No single published figure or framework places organisms and processes in
+dimensionless-number space across physics domains. Verified against the two most likely
+candidates: a 2026 *Physics Today* feature on dimensionless numbers in biology offers
+scattered examples and explicitly no comprehensive table; the field's 2021 biomimetics
+scale review organizes by physics domain and uses Reynolds "descriptively rather than
+systematically." The canonical books are fluid-media only — no optics, acoustics, thermal
+noise or information.
+
+### G22 · Scale-transfer triage — narrow but real
+Biomimetics uses the word "scaling" in **9,960** works. The intersection with
+Buckingham-theorem terminology is **9** — all single-application engineering papers, **zero
+methodology**. Terminological overlap without a methodological one.
+
+**The decisive datum:** the field's dedicated review on scale in biomimetic transfer, 200
+references, contains **no Buckingham Pi analysis**, and states in its own words that
+universal scaling guidelines are "far from being identified," with "no decision tree or
+algorithm."
+
+The unclaimed piece is the criterion in `METHOD.md` §9 applied as a pre-transfer screening
+step. Honest framing: methodology packaging on 111-year-old machinery, not a discovery.
+
 ---
 
 ## Key findings with numbers
@@ -335,6 +357,24 @@ Applying the neighbour procedure (METHOD.md §8) to this project's own load-bear
 And the live physics sits exactly there: photonic time crystals, Floquet rotational
 superradiance, and the dynamical Casimir effect — all of which win by varying
 time-invariance rather than by pushing harder on the other three.
+
+### Complex form without cellular machinery
+*Caulerpa* is a single cell metres long with differentiated stolon, frond and holdfast — no
+transverse walls, no cell division. Transcripts partition into "pseudo-organs." Proposed
+mechanism: **per-nucleus positional identity** — nuclei apparently detect their own position
+and express position-specific nuclear-pore genes, so patterning runs through selective
+nucleocytoplasmic transport rather than membranes. *Acetabularia* removes even the
+many-nuclei escape hatch: macroscopic, differentiated, and **uninucleate** for most of its
+life cycle.
+
+*Physarum* solves the size problem differently — its **peristaltic wavelength scales with
+network size**, converting a diffusion-limited problem into a transport problem it controls.
+
+**Honest negative:** this framing is already published. A 2015 paper titled *Plant
+architecture without multicellularity* argues explicitly for "the relative independence of
+organismal morphology from cell division patterns." Not novel in biology. **Never carried
+into design literature as an existence proof about achievable form** — that transfer is
+where any novelty lives.
 
 ---
 

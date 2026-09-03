@@ -265,3 +265,54 @@ should be stated as:
 
 That is honest in both directions, and it makes a bound **actionable** rather than closing.
 
+---
+
+## 9. The scale-transfer triage
+
+Before copying a mechanism, test whether it survives the scale change. The criterion is
+one line and appears not to have been stated anywhere:
+
+> A capability is **scale-transferable** iff the governing dimensionless group can be held
+> fixed by co-varying the free parameters (L, v, mu, rho, gamma). It is **constant-bound**
+> iff the group contains a fixed constant appearing **alone** — kT, lambda, g, c — rather
+> than in a ratio you can compensate.
+
+Note what this does and does not say. "Appears alone" is a statement about the *current
+formulation*, not about impossibility. It is the input to §8: a constant appearing alone is
+exactly the place to ask what the derivation held fixed.
+
+### Worked crossovers
+
+| Group | Ratio | Crossover |
+|---|---|---|
+| Peclet, Pe = vL/D | advection / diffusion | ~10 um for a cytoplasmic protein with motor transport |
+| Reynolds | inertia / viscous | ~0.1-1 mm for a mm/s swimmer; bacteria sit at Re ~ 1e-4, whales at 2e8 |
+| Bond | gravity / surface tension | capillary length in water ~2.7 mm — the water-strider boundary |
+| Knudsen | mean free path / size | ~70 nm in air |
+
+**The maximum-cell-size question and the Peclet number are the same equation.** Diffusion
+time goes as x^2/D: 1 um takes 0.01 s, 20 um takes 10 s, 1 cm takes two weeks. Motors run
+at ~1 um/s, so transport beats diffusion above ~10 um — and that crossover *is* Pe = 1.
+Cell biology and fluid mechanics asking one question in two vocabularies.
+
+### Documented transfer failures
+
+- **Gecko adhesion.** Maximum shear stress scales as A^(-1/4) — a *negative* exponent.
+  Not merely hard to manufacture at scale: **intrinsically anti-scaling.** Synthetic tape
+  fails beyond ~1 cm^2; human-scale (~200 cm^2) remains unrealized. The van der Waals
+  interaction length is fixed at ~nm while real surfaces are rough at hundreds of um — a
+  constant-bound failure, exactly the category the triage would have caught.
+- **Structural colour.** Wavelength-locked. You cannot build a 10x-scale morpho wing that
+  is still blue.
+- **Compliant thin shells.** Self-weight deformation; weight goes as L^3 and strength as
+  L^2. Only material substitution helps, and that is not rescaling.
+- **Leonardo's ornithopters.** The first documented case, and a Reynolds failure.
+
+### Status of this as a contribution
+
+Honest framing, preserved from the survey: Buckingham Pi is 111 years old, biologists know
+Reynolds, and the biomimetics literature has already framed the problem correctly. The
+unclaimed piece is narrow — the criterion above, applied as a **pre-transfer screening
+step**, with crossover scales tabulated in metres. That is methodology packaging on known
+machinery, not a discovery, and should be pitched that way.
+

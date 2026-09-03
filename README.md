@@ -5,7 +5,7 @@ to say about anomalous propulsion claims. It became something more useful: a rep
 method for locating **cross-domain gaps** — principles that several fields discovered
 independently, quantified in their own vocabulary, and never put on a shared axis.
 
-Twenty such gaps are now documented, most with measured co-citation evidence. **Four have a
+Twenty-two such gaps are now documented, most with measured co-citation evidence. **Four have a
 unifying theorem already written and sitting unread in an adjacent field** — which has become
 the dominant finding of the project.
 
