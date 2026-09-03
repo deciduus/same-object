@@ -5,8 +5,12 @@ to say about anomalous propulsion claims. It became something more useful: a rep
 method for locating **cross-domain gaps** — principles that several fields discovered
 independently, quantified in their own vocabulary, and never put on a shared axis.
 
-Seventeen such gaps are now documented, most with measured co-citation evidence. Several
-have a unifying theorem already written and sitting unread in an adjacent field.
+Twenty such gaps are now documented, most with measured co-citation evidence. **Four have a
+unifying theorem already written and sitting unread in an adjacent field** — which has become
+the dominant finding of the project.
+
+A bound is rarely wrong. What is usually wrong is the list of things its derivation held
+fixed without saying so. See `METHOD.md` §8.
 
 ---
 
@@ -36,8 +40,9 @@ thing*:
 3. **Separate timescales** — don't build a faster actuator; decouple slow loading from fast release
 4. **Change the actor** — when a theorem blocks the route, swap the category of the thing doing the work
 5. **Work inside the noise** — suppress, exploit, redistribute; each community knows one
+6. **Vary what was held fixed** — a bound is rarely wrong; the list of things its derivation silently held fixed usually is
 
-All five are **structural** moves rather than **magnitude** moves. Engineering defaults to
+All six are **structural** moves rather than **magnitude** moves. Engineering defaults to
 raising signal or lowering noise. Evolution cannot turn up the power, so it searches
 arrangement instead — which is why it keeps finding these first.
 

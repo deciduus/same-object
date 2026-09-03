@@ -277,6 +277,65 @@ closed most of the molecular gap on spider silk — the bottleneck is the spinni
 the protein. Photosystem II rebuilds its own damaged subunit every ~30 minutes; **no
 engineered material has a repair cycle at all.**
 
+### Assumed invariants that fell
+Not arguments — experiments. Each held with confidence until someone built the apparatus.
+
+| Assumption | Overturned by | Note |
+|---|---|---|
+| Parity is conserved | Wu et al., 1957 | Fell within a year of Lee & Yang proposing the test |
+| Neutrinos are massless | Super-K 1998, SNO 2001-02 | Assumed, not measured. Built into the Standard Model |
+| CP is conserved | Cronin & Fitch, 1964 | |
+| Continents are fixed | Seafloor spreading | The geology was fine; the mechanism was missing |
+
+**This corrects a claim made earlier in the project.** The discrepancy survey found that
+every *recently* resolved inter-method disagreement went to systematics, not new physics.
+The solar neutrino problem is the counterexample: a persistent, decades-long,
+method-vs-method discrepancy that resolved to **new physics**, with two Nobel Prizes. The
+base rate is not zero — it is uncomputed and era-biased. See G9.
+
+### The property that looked intrinsic and was environmental
+The sharpest documented case of "the constant survived, the neighbour was free."
+
+| Nuclide | Neutral atom | Fully stripped |
+|---|---|---|
+| Dysprosium-163 | **Stable** | 47-day half-life |
+| Rhenium-187 | 4.2 x 10^10 yr | **32.9 yr** |
+
+Mechanism: with the electrons removed, the emitted beta can land in a *bound* orbital of
+the daughter rather than the continuum, raising the effective decay energy about thirtyfold.
+Nothing was added to the nucleus. A different door opened.
+
+"This nuclide is stable" reads like a property of the nucleus. It is a property of the
+nucleus **plus its environment**.
+
+**Honest limit:** this is full ionization in a storage ring, not a chemical environment.
+Chemically accessible control tops out at 0.1-1.5% (beryllium-7 in a fullerene cage, the
+most favourable case in the periodic table), and 10^-4 or less for heavy nuclei.
+
+### Regimes where the intuitive impossibility is real
+A documented category, not a hypothetical one:
+
+- **Negative absolute temperature** — nuclear spins (1951), motional degrees of freedom in
+  cold atoms (2013)
+- **Negative refractive index** — predicted 1968, demonstrated 2000-01
+- **Negative effective mass** — in a Bose-Einstein condensate, 2017
+- **Negative energy density** — the Casimir effect, measured to ~0.5%
+- **Superluminal phase velocity** — real, and carries no information
+
+### The 1/r^7 assumption audit
+Applying the neighbour procedure (METHOD.md §8) to this project's own load-bearing wall.
+
+| The derivation held fixed | Varied experimentally? |
+|---|---|
+| Matter is neutral | Yes |
+| Free space, no cavity | Yes — this is why cavities work |
+| Ambient temperature | Yes — this is flux pinning |
+| **The field is static in time** | **No. This is the open neighbour** |
+
+And the live physics sits exactly there: photonic time crystals, Floquet rotational
+superradiance, and the dynamical Casimir effect — all of which win by varying
+time-invariance rather than by pushing harder on the other three.
+
 ---
 
 ## Closed / refuted

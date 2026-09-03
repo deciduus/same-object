@@ -199,3 +199,69 @@ why it keeps finding these first.
   precisely because they were told to.
 - **Watch for placeholder returns.** An agent that reports "I'll wait for the surveys to
   land" has not done the work. Send it back.
+
+---
+
+## 8. Vary what was held fixed
+
+The sharpest formulation of the project's central move, and the one that most reliably
+points at live physics.
+
+**A hard bound is rarely wrong. What is usually wrong is the list of things its derivation
+held fixed without saying so.**
+
+The historical record favours this reading over "the constant is wrong":
+
+| Case | The constant survived | The neighbour was free |
+|---|---|---|
+| Dysprosium-163 | Nuclear stability | The **electron environment** — stable neutral, 47-day half-life fully stripped |
+| Rhenium-187 | Beta decay physics | The **available final state** — 4.2 x 10^10 yr to 32.9 yr when the electron can land in a bound orbital |
+| Solar neutrinos | The solar model | **Flavour** — a degree of freedom nobody was varying |
+| Muon g-2 | The measurement | The **hadronic input** |
+| Continental drift | The geology | **Seafloor spreading** |
+
+### The procedure
+
+1. Take the bound. Write down what its derivation **assumed**, not what it concluded.
+2. For each assumption, ask whether it has actually been varied experimentally, or merely
+   inherited.
+3. The unexamined assumptions are the work.
+
+### Worked example — the 1/r^7 wall
+
+The result (no matter-excluding barrier projected at standoff) assumes four things:
+
+| Held fixed | Varied? |
+|---|---|
+| Matter is neutral | Yes — charged and polarizable cases explored |
+| Free space, no cavity | Yes — this is precisely why cavities work |
+| Ambient temperature | Yes — this is flux pinning |
+| **The field is static in time** | **Open** |
+
+And the live physics sits exactly there. Photonic time crystals. Floquet rotational
+superradiance — you cannot spin a medium fast enough, so modulate it in time and obtain
+effective rotation. The dynamical Casimir effect — a mechanical mirror is hopeless, so make
+the boundary a boundary *condition* with no mass and win twelve orders of magnitude.
+
+Every one is the same move: **the thing everyone held constant was time-invariance, and
+varying it was worth more than any amount of pushing on the other three.**
+
+### Why this is not special pleading
+
+The distinction that keeps it honest: the assumptions that fell, fell to **experiments
+designed to test them**, not to arguments that they might be wrong. Parity fell because Wu
+built the apparatus. Neutrino mass fell because Davis and Koshiba counted for thirty years.
+
+That is not a defence of institutions — it is the opposite. It says the challenge succeeds
+when someone **measures**, which requires no permission.
+
+### Consequence for the scale triage
+
+"Constant-bound" is the wrong phrase and has been corrected throughout. A measured bound
+should be stated as:
+
+> The bound is measured. Here is how tightly. Here is what would have to be wrong for it to
+> move — and here is which of its assumptions has never been varied.
+
+That is honest in both directions, and it makes a bound **actionable** rather than closing.
+
