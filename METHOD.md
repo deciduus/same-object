@@ -399,7 +399,7 @@ theory of aging, **6 are reliability engineering** — under 1%. Biology importe
 engineering wholesale; engineering never imported back, and so has not adopted biology's
 late-life mortality plateau or heterogeneous-redundancy results.
 
-**Classify every result as TRUE GAP / ONE-WAY BORROWING / FORGOTTEN BRIDGE / CLOSED.**
+**Classify every result as TRUE GAP / ONE-WAY BORROWING / NOT YET A SHARED OBJECT / CLOSED.**
 
 - **One-way borrowing** — B took from A; A does not read B. A real gap in the unread direction.
 - **Forgotten bridge** — the link was built, used, and then lost. Signal detection theory
@@ -472,4 +472,96 @@ An instrument built **on top of** literature-based discovery, not beside it. Wor
 thin non-biomedical branch, with two methodological additions and a curated standing
 catalogue that does not appear to exist elsewhere — though that last absence rests on about
 fifteen searches, not a systematic review.
+
+---
+
+## 13. Admitting other knowledge systems as data
+
+Different knowledge systems have **different systematics**. Where an oral record and a
+sediment core agree, the agreement carries weight precisely because their failure modes are
+unrelated. That is METHOD 10 applied across knowledge systems rather than across instruments.
+
+### The criterion, sharpened
+
+Not "is it old?" but:
+
+> **Does it have replication structure and error independence?**
+
+Three properties, all required:
+
+1. **Repeated observation**, not a single event
+2. **Independently dated**, by something other than the phenomenon being inferred
+3. **Observer motive uncorrelated** with the hypothesis now being tested
+
+### The exemplar
+
+Lake Suwa, Japan: **571 annual ice-freeze dates, 1443-2014**, recorded by Shinto priests as
+a religious observance. Torne River, Finland: 320 years of ice breakup. The priests were
+recording a ritual, so **their errors cannot correlate with a climate hypothesis nobody had
+yet formed.** That is what makes it a dataset rather than a story.
+
+### The criterion tested against every case
+
+| Case | Repeated? | Independent date? | Motive independent? | Verdict |
+|---|---|---|---|---|
+| Lake Suwa / Torne | 571 / 320 annual | Calendar | Yes, ritual | **Passes cleanly** |
+| Cascadia 1700 | 9 accounts | **Yes** - Japanese records, tree rings | Yes | **Passes** |
+| Indigenous fire management | Continuous practice, tested prospectively | Tested by measurement | Yes | **Passes** |
+| Terra preta | Physical, not oral | Radiocarbon | N/A | Passes as soil evidence |
+| Artemisinin | Single preparation | N/A | - | **Fails as a dataset** - hypothesis generator only |
+| Aboriginal sea-level traditions | **n = 1 per location** | **No - derived from the story** | Unknown | **Fails** |
+
+**Cascadia's decisive feature:** the oral tradition was used to infer a Pacific Northwest
+tsunami **eleven years before** Japanese documents dated the event. It was not fitted to a
+known answer. That architecture is what escapes post-hoc matching, and it worked only
+because a second, independently dated documentary system happened to exist.
+
+### The failure modes, plainly
+
+- **Post-hoc matching.** Know an event happened, go looking for a matching myth, and you
+  will find one. Only independent dating escapes this.
+- **Transmission decay.** Laboratory measurement gives roughly 0.2 information loss per
+  transmission, an effective half-life of about three links. Critically, **evaluative gist
+  survives while specific content degrades** - exactly backwards from what deep-time
+  geomythology needs.
+- **Structural blindness to long latency.** Traditional empiricism reliably catches acute
+  toxicity and is systematically blind to delayed, low-base-rate harm with no felt link to
+  the dose. Aristolochic acid: roughly 39% of a national population exposed, the world's
+  highest urinary-tract cancer incidence, a unique mutational signature.
+- **The base rates are worse than the romantic version.** Tested properly, n = 1,294 plant
+  samples: traditional antimalarial use gave **17.9% highly active against a 21.1%
+  baseline** - no better than random. The famous "74-80% of drugs match traditional use"
+  conditions on drugs that already exist and **has no denominator.**
+
+### The formalism already exists, in epidemiology
+
+**Triangulation**: integrate approaches whose key biases are unrelated to each other and
+ideally point in opposite directions. A quantitative version now exists that assesses bias
+direction and magnitude per design, then meta-analyses with bias adjustment.
+
+**This is the SNO move, formalised.** Nobody has applied it across knowledge systems, and
+the leading indigenous-knowledge framework explicitly declines to, holding that evaluation
+belongs within rather than across systems. So that argument is available to make, with a
+ready-made skeleton and two worked cases where error independence demonstrably held.
+
+### On independent and amateur researchers
+
+Verified contributions: one man built a 9.6 m dish in his back yard in 1937 and essentially
+founded radio astronomy alone. Amateur variable-star observation, **74 million observations
+since 1911**. Amateur comet discovery, **over 4,000 since 1995**. Volunteer protein folding
+solved a retroviral protease structure that molecular replacement and expert
+crystallographers had failed to solve, with the players as literal co-authors.
+
+**Correction to an earlier claim in this project.** I asserted that amateur meteor networks
+publish uncertainty budgets while funded anomaly programs publish none. **That is wrong
+about the Galileo Project**, which publishes intrinsic and extrinsic calibration, a 41%
+acceptance rate, 36% mean detection efficiency, and calls its own outlier search a "toy."
+The defensible contrast is **capability, not virtue**: multi-station astrometry yields
+range, an infrared array does not, which is exactly why its ambiguous cases stay ambiguous.
+
+**And there is no base rate for heterodox claims being right.** It may be ill-posed. The
+denominator does not exist because publication deletes the failures; "turned out right"
+selects on the outcome variable; and the category is defined relative to a shifting
+consensus, so a claim stops being heterodox exactly when it wins. **If anyone quotes a
+number, ask for the denominator.**
 

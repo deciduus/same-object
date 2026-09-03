@@ -327,7 +327,7 @@ reports 1.57 bits/nt against a Shannon capacity of 1.83 — 86% of capacity — 
 result, using fountain codes and Reed-Solomon. That is what a field with a shared axis
 sounds like. Candidate G25 has none of the three properties.
 
-### G26 · Crypsis vs stealth — a FORGOTTEN bridge, a new category
+### G26 · Crypsis vs stealth — NOT YET A SHARED OBJECT (revised)
 Signal detection theory **originated in radar** (Neyman-Pearson 1933; Peterson, Birdsall &
 Fox 1954), moved into psychophysics in 1954, and reached camouflage biology third-hand —
 where it lost its provenance entirely.
@@ -345,9 +345,75 @@ The word partitions perfectly by discipline. **Weaker than G25** because there i
 scalar: engineering has radar cross section in m^2, biology has only behavioural detection
 latency, and no cost-normalized detectability metric exists on either side.
 
-**New classification: FORGOTTEN BRIDGE** — a link that was built, used, and then lost as the
-descendant field stopped citing the origin. Distinct from a true gap and from a one-way
-borrowing.
+**REVISED after a decisive follow-up measurement.** The union of 509 papers citing the
+canonical camouflage literature was checked against both founding texts of signal detection
+theory: **0 of 169 with available reference lists cite the radar original, and 0 cite the
+psychophysics original.** Combined with `"camouflage" AND "d-prime"` = 0, modern camouflage
+biology **does not use signal detection theory at all** - it measures detection latency and
+survival curves.
+
+So nothing was borrowed and then forgotten. This **fails the same-quantity test**, not the
+citation test: engineering has radar cross section in square metres, biology has
+seconds-to-detection. New classification: **NOT YET A SHARED OBJECT.** Someone would have to
+build a detectability scalar for crypsis before the comparison could even be posed.
+
+*(Coverage caveat: 169 of 509 reference lists available. Zero of 169 is strong but not
+proof.)*
+
+### G27 - Collective decision: the cleanest zero in the project
+Swarm intelligence and distributed-systems consensus both solve "reach agreement across
+unreliable distributed agents."
+
+| Pair | Co-citers |
+|---|---|
+| Ant colony optimisation (1996) and Paxos | **0** |
+| ACO survey and Paxos | **0** |
+| Paxos and honeybee nest-site selection (1999 / 2012) | **0 / 0** |
+| ACO and Seeley 1999 | 1, and it is an ACO paper reaching sideways |
+| *Internal control:* Seeley 1999 and Seeley 2012 | 33 |
+
+Zero co-citing papers among 3,433 Paxos citers and over 9,000 ACO citers.
+
+**The unread formalism:** the speed-accuracy tradeoff is explicit on both sides - quorum
+thresholds and dance-decay tuning in bees, latency bounds in consensus protocols. But the
+third axis, **message complexity**, is formalised only in distributed systems and appears
+nowhere in the bee literature. That is the missing shared surface.
+
+### G28 - Marginal value theorem vs the Gittins index
+Charnov's rule, leave a patch when marginal intake drops to the habitat average, is the
+deterministic zero-switching-cost limit of the same optimality condition the Gittins index
+generalises to the stochastic case. **No paper states that equivalence.**
+
+| Pair | Co-citers |
+|---|---|
+| Charnov and Gittins | **8** (0.5% of Gittins) |
+| *Control:* Gittins and Sutton & Barto | **181 (11.7%)** |
+
+The control is what makes this sharp: operations research and reinforcement learning are
+**one closed literature**. It is specifically biology that sits outside it. And all 8
+co-citers are **neuroeconomics** - a third field reading both - so operations research and
+behavioural ecology have no direct contact at all.
+
+Behavioural ecology even derived its own stopping rule independently (Green 1984, "Stopping
+Rules for Optimal Foragers"), in its own vocabulary, without the stopping-theory literature.
+
+**Information foraging is a ONE-WAY BORROWING**, taken from behavioural ecology into
+human-computer interaction, with the reverse direction unmeasured and expected near zero.
+
+### Positive control - Levy-flight search: CLOSED
+Physics and movement ecology genuinely read each other. The intermittent-search review
+shares **183 co-citers, 23% of its own base**, with the founding Levy-flight paper, and 71
+with the paper that overturned it. Against **0.5%** for Charnov-Gittins.
+
+Worth keeping for the correction too: the original albatross Levy signature came from
+wetness-logger dry periods that were **birds sitting on their nests**, and those spurious
+"flights" were precisely the tail carrying the signal.
+
+### Explore/exploit - shared phrase, not shared formalism
+March 1991 and Sutton & Barto share **122 co-citers out of 21,727**, or 0.6%. The phrase is
+ubiquitous; the formalism is not. The organisational literature cites reinforcement learning
+as a metaphor - no regret bound, no index, no exploration parameter that maps onto anything.
+**A shallower gap, because people in the field already suspect it.**
 
 ---
 
@@ -590,6 +656,8 @@ information.
 | G apparatus transplant | Two agents disagreed on rebuild vs transplant; balance of evidence and the paper title favour **transplant**. Flagged, not settled |
 | Loihi energy figure | Quoted 23.6 pJ/SOP — not in the primary paper. Removed |
 | Frugality asymmetry | **Claim did not survive.** Reproductive effort runs ~25% of an annual energy budget. Conflated numerosity with cost per unit, then with total share. Biology is not profligate with reproduction — it is expensive, which is what life-history theory is about |
+| Meteor vs Galileo contrast | **Wrong as stated.** The Galileo Project does publish calibration, a 41% acceptance rate and 36% detection efficiency. The real contrast is capability - multi-station astrometry gives range, an infrared array does not |
+| Crypsis as a forgotten bridge | **Wrong.** 0 of 169 camouflage papers cite either founding text of signal detection theory. Nothing was borrowed and lost; the fields measure different things. Reclassified NOT YET A SHARED OBJECT |
 | Hessdalen citation | An agent invented a paper attribution. See `METHOD.md` §4 |
 
 ---
