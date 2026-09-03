@@ -272,6 +272,83 @@ the one tissue that both accumulates fatigue damage and hormetically strengthens
 
 **This candidate produced the synonym-trap discovery.** See `METHOD.md` §11.
 
+### G25 · Energy per unit error suppression — the strongest find
+**The measurement.** All 1,463 papers citing Hopfield's 1974 kinetic-proofreading paper were
+pulled and their reference lists intersected against Shannon.
+
+| | |
+|---|---|
+| Citers with reference lists available | 416 |
+| …also citing Shannon | **16 (3.8%)** |
+| …with "Shannon" in the title | **0** |
+| …with "coding theory" / "channel capacity" / "codeword" / "LDPC" / "Hamming" | **0 each** |
+| `"proofreading"` AND `"rate-distortion"` | **0** |
+
+The 16 co-citers cite Shannon for *entropy*, never for the channel coding theorem. And the
+sharpest detail: **33 papers in the proofreading literature use "decoding"; every one means
+the ribosome's A-site.** The vocabulary collides perfectly; the formalism never meets.
+
+**The unifying result already exists, and it is three lines of algebra.**
+
+Shannon's limit is E_b >= N_0 ln2 per bit. With thermal noise N_0 = kT, so the Shannon limit
+**is kT ln2 per bit — which is Landauer's bound.** Same number, 1948 and 1961.
+
+The 2015 thermodynamics-of-error-correction result gives dW >= kT ln(eta_eq/eta) per error
+suppressed — **2.303 kT per decade of accuracy.**
+
+| Substrate | Bound | Value |
+|---|---|---|
+| Molecular copying | dW_p >= kT ln(eta_eq/eta) | **2.303 kT per decade** |
+| Communication | E_b >= N_0 ln2, N_0 = kT | **0.693 kT per bit** |
+| Computation | Landauer erasure | **0.693 kT per bit** |
+
+All three are kT per nat, differing only in whether the nat is transmitted or discarded.
+Three canonical bounds — 1948, 1961, 2015 — all in kT, cited by disjoint communities.
+
+**This is not a gap that lacks a name. It lacks a citation path.** It sharpens G8: *energy
+per unit error suppression* is a candidate universal figure of merit spanning molecular
+biology, communications and computation, and the algebra to build it is already published in
+three papers nobody reads together.
+
+Real numbers on both sides: raw thermodynamic discrimination gives >5% error; translation
+achieves ~1e-4; proofreading DNA polymerase 1e-6 to 1e-7. LDPC codes reach within 0.0045 dB
+of the Shannon limit.
+
+**Highest-yield next probe:** the T-cell discrimination literature, where proofreading models
+and mutual-information estimates of receptor signalling already coexist.
+
+### Positive control · DNA data storage — CLOSED
+`"DNA data storage"` AND `"error-correcting code"` = **5.4%**, against **0.53%** for kinetic
+proofreading — ten times higher, on a narrower base.
+
+**The closed-gap signature, now nameable:** shared vocabulary, shared canonical citations,
+and **performance reported as a fraction of a theoretical bound.** One DNA-storage paper
+reports 1.57 bits/nt against a Shannon capacity of 1.83 — 86% of capacity — as its headline
+result, using fountain codes and Reed-Solomon. That is what a field with a shared axis
+sounds like. Candidate G25 has none of the three properties.
+
+### G26 · Crypsis vs stealth — a FORGOTTEN bridge, a new category
+Signal detection theory **originated in radar** (Neyman-Pearson 1933; Peterson, Birdsall &
+Fox 1954), moved into psychophysics in 1954, and reached camouflage biology third-hand —
+where it lost its provenance entirely.
+
+| Pair | Count | Composition |
+|---|---|---|
+| `"camouflage"` AND `"radar cross section"` | 82 | **100% engineering** |
+| `"camouflage"` AND `"signal detection theory"` | 9 | **100% biology** |
+| both together | **0** | — |
+| `"radar"` AND `"Neyman-Pearson"` | 374 | |
+| `"camouflage"` AND `"Neyman-Pearson"` | 3 | |
+| `"camouflage"` AND `"d-prime"` | **0** | biology does not use SDT's own index |
+
+The word partitions perfectly by discipline. **Weaker than G25** because there is no common
+scalar: engineering has radar cross section in m^2, biology has only behavioural detection
+latency, and no cost-normalized detectability metric exists on either side.
+
+**New classification: FORGOTTEN BRIDGE** — a link that was built, used, and then lost as the
+descendant field stopped citing the origin. Distinct from a true gap and from a one-way
+borrowing.
+
 ---
 
 ## Key findings with numbers

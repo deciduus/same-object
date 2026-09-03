@@ -399,8 +399,15 @@ theory of aging, **6 are reliability engineering** — under 1%. Biology importe
 engineering wholesale; engineering never imported back, and so has not adopted biology's
 late-life mortality plateau or heterogeneous-redundancy results.
 
-**Classify every result as TRUE GAP / ONE-WAY BORROWING / CLOSED.** A one-way borrowing is
-a real gap in the unread direction, and it is easy to mistake for a closed one.
+**Classify every result as TRUE GAP / ONE-WAY BORROWING / FORGOTTEN BRIDGE / CLOSED.**
+
+- **One-way borrowing** — B took from A; A does not read B. A real gap in the unread direction.
+- **Forgotten bridge** — the link was built, used, and then lost. Signal detection theory
+  originated in radar, moved to psychophysics, and reached camouflage biology third-hand,
+  which no longer uses its sensitivity index at all.
+- **Closed** — the signature is threefold: shared vocabulary, shared canonical citations, and
+  **performance reported as a fraction of a theoretical bound.** That third property is the
+  most diagnostic; a field that quotes its result as "86% of capacity" has a shared axis.
 
 ---
 
