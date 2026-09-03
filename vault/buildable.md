@@ -136,15 +136,21 @@ is the whole game.** That is worth more than the device would have been.
 
 **Cost of finding out: one calculation.** Cost of not doing it: a workshop and a season.
 
-### 8. Run the reservoir audit
+### 8. Run the reservoir audit · **validated and ready**
 
-[[Q9-fuel-free-is-an-assumption]]. `Σ > 1` is not impossible physics — it is proof a reservoir
-was misidentified. Take a reported anomalous output, enumerate every candidate reservoir, and
-compute the `Δu` and `F` each would require. **What survives is a specification of what the
-second reservoir would have to be.**
+[[reservoir-audit]] is written and tested. **Five for five on known systems**, and the negative
+controls work: it reproduces the Pioneer anomaly's thermal explanation to **7%**, from
+pre-resolution inputs only.
 
-Costs nothing but arithmetic. Validated three for three on systems we already understand — and
-one of those three we got wrong ourselves first.
+The point is what it outputs. Run in 1998 it would **not** have said the anomaly was thermal. It
+would have said *a thermal explanation requires 3.2% anisotropy* — a number a finite-element
+model can check. Fourteen years later someone built that model and got 3.0%.
+
+That is the register's discipline made computable: **specification, never mechanism.**
+
+Costs nothing but arithmetic. Three conditions are written into the procedure: run the
+availability leg and not only Σ, check the *measurement* before the device, and prefix every
+negative with **"of the reservoirs considered"** — which is structural honesty, not hedging.
 
 ## What is not here, and why
 

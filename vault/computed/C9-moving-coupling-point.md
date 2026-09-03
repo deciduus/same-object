@@ -228,7 +228,7 @@ Pe ≡  ──────────────  ÷ (1−ε) = ───   , 
           κA/L                  α_th                   ρ c_p
 ```
 
-**`Pe` is the thermal Péclet number of the moving element** — precisely the group [[METHOD]] §9
+**`Pe` is the thermal Péclet number of the moving element** — precisely the group `METHOD.md` §9
 tabulates. This is the "additional dimensionless parameter" Bezsudnov & Snarskii reported in 2014
 (**VERIFIED**, §2), arrived at from the other direction.
 
@@ -394,7 +394,7 @@ two-hundred-year head start.
 
 - **The `Pe` form of the bound.** `ZT_eff = ZT/(1+(1−ε)Pe)` puts thermoelectrics, regenerators
   and thermoacoustics on one axis with the regenerator effectiveness `ε` and a Péclet number as
-  the only two knobs. It connects directly to [[METHOD]] §9's scale-transfer triage, and it is a
+  the only two knobs. It connects directly to `METHOD.md` §9's scale-transfer triage, and it is a
   one-line statement of why the regenerator is the whole game.
 - **The correction to [[C8-momentum-harvesting-metric]] §5**, which is the more important output.
 
@@ -418,7 +418,7 @@ coupling point does not move."*
 - The collapse-to-a-coefficient property, which C8 §3.3 correctly showed fails for *momentum*
   harvesters, **does not fail here.** The coefficient is `q'`, from the Schur complement.
 
-This is a case of [[METHOD]] §8 applied to the wrong assumption. The procedure — *take the bound,
+This is a case of `METHOD.md` §8 applied to the wrong assumption. The procedure — *take the bound,
 list what its derivation held fixed* — was run, but the item written down was not on the list. The
 list for `q` is: linearity, reciprocity, two pairs, steady state. **Motion of the coupling point
 is not an independent entry; it is "two pairs."** And varying it enlarges the matrix rather than

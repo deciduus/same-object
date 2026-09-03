@@ -30,6 +30,26 @@ derivation did not set out to produce:
 > **A measured Σ greater than 1 is not evidence of impossible physics. It is proof that a
 > reservoir has been misidentified.**
 
+## Correction: Σ alone is too weak, and [[reservoir-audit]] found out why
+
+**True but nearly useless on its own.** `Σ = P_useful/(F·Δu)` reduces to `v/Δu`, so `Σ ≤ 1` is
+automatic for any device slower than its reservoirs' relative velocity. **Σ would have cleared
+solar radiation pressure as the source of the Pioneer anomaly** — a candidate that is in fact
+excluded by a factor of nearly seven.
+
+The test that actually does the work is a **second leg the identity implies but this note did
+not name**: the availability ratio
+
+`A = (F_required · Δu) / P_available`
+
+Every exclusion in the validated audit is an `A` result, not a `Σ` result. A third signature
+also appeared: misidentification can surface as a **negative Δu** rather than as `Σ > 1`.
+
+**And one claim below is wrong.** "Electrodynamic tether → planetary rotation" holds only above
+geosynchronous orbit. **For every tether actually flown, the orbit is the net source and the
+planet's rotation is a sink.** Caught by exactly the mechanism this note is about — being forced
+to write a *number* for `Δu` where a *word* had been standing.
+
 So Σ inverts into a **detector**. Point it at any device that appears to produce useful work
 without carried fuel, and it returns one of three verdicts:
 
