@@ -83,6 +83,16 @@ mechanisms — six domain-local names, no shared name, no portable metric.
 `"let physics do the control"` → 0 hits. `"morphological computation" "radiative cooling"`
 → 0.
 
+**Re-run: HOLDS, with one crack.** All four domains calibrate strongly, and every crossing
+is zero except passive dynamic walking against morphological computation, which returns
+**2 real bridges** inside embodied robotics. The "six names, no contact" claim is slightly
+overstated there.
+
+**One sub-claim is UNVERIFIED.** The passivity ladder cannot be tested by term query -
+`"degree of passivity"` returns 60 hits owned by corrosion science, control theory,
+political history and psychology. Establishing its invisibility requires citation-tracing
+the document's citers, and that lookup rate-limited before completing.
+
 **Best find:** IAEA-TECDOC-626 (1991) already defines an ordinal degree-of-passivity
 ladder, Category A (no signal inputs, no external power, no moving parts, no moving fluid)
 through D. Invisible outside nuclear engineering. Generalized: *the fraction of the
@@ -213,8 +223,15 @@ A thin genuine bridge exists in cloud elasticity ("auto-scaling" ∧ "biological
 = 45, one small cluster), but it carries no quantities — no fold-change, no timescale, no
 cost of remodeling.
 
-**The unmeasured quantity:** the cost and latency of a capacity change. Biology pays it in
-ATP and weeks; engineering pays it in capex and years. No shared axis.
+**WEAKENED on re-run.** The claim implied biology lacks a design-margin framing. It does
+not - **symmorphosis *is* a safety-factor formalism**, written in engineering language
+deliberately (`"symmorphosis" AND "safety factor"` = 5, all real). The surviving gap is
+narrower: that formalism never reached computing or mechanical engineering
+(`"symmorphosis" AND "engineering design"` = 0). And the literature is only ~5 papers, a
+thin base either way.
+
+**The unmeasured quantity still stands:** the cost and latency of a capacity change. Biology
+pays it in ATP and weeks; engineering pays it in capex and years. No shared axis.
 
 ### G21 · No unified dimensionless regime map for biology
 No single published figure or framework places organisms and processes in
@@ -255,7 +272,7 @@ near-defect-free. Same failure law, different initial conditions.
 *(Contested: the late-life plateau itself. An age-misreporting rate of 1 in 10,000
 reproduces it artifactually, and French data show continued increase past 105.)*
 
-### G23 · Hormesis has no engineering formalism — an asymmetry, not an absence
+### G23 · Hormesis has no engineering formalism — **HOLDS, cleanest of the batch**
 **The original hypothesis was wrong.** Engineering does now build stress-responsive
 strengthening: mechanophore chemistry, and a 2021 polymer gel that self-strengthens under
 vibration with a **66x modulus increase**, localizing along the stress distribution and
@@ -265,7 +282,21 @@ So the asymmetry is **vocabulary, not capability.** Both fields build adaptive s
 only biology has the quantitative dose-response apparatus — the ~30-60% amplitude ceiling
 and the 10-20x stimulatory window width.
 
-Co-citation: `"shot peening" AND "hormesis"` = **0**; `"self-healing" AND "hormesis"` = **2**.
+**Re-run, with both sides calibrating strongly** (hormesis 901, mechanophore 547 - which is
+what makes these zeros mean something):
+
+| Pair | Count |
+|---|---|
+| shot peening AND hormesis (and the -ic suffix variant) | **0** |
+| hormesis/hormetic AND mechanophore / self-strengthening / stress-responsive material | **0** |
+| hormesis/hormetic AND work hardening / strain hardening / cold working | **0** |
+| hormesis/hormetic AND "training effect" | **0** |
+| hormesis AND fatigue AND metal | **0** |
+
+Meanwhile the engineering side demonstrably has the *phenomenon* - `"mechanophore"` against
+training/strengthening/adaptive returns 31, including *Mechanochemical strengthening of a
+synthetic polymer in response to typically destructive shear forces*. **Stress-strengthening
+materials exist; nobody has written a dose-response curve for one.**
 
 Materials scientists building dose-dependent adaptive strengthening are not using hormesis's
 formalism, and hormesis's claim that the amplitude ceiling is "highly conserved and remains

@@ -388,6 +388,30 @@ re-run of this project's zeros collapsed two findings and downgraded a third.
 3. **Proper-noun narrowness.** `"Paxos"` is one algorithm's name, not a literature. Anchoring
    a query on it measures the name. This is what killed G27.
 4. **Synonyms**, the original case.
+5. **Boolean relaxation** - and this one manufactures fake *nonzeros*, cutting the opposite
+   way from the other four. Search engines relax to partial matching as OR-groups grow:
+
+       two phrases, AND                          ->     1
+       same, with synonyms added to each side    -> 1,169
+
+   A thousand-fold jump from adding synonyms is the engine giving up on strict matching, not
+   a bridge population. **Only 2-phrase conjunctions are trustworthy.** Treat any 4-way OR
+   result as unusable without title inspection.
+
+### The homograph register
+
+Words confirmed to be owned by more than one field. Never anchor a zero on any of these:
+
+| Word | Owners |
+|---|---|
+| availability | reliability engineering; nutrient/light availability in biology |
+| self-healing | materials science; **IT autonomic computing** (fault recovery, incident response) |
+| rate limiting | network engineering; **biochemistry** (rate-limiting enzyme step) |
+| autoscaling | cloud computing; **chemometrics** (NMR data normalization) |
+| passivity | corrosion science; control theory (a dissipation property); political history; psychology |
+| metastability | physics/chemistry; **ADC circuit design**; tumour dormancy; supramolecular polymerization |
+| multifunctionality | ecology; materials science |
+| quorum sensing | microbiology; social-insect collective decision |
 
 ### The rule, hardened
 
