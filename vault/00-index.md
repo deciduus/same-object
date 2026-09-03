@@ -59,6 +59,7 @@ machine field measured whether something *survives*. Six of these were harvested
 that had been filed purely as losses. See [[Q6-negative-results-in-the-vault]].
 
 - [[Q7-same-class-prediction]] — **the one result selection bias cannot touch**, and it makes a dated, falsifiable prediction about the fine structure constant
+- [[Q9-fuel-free-is-an-assumption]] — **Σ inverts into a reservoir detector.** Σ > 1 is not impossible physics, it is proof a reservoir was misidentified — and this project made that exact error about solar sails
 - [[Q8-the-invisible-population]] — metrology has a **standardised procedure for not resolving disagreements**. The real population is far larger than the famous puzzles, and nearly fame-free
 - [[Q1-what-gets-checked]] — the refuted feature left a better predictor behind: cost and publishability of the *check*, not the number of groups
 - [[Q2-independent-rediscovery]] — the project keeps finding this event and counting instances. Five so far. Two were *simultaneous*, which is a different phenomenon wearing the same label
@@ -85,6 +86,7 @@ Not catalogue entries. Numbers this project produced.
 - [[C1-availability-living-tissue]] — photosystem II = 0.883, cortical bone = 0.984. **A leaf is less available than a power grid.**
 - [[C2-probabilistic-safety-factors]] — for bone, failure probability is set by tissue variability, not locomotor variability
 - [[C3-energy-error-axis]] — every information substrate on one kT-normalized axis
+- [[C8-momentum-harvesting-metric]] — **the founding question, answered.** Σ = P/(F·Δu), exact and bounded in [0,1] with no linearity assumed. Spans soaring, sails and tethers; reproduces the known minimum-shear condition as a check
 - [[C7-discrepancy-catalogue]] — 39 cases. The headline fraction is **not** a base rate and the note says so; the finding that survives is a conditional, in [[Q7-same-class-prediction]]
 - [[C5-charnov-gittins]] — **the strongest result in the project.** Charnov's rule *is* the Gittins index, as an identity in two lines. A 2024 paper re-derived it in foraging notation without ever naming Gittins
 - [[C6-damage-healing-ratio]] — **Ha = k_r/k_d.** The missing object in [[G5-repair-number]], written down, with no prior art. Three systems on one axis; two rows left empty because the data do not exist

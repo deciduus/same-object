@@ -99,10 +99,33 @@ curve fit, not an experiment.** Cheapest real test on the list.
 
 ---
 
-## What is not here, and why
+---
 
-No row for [[G1-gradient-coupling]] yet — the surviving momentum branch has no metric to build
-toward until `C8-momentum-harvesting-metric` lands. That is the founding question and the
-gating item.
+## Now unlocked by the metric
+
+### 7. A cyclically driven thermodynamic harvester
+
+[[C8-momentum-harvesting-metric]] found the corner while proving something else. The
+Kedem–Caplan bound `q` assumes **the coupling point does not move.** A harvester whose coupling
+point is deliberately driven through the gradient is therefore **not bounded by `q` at all**.
+
+Nobody has built or analysed one. It sits exactly where this project's founding intuition points
+— arrangement, not magnitude — and it is the first item here that is a *device* rather than a
+measurement.
+
+**Before building:** derive what replaces `q` for a moving coupling point, and confirm the bound
+actually differs rather than reappearing in another form. That is a calculation, not a workshop.
+
+### 8. Run the reservoir audit
+
+[[Q9-fuel-free-is-an-assumption]]. `Σ > 1` is not impossible physics — it is proof a reservoir
+was misidentified. Take a reported anomalous output, enumerate every candidate reservoir, and
+compute the `Δu` and `F` each would require. **What survives is a specification of what the
+second reservoir would have to be.**
+
+Costs nothing but arithmetic. Validated three for three on systems we already understand — and
+one of those three we got wrong ourselves first.
+
+## What is not here, and why
 
 Nothing from [[G9-discrepancy-base-rate]]. It is meta-research and cannot be built.

@@ -184,6 +184,12 @@
   },
   "active": "f8e74697011e4c94",
   "lastOpenFiles": [
+    "questions/Q9-fuel-free-is-an-assumption.md.tmp.48688.e12f2cf2b763",
+    "questions/Q9-fuel-free-is-an-assumption.md",
+    "questions/Q9-fuel-free-is-an-assumption.md.tmp.48688.4d9f7ee500e2",
+    "gaps/G1-gradient-coupling.md.tmp.48688.5f9e1a96bf7f",
+    "gaps/G1-gradient-coupling.md.tmp.48688.e2663893274f",
+    "computed/C8-momentum-harvesting-metric.md",
     "buildable.md.tmp.48688.d2e66eeae189",
     "00-index.md.tmp.48688.da6a6364cede",
     "00-index.md.tmp.48688.9cc954fbe228",
@@ -193,10 +199,6 @@
     "questions/Q8-the-invisible-population.md",
     "questions/Q8-the-invisible-population.md.tmp.48688.c57270cd643e",
     "method/fine-structure-discrepancy.md.tmp.48688.571118e57e5c",
-    "method/fine-structure-discrepancy.md.tmp.48688.e07f37a52f7b",
-    "log.md.tmp.48688.2264cc3f5eae",
-    "method/fine-structure-discrepancy.md.tmp.48688.0981e7cd620b",
-    "00-index.md.tmp.48688.c166029aed3f",
     "questions/Q7-same-class-prediction.md",
     "questions/Q6-negative-results-in-the-vault.md",
     "questions/Q5-restless-patches.md",
@@ -218,8 +220,6 @@
     "gaps/G8-energy-per-bit-axis.md",
     "gaps/G27-collective-decision.md",
     "gaps/G20-resize-vs-throttle.md",
-    "gaps/G4-criticality-as-design.md",
-    "gaps/G22-scale-transfer-triage.md",
     "Untitled.canvas"
   ]
 }

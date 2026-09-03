@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C8-momentum-harvesting-metric]]"]
 uses-move: ["[[M5-work-inside-the-noise]]"]
 rests-on: ["[[kedem-caplan]]"]
 tags: [node/gap, crosses/formalism, evidence/full-text-read, standing/narrowed]
@@ -75,10 +75,60 @@ trajectory-dependent, and a solar sail has no conjugate flux pair.
 
 This half remains **string-protocol**, not full-text-read. No soaring papers were read in full.
 
+## Narrowed again: the momentum branch now has a metric
+
+[[C8-momentum-harvesting-metric]] writes one.
+
+**`Σ ≡ P_useful / (F·Δu)`** — the power the harvester keeps, over the total power leaving the
+environment. `F` is the force transmitted between two reservoirs, `Δu` their relative velocity.
+
+It comes from an **exact identity**, no linearity assumed: summing the power each reservoir
+delivers in its own frame gives `P_total = −F·Δu`. So **`Σ ∈ [0,1]` by construction**, and it
+spans branches the Onsager machinery cannot reach.
+
+**It corrected this note's own premise.** We wrote *"a solar sail has no conjugate flux pair."*
+False. The sail's second reservoir is the **radiation field**, `Δu = c`, and `Σ_sail = 2v/c`
+falls straight out. `F·Δu` is the standard mechanical dissipation bilinear form — conjugate in
+exactly the Onsager sense. We had mistaken *no fuel we recognise* for *no conjugate pair*.
+
+**Independent check:** requiring `Σ_soar ≤ 1` reproduces the soaring literature's minimum-shear
+condition `dW/dz ≥ g/((L/D)·V)` from scratch. A metric derived for other reasons landing on a
+known result is the strongest validation available here.
+
+## And a precise impossibility, not a fudge
+
+**`Σ` spans both branches. `max Σ` does not.**
+
+`q` exists because in linear response the *maximum* efficiency collapses to a single
+state-independent coefficient. A cyclic harvester must return to its initial state, and **the
+return cost is not a property of any local point.** So `sup Σ` is a trajectory functional — an
+HJB problem — not a coefficient.
+
+That is the honest form of the barrier, and it is more useful than the original claim.
+
+## What it buys, and it answers the founding question
+
+Σ splits the class in two:
+
+| | Example | Lever |
+|---|---|---|
+| **Kinematic identity** | photon sail `2v/c`, gravity assist | none — only magnitude helps |
+| **Trajectory functional** | dynamic soaring, shear sailing | **arrangement is the only lever** |
+
+So *simple arrangement beating brute magnitude* stops being an intuition and becomes a
+criterion: **arrangement beats magnitude exactly when the optimum fails to collapse to a
+coefficient.** Which is the same property, seen from the other side, that stops `q` from
+generalising.
+
 ## What would change it
 
-Unchanged, and now better located: extend the degree of coupling past linear response. Genuine
-open research. See [[kedem-caplan]] — which the re-read also corrected.
+The open problem is now sharp: **does `sup Σ` admit a coefficient representation?** Extending
+the degree of coupling past linear response is the same question in the other branch's language.
+See [[kedem-caplan]] — which the re-read also corrected.
+
+**Prior-art risk, stated:** Greason's *Wind–Pellet Shear Sailing* (arXiv:2205.14117) states the
+sailing↔shear analogy directly. **Abstract only.** It is the single result most likely to demote
+C8 to rediscovery, and it has not been read.
 
 ## Unverified, stated
 
