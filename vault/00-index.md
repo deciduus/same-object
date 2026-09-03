@@ -15,6 +15,9 @@ Run `python _lint.py` from this directory before committing.
 
 ## Start here
 
+- **[[buildable]]** — what can actually be done, sorted by cost. Six items, three of them
+  reachable at home, one that is only a curve fit on published data
+
 - [[relationship-description]] — the six fields every entry is described along
 - [[what-closes-a-gap]] — a gap closes when someone supplies a *theorem*, not a review
 - [[failure-modes]] — five ways a measured zero can be fake, learned by failing all five
@@ -34,6 +37,20 @@ intersection. It caught two errors in one entry that no count could have:
 
 **String-protocol findings have survived under half the time when re-tested by
 [[citation-intersection]].** Weight accordingly.
+
+## Scope note, 2026-09-03
+
+[[G9-discrepancy-base-rate]] and its questions — [[Q1-what-gets-checked]],
+[[Q7-same-class-prediction]], [[Q8-the-invisible-population]] — are **meta-research**. They are
+about how science resolves disagreements, not about how nature engineers things.
+
+They are real and they produced a falsifiable prediction. **They are also a side branch**, and
+the project spent a session in them. Parked deliberately, not abandoned: pick them up when the
+main line is not moving.
+
+**The main line is the ladder in `VISION.md`** — literature, then computation, then hypothesis,
+then experiment — applied to the founding question: *simple arrangement beating brute magnitude.*
+[[buildable]] tracks what has actually reached the bottom rung.
 
 ## Doors opened
 
