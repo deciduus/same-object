@@ -231,7 +231,7 @@ community never connects its `β` to a partition ratio.
   1987, microheterogeneity snippets).
 - **§2.2 Li-ion fade** 0.025–0.048%/cycle: `VERIFIED` (Wikipedia Capacity_loss, fetched). `β = 12.7`
   NCR18650GA: **`VERIFIED-via-search` only** — primary ResearchGate returned 403, so treated as
-  reported-not-fetched, in the [[METHOD]] §4 sense. The qualitative `β > 1` (wear-out) is
+  reported-not-fetched, in the `METHOD.md` §4 sense. The qualitative `β > 1` (wear-out) is
   over-determined across [PMC11176627](https://pmc.ncbi.nlm.nih.gov/articles/PMC11176627/) (fetched),
   reliamag, and reliability texts.
 - **§2.3 organic flow reactants**: DHAQ 0.1%/cycle ≈7.6%/day, AQDS 0.08%/day, and the

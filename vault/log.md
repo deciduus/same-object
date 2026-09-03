@@ -30,7 +30,16 @@ the failure law; the shared coordinate is the **Weibull shape β** — β=1 enzy
 (memoryless), β>1 Li-ion wear-out. New result: organic flow-battery reactants fail by
 calendar-time chemical decay, **β≈1, the same law as enzyme death** — reclassified with enzymes,
 isolating Li-ion as the outlier. Ties to [[stress-strength-interference]]'s discrete-vs-continuous
-split. Three of the five-fan still running.
+split.
+
+**[[C17-offset-from-threshold]] narrows [[G4-criticality-as-design]] with a real invariant.**
+"Distance from threshold" is near-tautological — gain ∝ ε⁻¹ with exponent 1 in every class
+*because* a simple pole's resolvent is 1/distance. One level down: bandwidth ∝ ε, so
+**gain × bandwidth = c·rate, conserved along the offset axis in all three classes** (hair cell,
+parametric amplifier, cortex). The parametric-amp field already states `B·√G = const`; it
+transfers unchanged to cochlea and cortex, neither of which writes it.
+
+One of the five-fan (hormesis biphasic fit) still running.
 
 ## [2026-09-03] headline hardened | four unread theorems citation-tested, all survive
 

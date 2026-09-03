@@ -12,7 +12,7 @@ mediator:
 borrows-from: []
 lends-to: []
 mutual-with: []
-computed-in: []
+computed-in: ["[[C17-offset-from-threshold]]"]
 uses-move: ["[[M2-use-the-noise]]"]
 rests-on: []
 tags: [node/gap, crosses/formalism, evidence/single-review, standing/narrowed]
@@ -63,6 +63,30 @@ read in full, asks it as one question:
 > signal sensitivity... Behaviors of that sort are common in systems close to bifurcations."
 
 Engineering's name for the class is **Lur'e systems** — a term this project never searched.
+
+## The construction: the real invariant is gain × bandwidth, not distance ([[C17-offset-from-threshold]])
+
+The missing "distance from threshold" figure of merit was built — and it is **portable only in a
+near-tautological sense.** Define the offset `ε` as the normalized pole-to-axis distance; then
+gain diverges as `ε⁻¹` with the *same* exponent `a = 1` across a Hopf resonator (hair cell), a
+parametric amplifier (JPA) and a branching process (cortex). But that sameness is empty — the
+resolvent of a simple pole is `1/distance` by construction, so any codimension-1 bifurcation
+gives `a = 1`. "Shared axis, shared exponent" says only that a simple pole is a simple pole.
+
+**The content is one level down.** Bandwidth is the *same* pole distance, `Δ ∝ ε`, and settling
+time is `τ ∝ ε⁻¹`. So
+
+    gain × bandwidth = (c/ε)(rate·ε) = c·rate — independent of ε
+
+**The gain–bandwidth product is conserved along the offset axis in every class.** Sitting closer
+to threshold is provably not a free lunch: the `ε⁻¹` gained in gain is exactly the `ε` lost in
+bandwidth. That is the portable figure of merit that was hiding under "distance," and its
+fingerprint is the parametric-amplifier community's known constant gain–bandwidth product.
+
+So G4's surviving gap **closes onto a real shared invariant** — but the shared thing is
+`gain × bandwidth`, not offset. Cortex sitting at `m ≈ 0.98` and an amplifier biased just below
+threshold are both spending the *same* conserved budget, and neither field states it in the
+other's terms.
 
 ## What actually survives
 
