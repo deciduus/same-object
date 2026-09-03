@@ -42,6 +42,7 @@ machine field measured whether something *survives*. Six of these were harvested
 that had been filed purely as losses. See [[Q6-negative-results-in-the-vault]].
 
 - [[Q7-same-class-prediction]] — **the one result selection bias cannot touch**, and it makes a dated, falsifiable prediction about the fine structure constant
+- [[Q8-the-invisible-population]] — metrology has a **standardised procedure for not resolving disagreements**. The real population is far larger than the famous puzzles, and nearly fame-free
 - [[Q1-what-gets-checked]] — the refuted feature left a better predictor behind: cost and publishability of the *check*, not the number of groups
 - [[Q2-independent-rediscovery]] — the project keeps finding this event and counting instances. Five so far. Two were *simultaneous*, which is a different phenomenon wearing the same label
 - [[Q3-theory-cited-hardware-omitted]] — a review cited the author and skipped their device. If that is systematic, it weakens bibliographies as evidence — including ours

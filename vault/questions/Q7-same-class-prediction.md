@@ -45,6 +45,25 @@ The interesting open cases are the **different-class** ones with an independent 
 a side. That reprioritises the whole watch list, and it is the first time this project's
 catalogue has told us where *not* to look.
 
+## An independent seam strengthened it, and found no counterexample
+
+A separate metrology-and-constants pass, run without reference to this conditional, produced
+**four more closed same-class cases. All four resolved to systematics:**
+
+- **LKB Rb recoil, 2011 vs 2020, same laboratory**, 2.4σ → systematics in the 2011 result
+  (photon momentum in a distorted optical field, Gouy phase, Doppler ramp). The cleanest
+  which-side-was-wrong datum in the whole set.
+- **Hydrogen spectroscopy, 2S–4P vs 1S–3S vs 2S–2P** → systematics, the large-r_p results.
+- **Historical recommended values of c**, Birge ratio 1.47 → reported uncertainties too small.
+- **Successive CODATA adjustments 2006→2017** → the prior adjustments' uncertainty statements.
+
+**Seven for seven becomes eleven for eleven.** Still no counterexample.
+
+The one same-class case that is still **open** is the tenth-order QED coefficient — two Monte
+Carlo evaluations of the same number, **4.8σ apart**. That is a second live prediction: it
+should also resolve to error in one calculation, and it is a cleaner test than α because no new
+physics is even conceivable there.
+
 ## The open question
 
 **How large is the same-class evidence base really?** Seven closed cases is a suggestive

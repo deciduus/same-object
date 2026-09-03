@@ -41,8 +41,14 @@ in one laboratory disagreeing at 2.7 sigma, which was always the tell there.
 
 | Quantity | Disagreement | Status |
 |---|---|---|
-| Newton's constant G | ~13 sigma between methods | open, unmoved across two CODATA cycles |
+| Newton's constant G | **~9.9 sigma** between methods | open ~28 yrs. CODATA expansion factor **3.9** |
 | **Fine structure constant** | **5.4 sigma, same technique class** | **open, no third measurement** |
 | Neutron lifetime | ~4.5 sigma | open; survived its best mundane explanation in 2025 |
 | Proton radius | was ~7 sigma | resolved to systematics in the older method |
 | Muon g−2 | was ~5 sigma | migrated into a theory-versus-theory dispute |
+
+**Correction, 2026-09-03.** The G row read **"~13 sigma"**. Not supported by anything fetched.
+The largest pair computable from CODATA-2018's own input table is **~9.9σ** (BIPM-14 vs
+JILA-18), and that figure is *computed*, not quoted. The operative published fact is an
+**expansion factor of 3.9** and a "dark uncertainty" of τ_DL = 0.00056×10⁻¹¹ SI, with dispersion
+4.2× the median reported uncertainty. No G experiment has ever been retracted.
