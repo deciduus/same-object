@@ -5,6 +5,37 @@ type: method
 
 # Operations log
 
+## [2026-09-03] schema | a `question` type, because the vault could only record damage
+
+Every machine field measured whether a claim **survives**. There was nowhere to put what a
+finding **opened**. So the vault reported demolition even in a session whose substantive output
+was two theorems, a named experiment and a falsifiable prediction — and the reporting followed
+the instrument.
+
+Same error as [[verdict-scoring]], turned inward: a taxonomy that measures one thing gets
+mistaken for the terrain.
+
+Seven questions harvested, six of them from findings that had been filed purely as losses. See
+[[Q6-negative-results-in-the-vault]]. Open question raised there: **one door per gap damaged may
+be the natural rate**, in which case earlier audits generated them too and nobody wrote them down.
+
+## [2026-09-03] computed | C7, and the conditional that survives its own bias
+
+39 cases. Raw tally 20 SYSTEMATICS / 14 OPEN / 1 NEW-PHYSICS / 2 THEORY-ERROR / 1 REDEFINITION /
+1 UNRESOLVED — **explicitly not a base rate.** Three of five biases push the same way; the true
+systematics share is higher and new-physics lower, by an unknown amount.
+
+**The finding is not the fraction.** Every closed *same-class* disagreement resolved to
+systematics, seven for seven. A conditional needs no denominator, and the missing invisible cases
+can only add more systematics — so the bias cannot cut against it. That becomes a dated,
+falsifiable prediction about the fine structure constant in [[Q7-same-class-prediction]], and it
+tells us where **not** to look, which is new.
+
+Two schema findings for the next pass: FLUCTUATION and MISCONDUCT labels are needed with
+multi-labelling (3 rows in 39 do not fit), and **outcome labels have a shelf life** — muon g−2
+was reclassified mid-catalogue after the 2025 White Paper; the reactor anomaly was closed in 2021
+and has partly revived.
+
 Append-only. One line per structural change to the vault. Format:
 `## [YYYY-MM-DD] operation | description`
 

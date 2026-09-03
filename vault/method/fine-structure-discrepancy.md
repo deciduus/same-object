@@ -26,6 +26,14 @@ implementation. Per the discriminating features in [[G9-discrepancy-base-rate]]:
 > When two implementations of one technique disagree, no new physics is on offer — only a
 > shared-model error one side got wrong.
 
+**And the catalogue now makes this a prediction, not a watch item.** Every closed same-class
+disagreement in [[C7-discrepancy-catalogue]] resolved to systematics, seven for seven, and that
+conditional is immune to the selection bias that ruins the base rate. So α should resolve to
+measurement error. Recorded and falsifiable in [[Q7-same-class-prediction]].
+
+Which makes it *less* interesting than its 5.4σ suggests, not more — and reprioritises the watch
+list toward **different-class** disagreements with an independent relation picking a side.
+
 The suspected culprit is wavefront curvature. Compare the two gravitational-constant methods
 in one laboratory disagreeing at 2.7 sigma, which was always the tell there.
 

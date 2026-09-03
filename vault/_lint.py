@@ -15,7 +15,7 @@ STANDING = {"live", "narrowed", "withdrawn", "overturned"}
 EVIDENCE = {"citation-intersection", "full-text-read", "string-protocol",
             "single-review", "not-assessed"}
 RETIRED  = {"holds", "weakened", "collapsed"}
-TYPES    = {"gap", "move", "method", "theorem", "computed", "index"}
+TYPES    = {"gap", "move", "method", "theorem", "computed", "index", "question"}
 CROSSES  = {"nothing": 0, "word": 1, "metaphor": 2,
             "vocabulary": 3, "formalism": 4, "data": 5}
 TOPOLOGY = {"disjoint", "direct", "mediated"}

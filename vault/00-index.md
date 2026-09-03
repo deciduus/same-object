@@ -35,6 +35,20 @@ intersection. It caught two errors in one entry that no count could have:
 **String-protocol findings have survived under half the time when re-tested by
 [[citation-intersection]].** Weight accordingly.
 
+## Doors opened
+
+**Damaging a claim usually produces a better one, and this vault had nowhere to put it** — every
+machine field measured whether something *survives*. Six of these were harvested from findings
+that had been filed purely as losses. See [[Q6-negative-results-in-the-vault]].
+
+- [[Q7-same-class-prediction]] — **the one result selection bias cannot touch**, and it makes a dated, falsifiable prediction about the fine structure constant
+- [[Q1-what-gets-checked]] — the refuted feature left a better predictor behind: cost and publishability of the *check*, not the number of groups
+- [[Q2-independent-rediscovery]] — the project keeps finding this event and counting instances. Five so far. Two were *simultaneous*, which is a different phenomenon wearing the same label
+- [[Q3-theory-cited-hardware-omitted]] — a review cited the author and skipped their device. If that is systematic, it weakens bibliographies as evidence — including ours
+- [[Q4-healing-needs-a-new-law]] — the broken constitutive law names three testable replacements, discriminable by a curve fit on published data
+- [[Q5-restless-patches]] — the identity's stated limit is the case biology actually cares about, and the machinery is already waiting
+- [[Q6-negative-results-in-the-vault]] — the instrument had one dial, so every report read as demolition
+
 ## The moves
 
 Six structural patterns recurring across every field surveyed. None is *build a stronger thing*.
@@ -53,6 +67,7 @@ Not catalogue entries. Numbers this project produced.
 - [[C1-availability-living-tissue]] — photosystem II = 0.883, cortical bone = 0.984. **A leaf is less available than a power grid.**
 - [[C2-probabilistic-safety-factors]] — for bone, failure probability is set by tissue variability, not locomotor variability
 - [[C3-energy-error-axis]] — every information substrate on one kT-normalized axis
+- [[C7-discrepancy-catalogue]] — 39 cases. The headline fraction is **not** a base rate and the note says so; the finding that survives is a conditional, in [[Q7-same-class-prediction]]
 - [[C5-charnov-gittins]] — **the strongest result in the project.** Charnov's rule *is* the Gittins index, as an identity in two lines. A 2024 paper re-derived it in foraging notation without ever naming Gittins
 - [[C6-damage-healing-ratio]] — **Ha = k_r/k_d.** The missing object in [[G5-repair-number]], written down, with no prior art. Three systems on one axis; two rows left empty because the data do not exist
 - [[C4-inclination-sensing-limit]] — **the derivation does not close at one cell.** It forces pooling; the existing ablation data cannot discriminate pooling from linear summation, because the discriminating angle was never measured. A ~500-root experiment would settle it

@@ -60,6 +60,30 @@ discrepancies became.
 
 Having the phenomenon quantified is not having the base rate.
 
+## The catalogue exists now: [[C7-discrepancy-catalogue]]
+
+39 cases. Raw tally: **20 SYSTEMATICS, 14 OPEN, 1 NEW-PHYSICS, 2 THEORY-ERROR, 1 REDEFINITION,
+1 UNRESOLVED**.
+
+**That is not a base rate and the note says so.** Three of five identified biases push the same
+way: quiet convergence has no publication genre, and quiet convergence is exactly what a
+systematics resolution looks like. Bailey's 41,000 measurements contain thousands of 3–5σ
+disagreements; 39 reached a table. The true systematics fraction is **higher** than 80% and the
+new-physics fraction **lower** than 4%, by an unknown amount.
+
+The OPEN column carries no outcome information and must be excluded from any fraction — it is an
+artefact of the sampling date.
+
+**What survives the bias is not the fraction. It is a conditional:** every closed *same-class*
+disagreement resolved to systematics, seven for seven. See [[Q7-same-class-prediction]], which
+turns that into a dated prediction about the fine structure constant.
+
+Two structural findings for the next pass: the outcome schema needs **FLUCTUATION** and
+**MISCONDUCT** labels and multi-labelling (3 rows in 39 do not fit), and **outcome labels have a
+shelf life** — the muon g−2 row had to be reclassified mid-catalogue after the 2025 White Paper,
+and the reactor anomaly was declared closed in 2021 and has partly revived. Any base rate needs
+an as-of date.
+
 ## Four discriminating features — tested, and three of four damaged
 
 These were stated with one or two supporting examples each and never tested. They have now been
