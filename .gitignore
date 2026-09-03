@@ -1,0 +1,14 @@
+# Raw source downloads stay local; committed text is the extracted markdown under vault/sources/.
+sources/raw/
+*.pdf
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.zip
+*.docx
+*.pptx
+
+# scratch / tooling
+__pycache__/
+*.pyc

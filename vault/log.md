@@ -5,6 +5,18 @@ type: method
 
 # Operations log
 
+## [2026-09-03] honest null | Q10's strong reading refuted by its own test
+
+[[C21-rediscovery-clustering]] ran the falsifiable edge Q10 set for itself. **The rediscovered
+objects do not concentrate** — 18 instances across 11 object-types, Hill N2 ≈ 9.0, near-uniform.
+The clean bias-controlled sample (Q2's six independent rediscoveries) scatters one-per-type. The
+apparent 72%-into-six-types is the selection confound made visible: the specification-instrument
+method is built to retrieve those forms, and the only real repetition (Weibull ×3, index-policy
+×3) is the project reusing its own lenses. Strong claim (knowledge = one substrate-independent
+logic) refuted; weak claim (the *method* converges on a small toolkit) survives. The frame is
+demoted from a fact about the world to a fact about the tool. The method was allowed to kill the
+hunch, and did — which is the point.
+
 ## [2026-09-03] disclosure thread | sourced ledger, PURSUE added, and the lane doctrine
 
 **[[disclosure-ledger]]** — 24-entry provenance ledger of the post-2017 US UAP disclosure thread,

@@ -2,10 +2,26 @@
 name: Q10-substrate-independent-logic
 type: question
 arises-from: ["[[information-audit]]", "[[C3-energy-error-axis]]", "[[C12-pi-space-lattice]]", "[[specification-instruments]]"]
-status: open-frame
+status: tested-strong-reading-refuted
 ---
 
 # Is the project finding many bridges, or one substrate-independent logic?
+
+> **TESTED 2026-09-03 — the strong reading is refuted. [[C21-rediscovery-clustering]].** The
+> falsifiable edge below was run: the rediscovered objects **do not concentrate.** 18 instances
+> across **11 distinct object-types**; top two absorb 33%, top three 44%; effective number of
+> types (Hill N2) ≈ **9.0** — near-uniform, the opposite of clustering. And the one clean sample
+> — the Q2 six genuinely-independent rediscoveries — scatters one-per-type across five types,
+> exactly where clustering would show if real. The apparent concentration (72% into six
+> pre-named types) is the **selection confound made visible**: the specification-instrument
+> method is *built* to retrieve those forms, and the recurring ones (Weibull ×3, index-policy ×3)
+> are the project reusing its own lenses — the common citer is the vault, not the world.
+>
+> **What survives is the weak reading:** a real statement about the *method* — its instruments
+> converge on a small toolkit because that is the finite set of forms a conserved-quantity
+> identity can take — **not** the strong metaphysical claim that knowledge reduces to one logic.
+> Honest null. The lens is pattern-affinity of the instrument, not a discovered structure of
+> knowledge. Kept as a frame, demoted from a hypothesis about the world to one about the tool.
 
 > A framing, not a result — logged because it recurs, and recurrence usually means load-bearing.
 > The user's form: the emergent math and terms across the inquiry all seem to describe one

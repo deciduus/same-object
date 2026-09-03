@@ -81,7 +81,7 @@ machine field measured whether something *survives*. Six of these were harvested
 that had been filed purely as losses. See [[Q6-negative-results-in-the-vault]].
 
 - [[Q7-same-class-prediction]] — **the one result selection bias cannot touch**, and it makes a dated, falsifiable prediction about the fine structure constant
-- [[Q10-substrate-independent-logic]] — a frame: maybe not many bridges but **one substrate-independent logic** the fields re-encode. Made countable via [[Q2-independent-rediscovery]] — do the rediscovered objects concentrate?
+- [[Q10-substrate-independent-logic]] — the "one substrate-independent logic" frame, **tested and its strong reading refuted** ([[C21-rediscovery-clustering]]): objects don't concentrate (Hill N2 ≈ 9 of 11). What survives is a claim about the *method's* toolkit, not the structure of knowledge
 - [[Q9-fuel-free-is-an-assumption]] — **Σ inverts into a reservoir detector.** Σ > 1 is not impossible physics, it is proof a reservoir was misidentified — and this project made that exact error about solar sails
 - [[Q8-the-invisible-population]] — metrology has a **standardised procedure for not resolving disagreements**. The real population is far larger than the famous puzzles, and nearly fame-free
 - [[Q1-what-gets-checked]] — the refuted feature left a better predictor behind: cost and publishability of the *check*, not the number of groups
