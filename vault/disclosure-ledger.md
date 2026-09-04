@@ -18,8 +18,10 @@ type: method
 > **The one distinction the whole ledger turns on.** Two things get collapsed in public
 > discussion and must be held apart: *"official secrecy and officially-unexplained sensor data
 > were acknowledged"* — which **checked out** — and *"recovered non-human hardware/biologics
-> exist"* — which **has not been corroborated and was affirmatively pushed back on by the
-> government's own office**. Both are in the ledger. They are not the same claim.
+> exist"* — which **has not been corroborated**. Both are in the ledger. They are not the same
+> claim. (On the pushback: the office that reported "no evidence," AARO, is itself a contested
+> referee and possibly access-limited — see the §4 correction. Its null is evidence, not a
+> verdict.)
 
 ---
 
@@ -212,13 +214,42 @@ and is the one place the government's own office pushed back.**
   (the Q1 point).
 
 **The verdict, undivided into its two halves would be misleading. Divided:** the *secrecy and
-unexplained-data* thesis checked out; the *recovered-alien-materiel* thesis did not, and was
-actively contradicted by the one investigation empowered to look. Collapsing them — treating the
-vindication of Version A as if it were evidence for Version B — is the single most common
-reasoning error in this whole topic, and the reservoir-audit rule (§2 above) is exactly the tool
-that keeps them apart. This is the same structure as [[Q10-substrate-independent-logic]]'s honest
-handling of "the impossibility column keeps shrinking": what shrank was the *unwarranted
+unexplained-data* thesis checked out; the *recovered-alien-materiel* thesis is **uncorroborated**.
+Collapsing them — treating the vindication of Version A as if it were evidence for Version B — is
+the single most common reasoning error in this whole topic, and the reservoir-audit rule (§2
+above) keeps them apart. This is the same structure as [[Q10-substrate-independent-logic]]'s
+honest handling of "the impossibility column keeps shrinking": what shrank was the *unwarranted
 dismissal of officially-unexplained data*, not the *evidentiary gap under the exotic claim*.
+
+### Correction 2026-09-03 — AARO is a contested referee, not a neutral arbiter
+
+An earlier phrasing here said Version B was "actively contradicted by the one investigation
+empowered to look." **That over-trusted AARO**, and it is the exact documentary-lane error
+[[evidence-lanes]] warns against: *the body being investigated cannot also be the trusted
+arbiter.* Sourced, the critique is real and multi-directional, not just disclosure-camp noise:
+
+- **Congress** — bipartisan complaints of AARO's "lack of transparency" and "evasion of
+  congressional scrutiny," and a secret budget ([Stars & Stripes 2025](https://www.stripes.com/theaters/us/2025-09-10/unidentified-anomalous-phenomena-whistleblower-reprisal-19046217.html),
+  [House Oversight](https://oversight.house.gov/release/hearing-wrap-up-government-must-be-more-transparent-about-uaps/)).
+- **Coordinated messaging** — Kirkpatrick's pre-emptive *Scientific American* op-ed framing
+  non-human hypotheses as conspiratorial, read as PR shaping perception before the report.
+- **The stonewalling point, which is decisive:** Grusch alleged the crash-retrieval programs were
+  **withheld from AARO** and that AARO was denied access. If true even in part, **"AARO found no
+  evidence" collapses toward "AARO was not allowed to look"** — an absence-of-access, not an
+  absence-of-thing. AARO's null cannot refute Version B if AARO could not reach the compartment.
+
+**So the honest verdict on Version B softens: uncorroborated, and its main institutional
+refutation is itself contested and possibly access-limited — not "refuted."** This does **not**
+move Version B toward true. A contested refuter is not a confirmation; it widens the uncertainty,
+it does not fill it. Per [[evidence-lanes]], AARO's "no evidence" is one institutional lane with a
+now-visible bias, and it would need an *orthogonal* check to carry weight — which is exactly what
+[[Q1-what-gets-checked]] says does not exist here (the check is classification-gated).
+
+**Symmetry, kept honest:** much of the loudest AARO criticism comes from the very people whose
+claims AARO declined to validate (Grusch, Sheehan, New Paradigm Institute) — a motive to
+discredit the discreditor. So "AARO is contested" is well-sourced; "AARO is running a cover-up" is
+itself a testimonial claim under the same specification/mechanism rule. The defensible position is
+the narrow one: **AARO is not a neutral arbiter, so its conclusion is evidence, not a verdict.**
 
 ---
 

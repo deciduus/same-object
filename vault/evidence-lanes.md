@@ -22,7 +22,7 @@ error. The published record is a filter with known blind spots, not a synonym fo
 | Lane | Strong at | Characteristic bias |
 |---|---|---|
 | **Peer-reviewed academic** | reproducible mechanism; calibrated instruments | the publication filter — [[Q1-what-gets-checked]] economics, [[Q8-the-invisible-population]], positive-result bias, fields not reading each other |
-| **Official / documentary** (declassification, gov reports) | provenance; primary sources | what an institution chooses to *release* and how it *frames* it (AARO's framing is contested — see [[disclosure-ledger]] row 16) |
+| **Official / documentary** (declassification, gov reports) | provenance; primary sources | what an institution chooses to *release* and how it *frames* it — and **the referee-is-a-player trap** (below) |
 | **Credentialed testimony** | a real firsthand *observable* | self-selection (who goes public), narrative reinforcement, specification/mechanism confusion — [[testimony-taxonomy]] |
 | **Traditional / oral / independent** | observations the academic lane never logged | transmission drift, no instrumentation record (METHOD §13) |
 
@@ -55,6 +55,23 @@ This is *more* objective, not less: the front-end vibe no longer decides what is
 looked at. It is the same stance the project took from the start — the anti-inquiry prior was
 named and dropped early. The verified/unverified labels are **not** the filter being dropped;
 they are the check being trusted to run downstream instead of up front.
+
+## The referee-is-a-player trap
+
+The sharpest documentary-lane failure: **the body being investigated cannot also be the trusted
+arbiter of the investigation.** When an institution both *runs the check* and *is a subject of the
+claim*, its conclusion is circular — a "no evidence found" can mean "there is nothing," or "we
+chose not to look / release / were denied access," and from outside the two are
+indistinguishable.
+
+Worked case: [[disclosure-ledger]] leaned on AARO's "no evidence" to grade Version B refuted.
+But AARO's transparency is contested by Congress and its own former investigators, and the claim
+it was refuting alleges AARO was *stonewalled* — denied access to the compartment. So its null
+may be an absence-of-access, not an absence-of-thing. The fix is not to believe the opposite
+(the critics have their own motive); it is to **downgrade the institution's conclusion from
+verdict to evidence**, and require an *orthogonal* check it does not control. Where no orthogonal
+check exists ([[Q1-what-gets-checked]]), the honest state is *uncorroborated*, wider than either
+"refuted" or "confirmed."
 
 ## The guard against relativism
 

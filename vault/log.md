@@ -5,6 +5,26 @@ type: method
 
 # Operations log
 
+## [2026-09-03] correction | AARO is a contested referee, not a neutral arbiter
+
+User flagged that AARO is widely cited as still on a discredit/opacity footing, not real
+transparency. Sourced and correct — and it broke an assumption in our own [[disclosure-ledger]],
+which had graded Version B "actively contradicted by the one investigation empowered to look."
+That over-trusted AARO. Documented critique is multi-directional (Congress: "lack of
+transparency," secret budget, Stars & Stripes 2025 + House Oversight; Kirkpatrick's pre-emptive
+op-ed; the report omitting agencies and not engaging Grusch) — and the decisive point: Grusch
+alleged AARO was **stonewalled / denied access**, so "no evidence found" may be
+absence-of-access, not absence-of-thing.
+
+**Fix:** Version B softened from "refuted" to **uncorroborated**, its main institutional refuter
+downgraded from verdict to contested evidence. Does NOT move Version B toward true — a contested
+refuter widens uncertainty, it does not fill it. Symmetry kept: much of the loudest AARO
+criticism is from the camp AARO declined to validate (motive to discredit the discreditor), so
+"AARO is contested" is sourced while "AARO is a cover-up" stays a testimonial claim. Generalised
+into [[evidence-lanes]] as the **referee-is-a-player trap**: the body being investigated cannot
+be the trusted arbiter; downgrade its conclusion to evidence and require an orthogonal check it
+does not control — which [[Q1-what-gets-checked]] says does not exist here.
+
 ## [2026-09-03] corpus mined | ledger faceted, primaries archived, prediction holds only weakly
 
 [[C22-ledger-faceting]]. All 24 ledger entries faceted on the seven [[testimony-taxonomy]] axes.
