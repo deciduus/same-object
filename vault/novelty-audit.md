@@ -47,7 +47,7 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 | [[C5-charnov-gittins]] | Charnov's R\* **is** the Gittins index of the outside option, exact identity | **NOVEL** | Fetched Wikipedia, Geana 2016, bioRxiv 2024 (rediscovers Whittle without naming Gittins), arXiv — none state it | Houston & McNamara (1999) and Gittins-Glazebrook-Weber, both **unobtained books** |
 | [[C6-damage-healing-ratio]] | Healing Damköhler number `Ha = k_r/k_d = MTBF/MTTR`, reduces to availability | **NOVEL** | Prior-art check for a named damage/healing group found none | It *is* MTBF/MTTR renamed — textbook reliability computes it constantly (unnamed); borderline REPACKAGED |
 | [[C7-discrepancy-catalogue]] | 39 inter-method disagreements tallied; fraction explicitly not a base rate | REPACKAGED | Assembled from known resolved cases; the selection-bias analysis is the contribution | Bailey 2017 (magnitudes); the surviving finding is the conditional, which lives in C16 |
-| [[C8-momentum-harvesting-metric]] | Σ = P/(F·Δu)∈[0,1] spans soaring, sails, tethers; reproduces min-shear | REPACKAGED (+CORRECTED) | Identity P=−F·Δu is textbook; each special case (2v/c, V/Δu≤1/3) known; corrected gap-note's "sail has no conjugate pair" | **Greason shear-sailing read in abstract only** — note flags it as the single most likely demotion to rediscovery |
+| [[C8-momentum-harvesting-metric]] | Σ = P/(F·Δu)∈[0,1] spans soaring, sails, tethers; reproduces min-shear | REPACKAGED (+CORRECTED) | Identity P=−F·Δu is textbook; each special case (2v/c, V/Δu≤1/3) known; corrected gap-note's "sail has no conjugate pair" | **RESOLVED 2026-09-03**: Greason read in full — it has a bounded shear-extraction efficiency (η_ext<1), so the *concept* is not ours; but Σ's bilinear form and cross-branch span are ABSENT there. Confirms REPACKAGED, not a straight rediscovery |
 | [[C9-moving-coupling-point]] | Moving coupling point doesn't beat q; it's a Péclet number = thermoacoustics | **REDISCOVERED** | Note self-classifies "CLOSED three times over": Bezsudnov-Snarskii 2014 found the Péclet parameter; Proesmans-Van den Broeck 2015; Stirling 1816 | Fully known — thermoacoustics is a mature discipline scoring itself in % of Carnot |
 | [[C10-healing-curve-fit]] | Cycled healing is a decaying envelope, not a rate balance; class-dependent | REPACKAGED | Standard decay-fitting on 7 published datasets; the mechanistic discrimination + Kirkwood frame is the contribution | Self-healing-polymer community reports η(N) decay routinely; discrimination may exist |
 | [[C11-flyby-reservoir-audit]] | Flyby anomaly residual specification (1-9 mN, 2ΩR⊕/c, non-stationary) | REPACKAGED | Application of the reservoir-audit instrument; reproduces known exclusions (Rievers thermal, Adler DM); resolves nothing | Flyby-anomaly literature already carries these exclusions; output is a specification, not a result |
@@ -132,10 +132,12 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 
 ## The results most at risk of being unrecognized rediscoveries
 
-1. **[[C8-momentum-harvesting-metric]] (Σ).** The note itself names the threat: **Greason's
-   shear-sailing paper was read in abstract only**, and if its full text carries a normalised
-   extraction efficiency, Σ demotes from construction to rediscovery. The single result most likely
-   to be an unrecognized rediscovery hiding as novel.
+1. **[[C8-momentum-harvesting-metric]] (Σ) — RESOLVED 2026-09-03.** Greason read in full: it
+   **does** carry a bounded shear-extraction efficiency (`η_ext < 1`), so the *concept* of a
+   bounded extraction efficiency is not ours — but Σ's specific `P/(F·Δu)` bilinear form and its
+   cross-branch span (soaring + sails + tethers) are **absent** from Greason. Verdict:
+   **REPACKAGED confirmed, not a straight rediscovery.** No longer the top risk; moved off this
+   list. It was already outside the NOVEL-4, so no headline changes.
 2. **[[C6-damage-healing-ratio]] (Ha).** It is MTBF/MTTR passed through the Möbius map. Reliability
    engineering and pharmacokinetics both use the form unnamed; a named cross-domain version may exist
    in a corner not reached by ~a dozen searches.

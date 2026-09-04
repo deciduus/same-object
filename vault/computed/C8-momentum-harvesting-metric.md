@@ -309,9 +309,17 @@ thermoacoustics has always said.
 - §4 row 3: the *identity* `Σ_EDT = V_load/V_emf` holds; **the numerical range is
   UNVERIFIED** and both Sanmartín reviews and the 2024 *Acta Astronautica* review were
   **NOT OBTAINED**. The albatross `L/D = 20` is likewise **UNVERIFIED**.
-- Prior art: **Greason's shear-sailing paper was read in abstract only.** If its full text
-  contains a normalised extraction efficiency, that is the single result most likely to
-  demote this note from construction to rediscovery. It should be obtained.
+- Prior art: **Greason's shear-sailing paper — RESOLVED 2026-09-03, read in full via
+  ar5iv.** It **does** define a bounded extraction efficiency (Eq. 11: `η_ext`, useful power as a
+  fraction of the ISM kinetic-energy loss, with `η_ext < 1`, `η_acc < 1`). So the *concept of a
+  bounded shear-extraction efficiency is not ours* — it exists, in-domain, for pellet/ISM
+  sailing. **But the specific object Σ = P/(F·Δu) is ABSENT**, as is the `v/Δu` form and the
+  cross-branch span (Greason is shear-sailing only — no soaring, no tethers, no unifying
+  identity). Verdict: **Σ is REPACKAGED, not novel.** Its nearest neighbour independently has a
+  bounded extraction efficiency; the contribution is the exact `F·Δu` bilinear form and the
+  span across momentum/field-gradient harvesting, not the idea of bounded extraction. The
+  demotion the note flagged as possible **is confirmed** — honestly, and it is a small demotion:
+  the founding-question *answer* stands as a useful unification, it just is not a new concept.
 
 Recommended standing for [[G1-gradient-coupling]]: **narrowed again** — from "the momentum
 branch has no figure of merit" to "the momentum branch has `Σ`, and the open problem is

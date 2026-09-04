@@ -5,6 +5,17 @@ type: method
 
 # Operations log
 
+## [2026-09-03] verification | C8 novelty risk resolved by reading Greason in full
+
+The novelty audit's top rediscovery risk was [[C8-momentum-harvesting-metric]] (Σ), because
+Greason's shear-sailing paper had been read in abstract only. Read in full via ar5iv
+(arXiv:2205.14117). It **does** define a bounded extraction efficiency (Eq. 11, `η_ext < 1`) — so
+the *concept* of a bounded shear-extraction efficiency is not ours — but the specific
+`Σ = P/(F·Δu)` bilinear identity, the `v/Δu` form, and the cross-branch span (soaring + sails +
+tethers unified) are **absent** there. Verdict: **C8 is REPACKAGED, confirmed — not a straight
+rediscovery**, and it was never in the NOVEL-4, so no headline change. Updated C8, novelty-audit
+grade table, and the risk shortlist. The biggest open novelty question is now closed.
+
 ## [2026-09-03] correction | AARO is a contested referee, not a neutral arbiter
 
 User flagged that AARO is widely cited as still on a discredit/opacity footing, not real
