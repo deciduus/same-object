@@ -37,6 +37,28 @@ type: method
 - Layer 3 is real and reachable, but it spends the instruments rather than building them. It
   waits until the toolkit and the ground are wider.
 
+## The depth gate — Layer 3 is not earned yet (2026-09-03)
+
+Assessed honestly at the user's prompt: **Layer 2 is broad but shallow, and a solid Layer 3
+cannot be born from breadth.** ~20 gaps touched and a dozen instruments/bridges built — but
+almost every one is one-pass: built, verified, parked. A Layer-3 deduction needs two things
+Layer 2 does not yet supply:
+
+1. **A thread developed to depth.** The bridges ([[C5-charnov-gittins]], [[C6-damage-healing-ratio]],
+   [[C8-momentum-harvesting-metric]]) are *stated*, not *exploited* — no result has yet been
+   transferred across a bridge to yield a new falsifiable prediction. A stated identity is not a
+   springboard; a worked one is.
+2. **A target carrying real data, not testimony.** The candidate Layer-3 substrates sort cleanly:
+   - *Testimony-bound* (the [[disclosure-ledger]] thread) — dead-ends at a specification; the
+     witness-referent confirmed 0/9 in [[C22-ledger-faceting]]. Not a substrate.
+   - *Awaiting the world* (the [[Q7-same-class-prediction]] α prediction) — already made; we wait.
+   - *Needs a wet lab* (the [[C4-inclination-sensing-limit]] pooling test) — that is Layer 4.
+   - *Pure-desk, data-free* (develop [[C5-charnov-gittins]] into a novel foraging prediction) —
+     the only genuine desk Layer-3 available, and it requires deepening the stem first.
+
+**Conclusion: the next move toward Layer 3 is depth on one thread, not more gaps.** C5 is the
+best stem — the one genuinely-novel result, needing no data access. Earn Layer 3; do not rush it.
+
 ## What Layer-2 groundwork looks like, concretely
 
 - **Harden the headline claim.** The project's dominant pattern is "the unifying theorem sits
