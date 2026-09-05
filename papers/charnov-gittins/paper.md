@@ -12,14 +12,19 @@ abstract: |
   object. Bundling travel time into the outside option as a zero-reward prefix, the
   Gittins index of that "habitat arm" is $\sup_t g(t)/(\tau+t) = R^{*}$, and the index of
   a deterministic concave patch is $g'(t)$; the index rule $g'(t)=R^{*}$ is MVT. The
-  identity is exact for deterministic concave patches with non-revisitable patches and a
-  stationary habitat, generalises under discounting, and fails in exactly three places
+  identity is exact for deterministic concave patches with departed patches frozen in the
+  standard bandit sense and a stationary habitat, generalises under discounting, and fails in exactly three places
   that the bandit literature already names: restlessness (patch regrowth), switching
   costs (revisitable patches), and non-stationarity. We take the first of these across
   the bridge. For a patch at standing crop $x$ depleting at $\lambda x$ and regrowing at
   $r(1-x)$, the Whittle index is $W(x)=\lambda x^{2}-r(1-x)^{2}$; the problem is
-  indexable unconditionally, and $dGUD/dr>0$. Faster-regrowing patches should be
-  abandoned at a *higher* giving-up density. Kadmon & Shmida (1992) with Kadmon (1992)
+  indexable unconditionally, and $dGUD/dr>0$: faster-regrowing patches are predicted to be
+  left at a *higher* giving-up density. The claim is a signed comparative static and not one of
+  superiority --- run forward in a 20-patch network the Whittle policy *loses* intake to
+  MVT-with-regrowth, by $13.3\%$ at the pre-registered anchor and $0.5\%$ when each policy is
+  given its own rate-optimal threshold --- and it is specific to saturating renewal: under
+  linear renewal the index degenerates to a step function and the effect does not survive.
+  Kadmon & Shmida (1992) with Kadmon (1992)
   measure departure and nectar renewal in one plant--pollinator system and parameterise
   the test. The two literatures have not met: 5 of 1,013 works citing Gittins (1979) also
   cite Charnov (1976), against 225 of 1,013 for the Gittins $\times$ Auer (2002) positive
@@ -98,8 +103,8 @@ and state MVT's circularity, with zero occurrences of "Gittins" or "index". <!--
 # The identity
 
 Continuous time. An unlimited supply of statistically identical patches; travel costs
-$\tau>0$ at zero reward; a patch left behind is never revisited; the habitat is
-stationary.
+$\tau>0$ at zero reward; a departed patch is frozen rather than deleted, in the standard
+bandit sense (Section 2.3); the habitat is stationary.
 
 ## The index of the current patch
 
@@ -131,16 +136,24 @@ argument. <!-- C5 §2 -->
 
 ## The index of the outside option
 
-**Theorem.** *Let patches be statistically identical, non-revisitable, and have
-deterministic concave gain function $g$ with $g(0)=0$, and let travel time be $\tau>0$ at
-zero reward in a stationary habitat. Define the* habitat arm *as the single arm whose
-reward stream from activation is*
+**Theorem.** *Let patches be statistically identical, with deterministic gain function $g$
+satisfying $g(0)=0$, increasing, differentiable on $(0,\infty)$, and strictly concave, so that
+$g'$ is strictly decreasing; let travel time be $\tau>0$ at zero reward in a stationary habitat;
+and assume the supremum in (2) below is attained at some finite $t^{*}$. Define the* habitat arm
+*as the single arm whose reward stream from activation is*
 $$r(u) = 0 \ \ \text{for } u\in[0,\tau), \qquad r(u)=g'(u-\tau) \ \ \text{for } u\ge\tau.$$
 *Then its undiscounted Gittins index is*
 $$\nu_0(\mathrm{habitat}) \;=\; \sup_{t\ge0}\ \frac{g(t)}{\tau+t} \;=\; R^{*}, \tag{2}$$
-*the supremum being attained at Charnov's optimal residence time $t^{*}$; and the index
-rule "continue the current arm until its index falls to the index of the best alternative"
-is exactly $g'(t)=R^{*}$, the marginal value theorem.*
+*attained at Charnov's optimal residence time $t^{*}$; and the index rule "continue the current
+arm until its index falls to the index of the best alternative" is exactly $g'(t)=R^{*}$, the
+marginal value theorem.*
+
+Attainment is a hypothesis, not a conclusion. It is implied by either of two standard
+conditions: $g$ bounded with $g'(t)\to0$ as $t\to\infty$, or, more generally, $g$ concave and
+increasing with $g'(0^{+})>\lim_{t\to\infty} g(t)/(\tau+t)$. Both fail for $g(t)=ct$, which is
+concave with $g(0)=0$ and for which $\sup_{t}ct/(\tau+t)=c$ is approached but never attained:
+there is then no $t^{*}$ and the forager never leaves. Strict decrease of $g'$ is what makes the
+departure time unique.
 
 *Proof.* Apply the index definition to the habitat arm at $\delta=0$. A stopping time
 $s\le\tau$ yields numerator $0$ and hence ratio $0$. A stopping time $s=\tau+t$ with
@@ -166,15 +179,38 @@ zero-switching-cost bandit --- switching between arms is free, which is what lic
 index theorem --- and yet $\tau$ does not vanish: it appears as a zero-reward prefix
 *inside* the habitat arm's own reward stream, and survives into the denominator of (2).
 
-> Absorbing travel time into the outside arm is legitimate **iff a departed patch is never
-> revisited.** Then $\tau$ is paid once per activation of a fresh arm and is a property of
-> that arm. If patches may be revisited, $\tau$ is paid on every transition, is a genuine
-> switching cost, and the index theorem fails.
+> Absorbing travel time into the outside arm is legitimate **if $\tau$ is incurred once per
+> activation of an arm and is a property of that arm's own reward stream.** Never revisiting a
+> departed patch is one sufficient condition. It is not necessary, and in the present model it
+> is not an assumption at all: it is a consequence.
 
 <!-- C5 §5.4 -->
 
-This is the assumption Kilpatrick et al.'s "different decision problems" was groping at.
-Non-revisitability, not zero travel, is the licence.
+Read the habitat with one arm type and the point is immediate. In steady state *every* patch is
+reached through a travel interval, so every arm carries the same $\tau$-prefixed stream
+$r(u)=0$ on $[0,\tau)$ and $r(u)=g'(u-\tau)$ thereafter. A fresh, never-activated arm therefore
+has index $R^{*}$ by (2). The patch currently occupied is simply such an arm that has already
+been played for $\tau+t$, and its residual index is $\sup_{s>0}[g(t+s)-g(t)]/s = g'(t)$ by (1).
+There is no "patch arm" and "habitat arm" to reconcile; there is one arm type and one index
+computation.
+
+On that reading a departed patch is not deleted but *frozen* --- the standard bandit convention
+for a passive arm --- and freezing is what does the work. A patch was left at $t_{\mathrm{dep}}$
+because $g'(t_{\mathrm{dep}})\le R^{*}$, and freezing holds its index at that value for ever,
+while every fresh arm sits at $R^{*}$. The fresh arm therefore always weakly wins; and because
+$g'$ is strictly decreasing, resuming the frozen arm for any positive duration returns an average
+rate strictly below $R^{*}$ where the fresh arm returns exactly $R^{*}$. Revisiting is never
+strictly optimal, so non-revisitability describes the optimal path rather than restricting it.
+One gap, stated: at the departure instant $g'(t_{\mathrm{dep}})=R^{*}$ exactly, so the two arms
+tie there, and the conclusion is "never strictly better to revisit" rather than "strictly worse".
+The argument is also generous to the model: in a real habitat resuming a patch would cost $\tau$
+again, which only widens the margin.
+
+This is what Kilpatrick et al.'s "different decision problems" was groping at, and the correct
+diagnosis is narrower than "revisits are forbidden". Travel becomes a genuine switching cost
+only when the arm one returns to is *not* frozen at its departure index --- which is precisely
+the restless case of Section 3, where a departed patch regrows, its index recovers, and revisits
+do occur (Section 3.5).
 
 ## The vanishing-discount limit, and the discounted MVT
 
@@ -308,17 +344,27 @@ that a genuine switching-delay analysis would; see Limitations items 2 and 3.
 
 ## The two limits
 
-**$r\to0$, patches revisitable.** $W(x)\to\lambda x^{2}$, which is *not* MVT. The gap is
-not an error: with revisits allowed, resource left behind is not lost, so $V'=1-x\neq0$ and
-the index correctly deducts it. This quantifies the switching-cost break that Section 2.5
+**$r\to0^{+}$, arms still restless.** $W(x)\to\lambda x^{2}$, which is *not* MVT. The gap is
+not an error: for any $r>0$ the departed patch is not frozen, its index recovers, revisits do
+occur, so resource left behind is not lost, $V'=1-x\neq0$, and the index correctly deducts it. This quantifies the switching-cost break that Section 2.5
 could only name.
 
-**$r\to0$, patches non-revisitable.** A departed patch is gone, so its stored resource has
-value $0$ and $V'\equiv0$ by fiat. Then $W(x)=\lambda x = g'(t)$ and the leaving rule
+**$r=0$, arms frozen.** At $r=0$ a departed patch neither regrows nor recovers its index, so
+the frozen-arm argument of Section 2.3 applies verbatim: its index stays at
+$g'(t_{\mathrm{dep}})\le R^{*}$ for ever, no optimal path resumes it, and the resource left
+behind is never harvested by this forager. Its shadow price is therefore $0$ as an *output* of
+the dynamic programme with an absorbing departure --- $V'\equiv0$ is derived from the departure
+structure, not imposed. Then $W(x)=\lambda x = g'(t)$ and the leaving rule
 $W(x^{*})=\nu(\mathrm{habitat})$ reads $g'(t^{*})=R^{*}=\max_t g(t)/(\tau+t)$, which is
-equation (2) exactly. The reduction passes, and it passes *conditionally on precisely the
-condition identified as the licence* in Section 2.3 --- a stronger result than an
-unconditional pass would have been.
+equation (2) exactly. The reduction passes because of the structural condition of Section 2.3,
+and the first limit above shows what happens when that condition is removed.
+
+The two limits do not commute, and that is the content of the pair. For every $r>0$ the arm is
+restless: a departed patch's index recovers, revisits genuinely occur, and the resource left
+behind retains value $V'=1-x$. At exactly $r=0$ the arm is frozen and $V'=0$. So
+$\lim_{r\to0^{+}}W(x)=\lambda x^{2}$ differs from the frozen-arm value $\lambda x$, and the gap
+$\lambda x(1-x)$ is precisely the value of a revisit that the restless model permits and the
+frozen model forbids.
 
 **$r\to\infty$.** $W(x)\to-\infty$ for every $x<1$, with $W(1)=\lambda$: skim the top of a
 patch that is always full, travel, repeat. Numerically $r/\lambda=10^{6}$ gives
@@ -355,8 +401,11 @@ the model's own passive dynamics deliver in a round-robin steady cycle,
 $x_{\mathrm{arr}}=1-(1-\mathrm{GUD})e^{-r\tau}$, so
 $t^{*}=\ln(x_{\mathrm{arr}}/\mathrm{GUD})/\lambda$ against
 $t^{*}_{\mathrm{MVT}}=\ln(1/u_0)/\lambda=1.204$; an earlier version forced arrival to a full
-patch ($x=1$), a state the passive dynamics forbid in steady state, which overstated the ratio
-by up to a factor of 3.8 and concealed that the ratio is *non-monotone* in $r$ --- rising from
+patch ($x=1$), a state the passive dynamics forbid in steady state. The resulting overstatement
+is row-dependent, not bounded by a single factor: it is $3.8$ at $r\tau=0.2$, $11.8$ at
+$r\tau=0.05$, and diverges as $r\to0$, since the old convention's ratio tends to $1$ while the
+corrected one tends to $0$. The old column also concealed that the ratio is *non-monotone* in
+$r$ --- rising from
 $0$ at $r\tau=0$, peaking at $0.356$ near $r\tau=2$, and falling back toward $0$ as
 $r\to\infty$. The $\mathrm{GUD}/\mathrm{GUD}_{\mathrm{MVT}}$ column is a ratio *at this anchor*:
 run forward as a policy in a 20-patch network the same anchor returns $1.271$ and a learned
@@ -382,6 +431,40 @@ MVT anchor $\nu=\lambda u_0^{2}$ used above and $1.060$ when $\nu$ is instead le
 network's realised long-run intake rate, so the quantity a field test should be powered for
 is a between-type GUD ratio in $[1.06,\,1.27]$ at $r\tau=0.2$, not a single number.
 
+## The simulation behind that interval
+
+Complete graph, $N=20$ patches (10 fast, 10 slow), one forager, uniform travel $\tau=1/\lambda$
+between any pair, $\lambda=1$, $G_{\max}=1$, dynamics exactly as in Section 3.1. Baseline
+$r_{\mathrm{fast}}\tau=0.2$ and $r_{\mathrm{slow}}\tau=0.02$. Discrete time with $dt=0.01$ and
+the exact exponential flow applied per step ($x\mapsto x e^{-\lambda\,dt}$ active,
+$x\mapsto 1-(1-x)e^{-r\,dt}$ passive), so the discretisation error is in *when* a decision fires,
+not in the flow; thresholds fire at the first step past the crossing, worth $\le0.5\%$ on any
+GUD reported here. Burn-in 200 time units discarded, 1,000 scored, 20 seeds, none dropped;
+intervals are Student-$t$ 95\% across seeds. The destination is the $\arg\max$ of the policy's
+own criterion evaluated at the arrival state $x_j^{\mathrm{arr}}=1-(1-x_j)e^{-r_j\tau}$. The
+forager carries **one** habitat scalar. Fixed at the MVT anchor $\nu=\lambda u_0^{2}=0.09$ the
+fast/slow GUD ratio is $1.2708\pm0.0002$; set instead by a damped fixed point on the realised
+long-run intake rate it converges to $\nu=0.273$ and the ratio is $1.0600\pm0.0002$. Those two
+calibrations are the endpoints of $[1.06,\,1.27]$: it is a calibration range, not a confidence
+interval, and the Monte Carlo error on each endpoint is $\pm0.0002$. The usable design window is
+$r_{\mathrm{fast}}\tau\in[0.2,1]$ --- at $r_{\mathrm{fast}}\tau=10$ the simulated forager visits
+the slow type zero times in every run and the ratio is undefined. Reproduced by
+`vault/_scripts/c45_whittle_sim.py` (standard library only). <!-- C45 §1, §3, §5 -->
+
+**Why the anchor gives $1.271$ here and $1.340$ in Table 1.** The two are different ratios, and
+the difference is almost entirely in the denominator. Table 1's $1.340$ is
+$\mathrm{GUD}(r\tau=0.2)/\mathrm{GUD}_{\mathrm{MVT}}$ with
+$\mathrm{GUD}_{\mathrm{MVT}}=u_0=0.300$, an $r=0$ baseline. The simulation's $1.271$ is a
+*between-type* ratio whose slow type regrows at $r_{\mathrm{slow}}\tau=0.02$, not $0$, and so
+departs at $\mathrm{GUD}_{\mathrm{slow}}=0.3138$ --- itself within $0.8\%$ of the closed form's
+small-$r$ expansion $0.300+0.817\times0.02=0.3163$. The simulated fast type departs at $0.3987$
+against the closed form's $0.4019$, again $0.8\%$. Taken against the same $r=0$ baseline the
+simulated fast value gives $0.3987/0.300=1.329$ against Table 1's $1.340$. The closed form
+therefore survives the network; what changes is the baseline the ratio is measured against. The
+residual $0.8\%$ in each level is attributed in the source note to the $dt$ overshoot and to the
+finite-$N$ visit imbalance (87\% of departures are from fast patches at the baseline); that
+attribution is stated there but not separately verified. <!-- C45 §5 -->
+
 # A test
 
 Kadmon & Shmida (1992), *Evolutionary Ecology* 6:142--151 [@kadmonshmida1992], report
@@ -406,9 +489,26 @@ measured foragers. <!-- C25 §6 -->
 
 **Caveat, and it is not small.** Kadmon (1992) measured *linear* renewal in *Anchusa*,
 $\dot x = \mathrm{const}$ up to a cap, not the saturating-exponential $\dot x = r(1-x)$
-assumed in Section 3.1. The derivation runs the same way with linear renewal, but (4)
-changes. The *sign* of (6) survives; the coefficients in Table 1 do not. Applying Table 1
-numerically to *Anchusa* would be wrong. <!-- C25 §7 -->
+assumed in Section 3.1. **The derivation does not run the same way, and the prediction does not
+transfer.** With passive dynamics $\dot x=c$ (constant, capped) and the same active dynamics, the
+singular-arc active fraction is $u^{*}=c/(\lambda a+c)$ and the gain is
+$\rho(a)=\lambda a(c+\nu)/(\lambda a+c)$, so
+$$\frac{\partial\rho}{\partial a}=\frac{\lambda c\,(c+\nu)}{(\lambda a+c)^{2}}>0$$
+for every $a$ whenever $c>0$ and $\nu>-c$. There is **no interior stationary point**: the
+$a$-dependence of the forgone regrowth, which supplied the competing term in Section 3.3, is
+absent, because the regrowth given up by occupying the patch is $c$ regardless of standing crop.
+The maximiser is the boundary $a=1$, and the index degenerates to a step function,
+$$W(x)=-c \ \ \text{on } (0,1), \qquad W(1)=\lambda,$$
+flat on the interior and carrying neither state nor $c$ information. There is therefore **no
+analogue of (4), no analogue of (6), and no regrowth effect**: $d\mathrm{GUD}/dc=0$ from the
+index alone, and with travel made explicit the self-consistent cycle gives
+$\mathrm{GUD}^{*}(c)=\max\{a_{\mathrm{MVT}}(\lambda\tau),\,1-c\tau\}$, whose derivative is
+$-\tau$ below the kink and $0$ above --- never positive, where (6) requires strictly positive.
+The Kadmon pair therefore parameterises the model but cannot test it whichever way the data
+fall. The test needs an artificial array with saturating refill by construction, and a
+linear-refill arm as a negative control. This is Limitations item 5; an earlier draft of this
+section claimed that the sign of (6) survives linear renewal, and that claim was wrong.
+<!-- C25 §5 boundary condition; C48 §2 -->
 
 # Evidence that the two literatures have not met
 
@@ -431,16 +531,25 @@ the likely source). Crossref's `is-referenced-by-count` for the same DOI was 986
 OpenCitations' citation count 1,026, and OpenAlex's `cited_by_count` 1,544, all fetched
 2026-09-05; the percentages are not recomputed against these. The control partner is Auer,
 Cesa-Bianchi & Fischer 2002 (`10.1023/A:1013689704352`), DOI verified against Crossref
-2026-09-05, `is-referenced-by-count` 3,906 [@auer2002].
+2026-09-05, `is-referenced-by-count` 3,906 [@auer2002]. This is a **same-field** control: Auer
+et al. is a bandit paper sharing Gittins' venue culture and vocabulary, whereas Charnov 1976 is
+behavioural ecology, so the ratio below measures field distance as well as conceptual neglect,
+and should be read as an upper bound on the latter. No cross-field control of comparable
+citation volume has been run; we keep the number and mark its interpretation.
 
 **The statistic to quote is the control ratio, not the raw count or $O/E$.** Under
 independence, $E = |A|\cdot|B|/N_{\text{universe}}$, and $E\propto 1/N$, so a gap that looks
 decisive at one denominator vanishes at another: at $N=10^{6}$ the expected Gittins
 $\times$ Charnov count falls to 5.5 and $O/E\approx0.91$, indistinguishable from chance. $N$
-cancels when the same universe is used for gap and control, giving
-$$\frac{(O/E)_{\text{gap}}}{(O/E)_{\text{control}}}
+cancels when the same universe is used for gap and control. Since
+$(O/E)_i = O_i N/(|A|\,|B_i|)$, the isolation factor is the control's $O/E$ divided by the
+gap's:
+$$\frac{(O/E)_{\text{control}}}{(O/E)_{\text{gap}}}
 = \frac{O_{\text{control}}/|B_{\text{control}}|}{O_{\text{gap}}/|B_{\text{gap}}|}
 = \frac{225/3{,}906}{5/5{,}424} = \frac{0.0576}{0.000922} = 62.5 .$$
+(Written the other way up, $(O/E)_{\text{gap}}/(O/E)_{\text{control}} = 1/62.5 = 0.016$; an
+earlier draft printed the left-hand side in that orientation against the right-hand side in
+this one.)
 The headline "factor of 45" that comes from dividing both percentages by the same 1,013
 base ignores that the two partner sets differ in size; correcting for that moves 45 to
 **62.5**, so the isolation is slightly stronger than the uncorrected figure, and is now

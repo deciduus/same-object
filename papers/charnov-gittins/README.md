@@ -265,3 +265,51 @@ against the providers:
 numbered **§9**, not §8, because §8 ("What it does not settle") already exists; the paper's
 existing `C25 §8` traceability comments are unaffected. A log entry is staged in
 `vault/PENDING-log-REV1.md` for merging into `vault/log.md`.
+
+## Revision 2026-09-05 (referee 2)
+
+Responds to `reviews/2026-09-05-referee-2-opus.md` (verdict: major revision). That referee
+had the manuscript and `refs.bib` only, and recomputed every derivation and number reachable
+from them. Three were wrong; all three are corrected here. **No number in Table 1 changed** —
+the referee re-derived all sixteen non-trivial cells independently and they agree. A point-by-
+point author response is appended to the review file itself.
+
+Ten changes, in the order the brief lists them:
+
+1. **§4 linear renewal (ERROR 1, the referee's M6).** The caveat claimed "the *sign* of (6)
+   survives" under linear renewal. It does not. §4 now carries the derivation:
+   `∂ρ/∂a = λc(c+ν)/(λa+c)² > 0` everywhere, so no interior stationary point exists, the index
+   degenerates to `W = −c` on `(0,1)` with `W(1) = λ`, there is no analogue of (4) or (6), and
+   `dGUD/dc` is `−τ` below the kink and `0` above — never positive. §4 now agrees with
+   Limitations item 5 and with `vault/computed/C48-kadmon-regrowth-test.md`.
+2. **Control-ratio identity (ERROR 2).** The displayed equation is reoriented to
+   `(O/E)_ctrl / (O/E)_gap`, which is the 62.5; the reciprocal orientation is noted
+   parenthetically. No number moved.
+3. **"Factor of 3.8" (ERROR 3).** Restated as row-dependent: 3.8 at `rτ = 0.2`, 11.8 at
+   `rτ = 0.05`, diverging as `r → 0`.
+4. **Simulation described.** New §3.7, "The simulation behind that interval", gives the C45
+   setup in full and reconciles the network's 1.271 with Table 1's 1.340.
+5. **Theorem hypotheses.** Attainment of the supremum is now assumed, with two sufficient
+   conditions given and the failure case `g(t) = ct` stated; `g'` strictly decreasing is named
+   as what makes `t*` unique.
+6. **Non-revisitability.** The referee's restructuring is adopted (option (a)) and verified:
+   one arm type, τ-prefixed, with a departed arm frozen rather than deleted. The "iff" becomes
+   "if". Recorded as `C5-charnov-gittins` §13.
+7. **`V' ≡ 0` no longer "by fiat".** §3.5's second limit derives it from the frozen-arm
+   argument and the absorbing-departure structure, and the two `r → 0` branches are shown not
+   to commute.
+8. **Auer control.** §5 now says the control is same-field and measures field distance as well
+   as neglect. The number is kept.
+9. **Abstract.** Now states the negative simulation result and the saturating-renewal
+   restriction.
+10. **Referee's three questions** answered in the author response.
+
+### Vault
+
+`vault/computed/C5-charnov-gittins.md` gained **§13**, "Referee-2 restatement" — the proof in
+§2–§4 is untouched; §13 records the added hypotheses and the weakened licence.
+`vault/computed/C25-whittle-foraging.md` was **not edited**: its §5 boundary-condition
+paragraph already stated the linear-renewal degeneracy correctly, so the bug was in the paper
+alone. Draft `log.md` entries and the open items this round did not close are staged in
+`vault/PENDING-log-REV2.md` (deliberately not linked from `00-index.md`; `_lint.py` warns
+about that and the warning is expected). `refs.bib` was not changed in this round.

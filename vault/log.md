@@ -4983,3 +4983,103 @@ file wants it, belongs under its title:
 
 Scoped to one instrument. For the whole research loop — provenance, statistics, reasoning,
 process and framing — see [[failure-taxonomy]].
+
+## [2026-09-05] computed | C49's exchange residual fails on the measured CH4 adsorption enthalpy by 182x and passes on the fitted one by 22x; the whole gap is one lab number
+
+C53 tests whether C49's `EXCHANGE REQUIRED` residual — a two-way surface reservoir moving
+>= 3,820 t/yr of CH4 in each phase, season-locked, tau_eff = 0.944 yr — is reachable by
+adsorption/desorption on regolith under Mars' real temperature and pressure swing. Brief
+`audits/blind-brief-c53-2026-09-05.md`, sha256
+`7529887e8233ede93ab66860c2d900ae37e41323f125f59d9f5890f837d5857f`, hashed before any isotherm,
+thermal or diffusion value was fetched; it pre-committed to the two moves that could have rigged
+the result (use the *smaller* of the thermal and diffusive depth; single-component isotherms
+give an upper bound, so a failure is robust and a pass soft). Both honoured.
+
+What was wrong / open: C49 recorded the regolith two-way exchange row as SURVIVES by six orders
+on *capacity* and left the *sign alternation* untested.
+
+What it is now: RULED OUT on measured parameters. Frenkel residence-time physisorption
+(`N = gamma Z tau0 exp(dH/RT)`) integrated over the annual thermal skin depth `1.254 m` — which
+beats the diffusive reach `17-158 m` by 14-126x, so the accessible column is thermally, not
+diffusively, limited — gives `dM_ads = 1.452e-10 kg m^-2`, **21.0 t** planet-wide against
+3,820 t required: **A_exchange = 182, RULED OUT**, surviving the 2x aperture row at 91.
+Re-run at `dH = 31.5 kJ mol^-1`, the value Smith/Moores had to *fit* to the Gale cycle, it gives
+8.37e4 t and `A = 0.046`, a pass by 22x. The distance between the two verdicts is
+`exp(13.5 kJ mol^-1 / RT) x 1.75 = 3,989`.
+
+What produced the new number: `vault/_scripts/c53_exchange.py`, on Gough, Tolbert, McKay & Toon
+2010 Icarus `10.1016/j.icarus.2009.11.030` (Crossref-verified 2026-09-05: 67 refs, 32 cites) for
+`dH_obs = 18 +/- 1.7 kJ mol^-1`, measured at **115-135 K** and extrapolated — VERIFIED-SECONDARY,
+paywalled; and Smith, Moores, Gough, Martinez, Meslin, Atreya, Mahaffy, Newman & Webster,
+LPSC 50 (2019) abstract 1289, **full-text-read** 2026-09-05, for the fitted `dH = 31.5`,
+`gamma/eta = 1`, EADT 30 sols, seep 2.8e-16 kg m^-2 s^-1, chi2_nu = 0.91, and for the sentence
+that laboratory `gamma/eta` and `dH` "do not produce good fits" to the SAM-TLS data.
+
+The literature result: Meslin, Gough, Lefevre & Forget 2011 PSS `10.1016/j.pss.2010.09.022`
+("little variability", < a few percent at Gale's latitude) and Moores, Gough, Martinez, Meslin
+et al. 2019 Nat. Geosci. `10.1038/s41561-019-0313-y` ("consistent with regolith adsorption and
+diffusion") are **not a disagreement**: same physics, two values of `dH`, and Meslin is a
+co-author of the second. C53 independently reproduces Meslin 2011 (0.55% of the needed amplitude
+against their "a few percent"), and applies the C30 discipline to that agreement: the order and
+direction are independent, the digit is not evidence, because neither paper was full-text-read
+and `dH` is an input to both routes.
+
+The residual tightens rather than closes, and changes what it is about: **adsorption closes C49's
+residual iff the CH4-regolith adsorption enthalpy at 180-240 K on a real Mars analogue is
+>= ~28 kJ mol^-1**, against 18 +/- 1.7 measured at 115-135 K. C49 ended with a specification
+about Mars; C53 ends with one about a cryostat. Otherwise the sign alternation needs a
+non-adsorptive two-way process (clathrate, barometric pumping, microbial) or the Gale observable
+is not real (C49's own UNREPLICABLE OBSERVABLE condition).
+
+Honesty: every soft input was set toward a pass (`gamma = 1`, `S = 100 m^2 g^-1` at JSC Mars-1's
+high end, no CO2/H2O competition), so 21 t is an upper bound and A = 182 a lower bound on the
+shortfall; the fitted pass is correspondingly soft. `tau0 = 1e-13 s` is a textbook estimate and
+is degenerate with `dH` (13.5 kJ mol^-1 == a factor 2,280 in tau0). Gough 2010, Meslin 2011,
+Sizemore & Mellon 2008 `10.1016/j.icarus.2008.05.013` and both Moores 2019 papers are
+Crossref-verified but **none full-text-read**; only LPSC 1289 was.
+
+
+
+## [2026-09-05] correction | C49's areal residual is 7.24e-5 mg m^-2 day^-1, not 0.072 — a 10^3 unit slip, favourable to its own argument
+
+C49 section 5 states the exchange residual as `0.072 mg m^-2 day^-1`. Recomputing from C49's own
+inputs: 3,820 t yr^-1 / 1.444e14 m^2 / 365.25 d = **7.243e-5 mg m^-2 day^-1**. The printed figure
+is in **micrograms**, not milligrams. Found by `vault/_scripts/c53_exchange.py` as an incidental
+check while computing C53. Nothing in C49's verdict moves: the correction makes the requirement
+**5-6** orders below terrestrial microseepage (10-100 mg m^-2 day^-1) rather than the 2-3 orders
+C49 claims, which strengthens rather than weakens its "the capacity is not the problem; the sign
+alternation is" conclusion. **Logged, not edited** — C49 was held by another agent this session,
+so the fix is deferred to whoever merges this file.
+
+
+## [2026-09-05] correction | Paper §4 claimed the sign of dGUD/dr survives linear renewal; it does not, and C48 always said so
+Referee 2 recomputed the linear-renewal singular arc independently and got
+∂ρ/∂a = λc(c+ν)/(λa+c)² > 0 everywhere — no interior stationary point, so (4) has no
+linear-renewal analogue. This is C48 §2 exactly. The paper's §4 caveat is rewritten to
+carry the degeneracy (W = −c on (0,1), W(1) = λ; dGUD/dc = −τ below the kink, 0 above)
+and now agrees with Limitations item 5. C25 §5's boundary-condition paragraph was already
+correct and needed no edit; the bug was in the paper only.
+
+## [2026-09-05] correction | Control-ratio identity was printed as its own reciprocal
+(O/E)_gap/(O/E)_ctrl was equated to (O_ctrl/|B_ctrl|)/(O_gap/|B_gap|). Since
+(O/E)_i = O_i·N/(|A||B_i|), the left side is (O_gap/|B_gap|)/(O_ctrl/|B_ctrl|) = 1/62.5.
+The intended object — isolation of 62.5, control over gap — is unchanged; the equation now
+reads (O/E)_ctrl/(O/E)_gap on the left. No number moved.
+
+## [2026-09-05] correction | "Overstated by up to a factor of 3.8" was false over the table's own range
+The x_arr = 1 convention overstates the residence ratio by 3.8 at rτ = 0.2 but 11.8 at
+rτ = 0.05, and without bound as r → 0 (old ratio → 1, corrected → 0). Restated as
+row-dependent. Table 1 itself is unchanged and was verified cell by cell by the referee.
+
+## [2026-09-05] vocabulary | Non-revisitability is sufficient, not necessary: freezing is the licence
+A departed arm is frozen, not deleted; its index stays at g'(t_dep) ≤ R* while every fresh
+arm sits at R*, so under strictly decreasing g' a revisit is never strictly optimal. The
+"iff" in C5 §5.4 becomes "if", and the condition actually needed is that τ is incurred once
+per activation and belongs to the arm's own reward stream. Recorded as C5 §13; the proof in
+C5 §2–§4 is untouched. Ties at the departure instant mean the conclusion is "never strictly
+better to revisit", not "strictly worse".
+
+## [2026-09-05] method | Theorem hypotheses stated: attainment, strict concavity
+g(t) = ct satisfies every stated hypothesis and has no maximiser of g(t)/(τ+t). Attainment
+is now assumed, with g bounded and g'(∞) = 0, or g'(0⁺) > lim g(t)/(τ+t), given as
+sufficient conditions; g' strictly decreasing is what makes t* unique.

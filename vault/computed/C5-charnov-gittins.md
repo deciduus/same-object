@@ -604,3 +604,49 @@ Ten lines, written from what §11 found, so the next agent does not re-litigate 
    studies, where `r` is measured independently. Without a named dataset E4 is Layer 2, not
    Layer 3.
 10. **Write it in `C24`/`C25`, not here.** C5 is the identity; E4 is the transfer across it.
+
+---
+
+## 13. Referee-2 restatement (2026-09-05) — hypotheses added, licence weakened
+
+Referee 2 on `papers/charnov-gittins/paper.md` (report at
+`papers/charnov-gittins/reviews/2026-09-05-referee-2-opus.md`) raised two conditions on the
+theorem of §3–§4. Neither touches the proof; both change what the statement must say. **The
+derivation in §2–§4 above is unchanged and is not edited.** This section records the restated
+hypotheses that the paper now carries.
+
+**1. Attainment of the supremum is a hypothesis, not a conclusion.** §3 says the `t` attaining
+(4) is `t*` and that this "falls out of the same equation". It does not: attainment must be
+assumed or implied. `g(t) = ct` is concave with `g(0) = 0`, and `sup_t ct/(τ+t) = c` is
+approached but never attained — there is no `t*` and the forager never leaves. Sufficient
+conditions, either of which the paper may state: `g` bounded with `g'(t) → 0` as `t → ∞`; or,
+more generally, `g` concave and increasing with `g'(0⁺) > lim_{t→∞} g(t)/(τ+t)`. Uniqueness of
+the departure time additionally needs `g'` **strictly** decreasing, i.e. `g` strictly concave —
+plain concavity permits a flat segment of `g'` and hence an interval of optimal departure times.
+
+**2. Non-revisitability (§5.4) is sufficient, not necessary — freezing is what does the work.**
+The boxed claim that absorbing `τ` into the outside arm is legitimate *iff* a departed patch is
+never revisited is too strong. In the standard bandit formulation a departed arm is **frozen**,
+not deleted, and its index is held at its departure value `g'(t_dep) ≤ R*` for ever, while every
+fresh arm sits at `R*`. The fresh arm therefore always weakly wins; and since `g'` is strictly
+decreasing, resuming the frozen arm for any positive duration returns an average rate strictly
+below `R*` against the fresh arm's exactly `R*`. So revisiting is never strictly optimal, and
+non-revisitability is a property of the optimal path rather than a restriction placed on it. The
+condition actually needed is the weaker one: **`τ` is incurred once per activation of an arm and
+is a property of that arm's own reward stream.**
+
+*Gap, stated.* At the departure instant `g'(t_dep) = R*` exactly, so the frozen arm and a fresh
+arm tie. The conclusion is "never strictly better to revisit", not "strictly worse". Nothing in
+§3–§6 uses the strict form. (In a physical habitat resuming a patch also re-incurs `τ`, which
+widens the margin, but the model as written does not charge it.)
+
+*Consequence for §6 row 6 and for [[C25-whittle-foraging]] §4.* The correct diagnosis of the
+switching-cost break is not "revisits are permitted" but "the arm you return to is **not frozen**
+at its departure index". That is exactly the restless case: with `r > 0` a departed patch
+regrows, its index recovers, it can re-attain the top, and revisits genuinely occur. This
+reconciles §5.4 with C25 §4, whose two `r → 0` branches do not commute — `lim_{r→0⁺} W = λx²`
+(restless, revisits valued, `V' = 1−x`) against the frozen-arm value `λx` (`V' ≡ 0`). The gap
+`λx(1−x)` is the value of a revisit the restless model permits and the frozen model forbids. C25
+§4's `V' ≡ 0` is therefore **derived** from the absorbing-departure structure, not imposed "by
+fiat"; the wording there is a bug against this section and is queued in
+`vault/PENDING-log-REV2.md`.

@@ -136,7 +136,7 @@ Of the reservoirs considered, the source side is **over-supplied** and the sink 
 > **A surface reservoir exchanging CH₄ with the atmosphere in BOTH directions, at
 > `≥ 3,820 t/yr` in each phase, phase-locked to the Martian season, with an effective
 > atmospheric residence time of `0.944 yr` — 318× shorter than gas-phase photochemistry
-> supplies. Areally that is `0.072 mg m⁻² day⁻¹` over the whole planet, two to three orders
+> supplies. Areally that is `**7.24×10⁻⁵ mg m⁻² day⁻¹** (CORRECTED 2026-09-05 by [[C53-mars-exchange-feasibility]]: the first draft printed 0.072 mg, a 10³ slip; direction favourable, no verdict moves)` over the whole planet, two to three orders
 > BELOW terrestrial microseepage (10–100 mg m⁻² day⁻¹), so the capacity is not the problem;
 > the *sign alternation* is. Conditional on the Gale near-surface observable of §2.4 being
 > real.**
