@@ -47,9 +47,24 @@ itself about solar sails and caught it with its own instrument.
 |---|---|---|---|
 | [[reservoir-audit]] / [[C8-momentum-harvesting-metric]] | energy–momentum | reservoir enumeration | validated 5/5; [[C11-flyby-reservoir-audit]] is the first open case |
 | [[information-audit]] | entropy | sink enumeration; **bits** | validated 3/3, sink named each time |
-| [[Q7-same-class-prediction]] | — (a conditional, not an identity) | the same-class partition | bias-immune, 11/11 |
+| [[Q7-same-class-prediction]] | — (a conditional, not an identity) | the same-class partition | strict CLASS-I: **8 closed, 7 systematics + 1 fluctuation, 0 new physics**; Clopper–Pearson 95% upper bound on P(new physics) = **0.31**. Adding CLASS-II: 15 closed, bound **0.18**. **Not bias-immune** — see below |
 | [[citation-intersection]] | — | **set intersection over bibliographies** | the project's evidence standard |
 | [[C5-charnov-gittins]] | optimality | **the Gittins index — a discrete allocation object** | closed by identity |
+
+**The Q7 row, corrected 2026-09-05 (backlog C15).** It read *"bias-immune, 11/11"*. Both halves
+were wrong. The count came from a hand-assigned sample; re-applying [[C16-same-class-catalogue]]'s
+decision procedure **blind** — class assigned on apparatus / observable / analysis pipeline
+before the outcome is consulted — changes 11 of 24 assignments and leaves **N = 8** strict
+CLASS-I closed cases, not 11.
+
+And the bias-immunity claim is softened exactly as C16 softened it. The old argument was that
+adding invisible same-class cases could only add more systematics. **That fails**, because
+findability of a documented *resolution* correlates with the resolution being mundane: a
+same-class disagreement that quietly turned out to be real physics gets written up as a
+discovery and reclassified, not filed as a resolved measurement dispute. So the missing cases
+are not a random sample, and the correct posture is a stated interval rather than an immunity
+claim — hence the Clopper–Pearson bound in the row above. **0 of 8 is consistent with a
+same-class new-physics rate as high as 31%.**
 
 The middle column is the point. This project keeps landing on **integer and combinatorial
 objects**: the Gittins index (discrete stopping), Hill numbers (effective *count* of functions,

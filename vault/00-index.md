@@ -112,6 +112,7 @@ Six structural patterns recurring across every field surveyed. None is *build a 
 
 Not catalogue entries. Numbers this project produced.
 
+- [[C25-whittle-foraging]] — **first Layer-3 derivation.** The Whittle index of a regrowing patch is `W(x) = λx² − r(1−x)²`; indexable unconditionally, reduces to C5 eq. (4) as r→0 under non-revisitability, and predicts giving-up density rising with regrowth rate (1.34× MVT at r·τ = 0.2). Dataset named: Kadmon & Shmida 1992. Five open holes stated
 - [[C1-availability-living-tissue]] — photosystem II = 0.883, cortical bone = 0.984. **A leaf is less available than a power grid.**
 - [[C2-probabilistic-safety-factors]] — for bone, failure probability is set by tissue variability, not locomotor variability
 - [[C3-energy-error-axis]] — every information substrate on one kT-normalized axis
@@ -132,29 +133,29 @@ Not catalogue entries. Numbers this project produced.
 
 ### Live
 - [[G19-safety-factor-derived-twice]] — *citation-intersection* — 46 is the OpenAlex count and is confirmed live, not stale; Crossref returns 36 and OpenCitations 40 for the same work. Citing works individually inspected, all comparative biomechanics. The 753-works figure is withdrawn as a string artifact.
-- [[G25-proofreading-coding]] — *citation-intersection* — 1,463 citers pulled, 416 reference lists retrieved - 28.4% coverage, well below the 77-100% standard set by G6. The project's strongest finding, on the thinnest coverage.
 - [[G6-multifunctionality]] — *citation-intersection* — Survived both standards. Intersection 0 across six anchor pairings at 77-100% coverage; 1,033 works, no contact either direction. Control Byrnes x Jost = 17, reproduced by both sources.
 - [[G22-scale-transfer-triage]] — *full-text-read* — Disagreement adjudicated on the full text: Buckingham 0, dimensionless 0, screening 0. The paper asks for the guidelines, so it cannot be them. Holds.
 
 ### Narrowed
 - [[G17-overconfident-uncertainties]] — *citation-intersection* — Restored with correction. A citation is not a follow-up. Specimen case for the symmetry rule.
+- [[G25-proofreading-coding]] — *citation-intersection* — Re-run 2026-09-05 as a citer-set intersection (no reference lists needed, 100% of provider index): OpenAlex 36 co-citers of Hopfield 1974 and Shannon 1948 part I, OpenCitations 8 against part II. The old zero-coding-theory result was a 28.4%-coverage artifact - at least four co-citers carry real coding-theory content. Narrowed, not live.
+- [[G27-collective-decision]] — *citation-intersection* — Overturned on a query that never tested this gap - ants vs bees is swarm-internal. Citer-set intersection of swarm anchors against consensus anchors returns 0, 0, 1, 1 (OpenCitations, 2026-09-05); the one real bridge is ACM TAAS 2012. The 26 and 551 are UNSOURCED. Reverted to narrowed 2026-09-05 (orchestrator, on the agent's evidence).
 - [[G28-marginal-value-gittins]] — *citation-intersection* — Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs control 225/1,013 = 22.2% - a factor of 45. Denominators reconciled in the Provenance table. Griebling 2026 LOCATED, doi 10.1016/j.anbehav.2026.123491, and confirmed to cite Charnov 1976 and Gittins 1979.
 - [[G1-gradient-coupling]] — *full-text-read* — Thermodynamic branch is already unified: the ZT-form q is in active use for thermoelectric, electrokinetic, hydronic and oxphos. Gap survives only across the momentum branch.
 - [[G11-plant-gravisensing]] — *full-text-read* — Restored and restated. The withdrawal cited an experimental paper as if it were a derivation. But the original gap's premise was also wrong: the sensor measures inclination, not force, and its noise floor is active agitation at ~10x thermal.
 - [[G12-latch-fatigue]] — *full-text-read* — Held on full-text read. The 2023 JEB LaMSA review names re-usability and defers it; the click-beetle latch paper measures one cycle on dried specimens.
 - [[G2-metastability-metric]] — *full-text-read* — Single figure of merit killed by the prefactor (C15): tau_0 spans ~20 orders. Salvage: a 2D map separates chemistry (barrier) from biology (prefactor). Nuclear and PCM don't embed at all.
-- [[G21-dimensionless-regime-map]] — *full-text-read* — Surviving half closed by construction: C12 builds the co-located Pi-space as an integer kernel. Froude and Peclet are vectors in one lattice; transport crossovers are lattice-locked.
+- [[G21-dimensionless-regime-map]] — *full-text-read* — Surviving half closed by construction: C12 builds the co-located Pi-space as an integer kernel. Source located 2026-09-05: the three quotes are from Vogel's 1998 Physics Today feature, not from either book - the read-in-full was a 6-page article. Ortega Pi values now sourced to Plants 2019 8(1):17.
 - [[G23-hormesis-formalism]] — *full-text-read* — Headline sentence false: shot peening names its own descending limb (over-peening). What survives is the parameterised curve - no ceiling amplitude, no window width, no sweep.
 - [[G3-cycle-life]] — *full-text-read* — Narrowed: Hanson PNAS 2021 adopts CCR 'guided by catalyst engineering' as the in vivo TTN - that leg is bridged one-way. The unbridged leg is energy storage: cycle life vs TTN = 0.
 - [[G4-criticality-as-design]] — *full-text-read* — Bibliography audited directly: 595 refs, and it carries no titles at all, so prior subject characterisation read data that is not there. Only the offset-from-threshold figure of merit survives.
 - [[G5-repair-number]] — *full-text-read* — Zero survives the homograph (all 6 MTTR hits are IT). But 'no time in it' is wrong: CDHM has healing rate constants. The missing object is the ratio, not the rate.
-- [[G7-how-passive]] — *full-text-read* — Ladder reinvented independently in exoskeletons, structural control and facades - not nuclear-only. Read one in full. No field has a NUMBER, so the metric gap holds and is sharper.
+- [[G7-how-passive]] — *full-text-read* — Ladder reinvented independently in exoskeletons, structural control and facades - not nuclear-only. Citer trace completed 2026-09-05: TECDOC-626 has no DOI, but OpenAlex full-text search finds 57 works citing it and every one is nuclear. So the literal sub-claim is answered YES, nobody outside nuclear uses the A-D ladder. No field has a NUMBER, so the metric gap holds and is sharper.
 - [[G9-discrepancy-base-rate]] — *full-text-read* — Outcome distribution still uncomputed. Our own four discriminating features tested: one refuted (Homestake), three narrowed, and the neutron-lifetime example was wrong on the facts.
 
 ### Overturned
+- [[G8-energy-per-bit-axis]] — *citation-intersection* — Overturned, and the overturn survived re-test: citer-set intersection Landauer 1961 x (Laughlin 1998 + Attwell 2001) = 35 co-citers, ~340x the independence expectation, all inspected and on-topic (OpenCitations, 2026-09-05). The 575 string count itself is UNSOURCED and does not reproduce.
 - [[G20-resize-vs-throttle]] — *full-text-read* — Overturned. Computing has the symmorphosis question with formulas under the name over-provisioning accuracy, and safety factors are native to mechanical engineering - the direction was inverted.
-- [[G27-collective-decision]] — *string-protocol* — Overturned. The zero was anchored on Paxos, an algorithm name rather than a literature. Message complexity may still be untested.
-- [[G8-energy-per-bit-axis]] — *string-protocol* — Overturned. The specific figure in C3 may still be novel; the absence claim was not.
 
 <!-- /IDX:GAPS -->
 

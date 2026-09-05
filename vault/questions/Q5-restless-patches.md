@@ -53,3 +53,17 @@ Behavioural ecology inherits the whole restless-bandit literature: indexability 
 regret bounds, and the known failure cases. And bandit theory inherits **decades of field data
 on animals solving the restless problem** — which is the one thing operations research does not
 have.
+
+## Answered in part: [[C25-whittle-foraging]] (2026-09-05)
+
+The derivation is done. `W(x) = λx² − r(1−x)²` for a patch at standing crop `x` regrowing at
+rate `r`, depleting at `λx`. **Indexable unconditionally** (`W` strictly increasing). The
+signed regrowth term this note asked for is `−r(1−x)²`, and its sign is the one conjectured
+here: **fast-regrowing patches are left sooner, at a higher giving-up density**, with
+`dGUD/dr = (1−GUD)²/(2[λ·GUD + r(1−GUD)]) > 0`.
+
+Still open from this note: **the optimality gap is not stated.** A single forager among `N`
+patches sits outside the regime the Weber–Weiss asymptotic-optimality result covers, so C25
+delivers an indexable heuristic with a signed comparative static, not a bounded approximation.
+Also open: travel time `τ` is re-inserted at the renewal-cycle level, not inside the Whittle
+relaxation.

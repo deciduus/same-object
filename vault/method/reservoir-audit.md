@@ -207,7 +207,16 @@ Nothing in Part A failed. The procedure may be pointed at unresolved cases — w
 
 ---
 
-## Part B — negative controls on resolved anomalies
+## Part B — hard-positive controls on resolved anomalies
+
+**Renamed 2026-09-05. This was headed "negative controls" and it is not one.** Every row below
+is a real anomaly with a real, nonzero residual and a partner that turned out to exist. That is
+a *hard positive* control — a case where the answer is known and difficult, testing whether the
+instrument recovers a true signal it could plausibly have missed. A **negative** control is the
+opposite input: a system with **no** residual, testing whether the instrument can return
+*nothing*. This section contains none, and until Part D is run the audit has never been shown
+capable of a null output. See Part D below.
+
 
 ### B.1 Pioneer anomaly — the decisive test
 
@@ -369,30 +378,123 @@ Run on any device reported to produce useful work without carried fuel.
    bookkeeping — it is the whole instrument. Both errors this procedure has caught in this
    project (the sail, the tether) were caught here, by forcing a number where a word had been.
    *If you cannot write a number, the candidate is not a candidate yet.*
-5. **Compute `P_avail`** — the power the candidate can surrender through the device's actual
-   coupling cross-section, not through an idealised one. For photons this is the intercepted
-   or emitted radiant power; for a flow, `½ρAΔu³`; for expelled matter, `½ṁu_e²`.
-6. **Run the availability leg.** `A = (F_req·Δu)/P_avail`. For a photon reservoir this reduces
+5. **State the assumed coupling cross-section (the aperture), as a named row, and report `A`
+   at 2x and 0.5x that aperture.** MANDATORY, not optional. Per F3 the aperture is a free
+   parameter and `A` is not reproducible between analysts without it. Write the assumed area or
+   effective radius, what physical feature it corresponds to, and the sensitivity line
+   `A(2x aperture)` / `A(nominal)` / `A(0.5x aperture)`. For every reservoir in this note's
+   experience `P_avail` is linear in the aperture, so the sensitivity is `A/2` and `2A` — but
+   **state the scaling you assumed**, because a lifting-surface coupling is not linear in area
+   and the case where it is not is the case that matters. **An exclusion that does not survive
+   the 2x row is not an exclusion**; report it as `NOT TESTED` per F7.
+6. **Compute `P_avail`** — the power the candidate can surrender through the aperture named in
+   step 5, not through an idealised one. For photons this is the intercepted or emitted radiant
+   power; for a flow, `½ρAΔu³`; for expelled matter, `½ṁu_e²`.
+7. **Run the availability leg.** `A = (F_req·Δu)/P_avail`. For a photon reservoir this reduces
    to `F_req` against `P_avail/c` (absorption) or `2P_avail/c` (reflection). **`A > 1` rules the
    candidate out.**
-7. **Run the energy leg.** `Σ = P_useful/(F·Δu)`. Expect it to pass; treat a failure as
+8. **Run the energy leg.** `Σ = P_useful/(F·Δu)`. Expect it to pass; treat a failure as
    near-conclusive, since `Σ > 1` violates an identity. See F1.
-8. **Run the sign leg.** If `Δu` comes out negative — the device outrunning its own reservoir —
+9. **Run the sign leg.** If `Δu` comes out negative — the device outrunning its own reservoir —
    you have a single-reservoir model of a two-reservoir system. Go back to step 3 and find the
    partner. (Part A.4.)
-9. **Report per candidate**, in one of four states:
+10. **Report per candidate**, in one of four states:
    - `RULED OUT` with the factor by which `A` exceeds 1;
    - `SURVIVES` with the **required property** — anisotropy fraction, mass flux, field
      strength, relative velocity, coupling force;
    - `NOT FORMABLE` — the candidate names no `Δu`, so no `Σ` exists. A statement about the
      model, not the device;
    - `NOT TESTED` — you did not have the numbers. Say which.
-10. **Write the residual specification, never a verdict.** The output is the union of the
+11. **Write the residual specification, never a verdict.** The output is the union of the
     `SURVIVES` rows' required properties: *"a reservoir of mass flux ≥ X at relative velocity
     ≥ Y, coupling with force Z."* If the union is empty, the output is *"of the reservoirs
     considered, none supplies the required coupling"* — and the required coupling itself is
     then the specification.
-11. **Prefix every negative with "of the reservoirs considered."** Not as hedging. See F2.
+12. **Prefix every negative with "of the reservoirs considered."** Not as hedging. See F2.
+
+---
+
+## Part D — negative controls (design; NOT YET RUN)
+
+Part A is a soft-positive set, Part B a hard-positive set. **There is no input on which this
+instrument has ever returned "nothing here."** Step 11 guarantees an output by construction — if
+the union of surviving specifications is empty, the required coupling *itself* becomes the
+specification. An instrument that cannot return a null is not validated, it is only exercised.
+
+This section specifies the two negative controls and, crucially, **what output would count as
+the instrument correctly returning nothing.** Design only; neither case is run here, and no
+number below is a result.
+
+### D.1 — A fully accounted device: a Betz-calibrated wind turbine
+
+**The input.** A utility-scale horizontal-axis turbine with published rotor diameter, hub-height
+wind speed, air density and measured electrical output, at a point on its power curve where the
+measured power coefficient `C_p` is a documented fraction of the Betz limit `16/27 = 0.593`.
+Every watt is accounted: one reservoir (the ambient flow), one sink (the grid), a known loss
+budget. There is no anomaly, because there is no unexplained force.
+
+**Why this is the right null.** It is the exact structural mirror of Part A's rows — same
+reservoir class (a fluid at a bulk velocity), same identity, same arithmetic — differing only in
+that the residual is zero by construction. If the audit manufactures a specification here, it
+manufactures one everywhere, and the Part B outputs (Pioneer's 3.2% anisotropy, the EmDrive's
+2.4 mg/s) are artefacts of the procedure rather than of the devices.
+
+**What counts as returning nothing.** All three of:
+
+1. `A ≤ 1` for the ambient flow at the nominal aperture (the swept disc), *and* the required
+   coupling recovered from the observable is inside the uncertainty of the coupling the flow can
+   actually supply — i.e. `A` is not merely under 1 but consistent with the accounted value.
+2. The step-11 union is **non-empty and already occupied**: the surviving specification names the
+   ambient flow with a required property that the published `C_p` already satisfies. The correct
+   null output is *"the reservoir considered supplies the required coupling; no residual"* — not
+   an empty candidate list.
+3. **No second reservoir is demanded.** If the procedure, run honestly, emits a specification for
+   an *additional* partner, that is a failure of the negative control and must be recorded as
+   such.
+
+**What would count as a failure.** Any of: the aperture step (step 5) being tuned until a
+residual appears; a `1 < A < 2` exclusion of the ambient flow at nominal aperture (which would
+mean the instrument rules out the reservoir that is demonstrably doing the work); or a residual
+specification stated in units the published loss budget already covers.
+
+### D.2 — A fabricated thrust report consistent with zero
+
+**The input.** A synthetic, clearly-labelled fabricated report: a thruster of stated mass and
+input power reporting a thrust whose central value is **smaller than its own stated
+uncertainty** — e.g. `F = (0.4 ± 3.0) µN at 50 W`. Nothing else about it is anomalous. The
+fabrication is deliberate and must be flagged in the note that carries it so it can never be
+mistaken for a real device; it exists to test the procedure, not the physics.
+
+**Why this is the right null.** Part B's inputs all had a central value many sigma from zero.
+This one does not, and step 2 (`compute the required coupling from the observable`) will happily
+convert a zero-consistent observable into a finite `F_req` and carry it through to a residual
+specification. **That is the specific failure the control is built to catch:** the instrument
+has no step that asks whether the observable is distinguishable from zero before it starts
+specifying what would have to explain it.
+
+**What counts as returning nothing.** The procedure must halt at step 1 or 2 with:
+
+- `F_req` reported as an **interval containing zero**, and therefore
+- the verdict `NO OBSERVABLE TO EXPLAIN` — a fifth state alongside step 10's four (`RULED OUT`,
+  `SURVIVES`, `NOT FORMABLE`, `NOT TESTED`) — and **no candidate enumeration performed at all.**
+
+If the procedure as currently written cannot produce that state, then the control has found a
+missing step, and the fix is a step 0: *state the observable's significance; if the observable is
+consistent with zero, the audit does not run.* That would be a real amendment earned by a
+negative control, which is the point of running one.
+
+**Relationship to F5.** D.2 is adjacent to but distinct from the apparatus-artefact failure. F5
+says the audit cannot detect that a real, significant reading came from the balance mount rather
+than the device. D.2 says the audit does not currently check whether there is a reading at all.
+The first is out of the instrument's reach; the second is inside it and unguarded.
+
+### The deliverable
+
+One sentence, per the audit's own discipline: **the input class on which this audit returns
+nothing.** On the design above the expected answer is *"observables consistent with zero, and
+devices whose reservoir is already accounted to within its measured uncertainty"* — but that
+sentence is a prediction until D.1 and D.2 are actually run, and it is recorded here as a
+prediction, not a result.
 
 ---
 
@@ -418,7 +520,9 @@ free.** The Pioneer solar-pressure exclusion used the 2.74 m dish. Assume a larg
 area and `A` falls; assume enough area and any photon reservoir survives. State the aperture
 you assumed, and prefer the geometrically largest defensible one — because that makes
 exclusions conservative and admissions cheap, which is the right direction of error for a
-specification instrument.
+specification instrument. **This is now Part C step 5 and is mandatory, with `A` reported at
+2x and 0.5x the assumed aperture.** "Prefer the largest defensible" was a preference and
+preferences are not reproducible; the sensitivity line is.
 
 **F4 — `A ≤ 1` is necessary, never sufficient.** Solar radiation pressure passes the *energy*
 leg for Pioneer and is nonetheless wrong. The audit tests only the momentum-energy ledger; it
@@ -463,5 +567,11 @@ negative with *of the reservoirs considered*.
 The instrument is a [[positive-controls]] construction applied to physics rather than to
 citation counts — the five Part A rows are the known-closed pairs, and they are what makes the
 Part B results mean anything.
+
+**What that construction is still missing, stated plainly:** [[positive-controls]] is half of a
+control set. Part A is soft-positive, Part B hard-positive, and **there is no negative control** —
+no input on which this audit has been shown to return nothing. Part D specifies two and neither
+has been run, so every "validated" claim above should be read as *validated against positives
+only*.
 
 See [[Q9-fuel-free-is-an-assumption]], [[C8-momentum-harvesting-metric]], [[positive-controls]].

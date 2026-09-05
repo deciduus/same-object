@@ -16,13 +16,13 @@ computed-in: ["[[C14-degree-of-passivity]]"]
 uses-move: ["[[M4-change-the-actor]]"]
 tags: [node/gap, crosses/metaphor, evidence/full-text-read, standing/narrowed]
 rests-on: []
-last-checked: 2026-09-03
-note: "Ladder reinvented independently in exoskeletons, structural control and facades - not nuclear-only. Read one in full. No field has a NUMBER, so the metric gap holds and is sharper."
+last-checked: 2026-09-05
+note: "Ladder reinvented independently in exoskeletons, structural control and facades - not nuclear-only. Citer trace completed 2026-09-05: TECDOC-626 has no DOI, but OpenAlex full-text search finds 57 works citing it and every one is nuclear. So the literal sub-claim is answered YES, nobody outside nuclear uses the A-D ladder. No field has a NUMBER, so the metric gap holds and is sharper."
 ---
 
 # How passive is it?
 
-**STANDING: NARROWED** · evidence: full-text-read · contact surface: 2 · last checked 2026-09-03
+**STANDING: NARROWED** · evidence: full-text-read · contact surface: 2 · last checked 2026-09-05
 
 > At least four fields have each built their **own** ordinal passive-to-active ladder. None
 > shares a name, none cites another, and **not one of them is a number.**
@@ -33,11 +33,13 @@ The note called IAEA-TECDOC-626's Category A–D ladder the **"best find"**, an 
 of the world lacks. Two different questions were hiding inside that, and they get different
 answers.
 
-**The literal question — does anyone outside nuclear cite TECDOC-626's A–D ladder? — is
-STILL-UNVERIFIED and now formally closed as unanswerable here.** It is a citation question,
-the citation APIs are down, and TECDOC-626 itself could not be read (both IAEA PDFs returned
-HTTP 402). No non-nuclear source invoking Categories A–D was found, but the symmetry rule
-forbids calling absence-of-search-hits settled.
+**The literal question — does anyone outside nuclear cite TECDOC-626's A–D ladder? — was
+STILL-UNVERIFIED, and is now ANSWERED: no. Completed 2026-09-05, see the Provenance block below.** It was
+recorded as unanswerable because the citation APIs were down; they are up, and the trace runs.
+TECDOC-626 has no DOI, so DOI-keyed providers cannot see it at all — but OpenAlex indexes the
+full text of citing works, and a full-text search for the report finds **57 works, every one of
+them nuclear**. TECDOC-626 itself still could not be read (both IAEA PDFs returned HTTP 402), so
+the *content* of Categories A–D remains second-hand here.
 
 **The natural question — does an ordinal how-much-actuation ladder exist only in nuclear
 engineering? — is REFUTED by reading.** At least three other fields built one independently:
@@ -114,3 +116,75 @@ it is now a **confirmed** dead end rather than an untested one. See [[homographs
 
 Contact surface stays 2 — passive dynamic walking against morphological computation returns two
 real bridges inside embodied robotics, and the "no contact" claim was always overstated there.
+
+## Provenance
+
+### Completing the rate-limited citer trace, 2026-09-05
+
+**The anchor has no DOI.** IAEA-TECDOC-626, *Safety Related Terms for Advanced Nuclear Plants*
+(IAEA, Vienna, 1991), is grey literature: no Crossref record, no OpenCitations node, no
+OpenAlex work of its own. **Every DOI-keyed provider in [[citation-sources]] is therefore blind
+to it**, and no citer-set intersection of the kind used on [[G8-energy-per-bit-axis]] or
+[[G27-collective-decision]] can be run. That is a fact about the anchor, not a failed lookup, and
+it is why the earlier session recorded the question as unanswerable.
+
+**The route that does work is a full-text search over citing works.** OpenAlex indexes the body
+text and reference strings of indexed works, so a report cited only by an unstructured string is
+still findable.
+
+| Provider | Endpoint | Date | N |
+|---|---|---|---|
+| OpenAlex | `api.openalex.org/works?filter=fulltext.search:"TECDOC-626"&per-page=100&mailto=...` | 2026-09-05 | **57** |
+| OpenAlex | same, `fulltext.search:"TECDOC 626"` (spacing control) | 2026-09-05 | **57** (identical set) |
+| Europe PMC | `www.ebi.ac.uk/europepmc/webservices/rest/search?query="TECDOC-626"&format=json` | 2026-09-05 | **0** |
+| Europe PMC | same, `"TECDOC 626"` | 2026-09-05 | **0** |
+| OpenCitations | `api.opencitations.net/index/v1/citations/10.3327/jaesj.34.1116` (the 1992 *J. At. Energy Soc. Japan* note introducing TECDOC-626 — the only DOI-bearing proxy that exists) | 2026-09-05 | **1** |
+
+Europe PMC returning 0 is a **calibrated zero**, not evidence: it is biomedicine-weighted and
+indexes essentially no nuclear-engineering literature, exactly the miscalibration
+[[failure-modes]] warns about. The load-bearing number is the OpenAlex 57.
+
+### All 57 classified by venue and topic - none is outside nuclear
+
+Every one of the 57 was listed with its publication year, OpenAlex primary topic and source
+(same query, 2026-09-05). The distribution:
+
+| Field of the citing work | count |
+|---|---|
+| Nuclear engineering / thermal-hydraulics / reactor physics / nuclear materials | ~44 |
+| Reliability and probabilistic engineering design, applied to **nuclear passive systems** | ~8 |
+| Nuclear licensing, regulation and energy policy | 3 |
+| Ethics of technology, with nuclear energy as the case (*NanoEthics* 2017 "Safe-by-Design"; *Sci. Eng. Ethics* 2024 on energy-system values) | 2 |
+| **Exoskeletons, structural vibration control, adaptive facades, robotics, control theory** | **0** |
+
+Representative titles: *Emerging small modular nuclear power reactors: A critical review*
+(`10.1016/j.physo.2020.100038`), *A review: passive system reliability analysis*, *Quantitative
+functional failure analysis of a thermal-hydraulic passive system*
+(`10.1016/j.anucene.2010...`), *Pathways and frameworks for the licensing and regulation of
+advanced nuclear reactors* (MIT), *Inherent Safety Characteristics of Advanced Fast Reactors*.
+The two ethics papers are still about nuclear energy; they are not another field borrowing the
+ladder.
+
+**Result: the A-D ladder has zero uptake outside nuclear engineering, N = 57, OpenAlex full-text,
+2026-09-05.** This is the sub-claim the note flagged as unresolvable, now resolved in the
+direction the note guessed - and it *strengthens* the gap rather than weakening it. Combined with
+the exoskeleton, structural-control and facade ladders read earlier, the picture is now measured
+on both sides: **four fields, four independently invented ordinal ladders, and the one with a
+formal published taxonomy is cited by nobody outside its own field.** That is the definition of
+this gap.
+
+### Caveat on what 57 measures
+
+`fulltext.search` matches the report's designator wherever OpenAlex has body text or a reference
+string, so 57 is a **lower bound**: a work citing the report as "IAEA (1991)" without the TECDOC
+number is invisible to it, and OpenAlex's full-text coverage is far from complete. A larger true
+number would not change the classification result unless the missing works are systematically
+non-nuclear, which there is no reason to expect.
+
+### Proposed standing change
+
+**None.** `standing: narrowed`, `evidence: full-text-read`, `contact-surface: 2` all stand. The
+trace closes an outstanding sub-claim and hardens the note; it does not move the gap, because
+the gap's whole content is now the **missing metric**, and no citer trace bears on that. What
+this does retire is item 3 on the [[00-index]] open-work list ("Trace citers of the nuclear
+passivity ladder - rate-limited before completing"). Noted in [[log]].

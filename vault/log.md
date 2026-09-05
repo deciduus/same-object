@@ -1213,3 +1213,519 @@ say so. The C5 row now states the access level explicitly (Google Books term-ind
 text 403) and names the residual threat by DOI rather than by category. Recommend the same
 treatment wherever the audit's "biggest threat" column names an unread source — it pairs with
 the VERIFIED-PRIMARY / VERIFIED-SECONDARY split proposed in `audits/01-math-physics.md` item 25.
+
+## [2026-09-05] method | Citer-set intersection replaces reference-list intersection as the first pass
+
+A citation intersection does not need reference lists. Pull the citer DOI set of anchor A, pull
+the citer DOI set of anchor B, intersect. Coverage is then **100% of what the provider indexes**
+instead of the publisher-deposit-limited fraction that capped G25 at 28.4%, and it costs two
+requests instead of thousands. Written up in `citation-sources.md` with the script
+`vault/_scripts/intersect.py` (stdlib only, caching, `--enrich` for hand inspection, `NULL_N=`
+for the observed/expected null model).
+
+## [2026-09-05] correction | G25's "zero coding-theory content" was a coverage artifact; standing live → narrowed
+
+Re-ran Hopfield 1974 (`10.1073/pnas.71.10.4135`) × Shannon 1948 as a citer-set intersection.
+
+- **OpenAlex**, `api.openalex.org/works?filter=cites:W2074616759,cites:W1995875735&mailto=…`,
+  2026-09-05: Hopfield `cited_by_count` 1,656, Shannon pt I 82,198, **intersection 36** (32
+  distinct works after preprint/published duplicates).
+- **OpenCitations**, `api.opencitations.net/index/v1/citations/<doi>`, 2026-09-05: Hopfield 1,542,
+  Shannon pt II (`10.1002/j.1538-7305.1948.tb00917.x`) 9,771, **intersection 8**; expected under
+  independence at N=1.6×10⁸ is 0.09, so obs/exp ≈ 85.
+- Hopfield × Shannon **pt II** on OpenAlex: 0.
+
+Original run: 16 co-citers out of 416 reference lists (28.4% coverage), **0 with coding-theory
+content**. The fraction barely moved (3.8% → 2.2%). **The zero did not survive.** All 44 hits
+were inspected by title and abstract; at least four carry real coding theory, two decisively:
+
+- `10.1016/j.tpb.2019.03.007` (*Theor. Pop. Biol.* 2019) — "used results from **coding theory** to
+  prove bounds … including **proofreading**", genotypes built on **extended Hamming codes**.
+- `10.3390/e20050368` (*Entropy* 2018) — *Writing, Proofreading and Editing in Information Theory*.
+- `10.1109/memb.2006.1578663` — *The quest for error correction in biology*.
+- `10.3390/e25060881` — error correction on an explicit memoryless channel model.
+
+**Applied to the note:** `standing` `live` → **`narrowed`**, `contact-surface` 16 → **36**, tag
+line and STANDING line updated, `note:` rewritten. `evidence: citation-intersection` unchanged
+and now better supported. Narrowed rather than overturned: 2.2% co-citation with four bridges is
+still well under the closed-gap signature in `positive-controls` (DNA data storage co-cites
+error-correcting codes at 5.4% *and* reports results as a fraction of Shannon capacity).
+
+## [2026-09-05] method | New endpoint trap: OpenCitations 500s on very large citer sets
+
+`api.opencitations.net/index/v1/citations/10.1002/j.1538-7305.1948.tb01338.x` (Shannon 1948 part
+I, ~82,000 citers) returns `HTTP 500 — something unexpected happened - SystemExit: 1 (line 1412)`
+after 3 min 47 s. Part II (9,771 citers) returns 200 in 19 s. Above roughly 10,000 citers, use
+OpenAlex's server-side `cites:A,cites:B` filter instead. **A 500 here is a size failure, not a
+zero.** Recorded in `citation-sources.md`, alongside: the host moved to
+`api.opencitations.net/index/v1/`, and `/citation-count/` no longer reproduces the bogus constant
+`1` on the new host (control: Alexander 1997, 40 = 40) but is still to be cross-checked.
+
+## [2026-09-05] correction | G21's three "Vogel" quotes are from a magazine feature, not either book
+
+B8 asked for edition + page. There is no edition: all three quoted crossover passages come from
+**Vogel, S., "Exposing Life's Limits with Dimensionless Numbers," *Physics Today* 51(11):22–27
+(November 1998), `10.1063/1.882079`** — republished online 2026-01-27 as *Physics Today*
+79(2):32–41, `10.1063/pt.b72840e67d`. Both DOIs confirmed via Crossref
+`query.bibliographic` + `filter=container-title:Physics Today`, 2026-09-05; all three phrases
+verified present in the online reprint, fetched 2026-09-05.
+
+So the note's `evidence: full-text-read` rests on a **six-page magazine article**, not on *Life in
+Moving Fluids* (2nd ed. 1994) or *Comparative Biomechanics*. The ABSENT check was re-run against
+that article and **holds on its own terms**: it names Froude, Bond, Weber, Reynolds, the
+Bernoulli–Hagen–Poiseuille ratio and Froude propulsion efficiency, **never Péclet**, and has no
+figure placing organisms and processes on shared axes. The finding survives; the object it was
+measured on was much smaller than the note implied, and no full-text ABSENT check against either
+book has ever been run. No page number inside the article is claimed — the print PDF is
+paywalled and the reprint has no folios.
+
+Could not reach: `archive.org/…/comparativebiome00voge_djvu.txt` **HTTP 403** (lending
+restriction); Google Books renders search-inside snippets client-side and returned none;
+`googleapis.com/books/v1/volumes` **HTTP 429**. All 2026-09-05.
+
+## [2026-09-05] verification | G21's Ortega Π values sourced, and one of them relocated
+
+Πpe values were marked UNVERIFIED (ScienceDirect 403, Europe PMC 503). A different, open-access
+Ortega paper answers the same question: **Ortega, J. K. E., "Dimensionless Numbers to Analyze
+Expansive Growth Processes," *Plants* 8(1):17 (2019), `10.3390/plants8010017`, PMID 30634577,
+PMCID PMC6359133**, fetched from
+`www.ebi.ac.uk/europepmc/webservices/rest/PMC6359133/fullTextXML`, HTTP 200, 167,179 bytes,
+2026-09-05.
+
+- **Πpe = 32**, *P. satinis* L. stem — **Table 2**. Confirmed.
+- **Πpe = 564**, *C. corallina* internode — **Table 2**. Confirmed.
+- **Πpe = 1524**, *P. blakesleeanus* sporangiophore — **not in Table 2.** Table 2 gives
+  1148 / 1791 / 1240 for the three measured stages. 1524 is a *single fitted constant across
+  stages* quoted in the discussion. The vault implied it was one measurement. Corrected in place.
+
+## [2026-09-05] verification | G8's overturn was reached with a bad instrument and is nonetheless correct
+
+The 575 behind `"Landauer" AND (neuron OR synapse OR brain)` has **no host, endpoint or date and
+does not reproduce**: OpenAlex `title_and_abstract.search` = 887, `fulltext.search` = 50,957,
+Europe PMC = 1,031 (all 2026-09-05). **Left marked UNSOURCED** — new numbers do not source an
+old one.
+
+Re-tested as a citer-set intersection. **OpenCitations, `…/index/v1/citations/<doi>`, 2026-09-05:**
+Landauer 1961 `10.1147/rd.53.0183` = 4,292 citers; Laughlin 1998 `10.1038/236` + Attwell 2001
+`10.1097/00004647-200110000-00001` pooled = 3,881; **intersection 35**; expected under
+independence at N=1.6×10⁸ = 0.10, **obs/exp ≈ 340**. All 35 inspected by title (Crossref,
+2026-09-05) and they are the claimed connection itself — *Energetic costs of cellular
+computation*, *The Cost of Sending a Bit*, *Capacity and energy cost of information in biological
+and silicon photoreceptors*, and the "35 times more energy" paper the original overturn named.
+
+**Proposed, not applied** (frontmatter left alone per this round's scope): keep
+`standing: overturned`; `evidence` `string-protocol` → **`citation-intersection`**;
+`contact-surface` 575 → **35**. Reason: the retraction should meet the same bar as an assertion,
+and now it can.
+
+## [2026-09-05] correction | G27 was overturned by a query that never tested the gap; propose overturned → narrowed
+
+`"ant colony optimization" AND "honeybee"` is **swarm-internal** — ants against bees. G27 is about
+**swarm intelligence against distributed-systems consensus**. The 26 (and the 551 under synonyms)
+never touched that pairing. Both are UNSOURCED and neither reproduces (OpenAlex
+title+abstract 32, fulltext 1,019; Europe PMC 38; all 2026-09-05).
+
+Run on the pairing the gap names. **OpenCitations, `…/index/v1/citations/<doi>`, 2026-09-05:**
+
+| A | B | N_A | N_B | ∩ | exp (N=1.6×10⁸) |
+|---|---|---|---|---|---|
+| Dorigo 1996 `10.1109/3477.484436` | Lamport 1998 `10.1145/279227.279229` | 8,814 | 1,914 | **0** | 0.11 |
+| Seeley 1999 `10.1007/s002650050536` | Lamport 1998 | 267 | 1,914 | **0** | 0.003 |
+| Dorigo 1996 | Byzantine `10.1145/357172.357176` + FLP `10.1145/3149.214121` | 8,814 | 6,735 | **1** | 0.37 |
+| Seeley 1999 | same pooled | 267 | 6,735 | **1** | 0.01 |
+
+Both hits inspected. `10.1201/9781420038880.bmatt` is a book's back-matter "References", a
+cataloguing artifact. `10.1145/2168260.2168264` — *Host selection through collective decision*,
+ACM TAAS 2012 — is a **genuine bridge**. **Honest contact surface: 1.**
+
+**Proposed, not applied:** `standing` `overturned` → **`narrowed`**; `evidence` `string-protocol`
+→ **`citation-intersection`**; `contact-surface` 26 → **1**. Reason: the zero that was retracted
+was never measured, and when measured properly it is one bridge across ~8,800 swarm citers and
+~6,700 consensus citers. Narrowed rather than live because that one bridge is real, and because
+the surviving claim is the sharper one the note already named — **message complexity, cost per
+unit communication**, formalised only on the distributed-systems side.
+
+Two caveats kept in the note so the revert is not itself an overclaim: (1) a zero against an
+expectation of 0.11 is weakly informative — the *low* numbers carry the evidence, not the zeros;
+(2) Dorigo 1996 and Lamport 1998 are single-algorithm papers, the same trap the note originally
+diagnosed, which is why the consensus side was broadened to Byzantine + FLP.
+
+## [2026-09-05] verification | G7's TECDOC-626 citer trace completed: 57 citing works, all nuclear
+
+The sub-claim recorded as "STILL-UNVERIFIED and formally closed as unanswerable" is answered.
+
+**IAEA-TECDOC-626 has no DOI** — grey literature, invisible to Crossref, OpenCitations and
+OpenAlex as a work. No citer-set intersection is possible on it, and that is a property of the
+anchor, not a failed lookup. The route that works is full-text search over citing works:
+
+| Provider | Endpoint | Date | N |
+|---|---|---|---|
+| OpenAlex | `works?filter=fulltext.search:"TECDOC-626"&per-page=100&mailto=…` | 2026-09-05 | **57** |
+| OpenAlex | same with `"TECDOC 626"` (spacing control) | 2026-09-05 | **57**, identical set |
+| Europe PMC | `…/rest/search?query="TECDOC-626"&format=json` | 2026-09-05 | **0** (calibrated zero — biomedicine-weighted, indexes no nuclear engineering) |
+| OpenCitations | `…/citations/10.3327/jaesj.34.1116` (1992 *J. At. Energy Soc. Japan* note introducing TECDOC-626, the only DOI-bearing proxy) | 2026-09-05 | **1** |
+
+All 57 classified by OpenAlex primary topic and venue: ~44 nuclear engineering / thermal-hydraulics
+/ reactor physics / nuclear materials, ~8 reliability engineering applied to nuclear passive
+systems, 3 nuclear licensing and policy, 2 technology ethics with nuclear energy as the case.
+**Zero exoskeleton, structural-control, façade, robotics or control-theory works.** The 57 is a
+lower bound (a work citing "IAEA (1991)" without the number is invisible), but a larger true
+number would not change the classification unless the missing works are systematically
+non-nuclear.
+
+**Proposed standing change: none.** `narrowed` / `full-text-read` / contact-surface 2 all stand.
+The trace hardens the note and retires open-work item 3 on `00-index.md` ("Trace citers of the
+nuclear passivity ladder — rate-limited before completing"). TECDOC-626 itself still could not be
+read (both IAEA PDFs HTTP 402), so the content of Categories A–D remains second-hand.
+
+## [2026-09-05] method | New file: vault/_scripts/intersect.py
+
+The one new script this round. Stdlib only, no key, caches raw JSON, usage documented at the top.
+`python intersect.py <doiA> <doiB> [<doiB2> …] --cache=<dir> --enrich`, with `NULL_N=` for the
+observed/expected null model. Pooling several DOIs into anchor B is how a multi-part work
+(Shannon 1948) or a too-narrow anchor (Paxos alone) gets a fair test.
+
+
+## [2026-09-05] method | Citation intersection gets a null model; two gaps turn out denominator-sensitive
+
+`method/citation-intersection.md` gains "Expected co-citers under independence":
+`E = |citers_A|·|citers_B| / N_universe`, with `N` defined per provider (OpenAlex concept/year
+window; or the union of the two citer sets as a computable *floor*, which because it is the
+smallest `N` gives the largest `E` and therefore flatters gap claims — labelled as such).
+
+Worked. **G28:** Gittins 1,013 x Charnov 5,424, observed 5, union floor N = 6,432, E = 854,
+O/E = **0.0059**; control Gittins x Auer 2002 (`10.1023/A:1013689704352`, Crossref
+`is-referenced-by-count` = 3,906, 2026-09-05) 1,013 x 3,906, observed 225, N = 4,694, E = 843,
+O/E = **0.267**. The **control ratio 62.5** is denominator-invariant and replaces the note's
+"factor of 45", which divided both sides by the same 1,013 base without correcting for the two
+partner sets' different sizes. Correcting it makes the isolation slightly *stronger*.
+
+**G6:** 172 engineering x 861 ecology, observed 0, union floor N = 1,033 gives E = **143**. But
+`E ∝ 1/N`: at N = 10⁵, E = 1.5; at N = 10⁶, E = 0.15. **A zero intersection is a finding only
+where E > 1.** G6's zero therefore requires a fetched, concept-scoped `N` below ~1.5×10⁵ works,
+and no such number has been fetched. This is a real weakening and is recorded as one.
+
+**G25:** the Shannon-side citer count was never logged, so `E` is not computable. The null model
+reduces to one query — is Shannon 1948 cited by more or less than 3.85% of the universe? — but
+the load-bearing claim (0 of 416 inspected citers carry coding-theory content) is
+denominator-free and unaffected.
+
+`method/positive-controls.md` restated in the same units. **Five of the six original controls
+turn out to be unstateable there** — Gompertz x Weibull, Weibull x reliability-theory-of-aging,
+Levy-flight, Gittins x Sutton & Barto and DNA-storage x ECC all lack at least one citer-set size,
+recorded as "inputs not recorded" rather than filled in. "The signal separates cleanly" now rests
+on **one** fully specified control pair.
+
+## [2026-09-05] method | Failure mode 6 added: diachronic terminology drift
+
+`method/failure-modes.md` (now "Six ways a measured zero can be fake") and `METHOD.md` §11. The
+first non-synchronic mode: modes 1-5 assume both names coexist, mode 6 is the case where they
+never did — a citer window spans decades, a vocabulary does not. Required step: bin the window by
+decade and re-run the concept under each decade's own name, taken from a review published *in*
+that decade; a zero survives only if it is a zero in every bin.
+
+Specimen: **kedem-caplan**, from this log's own 2026-09-03 correction. The 1965 degree-of-coupling
+result was called unread on 2 co-citers between two named 1960s papers; the re-read found it in
+active use (*Entropy* 25:1575, arXiv:2403.20209). It had travelled into thermoelectrics as the
+figure of merit `ZT` and dropped the eponym. Chosen over the symmorphosis /
+over-provisioning-accuracy case, which is a *cross-field* synonym with both names in use at once
+— synchronic, and already covered by the "originating field's term" mechanism.
+
+## [2026-09-05] method | A string count may no longer overturn a gap without host + query + date
+
+`method/failure-modes.md`. The string protocol fails re-test more than half the time in both
+directions, and an overturning is a withdrawal, so `relationship-description`'s symmetry rule
+applies. Host, exact query string and date are now all three required before
+`standing: overturned` on a string-protocol basis; absent any of them the count is an unverified
+lead and must be re-tested under citation intersection.
+
+Specimens are the project's own two: **G8** (575 on `"Landauer" AND (neuron OR synapse OR
+brain)` — query recorded, host and date not, and a four-term disjunction is exactly the shape
+failure mode 5 says relaxes) and **G27** (26 unmodified, 551 under synonyms — the 21-fold jump is
+mode 5's signature, so the load-bearing figure is the 26, whose host and date are not recorded).
+Neither standing is changed by this; both are flagged as resting on numbers no one can re-run.
+
+## [2026-09-05] method | Reservoir-audit Part B renamed hard-positive; aperture sensitivity now mandatory
+
+`method/reservoir-audit.md`. Part B was headed "negative controls on resolved anomalies" and is
+not one — every row is a real anomaly with a real nonzero residual and a partner that turned out
+to exist, i.e. a hard *positive* control. Renamed, with the distinction stated: a negative
+control is an input with no residual, testing whether the instrument can return nothing. There
+has never been one.
+
+New mandatory Part C step 5: **state the assumed coupling cross-section and report `A` at 2x and
+0.5x that aperture.** F3 conceded the aperture is a free parameter and instructed "prefer the
+largest defensible one" — a preference, not a reproducible procedure. An exclusion that does not
+survive the 2x row is now `NOT TESTED`, not `RULED OUT`. Procedure renumbered to 12 steps.
+
+Part D added: **negative-control designs, not run** — (a) a Betz-calibrated wind turbine, with
+the correct null output specified as "the reservoir considered supplies the required coupling; no
+residual", and (b) a fabricated zero-consistent thrust report `F = (0.4 ± 3.0) µN at 50 W`, whose
+correct output is a new fifth verdict state `NO OBSERVABLE TO EXPLAIN` reached before candidate
+enumeration. D.2 predicts a missing step 0: *if the observable is consistent with zero, the audit
+does not run.*
+
+## [2026-09-05] correction | specification-instruments Q7 row: "bias-immune, 11/11" was wrong twice
+
+`method/specification-instruments.md`. Replaced with C16's post-blind-rule numbers: strict
+CLASS-I **N = 8** closed, 7 systematics + 1 fluctuation, **0 new physics**, Clopper–Pearson
+one-sided 95% upper bound `1 − 0.05^(1/8)` = **0.31**; CLASS-I+II N = 15, bound **0.18**. The
+"11" came from hand assignment; the blind rule changes 11 of 24 assignments.
+
+Bias-immunity softened the same way C16 softened it: findability of a documented *resolution*
+correlates with the resolution being mundane, so the invisible cases are not a random sample and
+"adding invisible same-class cases can only add more systematics" fails. **0 of 8 is consistent
+with a same-class new-physics rate as high as 31%.**
+
+---
+
+## Part 2 — proposed edits to notes owned by other agents
+
+### 2a. `vault/computed/C11-flyby-reservoir-audit.md` — aperture retrofit (backlog C7)
+
+Another agent owns C11. Proposed: append an **aperture** column and a sensitivity block to the
+per-reservoir table in §2, satisfying the new `reservoir-audit` Part C step 5. All values below
+are the current post-Oberth ones (`F_req = 5.28×10⁻⁴ N`); nothing is recomputed and no verdict
+changes.
+
+**Scaling assumed:** `A = F_req/F_max` and `F_max` is linear in the aperture for all three
+reservoirs — Lorentz `F = QvB` with `Q = CV` and capacitance linear in effective radius; drag
+`F = ½ρV²C_dA` linear in frontal area; thermal `F = P_rad/c` with radiated power linear in
+radiating area. So `A(2x) = A/2` and `A(0.5x) = 2A`. **State this scaling in the note** — it is
+the assumption that makes the sensitivity two lines instead of a re-derivation.
+
+Proposed replacement rows:
+
+| Reservoir | Assumed aperture (nominal) | `F_max` | **A (nominal)** | A (2x aperture) | A (0.5x aperture) | Verdict |
+|---|---|---|---|---|---|---|
+| Earth rotation via geomagnetic field (Lorentz) | spacecraft floating-charge capacitance `C ≈ 10⁻¹⁰ F` at `V ≈ 10 V`, i.e. a ~1 m effective conducting radius; **no deployed conductor** | `QV_pB ≈ 3.1×10⁻¹⁰ N` | **1.7×10⁶** | 8.5×10⁵ | 3.4×10⁶ | **RULED OUT** — survives 2x by six orders |
+| Anisotropic thermal radiation | full spacecraft radiating envelope at `P_rad ≤ ~1 kW`, `η = 1` (fully collimated) | `P_rad/c ≈ 3.34×10⁻⁶ N` | **160** | 80 | 320 | **RULED OUT** — survives 2x by ~2 orders; also excluded on sign |
+| Atmosphere / exosphere drag at 539 km | NEAR frontal area with `C_d` order unity, `ρ ≈ 10⁻¹³ kg/m³` | `≈ 3×10⁻⁵ N` | **18** | **9** | 36 | **RULED OUT** — survives 2x, but this is the row where the rule bites |
+
+Proposed prose to accompany it:
+
+> **The drag row is the one the aperture rule was written for.** `A = 18` nominal falls to
+> **9** at twice the assumed frontal area — still an exclusion, but a one-order one resting on an
+> exospheric density marked UNVERIFIED and solar-cycle dependent. Per F7 (`1 < A < 10` on
+> unverified inputs is `NOT TESTED`, not `RULED OUT`), **the drag exclusion at 2x aperture sits
+> exactly on that boundary and is carried by the sign argument, not by `A`.** The Lorentz and
+> thermal exclusions are aperture-insensitive to any defensible factor: an aperture large enough
+> to rescue the Lorentz coupling would need to be ~10⁶ times NEAR's, which is not a spacecraft.
+
+### 2b. `vault/method/information-audit.md` — Part C negative-control design (backlog C6)
+
+Not in this agent's file list. Proposed section, design only, mirroring `reservoir-audit` Part D:
+
+> **## Part C — negative controls (design; NOT YET RUN)**
+>
+> The 3/3 validation is a positive-only control set, and it is not blind: all three cases
+> (Bérut 2012, Toyabe 2010, Koski 2014) are textbook results whose entropy sink is stated in the
+> source the audit quotes, and Bérut has only one sink available by construction, so it cannot
+> discriminate. The audit has never been shown to return "no unnamed sink."
+>
+> **C.1 — A device whose entropy books already close.** Feed a system with a fully accounted
+> entropy budget and no unnamed sink: a measured, near-quasistatic isothermal gas expansion, or a
+> Carnot-cycle heat engine at published efficiency, where `ΔS_total` is accounted to within
+> measurement uncertainty by the named reservoirs alone. **What counts as returning nothing:**
+> the audit's sink enumeration terminates with the *already-named* sinks supplying the full
+> balance, `ΔS_residual` reported as an interval containing zero, and **no new sink specified.**
+> If it names an additional sink, the Toyabe result — where naming the demon's memory register as
+> the unnamed sink is the audit's headline success — is an artefact of the procedure.
+>
+> **C.2 — A blind case.** Compute the sink for one case *before* reading the source's conclusion,
+> and record the pre-registration in the note with a date and the source withheld until after.
+> The three existing cases cannot be un-read, so this needs a fourth. **What counts as passing:**
+> the pre-registered sink matches the published one, and the pre-registration is timestamped
+> ahead of the read.
+>
+> **C.3 — An adversarial case.** A published claim whose sink attribution was **later corrected**.
+> The audit passes if it reproduces the correction, not the original attribution.
+>
+> **Until C.1 and C.2 are run, "validated 3/3" should be read as *validated against positives
+> only, non-blind*.**
+
+### 2c. Per-gap `expected` lines (backlog C1)
+
+The gap notes are owned elsewhere. Proposed one-line additions, to sit beside each note's
+existing intersection figure. Each names its `N` route, because `O/E` is meaningless without it.
+
+**`vault/gaps/G28-marginal-value-gittins.md`**, into the *citation intersection* section:
+
+> **Expected under independence.** `E = |A|·|B|/N`. With `|citers(Gittins 1979)| = 1,013`
+> (run-time, 2026-09-03) and `|citers(Charnov 1976)| = 5,424`, the union floor `N = 6,432` gives
+> `E = 854` against `O = 5`, i.e. **O/E = 0.0059**. The Gittins × Auer control at the same
+> construction gives `E = 843` against `O = 225`, **O/E = 0.267**. The **control ratio is 62.5**
+> and is invariant under the choice of `N` — it supersedes the "factor of 45", which divided both
+> numerator sets by the same 1,013 base and so ignored that Charnov's citer set is 39% larger than
+> Auer's. `N_universe` has **not** been fetched; the union floor is a floor, and at `N = 10⁶` the
+> raw `O/E` rises to 0.91. **Quote the control ratio, not the raw O/E.** See
+> `method/citation-intersection.md`.
+
+**`vault/gaps/G6-multifunctionality.md`**, into the intersection table's surroundings:
+
+> **Expected under independence.** `E = 172 × 861 / N`. At the union floor `N = 1,033` (the note's
+> own "1,033 works"), `E = 143` against `O = 0`. But `E ∝ 1/N`: `E = 1.5` at `N = 10⁵` and
+> `E = 0.15` at `N = 10⁶`, where a zero is uninformative because fewer than one co-citer is
+> expected anyway. **This zero is a finding only if the shared universe is smaller than
+> ~1.5×10⁵ works, and that number has not been fetched.** The required query is an OpenAlex
+> concept/year window over the union of the materials-multifunctionality and
+> ecosystem-multifunctionality concepts from the earliest citer year. The positive control
+> Byrnes 2014 × Jost 2006 = 17 **cannot be restated in these units: `|citers(Jost 2006)|` was not
+> recorded.** See `method/citation-intersection.md`.
+
+**`vault/gaps/G25-proofreading-coding.md`**, into the contact-surface section:
+
+> **Expected under independence.** Not computable as recorded: `|citers(Shannon 1948)|` was never
+> logged. The model reduces to `O/E = (16/416) / f_Shannon = 0.0385 / f_Shannon`, where
+> `f_Shannon` is Shannon 1948's base rate in the universe — **one query**
+> (`cited_by_count` for `10.1002/j.1538-7305.1948.tb01338.x` over the same concept/year window
+> that defines `N`) settles whether this literature over- or under-cites Shannon. **The gap's
+> load-bearing figure is denominator-free**: `O = 0` works with coding-theory content among the
+> 416 inspected gives `O/E = 0` for any positive `E`. The binding limitation on this note remains
+> **28.4% coverage**, not the null model. See `method/citation-intersection.md`.
+
+---
+
+## Part 3 — not done, and why
+
+- **`positive-controls.md` five unstateable rows.** Recovering them needs the citer-set size for
+  the second anchor of each pair, and those anchors' DOIs were not recorded at time of run. This
+  is B13/B14 work, not C1 work.
+- **`N_universe` never fetched for any gap.** Every `O/E` above uses a union floor, which is a
+  floor and is labelled as one. Fetching concept-scoped denominators is the natural follow-on and
+  would change G6's standing argument materially.
+- **Parts D.1/D.2 and information-audit C.1–C.3 are designs.** Running them creates computed
+  notes (backlog C5, C6), which this pass was scoped out of.
+
+
+## [2026-09-05] computed | First Layer-3 derivation: Whittle index of a regrowing patch is W(x) = lam*x^2 - r*(1-x)^2
+
+Backlog E4, per C5 section 12. Transferred the C5 Charnov-Gittins identity across the bridge
+into the restless (regrowing-patch) case. Model: standing crop x in [0, G_max]; active
+xdot = -lam*x with intake lam*x (reproduces Charnov's g(t) = G_max(1 - e^-lam*t)); passive
+xdot = r(G_max - x); average-reward limit. Whittle relaxation with subsidy nu, single-arm HJB,
+singular arc: W(x) = lam*x^2 - r*(1-x)^2, cross-checked by recovering V'(x) = 1 - x from it and
+substituting back. INDEXABLE UNCONDITIONALLY (W' = 2*lam*x + 2r(1-x) > 0), so no condition to
+check against Whittle 1988 / Nino-Mora 2001 / Glazebrook et al. 2006 (three DOIs verified,
+Crossref, 2026-09-05).
+
+Prediction: at fixed habitat quality, giving-up density RISES with regrowth rate,
+dGUD/dr = (1-GUD)^2 / (2[lam*GUD + r(1-GUD)]) > 0. At r*tau = 0.2 (lam*tau = 1, GUD_MVT = 0.30):
+GUD = 1.34x the MVT baseline, residence time 0.76x. Sign confirms the Q5 conjecture.
+
+Both limit checks pass. r -> infinity: GUD -> G_max, t* -> 0 (degenerate skimming). r -> 0:
+reproduces C5 eq. (4) g'(t*) = R* = max_t g(t)/(tau+t) EXACTLY, but only once
+non-revisitability is re-imposed (V' = 0). The residual W(x) = lam*x^2 at r = 0 with revisits
+allowed is not an error - it is C5 section 6 row 6 (Banks-Sundaram switching costs), now
+quantified rather than merely named. That is an unasked-for second result.
+
+Honest limits, stated in the note: (i) W is monotone in x, so in a HOMOGENEOUS habitat the
+priority rule degenerates to "visit the fullest patch" and carries no r-signal - the prediction
+is necessarily a between-patch-type contrast; (ii) tau sits outside the Whittle relaxation and
+is re-inserted only at renewal-cycle level, so the r*tau axis is a reporting convention, not a
+derived scaling - the largest hole; (iii) no optimality gap is stated, because one forager
+among N patches is not the Weber-Weiss asymptotic regime.
+
+Dataset named: Kadmon & Shmida 1992 Evol. Ecol. 6:142-151 (10.1007/BF02270708, departure rules)
+paired with Kadmon 1992 Oecologia 92:552-555 (10.1007/BF00317848, measured nectar renewal in
+the same Anchusa strigosa / Anthophora system). Both verified via Crossref 2026-09-05. The pair
+parameterises the test but does not run it: departures are not stratified by renewal rate. Note
+against interest: Kadmon 1992 measured LINEAR renewal, not the saturating form assumed here.
+
+Files: new vault/computed/C25-whittle-foraging.md, new vault/_scripts/c25_whittle.py, pointer
+section appended to vault/questions/Q5-restless-patches.md. Lint 0 errors.
+
+
+## [2026-09-05] correction | Ledger totals were wrong in two places at once; recounted row-by-row to 12/8+1/3/1 = 25
+
+B12. The disclosure ledger carried **two disagreeing tier counts**: the header said "13 DOCUMENTED
++ 1 hybrid, 7 TESTIMONIAL, 3 ATTRIBUTED/REFUTED — 24 entries" and the Findings summary said
+"12 DOCUMENTED, 7 TESTIMONIAL, 3 ATTRIBUTED/REFUTED (22 entries)". Neither matched the table.
+Recounted from the rows themselves: DOCUMENTED = 1,2,3,4,5,6,10,11,14,21,22,23 (**12**);
+TESTIMONIAL = 7,8,9,16,17,18,19,20 (**8**); ATTRIBUTED/REFUTED = 12,13,15 (**3**);
+SECONDARY-sourced = 24 (**1**); plus new row 25, TESTIMONIAL-anonymous (**1**) = **25 entries**.
+The header's error was in TESTIMONIAL (7 for 8) and in double-counting row 24 as DOCUMENTED *and*
+hybrid; the summary's error was both TESTIMONIAL and a total that predated rows 23–24. One
+consistent set now, stated once in the header and once, cross-referenced, in the summary. Nothing
+was fetched to produce these numbers — they are a recount of text already in the note.
+
+## [2026-09-05] correction | Ledger row 24 (Apollo/PURSUE) downgraded DOCUMENTED -> SECONDARY-sourced: we never held the primary
+
+B12. Adding the per-row `Fetched` column made an existing overreach visible. Row 24 asserted "the
+transcripts are authentic primary records — a genuine upgrade from lore to primary source," but
+**no Apollo debriefing transcript was ever fetched**: the PURSUE portal `https://www.war.gov/ufo/`
+returned **HTTP 403** to both `curl` and WebFetch on 2026-09-03, and the only primary-adjacent
+extract in the vault is explicitly labelled SECONDARY. Worse, the one *fetched* secondary (TIME,
+2026-05-11) foregrounds **Gemini 7** (Borman/Lovell, 1965) with its "particles" reported as
+**explained as booster debris** — a mundane attribution, not an Apollo-lunar account. The Apollo
+framing came from unfetched outlets. Row 24 is now **SECONDARY-sourced (documented) / OPEN
+(referent)**, restorable to DOCUMENTED on a fetched primary. This is the ledger's own rule —
+VERIFIED means a fetched URL — applied to the ledger.
+
+## [2026-09-05] method | Ledger gains a per-row `Fetched` column; every row's provenance now carries a date
+
+B12. All 24 pre-existing rows read **2026-09-03** (the single session in which the ledger was built
+and its URLs fetched — `log.md`, "[2026-09-03] disclosure thread" / "[2026-09-03] corpus mined");
+row 25 reads 2026-09-05. **No row needed "date not recorded."** Three things the single date hides
+are now stated under the table: row 4's AARO founding memo was never fetched, rows 5 and 23 rest
+on secondary reporting only, and the AARO FY24 PDF was unfetchable on every route in that session
+so rows 12–15 have no `sources/` extract. The column's value showed up immediately — it is what
+exposed row 24.
+
+## [2026-09-05] ingested | New witness is anonymous: the "4chan UFO whistleblower," archived as ledger row 25 at the tier floor
+
+E17. The owner flagged YouTube `HM3oUMvvTe8`. Fetched: oembed **HTTP 200** (title "The 4chan UFO
+Whistleblower", channel *Lately*); watch page **HTTP 200**, 1,265,145 bytes, giving upload
+**2026-08-31**, 2,320 s, 394,102 views. `yt-dlp` is **not installed**; `youtube_transcript_api`
+**is**, so nothing was installed — the **auto-generated** `en` caption track (1,146 segments, no
+manual English track) was pulled and archived verbatim, bucketed at ~60 s, as
+`vault/sources/src-4chan-ufo-whistleblower-video-2026-09-05.md`, with its ASR errors left uncorrected.
+
+**The primary was NOT obtained.** The claim originates in anonymous 4chan `/x/` threads, and
+`archive.4plebs.org` (thread and search and API), `desuarchive.org` all returned **HTTP 403**; the
+Adobe PDF of the thread linked in the video's own description resolves only to a JPEG page image
+with no extractable text. Two concordant secondary pages (reveil.blog, smbtech.au, both fetched
+2026-09-05) identify the primary as `/x/` **No. 34629564** (2023-04-24) and **No. 34704869**
+(2023-05-04) — VERIFIED-SECONDARY, not primary-verified.
+
+Filed **TESTIMONIAL-anonymous**, a new tier floor: the claimant is unidentifiable *in principle*,
+so access basis is not merely hearsay but unverifiable, and even "firsthand" cannot be graded.
+Per [[specification-instruments]] only the **specification** was extracted — materials, dimensions,
+behaviours, dates, places, named programs, in a new §2a table — and no mechanism was assessed.
+Recorded discrepancy: the owner's flag described a *reconstruction worker*; the source describes
+**crash retrieval** ("team two" of four) and places reverse-engineering with contractors. Also
+recorded: nearly every specification line has a public antecedent (Lazar's element 115, Majestic-12,
+the Wilson memo), so the account's detail is not independent of the corpus it sits in — equally
+consistent with a well-read hoax and with an insider account, and the ledger takes no position.
+
+## [2026-09-05] counted | "A growing narrative" is now countable: 11 witnesses, 0 non-US, 0 firsthand-with-primary on the extraordinary claims
+
+E17. New disclosure-ledger §5, "Cross-witness meta-narrative table," built from every ledger row
+plus row 25, with the counting rule stated first: one witness = one natural person in their own
+voice (institutions are not witnesses); one row can carry two witnesses (row 24: Aldrin, Schmitt);
+claim class = [[testimony-taxonomy]] facet 3, counted as occupied cells.
+
+**The count: 25 ledger rows, 26 table rows, 11 distinct witnesses** — 10 named, 1 anonymous —
+**15 rows institutional.** What the count shows: **every witness is American and US-program-
+adjacent, so the corpus contains no cross-national independence at all**; and while all six claim
+classes are occupied, the two extraordinary ones (materials/craft retrieval, biologics) are held
+by 3 witnesses of whom **zero** are firsthand-with-primary — one sworn secondhand (Grusch), one
+bare assertion (Nell), one anonymous (row 25). Row 25 grew the witness count by one and the
+evidence by nothing: no new class, no new country, no primary. The narrative grows faster than the
+evidence, which is what the selection filter (§3) predicts and is *not*, by itself, an argument
+that it is false. This converts the E2-vs-E17 conflict the owner left open — freeze the ledger, or
+keep ingesting — into the third option: keep ingesting, but only into a counted structure.
+
+## [2026-09-05] method | Exit condition named for an institutional null, so "contested referee" cannot become an unfalsifiable veto
+
+C14. [[evidence-lanes]] gains "Exit condition for an institutional null." Downgrading a contested
+referee's null to evidence is only honest if it is reversible; otherwise it is dismissal wearing
+skepticism's coat. Stated condition: a null becomes a **verdict** when a second body reruns the
+check on a **different access basis** and four things hold — (1) no institutional stake (not a
+subject, not the funder/supervisor, not the proponent); (2) access **independently verified**, not
+asserted, so the result is demonstrably absence-of-thing rather than absence-of-access; (3) the
+same specified observable, not a reformulated one; (4) the same null returned. Two convergent
+nulls from orthogonal access bases are the null-side form of the orthogonal-lane rule. Applied to
+AARO in disclosure-ledger §4 in one sentence; short of it, Version B stays *uncorroborated*, and
+[[Q1-what-gets-checked]] says the second check is unfunded/classification-gated rather than tried
+and failed.

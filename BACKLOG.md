@@ -1,6 +1,8 @@
 # Merged backlog — 2026-09-05
 
-**Status 2026-09-05 (after rounds 1–2):** ✅ done and committed, ⚠ partial. Rounds: `aa0f842` (round 1), `60beb4a` (round 2).
+**Status 2026-09-05 (after rounds 1–2):** ✅ done and committed, ⚠ partial. Rounds: `aa0f842` (round 1), `60beb4a` (round 2), round 3 = this commit.
+
+**Staged, not yet applied** (from round 3, in `audits/staged/PENDING-log-R3C.md`): C11 aperture-sensitivity rows (A at 2× and 0.5×), per-gap `expected` blocks for G28/G6/G25, `information-audit.md` Part C negative-control design. New follow-ups: fetch a concept-scoped N_universe so O/E is not a floor; run the Kadmon 1992 test of C25; C5 preprint draft.
 
 Five Opus 4.8 audits (math/physics, sources, method, structure, scope). ~130 raw actionables, merged and deduplicated to 62. Grouped into batches an agent can run as one job. Effort: S = under 1 hour, M = a few hours, L = a session.
 
@@ -58,15 +60,15 @@ All edits stay inside one note each. Log every change in `vault/log.md`.
 | B1 ✅ | `FINDINGS.md`, `METHOD.md` §2, `vault/log.md`, `vault/method/co-citation-audit.md`, `vault/gaps/G4-criticality-as-design.md` | Rewrite 578/595: Crossref deposited = 578, printed = 595, different objects; real defect was an unattributed number | No file says 578 was "wrong" | M |
 | B2 ✅ | `vault/gaps/G19-safety-factor-derived-twice.md`, `vault/theorems/stress-strength-interference.md` | Reconcile Alexander-1997 count (OpenAlex = 46, 2026-09-05) and "753 works"; name provider + date | Files agree | M |
 | B3 ✅ | `vault/gaps/G25-proofreading-coding.md` | Add Provenance block: Hopfield DOI `10.1073/pnas.71.10.4135`, Shannon DOI, provider, endpoint, date; surface 28.4% coverage | 1,463 / 416 / 16 re-derivable | S |
-| B4 | same | Re-run intersection via OpenCitations COCI to raise coverage >70% | Two providers recorded | M |
+| B4 ✅ | same | Re-run intersection via OpenCitations COCI to raise coverage >70% | Two providers recorded | M |
 | B5 ✅ | `vault/gaps/G28-marginal-value-gittins.md` | One table of (provider, endpoint, date, N) for Gittins citers incl. Crossref 986; say which denominator 0.49% uses; add Auer 2002 DOI and 22.2% control query | Numbers reconstructable | S |
 | B6 ✅ | same + `vault/00-index.md` + `vault/log.md` | Locate "Griebling 2026 Animal Behaviour" via Crossref; else mark UNLOCATED everywhere | No file asserts it as established | S |
 | B7 ⚠ (Bailey fixed; 279→6 enumeration unrecoverable) | `vault/gaps/G17-overconfident-uncertainties.md` | State screening 279 → 6 with DOIs; fix Bailey *Not Normal* = R. Soc. Open Sci. 4:160600 (2017) | Six enumerable | M |
-| B8 | `vault/gaps/G21-dimensionless-regime-map.md` | Vogel edition + page for three quotes; source or strike Ortega Π values | No quote without locator | M |
-| B9 | `vault/gaps/G8-energy-per-bit-axis.md`, `G27-collective-decision.md` | Add host + date behind 575 / 26 / 551; re-test under citation intersection before "overturned" stands | Retraction meets assertion bar | M |
+| B8 ✅ | `vault/gaps/G21-dimensionless-regime-map.md` | Vogel edition + page for three quotes; source or strike Ortega Π values | No quote without locator | M |
+| B9 ✅ | `vault/gaps/G8-energy-per-bit-axis.md`, `G27-collective-decision.md` | Add host + date behind 575 / 26 / 551; re-test under citation intersection before "overturned" stands | Retraction meets assertion bar | M |
 | B10 ✅ | `vault/gaps/G6-multifunctionality.md` | Provider + endpoint + date on six-pairing table and "9,570 hits" | Fully reproducible | S |
-| B11 | `vault/gaps/G7-how-passive.md` | Complete the rate-limited citer trace via Crossref/OpenCitations/Europe PMC | Standing updated | S |
-| B12 | `vault/disclosure-ledger.md` | Per-row `fetched` date column; row 24 Apollo → SECONDARY (PURSUE 403'd; TIME foregrounds Gemini 7); fix header 24 vs summary 22 totals | Tier matches evidence held | M |
+| B11 ✅ | `vault/gaps/G7-how-passive.md` | Complete the rate-limited citer trace via Crossref/OpenCitations/Europe PMC | Standing updated | S |
+| B12 ✅ | `vault/disclosure-ledger.md` | Per-row `fetched` date column; row 24 Apollo → SECONDARY (PURSUE 403'd; TIME foregrounds Gemini 7); fix header 24 vs summary 22 totals | Tier matches evidence held | M |
 | B13 | `vault/gaps/` (new template) | EVIDENCE BLOCK template modelled on `vault/sources/*.md` headers; apply to G6, G17, G19, G25, G28 | Five CI gaps carry it | L |
 | B14 | whole vault | `grep -rnE '\b[0-9][0-9,]{2,} (citers|citations|works|papers|hits|references)\b'`; attach provider + date or mark UNSOURCED | No bare count survives | L |
 | B15 ✅ | `vault/log.md` | Log this audit's two contradictions (Crossref 578; OpenAlex 46) | Corrections-of-corrections traceable | S |
@@ -76,21 +78,21 @@ All edits stay inside one note each. Log every change in `vault/log.md`.
 
 | # | File | Task | Done | Effort |
 |---|---|---|---|---|
-| C1 | `vault/method/citation-intersection.md`, `positive-controls.md`, each CI note | Add null model: expected co-citers = |A|·|B|/N; report observed/expected; restate control table in same units | Every CI note has `expected` | M |
-| C2 | `vault/method/failure-modes.md`, `METHOD.md` §11 | Add failure mode 6: diachronic terminology drift, with specimen | Present in both | S |
-| C3 | same | Rule: a string count cannot overturn a gap without host + query + date; cite G8/G27 | Rule written | S |
+| C1 ✅ | `vault/method/citation-intersection.md`, `positive-controls.md`, each CI note | Add null model: expected co-citers = |A|·|B|/N; report observed/expected; restate control table in same units | Every CI note has `expected` | M |
+| C2 ✅ | `vault/method/failure-modes.md`, `METHOD.md` §11 | Add failure mode 6: diachronic terminology drift, with specimen | Present in both | S |
+| C3 ✅ | same | Rule: a string count cannot overturn a gap without host + query + date; cite G8/G27 | Rule written | S |
 | C4 | `vault/moves/M1..M5-*.md` | Add `falsifier:` frontmatter + one pre-registered counterexample search each | Five falsifiers | M |
 | C5 | new `vault/computed/C23-reservoir-audit-negative-control.md` | Feed (a) fully-accounted device (Betz-calibrated turbine), (b) fabricated zero-consistent thrust report; record whether audit returns nothing | Input class on which audit returns nothing stated | M |
 | C6 | `vault/method/information-audit.md` | Part C: negative control + one blind (pre-registered) case | Both results recorded | M |
-| C7 | `vault/method/reservoir-audit.md` | Rename Part B (hard-positive, not negative); add mandatory aperture-assumption row with A at 2× and 0.5×; retrofit C11 | Step numbered, C11 updated | S |
+| C7 ✅ | `vault/method/reservoir-audit.md` | Rename Part B (hard-positive, not negative); add mandatory aperture-assumption row with A at 2× and 0.5×; retrofit C11 | Step numbered, C11 updated | S |
 | C8 | `vault/method/what-closes-a-gap.md`, each live/narrowed gap | Review-sweep subsection: two most recent reviews per side read, ABSENT recorded, dated | Each live gap has it | L |
 | C9 | `vault/method/precedent.md` | Add Arrowsmith, SemMedDB open/closed discovery, LION-LBD, embedding/KG LBD; re-derive "what survives" table | Table re-derived | M |
 | C10 | new `vault/computed/C24-timeslice-validation.md` | LBD-standard retro-test: rebuild citation universe at a cut-off year for a gap that later closed; hit or miss | Result stated with cut-off | L |
 | C11 | `vault/_lint.py`, `relationship-description.md`, withdrawn/overturned notes | `withdrawal-evidence:` field; lint it ≥ original evidence grade | Lint rejects weak withdrawals | M |
 | C12 | `vault/novelty-audit.md` | Humility rule as procedure: NOVEL requires ≥N query formulations, count recorded per note | Each NOVEL carries search count | M |
 | C13 | `vault/method/press-feel-dig.md` | Split: keep tasking rule as method; move map-runs-territory claim to a framing note marked aesthetic | Method note has only evidenced rules | S |
-| C14 | `vault/method/evidence-lanes.md`, `disclosure-ledger.md` §4 | State the condition under which an institutional null (AARO) becomes a verdict | Named checkable condition | S |
-| C15 | `vault/method/specification-instruments.md` | Q7 "11/11" → C16 numbers (24 cases, 17 closed, 16/1/0) | Matches C16 | S |
+| C14 ✅ | `vault/method/evidence-lanes.md`, `disclosure-ledger.md` §4 | State the condition under which an institutional null (AARO) becomes a verdict | Named checkable condition | S |
+| C15 ✅ | `vault/method/specification-instruments.md` | Q7 "11/11" → C16 numbers (24 cases, 17 closed, 16/1/0) | Matches C16 | S |
 | C16 ✅ | new `vault/predictions.md` | Append-only home for α, tenth-order QED coefficient, C4 pooling, C16 classes; real timestamps + content hash | Timestamps not all identical | S |
 
 ## Batch D — Structure, tooling, agent-readiness
@@ -130,7 +132,7 @@ All edits stay inside one note each. Log every change in `vault/log.md`.
 | E1 ✅ | `README.md`, `VISION.md`, `vault/strategy.md` | Rewrite frame paragraph: cross-domain synthesis reaching checkable science; ecology, circularity, conservation, astrobiology named in scope under the same rule | Scope stated without weakening rule | S |
 | E2 | `vault/disclosure-ledger.md`, `testimony-taxonomy.md`, `symbol-display-testimony.md`, `00-index.md` | Freeze banner: retained as worked example of evidence-lane discipline; closed as research thread | Index no longer lists it as active | S |
 | E3 ✅ | `vault/computed/C5-charnov-gittins.md`, `novelty-audit.md` | Obtain Houston & McNamara 1999 and Gittins-Glazebrook-Weber; grep for Gittins + marginal value | C5 novelty hardened with page cite or downgraded | M |
-| E4 | `C5`, `Q5-restless-patches.md`, new `C25-whittle-foraging.md` | Whittle index for a regrowing patch → numeric giving-up-density prediction with regrowth rate r free; name a foraging dataset to test it | Prediction stated or indexability failure located | L |
+| E4 ✅ | `C5`, `Q5-restless-patches.md`, new `C25-whittle-foraging.md` | Whittle index for a regrowing patch → numeric giving-up-density prediction with regrowth rate r free; name a foraging dataset to test it | Prediction stated or indexability failure located | L |
 | E5 ✅ | `C4`, `novelty-audit.md` | Prior-art kill-check: distributed-detection literature for M^(−1/2) vs M^(−1) | Grade confirmed or downgraded | S |
 | E6 | `C18`, new `C23-beta-enzyme-distributions.md` | Fit Weibull β to 3–5 enzyme/catalyst inactivation datasets | Measured enzyme β with CI | M |
 | E7 | `C18` | Add product-lifetime Weibull fits (Oguchi & Daigo et al.); state circularity claim β≈1 loss vs β>1 wear-out | Axis spans enzymes → products | M |
@@ -143,7 +145,7 @@ All edits stay inside one note each. Log every change in `vault/log.md`.
 | E14 | `C8` or new note | Σ for a chemolithotroph on a redox gradient | Bridge built or shown not to form | M |
 | E15 | `vault/theorems/kirkwood-disposable-soma.md`, new gap | Citation-intersect Kirkwood 1977 vs infrastructure maintenance-budget literature | Count + coverage | M |
 | E16 | `vault/buildable.md` | Latch build: deliverable → Weibull fit over ≥6 specimens; add RH/T logging + wet specimen; Π-group same-object argument; add time column; mark salt-hydrate as "start here" and write its full protocol | Protocol executable without design decisions | M |
-| E17 | `vault/disclosure-ledger.md`, new `vault/sources/src-<witness>-<date>.md` | Ingest the new witness the owner flagged 2026-09-05 (YouTube HM3oUMvvTe8, t=256s; a reported reconstruction worker; possibly a 4chan-origin report). Pull transcript, archive verbatim with URL + fetch date, locate the original 4chan post if any, file as TESTIMONIAL (secondhand unless firsthand is shown), extract only the *specification* the claim implies, and add a row to a new "cross-witness meta-narrative" table (who, country, service, year, claim class) so the "growing ex-military narrative" can be counted rather than felt | Source file archived; ledger row with tier + status; meta-narrative table has ≥1 row and a stated counting rule | M |
+| E17 ✅ | `vault/disclosure-ledger.md`, new `vault/sources/src-<witness>-<date>.md` | Ingest the new witness the owner flagged 2026-09-05 (YouTube HM3oUMvvTe8, t=256s; a reported reconstruction worker; possibly a 4chan-origin report). Pull transcript, archive verbatim with URL + fetch date, locate the original 4chan post if any, file as TESTIMONIAL (secondhand unless firsthand is shown), extract only the *specification* the claim implies, and add a row to a new "cross-witness meta-narrative" table (who, country, service, year, claim class) so the "growing ex-military narrative" can be counted rather than felt | Source file archived; ledger row with tier + status; meta-narrative table has ≥1 row and a stated counting rule | M |
 
 ---
 

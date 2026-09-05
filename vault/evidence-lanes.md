@@ -73,6 +73,26 @@ verdict to evidence**, and require an *orthogonal* check it does not control. Wh
 check exists ([[Q1-what-gets-checked]]), the honest state is *uncorroborated*, wider than either
 "refuted" or "confirmed."
 
+## Exit condition for an institutional null
+
+Downgrading a contested referee's null from verdict to evidence is only honest if it can be
+undone; otherwise "contested" becomes an unfalsifiable veto and the null can never count for
+anything, which is dismissal wearing skepticism's coat. So state the exit in advance. **An
+institutional null becomes a verdict when a second body reruns the same check on a *different
+access basis*, and four things hold: (1) the second body has no institutional stake in the
+answer — it is not a subject of the claim, does not fund or supervise the first body, and is not
+the claim's proponent either; (2) its access is *independently verified* rather than asserted —
+someone outside both bodies confirms it actually reached the compartments, records or samples the
+first body was alleged to have been denied, so that the check is demonstrably an
+absence-of-thing rather than an absence-of-access; (3) it runs against the *same specified
+observable*, not a reformulated one; and (4) it returns the same null.** Convergent nulls from two
+bodies with orthogonal access bases are the null-side form of the orthogonal-lane rule that runs
+the rest of this note: the two can fail from lack of access only if they were blocked
+independently, which is a far stronger claim than either failing alone. Short of that, the null
+stays evidence, the honest state stays *uncorroborated*, and the width of the uncertainty is the
+price of the missing check — a price [[Q1-what-gets-checked]] says is usually paid because the
+second check is unfunded or classification-gated, not because it was tried and failed.
+
 ## The guard against relativism
 
 This does **not** say all lanes are equal, or that logic is optional. It says the opposite: because

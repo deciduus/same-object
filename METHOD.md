@@ -418,7 +418,7 @@ sides**, including:
 A zero survives only if it survives all of them.
 
 
-### Three failure modes, not one
+### Six failure modes, not one
 
 The synonym trap turned out to be the mildest of four ways a zero can be fake. A systematic
 re-run of this project's zeros collapsed two findings and downgraded a third.
@@ -441,6 +441,25 @@ re-run of this project's zeros collapsed two findings and downgraded a third.
    A thousand-fold jump from adding synonyms is the engine giving up on strict matching, not
    a bridge population. **Only 2-phrase conjunctions are trustworthy.** Treat any 4-way OR
    result as unusable without title inspection.
+
+6. **Diachronic terminology drift** - the only non-synchronic mode. Modes 1-5 assume both
+   names are in use at once and you tried the wrong one. Mode 6 is the case where the names
+   *never coexisted*: a citer window spans decades, a vocabulary does not, so a single query run
+   under today's name is blind to the earlier half of its own window.
+
+   **Required step: bin the citer window by decade and re-run the concept under each decade's
+   own name** - taken from a review published *in* that decade, not from today's vocabulary.
+   Report per-decade counts. A zero survives only if it is a zero in every bin.
+
+   **Specimen: kedem-caplan.** The 1965 degree-of-coupling result was catalogued as an unread
+   theorem on **2 co-citers** between two named 1960s papers. The re-read found it in active
+   use - *Entropy* 25:1575 (2023) on thermoelectrics and oxidative phosphorylation together,
+   arXiv:2403.20209 cloning the form into a hydronic figure of merit. The object had travelled
+   into thermoelectrics as the **figure of merit `ZT`** and dropped the eponym on the way, so a
+   1960s-vocabulary count measured 1960s-vocabulary traffic across a window whose later decades
+   had moved on. Logged 2026-09-03 in `vault/log.md`. (The symmorphosis /
+   over-provisioning-accuracy case is *not* the specimen: those two names coexist, so it is a
+   cross-field synonym and is covered by the mechanism named below.)
 
 ### The recurring mechanism, named
 
