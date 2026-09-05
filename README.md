@@ -1,5 +1,7 @@
 # Gradient Coupling Inquiry
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22334047.svg)](https://doi.org/10.5281/zenodo.22334047)
+
 An inquiry in **cross-domain synthesis**, run under one rule: **a thread is in scope if it can
 reach a checkable claim.** The starting question was whether biomimicry has anything to say
 about anomalous propulsion claims. It became something more useful: a repeatable method for
@@ -150,3 +152,7 @@ Requiring about $100 of kitchen equipment:
   Two research failures in this project had the same tell — specific numbers with no URL.
 - Corrections are logged in `vault/log.md` rather than silently fixed. The pattern of
   errors is itself information — and one entry there is a correction *of* a correction.
+
+## Cite
+
+Holden, L. K. (2026). *Gradient Coupling Inquiry: a cross-domain gap-finding vault*. Zenodo. https://doi.org/10.5281/zenodo.22334047 (concept DOI, resolves to the latest release; v0.1.0 is 10.5281/zenodo.22334048). Licensed CC-BY-4.0.
