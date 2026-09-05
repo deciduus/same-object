@@ -195,7 +195,7 @@ therefore a discounted marginal value theorem, and it is MVT with $R^{*}$ replac
 discounted habitat index. The $e^{-\delta\tau}$ factor devalues the delayed fresh patch,
 lowering the outside index, so the forager stays longer. <!-- C5 §5.3 -->
 
-This is independently corroborated by a rediscovery. A 2024 preprint,
+This is independently corroborated by a rediscovery. Zylberberg (2024), in a preprint titled
 *Generalized marginal value theorem with temporal discounting* [@genmvt2024], derives a
 departure threshold matching instantaneous reward rate to $\lambda\cdot EV$ --- the
 discount rate times the expected value function, which is $\delta M$, which is Whittle's
@@ -468,8 +468,8 @@ Two further limits belong to Section 2 rather than Section 3. The exploration-bo
 inequality $\nu(x)\ge\mathbb{E}[\text{immediate rate}]$ for informative patches is argued
 from the structure of the supremum over stopping times but is **not proved here in
 generality**; making it a theorem with a computable bonus for a specific posterior family
-would be the next step. And the novelty claim rests on three unread full texts: Houston &
-McNamara (1999) [@houston1999] and Gittins, Glazebrook & Weber (2011) [@gittins2011], both
+would be the next step. And the novelty claim rests on four unread full texts: Houston &
+McNamara (1999) [@houston1999], Stephens & Krebs (1986) [@stephens1986] and Gittins, Glazebrook & Weber (2011) [@gittins2011], all three
 reached only at Google Books term-index level (neither term list contains the crossing
 vocabulary; a single sentence below the frequency cutoff could still exist), and Griebling
 et al. (2026). The claim is "appears unwritten", not "is unwritten".

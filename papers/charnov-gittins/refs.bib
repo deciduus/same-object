@@ -2,11 +2,13 @@
 % outside option, and its restless extension predicts giving-up density rises with
 % patch regrowth".
 %
-% VERIFICATION POLICY. A DOI appears below only if a note in the research vault
-% records it as verified against a named provider on a named date (almost always
-% api.crossref.org/works/{doi}, fetched 2026-09-05). Entries whose DOI was NOT
-% verified -- or for which the vault records no DOI at all -- carry a
-% "% UNVERIFIED" comment stating exactly what is missing. No DOI in this file was
+% VERIFICATION POLICY. Every entry carries a `note` field recording its verification
+% status. "verified Crossref 2026-09-05" means the DOI was resolved at
+% api.crossref.org/works/{doi} (or the record located by bibliographic query) on that
+% date and authors, title, venue, volume, issue, pages and year were checked
+% field-by-field against the returned record. Books with no DOI carry an ISBN verified
+% against Open Library / publisher records. Entries that could not be fully confirmed
+% carry note = {UNVERIFIED: <reason>}. No DOI, page range or ISBN in this file was
 % constructed, guessed, or inferred from a pattern.
 
 @article{charnov1976,
@@ -17,44 +19,47 @@
   volume  = {9},
   number  = {2},
   pages   = {129--136},
-  doi     = {10.1016/0040-5809(76)90040-X}
+  doi     = {10.1016/0040-5809(76)90040-X},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI verified: used as the Charnov anchor in G28; Crossref, 2026-09-05.
 
 @article{gittins1979,
   author  = {Gittins, John C.},
   title   = {Bandit Processes and Dynamic Allocation Indices},
-  journal = {Journal of the Royal Statistical Society: Series B},
+  journal = {Journal of the Royal Statistical Society: Series B (Methodological)},
   year    = {1979},
   volume  = {41},
   number  = {2},
   pages   = {148--164},
-  doi     = {10.1111/j.2517-6161.1979.tb01068.x}
+  doi     = {10.1111/j.2517-6161.1979.tb01068.x},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI verified against Crossref 2026-09-05 (title and journal match); G28 Provenance table.
 
 @book{gittins2011,
   author    = {Gittins, John and Glazebrook, Kevin and Weber, Richard},
-  title     = {Multi-armed Bandit Allocation Indices},
+  title     = {Multi-Armed Bandit Allocation Indices},
   edition   = {2},
   publisher = {Wiley},
   year      = {2011},
-  doi       = {10.1002/9780470980033}
+  isbn      = {9780470670026},
+  doi       = {10.1002/9780470980033},
+  note      = {verified Crossref 2026-09-05 (monograph record: authors, title, publisher,
+               year and both ISBNs 9780470670026 print / 9780470980033 online confirmed).
+               Full text NOT read; the novelty claim against this book rests on a Google
+               Books term-index check only}
 }
-% UNVERIFIED: the DOI string is recorded in C5 §11.1 as the Wiley book page, but that
-% page returned HTTP 403 and Crossref holds the monograph record with 0 references
-% deposited, so the record could not be confirmed field-by-field. Full text NOT read.
 
 @article{whittle1988,
   author  = {Whittle, Peter},
   title   = {Restless bandits: activity allocation in a changing world},
   journal = {Journal of Applied Probability},
   year    = {1988},
-  volume  = {25A},
+  volume  = {25},
+  number  = {A},
   pages   = {287--298},
-  doi     = {10.2307/3214163}
+  doi     = {10.2307/3214163},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI, title, author and journal verified against api.crossref.org/works/{doi}, 2026-09-05 (C25 §2).
 
 @article{ninomora2001,
   author  = {Ni{\~n}o-Mora, Jos{\'e}},
@@ -64,9 +69,9 @@
   volume  = {33},
   number  = {1},
   pages   = {76--98},
-  doi     = {10.1239/aap/999187898}
+  doi     = {10.1239/aap/999187898},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI, title, author and journal verified against api.crossref.org/works/{doi}, 2026-09-05 (C25 §2).
 
 @article{glazebrook2006,
   author  = {Glazebrook, Kevin D. and Ruiz-Hern{\'a}ndez, Diego and Kirkbride, Christopher},
@@ -76,9 +81,9 @@
   volume  = {38},
   number  = {3},
   pages   = {643--672},
-  doi     = {10.1239/aap/1158684996}
+  doi     = {10.1239/aap/1158684996},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI, title, authors and journal verified against api.crossref.org/works/{doi}, 2026-09-05 (C25 §2).
 
 @article{kadmonshmida1992,
   author  = {Kadmon, Ronen and Shmida, Avi},
@@ -88,35 +93,34 @@
   volume  = {6},
   number  = {2},
   pages   = {142--151},
-  doi     = {10.1007/BF02270708}
+  doi     = {10.1007/BF02270708},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI, title, authors, journal and year verified against api.crossref.org/works/{doi},
-% 2026-09-05; is-referenced-by-count 62 (C25 §6).
 
 @article{kadmon1992,
   author  = {Kadmon, Ronen},
-  title   = {Dynamics of forager arrivals and nectar renewal rates in patches of {\emph{Anchusa strigosa}}},
+  title   = {Dynamics of forager arrivals and nectar renewal in flowers of {\emph{Anchusa strigosa}}},
   journal = {Oecologia},
   year    = {1992},
   volume  = {92},
   number  = {4},
   pages   = {552--555},
-  doi     = {10.1007/BF00317848}
+  doi     = {10.1007/BF00317848},
+  note    = {verified Crossref 2026-09-05; TITLE CORRECTED from "Dynamics of forager
+             arrivals and nectar renewal rates in patches of Anchusa strigosa"}
 }
-% DOI, title, author, journal and year verified against api.crossref.org/works/{doi},
-% 2026-09-05; is-referenced-by-count 16 (C25 §6).
 
 @article{possingham1989,
   author  = {Possingham, Hugh P.},
-  title   = {The distribution and abundance of resources encountered by a forager},
+  title   = {The Distribution and Abundance of Resources Encountered by a Forager},
   journal = {The American Naturalist},
   year    = {1989},
   volume  = {133},
   number  = {1},
   pages   = {42--60},
-  doi     = {10.1086/284900}
+  doi     = {10.1086/284900},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI verified against Crossref, 2026-09-05 (C25 §6).
 
 @article{ohashi2005,
   author  = {Ohashi, Kazuharu and Thomson, James D.},
@@ -126,9 +130,9 @@
   volume  = {16},
   number  = {3},
   pages   = {592--605},
-  doi     = {10.1093/beheco/ari031}
+  doi     = {10.1093/beheco/ari031},
+  note    = {verified Crossref 2026-09-05}
 }
-% DOI verified against Crossref, 2026-09-05 (C25 §6).
 
 @article{auer2002,
   author  = {Auer, Peter and Cesa-Bianchi, Nicol{\`o} and Fischer, Paul},
@@ -136,89 +140,114 @@
   journal = {Machine Learning},
   year    = {2002},
   volume  = {47},
+  number  = {2-3},
   pages   = {235--256},
-  doi     = {10.1023/A:1013689704352}
+  doi     = {10.1023/A:1013689704352},
+  note    = {verified Crossref 2026-09-05; issue number 2-3 added}
 }
-% DOI verified against Crossref 2026-09-05 (title, authors, journal all match);
-% is-referenced-by-count 3,906 (G28).
 
 @article{griebling2026,
-  author  = {Griebling, Hannah J. and Johnson, Christina M. and Benson-Amram, Sarah},
+  author  = {Griebling, Hannah J. and Johnson, Shylo R. and Benson-Amram, Sarah},
   title   = {Raccoons optimally forage for information: exploration--exploitation trade-offs in innovation},
   journal = {Animal Behaviour},
   year    = {2026},
-  doi     = {10.1016/j.anbehav.2026.123491}
+  volume  = {234},
+  pages   = {123491},
+  doi     = {10.1016/j.anbehav.2026.123491},
+  note    = {verified Crossref 2026-09-05; SECOND AUTHOR CORRECTED from "Johnson, Christina M."
+             to "Johnson, Shylo R."; volume 234 and article number 123491 added. Full text
+             NOT obtained (ScienceDirect HTTP 403); deposited reference list of 100 items
+             confirmed to contain Charnov 1976, Gittins 1979 and Gittins et al. 2011}
 }
-% DOI verified: full Crossref record retrieved 2026-09-05, deposited reference list of
-% 100 references confirmed to contain Charnov 1976, Gittins 1979 and Gittins et al. 2011.
-% Full text NOT obtained (ScienceDirect HTTP 403).
 
-@article{kilpatrick2020,
+@misc{kilpatrick2020,
   author  = {Kilpatrick, Zachary P. and Davidson, Jacob D. and El Hady, Ahmed},
   title   = {Normative theory of patch foraging decisions},
   year    = {2020},
   eprint  = {2004.10671},
   archivePrefix = {arXiv},
-  note    = {Full text extracted and grepped 2026-09-05}
+  primaryClass  = {q-bio.NC},
+  doi     = {10.48550/arXiv.2004.10671},
+  note    = {verified 2026-09-05: arXiv:2004.10671 (submitted 2020-04-22, arXiv DOI
+             10.48550/arXiv.2004.10671) and the parallel bioRxiv preprint
+             10.1101/2020.04.22.055558 (Crossref posted-content, 2020-04-24, same title
+             and authors). NO journal version exists under this title: arXiv lists no
+             journal reference, and the bioRxiv publication API returns "no articles
+             found for published version". The authors' later J. R. Soc. Interface paper
+             (Kilpatrick, Davidson \& El Hady, "Uncertainty drives deviations in normative
+             foraging decision strategies", 18(180):20210337, 2021,
+             doi:10.1098/rsif.2021.0337) is a DIFFERENT, differently-titled work and is
+             not a substitute. Cite as a preprint. Full text extracted and grepped
+             2026-09-05}
 }
-% UNVERIFIED DOI: C5 §11.1 records a bioRxiv record 10.1101/2020.04.22.055558 for this
-% work from an OpenAlex hit, but that DOI was not independently verified against a
-% provider, so it is deliberately omitted here. Cite by arXiv identifier.
 
 @article{genmvt2024,
+  author  = {Zylberberg, Joel},
   title   = {Should I stay or should I go? {G}eneralized marginal value theorem with temporal discounting},
   year    = {2024},
   journal = {bioRxiv},
   doi     = {10.1101/2024.10.28.620618},
-  note    = {Full text fetched and grepped: contains no occurrence of Gittins, bandit, index policy, or Whittle}
+  note    = {verified Crossref 2026-09-05; AUTHOR LIST NOW FILLED IN -- single author
+             Joel Zylberberg (York University), corroborated by the bioRxiv details API
+             and OpenAlex, both of which list exactly one author. Posted 2024-10-28,
+             version 1, still unpublished (bioRxiv "published": NA). Full text fetched and
+             grepped: contains no occurrence of Gittins, bandit, index policy, or Whittle}
 }
-% DOI verified by direct fetch of the bioRxiv full text, 2026-09-05 (C5 §5.3, §8).
-% UNVERIFIED: the author list is not recorded in the vault and is deliberately not
-% supplied here. AUTHOR TO FILL IN before submission.
 
 @article{nonacs2001,
   author  = {Nonacs, Peter},
-  title   = {State dependent behavior and the Marginal Value Theorem},
+  title   = {State dependent behavior and the {M}arginal {V}alue {T}heorem},
   journal = {Behavioral Ecology},
   year    = {2001},
   volume  = {12},
   number  = {1},
-  pages   = {71--83}
+  pages   = {71--83},
+  doi     = {10.1093/oxfordjournals.beheco.a000381},
+  note    = {verified Crossref 2026-09-05; DOI newly located and added}
 }
-% UNVERIFIED: no DOI recorded in the vault. Content verified by fetch of
-% academic.oup.com/beheco/article/12/1/71/392385, 2026-09-05; the "26 studies" and the
-% quoted phrase are from that fetch (C5 §7).
 
 @article{banks1994,
   author  = {Banks, Jeffrey S. and Sundaram, Rangarajan K.},
-  title   = {Switching costs and the {G}ittins index},
+  title   = {Switching Costs and the {G}ittins Index},
   journal = {Econometrica},
   year    = {1994},
   volume  = {62},
   number  = {3},
-  pages   = {687--694}
+  pages   = {687--694},
+  doi     = {10.2307/2951664},
+  note    = {verified Crossref 2026-09-05; DOI newly located and added (Crossref records
+             first page 687 only; the 687--694 range is retained from the vault record).
+             Bibliographic record verified; the substantive claim that no optimal index
+             policy exists under switching costs still rests on secondary descriptions --
+             the primary paper was NOT obtained}
 }
-% UNVERIFIED: no DOI recorded. The citation itself is verified by bibliography extraction
-% from arXiv:1808.06314; the primary paper was NOT obtained, and the specific claim that
-% no optimal index policy exists under switching costs rests on secondary descriptions
-% (C5 §8).
 
 @article{averbeck2015,
   author  = {Averbeck, Bruno B.},
-  title   = {Theory of choice in bandit, information sampling and foraging tasks},
-  journal = {PLoS Computational Biology},
-  year    = {2015}
+  title   = {Theory of Choice in Bandit, Information Sampling and Foraging Tasks},
+  journal = {PLOS Computational Biology},
+  year    = {2015},
+  volume  = {11},
+  number  = {3},
+  pages   = {e1004164},
+  doi     = {10.1371/journal.pcbi.1004164},
+  note    = {verified Crossref 2026-09-05; DOI, volume, issue and article number newly
+             located and added. Read in full via Europe PMC PMC4401555}
 }
-% UNVERIFIED: no DOI recorded in the vault. Read in full via Europe PMC PMC4401555 (G28).
 
 @inproceedings{geana2016,
   author    = {Geana, Andra and Wilson, Robert C. and Daw, Nathaniel D. and Cohen, Jonathan D.},
-  title     = {Information-Seeking, Learning and the Marginal Value Theorem},
-  booktitle = {Proceedings of the 38th Annual Conference of the Cognitive Science Society},
-  year      = {2016}
+  title     = {Information-Seeking, Learning and the Marginal Value Theorem: A Normative Approach to Adaptive Exploration},
+  booktitle = {Proceedings of the 38th Annual Meeting of the Cognitive Science Society},
+  year      = {2016},
+  pages     = {1793--1798},
+  address   = {Philadelphia, PA},
+  note      = {UNVERIFIED DOI: the CogSci proceedings series deposits no DOIs, so no DOI
+               exists to record; a Crossref bibliographic query returns no matching record.
+               Bibliographic fields (subtitle, page range 1793--1798, proceedings title)
+               verified 2026-09-05 against dblp (conf/cogsci/GeanaWDC16a) and the
+               eScholarship copy qt5339f64z, from which the full text was extracted}
 }
-% UNVERIFIED: no DOI. Full text extracted locally from
-% escholarship.org/content/qt5339f64z/qt5339f64z.pdf (C5 §8).
 
 @article{mcnamara1985,
   author  = {McNamara, John M. and Houston, Alasdair I.},
@@ -226,52 +255,85 @@
   journal = {Journal of Theoretical Biology},
   year    = {1985},
   volume  = {117},
-  pages   = {231--249}
+  number  = {2},
+  pages   = {231--249},
+  doi     = {10.1016/S0022-5193(85)80219-8},
+  note    = {verified Crossref 2026-09-05; DOI, issue number and end page 249 newly
+             located and added}
 }
-% UNVERIFIED: no DOI recorded; page range end not recorded in the vault (start page 231
-% is). Full text extracted and grepped 2026-09-05 (C5 §11.3).
 
 @book{houston1999,
   author    = {Houston, Alasdair I. and McNamara, John M.},
-  title     = {Models of Adaptive Behaviour},
+  title     = {Models of Adaptive Behaviour: An Approach Based on State},
   publisher = {Cambridge University Press},
-  year      = {1999}
+  address   = {Cambridge},
+  year      = {1999},
+  isbn      = {9780521384803},
+  note      = {verified 2026-09-05 via Open Library (authors, title, publisher, 1999;
+               ISBNs 9780521384803 hardback / 9780521655392 paperback) and corroborated by
+               Crossref-indexed 1999--2001 book reviews in Ecology, The Auk and The Canadian
+               Field-Naturalist. No DOI is registered for this monograph. Full text NOT
+               obtained (archive.org lending restriction, HTTP 403); checked only at
+               Google Books term-index level}
 }
-% UNVERIFIED: no DOI. Full text NOT obtained (archive.org lending restriction, HTTP 403);
-% checked only at Google Books term-index level (C5 §11.2).
 
 @book{stephens1986,
   author    = {Stephens, David W. and Krebs, John R.},
   title     = {Foraging Theory},
   publisher = {Princeton University Press},
-  year      = {1986}
+  address   = {Princeton, NJ},
+  series    = {Monographs in Behavior and Ecology},
+  year      = {1986},
+  isbn      = {9780691084411},
+  note      = {verified 2026-09-05 via Open Library (1986 Princeton University Press
+               edition, ISBN 9780691084411 cloth / 9780691084428 paper) and Crossref
+               (2019 Princeton reissue, doi:10.2307/j.ctvs32s6b, ISBN 9780691206790 --
+               the reissue DOI is deliberately NOT used for the 1986 edition cited here).
+               Full text NOT obtained; Google Books term-index check only}
 }
-% UNVERIFIED: no DOI. Full text NOT obtained; Google Books term-index check only (C5 §11.2).
 
 @article{green1984,
   author  = {Green, Richard F.},
-  title   = {Stopping rules for optimal foragers},
+  title   = {Stopping Rules for Optimal Foragers},
   journal = {The American Naturalist},
-  year    = {1984}
+  year    = {1984},
+  volume  = {123},
+  number  = {1},
+  pages   = {30--43},
+  doi     = {10.1086/284184},
+  note    = {verified Crossref 2026-09-05; DOI, volume 123, issue 1 and pages 30--43
+             newly located and added}
 }
-% UNVERIFIED: no DOI, no volume or pages recorded in the vault (G28 records only the
-% title and a citation count of 248).
 
 @inproceedings{srivastava2013,
   author    = {Srivastava, Vaibhav and Reverdy, Paul and Leonard, Naomi E.},
   title     = {On optimal foraging and multi-armed bandits},
-  booktitle = {51st Annual Allerton Conference on Communication, Control, and Computing},
-  year      = {2013}
+  booktitle = {2013 51st Annual Allerton Conference on Communication, Control, and Computing (Allerton)},
+  publisher = {IEEE},
+  year      = {2013},
+  pages     = {494--499},
+  doi       = {10.1109/Allerton.2013.6736565},
+  note      = {verified Crossref 2026-09-05; DOI, publisher and pages 494--499 newly
+             located and added. Read in full; never mentions Gittins}
 }
-% UNVERIFIED: no DOI recorded. Read in full under G28; never mentions Gittins.
 
-@article{scully2025,
-  author  = {Scully, Ziv and Terenin, Alexander},
-  title   = {The {G}ittins Index: A Design Principle for Decision-Making Under Uncertainty},
-  journal = {INFORMS TutORials in Operations Research},
-  year    = {2025},
-  eprint  = {2506.10872},
-  archivePrefix = {arXiv}
+@incollection{scully2025,
+  author    = {Scully, Ziv and Terenin, Alexander},
+  title     = {The {G}ittins Index: A Design Principle for Decision Making Under Uncertainty},
+  booktitle = {Tutorials in Operations Research: Advances in Analytics and Operations Research:
+               Improving Decisions to Secure the Future},
+  publisher = {INFORMS},
+  year      = {2025},
+  pages     = {28--70},
+  isbn      = {9798988285632},
+  doi       = {10.1287/educ.2025.0290},
+  eprint    = {2506.10872},
+  archivePrefix = {arXiv},
+  note      = {verified Crossref 2026-09-05; published version located -- DOI
+               10.1287/educ.2025.0290, INFORMS TutORials in Operations Research,
+               October 2025, pages 28--70, ISBN 9798988285632. TITLE CORRECTED from
+               "Decision-Making" to "Decision Making" per the published record; entry
+               type changed from @article to @incollection. Full text (arXiv:2506.10872)
+               extracted 2026-09-05: 240 occurrences of "Gittins", zero of "foraging",
+               "Charnov" or "marginal value"}
 }
-% UNVERIFIED: no DOI recorded. Full text extracted 2026-09-05: 240 occurrences of
-% "Gittins", zero of "foraging", "Charnov" or "marginal value" (C5 §11.3).
