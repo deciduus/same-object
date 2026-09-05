@@ -7,8 +7,9 @@ type: computed
 
 > A single statocyte, modelled as a Berg–Purcell counter reading the population
 > imbalance of `N ≈ 20–50` actively-agitated statoliths over one presentation time
-> `τ ≈ 70 s`, with pile correlation time `τ_c ≈ 60–120 s`, has
-> **`δθ_min ≈ 8°–17°`, central value ≈ 11°**.
+> `τ ≈ 70 s`, with pile correlation time `τ_c ≈ 60–120 s` and
+> `N_ind = max(1, τ/τ_c)`, has **`δθ_min ≈ 7.6°–12.9°`, central value ≈ 10°**.
+> *(Band revised from `8°–17°` / 11° on 2026-09-05 — see §5 and Corrections.)*
 >
 > That is **at or above** the smallest inclination plants are demonstrated to
 > respond to, and it lands almost exactly on the measured jamming angle
@@ -60,7 +61,7 @@ Area transferred from the up-slope half to the down-slope half:
 
 Total area `A = w h₀`. So the **fractional population imbalance** is
 
-    p(θ) ≡ (N_L − N_R)/N = ΔA/A = (w / 4h₀) · tan θ ≈ α · sin θ,   α ≡ w/(4h₀)
+    p(θ) ≡ (N_L − N_R)/N = ΔA/A = (w / 4h₀) · tan θ,   α ≡ w/(4h₀)
 
 Numbers: Bérut's biomimetic statocyte is `100 × 30 × 50 μm`; the pile is
 `2–3` layers of `d = 4.5 μm`, so `h₀ ≈ 9–14 μm`. Taking `w ≈ 50 μm`:
@@ -69,21 +70,83 @@ Numbers: Bérut's biomimetic statocyte is `100 × 30 × 50 μm`; the pile is
 
 So `α ≈ 1` (range ~0.5–2), and the signal is
 
-    ΔN_signal = α N sin θ  ≈  N θ   (small θ)
+    ΔN_signal = α N tan θ  ≈  α N sin θ  ≈  N θ   (small θ only — see below)
 
-This is the microscopic origin of the macroscopic sine law, and it is geometric,
-not thermal. **`T_eff` does not set the signal amplitude.**
+**The wedge is geometric, not thermal: `T_eff` does not set the signal amplitude.**
+That is the load-bearing structural result of this section and it is unaffected by
+what follows.
 
-*Cross-check against the equilibrium route.* If instead one writes a Boltzmann
-occupancy at `T_eff` for the two sides, `p = tanh(ΔE / 2k_BT_eff)` with
-`ΔE ≈ mg (w/2) sin θ`, then
+### 1.1 `tan θ`, not `sin θ` — the range of validity (corrected 2026-09-05, A11)
+
+*Earlier versions of this note wrote "`p(θ) = (w/4h₀)·tan θ ≈ α sin θ`. This is the
+microscopic origin of the macroscopic sine law." That sentence is withdrawn.* The
+wedge construction yields `tan θ`. `tan θ = sin θ` only to first order:
+
+    tan θ / sin θ = 1/cos θ = 1 + θ²/2 + O(θ⁴)
+
+so the wedge reproduces a sine law **to first order in θ and no further**. Sizes of
+the discrepancy, computed from `1/cos θ`:
+
+| θ | `1/cos θ` | wedge overshoot vs a sine law |
+|---|---|---|
+| 5° | 1.004 | +0.4% |
+| 10° | 1.015 | +1.5% |
+| 20° | 1.064 | +6.4% |
+| 23.7° | 1.092 | +9.2% (model boundary) |
+| 45° | 1.414 | +41% |
+| 90° | ∞ | model has already failed |
+
+**Breakdown angle.** The linear surface `h(x) = h₀ + x tan θ` stays inside the pile
+only while `h(−w/2) ≥ 0`, i.e.
+
+    (w/2)·tan θ ≤ h₀    ⟺    |tan θ| < 2h₀/w = 2 × 11 / 50 = 0.44
+    ⟹  θ < arctan 0.44 = **23.7°**
+
+Above that the up-slope edge of the floor is bare, the "wedge of transferred area"
+is no longer a triangle, and the derivation is simply invalid — the model saturates
+rather than diverging. (A weaker bound also exists: `p ≤ 1` fails at
+`tan θ = 1/α = 0.909`, θ ≈ 42.3°. The geometric bound at 23.7° binds first.)
+
+**So what does the sine law come from?** *Not from here.* Chauvet et al. verify
+`response ∝ sin θ` experimentally out to 90°, a range over which `tan θ` diverges
+and this model does not apply at all. The honest statement is: **the wedge model
+reproduces the sine law in the small-angle limit only (θ ≲ 24°, and within 1.5% only
+for θ ≲ 10°); the macroscopic sine law over the full angular range is not derived in
+this note.** All the numbers this note computes live at θ ≈ 8–13°, well inside the
+valid range, so nothing downstream changes — but the "microscopic origin of the sine
+law" claim does not survive.
+
+### 1.2 The Boltzmann route: what it actually shows (rewritten 2026-09-05, A12)
+
+If instead one writes a Boltzmann occupancy at `T_eff` for the two sides,
+`p = tanh(ΔE / 2k_BT_eff)` with `ΔE ≈ mg (w/2) sin θ`, then
 
     ΔE / k_BT_eff = (mgd / k_BT_eff) · (w/2d) · sin θ ≈ 20 × 5.6 × sin θ ≈ 110 sin θ
 
-which exceeds 1 for `θ > 0.5°`. The Boltzmann route **saturates almost immediately**:
-the pile fully levels. That is consistent with — and reduces to — the geometric
-result `α ≈ 1`. Two independent routes agree that the signal is `≈ N sin θ`, and
-neither is limited by `T_eff`.
+so `p = tanh(55 sin θ)`. That **saturates**, and fast:
+
+| θ | `55 sin θ` | `p = tanh(55 sin θ)` |
+|---|---|---|
+| 0.5° | 0.48 | 0.45 |
+| 1° | 0.96 | 0.74 |
+| 2° | 1.92 | 0.96 |
+| 5° | 4.79 | 0.9999 |
+| 10° | 9.55 | 1 − 5×10⁻⁹ |
+
+**This is not `α sin θ` and does not reduce to it.** Above about 1–2° the Boltzmann
+expression is pinned at `p = 1` — complete levelling — while the geometric result at
+10° is `p = α tan θ ≈ 0.19`. The two curves disagree by a factor of five at the angle
+that matters, and the earlier sentence *"That is consistent with — and reduces to —
+the geometric result… Two independent routes agree that the signal is ≈ N sin θ"* was
+wrong on both counts: the routes neither agree nor are independent (both use the same
+`mgd/k_BT_eff ≈ 20` and the same `w`).
+
+**What the Boltzmann calculation does establish, and it is worth one line:** since
+`ΔE/k_BT_eff ≫ 1` for any angle of interest, the active bath is far too weak to
+randomise which side a statolith sits on. **`T_eff` does not limit the signal
+amplitude.** That is all. It gives no independent value of `α`, and the amplitude
+must come from the geometry of §1 alone. Where `T_eff` *does* enter is §3: the
+correlation time.
 
 ## 2. The noise
 
@@ -104,7 +167,21 @@ That is the honest statement of where the active bath does its work.
 ## 3. The correlation time — and which one I used
 
 The Berg–Purcell step needs the number of statistically independent readings
-inside the integration window, `N_ind = τ / τ_c`.
+inside the integration window,
+
+    N_ind = max(1, τ / τ_c)                      (floor imposed 2026-09-05, A13)
+
+**Why the floor.** `√N_ind` is a *variance-reduction from averaging* factor. Averaging
+`n` independent samples reduces the standard error by `√n` only for `n ≥ 1`; for
+`n < 1` the expression `√(τ/τ_c)` is being read as "averaging less than one sample",
+which is outside the regime in which the Berg–Purcell construction is defined and
+would *inflate* the noise by an unphysical factor. The correct reading of `τ < τ_c`
+is that the cell gets exactly one look at the pile — one independent configuration —
+so `N_ind = 1` and the averaging factor is unity, not `√(τ/τ_c) < 1`.
+
+This bites: with `τ = 70 s` and `τ_c ∈ 60–120 s`, `τ/τ_c = 0.58–1.13`, so the entire
+`τ_c = 120 s` column of §5 was previously computed with `N_ind = 0.58`. Those rows are
+regenerated in §5.
 
 Two candidate clocks:
 
@@ -128,36 +205,70 @@ as a decorrelation time is an approximation (see Assumption A4).
 ## 4. Setting SNR = 1
 
     SNR(θ) = ΔN_signal / (σ_ΔN / √N_ind)
-           = α N sin θ · √(τ/τ_c) / √N
-           = α √N · sin θ · √(τ/τ_c)
+           = α N sin θ · √N_ind / √N
+           = α √N · sin θ · √N_ind ,       N_ind = max(1, τ/τ_c)
 
 Set `SNR = 1`:
 
-    ┌──────────────────────────────────────────┐
-    │   sin δθ_min = (1 / α√N) · √(τ_c / τ)    │
-    └──────────────────────────────────────────┘
+    ┌────────────────────────────────────────────────────────┐
+    │   sin δθ_min = (1 / α√N) · 1/√N_ind ,                  │
+    │   N_ind = max(1, τ/τ_c)                                │
+    │                                                        │
+    │   i.e.  = (1/α√N)·√(τ_c/τ)   when τ ≥ τ_c              │
+    │         = (1/α√N)            when τ < τ_c  (one look)  │
+    └────────────────────────────────────────────────────────┘
 
-Scaling: `δθ_min ∝ N^{-1/2} τ^{-1/2}`. And — the notable structural result —
+Scaling: `δθ_min ∝ N^{-1/2}`, and `∝ τ^{-1/2}` **only in the averaging regime**
+`τ > τ_c`; below it, extra integration time buys nothing until it reaches one
+correlation time. And — the notable structural result —
 **`T_eff` appears only inside `τ_c`**, not as an amplitude. Raising the agitation
 *improves* the sensor (shorter `τ_c`, more independent samples) until the pile
 stops being a pile. That is [[M2-use-the-noise]] in one line.
 
 ## 5. Arithmetic
 
-`τ = 70 s` (presentation time, Arabidopsis control roots, 1.16 min).
-`α = 1`.
+*Regenerated 2026-09-05 under `N_ind = max(1, τ/τ_c)` (A13). The superseded table is
+kept below the new one so the change is auditable.*
 
-| `N` | `τ_c` (s) | `√(τ_c/τ)` | `1/√N` | `sin δθ_min` | `δθ_min` |
+Inputs, unchanged: `τ = 70 s` (presentation time, Arabidopsis control roots,
+1.16 min, VERIFIED §6); `τ_c = 62 s` (Chauvet `τ_aval` = 1.04 min) and `τ_c = 120 s`
+(Bérut `t_a ≈ 2 min`); `N = 20` and `N = 50`; `α = 1`.
+
+    sin δθ_min = (1/α√N) · (1/√N_ind)
+
+| `N` | `τ_c` (s) | `τ/τ_c` | `N_ind = max(1,·)` | `1/√N_ind` | `1/√N` | `sin δθ_min` | `δθ_min` |
+|---|---|---|---|---|---|---|---|
+| 20 | 62 | 1.129 | 1.129 | 0.9411 | 0.22361 | 0.21044 | **12.1°** |
+| 20 | 120 | 0.583 | **1** (floored) | 1.0000 | 0.22361 | 0.22361 | **12.9°** |
+| 50 | 62 | 1.129 | 1.129 | 0.9411 | 0.14142 | 0.13309 | **7.6°** |
+| 50 | 120 | 0.583 | **1** (floored) | 1.0000 | 0.14142 | 0.14142 | **8.1°** |
+
+**`δθ_min ≈ 7.6°–12.9°`, central (geometric mean of the extremes) ≈ 9.9° → ~10°.**
+
+**Superseded table (pre-2026-09-05), for comparison:**
+
+| `N` | `τ_c` (s) | `√(τ_c/τ)` | `sin δθ_min` | `δθ_min` | fate |
 |---|---|---|---|---|---|
-| 20 | 62 | 0.941 | 0.2236 | 0.2104 | **12.1°** |
-| 20 | 120 | 1.309 | 0.2236 | 0.2928 | **17.0°** |
-| 50 | 62 | 0.941 | 0.1414 | 0.1331 | **7.6°** |
-| 50 | 120 | 1.309 | 0.1414 | 0.1851 | **10.7°** |
+| 20 | 62 | 0.941 | 0.2104 | 12.1° | unchanged (`N_ind = 1.13 ≥ 1`) |
+| 20 | 120 | 1.309 | 0.2928 | 17.0° | **→ 12.9°** (`N_ind` was 0.58) |
+| 50 | 62 | 0.941 | 0.1331 | 7.6° | unchanged |
+| 50 | 120 | 1.309 | 0.1851 | 10.7° | **→ 8.1°** (`N_ind` was 0.58) |
 
-**`δθ_min ≈ 8°–17°`, central ≈ 11°.**
+The floor removes the pessimistic tail: the widest end of the old `8°–17°` band was an
+artifact of averaging 0.58 of a sample. The band narrows by a factor 1.7 → 1.3 in
+spread and the central value moves 11° → **~10°**.
 
-With `α = 2` (a shallower pile) the whole band halves to ~4–9°; with `α = 0.5` it
-roughly doubles to ~15–35°. The `α` uncertainty is comparable to the `N` uncertainty.
+**A note on the number quoted in `BACKLOG.md` A13.** The backlog anticipated
+`≈ 7.6°–12.1°`. That is the band you get if the `τ_c = 120 s` rows are *deleted*
+rather than floored. Flooring is the more defensible move — `τ_c = 120 s` is a
+VERIFIED measurement (Bérut's `t_a ≈ 2 min`) and there is no reason to discard the
+input, only to stop mis-applying the averaging formula to it — so the band recorded
+here is **7.6°–12.9°**, 0.8° wider at the top than the backlog's estimate. Both agree
+on the central value (~10°) and on the removal of 17°.
+
+With `α = 2` (a shallower pile) the whole band halves to ~3.8–6.4°; with `α = 0.5` it
+roughly doubles to ~15.4–26.6° (at `α = 0.5`, `N = 20`, `τ_c = 120`,
+`sin δθ = 0.44721` → 26.6°). The `α` uncertainty is comparable to the `N` uncertainty.
 
 ## 6. Inputs
 
@@ -220,7 +331,9 @@ error is in the safe direction.
 rectangles, the pile does not have a sharp free surface at 2–3 layers thick, and
 the relevant `w` is a guess from the biomimetic cell rather than a measured wheat
 statocyte. `α` is uncertain by a factor ~2 in each direction and propagates
-linearly into `δθ_min`.
+linearly into `δθ_min`. **Additionally (2026-09-05, A11): the wedge yields `tan θ`,
+not `sin θ`, and is geometrically invalid above θ = 23.7°. See §1.1. All angles used
+in this note are below 13°, where the two differ by under 2.5%.**
 
 **A4 — `τ_c = τ_aval`.** The avalanche time is a *driven, gravity-relaxation*
 timescale measured after a large step tilt. Using it as the *equilibrium*
@@ -251,17 +364,21 @@ extrapolates to zero with no plateau — and Bérut et al. make the same point
 mechanistically: the agitation is what stops the pile jamming, so statoliths "move
 even at small inclination."
 
-**Computed:** `δθ_min ≈ 8°–17°` (central 11°) for one statocyte over one
-presentation time.
+**Computed:** `δθ_min ≈ 7.6°–12.9°` (central ~10°) for one statocyte over one
+presentation time. *(Was `8°–17°`, central 11°, before the `N_ind = max(1, τ/τ_c)`
+floor of 2026-09-05; §5.)*
 
 **Verdict: the bound sits AT or ABOVE the observed sensitivity.** It does not
 close. Three readings, in order of how much I believe them:
 
 1. **The plant averages over more than one cell and more than one presentation
    time.** This is the boring and most likely answer, and it is a quantitative
-   prediction: with `M` statocytes pooled and `τ = τ_memory = 13 min`,
-   `δθ_min → 11° / (√M · √(780/70)) = 11°/(3.34√M)`. For `M = 12` that is
-   **0.95°**; for `M = 30`, **0.6°**. So sub-degree sensitivity is reachable, but
+   prediction: with `M` statocytes pooled and `τ = τ_memory = 13 min = 780 s`,
+   `δθ_min → 9.9° / (√M · √(780/70)) = 9.9°/(3.34√M)`. For `M = 12` that is
+   **0.86°**; for `M = 30`, **0.54°**. (Before the A13 floor these read 0.95° and
+   0.6°, from the old central value 11°; the `√(780/70) = 3.34` factor is unaffected
+   because `τ = 780 s > τ_c`, so `N_ind > 1` and no flooring applies in this regime.)
+   `M = 12` is itself superseded by §11.1's `M = 48`. So sub-degree sensitivity is reachable, but
    *only* with pooling — a single cell provably cannot do it under this model.
    **Falsifiable:** ablate columella cells and the threshold angle should degrade
    as `M^{-1/2}`. Blancaflor et al. already did the ablations and reported
@@ -275,8 +392,18 @@ close. Three readings, in order of how much I believe them:
    collectively rigid, the effective `σ` is smaller than `√N` and the bound moves
    down without any change to `T_eff`.
 
-**The coincidence worth flagging.** `δθ_min ≈ 11°` and the measured jamming angle
-`θ_c ≈ 10°` agree to well within the uncertainty of either. These are supposed to
+*Caveat on the 3.34 factor.* `√(τ_memory/τ) = 3.34` is exact only for `τ_c = 62 s`,
+where both `τ = 70 s` and `τ = 780 s` sit in the averaging regime. At `τ_c = 120 s`
+the short window is floored (`N_ind = 1`) while the long one is not (`N_ind = 6.5`),
+so the gain is `√6.5 = 2.55`, not 3.34. The pooled numbers above use the more
+favourable branch and are therefore optimistic by up to 1.3×.
+
+**The coincidence worth flagging.** `δθ_min ≈ 9.9°` and the measured jamming angle
+`θ_c ≈ 10°` agree to well within the uncertainty of either — and, after the A13
+correction, more closely than before (they were 11° vs 10°). *This is not evidence
+for the coincidence being meaningful:* the band is 7.6°–12.9° wide and the "central
+value" is a geometric mean of two arbitrary endpoints, so its agreement with 10° to
+1% is not a measurement. These are supposed to
 be independent quantities — one is a granular-mechanics angle of repose, the other
 a signal-to-noise limit. Either that is chance (the band is wide enough that it
 could be), or the pile is tuned so that its statistical detection floor coincides
@@ -350,9 +477,13 @@ for PMC35160 (it was **not** reachable for PMC5960325, which required the eutils
 This **replaces the UNVERIFIED "12" in §6**, which was a 2-D median-section count (3 × 4) and
 undercounted by exactly the factor 4 of the Z-direction. Consequences for §8 reading (1):
 
-    δθ_min = 11° / (√M · √(τ_memory/τ)) = 11° / (√48 × 3.34) = 0.48°
+    δθ_min = 9.9° / (√M · √(τ_memory/τ)) = 9.9° / (√48 × 3.34) = 9.9/23.14 = 0.43°
 
-not 0.95°. Sub-degree sensitivity is comfortably reachable *if* pooling is real.
+not 0.95°. **Updated 2026-09-05 (A13): 0.48° → 0.43°**, because the single-cell
+central value fell from 11° to 9.9° when the `N_ind = max(1, τ/τ_c)` floor was
+imposed (§5). Sub-degree sensitivity is comfortably reachable *if* pooling is real —
+but see §11.6, where this figure is relabelled as an optimistic upper bound rather
+than a prediction.
 
 **Correction to the brief that commissioned this section:** the graded ablation study is
 **Arabidopsis**, not maize. Blancaflor, Fasano & Gilroy also published the same dataset as
@@ -500,16 +631,48 @@ so integration is saturated and only the angle is limiting) at each of θ = 5°,
 at which curvature becomes indistinguishable from zero — the same regression-to-`y = 0`
 construction Blancaflor already used for time, applied to angle. Call it `θ_min(M)`.
 
-**Predicted numbers.** Normalising to the control arm:
+**Predicted numbers.** Normalising to the control arm. **The ratio columns are the
+prediction. The absolute column is an upper bound that is known to be optimistic** —
+see the boxed warning below (relabelled 2026-09-05, A14).
 
-| `M` | pooling, `√(48/M)` | linear summation, `48/M` | absolute `θ_min` if control is 0.48° |
+| `M` | **pooling, `√(48/M)`** | **linear summation, `48/M`** | equal-weight-pooling *upper bound* on `θ_min` (optimistic; control anchor 0.43°) |
 |---|---|---|---|
-| 48 | 1.00 | 1.00 | 0.48° / 0.48° |
-| 32 | 1.22 | 1.50 | 0.59° / 0.72° |
-| 24 | 1.41 | 2.00 | 0.68° / 0.96° |
-| 16 | **1.73** | **3.00** | **0.83° / 1.44°** |
+| 48 | 1.00 | 1.00 | ≥ 0.43° / ≥ 0.43° |
+| 32 | 1.22 | 1.50 | ≥ 0.53° / ≥ 0.64° |
+| 24 | 1.41 | 2.00 | ≥ 0.61° / ≥ 0.86° |
+| 16 | **1.73** | **3.00** | ≥ 0.74° / ≥ 1.29° |
 
-The absolute column uses §11.1; it is model-dependent and the *ratios* are the real prediction.
+> **What the third column is, and is not (A14, 2026-09-05).**
+>
+> It is **not a predicted measurement.** It is the sensitivity the root would reach
+> *if* all `M` statocytes were interchangeable, equally weighted, independent
+> samplers. §11.4 measured that assumption and **falsified it**: at fixed `M` the
+> presentation time spans 2.1–2.8× depending on *which* cells were ablated, and
+> §11.8 records "Equal-weight pooling: **Falsified**". Unequal weights strictly
+> reduce the effective sample size (`M_eff = (Σwᵢ)²/Σwᵢ² ≤ M`, with equality only for
+> equal weights), so real `θ_min` can only be **larger** than the numbers in this
+> column. They are therefore **lower bounds on the angle, i.e. an optimistic upper
+> bound on the sensitivity** — hence the `≥`.
+>
+> How much larger is not known. The paper reports S2-central cells as dominant
+> (largest amyloplast sedimentation velocities) but gives no weights, and §11.4
+> declined to fit a weighted model because it is not falsifiable on four group means.
+> A crude illustration of the direction: if one story of 16 carried half the total
+> weight and the other 32 cells shared the rest, `M_eff ≈ 32` rather than 48, and the
+> control anchor moves 0.43° → 0.53°.
+>
+> The anchor itself (0.43°) also inherits every assumption of §5 and §11.1 —
+> `α ≈ 1` (factor ~2 either way), `N = 20–50`, `τ_c`, and A1's `T_eff`. Do not quote
+> it as a number. Quote the ratios.
+
+**Why the ratios survive when the absolute does not.** `θ_min(16)/θ_min(48)` is a
+ratio of the same quantity measured in two arms of one experiment: `α`, `N`, `τ_c`,
+`τ_memory` and the detection criterion all cancel. It depends only on how the
+effective sample size scales with `M` — which is exactly the thing under test.
+Unequal weighting does *not* cancel from the ratio in general, but it biases both
+live models in the same direction, and the arms are chosen (§ "Design", above) to
+hold the S2 fraction as constant as possible for precisely this reason. **1.73 vs
+3.00 is the load-bearing prediction of this note.**
 
 **Falsification, stated in advance.**
 
@@ -561,7 +724,8 @@ one paper that touches both uses the averaging as an instrument rather than a hy
 | Claim | Before | After |
 |---|---|---|
 | `M` for Arabidopsis columella | UNVERIFIED, guessed 12 | **VERIFIED = 48** |
-| `δθ_min` with pooling + `τ_memory` | 0.95° | **0.48°** |
+| Single-cell `δθ_min` band | 8°–17°, central 11° | **7.6°–12.9°, central ~10°** (A13 floor, §5) |
+| `δθ_min` with pooling + `τ_memory` | 0.95° | **≥ 0.43°** — an *equal-weight upper bound on sensitivity*, not a prediction (see §11.6). Was 0.48° before A13 |
 | Graded ablation data exist | assumed | **Yes — 9 treatments, 4 distinct `M`** |
 | Threshold angle vs `M` measured | assumed re-analysable | **No. Never measured. All stimulation at 90°** |
 | `τ_p ∝ M⁻¹` | untested | **b = 1.20 ± 0.12, R² = 0.98 on group means; b = 1 not rejected** |
@@ -609,4 +773,79 @@ S3 result argues against full cleanliness: ablating S3 barely changed presentati
 *did* inhibit bending, which the authors attribute to blocked signal **translocation** rather
 than lost perception. Any `M`-scaling fit therefore mixes sensing loss with transport damage.
 This is the weakest step in §11.4 and is worse than the statistics.
+
+---
+
+## Prior-art check 2026-09-05
+
+*Backlog item **E5** / `audits/05-scope-strategy.md` item 11: kill-check C4's `M^{−1/2}` vs
+`M^{−1}` discriminator (§11.5, §11.6) against the distributed-detection, sensor-fusion and
+collective-cellular-sensing literatures. §11.7 had already searched the **plant** side; this
+section searches the **physics/engineering** side, which is where the discriminator could
+plausibly already exist. Provider: WebSearch (US index), all fetched **2026-09-05**.*
+
+### Queries issued and what came back
+
+| # | Query formulation (verbatim) | Returned | Bearing on the discriminator |
+|---|---|---|---|
+| 1 | `"distributed detection" sensor fusion "square root law" pooling number of sensors` | Distributed-detection / decision-fusion literature: Aziz 2013 *Inf. Fusion* multiple-decisions fusion rule; IEEE 7065504 fusion for target detection; [arXiv:1809.03653](https://arxiv.org/pdf/1809.03653) energy-efficient decision fusion in WSNs; PMC6308585 soft–hard combination fusion | **Field exists, discriminator absent.** These papers optimise fusion rules and count sensors needed for a fixed error rate; none states a `M^{−1/2}` vs `M^{−1}` *contrast* as a model-discriminating test, and none is biological. |
+| 2 | `"Berg Purcell" many receptors collective sensing accuracy 1/sqrt(N) multicellular` | [The Berg–Purcell Limit Revisited](https://www.sciencedirect.com/science/article/pii/S0006349513058475) (Bialek/Endres line); [Revising Berg–Purcell for finite receptor kinetics](https://www.sciencedirect.com/science/article/pii/S0006349521002514); Mugler/Levchenko/Nemenman, [Sense and sensitivity: physical limits to multicellular sensing](https://arxiv.org/pdf/1512.00496); [Collective chemotaxis through noisy multicellular gradient sensing](https://arxiv.org/pdf/1605.00712) | **`M^{−1/2}` for pooled cells is standard and well established** — this is the machinery C4 §4 borrows, and C4 should not and does not claim to have invented it. No plant application. |
+| 3 | `statocyte columella pooling signal averaging gravisensing threshold angle number of cells M^-1/2` (engine also expanded to three variants: pooling-model, noise-amplification, and CLT-over-statocytes phrasings) | Pouliquen et al. position-sensor hypothesis ([arXiv:1703.07688](https://arxiv.org/pdf/1703.07688)); Bérut 2018 PNAS; Nakamura *Stochastic processes in gravitropism* (PMC4245003); Miyamoto *Noise amplification of plant gravisensing*; Bérut/Chauvet integrative auxin models | **Nothing.** Closest is the noise-amplification line (noise *lowers* the threshold within a cell) — a different mechanism from averaging *across* cells. No `M`-scaling of angular threshold anywhere. Confirms §11.7 independently. |
+| 4 | `pooling independent noisy sensors 1/sqrt(N) versus 1/N discriminate deterministic summation biological detection` | McDonnell et al. **stochastic pooling networks** — [PRE 88:022118](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.88.022118) (optimal sensor selection for noisy binary detection in stochastic pooling networks), [PRE 79:041107](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.79.041107) | **The nearest miss in the whole check.** "Stochastic pooling networks" is exactly the right object class and explicitly covers biological sensory neurons. But the results are information-capacity and sensor-selection results; the papers do **not** pose `M^{−1/2}` vs `M^{−1}` as a two-model discrimination, and do not apply it to any gravisensor. |
+| 5 | `"collective sensing" plants "square root" number of cells noise averaging gravitropism distributed detection` (engine expanded to three variants) | Fancher & Mugler, [Fundamental limits to collective concentration sensing in cell populations](https://arxiv.org/pdf/1603.04108); [Collective gradient sensing with limited positional information](https://link.aps.org/accepted/10.1103/PhysRevE.105.044410); plant-side returns were gravitropism reviews (Wang 2026 *New Phytol.*, Su 2017 *Curr. Biol.*) | **The two literatures return disjoint result sets on one query.** That is the gap C4 §11.7 asserts, now measured on the physics side too. |
+| 6 | `"statocyte" OR "columella" gravitropism "distributed detection" OR "signal detection theory" number of sensing cells scaling` | Gravity-sensing reviews only (Statocyte/Wikipedia, *Mechanism of Higher Plant Gravity Sensing*, statolith sedimentation kinetics, angle-dependence/auxin theory) | **Zero returns containing both a detection-theory term and a cell-count scaling.** |
+| 7 | `traffic intensity offered load M/M/1/1 Erlang B` (run for C6/A9; recorded here only because it is the same session's search log) | teletraffic sources | not applicable to C4 |
+
+Six distinct formulations bearing on E5 (rows 1–6), spanning: engineering distributed detection;
+Berg–Purcell/receptor physics; plant-specific pooling; the abstract `M^{−1/2}` vs `M^{−1}`
+contrast; collective cellular sensing; and a detection-theory × statocyte cross-term.
+
+### Verdict
+
+**The discriminator does not already exist for plant statocytes. C4's hedged NOVEL grade
+survives — but it should be narrowed, not confirmed as stated.**
+
+Three separate claims, graded separately, because conflating them is how a novelty grade goes
+wrong:
+
+| Claim | Grade | Basis |
+|---|---|---|
+| `M^{−1/2}` scaling of sensitivity for `M` pooled independent noisy sensors | **NOT NOVEL — textbook.** | Berg–Purcell 1977 and its whole descendant literature (row 2); classical estimation theory. C4 §4 borrows it and says so. |
+| The general contrast between statistical pooling (`M^{−1/2}`) and deterministic summation-to-threshold (`M^{−1}`) as distinguishable model classes | **NOT NOVEL in the abstract, but not packaged as a test.** | Stochastic-pooling-network literature (row 4) has the object class; no source found states the exponent contrast as a discriminating experiment. Closest prior art in the vault's sense: **LOCATED**, one inference short. |
+| **Applying that contrast to plant statocytes, with `M = 48` resolved from a real ablation series, and specifying the angular-series experiment (§11.6) that separates 1.73 from 3.00** | **NOVEL (hedged), sustained.** | Rows 3, 5, 6 return nothing. §11.7's ~10 plant-side queries returned nothing. Both literatures exist; six formulations failed to find a document containing both. |
+
+**What would overturn this.** A single paper that (a) treats a multicellular mechanosensor and
+(b) proposes ablation/cell-count variation to test an exponent. None of the ~16 formulations
+across §11.7 and this section produced one. **This is an absence measured with a stated
+protocol, not an absence assumed** — and it is a *search* absence, which is the weakest kind:
+the searches are English-language, web-index only, and did not query Web of Science, Scopus, or
+a citation-intersection over Berg–Purcell 1977 × Blancaflor 1998. That intersection is the
+obvious next hardening step and was **not** run this session.
+
+**Proposed `novelty-audit.md` change:** see [[log]] — the grade line for C4 should
+be split into the three rows above rather than left as one hedged NOVEL. This agent did not
+edit `novelty-audit.md`.
+
+---
+
+## Corrections 2026-09-05
+
+Batch A items A11–A14 and Batch E item E5 from `BACKLOG.md`, sourced to
+`audits/01-math-physics.md` (C4 findings) and `audits/05-scope-strategy.md` item 11. Logged in
+[[log]].
+
+| # | Was | Is now | What produced the change |
+|---|---|---|---|
+| A11 | §1: `p(θ) = (w/4h₀)·tan θ ≈ α sin θ`; "This is the microscopic origin of the macroscopic sine law" | §1.1: the wedge gives `tan θ`, equal to `sin θ` only to first order (`tan θ/sin θ = 1/cos θ = 1 + θ²/2 + …`); valid only while `\|tan θ\| < 2h₀/w = 2×11/50 = 0.44`, i.e. **θ < arctan 0.44 = 23.7°**. The origin-of-the-sine-law claim is **withdrawn**: the sine law is verified to 90°, where the model is invalid | Geometry only. `h(−w/2) ≥ 0` requires `(w/2)tan θ ≤ h₀`, with `h₀ ≈ 11 μm`, `w ≈ 50 μm` from Bérut's biomimetic cell (VERIFIED, §6). Secondary bound `p ≤ 1` at `tan θ = 1/α = 0.909` → 42.3°, not binding. |
+| A12 | §1: the Boltzmann occupancy "is consistent with — and reduces to — the geometric result… **Two independent routes agree** that the signal is ≈ N sin θ" | §1.2: `p = tanh(55 sin θ)` reaches 0.74 at 1°, 0.96 at 2°, 0.9999 at 5° — it **saturates** and does not reduce to `α sin θ` (at 10° it gives 1 against the geometric 0.19, a factor 5). Claim of two agreeing independent routes **deleted**. The Boltzmann calculation is retained for the one thing it does show: `ΔE/k_BT_eff ≫ 1`, so **`T_eff` does not limit signal amplitude** | Evaluated `tanh(55 sin θ)` at 0.5°, 1°, 2°, 5°, 10° from the note's own `ΔE/k_BT_eff ≈ 110 sin θ`. The two routes also share `mgd/k_BT_eff ≈ 20` and `w`, so they were never independent. |
+| A13 | §3/§4: `N_ind = τ/τ_c` unfloored. §5 table rows at `τ_c = 120 s` used `N_ind = 70/120 = 0.583`. Band **`8°–17°`, central 11°** | `N_ind = max(1, τ/τ_c)` imposed. §5 table regenerated with an explicit `N_ind` column; **no row now has `N_ind < 1`**. Band **`7.6°–12.9°`, central ~10°**. Row changes: (N=20, τ_c=120) **17.0° → 12.9°**; (N=50, τ_c=120) **10.7° → 8.1°**; the two `τ_c = 62 s` rows (12.1°, 7.6°) are unchanged because `N_ind = 1.129 ≥ 1` | `sin δθ_min = (1/α√N)(1/√N_ind)`, `α = 1`, `τ = 70 s` (VERIFIED, Blancaflor 1998), `τ_c = 62 s` (Chauvet `τ_aval` 1.04 min) and `120 s` (Bérut `t_a ≈ 2 min`), `N = 20, 50`. Floored rows: `sin δθ = 1/√20 = 0.22361 → 12.92°`; `1/√50 = 0.14142 → 8.13°`. Central = geometric mean √(7.6×12.9) = 9.9°. |
+| A13 (propagated) | Pull-quote `8°–17°` / 11°; §8 "Computed: 8°–17° (central 11°)"; §8 pooling `11°/(3.34√M)` → 0.95° (M=12), 0.6° (M=30); §11.1 `0.48°`; §11.8 row `0.48°` | Pull-quote and §8 now `7.6°–12.9°` / ~10°; §8 pooling `9.9°/(3.34√M)` → **0.86°** (M=12), **0.54°** (M=30); §11.1 **0.43°** (`9.9/(√48 × 3.34) = 9.9/23.14`); §11.8 row updated and a new single-cell-band row added | Same inputs; only the 11° → 9.9° anchor moved. New caveat recorded in §8: the `√(τ_memory/τ) = 3.34` gain is exact only for `τ_c = 62 s`; at `τ_c = 120 s` it is `√6.5 = 2.55`, so the pooled figures are optimistic by up to 1.3×. |
+| A14 | §11.6 third column headed "absolute `θ_min` if control is 0.48°", presented alongside the ratios, contradicting §11.8's "Equal-weight pooling: **Falsified**" | Column relabelled **"equal-weight-pooling *upper bound* on θ_min (optimistic)"** with `≥` on every entry and a boxed explanation: unequal weights give `M_eff = (Σwᵢ)²/Σwᵢ² ≤ M`, so true `θ_min` can only be larger. §11.8's `δθ_min` row now carries the same label. **`1.73` vs `3.00` restated as the load-bearing prediction**, with the reason the ratio survives what the absolute does not | §11.4's own measurement: 2.1–2.8× spread in `τ_p` at fixed `M`. Values rescaled by the new 0.43° anchor: 0.43 / 0.53 / 0.61 / 0.74 (pooling) and 0.43 / 0.64 / 0.86 / 1.29 (linear summation). Ratio columns **unchanged** — 1.00 / 1.22 / 1.41 / **1.73** and 1.00 / 1.50 / 2.00 / **3.00**. |
+| E5 | §11.7 searched the plant literature only; novelty grade a single hedged NOVEL | New `## Prior-art check 2026-09-05` section: six distinct query formulations against distributed detection, sensor fusion, Berg–Purcell/receptor physics and collective cellular sensing. Grade split three ways — the `M^{−1/2}` law is **textbook**, the pooling-vs-summation contrast is **located but unpackaged**, and the statocyte application + §11.6 experiment remains **NOVEL (hedged)** | WebSearch, 2026-09-05, queries and returns tabulated in that section. Nearest miss: McDonnell et al. stochastic pooling networks, PRE 88:022118 / 79:041107. Not run: a citation intersection of Berg–Purcell 1977 × Blancaflor 1998, which is the next hardening step. |
+
+**Numbers deliberately unchanged:** §0's `Pe⁻¹` reproduction table; §11.3's nine presentation
+times; §11.4's fits `b = 1.13 ± 0.40` (all points) and `b = 1.20 ± 0.12` (group means),
+`R² = 0.980`; `M = 48`; and every ratio in §11.6. **Left undone:** §11.6's optional recomputation
+of the absolute bound with an S2-weighted `M_eff` — the audit marked it optional and §11.4
+records that the weights are unidentifiable from four group means, so it is not attempted here.
 

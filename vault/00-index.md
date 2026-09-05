@@ -30,6 +30,7 @@ editing agents are in `CLAUDE.md`.
 - [[citation-intersection]] — the strongest evidence standard, and its own limits
 - [[precedent]] — this method is Literature-Based Discovery, founded 1986. What is honestly ours
 - [[novelty-audit]] — **the honest scorecard.** Every result graded novel / repackaged / rediscovered / located / corrected, biased toward humility. Real product: a method plus a handful of genuine bridges, not a body of new physics
+- [[predictions]] — append-only, hash-stamped register of dated falsifiable predictions (α, tenth-order QED, C4 statocyte pooling, C16 class pre-registration); per-prediction dates from `git log`, sha256 per entry
 
 ## Reading the standings
 

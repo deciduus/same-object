@@ -17,10 +17,10 @@ type: computed
 > times their relative velocity. `F·Δu` is the total dissipation, so `Σ ∈ [0,1]` by
 > construction, and it is a genuine bilinear flux–force product in the Onsager sense.
 > **The gap note's premise that "a solar sail has no conjugate flux pair" is wrong** — the
-> sail's second reservoir is the radiation field, its `Δu` is `c`, and `Σ_sail = 2v/c`
+> sail's second reservoir is the radiation field, its `Δu` is `c`, and `Σ_sail = v/c`
 > falls straight out. Σ evaluates to each field's own existing performance number as a
-> special case: the tether's load-voltage fraction of the motional EMF, the sail's `2v/c`,
-> the drag turbine's `V/Δu ≤ 1/3`, the soarer's distance above the minimum-shear condition.
+> special case: the tether's load-voltage fraction of the motional EMF, the sail's `v/c`,
+> the drag device's `V/Δu`, the soarer's distance above the minimum-shear condition.
 >
 > **What does not generalise is [[kedem-caplan]]'s `q`.** The degree of coupling exists
 > because in linear response the *maximum* of the efficiency collapses to a function of a
@@ -32,7 +32,7 @@ type: computed
 > tabulate from material properties.
 >
 > That distinction turns out to be the useful part. It cleaves the family in two — systems
-> where `Σ` is a **kinematic identity** (a sail: `2v/c`, unimprovable by any arrangement)
+> where `Σ` is a **kinematic identity** (a sail: `v/c`, unimprovable by any arrangement)
 > and systems where `Σ` is a **trajectory functional** (soaring: arrangement is the entire
 > lever). The project's founding intuition — arrangement beats magnitude — is not
 > universally true, and this is the criterion that says where it holds.
@@ -164,6 +164,20 @@ product is what matters). [[G1-gradient-coupling]] and [[kedem-caplan]] both ass
 solar sail "has no conjugate flux pair." That is false as stated. The sail's second
 reservoir is the radiation field, and its `Δu` is `c`.
 
+**Where the factor 2 lives — corrected 2026-09-05.** Put `Δu = c` into (2):
+
+```
+Σ_sail  =  P_useful / (F·Δu)  =  F v / (F c)  =  v / c                (2a)
+```
+
+The `F` cancels, so **`Σ_sail = v/c`, not `2v/c`** — the 2 is not in Σ. It is in the *force*.
+Reflected-photon bookkeeping for a perfect mirror of area `A` at flux `Φ`: each photon
+reverses momentum rather than being absorbed, so `F = 2ΦA/c`, twice the absorber's `ΦA/c`.
+That 2 then appears identically in numerator (`P_useful = Fv`) and denominator (`F·c`) and
+divides out. The earlier `Σ_sail = 2v/c` double-counted it: it took the doubled force in the
+numerator and the *incident* flux `ΦA = Fc/2` in the denominator. Under (2) the denominator
+is `F·Δu = F·c`, which for a perfect mirror is `2ΦA`, not `ΦA`.
+
 ### 3.3 Where it breaks — the crux, answered
 
 The thermodynamic branch gets more than an efficiency: it gets `q`, a single number such
@@ -195,17 +209,42 @@ provably cannot have is named.
 
 ### 3.4 Consistency check — Σ ≤ 1 reproduces the minimum-shear condition
 
-For a soarer, take the most favourable instantaneous configuration (all of `V` devoted to
-both climb and downwind travel). Then `P_available = m V² (dW/dz)` and the power that must
-be recovered is the drag power `D·V = mgV/(L/D)`. So
+For a soarer the available power is the shear term of §2.1, `m (dW/dz) ż v_x`, where `ż` is
+climb rate and `v_x` the ground-frame horizontal component. These are two components of the
+same airspeed vector, so `ż² + v_x² ≤ V²`, and by AM–GM `ż v_x ≤ V²/2`, with equality at
+`ż = v_x = V/√2`. **The ceiling therefore carries a factor ½** (corrected 2026-09-05; the
+earlier `P_available = m V²(dW/dz)` implicitly set `ż = v_x = V` simultaneously, which is
+kinematically impossible):
 
 ```
-Σ_soar  =  g / [ (L/D) · V · (dW/dz) ]                                 (3)
+P_available  =  ½ m V² (dW/dz)
 ```
 
-and `Σ_soar ≤ 1` is `(dW/dz) ≥ g / ((L/D)·V)` — **the minimum-shear condition the soaring
-literature derives independently.** The metric's own bound reproduces the field's own
-criterion. That is the strongest evidence the construction is the right one.
+The power that must be recovered is the drag power `D·V = mgV/(L/D)`. So
+
+```
+Σ_soar  =  [mgV/(L/D)] / [½ m V²(dW/dz)]  =  2g / [ (L/D) · V · (dW/dz) ]        (3)
+```
+
+and `Σ_soar ≤ 1` is `(dW/dz) ≥ 2g / ((L/D)·V)` — **twice the shear** the previous version of
+this note required.
+
+**Does it still reproduce the field's criterion? Functional form yes, constant no — restated
+as order-of-magnitude.** The scaling `dW/dz ∝ g/((L/D)V)` is the one the soaring literature
+derives, and that much survives. The constant does not, and it never did: (3) is a *ceiling*
+(the caveat below), so the previous exact-looking match at coefficient 1 was a coincidence of
+an over-generous `P_available`, not a recovery. Numerically, with the §4 albatross inputs
+(`L/D = 21.2`, `V = 15.5 m/s`):
+
+```
+(dW/dz)_min  =  2 × 9.81 / (21.2 × 15.5)  =  0.0597 s⁻¹
+```
+
+i.e. a shear of only ~0.12 m/s across the 2 m layer, versus the ~3.6 m/s minimum wind
+Richardson (2015) obtains for a wandering albatross from a Rayleigh-cycle model. The bound is
+loose by a factor of ~30, exactly as a ceiling should be. **Claim now stated as: Σ ≤ 1
+recovers the minimum-shear condition's functional form to within an order of magnitude; it
+does not reproduce the field's constant, and §5 no longer claims it does.**
 
 **Honest caveat, stated because it is load-bearing.** (3) is a *bound*, not tight: a real
 soarer cannot climb at `V` while also running downwind at `V`, and it must reverse. The
@@ -221,18 +260,19 @@ ones, and any table mixing them must say so. This one does.
 
 | System | `F·Δu` (power processed) | `P_useful` | **Σ** | Verification |
 |---|---|---|---|---|
-| **Wandering albatross**, cruise in 12 m/s wind | `m V² (dW/dz)` = 9.5 × 15.5² × 2.1 ≈ 4.8 kW | `mgV/(L/D)` = 9.5×9.81×15.5/20 ≈ 72 W | **≈ 1.5×10⁻²** | m = 9.5 kg, wing area 0.65 m², `Vc` = 15.5 m/s, `λ` = 24.3 m, δ = 2 m, `W₀` = 25–50% of the 10 m wind — all **VERIFIED** from [PMC5665832](https://pmc.ncbi.nlm.nih.gov/articles/PMC5665832/). `dW/dz ≈ W₀/δ ≈ 4.2/2 = 2.1 s⁻¹` is **computed** from those. **L/D = 20 is UNVERIFIED** (not obtained this session; the result scales as 1/(L/D)). |
-| **IKAROS**, 1 AU idealisation | intercepted flux `≈ Φ·A` = 1361 × 196 ≈ 2.67×10⁵ W | `F·v` = 1.12×10⁻³ × 3×10⁴ ≈ 34 W | **≈ 1.3×10⁻⁴** | Thrust 1.12 mN **VERIFIED** ([JAXA](https://www.jaxa.jp/press/2010/07/20100709_ikaros_e.html), quoted: "The thrust by solar light pressure is 1.12 mili-Newton"). Mass 310 kg, sail 14 m × 14 m = 196 m², 7.5 µm polyimide **VERIFIED** ([Wikipedia/IKAROS](https://en.wikipedia.org/wiki/IKAROS)). Solar constant 1361 W m⁻² and heliocentric speed 30 km/s **UNVERIFIED** (standard values, and IKAROS actually flew inward toward Venus, so both are approximations). Closed form `Σ = 2v/c` = 2×10⁻⁴ agrees. |
+| **Wandering albatross**, cruise in 12 m/s wind | `½ m V² (dW/dz)` = 0.5 × 9.5 × 15.5² × 2.1 ≈ **2.40 kW** | `mgV/(L/D)` = 9.5×9.81×15.5/21.2 ≈ **68.1 W** | **≈ 2.8×10⁻²** | m = 9.5 kg, wing area 0.65 m², `Vc` = 15.5 m/s, `λ` = 24.3 m, δ = 2 m, `W₀` = 25–50% of the 10 m wind — all **VERIFIED** from [PMC5665832](https://pmc.ncbi.nlm.nih.gov/articles/PMC5665832/). `dW/dz ≈ W₀/δ ≈ 4.2/2 = 2.1 s⁻¹` is **computed** from those. The ½ is the AM–GM ceiling derived in §3.4 (corrected 2026-09-05; was omitted, making `F·Δu` 2× too generous and Σ 2× too small). **L/D = 21.2 is now sourced: VERIFIED-SECONDARY** — "the cruise airspeed, Vc = 16 m/s, of a wandering albatross is its speed at the maximum glide ratio, which is around 21.2 in straight flight (Pennycuick, 2008)", Richardson (2015), *Prog. Oceanogr.* 130:146, [PDF](https://www2.whoi.edu/staff/prichardson/wp-content/uploads/sites/75/2018/11/Richardson-2015-PinO-upwind.pdf), fetched **2026-09-05**; secondary because Richardson quotes Pennycuick (2008), a book not obtained. Result scales as 1/(L/D); at the old unsourced L/D = 20, Σ = 3.0×10⁻². |
+| **IKAROS**, 1 AU idealisation | `F·Δu` = `F·c` = 1.12×10⁻³ × 2.9979×10⁸ = **3.36×10⁵ W** | `F·v` = 1.12×10⁻³ × 3×10⁴ = **33.6 W** | **= 1.00×10⁻⁴** | Thrust 1.12 mN **VERIFIED** ([JAXA](https://www.jaxa.jp/press/2010/07/20100709_ikaros_e.html), quoted: "The thrust by solar light pressure is 1.12 mili-Newton"). Mass 310 kg, sail 14 m × 14 m = 196 m², 7.5 µm polyimide **VERIFIED** ([Wikipedia/IKAROS](https://en.wikipedia.org/wiki/IKAROS)). Heliocentric speed 30 km/s **UNVERIFIED** (standard value, and IKAROS actually flew inward toward Venus, so it is an approximation). Closed form `Σ = v/c` = 3×10⁴/2.9979×10⁸ = **1.0007×10⁻⁴**, which the populated row reproduces **exactly** — as it must, since `F` cancels. *Corrected 2026-09-05:* the row previously used the incident flux `Φ·A` = 1361 × 196 = 2.67×10⁵ W as the denominator, which is not `F·Δu`; it gave Σ = 1.26×10⁻⁴ against a closed form of 2×10⁻⁴ and the note called that agreement. Both halves were wrong (see §3.2). |
 | **Electrodynamic tether**, LEO generator | `F·Δu` = `I·L·B·v_rel` = `I × V_emf` | `I × V_load` | **`Σ = V_load / V_emf`** — order 0.3–0.7 by design | The reduction is exact and follows from `F = ILB` and `V_emf = vBL`, both **VERIFIED** ([Wikipedia](https://en.wikipedia.org/wiki/Electrodynamic_tether)). The 0.3–0.7 range is **UNVERIFIED** — the Sanmartín reviews (oa.upm.es PDFs) and the 2024 *Acta Astronautica* review were **NOT OBTAINED** (PDFs returned undecodable binary; ScienceDirect 403s). What is established is the *identity*, not the number. |
-| *Reference — drag device* (parachute, magnetic sail, dead-downwind hull) | `F·Δu` | `F·V` | `Σ = V/Δu`, **max 1/3** at `V = Δu/3` | Elementary; the classical drag-machine limit that motivates Betz. Included to show Σ recovers known bounds. |
+| *Reference — drag device* (parachute, magnetic sail, dead-downwind hull) | `F·Δu` | `F·V` | `Σ = V/Δu ∈ [0,1]` | Elementary. *Corrected 2026-09-05:* the row previously read "max 1/3 at `V = Δu/3`". That is false under (2): `Σ = FV/(FΔu) = V/Δu` is **monotone increasing in V with supremum 1** and has no stationary point. `V = Δu/3` is the optimum of a *different* objective — the extracted **power** `P = FV ∝ (Δu−V)²V`, maximised at `V = Δu/3` with `Cp = 4/27`, the classical drag-machine limit that motivates Betz. A power optimum is not a bound on Σ. This row therefore does **not** recover a known bound; see §5 item 1. |
 
-**The finding in the table.** Σ ranges over more than two orders of magnitude across three
-systems that previously had no common axis at all — and the ordering is not the one the
-fields' own vocabulary suggests. The tether, the least glamorous of the three, is the best
-converter by two orders of magnitude. The solar sail, which the sail literature scores by a
+**The finding in the table.** Σ ranges over more than three orders of magnitude
+(1.0×10⁻⁴ → 0.3–0.7) across three systems that previously had no common axis at all — and
+the ordering is not the one the fields' own vocabulary suggests. The tether, the least
+glamorous of the three, is the best converter: ~18× the albatross (0.5/2.8×10⁻²) and
+~5×10³× the sail. The solar sail, which the sail literature scores by a
 *force* ratio β and which IKAROS scored well on as a demonstrator (β ≈ 6×10⁻⁴, computed from
 `a_c` = 1.12 mN / 310 kg = 3.6×10⁻⁶ m s⁻²), is the worst *energy* converter on the list by a
-factor of ~10⁴ against the tether. **β and Σ rank sails and tethers in opposite orders, and
+factor of ~5×10³ against the tether (0.5 / 1.0×10⁻⁴). **β and Σ rank sails and tethers in opposite orders, and
 only Σ is an efficiency.**
 
 ---
@@ -240,9 +280,17 @@ only Σ is an efficiency.**
 ## 5. What it buys
 
 **1. It puts three fields on one axis for the first time, and each keeps its own number as a
-special case.** `Σ_EDT` = load fraction of the motional EMF. `Σ_sail` = `2v/c`.
-`Σ_drag` = `V/Δu`. `Σ_soar ≤ 1` *is* the minimum-shear criterion. A unification that
-reproduced none of the local results would be suspect; this one reproduces all four.
+special case.** `Σ_EDT` = load fraction of the motional EMF. `Σ_sail` = `v/c`.
+`Σ_drag` = `V/Δu`. `Σ_soar ≤ 1` recovers the minimum-shear criterion's *functional form*
+(§3.4), to within an order of magnitude — not its constant. A unification that reproduced
+none of the local results would be suspect; this one reproduces **three**.
+
+*Corrected 2026-09-05 (was "all four").* The fourth was the drag device's claimed
+`Σ ≤ 1/3`, which §4 row 4 shows is not a bound on Σ at all but the optimum of extracted
+power. `Σ_drag = V/Δu` is still recovered as an expression; it is not a recovered *bound*.
+And the soaring case is a functional-form match, not the exact-constant match previously
+claimed. So: two exact special cases (tether, sail), one order-of-magnitude recovery
+(soaring), one expression that is not a bound (drag).
 
 **2. It kills a false premise that was blocking the gap.** "A solar sail has no conjugate
 flux pair" appears in both [[G1-gradient-coupling]] and [[kedem-caplan]]. It is wrong, and
@@ -264,8 +312,8 @@ slogan.** *Arrangement beats magnitude* — sometimes. Σ splits the family:
 
 | | Σ is a **kinematic identity** | Σ is a **trajectory functional** |
 |---|---|---|
-| Examples | photon sail (`2v/c`), gravity assist (`2u_planet` per pass) | dynamic soaring, sailing craft, cyclic tether |
-| Can arrangement raise Σ? | **No.** No trajectory, no shape, no cleverness changes `2v/c`. Only raising `v` does — magnitude. | **Yes, and it is the only lever.** The whole gap between the ceiling (3) and the achieved value is trajectory. |
+| Examples | photon sail (`v/c`), gravity assist (`2u_planet` per pass) | dynamic soaring, sailing craft, cyclic tether |
+| Can arrangement raise Σ? | **No.** No trajectory, no shape, no cleverness changes `v/c`. Only raising `v` does — magnitude. | **Yes, and it is the only lever.** The whole gap between the ceiling (3) and the achieved value is trajectory. |
 
 So the founding intuition is **conditionally true, and the condition is now stated**:
 arrangement beats magnitude exactly when the optimum fails to collapse to a coefficient —
@@ -300,15 +348,21 @@ thermoacoustics has always said.
 
 ## 6. Status
 
-- §3.1 (the identity `P = F·Δu`), §3.2 (conjugacy), §3.4 (recovery of the minimum-shear
-  condition): **derivation holds.**
+- §3.1 (the identity `P = F·Δu`) and §3.2 (conjugacy): **derivation holds.**
+- §3.4 (minimum-shear): **derivation holds with the AM–GM ½ inserted 2026-09-05**, but the
+  claim is now weaker. `Σ ≤ 1` gives `dW/dz ≥ 2g/((L/D)V)`, which recovers the literature
+  criterion's *functional form* only; the constant is not recovered and the bound sits ~30×
+  below the observed minimum wind. **Order-of-magnitude, not exact.**
 - §3.3 (no generalisation of `q`): **the negative result, argued from the definition of `q`
   as the coefficient to which the optimum collapses.** It is an argument, not a theorem;
   making it a theorem means exhibiting a class of trajectory-dependent harvesters and
   proving no state function reproduces `sup Σ`. Not done here.
 - §4 row 3: the *identity* `Σ_EDT = V_load/V_emf` holds; **the numerical range is
   UNVERIFIED** and both Sanmartín reviews and the 2024 *Acta Astronautica* review were
-  **NOT OBTAINED**. The albatross `L/D = 20` is likewise **UNVERIFIED**.
+  **NOT OBTAINED**.
+- §4 row 1: the albatross `L/D` is **no longer UNVERIFIED** — 21.2, VERIFIED-SECONDARY from
+  Richardson (2015) quoting Pennycuick (2008), fetched 2026-09-05. Pennycuick's own book was
+  not obtained, so it is not VERIFIED-PRIMARY.
 - Prior art: **Greason's shear-sailing paper — RESOLVED 2026-09-03, read in full via
   ar5iv.** It **does** define a bounded extraction efficiency (Eq. 11: `η_ext`, useful power as a
   fraction of the ISM kinetic-energy loss, with `η_ext < 1`, `η_acc < 1`). So the *concept of a
@@ -326,3 +380,29 @@ branch has no figure of merit" to "the momentum branch has `Σ`, and the open pr
 whether `sup Σ` admits any coefficient representation."
 
 See [[kedem-caplan]] and [[what-closes-a-gap]].
+
+---
+
+## Corrections 2026-09-05
+
+Source for all four: `audits/01-math-physics.md` (items 15, 16, 17 and priority actions 4-7);
+backlog rows A4-A7.
+
+| # | What was wrong | What it is now | Why |
+|---|---|---|---|
+| A4 | `Σ_sail = 2v/c` | **`Σ_sail = v/c`** = 1.0007×10^-4 for IKAROS | (2) with `Δu = c` gives `Σ = Fv/(Fc) = v/c`; `F` cancels. The 2 belongs to the *force* of a perfect mirror (`F = 2ΦA/c`, reflected-photon bookkeeping), where it appears in numerator and denominator alike. Justified and then dropped, per the audit's either/or |
+| A4 | IKAROS row denominator = incident flux `Φ·A` = 2.67×10^5 W, Σ = 1.3×10^-4, "closed form 2×10^-4 agrees" | denominator = `F·c` = 1.12×10^-3 × 2.9979×10^8 = **3.36×10^5 W**; `P` = 33.6 W; **Σ = 1.00×10^-4** | `Φ·A` is not `F·Δu`. For a perfect mirror `ΦA = Fc/2`, so the old row was low by 2 while the old closed form was high by 2 - a 60% mismatch presented as agreement. Row and closed form now agree **exactly**, by construction |
+| A5 | `Σ_drag = V/Δu`, **max 1/3** at `V = Δu/3` | `Σ_drag = V/Δu ∈ [0,1]`, monotone, no stationary point | `V = Δu/3` maximises extracted **power** `P ∝ (Δu−V)²V` (`Cp = 4/27`), a different objective. A power optimum is not a ceiling on Σ |
+| A5 | §5 item 1: "reproduces all four" known results | **three** | Deleting the 1/3 bound removes one recovered bound; the soaring case is demoted from exact to order-of-magnitude (A6). Two exact (tether, sail), one order-of-magnitude (soaring), one expression-but-not-a-bound (drag) |
+| A6 | `P_available = m V²(dW/dz)` | **`½ m V²(dW/dz)`** = 2.40 kW (was 4.8 kW) | `ż` and `v_x` are components of one airspeed vector: `ż² + v_x² ≤ V²`, so `ż v_x ≤ V²/2` by AM-GM. The old form set both to `V` at once |
+| A6 | eq. (3) `Σ_soar = g/((L/D)V dW/dz)` | **`2g/((L/D)V dW/dz)`**; `Σ ≤ 1` is `dW/dz ≥ 2g/((L/D)V)` | Follows from the ½ |
+| A6 | "§3.4 reproduces the field's own criterion" | **functional form only, to within an order of magnitude** | `2g/(21.2 × 15.5) = 0.0597 s^-1`, i.e. ~0.12 m/s across the 2 m layer, against the ~3.6 m/s minimum wind Richardson (2015) obtains. Loose by ~30x, as a ceiling should be. The old exact-looking match at coefficient 1 was an artefact of the 2x-too-generous `P_available` |
+| A7 | albatross `L/D = 20`, **UNVERIFIED** | **21.2**, VERIFIED-SECONDARY | Richardson (2015), *Prog. Oceanogr.* 130:146, [PDF](https://www2.whoi.edu/staff/prichardson/wp-content/uploads/sites/75/2018/11/Richardson-2015-PinO-upwind.pdf), fetched 2026-09-05, quoting Pennycuick (2008) |
+| A6+A7 net | `Σ_albatross ≈ 1.5×10^-2` | **`≈ 2.8×10^-2`** | `68.14 / 2396.5`. The ½ raises it 2x; the L/D change lowers it by 20/21.2. At the old L/D = 20 it would be 3.0×10^-2, the audit's predicted value |
+
+**Not done.** Sachs (2005), *Ibis* 147:1-10, the paper the backlog named first for the L/D, is
+paywalled (Wiley returned HTTP 403, 2026-09-05) and Pennycuick (2008) is a book that was not
+obtained - hence VERIFIED-SECONDARY rather than PRIMARY. The soaring minimum-shear comparison
+uses Richardson's Rayleigh-cycle minimum wind (3.6 m/s) rather than Sachs's own criterion, so
+the "~30x loose" figure is indicative, not a matched-object comparison. The tether range
+0.3-0.7 remains UNVERIFIED (§6, unchanged by this pass).

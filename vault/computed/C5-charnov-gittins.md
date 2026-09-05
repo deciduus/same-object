@@ -19,6 +19,14 @@ Closes — or rather, supplies the missing object for — [[G28-marginal-value-g
 [[what-closes-a-gap]] the requirement was a theorem, not a review. This is the theorem, with
 the failure boundary stated.
 
+**Novelty, after the 2026-09-05 kill-check: NOVEL, and "appears" now carries less weight.**
+The two books the novelty audit named as the only live falsifiers were reached at index level
+and neither contains the crossing vocabulary (§11). The closest thing to a prior statement
+found anywhere is an explicit *denial* — Kilpatrick, Davidson & El Hady state that patch
+foraging and the bandit "are still different decision problems". Full texts of Houston &
+McNamara (1999), Gittins–Glazebrook–Weber (2011) and Griebling et al. (2026) were **not**
+read; the claim is not unconditional. See §11 for exactly what was and was not seen.
+
 ---
 
 ## 1. Setup and notation
@@ -432,9 +440,167 @@ rate]` is argued from the structure of the sup over stopping times but **is not 
 generality**; making it a theorem with a computable bonus for a specific posterior family
 (Beta–Bernoulli patches, say) is the obvious next computed note.
 
-Two things could still falsify the novelty claim, both books that could not be obtained:
-Houston & McNamara (1999) and Gittins–Glazebrook–Weber. Until one of those is read, this is
-**a theorem that is correct and appears to be unwritten**, with "appears" carrying its full
-weight.
+The two books that could falsify the novelty claim — Houston & McNamara (1999) and
+Gittins–Glazebrook–Weber (2011) — were pursued on 2026-09-05 and reached at index level but not
+read in full (§11). Neither shows the crossing vocabulary. The remaining unread item is
+Griebling et al. (2026), the one document known to cite Charnov 1976, Gittins 1979 *and* the
+Gittins book together; its abstract is an empirical raccoon study, not a theorem. This is
+**a theorem that is correct and appears to be unwritten**, with "appears" now resting on three
+unread full texts rather than two unobtained books.
 
 See [[G28-marginal-value-gittins]] and [[what-closes-a-gap]].
+
+---
+
+## 11. Prior-art check 2026-09-05
+
+Ran under BACKLOG row E3, `audits/05-scope-strategy.md` item 2. **Verdict: NOVEL.** No source
+found anywhere states, or computes, that Charnov's `R*` is the Gittins index of the outside
+option. Adversarial standard applied: a bandit treatment of foraging that *identified* patch
+residence with an index policy would have counted even without the word "Charnov". None does.
+
+### 11.1 Queries run, and the top relevant hits
+
+WebSearch, all 2026-09-05:
+
+| # | Query | Top relevant hits |
+|---|---|---|
+| 1 | `"marginal value theorem" "Gittins index"` | Wikipedia MVT; Wikipedia *Gittins index*; Berkeley and Bonn lecture notes; arXiv:1911.07773 *Optimal Search and Discovery*. **No hit joins the two.** |
+| 2 | `"Charnov" "Gittins" patch leaving index equivalence` | arXiv:1904.04732 (UCB↔Gittins, no foraging); [Behav. Ecol. 11(6):577](https://academic.oup.com/beheco/article/11/6/577/221357); [bioRxiv 2024.10.28.620618](https://www.biorxiv.org/content/10.1101/2024.10.28.620618.full.pdf); [Entropy 28(8):875](https://www.mdpi.com/1099-4300/28/8/875). None state it. |
+| 3 | `McNamara 1982 "potential" optimal patch use stochastic environment Gittins index equivalent` | [McNamara 1982, *Theor. Popul. Biol.* 21:269](https://sciencedirect.com/science/article/abs/pii/0040580982900181); Oaten 1977; [arXiv:2004.10671](https://arxiv.org/pdf/2004.10671). No Gittins linkage surfaced. |
+| 4 | `"optimal foraging" "multi-armed bandit" "index policy" patch residence` | Srivastava, Reverdy & Leonard 2013 (Allerton); [Kilpatrick et al., arXiv:2004.10671](https://arxiv.org/pdf/2004.10671); [PNAS 10.1073/pnas.2216524120](https://www.pnas.org/doi/10.1073/pnas.2216524120). Bandits *used for* foraging; no index identity. |
+| 5 | `"Whittle index" foraging patch regrowth restless bandit ecology` | Only OR papers (arXiv:2008.06111; arXiv:2403.10638; Liu–Weber–Zhao 2011). **Zero ecological applications of the Whittle index found.** This is E4's open ground. |
+| 6 | `"patch leaving" "Gittins index" equivalence forager threshold` | [J. R. Soc. Interface 18:20210337](https://royalsocietypublishing.org/rsif/article/18/180/20210337/89925); [PLoS Comput. Biol. 15:e1007060](https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1007060); [Entropy 28(8):875](https://www.mdpi.com/1099-4300/28/8/875). Threshold rules derived; never called an index. |
+| 7 | `"marginal value theorem" "optimal stopping" index "outside option" foraging derivation` | [bioRxiv 2025.04.04.647000](https://www.biorxiv.org/content/10.1101/2025.04.04.647000v1.full); [Ecol. Model. S0304380022000564](https://www.sciencedirect.com/science/article/abs/pii/S0304380022000564) — MVT as a special case of the ideal free distribution, a *different* unification. |
+| 8 | `"giving-up time" OR "giving-up density" "bandit" index foraging theory Gittins` | Nothing joining the two literatures. |
+| 9 | `Keasar 2002 "Bees in two-armed bandit situations" Gittins index marginal value theorem` | Keasar et al. 2002 located; bandit *experiment*, no index computed, no MVT identity. |
+| 10 | `Houston McNamara "Models of Adaptive Behaviour" contents Gittins/bandit/potential` | [Google Books JB7jUHDzQDgC](https://books.google.com/books/about/Models_of_Adaptive_Behaviour.html?id=JB7jUHDzQDgC). See §11.2. |
+| 11 | `Gittins Glazebrook Weber "Multi-armed Bandit Allocation Indices" 2011 pdf chapter 1` | [Wiley 10.1002/9780470980033](https://onlinelibrary.wiley.com/doi/book/10.1002/9780470980033) (HTTP 403); [Google Books LzSLMHfM3QgC](https://books.google.com/books/about/Multi_armed_Bandit_Allocation_Indices.html?id=LzSLMHfM3QgC). See §11.2. |
+| 12 | `Griebling 2026 Animal Behaviour foraging bandit Gittins Charnov` | [10.1016/j.anbehav.2026.123491](https://doi.org/10.1016/j.anbehav.2026.123491). See §11.3. |
+
+OpenAlex `fulltext.search` (api.openalex.org, mailto set, 2026-09-05):
+
+| Query | N | Top hits |
+|---|---|---|
+| `gittins index marginal value theorem` | 390 | All OR / clinical-trial; nothing ecological in the first 15. |
+| `charnov gittins` | 43 | Cognitive and decision neuroscience (Daw et al. 2006 *Nature* 441:876; Averbeck 2015; Addicott 2017) plus Kacelnik's 1979 DPhil thesis and [Kilpatrick et al. 2020](https://doi.org/10.1101/2020.04.22.055558). **The same neuroscience-mediated topology G28 already reports.** |
+| `marginal value theorem bandit index` | 3,219 | Pure bandit literature. |
+| `foraging gittins index patch departure threshold` | **10** | Kilpatrick et al. 2020 (×2); Kacelnik 1979; assorted irrelevant theses. A ten-document universe. |
+| `optimal foraging theory dynamic allocation index gittins patch` | 42 | Daw 2008; Averbeck 2015; Addicott 2017; Kilpatrick 2020 — the neuroscience bridge again. |
+
+Crossref: the reference list of `10.1016/j.anbehav.2026.123491` was retrieved and grepped
+(2026-09-05). Semantic Scholar `graph/v1/paper/search` returned **HTTP 429** on both attempts
+and was not usable this session.
+
+### 11.2 The two books
+
+**Houston & McNamara (1999), *Models of Adaptive Behaviour*, Cambridge.**
+
+- archive.org holds it as `modelsofadaptive0000hous`
+  ([details](https://archive.org/details/modelsofadaptive0000hous)). The item is
+  **lending-restricted**: `_djvu.txt` returns HTTP 403, and the BookReader search-inside
+  endpoint (`/fulltext/inside.php`, with the path taken from the item's own `searchInsideUrl`
+  template) returns *Bad Request* for every query. `api.archivelab.org/books/.../searchinside`
+  returns empty. **Full text NOT obtained.**
+- Google Books `JB7jUHDzQDgC`: the *common terms and phrases* list — Google's frequency index
+  over the whole scanned text — reads: action, analyse, animal, assume, best response, bird,
+  breeding season, brood, choice, clutch, cohort members, context, convergence, cycle,
+  decision, dynamic games, dynamic programming, energetic gain, energy reserves, environment,
+  evolutionary, fitness, foraging options, Hawk-Dove game, intake rate, life-history strategy,
+  Nash equilibrium, optimal behaviour, optimal strategy, optimisation, predation risk,
+  reproductive value, risk-sensitive, state-dependent, stochasticity, terminal reward.
+  **No "Gittins", no "bandit", no "index", no "Charnov", no "marginal value".** The book's
+  high-frequency vocabulary is state-dependent dynamic programming, not patch-use theory —
+  which is why it was always a weaker threat than G28 assumed.
+- **Status: not falsified, not fully excluded.** A single sentence below Google's frequency
+  cutoff could still exist. Downgraded from "the most likely hiding place" to "unlikely".
+
+**Gittins, Glazebrook & Weber (2011), *Multi-armed Bandit Allocation Indices*, 2nd ed., Wiley.**
+
+- The Wiley book page `10.1002/9780470980033` returns HTTP 403; Crossref holds the monograph
+  record with **0 references deposited**, so a reference-list grep is impossible.
+- Google Books `LzSLMHfM3QgC` common terms and phrases, verbatim: allocation, alternative
+  bandit processes, arrivals, Bernoulli reward process, bound, branching bandits, conjugate
+  prior, continuation control, continuous-time, discount factor, discounted reward,
+  discrete-time, dynamic programming, expected reward, exponential distribution, FABP, family
+  of alternative, forwards induction policy, Gittins index, Gittins index policy, index
+  theorem, index values, job types, Lagrangian relaxation, machine, Markov decision processes,
+  modified forwards induction, multi-armed bandit problem, Niño-Mora, normal reward process,
+  optimal policy, precedence constraints, prior distribution, queue, restless bandits,
+  sampling process, scheduling, semi-Markov, server, SFABP, simple family, standard bandit
+  process, stochastic, stopping, sufficient statistic, superprocess, supremum, switching,
+  target process, undiscounted, Whittle index.
+  **No "foraging", "Charnov", "animal", "ecology" or "marginal value".** The applied chapters
+  are clinical trials, scheduling, queueing and website design.
+- **Status: not falsified, not fully excluded.** Same frequency-cutoff caveat.
+
+**Stephens & Krebs (1986), *Foraging Theory*** — not named in the E3 brief but the third
+candidate. archive.org `foragingtheory0000step` is likewise lending-restricted. Google Books
+`DVxvu-qDsaIC` common terms include *Charnov*, *marginal-value theorem*, *patch residence*,
+*patch depression*, *dynamic programming*, *Houston*, *McNamara*, *Kacelnik* — and **no
+"Gittins", no "bandit", no "index"**. The same asymmetry, seen from the ecology side.
+
+### 11.3 The adjacent literature, checked one by one
+
+| Source | What was actually done | Does it state MVT = Gittins? |
+|---|---|---|
+| Kacelnik (1979), DPhil thesis, *Studies of foraging behaviour and time budgeting in great tits* ([ORA, full PDF extracted](https://ora.ox.ac.uk/objects/uuid:8155d6b1-2df4-4e13-987d-a4d3b1ee3b68), 420 kB of text) — the source behind **Krebs, Kacelnik & Taylor 1978** | Full text grepped this session. Chapters 6–8 are entirely two-armed-bandit: Thompson 1933, Bellman, Jones 1975/1976, Wahrenberger 1977, DeGroot. Solved by **dynamic programming**, not by an index. **Zero occurrences of "Gittins" or "dynamic allocation".** | **No.** Bandits used for *sampling*, never for patch residence. The 1978 *Nature* lineage is a genuine near-miss that missed. |
+| McNamara & Houston (1985), *Optimal foraging and learning*, *J. Theor. Biol.* 117:231 ([PDF](https://paulseabright.com/wp-content/uploads/2014/08/optimal_foraging.pdf)) | Full text extracted and grepped. Names the two-armed bandit explicitly — "This procedure corresponds to the two-armed bandit problem of decision theory" — **and** MVT in the same paper, and even states MVT's circularity: `γ*` "can only be achieved by behaving optimally". **Zero occurrences of "Gittins" or "index".** | **No.** Both halves in one paper, no connection drawn — the *same* structure as Averbeck 2015. This strengthens G28 rather than threatening it. |
+| Kilpatrick, Davidson & El Hady, *Normative theory of patch foraging decisions* ([arXiv:2004.10671](https://arxiv.org/pdf/2004.10671)) — **the C5 note's outstanding "abstract only" entry, now read in full** | Full text extracted and grepped. **"Gittins" appears exactly once, in reference [60]: Banks & Sundaram, *Switching costs and the Gittins index*.** The body devotes a subsection, *Patch foraging as modified multi-armed bandit*, to the comparison, and concludes the opposite of C5. | **No — it explicitly denies it.** Verbatim: *"as formulated these are still different decision problems"*. It gets as far as "patch foraging is fairly well described by a non-stationary bandit with … switching costs" and stops — no index, no MVT identity. **This is the strongest prior art found, and it is a denial.** |
+| Averbeck (2015), *Theory of choice in bandit, information sampling and foraging tasks* | Already read in full under G28. Names Gittins and MVT separately. | **No.** |
+| Geana, Wilson, Daw & Cohen (2016) | Already read in full. | **No.** |
+| Srivastava, Reverdy & Leonard (2013), *On optimal foraging and multi-armed bandits*, Allerton | Already read in full under G28: never mentions Gittins. Imports foraging *framing* into bandit regret analysis; the direction is OR→biology. | **No.** |
+| Keasar et al. (2002), *Bees in two-armed bandit situations* | Located; a behavioural two-armed-bandit experiment on bumblebees. No index computed, no patch-residence identity. | **No.** |
+| Mangel & Clark (1988), *Dynamic Modeling in Behavioral Ecology*; Stephens & Krebs (1986) ch. on patch use | Books, not obtained. Stephens & Krebs checked at index level (§11.2): no Gittins, bandit or index. Mangel & Clark **not checked** — it is stochastic dynamic programming, which subsumes the index without naming it. | **Unknown; low risk.** |
+| Griebling, Johnson & Benson-Amram (2026), *Raccoons optimally forage for information*, *Anim. Behav.*, [10.1016/j.anbehav.2026.123491](https://doi.org/10.1016/j.anbehav.2026.123491) | Crossref reference list retrieved 2026-09-05: it cites **Charnov 1976** (`bib16`), **Gittins 1979** (`bib34`) *and* **Gittins–Glazebrook–Weber 2011** (`bib35`) — the only document known to cite all three. Abstract retrieved via OpenAlex. Full text **NOT obtained**: ScienceDirect HTTP 403, no repository copy, no Europe PMC record. | **Almost certainly no.** The abstract is an empirical multi-access-puzzle-box study of captive raccoons; the Gittins citations sit in an explore/exploit background frame. But this is the one live unread threat, and it should be read if a preprint or ILL copy appears. |
+| Scully & Terenin (2025), *The Gittins Index: A Design Principle for Decision-Making Under Uncertainty*, INFORMS TutORials ([arXiv:2506.10872](https://arxiv.org/pdf/2506.10872)) | Full text extracted: 165 kB, **240 occurrences of "Gittins"**, and **zero occurrences of "foraging", "Charnov" or "marginal value"**. | **No** — and as the current state-of-the-art survey of the index, its silence is the cleanest single measurement of the gap from the OR side. |
+| Jacko (2019), *The Finite-Horizon Two-Armed Bandit Problem … A Multidisciplinary Survey* ([arXiv:1906.10173](https://arxiv.org/pdf/1906.10173)) | Full text extracted. **Zero occurrences of "foraging", "Charnov", "ecology" or "animal"** — in a survey that advertises itself as multidisciplinary. | **No.** |
+
+### 11.4 What could not be accessed
+
+- Full texts of **Houston & McNamara 1999**, **Gittins–Glazebrook–Weber 2011** and
+  **Stephens & Krebs 1986** — archive.org lending restriction (HTTP 403 on the text
+  derivative; the search-inside endpoint returns Bad Request); Wiley HTTP 403. Index-level
+  check only.
+- Full text of **Griebling et al. 2026** — ScienceDirect HTTP 403, no OA repository copy.
+- **Mangel & Clark 1988** — not attempted beyond search.
+- **Semantic Scholar API** — HTTP 429 on every call this session.
+- **Google Books API** — daily quota exhausted for this IP; the two term lists above came from
+  the public `books.google.com/books/about/` pages, not the API.
+- **HathiTrust** full-text search — HTTP 403.
+
+### 11.5 Consequence for the standing
+
+`G28` stays **narrowed** and the identity stays **NOVEL**. The E3 caveat changes shape: it is
+no longer "two unobtained books, either of which could falsify this" but "three unread full
+texts, all three of which look the wrong shape to contain the claim, one of which
+(Griebling 2026) cites all three anchors and should be read when it becomes obtainable."
+
+---
+
+## 12. What E4 must do
+
+Ten lines, written from what §11 found, so the next agent does not re-litigate novelty.
+
+1. **Do not re-run the prior-art check.** §11 settled it. E4 is a derivation, not a survey.
+2. **The ground is empty, and that is the point.** Query 5 in §11.1 found *zero* ecological
+   applications of the Whittle index. E4 is not competing with anyone.
+3. **Start from §6 row 5**, patch regrowth — the only break that is a *heuristic* failure
+   rather than a structural one. Rows 6 and 7 are dead ends: Banks–Sundaram and
+   non-stationarity admit no index at all.
+4. **Model**: patch resource `x(t)` regrowing at rate `r` (logistic or exponential) while
+   passive, depleting at `g'` while active; the forager activates one patch out of `N`.
+5. **Prove or disprove indexability first**, in Whittle's sense, before quoting any index
+   value. An indexability *failure* located at a named parameter is a publishable result here.
+6. **Deliver a number, not a restatement.** The exit condition from
+   `audits/05-scope-strategy.md` item 3: a giving-up density `GUD(r)` or residence time
+   `t*(r)`, with `r` free, reducing to Charnov's `R*` as `r → 0`.
+7. **Check the `r → 0` limit against Eq. (4).** If it does not reduce to `max_t g(t)/(τ+t)`,
+   the restless model is wrong — not MVT.
+8. **Sign the prediction.** Regrowth should make the outside option worth *more* than a
+   never-revisited fresh patch only if patches are revisitable; if they are not, regrowth
+   raises `R*` and shortens residence. State which sign the Whittle index gives, and why.
+9. **Name a dataset before deriving**, per the audit: nectar standing-crop or GUD-tray
+   studies, where `r` is measured independently. Without a named dataset E4 is Layer 2, not
+   Layer 3.
+10. **Write it in `C24`/`C25`, not here.** C5 is the identity; E4 is the transfer across it.

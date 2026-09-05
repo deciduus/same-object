@@ -19,8 +19,10 @@ type: computed
 
 The narrow-question build requested by [[Q7-same-class-prediction]]: assemble same-class
 persistent inter-method disagreements (two or more implementations of *one* technique) and
-record how each resolved. This is the bias-immune complement to [[C7-discrepancy-catalogue]] and
-the live anchor is [[fine-structure-discrepancy]]. Every outcome below was fetched this session;
+record how each resolved. This is the complement to [[C7-discrepancy-catalogue]] — it is a *conditional*, so it needs a
+counterexample rather than a denominator, but that is not the same as being immune to bias (see
+the verdict's interval, and the caveat there on findability). The live anchor is
+[[fine-structure-discrepancy]]. Every outcome below was fetched this session;
 `as-of 2026-09-03`.
 
 **Class rule, applied before outcome (per Q7 / [[G9-discrepancy-base-rate]] feature 1).**
@@ -140,6 +142,133 @@ conditional is thinnest.
 
 ---
 
+## The decision procedure (A20) and the pre-registered assignments (A21)
+
+The class assignment carried a post-hoc degree of freedom, and it was exercised in the direction
+that protects the conditional (`audits/01-math-physics.md`: solar neutrinos and lattice-vs-
+dispersive g−2 both land as *different*-class; the redshift counterexample is excluded by an
+inclusion rule that appears only after the hunt). The fix is to state the rule as a procedure
+with named inputs, then apply it blind.
+
+### The procedure
+
+**Inputs, in this order. Read all three off the *methods* section, never off the result.**
+
+1. **A — apparatus.** The physical (or, for a calculation, computational) measurement principle
+   whose systematic-error budget the two determinations share. Granularity: the level at which a
+   single mis-modelled effect would bias *both* determinations the same way. "Torsion balance",
+   "atom-recoil interferometry", "NaI(Tl) scintillator", "Monte-Carlo integration of a fixed
+   diagram set".
+2. **O — observable.** The quantity read out *before* any model inversion. The interference-fringe
+   frequency, not α. The Ge atom count, not the neutrino flux. Two different atomic transitions
+   are two different observables.
+3. **P — analysis pipeline.** The model chain from raw signal to the reported number:
+   subtraction/renormalisation scheme, template or line-shape model, calibrator set, bias
+   corrections.
+
+**Output — class id = the triple (A, O, P), graded:**
+
+| Grade | Condition | Treatment |
+|---|---|---|
+| **CLASS-I** | A, O and P all match | **SAME-CLASS.** The conditional is tested on these and only these. |
+| **CLASS-II** | A and O match, P differs | Same apparatus, different analysis. Reported separately; does not enter the headline tally. |
+| **CLASS-III** | A or O differs | **DIFFERENT-CLASS.** Excluded from the conditional entirely. |
+
+**Standing exclusion (pre-existing, restated so it is part of the procedure rather than a
+post-hoc patch):** a difference that is a *known, computed correction applied before* the residual
+is quoted — the gravitational redshift between two clocks at different heights being the type case
+— is not a disagreement at all and never enters the catalogue, whatever its (A, O, P).
+
+### Pre-registered assignments, 2026-09-05
+
+Applied to the 7 OPEN rows (1, 3, 4, 7, 21, 22, 23) and the 4 `‡` ambiguous rows (4, 8, 21, 24)
+— nine distinct rows — **from apparatus, observable and pipeline alone, before consulting the
+outcome column.** Recorded with a `sha256` in [[predictions]].
+
+| Row | Dispute | A | O | P | **Grade** |
+|---|---|---|---|---|---|
+| 1 | α, Berkeley Cs vs LKB Rb | atom-recoil interferometry | photon-recoil frequency (h/m) | h/m → α via Rydberg + mass ratios | **CLASS-I** |
+| 3 | tenth-order QED A₁⁽¹⁰⁾ | MC integration of the same diagram set | the coefficient A₁⁽¹⁰⁾ | **differs** — AHKN and Volkov use different subtraction/parametrisation schemes | **CLASS-II** |
+| 4 | G, HUST | same torsion balance, same lab | **differs** — swing period vs angular acceleration | differs (different dynamical model) | **CLASS-III** |
+| 7 | H 1S–3S, MPQ vs LKB | optical two-photon H spectroscopy | the 1S–3S transition frequency | line-shape fit + QED inversion, same chain | **CLASS-I** |
+| 8 | electronic-H proton radius | optical/microwave H spectroscopy | **differs** — 2S–4P, 1S–3S and 2S–2P are three observables | common QED inversion to r_p | **CLASS-III** |
+| 21 | W mass, CDF II vs D0 | hadron-collider general-purpose detector | W → ℓν transverse-mass spectrum | template fit, same chain | **CLASS-I** |
+| 22 | DAMA vs COSINE-100 / ANAIS-112 | NaI(Tl) scintillator | annual modulation amplitude of the low-energy rate | modulation fit, same chain | **CLASS-I** |
+| 23 | ⁷¹Ga, GALLEX / SAGE / BEST | radiochemical ⁷¹Ga → ⁷¹Ge extraction and counting | ⁷¹Ge production rate | cross-section + source-strength inversion | **CLASS-I** |
+| 24 | Hubble Wars, Sandage vs de Vaucouleurs | Cepheid-anchored photometric distance ladder | Cepheid and secondary-indicator magnitudes | **differs** — calibrator selection and Malmquist-bias treatment | **CLASS-II** |
+
+**Two assignments change, and both change against the conditional's interest** — which is the
+point of applying the rule blind:
+
+- **Row 4 (G, HUST)** was same-class `‡`; the procedure makes it **CLASS-III**, because the two
+  modes read out different observables (period vs angular acceleration). It is OPEN, so no tally
+  moves.
+- **Row 8 (electronic-H r_p)** was same-class `‡`; the procedure makes it **CLASS-III**, because
+  three different transitions are three different observables. It is **CLOSED (SYSTEMATICS)**, so
+  adopting the procedure drops the closed tally **17 → 16** (15 SYSTEMATICS + 1 FLUCTUATION,
+  still 0 NEW-PHYSICS) and loosens the 95% upper bound **0.16 → 0.17**.
+
+### The blind re-application to all 24 rows (A20)
+
+The procedure was then run over **all 24 rows plus the three excluded candidates**, reading only
+the apparatus / observable / pipeline columns. Rows already tabulated above keep their grade.
+
+| Row | Dispute | Why | **Grade** | Change? |
+|---|---|---|---|---|
+| 1 | α, Cs vs Rb recoil | A, O, P match | CLASS-I | — |
+| 2 | LKB Rb 2011 vs 2020 | P differs — the 2020 pipeline adds the wavefront/Gouy corrections the 2011 one lacked | **CLASS-II** | **changed** |
+| 3 | tenth-order QED | P differs — different subtraction/parametrisation | **CLASS-II** | **changed** |
+| 4 | G, HUST two modes | O differs — swing period vs angular acceleration | **CLASS-III** | **changed** |
+| 5 | Kibble / watt balances | P differs — each lab's own correction chain | **CLASS-II** | **changed** |
+| 6 | lattice HVP window, 6 groups | P differs — different actions, discretisations, scale setting | **CLASS-II** | **changed** |
+| 7 | H 1S–3S, MPQ vs LKB | A, O, P match | CLASS-I | — |
+| 8 | electronic-H r_p | O differs — three different transitions | **CLASS-III** | **changed** |
+| 9 | R(K), LHCb 2021 vs 2022 | P differs — new electron-ID / hadronic-misID treatment | **CLASS-II** | **changed** |
+| 10 | XENON1T vs XENONnT | A, O, P match (LXe TPC, low-energy ER spectrum, same chain) | CLASS-I | — |
+| 11 | Δα/α, Keck vs VLT | A, O, P match (echelle QSO absorption, many-multiplet) | CLASS-I | — |
+| 12 | primordial D/H sightlines | A, O, P match; target *selection* differs, which is sampling, not pipeline | CLASS-I | — |
+| 13 | Θ⁺(1540) | A, O, P match (invariant-mass peak search) | CLASS-I | — |
+| 14 | ν̄_e mass, ITEP vs Zürich/LANL | P differs — ITEP's energy-loss and ³He–T mass-difference modelling | **CLASS-II** | **changed** |
+| 15 | polywater | A, O, P match | CLASS-I | — |
+| 16 | N-rays | A, O, P match (visual scintillation) | CLASS-I | — |
+| 17 | element 118 | A, O, P match (same recoil separator, same decay-chain analysis) | CLASS-I | — |
+| 18 | 750 GeV diphoton | A, O, P match (same detector, same channel, same fit) | CLASS-I | — |
+| 19 | historical values of c | **A differs** — the era's optical, Kerr-cell, cavity-resonator and geodimeter methods are different apparatus | **CLASS-III** | **changed** |
+| 20 | successive CODATA adjustments | P differs — each cycle has a different input set and expansion factor | **CLASS-II** | **changed** |
+| 21 | W mass, CDF II vs D0 | A, O, P match | CLASS-I | — |
+| 22 | DAMA vs COSINE/ANAIS | A, O, P match | CLASS-I | — |
+| 23 | ⁷¹Ga sources | A, O, P match | CLASS-I | — |
+| 24 | Hubble Wars | P differs — calibrator sets and Malmquist treatment | **CLASS-II** | **changed** |
+| — | solar neutrinos (excluded) | **A differs** — radiochemical vs Cherenkov | CLASS-III | confirms existing exclusion |
+| — | lattice vs dispersive muon g−2 (excluded) | **A differs** — lattice computation vs e⁺e⁻ cross-section data | CLASS-III | confirms existing exclusion |
+| — | gravitational-redshift clocks (excluded) | standing exclusion: a known, computed correction applied before the residual is quoted | excluded regardless of (A, O, P) | confirms existing exclusion |
+
+**Count of changed assignments: 11 of 24** — 3 demoted to CLASS-III (leave the same-class set
+entirely) and 8 demoted to CLASS-II (same apparatus and observable, different analysis pipeline;
+reported separately, not in the headline tally). The three previously-excluded candidates are all
+confirmed excluded, so the procedure does *not* rescue a counterexample — but it does thin the
+evidence base substantially, in the direction that weakens the conditional.
+
+### The tally under the procedure
+
+| Set | Closed | Open | Outcomes of the closed | 95% one-sided upper bound on P(new physics) |
+|---|---|---|---|---|
+| **CLASS-I only** (rows 1, 7, 10, 11, 12, 13, 15, 16, 17, 18, 21, 22, 23) | **8** | 5 | 7 SYSTEMATICS + 1 FLUCTUATION, **0 NEW-PHYSICS** | `1 − 0.05^(1/8)` = **0.31** |
+| **CLASS-I + CLASS-II** (adds rows 2, 3, 5, 6, 9, 14, 20, 24) | **15** | 6 | 14 SYSTEMATICS + 1 FLUCTUATION, **0 NEW-PHYSICS** | `1 − 0.05^(1/15)` = **0.18** |
+| legacy assignment (this note's table) | 17 | 7 | 16 SYSTEMATICS + 1 FLUCTUATION, 0 NEW-PHYSICS | `1 − 0.05^(1/17)` = **0.16** |
+
+**This is the honest headline.** Still **no counterexample at any grade** — that survives the
+blind re-application intact, and it is the load-bearing claim. But the strict same-class set is
+**8 closed cases, not 17**, and 8 zero-out-of-8 permits a new-physics rate of up to **31%**. The
+conditional is a great deal weaker than "seventeen for seventeen" made it sound.
+
+**Caveat on this sweep.** It was run by the same agent that wrote the procedure, on the same day,
+with the outcome column visible on the page (though not consulted for the A/O/P reading). It is a
+*blind-in-intent* re-application, not an independent replication. A genuine test needs a second
+analyst who has never seen the outcomes.
+
+---
+
 ## Verdict on [[Q7-same-class-prediction]]
 
 **The conditional holds and is strengthened.** Over a same-class sample built specifically
@@ -156,6 +285,59 @@ likely place for a same-class disagreement to be real physics — returned **no 
 
 **The conditional now stands at N = 16 closed same-class cases, all systematics, zero new
 physics** (17 closed if the one fluctuation is counted, still zero new physics), with 7 open
-same-class cases as live future tests. It remains bias-immune: adding invisible same-class cases
-can only add more systematics. Related: [[C7-discrepancy-catalogue]], [[fine-structure-discrepancy]],
-[[G9-discrepancy-base-rate]].
+same-class cases as live future tests.
+
+**What 17-for-17 is actually worth — quote the interval, not the tally.** With 17 closed cases
+and zero new-physics resolutions, the **Clopper–Pearson one-sided 95% upper bound** on
+P(new physics | same class) is
+
+```
+p_upper = 1 - 0.05^(1/17) = 1 - exp(ln(0.05)/17) = 1 - exp(-2.99573/17)
+        = 1 - exp(-0.176219) = 1 - 0.838434 = 0.1616  ->  0.16
+```
+
+(inputs: n = 17 closed cases, k = 0 new-physics outcomes, one-sided 95%.) **So the data are
+consistent with a same-class new-physics rate as high as 16%** — roughly one case in six. A
+zero numerator over 17 trials is *suggestive*, not established: at a true rate of 16% the
+probability of seeing zero in 17 is exactly 5%. Under the pre-registered decision procedure below, which
+strips the same-class set down to **8 closed CLASS-I cases**, the bound loosens all the way to
+`1 - 0.05^(1/8) = 0.31`; including CLASS-II (15 closed) it is `1 - 0.05^(1/15) = 0.18`.
+
+The conditional should therefore be stated as **"P(new physics | same class) < 0.16 at 95%
+confidence"**, not as "same-class disagreements never resolve to new physics."
+
+Related: [[C7-discrepancy-catalogue]], [[fine-structure-discrepancy]],
+[[G9-discrepancy-base-rate]], [[predictions]].
+
+---
+
+## Corrections 2026-09-05
+
+Backlog A19–A21; `audits/01-math-physics.md` C16 items; `audits/03-method-epistemics.md` 19–20.
+
+1. **A19 — "17/17" now carries an interval.** Old: the verdict quoted the tally alone
+   ("N = 16 closed same-class cases, all systematics, zero new physics"). New: the
+   **Clopper–Pearson one-sided 95% upper bound** is added (inputs: n = 17 closed cases, k = 0
+   new-physics outcomes): `1 − 0.05^(1/17) = 1 − exp(−2.99573/17) = 1 − 0.838434 = 0.1616 → 0.16`.
+   The data are consistent with a same-class new-physics rate of up to **16%**. At n = 16 (if the
+   new procedure's removal of row 8 is adopted) the bound is `1 − 0.05^(1/16) = 0.171`.
+2. **A19 — bias-immunity assertion DELETED.** Old: "It remains bias-immune: adding invisible
+   same-class cases can only add more systematics." New: removed, and the framing sentence near
+   the top ("the bias-immune complement to C7") is softened. The argument fails because
+   findability of a documented *resolution* correlates with the resolution being mundane: a
+   same-class disagreement that quietly turned out to be real physics would be written up as a
+   discovery and reclassified, not filed as a resolved measurement dispute.
+3. **A21 — decision procedure written; 9 rows pre-registered.** New section states the rule as
+   inputs (apparatus, observable, analysis pipeline) → class id (CLASS-I / II / III), and applies
+   it blind to the 7 OPEN and 4 ambiguous rows. **Two assignments change, both against the
+   conditional's interest:** rows 4 and 8 become CLASS-III (different observable). Recorded with
+   `sha256` in [[predictions]].
+4. **A20 — blind re-application run over all 24 rows plus the 3 excluded candidates.**
+   Old: 24 same-class rows, 17 closed, tally 16 SYSTEMATICS + 1 FLUCTUATION + 0 NEW-PHYSICS,
+   no interval. New: **11 of 24 assignments change** — rows 4, 8, 19 → CLASS-III (different
+   apparatus or observable); rows 2, 3, 5, 6, 9, 14, 20, 24 → CLASS-II (different analysis
+   pipeline). The three excluded candidates stay excluded. Strict CLASS-I tally: **8 closed
+   (7 SYSTEMATICS + 1 FLUCTUATION), 5 open, 0 NEW-PHYSICS**, 95% upper bound
+   `1 − 0.05^(1/8) = 0.31`; CLASS-I+II: 15 closed, bound `1 − 0.05^(1/15) = 0.18`. **No
+   counterexample appears at any grade** — that survives — but the evidence base is 8 strict
+   cases, not 17. Limitation stated in the note: same-day, same-agent, blind-in-intent only.

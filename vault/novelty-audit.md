@@ -43,9 +43,9 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 | [[C1-availability-living-tissue]] | First availability figures for biological tissue (PSII 0.883, bone 0.984) | REPACKAGED | Applies textbook [[availability-formula]]; C13 confirms the *formula* is unread by biology, but the computation is a direct application | A biophysics paper having already computed PSII "availability"; only co-citation (not full-text) checked |
 | [[C2-probabilistic-safety-factors]] | Bone failure probability set by tissue, not locomotor, variability | REPACKAGED | [[stress-strength-interference]] (1967) applied to biology; the load-adaptive-strength inversion is stated as a direction, not derived | The symmorphosis P_f literature (Alexander mixed chains) — this is exactly [[G19-safety-factor-derived-twice]] |
 | [[C3-energy-error-axis]] | Every information substrate on one kT-normalized axis | REPACKAGED (+CORRECTED) | Note itself withdrew the "no such axis exists" claim ([[G8-energy-per-bit-axis]] overturned, 575 Landauer-neural papers); composed identity "may still be novel" | Landauer/Shannon composition is standard; the specific figure the only possibly-new piece |
-| [[C4-inclination-sensing-limit]] | Berg-Purcell bound for a statocyte forces cross-cell pooling; δθ_min∝1/√(MNτ), falsifiable | **NOVEL** (hedged) | ~10 queries found **no published statocyte-pooling proposal** ("NOT YET A SHARED OBJECT"); Bérut 2018 uses averaging as instrument not hypothesis | Berg-Purcell is textbook machinery; unread active-matter sensing literature; thin search |
-| [[C5-charnov-gittins]] | Charnov's R\* **is** the Gittins index of the outside option, exact identity | **NOVEL** | Fetched Wikipedia, Geana 2016, bioRxiv 2024 (rediscovers Whittle without naming Gittins), arXiv — none state it | Houston & McNamara (1999) and Gittins-Glazebrook-Weber, both **unobtained books** |
-| [[C6-damage-healing-ratio]] | Healing Damköhler number `Ha = k_r/k_d = MTBF/MTTR`, reduces to availability | **NOVEL** | Prior-art check for a named damage/healing group found none | It *is* MTBF/MTTR renamed — textbook reliability computes it constantly (unnamed); borderline REPACKAGED |
+| [[C4-inclination-sensing-limit]] | Berg-Purcell bound for a statocyte forces cross-cell pooling; δθ_min∝1/√(MNτ), falsifiable | **SPLIT** (2026-09-05): (a) M^−1/2 pooling law NOT NOVEL, textbook Berg–Purcell; (b) pooling-vs-summation model contrast LOCATED in stochastic-pooling networks (McDonnell et al. PRE 88:022118); (c) the statocyte application and the 1.73 vs 3.00 angular experiment **NOVEL (hedged)**, 16 query formulations | Search absence, not citation-intersection absence; Berg–Purcell 1977 × Blancaflor 1998 intersection not yet run | See C4 `## Prior-art check 2026-09-05` |
+| [[C5-charnov-gittins]] | Charnov's R\* **is** the Gittins index of the outside option, exact identity | **NOVEL** (E3 kill-check 2026-09-05, held) | 12 web queries + 5 OpenAlex full-text queries; full texts of Kacelnik 1979 thesis, McNamara & Houston 1985, Kilpatrick et al. 2020, Scully & Terenin 2025, Jacko 2019 extracted and grepped — **none state it**. Both books reached at Google Books term-index level: H&M 1999 has no "Gittins"/"bandit"/"index"/"Charnov"; Gittins-Glazebrook-Weber has no "foraging"/"Charnov"/"animal". Strongest prior art is an explicit **denial** — Kilpatrick et al.: "as formulated these are still different decision problems" | No longer the two books. Three **unread full texts**: H&M 1999, Gittins-Glazebrook-Weber 2011 (both archive.org/Wiley 403), and **Griebling et al. 2026** ([10.1016/j.anbehav.2026.123491](https://doi.org/10.1016/j.anbehav.2026.123491)), the only document known to cite Charnov 1976 + Gittins 1979 + the Gittins book — abstract is empirical, full text SD 403. See C5 §11 |
+| [[C6-damage-healing-ratio]] | Healing Damköhler number `Ha = k_r/k_d = MTBF/MTTR`, reduces to availability | **REPACKAGED** (downgraded 2026-09-05, was NOVEL) | `1/Ha` is the offered load ρ of an M/M/1/1 loss system; `A = Ha/(1+Ha)` is the Erlang-B blocking complement (C6 §1.1) | What survives: no source applies the group to damage/repair or spans biology and engineering on one axis — an axis-construction contribution, not a new group |
 | [[C7-discrepancy-catalogue]] | 39 inter-method disagreements tallied; fraction explicitly not a base rate | REPACKAGED | Assembled from known resolved cases; the selection-bias analysis is the contribution | Bailey 2017 (magnitudes); the surviving finding is the conditional, which lives in C16 |
 | [[C8-momentum-harvesting-metric]] | Σ = P/(F·Δu)∈[0,1] spans soaring, sails, tethers; reproduces min-shear | REPACKAGED (+CORRECTED) | Identity P=−F·Δu is textbook; each special case (2v/c, V/Δu≤1/3) known; corrected gap-note's "sail has no conjugate pair" | **RESOLVED 2026-09-03**: Greason read in full — it has a bounded shear-extraction efficiency (η_ext<1), so the *concept* is not ours; but Σ's bilinear form and cross-branch span are ABSENT there. Confirms REPACKAGED, not a straight rediscovery |
 | [[C9-moving-coupling-point]] | Moving coupling point doesn't beat q; it's a Péclet number = thermoacoustics | **REDISCOVERED** | Note self-classifies "CLOSED three times over": Bezsudnov-Snarskii 2014 found the Péclet parameter; Proesmans-Van den Broeck 2015; Stirling 1816 | Fully known — thermoacoustics is a mature discipline scoring itself in % of Carnot |
@@ -116,7 +116,13 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
    costs, non-stationarity — the three places the bandit theorem is *known* to break, mapping onto
    three known foraging complications). Survived a full-text prior-art sweep; a 2024 bioRxiv paper
    independently rediscovers the same threshold *without ever naming Gittins*, which is positive
-   evidence the gap is real. The single strongest result in the project.
+   evidence the gap is real. **Re-checked adversarially on 2026-09-05 under backlog row E3 and it
+   held** (C5 §11): the closest prior statement anyone has published is a *denial* — Kilpatrick,
+   Davidson & El Hady, having compared patch foraging with the bandit directly, conclude "as
+   formulated these are still different decision problems". Two more near-misses were added by
+   that sweep: Kacelnik's 1979 thesis solves the foraging bandit by dynamic programming with zero
+   occurrences of "Gittins", and McNamara & Houston 1985 names the two-armed bandit *and* MVT's
+   circularity in one paper without connecting them. The single strongest result in the project.
 2. **[[C16-same-class-catalogue]] / [[Q7-same-class-prediction]] — same-class disagreements resolve
    to systematics, never new physics.** Bias-immune (a conditional with no surviving counterexample,
    so the denominator cannot hurt it), purpose-built sample of 24, and it makes a dated falsifiable
@@ -152,7 +158,7 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 
 ## The honest tally
 
-- **NOVEL: 4** — C5 (strong), the C16/Q7 same-class conditional, C6, C4 (both hedged).
+- **NOVEL: 3** — C5 (strong; survived a 17-query kill-check 2026-09-05, see C5 §11), the C16/Q7 same-class conditional (now 8 strict cases under a blind class rule, bound 0.31), C4 part (c) (hedged). **C6 downgraded to REPACKAGED 2026-09-05** (Erlang-B).
 - **REPACKAGED: ~20** — C1, C2, C3, C7, C8, C10, C11, C12, C13, C14, C17, C18, C19, C20; the reservoir- and information-audit instruments; specification-instruments; positive-controls/quantification filter; Q9.
 - **REDISCOVERED: 2** — C9 (thermoacoustics + Bezsudnov-Snarskii 2014); kedem-caplan (in active use).
 - **LOCATED: ~20** — five theorem-bridges (availability, stress-strength, Hill-number, Kirkwood, LaMSA) plus the live/narrowed gaps G1-G7, G9, G11, G12, G17, G19, G21-G25, G28, and the C15 non-constructibility result.
@@ -178,7 +184,9 @@ not a body of new physics.
 "Novel" here means **unwritten in sources we could reach**, nothing stronger. This audit is blind to:
 paywalled full texts; unread books named repeatedly as the most likely hiding places (**Houston &
 McNamara, *Models of Adaptive Behaviour*, 1999** and **Gittins-Glazebrook-Weber, *Multi-armed Bandit
-Allocation Indices*** — both unobtained, either of which could falsify C5's novelty); and
+Allocation Indices*** — *E3 update 2026-09-05: both were pursued and reached at Google Books
+term-index level, neither shows the crossing vocabulary; full texts still unread, and the live
+threat to C5 is now Griebling et al. 2026, not the books — see C5 §11*); and
 **non-citing parallel derivations**, which citation intersection cannot see by construction (the exact
 mechanism by which [[kedem-caplan]] was a rediscovery all along, and Morrison-Osterle 1965 sat
 invisible). Every NOVEL grade above should be read as "appears unwritten in what we reached," with

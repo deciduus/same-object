@@ -9,16 +9,23 @@ type: computed
 > first time as parameterised constants, the stress-strengthening analogues of toxicology's
 > hormesis numbers. The result depends decisively on **which response you fit**, and that
 > dependence is itself the finding:
-> - **Amplitude ceiling — fatigue STRENGTH (endurance limit):** ≈ **+80%** (AA 7075, 275 → 500
->   MPa, VERIFIED); ≈ **+20–30%** for AISI 4140 via Basquin conversion. This **straddles /
->   modestly exceeds** biology's **30–60%**.
+> - **Amplitude ceiling — fatigue STRENGTH:** ≈ **+82%** for AA 7075 (275 → 500 MPa, VERIFIED)
+>   — a *measured endurance limit*, and the **best of two doses**, not a fitted ceiling;
+>   ≈ **+18–25%** for AISI 4140 as a **σ'_f-equivalent ESTIMATE** via Basquin conversion (a
+>   different axis — see §4). AA 7075's +82% **exceeds** biology's **30–60%**; the 4140
+>   σ'_f-equivalent estimate sits below it. The two do not straddle a common band because they
+>   are not on a common axis.
 > - **Amplitude ceiling — fatigue LIFE (cycles):** ≈ **+400% to +800%** (AISI 4140, VERIFIED).
 >   Far above biology — because life is strength passed through a steep power law (Basquin),
 >   exactly as organismal lifespan hormesis amplifies a small physiological gain.
-> - **Window width:** ≥ **15×** read straight off the data (all coverages 100–1500% stay above
->   baseline), **≈ 73×** from the fitted biphasic curve's zero-equivalent span. This **meets or
->   exceeds** biology's **10–20×**.
-> - **Peak/optimum:** coverage ≈ **400–660%** (medium-carbon steel, rotating bending).
+> - **Window width: not measured.** The tested dose range, all doses beneficial, spans **15×**
+>   (100–1500% coverage) — that is an experimental-design artifact (the ratio of the extreme
+>   *tested* doses), not a window, and it is **not** compared against biology's 10–20×. Refitting
+>   with a physically admissible form (`Nf = N₀(1 + a·c·e^{−bc})`, §3) shows the curve approaches
+>   baseline only **asymptotically**, so **no finite two-sided window exists under this form and
+>   the data constrain no window at all**. Only a one-sided descending-limb statement survives.
+> - **Peak/optimum:** measured maximum at coverage **400%** (44 MPa) / **1000%** (37 MPa); the
+>   admissible fit puts the optimum at ≈ **770%** (leave-one-out range 700–1140%).
 >
 > **Verdict: NARROWS G23, strongly, toward partial closure.** The parameterised biphasic curve
 > is now written down with fitted constants. Matched on response axis, engineering's ceiling and
@@ -155,25 +162,59 @@ Held-out check at 1000% (x = 3.000): predicts y = 11.504, Nf = 99,100 vs actual 
 +10%, acceptable given the flat plateau. **Ceiling (life):** 105,800/19,113 = 5.53× = **+453%**
 above baseline, consistent with the raw peak of +405%.
 
-**Window width (life axis).** In vertex form `y = 11.5694 − 1.9724·(x − 2.8177)²`. The
-zero-equivalent dose (ZED) is where the curve returns to baseline `y = ln 19,113 = 9.8583`:
+**Window width — refit with a physically admissible form.** The log-quadratic above is fitted
+only near the peak; extrapolated it predicts `Nf` *below baseline* for coverage < 77%, i.e. that
+light peening is harmful, which contradicts the definition `Nf → N₀` as coverage → 0. A symmetric
+parabola in log-dose cannot have that asymptote. So the window is refitted on the form the audit
+specifies, which does:
 
 ```
-1.9724·(x − 2.8177)² = 11.5694 − 9.8583 = 1.7111
-(x − 2.8177)² = 0.8675  →  x − 2.8177 = ±0.9314
-x_low  = 1.886  →  cov ≈ 77%
-x_high = 3.749  →  cov ≈ 5,610%
-window = 5610/77 ≈ 73×   (equivalently 10^(2·0.9314) = 72.9×)
+Nf(c) = N0 * (1 + a*c*exp(-b*c)),   N0 = 19,113 cycles (fixed, §2),  c = coverage in %
 ```
 
-**Two window numbers, both honest:**
-- **Model-free lower bound: ≥ 15×.** Every tested dose from 100% to 1500% coverage stays net
-  beneficial (even 1500% is +330%), so the beneficial span is *at least* 1500/100 = 15× wide —
-  read with no fitting at all.
-- **Fitted ZED span: ≈ 73×.** The over-peening descending limb is *shallow* (only −15% from peak
-  across a 3.75× dose increase), so extrapolating it back to baseline gives a very wide window.
+`c → 0 ⟹ Nf → N₀` ✓ (correct baseline asymptote) and `c → ∞ ⟹ Nf → N₀` from *above*,
+asymptotically.
 
----
+**Fit (Python, numpy 2.4.3, this session; least squares on the excess ratio `Nf/N₀ − 1`, with `a`
+solved in closed form at each `b` on a 20,000-point grid over `b ∈ [10⁻⁵, 5×10⁻³]`):**
+
+| coverage c (%) | Nf measured | Nf fitted | residual |
+|---|---|---|---|
+| 100 | 28,300 | 43,813 | **+54.8%** |
+| 400 | 96,522 | 86,147 | −10.7% |
+| 1000 | 90,336 | 96,258 | +6.6% |
+| 1500 | 82,120 | 79,735 | −2.9% |
+
+```
+a = 1.4707e-2    b = 1.29299e-3 (per % coverage)    SSE (on excess ratio) = 1.065
+peak     c* = 1/b = 773% coverage
+peak Nf  = N0*(1 + a*c*/e) = 19,113 * 5.184 = 99,089 cycles   (+418% over baseline)
+```
+
+Leave-one-out sensitivity on `c*`: dropping the 100 / 400 / 1000 / 1500% point gives
+700 / 1136 / 788 / 723%. A three-parameter generalisation `Nf = N₀(1 + a·c^p·e^{−bc})` improves
+the fit only modestly (a = 1.851×10⁻³, b = 1.8655×10⁻³, p = 1.390, SSE 0.769) and moves the
+optimum to 745% — three parameters on four points, reported as a sensitivity check, not adopted.
+
+**What the refit says about the window — the honest answer is "nothing".**
+
+- **No two-sided window is constrained at all.** Under this form the curve never returns to
+  baseline at finite dose; it decays to `N₀` asymptotically. There is therefore no zero-equivalent
+  dose and no finite ZED span. The previous **≈ 73× fitted window is withdrawn**: it was an
+  artifact of forcing a symmetric log-parabola onto an asymmetric hormetic shape.
+- **One-sided (descending-limb) statement only.** The dose at which the fitted benefit decays to
+  +10% / +5% / +1% above baseline is c ≈ **5,120% / 5,750% / 7,160%** coverage, i.e. 6.6 / 7.4 /
+  9.3 × the fitted optimum. All three are extrapolations **3.4–4.8× beyond the highest tested
+  dose (1500%)** and are order-of-magnitude only.
+- **Tested dose range, all beneficial: 15×.** Every tested dose from 100% to 1500% coverage stays
+  net beneficial (even 1500% is +330%). This is the ratio of the extreme *tested* doses — an
+  experimental-design artifact that would have read 10× or 100× had the experimenters chosen
+  different endpoints. It is **not** a measured window and is **not** compared to toxicology's
+  10–20× anywhere in this note.
+- **Fit quality is poor at the low end.** The 100% point is over-predicted by 55%, and the fitted
+  optimum (773%) sits well above the measured maximum (400%). A two-parameter form cannot
+  reproduce both the steep 100 → 400% rise and the flat 400 → 1500% plateau. A 6–8 dose sweep is
+  needed before any window number is quotable.
 
 ## 4. The strength ceiling, and the Basquin translation rule
 
@@ -189,10 +230,18 @@ corresponds to a fatigue-strength-coefficient ratio `ρ = R_N^(−b)`. Using a t
 37 MPa peak:  R_N = 8.97  →  ρ = 8.97^0.10 = e^(0.10·2.194) = 1.245  →  +24.5% strength
 ```
 
-So the AISI 4140 **strength** ceiling is ≈ **+18–25%** (marked ESTIMATE — depends on the assumed
-exponent; a steeper `b ≈ −0.15` gives +28%). The AA 7075 **strength** ceiling is a *directly
-measured* **+82%** (Dataset B, VERIFIED). Across the two materials the strength-axis ceiling
-spans ≈ **+20% to +80%** — the same order of magnitude as, and straddling, biology's 30–60%.
+So the AISI 4140 number is ≈ **+18–25%**, and it must be labelled precisely: it is a
+**σ'_f-equivalent ESTIMATE** — a change in the Basquin fatigue-strength *coefficient* `σ'_f`,
+inferred from a life ratio under an assumed exponent (a steeper `b ≈ −0.15` gives +28%).
+
+**Axis mismatch, stated plainly.** AA 7075's **+82%** is a *directly measured endurance limit*
+(a run-out asymptote), which lies **outside** Basquin's power-law regime. `σ'_f` and the
+endurance limit are **not the same quantity**, so +18–25% (4140, σ'_f-equivalent, ESTIMATE) and
++82% (7075, endurance limit, MEASURED) may not be pooled into a single "strength ceiling" range.
+The earlier reading of "≈ +20% to +80%, straddling biology's 30–60%" is **withdrawn**: it merged
+two axes, and +82% *exceeds* 30–60% rather than straddling it. Separately, Dataset B has one
+baseline and two doses, so **+82% is the best of two doses**, not a fitted ceiling — no window
+and no peak can be extracted from B.
 
 The general lesson: **fatigue life is a steep power-law transform of fatigue strength** (`N ∝
 σ^(1/b)`, and `1/b ≈ −10`), so a ~20% strength gain becomes a ~5× life gain. This is the exact
@@ -207,28 +256,36 @@ of the engineering data.**
 
 | Quantity | Toxicology (hormesis) | This work (stress-strengthening) | Match? |
 |---|---|---|---|
-| Amplitude ceiling, **direct-response axis** | +30–60% | +20–80% (fatigue strength: 7075 +82%, 4140 est. +18–25%) | **overlaps / modestly exceeds** |
+| Amplitude ceiling, **endurance limit (measured)** | +30–60% | **+82%** — AA 7075, best of two doses, not a fitted ceiling | **exceeds** biology's band |
+| Amplitude ceiling, **σ'_f-equivalent (ESTIMATE)** | (no matching axis in toxicology) | **+18–25%** — AISI 4140, Basquin-inferred under assumed `b ≈ −0.10` | not comparable — different axis from the row above |
 | Amplitude ceiling, **amplified-outcome axis** | (organismal lifespan hormesis, similar %) | +400–800% (fatigue life) | far larger — steep Basquin transform |
-| Stimulatory window width | 10–20× | ≥15× (raw) / ≈73× (fitted ZED) | **meets or exceeds** |
-| Peak location | low-dose (sub-toxic) | 400–660% coverage; shifts with load | qualitatively analogous |
+| Stimulatory window width | 10–20× | **not measured.** Tested dose range, all beneficial: 15× (design artifact). Admissible fit has no finite ZED. | **no comparison possible** |
+| Peak location | low-dose (sub-toxic) | measured maximum 400% (44 MPa) / 1000% (37 MPa); fitted optimum ≈ 770%; shifts with load | qualitatively analogous |
 | Mechanistic form | stimulation − toxicity (two monotone terms) | compressive-stress benefit − surface-damage penalty (two monotone terms; residual stress alone is monotone) | **structurally identical** |
 
-The window-width agreement is the strongest quantitative bridge: **≥15× measured, ~73× fitted,
-against biology's 10–20×** — the same decade-scale span, arrived at independently. The
-amplitude-ceiling agreement holds only once the response axes are matched (direct strength ↔
-30–60%); the raw fatigue-life numbers are an order of magnitude larger, and the Basquin exponent
-is the conversion factor that reconciles them.
+**There is no window-width agreement, because there is no measured window.** The 15× figure is
+the tested dose range (an experimental-design artifact) and the physically admissible fit yields
+no finite zero-equivalent span at all; both the "≥15× lower bound" and the "≈ 73× fitted window"
+claims are withdrawn. On amplitude: AA 7075's measured endurance-limit gain of +82% *exceeds*
+biology's 30–60%, and the AISI 4140 σ'_f-equivalent estimate of +18–25% is on a different axis
+and cannot be pooled with it. The raw fatigue-life numbers are an order of magnitude larger
+again, and the Basquin exponent is the conversion factor between life and `σ'_f` — that
+translation rule is what survives here, not a numerical match to toxicology.
 
 ---
 
 ## 6. Verdict on G23: NARROWS (toward partial closure)
 
-- **The two numbers now exist as fitted constants**, which they did not before this file:
-  ceiling ≈ +80% (strength) / +450% (life); window ≈ 15–73×; peak ≈ 400–660% coverage. That is
-  the parameterised biphasic curve G23 said was absent — supplied here.
-- **They transfer, matched on axis.** Window width lands squarely in biology's 10–20× band;
-  strength-ceiling overlaps biology's 30–60%. So the hormesis *formalism* is importable, with the
-  Basquin exponent as the translation rule between the two response axes.
+- **One of the two numbers now exists as a fitted constant**, which it did not before this file:
+  the amplitude ceiling — +82% endurance limit (AA 7075, measured, best of two doses) / +418–453%
+  life (AISI 4140, fitted) — with a fitted optimum at ≈ 770% coverage. **The window width does
+  not.** Under a physically admissible form the data constrain no window; only a one-sided
+  descending-limb extrapolation is available, and it lies beyond the tested range. That half of
+  what G23 said was absent is **still absent**.
+- **What transfers is the translation rule, not a numerical match.** The Basquin exponent
+  converts between the life axis and the `σ'_f` axis, and that is a genuine importable piece.
+  The amplitude ceiling does not land inside biology's 30–60% (AA 7075 exceeds it); the window
+  cannot be compared at all.
 - **But not a universal constant, and not a theorem.** Two materials give two different amplitude
   ceilings (+82% vs +18–25% strength) and the window is bounded from only one of them. Per
   [[what-closes-a-gap]], closure needs a *theorem* fixing a shared figure of merit, not two fits.
@@ -239,9 +296,11 @@ is the conversion factor that reconciles them.
   two biphasic curves share arithmetic but differ in mechanism, and the engineering window is
   *wider* (shallower over-peening limb) than a typical toxicological one.
 
-**Net:** G23 stays **narrowed**, moved materially toward closure. The parameterised curve is no
-longer missing; what remains open is a cross-material theorem that would make the ceiling and
-window a single shared axis rather than a fitted family.
+**Net:** G23 stays **narrowed**, but less far toward closure than the first pass claimed. Half
+the parameterised curve (the amplitude ceiling, plus the Basquin translation rule) is now written
+down; the **window width is not** — it needs a 6–8 dose sweep that reaches the descending limb
+far enough to see baseline. What remains open is that sweep, and beyond it a cross-material
+theorem that would make the ceiling a single shared axis rather than a fitted family.
 
 ## 7. Weakest links (stated plainly)
 
@@ -249,12 +308,46 @@ window a single shared axis rather than a fitted family.
   the window and life-ceiling. The baseline is VERIFIED-DERIVED from the stated +405%, not read
   from Table 4 directly (the table body did not render in the fetched text); the four-way internal
   consistency check makes it solid but it is one arithmetic step removed from a printed cell.
-- **Two Nf points define the over-peening limb** (1000%, 1500%), and it is shallow, so the fitted
-  73× window is an extrapolation — hence both the ≥15× model-free bound and the 73× fit are given.
-- **Strength ceiling for AISI 4140 is an ESTIMATE** via an assumed Basquin `b`; only AA 7075's
-  +82% is a direct measured endurance-limit ratio.
-- **Fit is quadratic-in-log through 3 points** (exact, robust to the flat plateau) rather than a
-  full nonlinear hormesis model; a 6–8 dose sweep would let a proper log-normal be fit and the
-  ZED measured rather than extrapolated. None was found open-access with a tabulated fine sweep —
-  itself a mild echo of G23's original complaint that experiments report the optimum, not the
-  full curve.
+- **Two Nf points define the over-peening limb** (1000%, 1500%), and it is shallow, so **no
+  window number is obtainable**. The descending-limb doses quoted in §3 are extrapolations 3.4–4.8×
+  beyond the highest tested dose.
+- **AISI 4140's +18–25% is a σ'_f-equivalent ESTIMATE** under an assumed Basquin `b`; only AA
+  7075's +82% is a directly measured endurance-limit ratio, and those are different axes.
+- **AA 7075 has one baseline and two doses**, so +82% is the best of two doses, not a ceiling.
+- **The admissible fit is 2-parameter on 4 points and fits the 100% point badly** (+55%). Its
+  optimum (773%) exceeds the measured maximum (400%). A 6–8 dose sweep would let a proper
+  log-normal be fit and a window measured rather than extrapolated. None was found open-access
+  with a tabulated fine sweep — itself a mild echo of G23's original complaint that experiments
+  report the optimum, not the full curve.
+
+---
+
+## Corrections 2026-09-05
+
+Backlog A15–A17; `audits/01-math-physics.md` C19 items; `audits/03-method-epistemics.md` 15–17.
+
+1. **A15 — "model-free lower bound ≥ 15×" → "tested dose range, all beneficial: 15×."**
+   Old: §3 and the pull-quote read the 15× as a measured lower bound on the stimulatory window,
+   and §5 scored it "**meets or exceeds**" toxicology's 10–20×. New: 15× = 1500%/100% is the
+   ratio of the extreme *tested* doses (inputs: the four tested coverages 100 / 400 / 1000 /
+   1500%), an experimental-design artifact; it is removed from the §5 comparison verdict, which
+   now reads "no comparison possible."
+2. **A16 — 73× fitted ZED window WITHDRAWN; refit on `Nf = N₀(1 + a·c·e^{−bc})`.**
+   Old: the log-quadratic vertex fit gave a two-sided ZED span of 72.9× (x_low = 1.886 ⇒ 77%
+   coverage, x_high = 3.749 ⇒ 5,610%), which implies harm below 77% coverage and so violates
+   `Nf → N₀` as `c → 0`. New (inputs: c = 100 / 400 / 1000 / 1500%, Nf = 28,300 / 96,522 /
+   90,336 / 82,120, N₀ = 19,113; least squares on `Nf/N₀ − 1`, numpy 2.4.3, 20,000-point grid on
+   `b`): **a = 1.4707×10⁻², b = 1.29299×10⁻³, SSE = 1.065, optimum c\* = 773%, peak Nf = 99,089
+   (+418%)**. This form has the correct `c → 0` asymptote and decays to baseline only
+   asymptotically, so **no finite two-sided window exists and the data constrain none**. Only a
+   one-sided descending-limb statement remains (benefit decays to +10% / +5% / +1% at c ≈ 5,120 /
+   5,750 / 7,160%, all extrapolated 3.4–4.8× past the highest tested dose).
+3. **A17 — AISI 4140 numbers relabelled σ'_f-equivalent; axis mismatch stated; "+82% ceiling"
+   → "best of two doses"; "straddles 30–60%" corrected.** Old: §4/§5 pooled "+20% to +80%
+   (fatigue strength)" and called it straddling biology's 30–60%. New: +18–25% (AISI 4140) is a
+   **σ'_f-equivalent ESTIMATE** from `ρ = R_N^{−b}` with assumed `b ≈ −0.10` (inputs: R_N = 5.05
+   ⇒ 5.05^0.10 = 1.176; R_N = 8.97 ⇒ 8.97^0.10 = 1.245); +82% (AA 7075) is a **measured endurance
+   limit** (275 → 500 MPa), a run-out asymptote outside Basquin's regime, and is the **best of
+   two doses** on a one-baseline / two-dose sweep. The two are not on a common axis and are no
+   longer pooled; +82% **exceeds** 30–60% rather than straddling it. §5's amplitude row is split
+   in two accordingly.

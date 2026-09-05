@@ -28,7 +28,7 @@ Writes down the object named missing in [[G5-repair-number]], and populates it. 
 
 ---
 
-## 1. Prior art check — none found
+## 1. Prior art check — the *ratio* is named in queueing theory; the *healing* application is not
 
 Searched for: a named dimensionless damage/healing group; a "healing Damköhler number"; a
 self-healing availability metric; a steady-state damage fraction of the form
@@ -40,10 +40,47 @@ self-healing availability metric; a steady-state damage fraction of the form
 | `"healing rate"` + `"damage rate"` + dimensionless + steady state | Only **healing efficiency** η = (property recovered)/(property lost). Amplitude, not a rate ratio. |
 | Europe PMC `"self-healing" AND "damage rate" AND "healing rate"` | 6 hits, all asphalt/composite **healing indices** (67.8%, 90%, 19–55%) — amplitude fractions again. |
 | arXiv self-healing network/elastomer models | [arXiv:2401.11087](https://arxiv.org/html/2401.11087v1) non-dimensionalises *time* (τ̄ = t/τ). Never forms a rate **ratio**, gives no numerical rate constants. |
-| `k_repair/(k_repair + k_damage)` as a named number | Nothing. The form is used unnamed in reliability availability and in pharmacokinetic steady states; it has no cross-domain name. |
+| `k_repair/(k_repair + k_damage)` as a named number in *damage/healing* | Nothing. No self-healing, damage-mechanics or repair-biology source names the group. |
+| **`"traffic intensity"` / `"offered load"` / `"Erlang B"` / M/M/1/1** (added 2026-09-05, A9) | **HIT — the ratio itself is standard.** See §1.1. `1/Ha = k_d/k_r` is the offered load `ρ`; `A = 1/(1+ρ)` is the Erlang-B blocking complement for one server. |
 
-**The gap survives.** Engineering's `η` and biology's rate inequality are both what you write
-when you cannot form the ratio.
+### 1.1 The queueing-theory row, stated properly
+
+In a loss system the **offered load** (traffic intensity, measured in erlangs) is
+`ρ = λ/μ` = arrival rate × mean holding time (Little's law applied to the offered stream)
+— [Erlang (unit), Wikipedia, fetched 2026-09-05](https://en.wikipedia.org/wiki/Erlang_(unit)),
+which cites Kleinrock, *Queueing Systems Vol. 1: Theory* (Wiley 1975) and Freeman,
+*Fundamentals of Telecommunications* (Wiley 2005) as the standard texts; a modern open
+textbook treatment is Zukerman, *Introduction to Queueing Theory and Stochastic Teletraffic
+Models*, [arXiv:1307.2968](https://arxiv.org/abs/1307.2968) (author and title **VERIFIED** from
+the arXiv abstract page, fetched 2026-09-05; the Erlang-B chapter itself was **not** fetched
+this session — VERIFIED-SECONDARY).
+
+The Erlang-B blocking probability for `m` servers is `B(ρ,m) = (ρ^m/m!) / Σ_{i=0}^{m} ρ^i/i!`.
+Put `m = 1` (the M/M/1/1 loss system — one server, no queue) and it collapses, by arithmetic
+done here:
+
+    B(ρ,1) = ρ / (1 + ρ)        and        1 − B(ρ,1) = 1/(1 + ρ)
+
+Now map: a unit that fails at hazard `k_d` and is restored at hazard `k_r` is a single server
+whose "arrivals" are failures (rate `k_d`) and whose "holding time" is the repair (mean
+`1/k_r`), so
+
+    ρ = k_d / k_r = 1/Ha        ⟹        A = 1/(1 + ρ) = Ha/(1 + Ha)
+
+which is (★) of §3.1 exactly. **`Ha` is the reciprocal of the offered load, and `A` is the
+Erlang-B blocking complement of the one-server loss system.**
+
+**Verdict on the row: the algebra is prior art; the axis is not.** What is genuinely absent is
+any source that (a) applies this group to *damage and repair* rather than calls and channels,
+or (b) puts biological and engineered repairing systems on one such axis. The honest claim is
+therefore **not** "the ratio has no cross-domain name" — it has at least three (offered load /
+traffic intensity in teletraffic, MTBF/MTTR in reliability, and unnamed steady-state ratios in
+pharmacokinetics) — but "**no source connects them, and none applies the group to healing**".
+`Ha`'s novelty grade should be read as *located/repackaged*, not *new object*.
+
+**The gap survives in its narrowed form.** Engineering's `η` and biology's rate inequality are
+both what you write when you cannot form the ratio; the ratio *does* exist, three domains away,
+under a name nobody in either literature cites.
 
 ---
 
@@ -105,7 +142,27 @@ Dividing (★) top and bottom by `k_d`:
 
     A = Ha/(1 + Ha)         and, inverting,        Ha = A/(1 − A)
 
-`Ha` runs on (0, ∞), `A` on (0, 1). `Ha = 1` is the crossover — repair exactly keeps pace.
+`Ha` runs on (0, ∞), `A` on (0, 1). `Ha = 1` is simply the point where `A = 0.5`: at steady
+state half the population is damaged. It is **not** a threshold, a break-even or a collapse
+point — see §6 item 2 and §3.1, which proves the steady state is globally stable for *every*
+`Ha > 0`.
+
+> **Symbol collision — read this before quoting `Ha` (added 2026-09-05, A10).** Two collisions,
+> both real, and the symbol is retained anyway for the reason given:
+>
+> 1. **`Ha` is the Hartmann number in magnetohydrodynamics**, `Ha = BL√(σ/μ)`, the ratio of
+>    Lorentz to viscous forces. That is an established, widely used group and this note's `Ha`
+>    is unrelated to it. Outside this vault, always write it out as "healing Damköhler number
+>    `Ha ≡ k_r/k_d`" on first use, or use the disambiguated form **`Da_h`**.
+> 2. **"Damköhler" conventionally means reaction vs *transport***, not repair vs damage. `Da_I`
+>    is reaction rate / convective transport rate; `Da_II` reaction / diffusion. This group is a
+>    ratio of two *reaction-like* rates, so the name is an analogy to Damköhler's construction
+>    (fast process / slow process), not an instance of it.
+>
+> **Decision: keep `Ha`, do not rename.** The symbol is load-bearing in
+> [[C1-availability-living-tissue]], [[C10-healing-curve-fit]] and [[G5-repair-number]], so a
+> rename is not local to this file and would trade one confusion for a broken cross-reference.
+> `Da_h` is the recommended spelling in any external write-up.
 
 ### 3.3 Reduction to reliability availability
 
@@ -252,11 +309,37 @@ That loss is precisely what it is for, and it buys three things the separate rat
 1. **Commensurability.** Rates carry units and system-specific magnitudes; a photosystem
    turns over in minutes and a distribution grid in hours. `Ha` is scale-free, so the table
    above exists. That is the whole point of the gap: *the shared axis*.
-2. **Distance from collapse.** Biology's published statement is the **inequality**
-   "photoinhibition occurs when photoinactivation exceeds repair" — i.e. `Ha < 1`. The
-   inequality is binary and says nothing about margin. `Ha` says the margin: 7.6 at 20 °C,
-   2.4 at 35 °C, **0.91 at 5 °C** — already over the line. Cold stress is not "reduced
-   performance", it is a system running below break-even. An inequality cannot say that.
+2. **Graded margin where the literature has only a binary.** Biology's published statement is
+   the **inequality** "photoinhibition occurs when photoinactivation exceeds repair" — i.e.
+   `Ha < 1`. The inequality is binary and says nothing about magnitude. `Ha` gives the
+   magnitude: 7.6 at 20 °C (`A = 0.883`), 2.4 at 35 °C (`A = 0.706`), **0.91 at 5 °C**
+   (`A = 0.476`). Cold stress is a system whose steady state has fallen from 88% functional to
+   48% functional. An inequality cannot say that.
+
+   > **Correction 2026-09-05 (A8) — `Ha = 1` is not a collapse threshold, and earlier wording
+   > here said it was.** This item previously read "already over the line … running below
+   > break-even". That is wrong for the model actually written down. §3.1 proves that
+   > `dp/dt = k_d(1−p) − k_r p` has the unique fixed point `p* = k_d/(k_r+k_d)`, globally
+   > stable for **every** `k_r, k_d > 0` because the coefficient of `p` is `−(k_r+k_d) < 0`.
+   > There is no bifurcation, no critical `Ha`, and no runaway anywhere on `Ha ∈ (0, ∞)`:
+   > `A = Ha/(1+Ha)` is smooth and strictly increasing, and `A > 0` for all `Ha > 0`.
+   > `Ha = 1` is the `A = 0.5` point and nothing else — a *conventional* reference mark, like
+   > the half-maximum of a titration curve, not a physical transition.
+   >
+   > **What a real collapse threshold would need.** Two model changes, either of which produces
+   > a genuine critical `Ha`, and neither of which is in this note's kinetics:
+   > - **An unbounded damage pool.** If damaged units accumulate outside the `[0,1]` budget —
+   >   `dX/dt = k_d − k_r X` with `X` unbounded rather than `p ∈ [0,1]` — then repair capacity
+   >   saturates at some `k_r^max` and `X` grows without bound once `k_d > k_r^max`. The
+   >   threshold is a *capacity* limit, not the rate ratio.
+   > - **Autocatalytic damage.** If damage begets damage, `dp/dt = k_d(1−p) + c p(1−p) − k_r p`,
+   >   the fixed point can go unstable and a saddle-node appears at finite `c`; below it the
+   >   system runs away to `p = 1`.
+   >
+   > Neither modification is supported by the PSII data used in §5, so **no collapse claim is
+   > made anywhere in this note**. The 5 °C rows are low-availability, not collapsing. The
+   > separate, real failure mode found in this vault is [[C10-healing-curve-fit]]'s declining
+   > `k_r(N)` — a *depletion* result, which is again not a threshold in `Ha`.
 3. **Better conditioning.** Both `k_PI` and `k_REC` are normalised by sample-specific PSII
    content, extraction efficiency and instrument calibration. Those factors **cancel in the
    ratio**. `Ha` is a more robust observable than either rate — the SNO move of METHOD §10,
@@ -279,7 +362,31 @@ response.
   by bone (C2, C4) and by CDHM (C1–C3).
 - **CDHM as published has no steady state at all** in its healing variable — `h` is monotone.
   That is a defect in the constitutive law, not in this construction.
-- **No prior art found.** The gap in [[G5-repair-number]] stands, and is now filled rather
-  than merely named.
+- **Prior art: partial hit, recorded 2026-09-05.** The *algebra* is standard queueing theory —
+  `1/Ha` is the offered load `ρ` of an M/M/1/1 loss system and `A = 1/(1+ρ)` is the Erlang-B
+  blocking complement (§1.1). The earlier claim that the form "has no cross-domain name" is
+  **withdrawn**: it has three names in three literatures. What survives is the narrower and
+  still-checkable claim that **no source applies the group to damage/repair, and none puts
+  biology and engineering on one such axis**. [[G5-repair-number]] is narrowed, not filled.
+- **`Ha = 1` is not a threshold.** The two-state model is globally stable for all `Ha > 0`;
+  `Ha = 1` is the `A = 0.5` point. Any collapse language in earlier versions of §6 is retracted
+  (§6 item 2, correction of 2026-09-05).
 - Weakest link: the two empty rows are empty because of an experimental control that exists
   (`T_v` gating in vitrimers) and has not been used. That is the next measurement.
+
+---
+
+## Corrections 2026-09-05
+
+Batch A items A8, A9, A10 from `BACKLOG.md`, sourced to `audits/01-math-physics.md` findings on
+C6. Logged in [[log]].
+
+| # | Was | Is now | What produced the change |
+|---|---|---|---|
+| A8 | §6 item 2: `Ha = 0.91` at 5 °C is "already over the line", a system "running below break-even"; `Ha = 1` framed as a collapse threshold | `Ha = 1` is the `A = 0.5` point only; the linear two-state model is globally stable for **all** `Ha > 0`; the 5 °C rows are low-availability (`A = 0.476`, `A = 0.454`), not collapsing; a real threshold needs an unbounded damage pool or an autocatalytic damage term, and neither is in this model | The note's own §3.1: `dp/dt = k_d(1−p) − k_r p` is linear with `p`-coefficient `−(k_r+k_d) < 0`, hence one globally stable fixed point for every positive rate pair. No new data. |
+| A9 | §1: "`k_repair/(k_repair + k_damage)` … has no cross-domain name"; §7: "No prior art found" | §1.1 added: `ρ = k_d/k_r` is the **offered load / traffic intensity** of a loss system; `A = 1 − B(ρ,1) = 1/(1+ρ)` is the Erlang-B blocking complement at `m = 1`. §7 claim narrowed to "no source applies the group to healing / spans biology and engineering" | Erlang-B formula `B(ρ,m) = (ρ^m/m!)/Σ_{i=0}^m ρ^i/i!` from [Erlang (unit), Wikipedia](https://en.wikipedia.org/wiki/Erlang_(unit)) (fetched 2026-09-05; cites Kleinrock 1975 and Freeman 2005). `m = 1` reduction `B = ρ/(1+ρ)` done here. Textbook pointer: Zukerman, [arXiv:1307.2968](https://arxiv.org/abs/1307.2968), author/title verified from the abstract page, chapter not fetched → VERIFIED-SECONDARY. |
+| A10 | §3.2 defined `Ha` with no note of any symbol clash | Collision callout added: `Ha` = Hartmann number in MHD; "Damköhler" conventionally = reaction/transport. **Kept, not renamed** — `Ha` is referenced from C1, C10 and G5, so a rename is not local to this file. `Da_h` recommended for external write-ups | Naming decision only; no number changed. |
+
+**Numbers unchanged by this pass:** every row of the §5 table, all `Ha`, `A` and `τ_relax`
+values, and the §5 bone band (0.726 / 0.952). A8–A10 are framing and prior-art corrections; no
+arithmetic was recomputed.

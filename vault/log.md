@@ -713,3 +713,503 @@ and on the new host `/citation-count/` **no longer returns the bogus constant `1
 [[citation-sources]] — it agreed exactly with a counted `/citations/` list (Alexander 1997:
 40 = 40). Recorded in G25's provenance block. The Crossref `?select=reference` → HTTP 400 trap
 was not re-tested; full records were pulled as the method already prescribes.
+
+## [2026-09-05] correction | C8 albatross L/D sourced at 21.2; Sigma_albatross 1.5e-2 -> 2.8e-2
+
+A7. The wandering-albatross lift-to-drag ratio had stood at 20, marked UNVERIFIED. Sourced to
+21.2 from Richardson (2015), *Prog. Oceanogr.* 130:146 ("the cruise airspeed, Vc = 16 m/s, of a
+wandering albatross is its speed at the maximum glide ratio, which is around 21.2 in straight
+flight (Pennycuick, 2008)"), fetched 2026-09-05. Tagged VERIFIED-SECONDARY: Richardson quotes
+Pennycuick (2008), a book not obtained, and Sachs (2005) *Ibis* 147:1-10 is paywalled (Wiley
+403, same date). Combined with the A6 factor of 2, Sigma_albatross = 68.14 W / 2396.5 W =
+2.8e-2, from 1.5e-2.
+
+## [2026-09-05] correction | C8 soaring availability was 2x too generous; Sigma <= 1 no longer reproduces the field's constant
+
+A6. `P_available = m V^2 (dW/dz)` set climb rate and downwind speed both equal to the airspeed
+V simultaneously, which the constraint `zdot^2 + vx^2 <= V^2` forbids; AM-GM gives
+`zdot vx <= V^2/2`. With the half, `P_available = 2.40 kW` (was 4.8 kW) and eq. (3) becomes
+`Sigma_soar = 2g/((L/D) V dW/dz)`, so `Sigma <= 1` reads `dW/dz >= 2g/((L/D) V)` - twice the
+shear previously required. Consequence, and this is the part that matters: the note's claim
+that Sigma <= 1 "reproduces the field's own criterion" survives only as a functional-form match.
+The bound evaluates to 0.0597 s^-1, about 0.12 m/s of shear across the 2 m layer, against the
+~3.6 m/s minimum wind Richardson (2015) derives - loose by ~30x. Restated as order-of-magnitude.
+The previous exact-looking agreement at coefficient 1 was an artefact of the missing half.
+
+## [2026-09-05] correction | C8 Sigma_drag has no 1/3 ceiling; "reproduces all four" -> three
+
+A5. `Sigma_drag = FV/(F du) = V/du` is monotone in V with supremum 1 and no stationary point.
+The 1/3 was imported from a different objective: `V = du/3` maximises extracted *power*
+`P ∝ (du − V)^2 V`, the Cp = 4/27 drag-machine limit behind Betz. A power optimum is not a bound
+on Sigma. Deleting it removes one of the four "known bounds Sigma recovers", and A6 demotes the
+soaring case from exact to order-of-magnitude, so section 5 item 1 now claims three: two exact
+special cases (tether load fraction, sail v/c), one order-of-magnitude recovery (soaring), and
+one expression that is not a bound (drag).
+
+## [2026-09-05] correction | C8 Sigma_sail is v/c, not 2v/c; IKAROS row and closed form now agree exactly
+
+A4. The note's own definition `Sigma = P_useful/(F du)` with `du = c` gives `Fv/(Fc) = v/c`;
+F cancels, so the 2 cannot be in Sigma. It belongs to the force: a perfect mirror gets
+`F = 2 Phi A / c` from reflected-photon momentum reversal, and that 2 then divides out. The
+populated IKAROS row compounded the error by using the incident flux `Phi A` = 2.67e5 W as the
+denominator, which is not `F du` (for a mirror `Phi A = Fc/2`), giving 1.3e-4 against a closed
+form of 2e-4 - a 60% mismatch the note called agreement. Denominator corrected to
+`F c` = 3.36e5 W; Sigma = 33.6/3.36e5 = 1.00e-4 = v/c, exactly, by construction.
+
+## [2026-09-05] verification | C11 NEAR declinations sourced; formula check re-runs to 13.28 vs 13.46
+
+A3. `delta_i = -20.76 deg`, `delta_o = -71.96 deg` had been marked UNVERIFIED, "from memory".
+Both are confirmed in Table 1 of Acedo, Piqueras & Morano (2019), MNRAS 489:3232 (open access),
+attributed there to Anderson et al. (2008) and Jouannic et al. (2015), fetched 2026-09-05. The
+memory was right. Recomputed: `cos(20.76) − cos(71.96) = 0.62539`, so
+`dVinf = 6851 × 3.0993e-6 × 0.62539 = 13.28 mm/s` against the observed 13.46 - 1.3% low, and
+within 0.1% of the source's own 13.295. Tagged VERIFIED-SECONDARY, not PRIMARY: the source
+quotes the PRL, and PRL 100:091102 itself is paywalled with no arXiv preprint located.
+
+## [2026-09-05] correction | C11 required charge was 3 C / 10 orders; it is 1.7 mC / 6.2 orders
+
+A2. `Q_req = F_req/(V_p B) = 5.284e-4/(12739 × 2.43e-5) = 1.7e-3 C`, and against the assumed
+floating charge of 1e-9 C that is 6.2 orders, not 10. The old figure was three orders too large
+and, worse, contradicted the same section's own `A`: since both are linear in Q, `Q_req/Q_float`
+is identically A. The three statements 1.7 mC, 6.2 orders and `A = 1.7e6` are now one number.
+(The audit's intermediate 3.2 mC / 6.5 orders used the pre-Oberth `F_req = 1 mN`.)
+
+## [2026-09-05] correction | C11 F_req omitted the Oberth factor; 1-9 mN -> 0.5-5 mN, every A down 1.86x
+
+A1. The note computed the required force from `Delta p = m dVinf`, but `dVinf` is a change in
+hyperbolic *excess* speed while the impulse is applied at perigee. Energy is the invariant that
+connects them: `dE = m Vinf dVinf = m Vp Delta v_p` gives the Oberth conversion
+`Delta v_p = (Vinf/Vp) dVinf = 0.5378 × 13.46 = 7.24 mm/s`, from the note's own
+`dE = 6.73e4 J`. So `Delta p = 5.28` rather than 9.83 kg m/s, and
+`F_req = 0.53 mN` (1e4 s) to `4.87 mN` (tau_peri = 1085 s). Headline specification 1-9 mN ->
+0.5-5 mN. Every availability ratio falls by the same 1.86: `A` = 3e6 -> 1.7e6 (Lorentz),
+300 -> 160 (thermal), 30 -> 18 (drag). **No verdict flips** - all three stay above 1 and RULED
+OUT, and drag and thermal remain independently excluded on sign. Also removed two stray XML
+tags left at the end of C11 by an earlier editing session.
+
+
+## [2026-09-05] correction | C6: `Ha = 1` is not a collapse threshold — the two-state model is globally stable for every `Ha > 0`
+
+**What was wrong.** [[C6-damage-healing-ratio]] §6 item 2 read the `Ha` axis as having a
+break-even at `Ha = 1`: the 5 °C photosystem rows (`Ha = 0.907`, `0.831`) were described as
+"already over the line" and as "a system running below break-even". That is a threshold claim,
+and the note's own model has no threshold.
+
+**What it is now.** `Ha = 1` is the point at which `A = 0.5` — half the population damaged at
+steady state — and nothing more. Any collapse language is retracted.
+
+**What produced the correction.** C6 §3.1, unchanged: `dp/dt = k_d(1−p) − k_r p` is linear in
+`p` with coefficient `−(k_r + k_d) < 0`, so `p* = k_d/(k_r+k_d)` is the unique fixed point and
+is globally stable for **every** positive rate pair. `A = Ha/(1+Ha)` is smooth and strictly
+increasing on `(0, ∞)` with `A > 0` throughout — no bifurcation, no critical value. The
+correction is derived from the note's own algebra; no new data was fetched.
+
+**What a genuine threshold would require**, now stated in the note: an unbounded damage pool
+(repair capacity saturating at `k_r^max`, so damage grows without bound once `k_d > k_r^max` —
+a capacity limit, not a rate ratio), or an autocatalytic damage term
+(`dp/dt = k_d(1−p) + c p(1−p) − k_r p`, which has a saddle-node at finite `c`). Neither is
+supported by the PSII data in C6 §5.
+
+**Numbers unchanged:** every row of the §5 table. This is a framing correction. (Backlog A8.)
+
+---
+
+## [2026-09-05] correction | C6: the `k_r/(k_r+k_d)` form *does* have a cross-domain name — it is the Erlang-B complement of an M/M/1/1 loss system
+
+**What was wrong.** C6 §1 concluded "it has no cross-domain name", and §7 stated "No prior art
+found". The §1 search covered Damköhler, healing-rate/damage-rate phrasings, and the algebraic
+form as a *named group in damage/healing contexts*. **Queueing theory was never searched.**
+
+**What it is now.** New C6 §1.1. In a loss system the offered load / traffic intensity is
+`ρ = λ/μ`. The Erlang-B blocking formula `B(ρ,m) = (ρ^m/m!)/Σ_{i=0}^{m} ρ^i/i!` at `m = 1`
+(the M/M/1/1 system: one server, no queue) reduces to `B = ρ/(1+ρ)`, hence
+`1 − B = 1/(1+ρ)`. Mapping failures to arrivals (`λ = k_d`) and repair to holding time
+(`1/μ = 1/k_r`) gives `ρ = k_d/k_r = 1/Ha` and `A = 1/(1+ρ) = Ha/(1+Ha)` — C6's equation (★)
+exactly. So `Ha` is the reciprocal of the offered load and `A` is the Erlang-B blocking
+complement.
+
+**Provider and date.** Erlang-B formula and the offered-load definition from
+`https://en.wikipedia.org/wiki/Erlang_(unit)`, fetched **2026-09-05**, which cites Kleinrock,
+*Queueing Systems Vol. 1: Theory* (Wiley 1975) and Freeman, *Fundamentals of
+Telecommunications* (Wiley 2005). Open-textbook pointer: Zukerman, *Introduction to Queueing
+Theory and Stochastic Teletraffic Models*, `https://arxiv.org/abs/1307.2968` — **author and
+title VERIFIED from the arXiv abstract page, fetched 2026-09-05; the Erlang-B chapter itself
+was not fetched** (the arXiv PDF would not extract), so this is **VERIFIED-SECONDARY** under the
+B16 grading. The `m = 1` reduction was done in the note, not quoted.
+
+**What survives.** The claim is narrowed, not withdrawn. The *algebra* has at least three names
+(offered load in teletraffic, MTBF/MTTR in reliability, unnamed steady-state ratios in
+pharmacokinetics). What no source does is (a) apply the group to damage and repair, or (b) put
+biological and engineered repairing systems on one such axis. [[G5-repair-number]] is
+**narrowed, not filled**, and C6's novelty grade should read *repackaged/located*, not
+*new object*. (Backlog A9.)
+
+---
+
+## [2026-09-05] vocabulary | C6: `Ha` collides with the Hartmann number — kept with a note, not renamed
+
+`Ha` is the established symbol for the **Hartmann number** in magnetohydrodynamics
+(`Ha = BL√(σ/μ)`, Lorentz vs viscous forces), and "Damköhler" conventionally denotes
+reaction-vs-*transport* (`Da_I`, `Da_II`), not repair-vs-damage. C6 §3.2 defined
+`Ha ≡ k_r/k_d` with no note of either.
+
+**Decision: keep `Ha`, add an explicit collision callout in §3.2.** A rename is not local to
+one file — `Ha` is load-bearing in [[C1-availability-living-tissue]], [[C10-healing-curve-fit]]
+and [[G5-repair-number]] — so renaming inside C6 alone would trade one confusion for broken
+cross-references. **`Da_h` is recorded as the recommended spelling for any external write-up**,
+and the note now instructs writing the group out in full on first use outside the vault. No
+number changed. (Backlog A10.)
+
+---
+
+## [2026-09-05] correction | C4: `N_ind` floored at 1 — single-statocyte band moves from 8°–17° to 7.6°–12.9°, and three framing claims in §1 are withdrawn
+
+Four changes to [[C4-inclination-sensing-limit]], one of which moves numbers.
+
+**1. The wedge gives `tan θ`, not `sin θ` (A11).** §1 derived `p(θ) = (w/4h₀)·tan θ` and then
+wrote `≈ α sin θ`, concluding "This is the microscopic origin of the macroscopic sine law".
+Withdrawn. `tan θ/sin θ = 1/cos θ = 1 + θ²/2 + …`, so the wedge reproduces a sine law **only to
+first order**. The model is geometrically invalid above **θ = arctan(2h₀/w) = arctan(2×11/50)
+= arctan 0.44 = 23.7°**, where the up-slope edge of the floor goes bare; the macroscopic sine
+law is verified experimentally to 90°, so it is **not** derived in this note. Discrepancy vs a
+true sine law: +1.5% at 10°, +6.4% at 20°, +9.2% at the 23.7° boundary. Nothing downstream
+changes — every angle C4 computes is under 13°.
+
+**2. The Boltzmann "cross-check" is not a second route (A12).** §1 claimed "Two independent
+routes agree that the signal is ≈ N sin θ". Deleted. `p = tanh(55 sin θ)` gives 0.74 at 1°,
+0.96 at 2°, 0.9999 at 5° — it saturates, and at 10° returns 1 against the geometric 0.19, a
+factor of five. The two routes are also not independent: both use `mgd/k_BT_eff ≈ 20` and the
+same `w`. What the calculation *does* show is retained and is worth keeping: since
+`ΔE/k_BT_eff ≫ 1` at every angle of interest, **`T_eff` does not limit signal amplitude**.
+
+**3. `N_ind = max(1, τ/τ_c)` (A13) — this is the number change.** The Berg–Purcell averaging
+factor `√(τ/τ_c)` was applied with `τ = 70 s` against `τ_c = 60–120 s`, i.e. with
+`τ/τ_c = 0.583` in the `τ_c = 120 s` rows: averaging *less than one* independent sample, which
+is outside the regime where the formula is defined and inflates the noise unphysically. The
+correct reading of `τ < τ_c` is one look at the pile, `N_ind = 1`. §5 regenerated with an
+explicit `N_ind` column; **no row now has `N_ind < 1`**:
+
+| `N` | `τ_c` (s) | `N_ind` | `sin δθ_min` | was | now |
+|---|---|---|---|---|---|
+| 20 | 62 | 1.129 | 0.21044 | 12.1° | **12.1°** (unchanged) |
+| 20 | 120 | **1** (floored, from 0.583) | 0.22361 | 17.0° | **12.9°** |
+| 50 | 62 | 1.129 | 0.13309 | 7.6° | **7.6°** (unchanged) |
+| 50 | 120 | **1** (floored, from 0.583) | 0.14142 | 10.7° | **8.1°** |
+
+Inputs: `sin δθ_min = (1/α√N)·(1/√N_ind)`, `α = 1`, `τ = 70 s` (Blancaflor 1998, VERIFIED),
+`τ_c = 62 s` (Chauvet `τ_aval` 1.04 min) / `120 s` (Bérut `t_a ≈ 2 min`), `N = 20, 50`.
+
+**Band: `8°–17°`, central 11° → `7.6°–12.9°`, central ~10°** (geometric mean
+`√(7.6 × 12.9) = 9.9°`). Propagated: the pull-quote; §8's computed band; §8's pooling estimates
+`11°/(3.34√M)` → `9.9°/(3.34√M)`, giving **0.86°** at `M = 12` (was 0.95°) and **0.54°** at
+`M = 30` (was 0.6°); and §11.1's pooled figure **0.48° → 0.43°** (`9.9/(√48 × 3.34)`).
+
+*Note on the backlog's target number.* `BACKLOG.md` A13 anticipated `7.6°–12.1°`. That band
+results from **deleting** the `τ_c = 120 s` rows; this correction **floors** them instead,
+because `τ_c = 120 s` is a VERIFIED measurement and the defect was in applying the averaging
+formula to it, not in the input. Hence 12.9° rather than 12.1°. Both routes agree on ~10°
+central and on removing the 17° tail. Recorded here because it is a deliberate departure from
+the commissioning brief.
+
+*Second-order caveat now in §8:* the pooling gain `√(τ_memory/τ) = √(780/70) = 3.34` is exact
+only at `τ_c = 62 s`; at `τ_c = 120 s` the short window is floored and the long one is not, so
+the gain is `√6.5 = 2.55`. The pooled figures are optimistic by up to 1.3×.
+
+**4. §11.6's absolute column relabelled (A14).** §11.6 presented an "absolute `θ_min`" column
+anchored on §11.1 while §11.8 recorded "Equal-weight pooling: **Falsified**" (2.1–2.8× spread
+in `τ_p` at fixed `M`). The two sections contradicted each other. The column is now headed
+**"equal-weight-pooling upper bound on θ_min (optimistic)"** with `≥` on every entry, because
+unequal weights give `M_eff = (Σwᵢ)²/Σwᵢ² ≤ M` and true `θ_min` can therefore only be larger.
+§11.8's row carries the same label. The **ratio columns are unchanged and are restated as the
+load-bearing prediction: 1.73 (pooling) vs 3.00 (deterministic linear summation) at
+`M = 16` vs `M = 48`.** Rescaled bound entries: 0.43 / 0.53 / 0.61 / 0.74° (pooling) and
+0.43 / 0.64 / 0.86 / 1.29° (summation).
+
+**Not done:** the optional recomputation of the absolute bound with an S2-weighted `M_eff`.
+C4 §11.4 records that the weights are unidentifiable from four group means, so a weighted fit
+would be unfalsifiable on this dataset.
+
+---
+
+## [2026-09-05] prior-art check | C4 pooling discriminator survives against distributed-detection theory, but the grade splits three ways
+
+Backlog **E5** / `audits/05-scope-strategy.md` item 11. C4 §11.7 had searched only the plant
+literature; this check searched the physics/engineering side. **Six distinct query
+formulations**, WebSearch, all **2026-09-05**, tabulated verbatim with their returns in C4's new
+`## Prior-art check 2026-09-05` section.
+
+**Verdict: the `M^{−1/2}` vs `M^{−1}` discriminator does not already exist for plant
+statocytes.** Nearest miss is McDonnell et al.'s **stochastic pooling networks**
+([PRE 88:022118](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.88.022118),
+[PRE 79:041107](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.79.041107)) — the right
+object class, explicitly covering biological sensory neurons, but posed as capacity and
+sensor-selection results, never as a two-model exponent discrimination and never on a
+gravisensor.
+
+**Weakness of the null, stated:** this is a *search* absence — English-language, web-index only.
+No citation intersection of Berg–Purcell 1977 × Blancaflor 1998 was run. That is the obvious
+hardening step and is the recommended follow-up.
+
+---
+
+
+## [2026-09-05] correction | C19's "≥15× window" was the tested dose range, not a window; removed from the toxicology comparison
+
+The headline "model-free lower bound ≥ 15×" was the ratio of the highest to the lowest *tested*
+coverage (1500%/100%) — an experimental-design artifact that would have read 10× or 100× under
+different endpoints — and §5 scored it "meets or exceeds" toxicology's 10–20×. Renamed "tested
+dose range, all beneficial: 15×" and struck from the comparison verdict, which now reads "no
+comparison possible." Backlog A15.
+
+## [2026-09-05] correction | C19's 73× fitted hormesis window withdrawn; admissible refit constrains no window at all
+
+The log-quadratic fit implied `Nf` below baseline for coverage < 77%, i.e. that light peening is
+harmful, contradicting `Nf → N₀` as coverage → 0. Refit on `Nf = N₀(1 + a·c·e^{−bc})` (inputs:
+c = 100/400/1000/1500%, Nf = 28,300/96,522/90,336/82,120, N₀ = 19,113; least squares on the
+excess ratio, numpy 2.4.3, 20,000-point grid on `b`) gives **a = 1.4707×10⁻², b = 1.29299×10⁻³,
+SSE = 1.065, optimum 773% coverage, peak Nf = 99,089 (+418%)**. That form decays to baseline only
+asymptotically, so **no finite zero-equivalent dose exists and the data constrain no window**;
+only a one-sided descending-limb extrapolation survives (benefit falls to +10%/+5%/+1% at
+c ≈ 5,120/5,750/7,160%, all 3.4–4.8× beyond the highest tested dose). The fit also misses the
+100% point by +55%, so no window number is quotable until a 6–8 dose sweep exists. Backlog A16.
+
+## [2026-09-05] correction | C19's two "strength ceilings" are two different axes and were wrongly pooled
+
+AISI 4140's +18–25% is a **σ'_f-equivalent ESTIMATE** (Basquin coefficient inferred from a life
+ratio under assumed `b ≈ −0.10`: R_N = 5.05 ⇒ 1.176; R_N = 8.97 ⇒ 1.245). AA 7075's +82% is a
+**measured endurance limit** (275 → 500 MPa), a run-out asymptote outside Basquin's power-law
+regime, and it is the **best of two doses**, not a fitted ceiling. The pooled range "+20% to +80%,
+straddling biology's 30–60%" is withdrawn: the two are not on a common axis, and +82% *exceeds*
+30–60%. Backlog A17.
+
+## [2026-09-05] computed | C12's Smith normal form is now actually computed — diag(1,1,1) — and correspondingly demoted
+
+§3.3 had asserted the SNF without computing one. Computed this session in Python (integer
+arithmetic, standard SNF algorithm) on the 3×10 dimension matrix: **invariant factors (1, 1, 1),
+rank 3**, verified by explicit multiplication `U·D·V = SNF(D)` with `det U = −1`. All-ones
+invariant factors certify only that the kernel basis is integral. The load-bearing result — that
+the Re = 1, Pe = 1 and Pe_th = 1 crossovers are parallel — follows from ν, D and α all having
+dimension L²T⁻¹, readable off the note's own §1 table, with no kernel and no normal form
+involved. The "lattice lock" framing is replaced by that plain statement, and the G22
+constant-bound restatement is kept but relabelled a **definition**, not a derived criterion.
+Backlog A18.
+
+## [2026-09-05] correction | C16's 17-for-17 now quotes an interval, and the bias-immunity claim is deleted
+
+Clopper–Pearson one-sided 95% upper bound on P(new physics | same class) with n = 17 closed and
+k = 0: `1 − 0.05^(1/17) = 1 − exp(−2.99573/17) = 0.1616` → **0.16**. The data are consistent with
+a same-class new-physics rate of one case in six. Deleted: "It remains bias-immune: adding
+invisible same-class cases can only add more systematics" — findability of a documented
+*resolution* correlates with the resolution being mundane, so the invisible population is not
+guaranteed to be systematics. Backlog A19.
+
+## [2026-09-05] method | C16's SAME-CLASS rule written as a decision procedure and re-applied blind: 11 of 24 rows change class
+
+Procedure: inputs are **apparatus** (the principle whose systematic-error budget is shared),
+**observable** (the quantity read out before model inversion), and **analysis pipeline**; output
+is CLASS-I (all three match — the conditional is tested here), CLASS-II (apparatus and observable
+match, pipeline differs), CLASS-III (apparatus or observable differs — not same-class). Standing
+exclusion for known, computed corrections (the redshift-clock case) is folded into the procedure
+rather than applied after the hunt. Blind re-application to all 24 rows plus the 3 excluded
+candidates changed **11 of 24**: rows 4, 8, 19 → CLASS-III; rows 2, 3, 5, 6, 9, 14, 20, 24 →
+CLASS-II. All three excluded candidates stay excluded. **Strict CLASS-I tally: 8 closed
+(7 SYSTEMATICS + 1 FLUCTUATION), 5 open, 0 NEW-PHYSICS** — bound `1 − 0.05^(1/8) = 0.31`;
+CLASS-I+II: 15 closed, bound `1 − 0.05^(1/15) = 0.18`. **No counterexample at any grade** — the
+conditional survives — but on 8 strict cases, not 17. Limitation: same agent, same day,
+blind-in-intent, not an independent replication. Backlog A20.
+
+## [2026-09-05] method | New append-only, hash-stamped predictions register with real per-prediction dates
+
+`vault/predictions.md` created (`type: method`). Records five blocks: the α / fine-structure
+prediction (first made 2026-09-03, commit `a12703d`, per
+`git log --format='%h %ad %s' --date=short -- vault/questions/Q7-same-class-prediction.md vault/method/fine-structure-discrepancy.md`),
+the tenth-order QED coefficient prediction (same commit), C4's statocyte-pooling prediction
+(1.73 under `M^{−1/2}` pooling vs 3.00 under `M^{−1}` linear summation), the 2026-09-05
+pre-registration of CLASS-I/II/III for C16's 7 open and 4 ambiguous rows, and the 2026-09-05 full
+24-row sweep that supersedes its numeric consequence. Each block carries a `sha256` of its
+canonical text. Stated limitation: every commit in the repository's history is dated 2026-09-03,
+so the register can establish "before 2026-09-05" and no finer from repository evidence alone —
+which is precisely the defect it exists to stop recurring. Backlog A21 / C16.
+
+
+## [2026-09-05] correction | C9: the section-3 Schur object is ZT_Schur, not ZT_eff; eq. (6) and eq. (8) reconciled by identity (8e)
+
+A25. `ZT_eff` named two different quantities. §3 defined it on the Schur complement `L'` via
+`q'² = ZT_eff/(1+ZT_eff)` and showed it *rises*; §4 defined it as `α²GT/(K+(1−ε)cv)` and showed
+it *falls*. The §3 object is renamed **`ZT_Schur`** and eq. (6a) added:
+`ZT_Schur = ZT/(1−φ)` with `φ ≡ L₂₃²/(L₂₂L₃₃) ∈ [0,1)`. New §4.1a writes all three as `α²GT`
+over a conductance — `K`, `K' = K(1−φ)`, `K_tot = K+(1−ε)cv` — giving the identity
+`ZT_eff = ZT_Schur·K'/K_tot`, equivalently
+`1/ZT_eff − 1/ZT_Schur = [(1−ε)cv + φK]/(α²GT) ≥ 0`, hence `ZT_eff ≤ ZT ≤ ZT_Schur` (8f). The
+Schur complement flattered the leg by exactly `φK` of thermal conductance; the physical
+accounting charges that back and adds `(1−ε)cv`. **No number changed** — §5's `Pe = 3.97`,
+`ZT_eff = 0.201`, `q' = 0.409`, the 3.8× fall, the 25 µm/s ceiling and the 0.025 J contact
+penalty all come from eq. (8), untouched. Renaming plus an added identity; nothing fetched.
+
+## [2026-09-05] correction | C2: "nine orders vs half an order" is 8.74 vs 0.51 at SF=3, V_R=0.20; at V_R=0.10 the load-CV sweep is 4.70 orders, not half
+
+A24. The two sensitivities were evaluated at different, unstated operating points. Point now
+stated: `SF = μ_R/μ_S = 3`, `V_R = 0.20`, `V_S ∈ [0.05, 0.30]`, normal–normal with `μ_S = 1`,
+`μ_R = 3`, `σ_R = SF·V_R`, `σ_S = V_S`, `β = (μ_R−μ_S)/√(σ_R²+σ_S²)`, `P_f = Φ(−β)`. At that
+point the strength-CV sweep `V_R` 0.10→0.30 gives 2.42e-11 → 1.33e-2 = **8.74 orders** (7.85 at
+`V_S = 0.11`), and the load-CV sweep gives 4.47e-4 → 1.43e-3 = **0.51 orders**. Move only the
+strength CV to `V_R = 0.10` and the same load-CV sweep gives 2.42e-11 → 1.21e-6 = **4.70
+orders**. Cause is algebraic: `V_S` enters `β` only as `V_S²` added to `(SF·V_R)²`, which is
+0.36 at `V_R = 0.20` and 0.09 at `V_R = 0.10`. A lognormal cross-check on the same grid gives
+4.09 orders for the load-CV sweep at `V_R = 0.20`, so **the half-order figure is
+normal-model-specific**, not a property of stress–strength interference. Full Python and both
+6×3 tables pasted into a new §S. The note's existing illustrative pair (normal 5.2e-4,
+lognormal 8.2e-7) is reproduced to 2 s.f. and its point identified as `V_S = 0.11`. Qualitative
+claim — strength variability dominates load variability for bone — survives both models.
+Recomputation only; nothing fetched.
+
+## [2026-09-05] computed | C1: wind turbine fleet A = 0.9886 from lambda = 8.27/yr and MTTR = 12.06 h — first repairable *product* on the availability axis
+
+E9. Carroll, McDonald & McMillan, *Wind Energy* 19(6):1107–1119 (2016),
+DOI 10.1002/we.1887, author-accepted PDF fetched from Strathclyde repository 2026-09-05
+(Wiley version 403'd). Population ~350 offshore turbines, 1,768 turbine-years. Table 2:
+minor 6.81/yr × 6.67 h, major 1.17/yr × 17.64 h, replacement 0.29/yr × 116.19 h, total
+λ = 8.27/yr and 99.76 h/yr of repair. `MTTR = 99.76/8.27 = 12.06 h`;
+`MTBF = (8760−99.76)/8.27 = 1047 h`; `A = 1047/(1047+12.06) = 0.98861`. Two caveats recorded
+against the row: it is a **unit** availability (same object as the grid row, *not* the same
+object as PSII's population fraction), and it is an **upper bound**, because the source's
+repair time is technician-on-turbine time and excludes travel, vessel waiting, spare-part lead
+time and weather inaccessibility — which is why operators report ~0.97–0.98. Also noted: the
+paper's Table 2 column head reads "Repair Time (Days)" while its Figure 13 plots the same
+quantity in hours; read as hours.
+
+## [2026-09-05] correction | C1 headline: "a leaf is less available than a power grid" struck — it compared a population fraction to a system availability
+
+A23. The old headline read *"Photosystem II = 0.883. Cortical bone = 0.984. A leaf is less
+available than a power grid."* Two defects. (1) The 0.984 has no supporting datum (see next
+entry). (2) 0.883 is an expected *functional fraction* over ~10⁸ redundant photosystems, while
+the grid figure is a *system availability probability*; the note's own caveat 1 said so and the
+headline asserted the comparison anyway. New headline states PSII's steady-state functional
+fraction with its two rate inputs and adds that with `N ≈ 10⁸` independent units the
+probability that photosynthetic function is unavailable at the leaf is `(1−0.883)^N`, i.e.
+**leaf-level function availability ≈ 1**. A new §1 tabulates the two columns — unit
+availability vs population functional fraction — so no future row can cross them silently. The
+35 °C row is retained as the counterexample: correlated damage defeats the redundancy and the
+fraction falls to 0.562.
+
+## [2026-09-05] correction | C1 rebuilt: every row now carries (k_d, k_r) or (MTBF, MTTR), the arithmetic and a fetched source; trabecular 0.939 -> band 0.726-0.952; cortical 0.984 UNSUPPORTED
+
+A22. The note was a 35-line table of three headline numbers with no derivation, no rate inputs
+and no sources, one of which contradicted [[C6-damage-healing-ratio]]. Row by row:
+
+- **PSII** — `A = k_REC/(k_REC+k_PI)` from Bártolo, Frankenbach & Serôdio, *PLOS ONE* 18(9):
+  e0292211 (2023), DOI 10.1371/journal.pone.0292211, full text fetched via Europe PMC
+  PMC10538756, 2026-09-05. 20 °C community mean `k_PI = 2.695e-4 s⁻¹`, `k_REC = 20.235e-4 s⁻¹`
+  → `A = 0.8825` — reproduces the old 0.883 exactly and reproduces C6 §5. Stress rows now given
+  per community (35 °C: 0.706 / 0.562; 5 °C: 0.476 / 0.454) instead of as the ranges
+  "0.56–0.71" and "0.45–0.48". Added the light-dependence caveat from Tyystjärvi & Aro, *PNAS*
+  93:2213 (1996), DOI 10.1073/pnas.93.5.2213, PMCID PMC39937 (**abstract only**, fetched
+  2026-09-05; the numeric proportionality constant was not obtained): `k_PI ∝ PPFD` over
+  6.5–1500 µmol m⁻² s⁻¹, so every `A` is conditional on the assay light.
+- **Trabecular bone 0.939 → band 0.726–0.952.** Replaced by C6 §5's two definition-dependent
+  endpoints: revisit 730 d with the full 200 d remodelling cycle down gives
+  `(730−200)/730 = 0.726`; with only the 35 d resorption phase down gives
+  `(730−35)/730 = 0.952`. The 0.939 came by an unsourced "remodelling space" route. **The width
+  0.23 is the finding**: bone is not two-state, so C6's condition C2 fails.
+- **Cortical bone 0.984 → UNSUPPORTED.** C6 §5 marks cortical PARTIAL: the remodelling cycle
+  median (120 d) is verified but the turnover/revisit interval was not found, so there is no
+  denominator. Withdrawn until one is sourced.
+- **US power grid 0.9998 → 0.99976 (excl. major event days) and 0.99874 (incl.).** EIA
+  *Electric Power Annual* Table 11.1, <https://www.eia.gov/electricity/annual/html/epa_11_01.html>,
+  fetched 2026-09-05: 2024 SAIDI 126.0 min / SAIFI 1.043 and SAIDI 662.6 min / SAIFI 1.531.
+  `MTTR = SAIDI/SAIFI` = 2.01 h and 7.21 h; `MTBF = (525960 − SAIDI)/SAIFI` = 8,403 h and
+  5,718 h. Consistent with C6 §5's grid rows.
+- **Data centre "five nines" 0.99999 → UNSUPPORTED design target.** `1 − 0.99999` = 5.26 min/yr.
+  Uptime Institute's own journal (Andy Lawrence, "99 Red Flags", 2019-10-28, fetched
+  2026-09-05) says such figures are "market-driven", to be treated "with extreme caution", and
+  that there is no direct relationship between a number of nines and a Tier level. Kept as a
+  target, not as a datum, and no longer anchors the top of the axis.
+- **Commercial aviation dispatch 0.995 → UNSUPPORTED and the wrong object.** No primary
+  obtained (FAA ETEB summary PDF 403'd 2026-09-05); and dispatch reliability has a
+  *per-departure* denominator with an MEL allowance, not a time denominator, so it is not
+  `MTBF/(MTBF+MTTR)`.
+- **Gut epithelium — dropped, not left blank.** A 3–5 day turnover is scheduled replacement
+  before failure; there is no `k_d`, so no source was sought.
+
+Net: no number in C1 now contradicts C6, and every surviving number states its inputs, its
+arithmetic and a source with a URL and a fetch date. **Not obtained:** cortical bone
+turnover/revisit interval; Tyystjärvi & Aro numeric constant; FAA dispatch figure; Wiley
+version of Carroll et al.
+
+
+## [2026-09-05] verification | E3 prior-art kill-check on C5: NOVEL holds; the two books are no longer the threat
+
+The novelty audit rested C5's NOVEL grade on two unread books, "either of which could falsify
+C5's novelty": Houston & McNamara (1999), *Models of Adaptive Behaviour*, and
+Gittins–Glazebrook–Weber (2011), *Multi-armed Bandit Allocation Indices*. Both were pursued.
+Neither full text was obtained — archive.org holds `modelsofadaptive0000hous` and
+`foragingtheory0000step` under lending restriction (HTTP 403 on the text derivative; the
+BookReader search-inside endpoint returns Bad Request), and Wiley's book page returns 403 —
+but both were reached at **Google Books term-index level**, which is a frequency list over the
+whole scanned text. Houston & McNamara: no "Gittins", "bandit", "index", "Charnov" or
+"marginal value"; its high-frequency vocabulary is state-dependent dynamic programming, not
+patch-use theory, so it was always a weaker threat than G28 assumed.
+Gittins–Glazebrook–Weber: no "foraging", "Charnov", "animal" or "ecology". Stephens & Krebs
+(1986), checked the same way as a third candidate, has *Charnov* and *marginal-value theorem*
+and **no** "Gittins", "bandit" or "index" — the same asymmetry from the ecology side.
+Verdict unchanged: **NOVEL**. What changed is the caveat's shape, from "two unobtained books"
+to "three unread full texts", the third being Griebling et al. 2026.
+
+## [2026-09-05] verification | The strongest prior art for C5 is an explicit denial, not a statement
+
+Twelve web queries and five OpenAlex `fulltext.search` queries were run, and five full texts
+were extracted and grepped. Nothing states that Charnov's `R*` is a Gittins index. The closest
+anyone comes is **Kilpatrick, Davidson & El Hady**, *Normative theory of patch foraging
+decisions* ([arXiv:2004.10671](https://arxiv.org/pdf/2004.10671)) — which C5 §8 had listed as
+"abstract fetched only, provisional" and which is now **read in full**. It has a subsection
+titled *Patch foraging as modified multi-armed bandit*, cites Banks & Sundaram's *Switching
+costs and the Gittins index* (its one and only occurrence of the word "Gittins", in the
+reference list), and concludes the opposite of C5: "as formulated these are still different
+decision problems". It reaches "patch foraging is fairly well described by a non-stationary
+bandit with … switching costs" and stops. Under the adversarial standard set for E3 — a bandit
+treatment identifying patch residence with an index policy counts as prior art even without the
+word "Charnov" — this is the nearest miss on record, and it is a denial. C5 §8's provisional
+entry is discharged.
+
+## [2026-09-05] verification | Two new near-misses located: Kacelnik 1979 and McNamara & Houston 1985
+
+The Krebs–Kacelnik–Taylor 1978 lineage was checked at its source. **Kacelnik's 1979 Oxford DPhil
+thesis** (ORA `uuid:8155d6b1-2df4-4e13-987d-a4d3b1ee3b68`, full PDF extracted, ~420 kB of text)
+devotes three chapters to the two-armed bandit — Thompson 1933, Bellman, Jones 1975/1976,
+Wahrenberger 1977, DeGroot — and solves it by **dynamic programming**, with **zero occurrences
+of "Gittins" or "dynamic allocation"**. Bandits for *sampling*, never for patch residence.
+**McNamara & Houston (1985)**, *Optimal foraging and learning*, *J. Theor. Biol.* 117:231, names
+the two-armed bandit explicitly *and* MVT *and* MVT's circularity — `γ*` "can only be achieved
+by behaving optimally" — in one paper, with **zero occurrences of "Gittins" or "index"**. Same
+structure as Averbeck 2015: both halves in hand, no connection drawn. G28's "no direct contact"
+topology is corroborated at two more points.
+
+## [2026-09-05] verification | The OR side's silence measured: 240 "Gittins", zero "foraging"
+
+Scully & Terenin (2025), *The Gittins Index: A Design Principle for Decision-Making Under
+Uncertainty*, INFORMS TutORials ([arXiv:2506.10872](https://arxiv.org/pdf/2506.10872)),
+extracted in full: 165 kB of text, **240 occurrences of "Gittins"**, **zero occurrences of
+"foraging", "Charnov" or "marginal value"**. Jacko (2019)'s self-described *multidisciplinary*
+two-armed-bandit survey ([arXiv:1906.10173](https://arxiv.org/pdf/1906.10173)) has **zero**
+"foraging", "Charnov", "ecology" or "animal". The current state-of-the-art survey of the index
+does not know foraging exists. This is the cleanest single measurement of G28's gap from the
+operations-research side, and it is stronger evidence than the citation intersection.
+
+## [2026-09-05] honest null | Zero ecological applications of the Whittle index found; E4's ground is empty
+
+The query `"Whittle index" foraging patch regrowth restless bandit ecology` returned only
+operations-research papers. No application of Whittle's restless-bandit index to a foraging,
+patch-regrowth or ecological problem was located. This is a null with a use: it says backlog row
+E4 (Whittle index for a regrowing patch) is unoccupied ground rather than a re-derivation, and
+it is the reason C5 now carries a §12 "What E4 must do" spec instead of leaving the next agent
+to re-litigate novelty.
+
+## [2026-09-05] method | Novelty grades should record access level, not just "unobtained"
+
+E3 exposed a vocabulary gap in the novelty audit. "Unobtained book" collapsed three different
+epistemic states: never looked for, found but paywalled, and *found, full text blocked, but
+term-index read and clean*. The last is much stronger than the first and the audit could not
+say so. The C5 row now states the access level explicitly (Google Books term-index level, full
+text 403) and names the residual threat by DOI rather than by category. Recommend the same
+treatment wherever the audit's "biggest threat" column names an unread source — it pairs with
+the VERIFIED-PRIMARY / VERIFIED-SECONDARY split proposed in `audits/01-math-physics.md` item 25.

@@ -12,7 +12,9 @@ type: computed
 > coupling point adds a mechanical conjugate pair `(F, v)` — which [[C8-momentum-harvesting-metric]]
 > §3.2 itself established is a legitimate Onsager pair — so the matrix goes from 2×2 to 3×3.
 > The optimum still collapses to a coefficient. It collapses to the degree of coupling of the
-> **Schur complement**, `q'² = L'₁₂²/(L'₁₁L'₂₂)` with `L'ᵢⱼ = Lᵢⱼ − Lᵢ₃L₃ⱼ/L₃₃`.
+> **Schur complement**, `q'² = L'₁₂²/(L'₁₁L'₂₂)` with `L'ᵢⱼ = Lᵢⱼ − Lᵢ₃L₃ⱼ/L₃₃`. Call the
+> figure of merit built from it **`ZT_Schur`** — it is a *bookkeeping* object, defined on the
+> reduced 2×2 matrix, and it is **not** the same quantity as the physical `ZT_eff` below.
 >
 > Outcome **(b)**, delivered as outcome **(c)**. A modified bound exists, it is computable, and
 > it is **monotonically worse** than the static one:
@@ -155,10 +157,16 @@ symmetric matrix is positive-semidefinite and symmetric. So `L'` is a legitimate
 matrix, reciprocity holds in it, and
 
 ```
-q'²  ≡  L'₁₂² / (L'₁₁ L'₂₂)  ∈  [0,1] ,     max η  =  η_C · (√(1+ZT_eff) − 1)/(√(1+ZT_eff) + 1)
+q'²  ≡  L'₁₂² / (L'₁₁ L'₂₂)  ∈  [0,1] ,  max η = η_C·(√(1+ZT_Schur) − 1)/(√(1+ZT_Schur) + 1)
 
-with   q'²  =  ZT_eff/(1 + ZT_eff)                                      (5)
+with   q'²  ≡  ZT_Schur/(1 + ZT_Schur)  ,   i.e.   ZT_Schur ≡ q'²/(1 − q'²)      (5)
 ```
+
+**Naming, because the two objects were previously both called `ZT_eff`.** `ZT_Schur` is
+*defined by* (5) as the figure of merit of the Schur-complement matrix `L'`. `ZT_eff` in §4 is
+*defined by* (8) as `α²GT/(K + (1−ε)cv)` — the figure of merit of the leg with the advected
+heat load charged back in. They are different functions of the same matrix; §4.1a writes the
+identity connecting them, and (8f) orders them.
 
 **The optimum still collapses to a coefficient.** This is the precise point on which
 [[C8-momentum-harvesting-metric]] §5 is wrong. C8 §3.3 correctly identified that the *momentum*
@@ -179,6 +187,18 @@ L'₁₁ = L₁₁ ,   L'₁₂ = L₁₂ ,   L'₂₂ = L₂₂ − L₂₃²/L
 
 ⟹   q'²  =  L₁₂² / [L₁₁(L₂₂ − L₂₃²/L₃₃)]  =  q² · L₂₂/(L₂₂ − L₂₃²/L₃₃)   >  q²   (6)
 ```
+
+Equivalently, in the `ZT` variable — since `x ↦ x/(1+x)` is strictly increasing, (5) and (6)
+give
+
+```
+ZT_Schur  =  ZT · L₂₂/(L₂₂ − L₂₃²/L₃₃)  ≡  ZT / (1 − φ) ,
+                                       φ  ≡  L₂₃²/(L₂₂ L₃₃)  ∈  [0,1)          (6a)
+```
+
+`φ` is dimensionless, lies in `[0,1)` by positive-semidefiniteness of `L`, and is **the fraction
+of the leg's thermal conductance that is slaved to the prescribed motion**. `ZT_Schur ≥ ZT`
+always, and diverges as `φ → 1`. That is the whole of the apparent win, in one parameter.
 
 **The effective degree of coupling is raised.** As `L₂₃² → L₂₂L₃₃` — the positive-semidefinite
 boundary — `q' → 1`, so `ZT_eff → ∞` and `max η → η_C`. Algebraically the bound *is* evaded: the
@@ -232,12 +252,57 @@ Pe ≡  ──────────────  ÷ (1−ε) = ───   , 
 tabulates. This is the "additional dimensionless parameter" Bezsudnov & Snarskii reported in 2014
 (**VERIFIED**, §2), arrived at from the other direction.
 
-> **The cancellation, stated exactly.** The Schur complement lowers `L₂₂` by `L₂₃²/L₃₃`. The
-> advected heat load raises the physical thermal conductance by `(1−ε)cv`. Netting them,
-> `ZT_eff = ZT/(1 + (1−ε)Pe) ≤ ZT`, with equality **iff `v = 0` or `ε = 1`**.
+### 4.1a The identity that maps `ZT_Schur` to `ZT_eff` — eq. (6) and eq. (8) reconciled
+
+Both objects are `α²GT` divided by *some* thermal conductance. Write each in that form and the
+bookkeeping step is one line.
+
+```
+ZT        =  α²GT / K                                                       (8a)
+ZT_Schur  =  α²GT / K'      with  K'    ≡  K(1 − φ)  =  K − L₂₃²/(L₃₃ T²)      (8b)
+ZT_eff    =  α²GT / K_tot   with  K_tot ≡  K + (1−ε)·c v                     (8c)
+```
+
+(8b) is (6a) rewritten: the Schur complement subtracts `L₂₃²/L₃₃` from `L₂₂`, and `L₂₂ = K T²`,
+so it subtracts `φK` from the thermal conductance. **The two denominators differ by exactly the
+accounting move**, and the identity is
+
+```
+                     K'                        K − φK
+ZT_eff  =  ZT_Schur · ─────  =  ZT_Schur · ───────────────              (8d)
+                    K_tot                  K + (1−ε)·c v
+
+  equivalently     1/ZT_eff  −  1/ZT_Schur  =  [ (1−ε)c v  +  φK ] / (α²GT)  ≥ 0   (8e)
+```
+
+Read (8e) left to right: `ZT_Schur` was obtained by **removing** `φK` from the denominator;
+`ZT_eff` is obtained by **putting `φK` back and additionally charging `(1−ε)cv`**. Both added
+terms are non-negative, so `1/ZT_eff ≥ 1/ZT ≥ 1/ZT_Schur`, hence
+
+```
+ZT_eff  ≤  ZT  ≤  ZT_Schur                                                  (8f)
+```
+
+with `ZT_eff = ZT` iff `v = 0` or `ε = 1`, and `ZT_Schur = ZT` iff `φ = 0`.
+
+**So eq. (6) and eq. (8) are not in tension; they are two different denominators.** (6) says
+`q' > q`, i.e. `ZT_Schur > ZT` — true, and a statement about the reduced matrix `L'`. (8) says
+`ZT_eff ≤ ZT` — also true, and a statement about the physical leg. (8f) orders all three and
+(8e) is the ledger line: *the amount by which the Schur complement flattered the device is
+`φK`, and the physical accounting charges that back plus `(1−ε)cv`.*
+
+**The relabelled heat current is `φK` exactly** — the quantitative form of "the Schur complement
+made the leg look stiffer by relabelling a heat current". Which object is the operative figure
+of merit is not a choice: the advected heat is real, so `ZT_eff` is physical and `ZT_Schur` is
+an intermediate.
+
+> **The cancellation, stated exactly.** The Schur complement lowers `L₂₂` by
+> `L₂₃²/L₃₃ = φL₂₂`, which is what raises `ZT_Schur` above `ZT` in (6a). The advected heat load
+> raises the physical thermal conductance by `(1−ε)cv`. Netting them through (8d)–(8e),
+> `ZT_eff = ZT/(1 + (1−ε)Pe) ≤ ZT ≤ ZT_Schur`, with `ZT_eff = ZT` **iff `v = 0` or `ε = 1`**.
 >
-> The apparent gain in (6) is a positive-semidefiniteness statement about a matrix; the loss in
-> (8) is the same heat, counted where it actually goes. **Moving the coupling point cannot raise
+> The apparent gain in (6) is a positive-semidefiniteness statement about the matrix `L'`; the
+> loss in (8) is the same heat, counted where it actually goes. **Moving the coupling point cannot raise
 > the degree of coupling of a converter. At best a perfect regenerator restores the value it
 > would have had standing still.**
 
@@ -364,8 +429,9 @@ is doing nothing whatever.
 
 **Which of the three offered outcomes.** Formally **(b)**: a modified bound exists, it is
 `ZT_eff = ZT/(1+(1−ε)Pe)`, and deriving it is the useful part. Practically **(c)**: the modified
-bound is never better than the original, the gain in the Schur complement is exactly the advected
-heat counted twice, and the motion is charged again for drag and for contact.
+bound is never better than the original, the gain in the Schur complement
+(`ZT_Schur = ZT/(1−φ)`, eq. 6a) is exactly the advected heat `φK` relabelled and then charged
+back by (8e), and the motion is charged again for drag and for contact.
 
 **What the prior art already knew.**
 
@@ -429,7 +495,10 @@ escaping it.
 ## 8. Status
 
 - **§3 (Schur complement, `q'` exists, apparent gain in (6)): derivation holds**, and is the same
-  algebra Brandner–Seifert use (**VERIFIED**).
+  algebra Brandner–Seifert use (**VERIFIED**). Its figure of merit is now named **`ZT_Schur`**
+  (eqs. 5, 6a), distinct from §4's physical **`ZT_eff`** (eq. 8); the two are related by the
+  explicit identity (8d)–(8f), so `q' > q` and `ZT_eff ≤ ZT` are reconciled **from equations**,
+  not from prose.
 - **§4.1 (the cancellation, eq. 8): derivation holds**, and independently corroborated by the 2014
   rotating-thermoelectric result finding the same extra dimensionless group (**VERIFIED**).
 - **§4.2–§4.4 (drag, contact, balance): standard, and each is a strict inequality.** Equation (11)
@@ -451,3 +520,36 @@ escaping it.
 
 See [[C8-momentum-harvesting-metric]], [[kedem-caplan]], [[G1-gradient-coupling]] and
 [[what-closes-a-gap]].
+
+---
+
+## Corrections 2026-09-05
+
+**A25 — `ZT_eff` named two different quantities in §3 and §4. The §3 object is now `ZT_Schur`,
+and an explicit identity maps it to §4's `ZT_eff`.**
+
+| | old | new |
+|---|---|---|
+| §3 figure of merit (eq. 5) | **`ZT_eff`**, defined by `q'² = ZT_eff/(1+ZT_eff)` on the Schur complement `L'` | **`ZT_Schur`** — same definition, renamed; `ZT_Schur ≡ q'²/(1−q'²)` |
+| §3 apparent gain (eq. 6) | `q'² > q²`, "`ZT_eff → ∞`" | eq. **(6a)** added: `ZT_Schur = ZT/(1−φ)` with `φ ≡ L₂₃²/(L₂₂L₃₃) ∈ [0,1)`; diverges as `φ → 1` |
+| §4 figure of merit (eq. 8) | `ZT_eff = ZT/(1+(1−ε)Pe) ≤ ZT` | unchanged — and now the **only** `ZT_eff` in the note |
+| Reconciliation of (6) and (8) | §4.1 prose ("the Schur complement moved the leak") | new **§4.1a**, eqs. **(8a)–(8f)**: `ZT_eff = ZT_Schur·K'/K_tot`; `1/ZT_eff − 1/ZT_Schur = [(1−ε)cv + φK]/(α²GT) ≥ 0`; therefore `ZT_eff ≤ ZT ≤ ZT_Schur` |
+| Lead callout | named only "the Schur complement" | names `ZT_Schur` and warns it is not `ZT_eff` |
+| §6 verdict, §8 status | prose reconciliation | both now cite (6a) and (8d)–(8f) |
+
+**Inputs for every symbol introduced.** `φ ≡ L₂₃²/(L₂₂L₃₃)`, dimensionless, in `[0,1)` because
+`L ⪰ 0`. `K = κA/L` (leg thermal conductance, §5: `3.0×10⁻⁴ W K⁻¹`). `K' ≡ K(1−φ)`, from
+`L'₂₂ = L₂₂ − L₂₃²/L₃₃` together with `L₂₂ = K T²`. `K_tot ≡ K + (1−ε)cv`, from eq. (7).
+`c = κc_p A` per unit length; `Pe ≡ vL/α_th` from eq. (9).
+
+**No number changed.** §5's `Pe = 3.97`, `ZT_eff = 0.201`, `q' = 0.409`, the 3.8× efficiency
+fall, the 25 µm/s tolerance and the 0.025 J contact penalty are all computed from eq. (8),
+which is untouched. This correction is a **renaming plus an added algebraic identity**; nothing
+was recomputed and nothing was fetched for it.
+
+**What it fixes.** A reader previously had to accept in prose that eq. (6)'s `q' > q` and
+eq. (8)'s `ZT_eff ≤ ZT` were compatible. Equation (8e) now says by how much: the Schur
+complement flattered the device by exactly `φK` of thermal conductance, and the physical
+accounting returns that `φK` and adds `(1−ε)cv` on top. The audit's objection — "`ZT_eff`
+denotes two different quantities in §3 and §4 and they point in opposite directions" — is
+answered by (8f), which lets both point their own way in one ordered chain.
