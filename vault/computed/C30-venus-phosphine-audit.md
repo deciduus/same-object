@@ -218,6 +218,11 @@ and it surfaced a class D.2 did not anticipate — not "a central value inside i
 but **"a central value that is a function of the reduction pipeline."** D.2 should be amended to
 name it. A blind control still needs the K2-18b run, halt *not* pre-announced (2–3 h).
 
+**Amended 2026-09-05:** that class is now [[reservoir-audit]] **D.3 / F8**, with the mandatory
+step-0 reductions table, the `NO AGREED OBSERVABLE` halt, and — in D.3a — the record that this
+run's halt was pre-announced and therefore contaminated, plus the blind-brief template the
+uncontaminated test requires.
+
 ---
 
 ## 6. Honesty

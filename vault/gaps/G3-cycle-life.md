@@ -74,17 +74,24 @@ cells die by **cumulative wear-out**, `N_fail = tolerance/f`, a threshold crossi
 number, two different reliability distributions — the [[stress-strength-interference]]
 discrete-vs-continuous split again.
 
-**The bridge that does span both is the Weibull shape parameter β.** `β = 1` (constant hazard,
-exponential) is the enzyme signature — first-order thermal deactivation *is* `β = 1`. Li-ion is
-`β > 1` (wear-out; ~12.7 reported for one cell, VERIFIED-via-search only). β is dimensionless,
-spans both legs, and classifies by **failure physics, not by field.**
+**The candidate bridge is the Weibull shape parameter β — but only within one object class**
+(C18 §0, corrected 2026-09-05). `β = 1` (constant hazard, exponential) is the enzyme signature —
+first-order thermal deactivation *is* `β = 1`, though that is a model claim from bulk kinetics, not
+a fitted lifetime distribution. Li-ion is `β > 1` (wear-out; ~12.7 reported for one cell,
+VERIFIED-via-search only), and that one *is* a fitted lifetime distribution. β is dimensionless,
+but it is **not estimator-invariant**: on the same 100 turbofan units, an MLE on the ensemble of
+lifetimes and a first-passage fit to one unit's degradation path give 4.41 and 0.97
+([[C26-ews-hazard-shape]]). So β classifies by failure physics only once the object and the
+estimator are named.
 
 **The new result it produced:** organic flow-battery reactants degrade by **calendar-time
-chemical decay, β ≈ 1** — the *same failure law as enzyme death*, not Li-ion's. So the bridge
-reclassifies flow-battery chemistry **with** enzymes and isolates Li-ion electrode wear as the
-outlier. Nobody has drawn both β values on one plot — battery-side β fits are routine, enzyme-side
-β is left implicit in bulk decay curves. So G3 **narrows to: same count, different failure law,
-and the shared coordinate is β.**
+chemical decay** — first-order in *time*, the same kinetic law as enzyme thermal deactivation, and
+not cycle-driven at all. That reclassification survives. **The stronger claim that this puts flow
+chemistry "with enzymes and against Li-ion" on one β axis is withdrawn**, because Li-ion's β is a
+lifetime-distribution fit and the other rows are decay-rate constants. Battery-side β fits are
+routine; enzyme-side β is left implicit in bulk decay curves and never fitted. So G3 **narrows to:
+same count, different failure law — and the shared coordinate is `(object, estimator, β)`, one
+axis per object class.**
 
 ## Two things the reading added
 

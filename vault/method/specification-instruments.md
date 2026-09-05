@@ -51,6 +51,13 @@ itself about solar sails and caught it with its own instrument.
 | [[citation-intersection]] | — | **set intersection over bibliographies** | the project's evidence standard |
 | [[C5-charnov-gittins]] | optimality | **the Gittins index — a discrete allocation object** | closed by identity |
 
+**Step 2 has a prior step these instruments did not have until 2026-09-05.** Before any
+enumeration, check that the observable exists: [[reservoir-audit]] Part D.3 / F8 names the failure
+class **"the central value is a function of the reduction pipeline"** — independent reductions of
+the *same* raw data spanning "detected" and "not detected" — and halts with `NO AGREED OBSERVABLE`.
+Every instrument in this table converts whatever number it is handed into a required supply, so
+every one of them inherits the exposure.
+
 **The Q7 row, corrected 2026-09-05 (backlog C15).** It read *"bias-immune, 11/11"*. Both halves
 were wrong. The count came from a hand-assigned sample; re-applying [[C16-same-class-catalogue]]'s
 decision procedure **blind** — class assigned on apparatus / observable / analysis pipeline

@@ -2167,3 +2167,135 @@ added to `refs.bib`, each with a `note` recording provider, date and what was no
 **Polish.** The `δ → 0` passage now names the dominating function explicitly (`e^{−δu}g'(u)`
 is bounded on the compact `[0, s]` uniformly in `δ ≥ 0`, so a constant dominates), and an
 Acknowledgements section records the review.
+
+## [2026-09-05] correction | C18's β axis was not well defined: rows mixed objects and estimators; it narrows to one axis per object class
+
+C18 claimed a single Weibull-β axis spanning catalysis and energy storage, and used it to
+reclassify organic flow-battery reactants "with enzymes, against Li-ion". The rows being compared
+were not the same kind of quantity. Two were bulk decay-rate constants (enzyme thermal
+deactivation; flow-reactant %/day fade), one was an unfitted geometric model (enzyme suicide
+inactivation), and only one — Li-ion NCR18650GA, β = 12.7 — was a fitted distribution of unit
+lifetimes. C26 supplied the decisive evidence that this matters: the same 100 C-MAPSS FD001
+turbofan units give β = 4.41 by direct Weibull MLE on the sample of lifetimes (its R1) and
+β = 0.97 by the degradation-to-threshold first-passage route (its R2), a factor of 4.5 from the
+estimator alone.
+
+What is now in C18: a comparability rule (§0) naming four object classes; `object` and `estimator`
+columns on every row of the §3 table, with `not recorded` on two rows (enzyme suicide inactivation
+has no fit at all; the Li-ion source's fitting method is absent from the accessible snippet and the
+primary returned 403), both flagged not comparable; a within-class restatement (§3.1); and a linked
+cross-reference table (§3.2) to C26, C27 and C29 that keeps each number's provenance in its owning
+note. C27's rows are additionally marked as *discard* lifetimes from household surveys, not failure
+records.
+
+Withdrawn: "put each on the β axis and Li-ion is the outlier, while flow-battery chemistry and
+enzyme chemistry coincide", and the verdict-2 form of the same claim. Restated within class: the
+flow-reactant / thermal-enzyme coincidence holds inside the bulk decay-curve class, and the real
+result there is that flow-battery fade is first-order in *time*, not in cycles — the authors' own
+statement. Li-ion's 12.7 is comparable only with other fitted lifetime distributions, where its
+neighbours (C27 product classes 1.00–6.0, C26 R1 4.41) all sit below it. The honest outcome is that
+"one durability axis" narrows to "one axis per object class"; C18's `(N_fail, β)` pair becomes
+`(N_fail, β, object+estimator)`. G3's construction paragraph was updated to match. Full
+sentence-by-sentence diff is in C18 § Corrections 2026-09-05.
+
+
+## [2026-09-05] prediction failed | C29's prediction 1 does not replicate: per-habitat recovery β does not rank-correlate across datasets
+
+[[C29-recovery-beta]] §5.1 predicted that refitting its Weibull recovery `β` on an independent
+meta-analysis would reproduce the per-habitat ordering, with the sign of the rank correlation as
+the falsifiable object. [[C32-recovery-beta-replication]] ran it on Moreno-Mateos et al. 2017
+(Dryad `doi:10.5061/dryad.t5c97`, `Moreno, Jones database.xlsx`, 3,688 usable outcome measures from
+353 studies, fetched 2026-09-05) using C29's estimator unchanged. Spearman `ρ = +0.100`, n = 5,
+exact two-sided p = 0.950 at the outcome-measure level; `ρ = −0.300`, p = 0.683 at study level. The
+sign flips with the analysis unit and is nowhere near significance. Of C29's five named habitat
+statements only "brackish lowest" holds. By C29's own stated terms the claim that `β` measures
+something about ecosystem types is dead. Produced by `vault/_scripts/c32_replication.py`.
+
+## [2026-09-05] computed | Pooled recovery β replicates at 0.733 [0.703, 0.764] on a second meta-analysis
+
+Same run. `β < 1` with the profile CI clear of 1 on a dataset with a different recovery criterion,
+a different unit of observation and 69.1% censoring (against C29's 42.5%), and stable across
+analysis units (0.733 outcome-measure level, 0.721 study level). [[C18-durability-axis]]'s
+infant-mortality corner survives; what does not survive is resolution *within* the corner.
+
+## [2026-09-05] honest null | C29's prediction 2 (frailty split) is undecided, not answered
+
+Splitting by Moreno-Mateos' `Metric type` raises `β` toward 1 in the compositional/species class
+(0.733 → 0.824) and above 1 in several habitat × class cells (Forest × compositional 1.166
+[1.011, 1.328]) but leaves the structural/biomass class — 84% of rows — at 0.723, indistinguishable
+from pooled. Neither the clean frailty signature nor the clean null. Recorded as undecided rather
+than scored either way.
+
+## [2026-09-05] correction | "Independent replication" overstated: the two recovery meta-analyses share ~95 primary studies
+
+The Dryad deposit for Moreno-Mateos 2017 is named `Moreno, Jones database.xlsx` and its R script
+credits data manipulation to Peter Jones — the first author of Jones & Schmitz 2009, C29's dataset.
+Matching first-author surname + year across the two reference lists gives **95 shared primary
+studies: 37.3% of Jones & Schmitz's 255 references, 27.0% of Moreno-Mateos' 352**. Any future
+citation of C32 as an *independent* replication must carry this number. Direction of the bias:
+shared studies inflate agreement, so the pooled-`β` agreement is worth less than it looks, while
+the ordering failure is if anything harder to explain away.
+
+## [2026-09-05] method | Crouzeilles 2016 rejected as a replication target: its deposited data has no time variable
+
+C29 §5.1 named Crouzeilles et al. 2016 (`doi 10.1038/ncomms11666`) as the alternative target. Its
+Dryad deposit (`doi:10.5061/dryad.k3479`, `Meta_analysis.txt`, fetched 2026-09-05) carries site,
+disturbance-conversion, taxon/metric dummies and a log response ratio `RR` — and no elapsed-time
+column and no recovery yes/no. No survival time can be constructed from it. Recorded so the target
+is not re-attempted.
+
+## [2026-09-05] method | Moreno-Mateos' recovery *debt* converted to a survival time, and the conversion is the weak point
+
+The dataset records `Start`, `End`, `Goal` and elapsed `Time since restoration started`, not a
+return time. C32 §2 codes recovery as `End` crossing `Goal` in the direction of travel from
+`Start`, event or right-censoring at the elapsed time. This treats current-status data as exact
+event times and therefore overstates recovery times. Fitting the correct current-status likelihood
+degenerates (`β = 0.051`, `η` ~10⁹ yr) because the recovered fraction is nearly flat in elapsed
+time: 0.287 at ≤2 yr rising only to 0.360 beyond 80 yr, over 3,688 rows. That flatness is the
+single most informative number the run produced and it cuts both ways — extreme "early-or-never",
+and a warning that elapsed time carries little information about recovery status in this database.
+
+## [2026-09-05] method | Dryad is behind a proof-of-work bot check; deposits were retrieved by browser, not by defeating it
+
+`datadryad.org` returns an Anubis proof-of-work challenge to scripted requests (HTTP 403, or a
+"Validating…" HTML body, for every non-browser user agent tried on 2026-09-05). The two deposits
+above were fetched through an ordinary browser session. `vault/_scripts/c32_replication.py`
+therefore takes the database by `--xlsx` path and does not pretend it can fetch it, unlike
+`c29_recovery.py`. Note for future data-availability work: a Nature Communications "Data
+availability" statement pointing at Dryad is not scriptable today.
+
+
+## [2026-09-05] method | Reservoir audit gains F8 and Part D.3: "the central value is a function of the reduction pipeline" — step 0 now requires a table of independent reductions before any A is computed
+
+The first real run of the audit's step-0 halt ([[C30-venus-phosphine-audit]], Venus PH₃) surfaced
+a failure class Part D.2 did not anticipate. D.2 covers a single central value inside its *own*
+error bar. Venus is worse: the same three November 2021 SOFIA flights reduce to `<0.8 ppb`
+(Cordiner 2022) and to `3 ppb at 5.7σ` (Greaves 2023), and the same ALMA photons gave `20 ppb`
+then `1–7 ppb` — each reduction internally significant, the *set* spanning "detected" and "not
+detected". That is not METHOD §5's same-class systematic either: there is only one measurement,
+and what disagrees is the software downstream of it, so re-observation settles nothing.
+
+What changed in [[reservoir-audit]]: a new **Part C step 0**, mandatory and prior to step 1 —
+(a) significance, halting with `NO OBSERVABLE TO EXPLAIN` if the interval contains zero; (b) a
+table of every independent reduction of the same photons or records, halting with
+`NO AGREED OBSERVABLE` if the rows span detected/not-detected. No `A`, no `Σ`, no enumeration may
+be written before that table exists. A three-row contrast is carried in the step itself: C11
+(NEAR `+13.46 ± 0.13 mm/s`, agreed → proceed), C30 (pipeline-dependent → halt), D.2's fabricated
+`(0.4 ± 3.0) µN` (inside its error bar → halt). New **Part D.3** defines the class and bounds
+what a conditional run may claim — calibration against a known enumeration (C30 vs Bains 2021)
+yes; a residual specification asserted as real, no. New **F8** in the failure-modes list; the
+Standing summary now names five conditions, adding step 0 (F8) and the aperture row (step 5 / F3),
+both added 2026-09-05.
+
+Recorded honestly and against the project's interest, in new **D.3a**: the C30 halt was announced
+in advance in `audits/scout-03-astrobiology.md` §Job 1 and in the commissioning brief, so the
+agent was told the case halts and then reported that it halts. The datum shows the step-0 state is
+reachable and well-defined on a real, messy input; it does **not** test whether the instrument
+halts on its own, and Part D's central question stays unanswered. The uncontaminated test is
+specified: a future run briefed **blind** (agent not told whether the case is resolved, no
+expected outcome, no D-class named), with the five-line brief archived verbatim and dated at
+`audits/blind-brief-<case>-<YYYY-MM-DD>.md` *before* dispatch and cited in the resulting note.
+
+Also: one pointer line each in [[specification-instruments]] (every instrument in that table
+converts a handed number into a required supply, so all of them inherit the exposure) and in
+C30 §5. `python _lint.py` → 0 errors.

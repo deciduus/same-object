@@ -12,7 +12,7 @@ mediator:
 borrows-from: ["[[C18-durability-axis]]"]
 lends-to: []
 mutual-with: []
-computed-in: ["[[C29-recovery-beta]]"]
+computed-in: ["[[C29-recovery-beta]]", "[[C32-recovery-beta-replication]]"]
 uses-move: []
 rests-on: ["[[C18-durability-axis]]"]
 tags: [node/gap, crosses/formalism, evidence/citation-intersection, standing/live]
@@ -20,7 +20,7 @@ last-checked: 2026-09-05
 exit: computation
 extends-to: [ecology, conservation]
 next-step-cost: S
-note: "Ecology reports a mean return time where reliability reports a hazard shape. Weibull 1951 x five recovery/return-time anchors: intersection 0 on OpenCitations, every decade bin, against E floors 145-1933. Ecology-internal controls 7-31. Closed by computation in C29: beta = 0.587 [0.510, 0.668], decreasing hazard."
+note: "Ecology reports a mean return time where reliability reports a hazard shape. Weibull 1951 x five recovery/return-time anchors: intersection 0 on OpenCitations, every decade bin, against E floors 145-1933. Ecology-internal controls 7-31. Closed by computation in C29: beta = 0.587 [0.510, 0.668], decreasing hazard. Replication 2026-09-05 (C32, Moreno-Mateos 2017, 3,688 rows): pooled decreasing hazard survives (β = 0.733), the per-habitat ordering does NOT (Spearman ρ = 0.10, p = 0.95); ~30% study overlap between datasets."
 ---
 
 # Recovery time as a hazard shape
@@ -199,6 +199,10 @@ What that leaves open, and what would close the gap rather than the computation:
 1. **Reproduce the per-habitat `β` ordering on an independent recovery dataset** (Moreno-Mateos
    2017 or Crouzeilles 2016). [[C29-recovery-beta]] §5 states the prediction as the sign of a rank
    correlation, which is falsifiable and cheap.
+   **Run 2026-09-05 and failed:** [[C32-recovery-beta-replication]] refits on Moreno-Mateos 2017 and
+   gets pooled `β = 0.733 [0.703, 0.764]` (so `β < 1` replicates) but Spearman `ρ = +0.100`, n = 5,
+   p = 0.950 on the per-habitat ordering, flipping to `−0.300` at study level — `β` does not resolve
+   between ecosystem types.
 2. **Separate frailty from mechanism** by re-fitting within a single response-variable class. If
    `β` rises toward 1 within class while the pooled `β` stays at 0.59, the finding is
    heterogeneity, not deceleration — and that is still a result, just a different one.

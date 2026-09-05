@@ -200,3 +200,26 @@ let this pass.
   object C18 needs; **no goodness-of-fit comparison against a lognormal or a gamma was run**, so
   "Weibull with β = 0.587" is a parameterisation, not a demonstration that the Weibull family is
   the right one.
+
+## Replication 2026-09-05
+
+**Prediction 5.1 has been run and it failed.** [[C32-recovery-beta-replication]] refits this note's
+estimator, unchanged, on Moreno-Mateos et al. 2017's per-study database (Dryad
+`doi:10.5061/dryad.t5c97`, 3,688 usable outcome measures, 353 studies, fetched 2026-09-05).
+**Pooled `β = 0.733 [0.703, 0.764]`** — `β < 1` with the CI clear of 1, so §4's placement on
+[[C18-durability-axis]] survives. **The per-habitat ordering does not:** Spearman `ρ = +0.100`
+(n = 5, exact two-sided p = 0.950) at the outcome-measure level and `ρ = −0.300` (p = 0.683) once
+the analysis unit is collapsed to one record per study. Of §5.1's five named habitat statements,
+one holds (brackish lowest); marine-low and freshwater-highest are both wrong, with non-overlapping
+CIs. By §5.1's own terms — "a null or negative correlation kills the claim that `β` measures
+anything about ecosystems" — **`β` does not resolve between ecosystem types.**
+
+Prediction 5.2 (the frailty split) was run on Moreno-Mateos' `Metric type` and is **undecided**:
+`β` rises toward 1 in the compositional class and in several habitat × class cells (Forest ×
+compositional 1.166 [1.011, 1.328]) but not in the structural class that carries 84% of the rows
+(0.723, indistinguishable from pooled). Two things C32 found that bear directly on §6 of this note:
+the two datasets **share ~95 primary studies** (37% of this note's reference list), so the pooled
+agreement is worth less than an independent one; and in Moreno-Mateos' data the recovered fraction
+is **nearly flat in elapsed time** (0.29 at ≤2 yr to 0.36 at >80 yr), which is "early-or-never" in
+its most extreme form and simultaneously a warning that elapsed time carries little information
+about recovery status. No number above this section is changed.

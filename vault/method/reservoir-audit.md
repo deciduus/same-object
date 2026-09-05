@@ -362,6 +362,23 @@ points at the *analysis* rather than the *physics*. Recorded as failure mode F6.
 
 Run on any device reported to produce useful work without carried fuel.
 
+0. **Establish that there is an agreed observable — before any `A` is computed.** Two parts,
+   both mandatory, both prior to step 1.
+   **(a) Significance.** State the observable's central value with its uncertainty. If the
+   interval contains zero, halt with `NO OBSERVABLE TO EXPLAIN` (D.2) and enumerate nothing.
+   **(b) The reductions table.** List **every independent reduction of the same photons or
+   records** — team, pipeline, central value, stated significance, and which rows share raw data.
+   If the rows span "detected" and "not detected", halt with `NO AGREED OBSERVABLE` (D.3) and do
+   not proceed unconditionally. A conditional run downstream of this halt may claim calibration
+   against a known enumeration; it may **not** assert its residual specification as real.
+   **No `A`, no `Σ`, no candidate enumeration may be written before the table exists.**
+
+   | Case | Step-0 finding | Verdict |
+   |---|---|---|
+   | [[C11-flyby-reservoir-audit]] — NEAR flyby | one agreed number across groups: `ΔV∞ = +13.46 ± 0.13 mm/s`, `13.46/0.13 ≈ 100σ`; no reduction reports a null for NEAR | **agreed observable → proceed** |
+   | [[C30-venus-phosphine-audit]] — Venus PH₃ | same SOFIA photons → `<0.8 ppb` (Cordiner 2022) and `3 ppb at 5.7σ` (Greaves 2023); same ALMA photons → `20 ppb` then `1–7 ppb`; significance carried by the passband polynomial order | **pipeline-dependent → halt, `NO AGREED OBSERVABLE`** |
+   | D.2 fabricated thruster | one reduction, `F = (0.4 ± 3.0) µN`; central value inside its own error bar | **halt, `NO OBSERVABLE TO EXPLAIN`** |
+
 1. **State the observable in units.** Thrust in N, or power in W, with its uncertainty and the
    input power that accompanied it. Per METHOD §3: enter observables, never absences.
    *"Produces 1.2 mN at 1 kW"* is a row. *"Uses an unknown energy source"* is not.
@@ -414,16 +431,18 @@ Run on any device reported to produce useful work without carried fuel.
 
 ---
 
-## Part D — negative controls (design; NOT YET RUN)
+## Part D — negative controls (D.1/D.2 design, NOT YET RUN; D.3 has one contaminated datum)
 
 Part A is a soft-positive set, Part B a hard-positive set. **There is no input on which this
 instrument has ever returned "nothing here."** Step 11 guarantees an output by construction — if
 the union of surviving specifications is empty, the required coupling *itself* becomes the
 specification. An instrument that cannot return a null is not validated, it is only exercised.
 
-This section specifies the two negative controls and, crucially, **what output would count as
-the instrument correctly returning nothing.** Design only; neither case is run here, and no
-number below is a result.
+This section specifies the negative controls and, crucially, **what output would count as
+the instrument correctly returning nothing.** D.1 and D.2 are design only — neither is run here,
+and no number in them is a result. **D.3 is different: it was written after a real run
+([[C30-venus-phosphine-audit]], 2026-09-05) surfaced a failure class D.2 did not anticipate, and
+its status is stated honestly in D.3a — the datum exists but is contaminated.**
 
 ### D.1 — A fully accounted device: a Betz-calibrated wind turbine
 
@@ -488,6 +507,89 @@ says the audit cannot detect that a real, significant reading came from the bala
 than the device. D.2 says the audit does not currently check whether there is a reading at all.
 The first is out of the instrument's reach; the second is inside it and unguarded.
 
+### D.3 — The pipeline-dependent central value (first real datum: [[C30-venus-phosphine-audit]])
+
+**The failure class.** *The central value is a function of the reduction pipeline.* An observable
+whose reported magnitude, extracted from the **same raw photons or the same raw records**, changes
+the **sign of the conclusion** across independently written reductions — one pipeline reports a
+detection, another reports an upper bound excluding it. The quantity being audited is then not a
+property of the source but of the analysis, and there is no number for a reservoir to be required
+to supply.
+
+**How it differs from the two neighbours it is easily confused with.**
+
+- **Not D.2.** D.2 is a *single* central value sitting inside its *own* stated error bar —
+  `F = (0.4 ± 3.0) µN`. One reduction, one interval, the interval contains zero. The verdict is
+  `NO OBSERVABLE TO EXPLAIN`. In D.3 each individual reduction may be internally significant —
+  Greaves 2023 reports `3 ppb at 5.7σ`, Cordiner 2022 reports `<0.8 ppb` at 99% — and it is the
+  *disagreement between* them, not the width of either, that voids the observable. The verdict is
+  `NO AGREED OBSERVABLE`. A D.3 case can pass D.2's test row by row and still have nothing to explain.
+- **Not METHOD §5 same-class systematics.** §5 governs two *measurements* that disagree — different
+  apparatus, different epochs, same class — and rules that the disagreement is a systematic. D.3 is
+  narrower and worse: there is only one measurement. The photons were taken once. What disagrees is
+  the software downstream of them, so no amount of re-observation with the same pipeline family
+  settles it, and the "independent check" that would settle a §5 case does not exist here.
+
+**The step-0 test that detects it.** Before any `F_req`, `S_req` or `A` is computed:
+
+> List **every independent reduction of the same photons or records** as a row: team, pipeline,
+> central value, stated significance, and whether the raw data are shared with another row.
+> If the set of rows spans **"detected"** and **"not detected"** — i.e. one row's central value lies
+> outside another row's stated exclusion interval — **halt with `NO AGREED OBSERVABLE`** and do not
+> proceed unconditionally.
+
+The Venus rows that trip it: rows 8 and 9 of C30 §1 are the *same three November 2021 SOFIA flights*
+reduced to `<0.8 ppb` and to `3 ppb at 5.7σ`; rows 1 and 2 are the same ALMA photons before and
+after recalibration, differing `20×`.
+
+**What a conditional run may claim, and what it may not.** The halt does not forbid running §2
+onward; it forbids running them unconditionally. A conditional run:
+
+- **May claim calibration.** Run the ledger against a *known, published enumeration* of the same
+  routes and report whether the instrument reproduces that enumeration's verdict list route for
+  route. C30 does exactly this against Bains et al. 2021 and matches on every row Bains bounds.
+  That is a statement about the **instrument**, and it is valid whether or not the observable exists.
+- **May claim divergences from that enumeration**, provided they are procedural and stated as such
+  (C30's D1/D2/D3).
+- **May not claim a residual specification as real.** The step-11 output of a conditional run is
+  *"if the observable were real, a source would have to supply X"* — a conditional, and it must be
+  written as one, in the callout as well as in the section. It is not a specification of anything
+  in the world, it may not be quoted without its antecedent, and it may not be counted as an
+  instrument output in any standing.
+- **May not upgrade the halt.** No amount of ledger structure downstream converts
+  `NO AGREED OBSERVABLE` into an observable. What would un-halt it is stated in C30 §1: an amplitude
+  stable across independently written, pre-registered reduction pipelines.
+
+### D.3a — The first negative-control datum is contaminated
+
+Recorded here so it cannot be read as stronger than it is. **The C30 halt was announced in advance**
+— named in `audits/scout-03-astrobiology.md` §Job 1 and restated in the commissioning brief the
+agent ran from. The agent was told the case halts and then reported that it halts. **It therefore
+tests only that the step-0 state is reachable and well-defined on a real, messy input; it does not
+test whether the instrument halts on its own.** Part D's central question — *can this audit produce
+a null unprompted?* — remains **unanswered**, and D.3 must not be counted as a passed negative
+control.
+
+**The uncontaminated test.** A future run must be **briefed blind**: the agent is not told whether
+the case is resolved, not told a halt is expected, and not told which of D.1/D.2/D.3 (if any) the
+case belongs to. **The brief must be archived, verbatim and dated, before the run begins**, so that
+what the agent was and was not told is checkable afterwards rather than reconstructed. A halt
+reported from a blind brief is the first uncontaminated datum; a halt reported from any brief that
+mentions the expected outcome is contaminated by construction and must be logged as such.
+
+**The blind-brief template** (five lines; nothing else may be added):
+
+```
+1. Case: <system + observable, in units, with no verdict word>.
+2. Run [[reservoir-audit]] Part C from step 0. Report every step you run and every step you skip.
+3. Sources: <the literature entry points, listed without annotation as to what they conclude>.
+4. Output: the four (or five) step-10 states per candidate, plus the step-11 residual — or the halt.
+5. Do not ask whether this case is resolved, and do not read this brief's archive before reporting.
+```
+
+Archive the filled template at `audits/blind-brief-<case>-<YYYY-MM-DD>.md` **before** dispatching,
+and cite that path in the resulting note's negative-control section.
+
 ### The deliverable
 
 One sentence, per the audit's own discipline: **the input class on which this audit returns
@@ -548,6 +650,18 @@ is `A = 3.6`, a factor of four, resting on an **UNVERIFIED** claim magnitude and
 uncertainty is not an exclusion. **Report `A` with the uncertainty of its weakest input**, and
 treat `1 < A < 10` on unverified inputs as `NOT TESTED`, not as `RULED OUT`.
 
+**F8 — a central value can be a function of the reduction pipeline, and the audit will happily
+specify a source for it.** Steps 1–2 convert whatever number they are handed into a finite
+`F_req` or `S_req`, with no leg that asks whether independent reductions of the *same raw data*
+agree on the number's existence. Venus is the case: `<0.8 ppb` and `3 ppb at 5.7σ` from the same
+three SOFIA flights, `20 ppb` and `1–7 ppb` from the same ALMA photons. This is not F6's
+same-class systematic — there is only one measurement, and what disagrees is the software
+downstream of it, so re-observation with the same pipeline family settles nothing. **The
+mandatory reductions table is now Part C step 0(b); a spanning set halts the audit with
+`NO AGREED OBSERVABLE`, and anything run past the halt is conditional and must be written as a
+conditional.** Designed as D.3; the first datum ([[C30-venus-phosphine-audit]]) is contaminated
+because the halt was pre-announced — see D.3a for the blind-brief protocol that would fix it.
+
 ---
 
 ## Standing
@@ -560,9 +674,11 @@ strongest evidence this procedure works. The EmDrive returns a checkable mass-fl
 specification rather than a verdict. The flyby anomaly returns
 `UNRESOLVED-IN-SOURCES` and a sign-based exclusion of the Pioneer mechanism.
 
-**The procedure is sound enough to point at an unresolved case**, with three conditions: run
-the availability leg and not only Σ, run METHOD §5 on the measurement first, and prefix every
-negative with *of the reservoirs considered*.
+**The procedure is sound enough to point at an unresolved case**, with five conditions: run
+**step 0 before anything else — significance, and the table of independent reductions of the
+same raw data** (F8, added 2026-09-05); report the **aperture as a named row with `A` at 2x and
+0.5x** (step 5, F3, added 2026-09-05); run the availability leg and not only Σ; run METHOD §5 on
+the measurement first; and prefix every negative with *of the reservoirs considered*.
 
 The instrument is a [[positive-controls]] construction applied to physics rather than to
 citation counts — the five Part A rows are the known-closed pairs, and they are what makes the
@@ -570,8 +686,10 @@ Part B results mean anything.
 
 **What that construction is still missing, stated plainly:** [[positive-controls]] is half of a
 control set. Part A is soft-positive, Part B hard-positive, and **there is no negative control** —
-no input on which this audit has been shown to return nothing. Part D specifies two and neither
-has been run, so every "validated" claim above should be read as *validated against positives
-only*.
+no input on which this audit has been shown to return nothing. Part D specifies three (D.1, D.2, D.3) and **none has been run uncontaminated**: D.1 and D.2 are
+unrun, and D.3's first datum ([[C30-venus-phosphine-audit]], 2026-09-05) halted correctly but had
+the halt pre-announced in its commissioning brief, so it shows the state is reachable, not that
+the instrument reaches it unprompted. Every "validated" claim above should still be read as
+*validated against positives only*.
 
 See [[Q9-fuel-free-is-an-assumption]], [[C8-momentum-harvesting-metric]], [[positive-controls]].
