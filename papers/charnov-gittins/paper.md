@@ -3,7 +3,7 @@ title: |
   Charnov's marginal value theorem is the Gittins index of the outside option,
   and its restless extension predicts giving-up density rises with patch regrowth
 author:
-  - Landon Kade Holden
+  - Landon Holden
 <!-- AUTHOR: insert affiliation, ORCID and corresponding-author email here before submission -->
 date: 2026-09-05
 abstract: |
@@ -475,6 +475,10 @@ vocabulary; a single sentence below the frequency cutoff could still exist), and
 et al. (2026). The claim is "appears unwritten", not "is unwritten".
 
 <!-- C25 §7, §8; C5 §10, §11.4 -->
+
+# Use of AI tools
+
+This work was produced with substantial use of large language models, disclosed here per ICMJE and COPE guidance. The models are not authors and bear no responsibility for the content. Claude Fable 5.1 (Anthropic, model `claude-fable-5-1`) acted as orchestrator: it reviewed the vault, designed the audit and task briefs, integrated results, and drafted this manuscript's structure. Claude Opus 4.8 (Anthropic) instances, run through Claude Code, carried out the derivations, the literature and citation-database queries, the prior-art searches, the numerical fits, and the first draft of the text, each under a written brief and each reporting sources with provider and fetch date. Every query, count, and correction is logged in the vault (`vault/log.md`, `audits/`). The author set the research question, the scope rule, and the standards of evidence; chose which results to keep, downgrade, or withdraw; and reviewed and takes full responsibility for every claim, derivation, and citation in this paper. No AI tool was used to generate or alter data.
 
 # Data and code availability
 

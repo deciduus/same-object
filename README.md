@@ -153,6 +153,10 @@ Requiring about $100 of kitchen equipment:
 - Corrections are logged in `vault/log.md` rather than silently fixed. The pattern of
   errors is itself information — and one entry there is a correction *of* a correction.
 
+## AI use disclosure
+
+This vault is AI-assisted research. Claude Fable 5.1 (Anthropic) orchestrates: it audits, writes task briefs, integrates results, and decides what is committed. Claude Opus 4.8 agents, run through Claude Code, do the derivations, database queries, prior-art searches, fits, and drafting, each under a written brief. The human author (Landon Holden) sets the questions, the scope rule, and the evidence standards, and reviews and takes responsibility for every claim. All queries, counts, and corrections are logged in `vault/log.md` and `audits/`. Models are not authors. Cite this disclosure if you reuse the material in a context that requires it.
+
 ## Cite
 
-Holden, L. K. (2026). *Gradient Coupling Inquiry: a cross-domain gap-finding vault*. Zenodo. https://doi.org/10.5281/zenodo.22334047 (concept DOI, resolves to the latest release; v0.1.0 is 10.5281/zenodo.22334048). Licensed CC-BY-4.0.
+Holden, L. (2026). *Gradient Coupling Inquiry: a cross-domain gap-finding vault*. Zenodo. https://doi.org/10.5281/zenodo.22334047 (concept DOI, resolves to the latest release; v0.1.0 is 10.5281/zenodo.22334048). Licensed CC-BY-4.0.
