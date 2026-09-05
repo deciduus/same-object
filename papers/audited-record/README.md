@@ -79,3 +79,55 @@ C51 §3 exactly.
 
 All eight `refs.bib` entries are cited in `paper.md`. No dangling keys, no orphans, checked
 2026-09-05.
+
+## Revision 2026-09-05 (referee 1)
+
+Revised against `reviews/2026-09-05-referee-1-opus.md` (major revision). What changed:
+
+1. **Seven internal mismatches fixed.** (i) *Adversarial* split into two named objects: three
+   **dedicated adversarial reviews** and the pre-registered predictor **adversarial leg** (48/82),
+   whose coding rule is now quoted verbatim from the hashed brief; the "narrowing mechanism"
+   finding is withdrawn. (ii) Corrections of corrections: **two**, of which one carries that
+   `kind` and one is filed under `correction` — abstract, §3.3 and the tally now agree.
+   (iii) "Two working days" everywhere; the 79 failure instances are from the second day.
+   (iv) The twelve briefs are listed by ID (C39, C40, C43–C52; C41 and C42 have none).
+   (v) Ownership recounted to 25 (model 16, orchestration 4, tooling 2, jointly owned 3; the
+   human owns none alone and co-owns two); `vault/method/failure-taxonomy.md` corrected too.
+   (vi) The `kind` distribution is given in full, with "29 other kinds appearing once each".
+   (vii) The frame is stated: C23/C24 never created, eight retired G-IDs per `METHOD.md`,
+   C51–C53 outside the hashed set, and the frame is every note that exists.
+2. **Survival split into two variables**, `survived_novelty` (5/24 = 0.208) and
+   `survived_standing` (21/58 = 0.362), with H1–H4 re-run per stratum. New §3.2 in the paper;
+   `vault/computed/C51-vault-meta-analysis.md` carries the same split.
+3. **Wilson 95% intervals on every rate**, and a stated no-multiplicity-adjustment rationale.
+4. **The taxonomy is a catalogue with overlap, not a partition**; three overlapping events named.
+5. **Catch table gains an exposure column**, and lint's zero is stated as a selection effect —
+   the number is kept, the reading narrowed.
+6. **New related-work section** with nine new verified references (reproducibility base rates,
+   AI-for-science outcome reports, LBD evaluation, AI-authorship policy).
+7. **Data availability** pins commit `f1faab3`, the Zenodo **version** DOI `10.5281/zenodo.22334048`
+   alongside the concept DOI, and sha256 hashes for `claims.csv`, `failure-taxonomy.md`, `log.md`
+   and all twelve briefs.
+8. **Front matter and declarations**: affiliation placeholder "Independent researcher; Arizona
+   State University (student)" (author to confirm), plus competing interests, funding,
+   contributions and ethics statements.
+
+**Recounted numbers that changed.** `vault/log.md` now holds **252** entries (was 245) and **97**
+corrections (was 93); the earlier figures were counted before the last seven entries existed.
+
+**Reference verification, revision 2.** Six DOIs resolved at
+`api.crossref.org/works/{doi}?mailto=deciduusleaf@gmail.com` on 2026-09-05: `osc2015`,
+`errington2021`, `ioannidis2005`, `nature2023`, `swanson1997`, `yetisgen2009`. Three arXiv
+preprints are absent from Crossref and were verified at
+`export.arxiv.org/api/query?id_list=…`: `lu2024` (2408.06292), `si2024` (2409.04109), `si2025`
+(2506.20803). `icmje2025` is retired in favour of `icmje2026`: the page returned HTTP 200 on
+2026-09-05, carries "Updated January 2026", and the relevant section is
+**V. Use of Artificial Intelligence in Publishing**. `paper1` remains `% UNVERIFIED` (unposted).
+
+**Still outstanding**, and declined rather than faked in this round: the blinded second coding
+with κ, the re-grade of early claims under the later rubric, a second frame, a human comparator,
+the three figures, and the glossary of claim IDs. Each is named in the author response.
+
+**Staged, not yet applied.** `vault/PENDING-log-REV3.md` holds the eight `log.md` entries this
+revision generates. It is deliberately unlinked from `00-index.md`; append its entries to
+`vault/log.md` and delete the file.

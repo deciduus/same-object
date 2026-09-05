@@ -8,6 +8,8 @@ type: method
 > **25 modes, six groups, 79 logged instances in one day.** Most frequent: **P2 — the unattributed
 > count** (7), a figure promoted without provider, endpoint and fetch date. Next: **P1 — two
 > numbers in one field** and **P4 — a published margin adopted as if computed** (6 each).
+> This is a **catalogue of modes, not a partition of events**: the modes overlap, one event can
+> populate several, and 79 counts annotations rather than distinct events.
 
 One project, one day (2026-09-05), one orchestrator. Every entry is a failure this vault committed
 and caught, with how it was caught, the guard now standing, and the **actor**: the **model**
@@ -31,7 +33,9 @@ before calling one wrong; nothing checks frontmatter against body. **Actor:** hu
 the model.
 
 **P2. The unattributed count.** *A figure without provider, endpoint and fetch date.* The 578,
-whose defect was an unattributed number, not a hallucination;
+whose defect was an unattributed number, not a hallucination — **the same event is the first
+instance of P1** (578 and 595 are two objects carried in one field) and is the entry logged as a
+*correction of a correction* under **Pr5**, so one event populates three modes;
 [[G25-proofreading-coding]]'s 1,463 citers, provider never logged, against today's
 1,340 / 1,593 / 1,656; G28's 1,542 / 1,013 / 1,010 / implied, which were **one number badly
 measured**; every [[disclosure-ledger]] row before the `Fetched` column.
@@ -247,14 +251,37 @@ form. **Guard:** the note names the renewal class in the prediction sentence. **
 | Fr2 "value of the index" | model | simulation | pre-register the number to beat | 1 |
 | Fr3 prediction without conditions | model | adversary | name the regime | 1 |
 
-`recur.` counts logged instances on 2026-09-05, not only those itemised above. The model owns 15
-modes outright, the orchestration 5, the tooling 3 — not exculpatory, since the orchestration chose
-the workload. **No guard at all:** Pr2, Pr4, and the frontmatter-vs-body half of P1.
+`recur.` counts logged instances on 2026-09-05, not only those itemised above.
+
+**Ownership, summing to 25.** Counting the `actor` column above: the **model** owns 16 modes
+outright (P2, P3, P4, S1, S2, S3, S4, I4, I5, R1, R2, R3, R4, Fr1, Fr2, Fr3), the
+**orchestration** 4 (Pr1, Pr2, Pr3, Pr4), the **tooling** 2 (I1, I2), and **3 modes are jointly
+owned**: P1 (human / model), I3 (tooling / orchestration), Pr5 (model / human). 16 + 4 + 2 + 3 =
+25. **The human owns no mode alone and co-owns two**, P1 and Pr5, both by over-trust in a number
+that arrived without a provider. Counting joint ownership as implication rather than sole
+ownership: model 18, orchestration 5, tooling 3, human 2. An earlier version of this line read
+"15 modes outright, the orchestration 5, the tooling 3", which sums to 23 and gave the human no
+count; the recount is logged in [[log]].
+
+**This list is not a partition.** The modes overlap and one event can populate several. At least
+three logged events do: the **578/595** reference count is the exemplar of P2, the first instance
+of P1, and the correction-of-a-correction under Pr5; **C46's Σ ≡ 1** is both I4 and, as a brief
+contaminated by recognition, Pr2; the **spent OpenAlex daily budget** is both I3 and Pr3. So the
+79 instances are annotations, not distinct events, and the three-most-frequent ranking is a
+ranking of annotations. The count of distinct underlying events was not recorded and is not
+recoverable without re-coding.
+
+**No guard at all:** Pr2, Pr4, and the frontmatter-vs-body half of P1.
 
 ## What the guards cost
 
-**Cheap, and it catches none of these.** `_lint.py` blocks a commit on schema drift in under a
-second. **Zero of the 25 modes were caught by lint.** Its one contribution is Pr3, where a half-landed parallel edit surfaces as a dead link.
+**Cheap, and it catches none of these — by design, not by failure.** `_lint.py` blocks a commit
+on schema drift in under a second, and ran on every commit (89 to date) over roughly 140 notes.
+**Zero of the 25 modes were caught by lint.** That zero is a **selection effect**: the linter
+checks frontmatter vocabulary, field types and wikilink reachability, and all 25 modes are
+semantic. The honest reading is the narrow one — *schema linting does not substitute for
+semantic auditing* — not "the cheap guard caught nothing". Its one contribution is Pr3, where a
+half-landed parallel edit surfaces as a dead link.
 
 **Cheap, and the best ratio on the record.** The script self-test (I1), the calibration query — a
 term whose answer *cannot* be zero (I2) — and the printed drop count cost minutes each and caught
@@ -272,8 +299,12 @@ headline, the sign error that killed G36 leg 2, the metaphor that mis-titled G34
 positive control, two negative controls and a forward simulation caught 3 modes — but only they can
 catch **I5** and **Fr2**, where the claim is internally consistent and simply untrue.
 
-**Catch counts, by earliest catch:** audit 11 · adversary 7 · replication and controls 3 · self-test
-and calibration 2 · pre-registration 1 · the human 1 · **lint 0**. The cheap guards are worth running
+**Catch counts, by earliest catch, with the exposure each guard was applied to:** audit 11 (all
+87 coded notes, 7 audit reports) · adversary 7 (3 claim clusters) · replication and controls 3
+(5 runs) · self-test and calibration 2 (2 instrument adapters) · pre-registration 1 (12 blind
+briefs) · the human 1 (continuous, no denominator) · **lint 0** (89 commits × ~140 notes). The
+exposures are in different units and are not divisible into a common rate; they are printed
+because a tally without them compares three exposures to hundreds. The cheap guards are worth running
 always and are not sufficient; the expensive ones cannot be run on everything, so **what they are
 pointed at is the orchestrator's most consequential decision of the day.**
 

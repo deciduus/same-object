@@ -221,3 +221,5 @@ old, and they are the only things worth claiming:
    concept, is the transferable object.
 
 Everything else in the cluster is located, corrected, or withdrawn.
+
+- **[[C53-mars-exchange-feasibility]] — REDISCOVERED (2026-09-05).** The adsorption-enthalpy threshold for Mars methane is Hu et al. 2016 (36 kJ/mol vs 18 measured); C53 sharpens the temperature window and the seasonal observable, misstates its own threshold (26.4, not 28), and omits the pressure term its brief promised. NOVEL count unchanged at 3.

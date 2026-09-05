@@ -5083,3 +5083,376 @@ better to revisit", not "strictly worse".
 g(t) = ct satisfies every stated hypothesis and has no maximiser of g(t)/(τ+t). Attainment
 is now assumed, with g bounded and g'(∞) = 0, or g'(0⁺) > lim g(t)/(τ+t), given as
 sufficient conditions; g' strictly decreasing is what makes t* unique.
+
+## [2026-09-05] correction | C53's enthalpy threshold is 26.4 kJ/mol, not ~28; at 28 the ledger already passes by 2.6x
+
+C53 §6(a) states the pass boundary as "`≥ ~28 kJ mol⁻¹`". Re-running C53's own scaling law
+(available ∝ `ΔH·exp(ΔH/RT̄)`, `T̄ = 210 K`, anchored on the note's own `A(18.0) = 182`) and
+bisecting for `A = 1` gives **26.42 kJ mol⁻¹**; at 28.0 kJ mol⁻¹ the ledger returns
+**`A = 0.381`**, a pass with 2.6× spare. Produced by local re-execution of the
+`c53_exchange.py` scaling law, 2026-09-05.
+
+
+## [2026-09-05] correction | C53's prior-art leg missed Hu et al. 2016, which states the enthalpy-threshold result in its abstract
+
+C53 presents "adsorption closes the residual iff `ΔH ≥ ~28 kJ mol⁻¹`, against a measured 18" as
+a new residual specification. **Hu, Bloom, Gao, Miller & Yung 2016**, *Astrobiology*,
+`10.1089/ast.2015.1410` (Crossref-verified 2026-09-05: 86 refs, 26 cited-by) states in its
+abstract: *"The adsorption energy needs to be 36 kJ/mol to explain the magnitude of the methane
+spikes, higher than existing laboratory measurements."* Its body names Gough 2010's
+`18 ± 2 kJ mol⁻¹`, calls the requirement "2-fold greater than what is measured by Gough et al.
+(2010)", calls for the laboratory study, and uses the same `S = 17–100 m² g⁻¹`,
+`ρ = 1300 kg m⁻³` pair C53 uses. Hu 2016 is cited by Yung et al. 2018, which C49 read in full.
+The framing is REDISCOVERED; what remains new is the threshold for the *background seasonal*
+observable (Webster 2018) rather than the spikes, and the 180–240 K window.
+
+
+## [2026-09-05] correction | C53 dropped the pressure term its own hashed blind brief specified
+
+`audits/blind-brief-c53-2026-09-05.md` pre-commits to
+`ΔM_ads = A ∫ [(dq/dT)ΔT(z) + (dq/dp)Δp] ρ dz`. `vault/_scripts/c53_exchange.py` implements the
+first term only; `p = CHI*P_SURF` is evaluated once at a fixed `χ = 0.41 ppbv`. The omitted
+driver is the larger one: the seasonal fractional swing in `p_CH4` is 170 % (0.24 → 0.65 ppbv)
+against a thermal `(ΔH/RT²)·ΔT_pp` of 9.8 % at `ΔH = 18`. Sign: `q ∝ p` under Henry's law, so
+uptake rises with atmospheric CH₄ — negative feedback, reducing net exchange. **The row at risk
+is the `ΔH = 31.5` PASS, not the FAIL.** A deviation from a hashed brief is the reportable part.
+
+
+## [2026-09-05] verification | thermal-wave phase, not just amplitude: C53's available exchange is high by sqrt(2)
+
+C53 integrates the damped amplitude correctly (`∫₀^∞ e^{−z/δ}dz = δ`) but ignores the wave's
+depth-dependent phase. The seasonally coherent inventory swing is
+`|∫₀^∞ e^{−(1+i)z/δ}dz| = δ/√2`. Corrected: `A(18) = 257` (was 182), `A(31.5) = 0.065`
+(15× spare, was 22×), threshold `26.99 kJ mol⁻¹` (was 26.42). Direction favourable to the
+exclusion.
+
+
+## [2026-09-05] honest null | no CH4-on-Mars-analogue adsorption measurement 2020-2026; the ask is Hu 2016's and unanswered
+
+Crossref bibliographic queries, 2026-09-05, return no laboratory measurement of CH₄ adsorption
+on a Mars analogue since Gough 2010. Active work on the observable is modelling only:
+Ortiz et al. 2022 `10.1016/j.icarus.2022.115079`, Ortiz et al. 2024 `10.1029/2023JE008043` and
+`10.1016/j.icarus.2023.115810`.
+
+---
+
+## 2. `vault/computed/C53-mars-exchange-feasibility.md` — proposed edits
+
+**(a) §6(a), the threshold.** Replace `**≥ ~28 kJ mol⁻¹**` with
+`**≥ 26.4 kJ mol⁻¹** (26.99 with the thermal-wave phase correction of §3a)`, and delete the
+"~". This is the note's headline contribution and it is currently wrong on the note's own
+arithmetic.
+
+**(b) New §0 or an addition to §5 — prior art.** C53 has no prior-art section. Proposed
+insertion, immediately after the callout:
+
+> **Prior art.** The claim shape — *adsorption works only if `ΔH` exceeds a threshold, and the
+> threshold exceeds the laboratory value, so go and measure it* — is **Hu et al. 2016**
+> (*Astrobiology*, `10.1089/ast.2015.1410`), whose abstract reads *"The adsorption energy needs
+> to be 36 kJ/mol to explain the magnitude of the methane spikes, higher than existing
+> laboratory measurements."* Hu's threshold answers the ~7 ppbv **spikes** via perchlorate
+> deliquescence over a 10–60 cm storage depth; this note's answers Webster 2018's
+> **0.24–0.65 ppbv background cycle** via thermal desorption over the annual skin depth. The
+> increment is the observable and the 180–240 K window, not the framing.
+
+**(c) §7 honesty — add the dropped brief term.** Add to "What was not obtained" or as its own
+paragraph: the `(dq/dp)·Δp` term named in the hashed brief was not implemented, its magnitude
+exceeds the retained thermal term, and its sign threatens the `ΔH = 31.5` PASS rather than the
+FAIL. The §7 sentence "The direction of the bounds matters, and it favours the FAIL" is true of
+the *stated* soft inputs and **not** of this omission, and should be qualified.
+
+**(d) §3, the phase correction.** Either apply `δ → δ/√2` throughout with the table updated to
+`A = 257 / 0.065`, or add a footnote stating the factor and that the published numbers are the
+generous ones.
+
+**(e) §3's aperture table — an added caveat, or a demotion of the verdict.** The current text
+already says the Gale row is "asymmetric on purpose … unresolved here". Proposed strengthening:
+`3,820 t` globalises a signal that **Moores et al. 2019 *Nat. Geosci.*'s own abstract disavows
+as global** — *"we expect the amplitude of the seasonal cycle to be smaller for the same
+strength of seep"* over most of Mars. Area alone is `1.444×10⁸ / 2.7×10⁴ ≈ 5.3×10³`, and a
+collapsed nocturnal boundary layer against an 11 km scale height is two further orders — either
+exceeds `A = 182`. Recommended: keep `RULED OUT` **only** for the planet-wide reading and add a
+row reading `NOT TESTED (aperture)` for the Gale-local reading, per F7.
+
+**(f) §1 input #1 — provenance of "115–135 K".** The adversarial review could not obtain Gough
+2010 by any route (ADS 405, Elsevier paywall, Semantic Scholar `abstract: null`) and WebSearch
+returns `18 ± 2 kJ mol⁻¹` **without** the temperature range. Mark the range explicitly
+`UNVERIFIED` rather than folding it into the VERIFIED-SECONDARY value.
+
+**(g) §5 — the reconciliation is incomplete.** Add **Ortiz, Rajaram, Stauffer et al. 2022**,
+*Icarus* 385, 115079, `10.1016/j.icarus.2022.115079`, abstract verbatim: *"barometric pumping
+driven by seasonal variation of atmospheric pressure, along with adsorption and desorption of
+methane in the shallow subsurface driven by temperature change, can explain the observed bimodal
+peaks in the seasonal variations of methane concentration."* This is a third position in a
+literature C53 describes as two-sided, it supplies added physics rather than a re-fitted `ΔH`,
+and it makes §6's successor **(b)** ("subsurface barometric pumping") a **published claimed
+solution, not an open successor**. The callout's "not a physics disagreement" should be
+withdrawn or narrowed to Meslin 2011 vs Moores 2019 specifically.
+
+---
+
+## 3. `vault/computed/C49-mars-methane-audit.md` — proposed edit
+
+§5's residual is stated planet-wide (`3,820 t/yr`, `7.24×10⁻⁵ mg m⁻² day⁻¹` over the whole
+planet) from an observable its own §2 records as near-surface, nighttime-contained and
+Gale-local. Moores 2019 *Nat. Geosci.* expects a smaller amplitude elsewhere. Proposed: add to
+the residual's conditional clause that the **globalisation of the Gale amplitude is an
+assumption the source papers do not make**, so `3,820 t/yr` is an upper bound on the requirement
+by a factor plausibly ≥ 10³, and that C49 §6 row 4's ×9.8 aperture divergence is the same defect
+at smaller scale.
+
+---
+
+## 4. `vault/method/reservoir-audit.md` — proposed F-list addition (PROPOSED ONLY)
+
+> **F11 — F10's guarantee fails when the sink's `P_avail` is itself an aperture-bearing
+> reservoir.** F10 says sink rows are reproducible because `P_avail = burden/τ` is fixed by the
+> observable. That holds for a sink whose aperture *is* the column carrying the burden
+> (C49's photochemistry row). It fails for a **surface-exchange** sink, whose `P_avail` is an
+> isotherm times a free emitting area, and whose *required* side may inherit a globalisation the
+> source literature disavows. On such a row **both** apertures are free and `A` is not
+> reproducible. **Fix: step 5's mandatory 2×/0.5× rows must be run on the REQUIRED side as well
+> as the available side whenever the observable is local and the requirement is global; if the
+> required-side row moves `A` across 1, report `NOT TESTED (aperture)`.** Found by C53, where
+> `A = 182` planet-wide would be `≲ 1` read at the Gale nocturnal boundary layer.
+
+Also proposed for step 5's checklist line: *"state which side of `A` the aperture row varies;
+varying only the available side is not an aperture test when the requirement is areal."*
+
+
+## [2026-09-05] verification | K2-18 b DMS halts at step 0(b), not 0(a): the first uncontaminated two-agent blind, and the vault's advance guess named the wrong halt
+
+C54-k2-18b-audit. Brief written by a different agent, archived and hashed before dispatch
+(audits/blind-brief-c54-2026-09-05.md, sha256 ec039762abc96170a570932a69886e2c905e5eb5af6041c4bbc91605a0c3d840,
+verified by the runner over the content above the hash line before any source was fetched). The
+runner read reservoir-audit.md and the brief only, ran Part C step 0, and read no vault note until
+after the enumeration was written.
+
+WHAT WAS EXPECTED: audits/scout-03-astrobiology.md called K2-18 b "the case the audit should
+publicly refuse to run" and specified a "2-hour NO OBSERVABLE demonstration" — i.e. a step-0(a)
+halt, NO OBSERVABLE TO EXPLAIN.
+
+WHAT THE BLIND RUN RETURNED: a step-0(b) halt, NO AGREED OBSERVABLE. 0(a) does not fire:
+Madhusudhan et al. 2025's MIRI/LRS claim is 2.9-3.2 sigma and its interval does not contain zero.
+What fires is the reductions table — Taylor 2025 re-tests the SAME MIRI photons as Gaussian
+features and prefers a flat line in 5 of 6 tests (chi2_nu = 1.06, ~2 sigma); Schmidt et al. 2025
+re-reduces the SAME NIRISS+NIRSpec photons through 60 data treatments and >250 retrievals and
+finds no reliable DMS or CO2; Luque et al. 2025 finds nothing above 3 sigma. The set spans
+detected and not-detected.
+
+WHY IT MATTERS: 0(a) and 0(b) are exactly the pair reservoir-audit D.3 section "Not D.2" warns are
+easily confused, and the project's own advance guess confused them. The error is in the scout
+report, not in the instrument. D.3a is now satisfied in full for the first time: brief hashed
+before dispatch, written by a different agent, carrying no verdict word, and the runner halted
+unprompted. C30's halt was pre-announced; C46's and C50's blinds were single-agent.
+
+WHAT PRODUCED THE NEW NUMBERS: vault/_scripts/c54_k218b.py, from the identity
+F_req = N_col / tau_photo. Planet parameters M = 8.63 +/- 1.35 M_earth, R = 2.61 +/- 0.09 R_earth
+and photospheric T = 422 (+141 -133) K at 1 mbar all VERIFIED from ar5iv/2504.12267 fetched
+2026-09-05. Conditional result: inventory 1.214e17 mol (7.54e12 t) above 1 bar at 10 ppmv,
+F_req = 4.44e19 mol/yr at Earth's DMS lifetime (~1 day, VERIFIED-as-quoted from the same source),
+= 5.08e7 x Earth's marine DMS flux. Aperture rows 1.02e8 / 5.08e7 / 2.54e7 at 2x / 1x / 0.5x the
+1 bar reference — a clean factor of 2, fully reproducible.
+
+CORRECTION TO THE SHAPE OF F10, NOT TO ITS CONTENT: F10 says the SOURCE aperture is the free
+parameter on a mass-budget input. On K2-18 b the aperture is not free at all and the SINK is:
+F_req spans six orders of magnitude (A = 4.06e8 to 1.39e2) across tau = 3 h to 1 kyr, and no
+reduction measures tau. Step 1's own A >> 1e4 diagnostic therefore fires on every candidate at
+every aperture, and it is right to: A = 5e7 on a biological source is Earth's DMS lifetime
+imported into an H2 atmosphere around an M2.5V star. The audit's real output is the inversion:
+tau_photo >= 6.95e3 yr, a factor 2.5e6 over Earth's DMS lifetime, for the >=20x-Earth biogenic
+flux Madhusudhan 2025 quotes (from Tsai et al. 2024) to close the books.
+
+ONE APERTURE-FREE EXCLUSION SURVIVES: Reed et al. 2024's laboratory ceiling is a MIXING RATIO, not
+a flux, so it needs no aperture. DMS reaches 0.39-0.81 ppmv from 20 ppmv H2S without CO2 and
+0.04-0.06 ppmv with CO2; against the required 10 ppmv that is A = 12.3 and A = 167. CO2 is
+reported abundant, so 167 is operative. Gas-phase CH4/H2S photochemistry RULED OUT. Every other
+source row is NOT DISCRIMINATED (F10) or NOT TESTED (no delivery rate for comets, no outgassing
+flux, in any brief source).
+
+DEFECT IN THE BRIEF, LOGGED NOT FIXED: the brief's Tsai DOI 10.3847/2041-8213/ad1405 resolves via
+Crossref (fetched 2026-09-05) to "Day-Night Transport-induced Chemistry and Clouds on WASP-39b:
+Gas-phase Composition" — a different planet and not a DMS paper. The Tsai et al. 2024 carrying the
+>=20x-Earth result is a different work, cited by Madhusudhan 2025 but not identified by DOI
+anywhere in the brief. Every Tsai number in C54 is therefore SECONDARY, quoted from Madhusudhan
+2025's text about Tsai, and the tau_req inversion must be re-run against Tsai's own flux once the
+correct DOI is supplied.
+
+STILL WEAK: recognition. The runner recognised K2-18 b immediately and unprompted; the brief names
+the planet, the molecule and Madhusudhan. The two-agent design removes pre-announcement but not
+recognition. Single runner, one pass, no independent re-derivation. Earth's marine DMS flux
+(28 Tg S/yr) is UNVERIFIED and is the note's weakest input.
+
+
+---
+
+## Block 2 — proposed Part D text for `reservoir-audit.md`
+
+To be inserted as **D.3b**, immediately after D.3a:
+
+> ### D.3b — the first uncontaminated blind, and it named a different halt than the project expected
+>
+> **RUN 2026-09-05: [[C54-k2-18b-audit]], K2-18 b DMS/DMDS.** The first run satisfying D.3a in
+> full: brief written by a **different agent**, archived and hashed before dispatch
+> (`audits/blind-brief-c54-2026-09-05.md`, sha256
+> `ec039762abc96170a570932a69886e2c905e5eb5af6041c4bbc91605a0c3d840`, verified by the runner
+> before any source was fetched), **carrying no verdict word**, and the runner forbidden to read
+> any vault note until after the enumeration was written. The instrument **halted unprompted**:
+> step 0(b), `NO AGREED OBSERVABLE`.
+>
+> **And it halted at a different step than the project had guessed.**
+> `audits/scout-03-astrobiology.md` predicted a step-0(a) `NO OBSERVABLE TO EXPLAIN` — "features
+> consistent with noise". `0(a)` in fact **passes**: Madhusudhan et al. 2025's MIRI/LRS claim is
+> `2.9–3.2σ` and its interval does not contain zero. What fires is the reductions table. **The
+> pair D.3 §"Not D.2" warns are easily confused were in fact confused, by this project, in
+> advance** — which is the strongest available evidence that the two states are doing distinct
+> work and that the table, not intuition, is what separates them.
+>
+> **What D.3 is still missing after C54: recognition.** The case is famous and the brief names the
+> planet, the molecule and the claimant; the runner recognised it at once. A two-agent blind
+> removes pre-announcement, not recognition. The next D.3-class case must be one the runner
+> **cannot name** — a contested reduction in a low-profile system, briefed in units only.
+
+To be appended to the D.4 output-state table as a fourth data row:
+
+> | `NO AGREED OBSERVABLE` (D.3) | step 0(b) halt | [[C54-k2-18b-audit]] | **the reductions table only** | first **uncontaminated** blind; two-agent, hashed, no verdict word — and the halt the project had predicted was the wrong one |
+
+---
+
+## Block 3 — proposed F-list text for `reservoir-audit.md`
+
+**F8 amendment** — append to the existing F8 paragraph:
+
+> **Amended 2026-09-05 by [[C54-k2-18b-audit]]: the reductions table must list
+> feature-significance tests alongside retrievals.** K2-18 b's disagreement is not between two
+> retrieval pipelines but between **two different statistical questions asked of one spectrum** —
+> *does a retrieval prefer this molecule against a model grid* (Madhusudhan 2025: `2.9–3.2σ`) and
+> *does a Gaussian beat a flat line at the same wavelengths* (Taylor 2025: flat line preferred in
+> 5 of 6 tests, `χ²_ν = 1.06`). These are not the same observable, and a table that lists only
+> retrievals will record unanimity where none exists. Row 3 of C54's table sharpens it further:
+> Schmidt et al. 2025's 60-treatment reanalysis of the **same** NIRISS+NIRSpec photons removes
+> **CO₂** as well as DMS — a molecule the 2023 paper reported at `3σ` and on which the entire
+> hycean reading rests — so the spanning set is not confined to the disputed molecule.
+
+**F11, proposed and new** — the sink counterpart to F10:
+
+> **F11 — on a mass budget the *lifetime* can be freer than the aperture, and step 5 does not
+> test it.** Found by [[C54-k2-18b-audit]] (2026-09-05). F10 located the free parameter in the
+> **source aperture** and prescribed a sensitivity row at 2× and 0.5×. On K2-18 b that row is
+> perfectly behaved — `A = 1.02×10⁸ / 5.08×10⁷ / 2.54×10⁷`, a clean factor of two — and the
+> instrument is nonetheless carrying six orders of magnitude of freedom, all of it in `τ`:
+> `A = 4.06×10⁸` at `τ = 3 h` and `1.39×10²` at `τ = 1 kyr`, and **no reduction measures `τ`**.
+> Step 5 makes the aperture reproducible and says nothing about the sink timescale, so an analyst
+> who honours step 5 in full can still move `A` by `10⁶` by importing a lifetime from the wrong
+> planet — which is exactly what happens if Earth's `~1 day` DMS lifetime is used for an H₂
+> atmosphere around an M2.5V star where self-shielding is the whole point.
+> **Rule: where `F_req = N_col/τ`, `τ` is a named row with its own 2×/0.5× sensitivity and its own
+> provenance line, and if no source measures `τ` for *this* system, do not report an `A` at all —
+> invert and report the required `τ` instead.** C54's output is that inversion:
+> `τ_photo ≥ 6.95×10³ yr`, `2.5×10⁶ ×` Earth's, a number a photochemical model reports and a
+> laboratory cross-section constrains. **Corollary, and the reason this is F11 rather than a
+> footnote to F10: the step-1 `A ≫ 10⁴` diagnostic is a detector for a mis-specified `τ` just as
+> much as for a mis-specified observable**, and C54 is the case that separates the two — the
+> observable was correctly specified and `A` was still `10⁷·⁵`.
+
+
+## [2026-09-05] correction | failure-taxonomy ownership summed to 23, not 25; the human had no count
+
+`method/failure-taxonomy.md` §"The table" read "the model owns 15 modes outright, the
+orchestration 5, the tooling 3" — 23 of 25, with the fourth named actor (the human) given no
+count at all. Recounted from the table's own `actor` column: **model 16 outright** (P2, P3, P4,
+S1, S2, S3, S4, I4, I5, R1, R2, R3, R4, Fr1, Fr2, Fr3), **orchestration 4** (Pr1–Pr4),
+**tooling 2** (I1, I2), **3 jointly owned** (P1 human/model, I3 tooling/orchestration, Pr5
+model/human). 16 + 4 + 2 + 3 = 25. **The human owns no mode alone and co-owns two**, P1 and Pr5,
+both by over-trust in a number that arrived without a provider. Counting joint ownership as
+implication: model 18, orchestration 5, tooling 3, human 2. Produced by re-reading the 25 rows
+of the table, not by re-deriving from prose. Caught by referee 1 on
+`papers/audited-record/paper.md`, which had copied the 23.
+
+## [2026-09-05] correction | the taxonomy is a catalogue with overlap, not a partition; 79 counts annotations
+
+`method/failure-taxonomy.md` presented 79 instances across 25 modes without saying that one
+event can populate several modes. At least three logged events do: the **578/595** reference
+count for `10.1103/RevModPhys.90.031001` is the exemplar of **P2**, the first instance of **P1**,
+and the entry logged as a correction of a correction under **Pr5**; **C46's Σ ≡ 1** is both
+**I4** and **Pr2**; the **spent OpenAlex daily budget** is both **I3** and **Pr3**. So 79 is a
+count of annotations, not of distinct events, and the three-most-frequent ranking is a ranking of
+annotations. The count of distinct underlying events was not recorded contemporaneously and is
+not recoverable without re-coding. Stated in the note's callout and in a new §"This list is not
+a partition".
+
+## [2026-09-05] method | lint's zero is a selection effect, and the number stands
+
+`_lint.py` caught 0 of the 25 failure modes. The taxonomy and the paper had read that as "the
+cheap automated guard caught nothing". It is a **selection effect**: the linter checks
+frontmatter vocabulary, field types and wikilink reachability, and all 25 modes are semantic. The
+number is kept and the reading narrowed to *schema linting does not substitute for semantic
+auditing*. Exposures now printed beside every guard: lint 89 commits × ~140 notes; provenance
+audit all 87 coded notes over 7 audit reports; dedicated adversarial review 3 clusters;
+replication and controls 5 runs; self-test and calibration 2 instrument adapters;
+pre-registration 12 blind briefs; the human continuous with no denominator. The exposures are in
+different units and do not divide into a common rate.
+
+## [2026-09-05] computed | survival is two variables: survived_novelty 5/24 = 0.208, survived_standing 21/58 = 0.362
+
+`computed/C51-vault-meta-analysis.md` graded 82 claims into one `outcome` column that two
+different instruments had filled. Split by each row's own `source_line`:
+**`survived_novelty`** (outcome read from a novelty-audit grade table) **5/24 = 0.208**, Wilson
+95% CI 0.092–0.405; **`survived_standing`** (outcome read from a `**STANDING:` line, a callout, a
+`## Corrections` section, or `log.md`) **21/58 = 0.362**, 0.251–0.491. The two cannot return each
+other's verdicts — the novelty scale has no NARROWED or WITHDRAWN, the standing scale has no
+PRIOR_ART — so the pooled **26/82 = 0.317** (0.226–0.424) is a weighted average under weights
+nobody chose. **22 of the 24 novelty-graded rows are early rows**, so the round confound is partly
+this split. It is not wholly: stratified, the round contrast persists on the standing side,
+**16/33 = 0.485 vs 5/25 = 0.200, Fisher p = 0.0307**, n = 58. Produced by re-running
+`_scripts/c51_data/claims.csv` with the outcome column partitioned on `source_line`; Fisher
+two-sided exact, Wilson score intervals at 95%.
+
+## [2026-09-05] correction | "an adversarial pass is a narrowing mechanism" withdrawn; three reviews vs 48 legs separated
+
+Two different objects had been called *adversarial*. **Dedicated adversarial reviews: exactly
+three** (`audits/c43-adversarial.md`, `g34-adversarial.md`, `g36-adversarial.md`). The predictor
+`adversarial`, per the hashed C51 brief's rule (e) — 1 iff such a file exists **or** the note
+records a negative control, a positive control, or an explicit adversarial pass — is carried by
+**48 of 82 graded claims**, of which 27 are post-audit and 21 early, so it is correlated with
+`round` and not collinear with it. Survival 15/48 = 0.312 (0.199–0.453) with, 11/34 = 0.324
+(0.191–0.492) without, Fisher p = 1.0000; within strata the sign flips (novelty 4/11 vs 1/13;
+standing 11/37 vs 10/21). **The bolded finding "an adversarial pass is not a kill mechanism; it
+is a narrowing mechanism" is withdrawn as over-claimed** and replaced by the descriptive
+statement that the leg did not change the survival rate on these rows.
+
+## [2026-09-05] counted | log.md recount: 252 entries, 97 corrections, two corrections of corrections
+
+Recounted at commit `f1faab3` with `grep -c "^## \[" vault/log.md`: **252 entries**, 30 under
+2026-09-03 and 222 under 2026-09-05. Kind field contains "correction" in **97** (77 `correction`,
+19 `correction (archived)`, 1 `correction of a correction`). The paper had carried 245 and 93,
+counted before the last seven entries existed. **Two** entries are corrections of corrections —
+the 578/595 re-fetch, and the reversal of the "46 citations was stale" retraction — but only the
+first carries that `kind` string; the second is filed under plain `correction`. The tally of the
+`kind` field is therefore 1 and the count of the move is 2, and the gap is a property of a
+free-text field. Full remaining distribution: `method` 41, `computed` 28, `verification` 25,
+`honest null` 11, `gap` 9, `vocabulary` 4, `provenance` 3, `negative control` 3,
+`computed + verification` 2, and **29 other kinds appearing once each**. 97 + 126 + 29 = 252.
+
+## [2026-09-05] verification | eight new references verified for the audited-record paper
+
+`papers/audited-record/refs.bib` had no meta-research or AI-for-science entry at all. Added and
+verified 2026-09-05: Crossref at `api.crossref.org/works/{doi}?mailto=deciduusleaf@gmail.com` for
+`10.1126/science.aac4716` (Open Science Collaboration 2015), `10.7554/eLife.71601` (Errington et
+al. 2021), `10.1371/journal.pmed.0020124` (Ioannidis 2005), `10.1038/d41586-023-00191-1` (Nature
+editorial 2023), `10.1016/S0004-3702(97)00008-8` (Swanson & Smalheiser 1997) and
+`10.1016/j.jbi.2008.12.001` (Yetisgen-Yildiz & Pratt 2009, time-sliced LBD evaluation); arXiv API
+`export.arxiv.org/api/query?id_list=…` for 2408.06292, 2409.04109 and 2506.20803 — none of the
+three is in Crossref. `icmje2025` is no longer UNVERIFIED: `https://www.icmje.org/recommendations/`
+returned HTTP 200 on 2026-09-05, carries "Updated January 2026", and the AI section is
+**V. Use of Artificial Intelligence in Publishing**; the key is now `icmje2026`.
+
+## [2026-09-05] method | the frame stated: C23/C24 never existed, eight G-IDs retired
+
+The C51 ID set had silently skipped ten IDs. Stated in the paper and here: **C23 and C24 were
+never created** — no file, no log entry, no index line has ever carried either. **Eight G-IDs are
+retired with written reasons in `METHOD.md`**: G10, G13, G14, G15, G16, G18, G24, G26.
+**C51, C52 and C53 postdate the hashed ID set** and are not graded rows. The frame is therefore
+*every note that exists* under the three prefixes; nothing inside it was dropped. Twelve blind
+briefs cover fourteen IDs (C39, C40, C43–C52; C41 and C42 have none), of which ten fall inside
+the graded set.

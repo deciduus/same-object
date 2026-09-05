@@ -8,6 +8,8 @@ next-step-cost: M
 
 # C49's exchange residual, tested against regolith adsorption: the answer is one number, and it is `ΔH`
 
+> **WITHDRAWN AS NOVEL 2026-09-05 (adversarial pass, `audits/c53-adversarial.md`).** Hu, Bloom, Gao, Miller & Yung 2016, *Astrobiology*, `10.1089/ast.2015.1410`, states in its abstract that ~36 kJ/mol is needed to explain the methane spikes, "higher than existing laboratory measurements", names Gough 2010's 18 kJ/mol, and calls for the lab study. Hu 2016 is in the reference list of Yung 2018, which C49 read in full; this note cites it nowhere. Two further defects: the `A = 1` threshold on this note's own scaling law is **26.4 kJ/mol, not 28** (at 28 the ledger already passes 2.6×); and the hashed brief pre-committed to a `(dq/dp)·Δp` term that `c53_exchange.py` never implements — the seasonal `p_CH₄` swing (~170%) exceeds the thermal driver and its sign threatens the 31.5 kJ/mol pass, not the fail. Ortiz et al. 2022 (*Icarus* 385:115079) adds barometric pumping, so "one number, not physics" is false. What survives: the 180–240 K temperature window and the seasonal-background (not spike) framing are sharper than Hu 2016; the ten-year-old lab ask stands. Grade: **REDISCOVERED**.
+
 > **FAIL on the measured isotherm, PASS on the fitted one, and that is the whole result.**
 > Driving physisorbed CH₄ off the regolith with Mars' *annual* temperature swing supplies
 > **`ΔM_ads = 1.45×10⁻¹⁰ kg m⁻²`** per season planet-wide — **`21.0 t`** against `3,820 t`
