@@ -24,5 +24,6 @@ Thumbs.db
 *.bak
 
 # script caches and downloaded datasets
-vault/_scripts/.oc-cache/
+**/.oc-cache/
+**/.cache/
 vault/_scripts/*_data/
