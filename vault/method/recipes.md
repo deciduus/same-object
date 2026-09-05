@@ -111,8 +111,30 @@ The provider table, rate limits, biases and traps are in
    filename stem, and `closes:` / `last-checked:` / `result:` fields.
 3. **Show inputs, arithmetic and source per row.** Every number needs the fetch that produced it.
    Mark anything you could not source `UNSOURCED` or `UNVERIFIED` rather than dropping it.
-4. **State the negative result plainly if you get one.** A computation that fails to close its
+4. **Run the prior-art sweep before the callout is written — mandatory.** Take the note's
+   anchors (1–5 DOIs: the sources the claim actually rests on) and the claim's key phrases —
+   the words the claim would be found under, including its units, and **every spelling of the
+   unit** (matching is a plain substring, and Europe PMC renders Hu 2016's `36 kJ/mol` as
+   `36 kJ mol(-1)`, so pass `"kJ/mol" "kJ mol"` both) — and run
+
+   ```
+   cd vault/_scripts && python refsweep.py --anchors <doi>[,<doi>...] \
+       --phrases "<phrase>" "<phrase>" "<unit>"
+   ```
+
+   It reads each anchor's **deposited reference list** and each anchor's **citers**, resolves
+   titles and abstracts, and ranks every neighbour that matches. Paste the **top 10 hits** into a
+   `## Prior-art sweep` section of the note, each with a **one-line verdict** — *prior art*,
+   *adjacent*, or *irrelevant*, and why. **The note may not claim novelty for anything that
+   appears there.** If a hit says the claim, the note's grade is `REDISCOVERED` and the callout
+   must name the hit; if the sweep returns nothing, say that it returned nothing and say what it
+   read — a clean two-hop sweep is not evidence of novelty, only a dirty one is proof of its
+   absence. Run this **before** the callout, not after: the step exists because C53 claimed a
+   framing that was in the abstract of Hu et al. 2016, which sits in the deposited reference
+   list of Yung et al. 2018 — a paper this project had already graded `full-text-read`. See
+   `vault/method/failure-taxonomy.md` **R5**.
+5. **State the negative result plainly if you get one.** A computation that fails to close its
    gap is a result — `vault/questions/` and the log are full of them, deliberately.
-5. **Reciprocate the edge**: the gap note's `computed-in` and this note's `closes` must point at
+6. **Reciprocate the edge**: the gap note's `computed-in` and this note's `closes` must point at
    each other.
-6. **Link from `vault/00-index.md`**, log it in `vault/log.md`, then lint.
+7. **Link from `vault/00-index.md`**, log it in `vault/log.md`, then lint.

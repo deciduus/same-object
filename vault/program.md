@@ -68,7 +68,7 @@ or industry contact) · `bench`. Access: `open` · `ASU` · `paywalled` · `not 
 | P-087 | The Semantic Scholar and Lens keys | BUILD | [[recipes]] | Apply for the free S2 key (the shared pool 429'd across three sessions) and the academic Lens token (401) | + the two-provider standard becomes satisfiable / − refused ⇒ document the ceiling | hours·library |
 | P-088 | Artificial-flower regrowth array | BUILD | [[C25-whittle-foraging]] | Interleaved flowers on two programmed refill rates — P-067 with G_max and λ controlled by construction | + the GUD test without a matched natural pair / − no rate discrimination ⇒ behaviourally empty | session·bench |
 | P-089 | Reservoir audit: Mars methane | INSTRUMENT | [[reservoir-audit]] | The one open residual that is a *sink* not a source; Webster 2018, Korablev 2019, Yung 2018, Etiope 2017 (open) | + a residual specification in mol/yr with a sign / − a step-0 halt ⇒ a second worked halt | session·agent |
-| P-090 | Reservoir audit: K2-18b DMS, blind | INSTRUMENT | [[C28-biosignature-roc]] | Run it with the halt **not** pre-announced; the Venus datum is contaminated because the halt was known | + it halts unprompted ⇒ Part D is answered / − it manufactures a residual ⇒ not antifragile | session·agent |
+| P-121 | Reservoir audit: the anonymised-case blind | INSTRUMENT | [[reservoir-audit]] | C54 removed pre-announcement but not **recognition** — the runner named K2-18 b on sight. Brief a contested reduction in a low-profile system **in units only**: an anonymised exoplanet given as `M`, `R`, `T_eq`, host type, feature wavelength and significance, with no name, no discoverer, no molecule | + a halt or a residual from an instrument that could not have known the answer ⇒ D.3 is closed / − the runner de-anonymises it anyway ⇒ recognition is unremovable and every blind is graded down | session·agent |
 | P-091 | The blind brief as standing protocol | INSTRUMENT | `blind-brief-c40` | All three hash-stamped briefs record one weakness: the coder had read the source note. Make blindness structural | + a genuinely blind result / − coders cannot reproduce the coding ⇒ the rules are underspecified | session·library |
 | P-092 | Reservoir audit negative control D.1 | INSTRUMENT | [[reservoir-audit]] | Feed a Betz-calibrated turbine and confirm it demands no second reservoir; designed, never run | + it returns nothing on an accounted device ⇒ its nulls mean something / − every exclusion is suspect | hours·agent |
 | P-093 | Reservoir audit negative control D.2 | INSTRUMENT | [[reservoir-audit]] | Feed a labelled fabricated report, F=(0.4±3.0) µN at 50 W; confirm the halt at step 1–2 | + "returns nothing" becomes a result / − it enumerates anyway ⇒ it cannot see a zero | hours·agent |
@@ -155,10 +155,11 @@ METHOD 11 · THREAD 11 · INSTRUMENT 10 · BUILD 8.
 
 ## 2 · By interest — three highest-leverage items each
 
-- **Astrobiology — P-089, P-090, P-017.** The reservoir audit is validated 5/5 and pointed at exactly
-  one open case. Mars methane is the only open residual whose sign is inverted — a sink, not a source
-  — the hardest test an instrument built on sources can face. K2-18b run blind answers the one
-  question the audit's own Part D cannot, because the Venus halt was pre-announced. And C28's empty
+- **Astrobiology — P-121, P-017.** The reservoir audit is validated 5/5, and P-089 and P-090 are
+  both closed: Mars methane returned an `EXCHANGE REQUIRED` residual, and K2-18 b run blind
+  ([[C54-k2-18b-audit]]) halted **unprompted** at step 0(b), answering the question the Venus
+  halt could not because it was pre-announced. What remains is **recognition** — the runner named
+  K2-18 b on sight — so P-121, the anonymised-case blind, is now the open astrobiology item. And C28's empty
   specificity column is the most transferable finding here: the number that would operationalise it
   exists nowhere.
 - **Ecology — P-067, P-053, P-030.** C5 is the one genuinely novel result and C25 the one Layer-3
@@ -235,7 +236,8 @@ prediction survives when one global ν must serve every patch type. Desk, stdlib
 ### Track C — Instrument-first: point the audits at open cases, blind
 *Shape: a validated instrument, an unseen case, a pre-registered halt condition.* The audits are
 validated 5/5 and 3/3 and have one open case and no negative controls between them. P-092, P-093,
-P-090, P-089, P-091, P-094.
+P-090, P-089, P-091, P-094 — of which P-089, P-090, P-092 and P-093 are now done; P-121 replaces
+P-090 as the open blind.
 **First action:** run reservoir-audit negative control D.1 — the Betz-calibrated turbine — and record
 whether the audit returns nothing. It is designed, it is arithmetic, and until it runs every
 exclusion the instrument has published is uncontrolled. Two hours.
@@ -266,7 +268,7 @@ exclusion the instrument has published is uncontrolled. Two hours.
 
 ## Done 2026-09-05
 
-Seven items closed the same day. Outcome stated, not activity; a negative branch is a closure.
+Nine items closed the same day. Outcome stated, not activity; a negative branch is a closure.
 
 | ID | Status | Outcome |
 |---|---|---|
@@ -276,7 +278,10 @@ Seven items closed the same day. Outcome stated, not activity; a negative branch
 | P-079 | **done — H2/H3 fail** | [[C47-tfact-mechanism-test]]: pre-registered, 114 independent outcrop sites. ρ(`tfact`, `P`) = **+0.090**, p = 0.34, 95% CI [−0.095, +0.269] — C43's −0.206 lies outside it. The NSSH 618.91 rule is **depth × a renewability group**, not depth alone (depth alone predicts 64.6% of values). With `audits/c43-adversarial.md`, C43's ρ(`T`,`P`) = −0.180 is **withdrawn**; the soil thread's novel claim is gone and what survives is median `T`/`P` ≈ 22, already published |
 | P-089 | **done** | [[C49-mars-methane-audit]]: "methane on Mars" is four observables returning four step-0 states. Only the Gale seasonal cycle survives, conditionally, on a condition Part C had no row for. Gas-phase photochemistry `RULED OUT` at `A` = 319; the residual is an `EXCHANGE REQUIRED` surface reservoir moving ≥ 3,820 t/yr in **each** direction, τ_eff = 0.944 yr. Returned F10, the `EXCHANGE REQUIRED` state, the `UNREPLICABLE OBSERVABLE` step-0 condition and the `A ≫ 10⁴` diagnostic — all four now in [[reservoir-audit]] |
 | P-092 | **done** | [[C46-reservoir-audit-negative-control]]: D.1 ran all thirteen steps on a Betz-calibrated turbine and returned **`NO RESIDUAL`** unprompted (`A` = 0.386 at the swept disc), demanding no second reservoir. Weak yes — single-agent blind, textbook case. Also returned **F9**: on generator-form inputs the energy leg is an identity |
+| P-090 | **done** | [[C54-k2-18b-audit]]: the **first uncontaminated blind** — brief written by a *different* agent, hashed before dispatch (`ec039762…`), carrying no verdict word. The instrument **halted unprompted** at step **0(b) `NO AGREED OBSERVABLE`**, not the 0(a) `NO OBSERVABLE TO EXPLAIN` `scout-03` had predicted: Madhusudhan 2025's `2.9–3.2σ` does not contain zero, and what fires is the reductions table. **Part D's central question — can this audit produce a null unprompted? — is answered yes, once**, and the project's own advance guess named the wrong halt. Returned **F11** (on `F_req = N_col/τ` the *lifetime* is freer than the aperture: `A` spans `4.06×10⁸ → 1.39×10²` over `τ = 3 h → 1 kyr`, so report the required `τ`, not an `A` — here `τ_photo ≥ 6.95×10³ yr`) and the **F8 amendment** (a reductions table must list feature-significance tests alongside retrievals). One aperture-free exclusion survives: gas-phase CH₄/H₂S photochemistry `RULED OUT` at `A` = 167 on Reed et al. 2024's mixing-ratio ceiling. **Still weak: recognition** — the case is famous and the runner named it, so P-121 |
+| C53 | **done — REDISCOVERED** | [[C53-mars-exchange-feasibility]]: the enthalpy-threshold framing is **Hu et al. 2016** (`10.1089/ast.2015.1410`), which says in its abstract that the adsorption energy "needs to be 36 kJ/mol … higher than existing laboratory measurements", names the same Gough et al. 2010 value and uses C53's own soft inputs — and **sits in the deposited reference list of Yung et al. 2018, which C49 had read in full**. The threshold number was also wrong on C53's own ledger (26.4, not 28, and 27.0 phase-corrected), the `A` = 182 puts a *Gale-local* supply against a *planet-wide* demand, and "one number, not physics" is refuted by Ortiz et al. 2022's barometric pumping. What survives: the threshold for Webster 2018's background cycle rather than the spikes, and the 180–240 K window at which the measurement stops. Returned failure-taxonomy **R5** and the `refsweep.py` guard |
 | P-093 | **done** | [[C50-reservoir-audit-d2-control]]: D.2 fired at step 0(a) on (0.4 ± 3.0) µN — 0.13σ — with **nothing** enumerated. Three null states now observed at three distinct steps. The input was labelled synthetic, so it validates the wording of 0(a), not the judgement; the unlabelled replacement is **Tajmar et al. 2021** (`10.1007/s12567-021-00385-1`), and D.1's is a diffuser-augmented Betz-exceeding turbine |
 
-**Still open in these threads:** P-088 (now the only route to the C25 prediction), P-090, P-091,
-P-094 and P-095 for the instruments, and P-033 / P-054 for soil.
+**Still open in these threads:** P-088 (now the only route to the C25 prediction), P-091,
+**P-121** (the anonymised-case blind — the one thing C54 could not remove), P-094 and P-095 for
+the instruments, and P-033 / P-054 for soil.

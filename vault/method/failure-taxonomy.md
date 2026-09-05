@@ -5,11 +5,11 @@ type: method
 
 # A taxonomy of agent-driven research failures
 
-> **25 modes, six groups, 79 logged instances in one day.** Most frequent: **P2 — the unattributed
+> **26 modes, six groups, 82 logged instances in one day.** Most frequent: **P2 — the unattributed
 > count** (7), a figure promoted without provider, endpoint and fetch date. Next: **P1 — two
 > numbers in one field** and **P4 — a published margin adopted as if computed** (6 each).
 > This is a **catalogue of modes, not a partition of events**: the modes overlap, one event can
-> populate several, and 79 counts annotations rather than distinct events.
+> populate several, and 82 counts annotations rather than distinct events.
 
 One project, one day (2026-09-05), one orchestrator. Every entry is a failure this vault committed
 and caught, with how it was caught, the guard now standing, and the **actor**: the **model**
@@ -162,6 +162,37 @@ all clinical, so the ROC ancestry astronomers would plausibly cite (Peterson & B
 & Swets 1966) was never run. **Caught by** adversary and audit. **Guard:** calibrate both sides;
 re-test by [[citation-intersection]]. **Actor:** model.
 
+**R5. Prior art in an anchor's own reference list.** *A claim is written up as new while the work
+that already states it sits one hop away — in the deposited bibliography of a source this project
+opened, or in the citer set of a source it leaned on.* Three instances, all found by an adversary
+and none by the note that made the claim:
+
+- **C53 / Hu et al. 2016** (`10.1089/ast.2015.1410`). C53's framing — a threshold on the
+  CH₄–regolith adsorption enthalpy, required *above* the only laboratory value, therefore go and
+  measure it — is Hu 2016's, **in its abstract**: *"The adsorption energy needs to be 36 kJ/mol …
+  higher than existing laboratory measurements."* Hu 2016 names the same Gough et al. 2010
+  measurement and uses C53's own soft inputs (17–100 m² g⁻¹, ρ ≈ 1300 kg m⁻³). **C53 cites it
+  nowhere.** And it was not obscure: Hu 2016 is entry `e_1_3_3_52_1` of the Crossref-deposited
+  reference list of **Yung et al. 2018**, which [[C49-mars-methane-audit]] had graded
+  `full-text-read`. The prior art was one citation away from a paper this project had already
+  opened in full.
+- **C43 / Skidmore 1982** (`10.2134/asaspecpub45.c8`, in a volume titled *Determinants of Soil
+  Loss Tolerance*), with Schertz 1983, Johnson 1987 and Alexander 1988. The T-value mechanism C43
+  presented as its own is the 1980s soil-tolerance literature, by name and by title.
+- **C35 / Verheijen et al. 2009.** The T-vs-formation ratio C35 claimed is published there — and
+  Verheijen 2009 is in the **citer set of Montgomery 2007**, C35's own load-bearing,
+  text-extracted source.
+
+**Caught by** the adversary, three times out of three, and never by the note. **Guard:**
+`_scripts/refsweep.py` — the mandatory prior-art sweep of every anchor's reference list *and*
+citer set against the claim's key phrases, now step 4 of [[recipes]] "How to add a computed note",
+with the top 10 hits and a one-line verdict each pasted into the note before the callout is
+written, and [[reservoir-audit]] D.3a's rule that the sweep runs **before** the blind brief so the
+adverse source can be listed without annotation. **Actor:** model (it did not look), enabled by
+orchestration (nothing asked it to).
+*Distinct from R4*, where the anchors measure the wrong literature: here the anchors are the right
+ones and the answer is inside them.
+
 ## Group 5 — Process
 
 **Pr1. The pre-announced halt.** [[C30-venus-phosphine-audit]]'s step-0 halt was named in advance in
@@ -242,6 +273,7 @@ form. **Guard:** the note names the renewal class in the prediction sentence. **
 | R2 metaphor as same object | model | adversary | [[homographs]]; inspect hits | 3 |
 | R3 sign error toward the hope | model | replication + refit | falsifier before the fit | 3 |
 | R4 anchor measures wrong literature | model | adversary + audit | calibrate both sides | 3 |
+| R5 prior art in an anchor's own reference list | model / orchestr. | adversary (3 of 3) | `refsweep.py`; [[recipes]] step 4 | 3 |
 | Pr1 pre-announced halt | orchestration | audit of the brief | hashed blind brief | 1 |
 | Pr2 single-agent blind | orchestration | the note's honesty section | **no guard yet** | 2 |
 | Pr3 parallel agents, one budget/file | orchestration | 429 body; audit; lint | stagger; file ownership | 4 |
@@ -253,13 +285,13 @@ form. **Guard:** the note names the renewal class in the prediction sentence. **
 
 `recur.` counts logged instances on 2026-09-05, not only those itemised above.
 
-**Ownership, summing to 25.** Counting the `actor` column above: the **model** owns 16 modes
+**Ownership, summing to 26.** Counting the `actor` column above: the **model** owns 16 modes
 outright (P2, P3, P4, S1, S2, S3, S4, I4, I5, R1, R2, R3, R4, Fr1, Fr2, Fr3), the
-**orchestration** 4 (Pr1, Pr2, Pr3, Pr4), the **tooling** 2 (I1, I2), and **3 modes are jointly
-owned**: P1 (human / model), I3 (tooling / orchestration), Pr5 (model / human). 16 + 4 + 2 + 3 =
-25. **The human owns no mode alone and co-owns two**, P1 and Pr5, both by over-trust in a number
+**orchestration** 4 (Pr1, Pr2, Pr3, Pr4), the **tooling** 2 (I1, I2), and **4 modes are jointly
+owned**: P1 (human / model), I3 (tooling / orchestration), **R5 (model / orchestration)** and
+Pr5 (model / human). 16 + 4 + 2 + 4 = 26. **The human owns no mode alone and co-owns two**, P1 and Pr5, both by over-trust in a number
 that arrived without a provider. Counting joint ownership as implication rather than sole
-ownership: model 18, orchestration 5, tooling 3, human 2. An earlier version of this line read
+ownership: model 19, orchestration 6, tooling 3, human 2. An earlier version of this line read
 "15 modes outright, the orchestration 5, the tooling 3", which sums to 23 and gave the human no
 count; the recount is logged in [[log]].
 
@@ -267,7 +299,7 @@ count; the recount is logged in [[log]].
 three logged events do: the **578/595** reference count is the exemplar of P2, the first instance
 of P1, and the correction-of-a-correction under Pr5; **C46's Σ ≡ 1** is both I4 and, as a brief
 contaminated by recognition, Pr2; the **spent OpenAlex daily budget** is both I3 and Pr3. So the
-79 instances are annotations, not distinct events, and the three-most-frequent ranking is a
+82 instances are annotations, not distinct events, and the three-most-frequent ranking is a
 ranking of annotations. The count of distinct underlying events was not recorded and is not
 recoverable without re-coding.
 
@@ -277,8 +309,8 @@ recoverable without re-coding.
 
 **Cheap, and it catches none of these — by design, not by failure.** `_lint.py` blocks a commit
 on schema drift in under a second, and ran on every commit (89 to date) over roughly 140 notes.
-**Zero of the 25 modes were caught by lint.** That zero is a **selection effect**: the linter
-checks frontmatter vocabulary, field types and wikilink reachability, and all 25 modes are
+**Zero of the 26 modes were caught by lint.** That zero is a **selection effect**: the linter
+checks frontmatter vocabulary, field types and wikilink reachability, and all 26 modes are
 semantic. The honest reading is the narrow one — *schema linting does not substitute for
 semantic auditing* — not "the cheap guard caught nothing". Its one contribution is Pr3, where a
 half-landed parallel edit surfaces as a dead link.
@@ -290,17 +322,19 @@ the two failures that would have manufactured the most claims: ten phantom bridg
 **Moderate, and mechanical: the provenance audit.** Re-fetching every number with a named provider
 and date caught 11 modes — all four P rows, S3, S4, R1, I3, Pr3, Pr5, Fr1.
 
-**Expensive: one adversary per claim.** Each of the three adversarial reviews is a full agent-round
-against one cluster. They caught 7 modes — S1, I4, R2, R3, R4, Fr3, and the demand that produced I5
-— and are the **only** guard that caught the fatal ones: the pseudoreplication that killed C43's
-headline, the sign error that killed G36 leg 2, the metaphor that mis-titled G34.
+**Expensive: one adversary per claim.** Each of the adversarial reviews is a full agent-round
+against one cluster. They caught 8 modes — S1, I4, R2, R3, R4, **R5**, Fr3, and the demand that
+produced I5 — and are the **only** guard that caught the fatal ones: the pseudoreplication that killed C43's
+headline, the sign error that killed G36 leg 2, the metaphor that mis-titled G34, and **the
+prior art that three notes claimed novelty against while it sat in their own anchors'
+bibliographies** (R5).
 
 **Most expensive, and irreplaceable: replication and controls.** A pre-registered non-replication, a
 positive control, two negative controls and a forward simulation caught 3 modes — but only they can
 catch **I5** and **Fr2**, where the claim is internally consistent and simply untrue.
 
 **Catch counts, by earliest catch, with the exposure each guard was applied to:** audit 11 (all
-87 coded notes, 7 audit reports) · adversary 7 (3 claim clusters) · replication and controls 3
+87 coded notes, 7 audit reports) · adversary 8 (4 claim clusters) · replication and controls 3
 (5 runs) · self-test and calibration 2 (2 instrument adapters) · pre-registration 1 (12 blind
 briefs) · the human 1 (continuous, no denominator) · **lint 0** (89 commits × ~140 notes). The
 exposures are in different units and are not divisible into a common rate; they are printed
@@ -337,10 +371,10 @@ pointed at is the orchestrator's most consequential decision of the day.**
 
 ## Honesty
 
-One project, one day, one orchestrator. The 79 instances come from a single vault's 2026-09-05
+One project, one day, one orchestrator. The 82 instances come from a single vault's 2026-09-05
 record, and the recurrence counts are of **caught and logged** failures, not of failures committed;
 that ratio is unknown. Nothing here is a rate — there is no denominator of claims attempted — so
-"25 modes" describes one day's harvest.
+"26 modes" describes one day's harvest.
 
 The taxonomy was written by an agent of the same kind that committed the failures, reading a log the
 same kind of agent wrote. It is blind in the way its own modes predict — most plainly at

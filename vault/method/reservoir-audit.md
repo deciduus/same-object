@@ -459,7 +459,7 @@ Run on any device reported to produce useful work without carried fuel.
 
 ---
 
-## Part D — negative controls (D.1 RUN 2026-09-05, single-agent blind; **D.2 RUN 2026-09-05, labelled-synthetic input**; D.3 has one contaminated datum)
+## Part D — negative controls (D.1 RUN 2026-09-05, single-agent blind; **D.2 RUN 2026-09-05, labelled-synthetic input**; D.3 has one contaminated datum and **one uncontaminated two-agent datum, D.3b**)
 
 Part A is a soft-positive set, Part B a hard-positive set. **There is no input on which this
 instrument has ever returned "nothing here."** Step 11 guarantees an output by construction — if
@@ -619,6 +619,47 @@ mentions the expected outcome is contaminated by construction and must be logged
 Archive the filled template at `audits/blind-brief-<case>-<YYYY-MM-DD>.md` **before** dispatching,
 and cite that path in the resulting note's negative-control section.
 
+**Run the prior-art sweep before writing the brief, not after the run.** `_scripts/refsweep.py`
+on the case's anchors and the claim's key phrases (`vault/method/recipes.md` "How to add a
+computed note", step 4) returns every work in the anchors' reference lists and citer sets that
+speaks to the claim. Doing it **first** is what makes line 3 of the template honest: the adverse
+source can be dropped into the source list **without annotation**, alongside the favourable ones,
+so the runner meets it as a source rather than as a verdict. Sweeping afterwards cannot do this —
+by then the brief has already chosen what the runner would see, and any adverse work that turns
+up has to be introduced as a correction, which is a verdict word arriving late. **C53 is the
+counter-example**: Hu et al. 2016 sat in the deposited reference list of a paper the project had
+read in full, was found only by the adversary after the claim was written, and could have been
+line 3 of a brief.
+
+### D.3b — the first uncontaminated blind, and it named a different halt than the project expected
+
+**RUN 2026-09-05: [[C54-k2-18b-audit]], K2-18 b DMS/DMDS.** The first run satisfying D.3a in
+full: brief written by a **different agent**, archived and hashed before dispatch
+(`audits/blind-brief-c54-2026-09-05.md`, sha256
+`ec039762abc96170a570932a69886e2c905e5eb5af6041c4bbc91605a0c3d840`, verified by the runner over
+the content above the hash line before any source was fetched), **carrying no verdict word**, and
+the runner forbidden to read any vault note until after the enumeration was written. The
+instrument **halted unprompted**: step 0(b), `NO AGREED OBSERVABLE`.
+
+**And it halted at a different step than the project had guessed.**
+`audits/scout-03-astrobiology.md` predicted a step-0(a) `NO OBSERVABLE TO EXPLAIN` — "features
+consistent with noise". `0(a)` in fact **passes**: Madhusudhan et al. 2025's MIRI/LRS claim is
+`2.9–3.2σ` and its interval does not contain zero. What fires is the reductions table. **The pair
+D.3 §"Not D.2" warns are easily confused were in fact confused, by this project, in advance** —
+which is the strongest available evidence that the two states are doing distinct work and that
+the table, not intuition, is what separates them. The error is in the scout report, not in the
+instrument.
+
+**What D.3 is still missing after C54: recognition.** The case is famous and the brief names the
+planet, the molecule and the claimant; the runner recognised it at once and says so
+([[C54-k2-18b-audit]] §"Recognition"). A two-agent blind removes pre-announcement, not
+recognition, and there is no way to check afterwards which of the runner's judgements came from
+the sources and which from what it already knew. **The next D.3-class case must be one the runner
+cannot name** — a contested reduction in a low-profile system, briefed **in units only**: an
+**anonymised exoplanet given as parameters** (`M`, `R`, `T_eq`, host spectral type, the disputed
+feature's wavelength and significance) with no name, no discoverer and no molecule, so that
+recognition has nothing to attach to. Programme item **P-121**.
+
 ### D.4 — `NO RESIDUAL`: the third output state, and the first negative-control datum
 
 **D.1 — RUN, 2026-09-05: [[C46-reservoir-audit-negative-control]].** A 90 m rotor at 11 m/s
@@ -641,6 +682,7 @@ audit. **`NO RESIDUAL` is hereby named as an output state alongside step 10's fo
 | `NO OBSERVABLE TO EXPLAIN` (D.2) | step 0(a) halt | [[C50-reservoir-audit-d2-control]] (synthetic) | **nothing** | the observable is inside its own error bar |
 | `NO AGREED OBSERVABLE` (D.3) | step 0(b) halt | [[C30-venus-phosphine-audit]] | **the reductions table only** | the central value is a function of the pipeline |
 | **`NO RESIDUAL`** (D.1) | **step 11, after a full run** | [[C46-reservoir-audit-negative-control]] | **steps 0–10 in full** | the reservoirs considered supply the coupling; nothing is left over |
+| `NO AGREED OBSERVABLE` (D.3) | step 0(b) halt | [[C54-k2-18b-audit]] | **the reductions table only** | first **uncontaminated** blind; two-agent, hashed, no verdict word — and the halt the project had predicted was the wrong one |
 
 **D.2 fired at step 0(a) on the first input built for it, with nothing enumerated — but the input
 was labelled synthetic, so it validates the wording of step 0(a), not the instrument's
@@ -745,7 +787,19 @@ downstream of it, so re-observation with the same pipeline family settles nothin
 mandatory reductions table is now Part C step 0(b); a spanning set halts the audit with
 `NO AGREED OBSERVABLE`, and anything run past the halt is conditional and must be written as a
 conditional.** Designed as D.3; the first datum ([[C30-venus-phosphine-audit]]) is contaminated
-because the halt was pre-announced — see D.3a for the blind-brief protocol that would fix it.
+because the halt was pre-announced — see D.3a for the blind-brief protocol that would fix it, and
+D.3b for the first datum that satisfies it.
+
+**Amended 2026-09-05 by [[C54-k2-18b-audit]]: the reductions table must list feature-significance
+tests alongside retrievals.** K2-18 b's disagreement is not between two retrieval pipelines but
+between **two different statistical questions asked of one spectrum** — *does a retrieval prefer
+this molecule against a model grid* (Madhusudhan 2025: `2.9–3.2σ`) and *does a Gaussian beat a
+flat line at the same wavelengths* (Taylor 2025: flat line preferred in 5 of 6 tests,
+`χ²_ν = 1.06`). These are not the same observable, and **a table that lists only retrievals will
+record unanimity where none exists.** Row 3 of C54's table sharpens it further: Schmidt et al.
+2025's 60-treatment reanalysis of the **same** NIRISS+NIRSpec photons removes **CO₂** as well as
+DMS — a molecule the 2023 paper reported at `3σ` and on which the entire hycean reading rests —
+so the spanning set is not confined to the disputed molecule.
 
 **F9 — for a generator the energy leg is an identity, not a weak test.** Step 2's generator form
 `F_req = P_useful/v` is divided straight back out by step 8's `Σ = P_useful/(F·Δu)`, so `Σ ≡ 1`
@@ -772,6 +826,25 @@ parameter explains C49's one located divergence from Yung et al. 2018: 75,000 t/
 only sink rows may be quoted as exclusions.** This is F3 sharpened into a per-row verdict rather
 than a caution.
 
+**F11 — on a mass budget the *lifetime* can be freer than the aperture, and step 5 does not test
+it.** Found by [[C54-k2-18b-audit]] (2026-09-05); the sink counterpart to F10. F10 located the
+free parameter in the **source aperture** and prescribed a sensitivity row at 2× and 0.5×. On
+K2-18 b that row is perfectly behaved — `A = 1.02×10⁸ / 5.08×10⁷ / 2.54×10⁷`, a clean factor of
+two — and the instrument is nonetheless carrying six orders of magnitude of freedom, all of it in
+`τ`: `A = 4.06×10⁸` at `τ = 3 h` and `1.39×10²` at `τ = 1 kyr`, and **no reduction measures `τ`**.
+Step 5 makes the aperture reproducible and says nothing about the sink timescale, so an analyst
+who honours step 5 in full can still move `A` by `10⁶` by importing a lifetime from the wrong
+planet — which is exactly what happens if Earth's `~1 day` DMS lifetime is used for an H₂
+atmosphere around an M2.5V star where self-shielding is the whole point.
+**Rule: where `F_req = N_col/τ`, `τ` is a named row with its own 2×/0.5× sensitivity and its own
+provenance line, and if no source measures `τ` for *this* system, do not report an `A` at all —
+invert and report the required `τ` instead.** C54's output is that inversion:
+`τ_photo ≥ 6.95×10³ yr`, `2.5×10⁶ ×` Earth's, a number a photochemical model reports and a
+laboratory cross-section constrains. **Corollary, and the reason this is F11 rather than a
+footnote to F10: the step-1 `A ≫ 10⁴` diagnostic is a detector for a mis-specified `τ` just as
+much as for a mis-specified observable** — and C54 is the case that separates the two, because
+the observable was correctly specified and `A` was still `10⁷·⁵`.
+
 ---
 
 ## Standing
@@ -784,9 +857,13 @@ strongest evidence this procedure works. The EmDrive returns a checkable mass-fl
 specification rather than a verdict. The flyby anomaly returns
 `UNRESOLVED-IN-SOURCES` and a sign-based exclusion of the Pioneer mechanism.
 
-**The procedure is sound enough to point at an unresolved case**, with eight conditions: run
+**The procedure is sound enough to point at an unresolved case**, with nine conditions: run
 **step 0 before anything else — significance, and the table of independent reductions of the
-same raw data** (F8, added 2026-09-05); report the **aperture as a named row with `A` at 2x and
+same raw data, which must list feature-significance tests alongside retrievals or it will record
+unanimity where none exists** (F8, added 2026-09-05, amended 2026-09-05 by C54); **where
+`F_req = N_col/τ`, give `τ` its own named sensitivity row and its own provenance, and where no
+source measures `τ` for this system report the required `τ` instead of an `A`** (F11, added
+2026-09-05); report the **aperture as a named row with `A` at 2x and
 0.5x** (step 5, F3, added 2026-09-05); run the availability leg and not only Σ; **on
 generator-form inputs (`F_req = P_useful/v`) skip the energy leg or supply a non-tautological
 `F_req`, because Σ ≡ 1 there identically** (F9, added 2026-09-05); **on a
@@ -816,7 +893,13 @@ brief labelled the case synthetic in its first line, so it tests the wording of 
 than the instrument's judgement — the unlabelled replacement is Tajmar et al. 2021), and D.3's
 first datum ([[C30-venus-phosphine-audit]], 2026-09-05) halted correctly but had the halt
 pre-announced in its commissioning brief, so it shows the state is reachable, not that the
-instrument reaches it unprompted. Every "validated" claim above should still be read as
-*validated against positives, plus one textbook negative*.
+instrument reaches it unprompted. **D.3's second datum answers that**:
+[[C54-k2-18b-audit]] (2026-09-05, D.3b) is the first blind satisfying D.3a in full — brief by a
+different agent, hashed before dispatch, no verdict word — and the instrument **halted unprompted
+at step 0(b)**, at a *different* step than the project had predicted. **Part D's central question
+is now answered yes, once.** What it does not remove is **recognition**: the case was famous and
+the runner named it on sight, so the next D.3-class case must be one the runner cannot name
+(P-121). Every "validated" claim above should still be read as *validated against positives, plus
+one textbook negative and one uncontaminated unprompted halt*.
 
 See [[Q9-fuel-free-is-an-assumption]], [[C8-momentum-harvesting-metric]], [[positive-controls]].

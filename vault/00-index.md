@@ -20,6 +20,7 @@ editing agents are in `CLAUDE.md`.
 ## Start here
 
 - **[[program]]** — **the research programme, synthesized 2026-09-05 from every note and audit.** 120 concrete unrun items (52 data-first, 15 predictions, 13 simulations, 10 instrument runs, 8 builds, 11 method, 11 threads), grouped by interest, with three parallel tracks and an abandon list. Pick from here, not from a new scout
+- [[walls]] — **23 named absences the vault hit by trying to compute past them**, distinguished
 - **[[strategy]]** — three layers of reach, and why the current focus is **Layer 2**: produce new resultants, lay groundwork, hold Layer 3
 - **[[press-feel-dig]]** — the method is press, feel, dig — WASD by resistance gradient. The map runs the territory's own algorithm
 - **[[buildable]]** — what can actually be done, sorted by cost. Six items, three of them

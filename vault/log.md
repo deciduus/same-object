@@ -5456,3 +5456,228 @@ retired with written reasons in `METHOD.md`**: G10, G13, G14, G15, G16, G18, G24
 *every note that exists* under the three prefixes; nothing inside it was dropped. Twelve blind
 briefs cover fourteen IDs (C39, C40, C43–C52; C41 and C42 have none), of which ten fall inside
 the graded set.
+
+## [2026-09-05] method | Prior art in an anchor's own reference list is now failure mode R5, and refsweep.py is the guard
+
+Three claims on three threads were written up as new while the work that already states them sat
+one hop from a source the project had opened.
+
+  C53 / Hu, Bloom, Gao, Miller & Yung 2016, Astrobiology, 10.1089/ast.2015.1410. C53's framing --
+  a threshold on the CH4-regolith adsorption enthalpy, required ABOVE the only laboratory value,
+  therefore go and measure it -- is Hu 2016's, in its abstract: "The adsorption energy needs to be
+  36 kJ/mol to explain the magnitude of the methane spikes, higher than existing laboratory
+  measurements." Hu 2016 names the same Gough et al. 2010 measurement and uses C53's own soft
+  inputs (17-100 m2/g, rho ~ 1300 kg/m3). C53 cites it nowhere. It is entry e_1_3_3_52_1 of the
+  Crossref-deposited reference list of Yung et al. 2018 (10.1089/ast.2018.1917), which C49 had
+  graded full-text-read (Crossref works/<doi> message.reference, 155 entries, fetched 2026-09-05).
+
+  C43 / Skidmore 1982 (10.2134/asaspecpub45.c8, in a volume titled "Determinants of Soil Loss
+  Tolerance"), with Schertz 1983, Johnson 1987 and Alexander 1988: the T-value mechanism C43
+  presented as its own is the 1980s soil-tolerance literature, by name and by title.
+
+  C35 / Verheijen, Jones, Rickson & Smith 2009: the T-vs-formation ratio C35 claimed is published
+  there, and Verheijen 2009 is in the CITER set of Montgomery 2007 -- C35's own load-bearing,
+  text-extracted source.
+
+Caught by the adversary three times out of three and never by the note that made the claim.
+Actor: model (it did not look), enabled by orchestration (nothing asked it to). Distinct from R4,
+where the anchors measure the wrong literature: here the anchors are the right ones and the
+answer is inside them.
+
+WHAT PRODUCED THE GUARD: vault/_scripts/refsweep.py (new, stdlib only). Given 1-5 anchor DOIs and
+a list of claim phrases it reads each anchor's deposited reference list (Crossref works/<doi>
+message.reference; OpenCitations /references/<doi> as fallback where the publisher deposited
+none) AND each anchor's citers (the existing providers/ adapters), resolves every DOI found to
+title + year + abstract in bulk (Crossref works?filter=doi:... 40 at a time; Europe PMC
+resultType=core 25 at a time for the abstracts Crossref does not deposit; Semantic Scholar
+paper/batch 100 at a time, best-effort and skipped silently on 429), and prints every neighbour
+whose title or abstract matches a phrase, ranked by match count, with DOI, year and which anchor
+it came from. Every response is cached under _scripts/.oc-cache/.
+
+`python refsweep.py --selftest` runs the C53 case and asserts Hu 2016 is returned. Result
+2026-09-05: Yung 2018's deposited reference list is 155 entries, 155 usable, 0 unusable; 101
+carry an abstract; 2 match ["adsorption energy", "kJ/mol", "laboratory measurements"]; Hu 2016
+comes back at RANK 1 on two phrases, via the reference leg. The failure was one command away.
+
+NEW MANDATORY STEP: recipes.md "How to add a computed note" step 4 -- run refsweep on the note's
+anchors with the claim's key phrases BEFORE the callout is written, paste the top 10 hits into a
+"## Prior-art sweep" section with a one-line verdict each, and claim novelty for nothing that
+appears there. reservoir-audit.md D.3a adds the same step before a BLIND BRIEF is written, so the
+adverse source can be listed on line 3 without annotation rather than arriving later as a
+correction, which is a verdict word.
+
+WHAT THE GUARD DOES NOT DO: refsweep reads exactly two hops. A work that neither cites nor is
+cited by any anchor is invisible to it, so a clean sweep is NOT evidence of novelty -- only a
+dirty sweep is proof of its absence, and the recipe says so. Crossref deposits abstracts for a
+minority of works; the sweep prints how many rows were resolved with an abstract and warns when
+under a quarter of the corpus has one, so a title-only corpus is visible as such rather than
+being read as clean zeros (failure-taxonomy I2).
+
+TAXONOMY COUNTS UPDATED: 25 modes -> 26, 79 logged instances -> 82. Ownership 16 model outright,
+4 orchestration, 2 tooling, 4 jointly owned (P1, I3, R5, Pr5), summing to 26; by implication
+model 19, orchestration 6, tooling 3, human 2. Adversary catch count 7 -> 8 over 4 clusters;
+lint's catch count is still 0 of 26, and still a selection effect.
+
+
+
+## [2026-09-05] method | Reservoir audit: F11 added, F8 amended, D.3b recorded -- the first uncontaminated blind halted at a step the project had guessed wrong
+
+Applied to vault/method/reservoir-audit.md from the staged text in
+audits/staged/c54-proposed-F11-D3b.md, on the evidence of C54-k2-18b-audit.
+
+D.3b, new. RUN 2026-09-05, K2-18 b DMS/DMDS. The first run satisfying D.3a in full: brief written
+by a DIFFERENT agent, archived and hashed before dispatch
+(audits/blind-brief-c54-2026-09-05.md, sha256
+ec039762abc96170a570932a69886e2c905e5eb5af6041c4bbc91605a0c3d840, verified by the runner over the
+content above the hash line before any source was fetched), carrying NO VERDICT WORD, runner
+forbidden to read any vault note until the enumeration was written. The instrument halted
+unprompted at step 0(b), NO AGREED OBSERVABLE. audits/scout-03-astrobiology.md had predicted a
+step-0(a) NO OBSERVABLE TO EXPLAIN; 0(a) in fact passes, because Madhusudhan et al. 2025's
+MIRI/LRS claim is 2.9-3.2 sigma and its interval does not contain zero. What fires is the
+reductions table. The two states D.3 section "Not D.2" warns are easily confused were in fact
+confused, by this project, in advance -- which is the strongest available evidence that they do
+distinct work and that the table, not intuition, separates them. The error is in the scout
+report, not in the instrument. Added as a fourth data row to the D.4 output-state table.
+
+Part D's central question -- can this audit produce a null unprompted? -- is answered YES, ONCE.
+The Standing section is updated accordingly: "validated against positives, plus one textbook
+negative and one uncontaminated unprompted halt."
+
+WHAT IS STILL MISSING: recognition. The case is famous, the brief names the planet, the molecule
+and the claimant, and the runner recognised it at once and says so (C54 section "Recognition").
+A two-agent blind removes pre-announcement, not recognition, and there is no way to check
+afterwards which judgements came from the sources. Next D.3-class case must be one the runner
+cannot name: an ANONYMISED EXOPLANET briefed in units only -- M, R, T_eq, host spectral type, the
+disputed feature's wavelength and significance, with no name, no discoverer and no molecule.
+Programme item P-121, now the open astrobiology item in place of the closed P-090.
+
+F8 AMENDED: the mandatory reductions table must list FEATURE-SIGNIFICANCE TESTS alongside
+retrievals. K2-18 b's disagreement is not between two retrieval pipelines but between two
+different statistical questions asked of one spectrum -- does a retrieval prefer this molecule
+against a model grid (Madhusudhan 2025: 2.9-3.2 sigma), and does a Gaussian beat a flat line at
+the same wavelengths (Taylor 2025: flat line preferred in 5 of 6 tests, chi2_nu = 1.06). A table
+listing only retrievals records unanimity where none exists. Schmidt et al. 2025's 60-treatment
+reanalysis of the SAME NIRISS+NIRSpec photons removes CO2 as well as DMS -- a molecule the 2023
+paper reported at 3 sigma and on which the whole hycean reading rests -- so the spanning set is
+not confined to the disputed molecule.
+
+F11, new -- the sink counterpart to F10. On a mass budget the LIFETIME can be freer than the
+aperture, and step 5 does not test it. F10 put the free parameter in the source aperture and
+prescribed 2x/0.5x rows. On K2-18 b that row is perfectly behaved (A = 1.02e8 / 5.08e7 / 2.54e7,
+a clean factor of two) and the instrument still carries six orders of magnitude of freedom, all
+of it in tau: A = 4.06e8 at tau = 3 h and 1.39e2 at tau = 1 kyr, and no reduction measures tau.
+An analyst who honours step 5 in full can move A by 1e6 by importing a lifetime from the wrong
+planet -- exactly what happens if Earth's ~1 day DMS lifetime is used for an H2 atmosphere around
+an M2.5V star where self-shielding is the point. RULE: where F_req = N_col/tau, tau is a named row
+with its own 2x/0.5x sensitivity and its own provenance line, and where no source measures tau for
+THIS system, report no A at all -- invert and report the required tau. C54's output is that
+inversion: tau_photo >= 6.95e3 yr, 2.5e6 x Earth's. Corollary, and the reason this is F11 rather
+than a footnote to F10: the step-1 A >> 1e4 diagnostic detects a mis-specified tau as much as a
+mis-specified observable, and C54 separates the two -- the observable was correctly specified and
+A was still 1e7.5.
+
+The audit's conditions go from eight to nine.
+
+
+
+## [2026-09-05] correction | C53's threshold is 26.4 kJ/mol, not 28, and the framing is Hu et al. 2016's -- graded REDISCOVERED
+
+From audits/c53-adversarial.md. Four clauses of C53's headline sentence, three deaths and one
+arithmetic error.
+
+  FRAMING: rediscovered, ten years old, by name -- Hu et al. 2016 (see the R5 entry above).
+  THRESHOLD: wrong on C53's own ledger. Available mass scales as dH*exp(dH/RT); holding
+    A(18.0) = 182 fixed and bisecting for A = 1 at T_bar = 210 K gives dH = 26.42 kJ/mol, not 28.
+    At 28 the ledger already passes by 2.6x (A = 0.381). With the thermal-wave PHASE correction
+    -- contributions from different depths are not in phase, so the coherent swing integrates to
+    delta/sqrt(2), not delta -- the threshold is 26.99 and A(18.0) = 257, A(31.5) = 0.065.
+  APERTURE: 21 t against 3,820 t is a Gale-local supply against a planet-wide demand. Moores et
+    al. 2019 (Nat. Geosci.) expects a SMALLER amplitude elsewhere for the same seep; Webster et
+    al. 2021 (10.1051/0004-6361/202040030) reports nighttime containment at Gale. Step 5's rows
+    vary the AVAILABLE side only, so they cannot test this. Proposed as F11 by the C53 review; the
+    F11 that landed is C54's sink-timescale version, and the aperture-on-the-required-side case
+    is folded into F3/F10 rather than given its own letter.
+  "ONE NUMBER, NOT PHYSICS": false. Ortiz, Rajaram, Stauffer et al. 2022, Icarus 385, 115079
+    (10.1016/j.icarus.2022.115079) adds barometric pumping to temperature-driven adsorption and
+    claims the same bimodal seasonal peaks -- added transport PHYSICS, not a re-tuned dH -- and
+    C53 never fetched it. Nor is there one number: Hu needs 36 (spikes, deliquescence),
+    Smith/Moores 2019 fit 31.5 (seasonal cycle), C53's ledger demands 26.4.
+
+Also logged, not fixed: the blind brief pre-committed to a (dq/dp)*Delta_p pressure term and
+c53_exchange.py has none -- CHI and P_SURF are module constants and coverage() evaluates
+p = CHI*P_SURF once. The neglected driver is the larger one (170% fractional swing in p_CH4
+against 9.8% thermal at dH = 18) and its sign is OUT OF PHASE with the thermal term, so including
+it reduces net exchange: it makes the measured-dH FAIL more robust and eats the fitted-dH row's
+22x spare, the opposite of the direction C53 flags. Gough et al. 2010 was never read by C53 or by
+the review (ADS 405, ScienceDirect paywall, Semantic Scholar abstract: null), so the sentence's
+"115-135 K" is VERIFIED-SECONDARY at best.
+
+WHAT SURVIVES: the threshold stated for Webster 2018's 0.24-0.65 ppbv BACKGROUND cycle rather
+than the spikes, and the 180-240 K temperature window at which the existing measurement stops.
+That is a sharpening of Hu 2016's ten-year-old laboratory ask, not a discovery. Crossref
+bibliographic queries for a CH4-on-Mars-analogue adsorption measurement 2020-2026 return nothing:
+no one is measuring it, and no one has been since 2016 despite being asked.
+
+
+## [2026-09-05] method | Wall register: 23 named absences the vault hit by trying to compute past them
+
+vault/walls.md compiles, from ~50 computed notes, every gap note's "what would close it",
+Q1-Q10, the four adversarial reviews, the two referee reports and the fourteen blind briefs, the
+things the vault needed and could not find in the literature. A wall is an absence *within* one
+field - a measurement never made at the right conditions, a dataset never compiled, a theorem
+never proved for the relevant regime, a control never run, a rig never built - as distinct from
+a Layer-1 gap between two fields. 23 walls: 11 measurement, 7 dataset, 1 theorem, 3 control,
+1 build.
+
+Load-bearing entries, with the evidence line: W-01 CH4 adsorption enthalpy on a Mars analogue at
+180-240 K under 6 mbar CO2 (Gough 2010 measured 115-135 K and extrapolated; Hu et al. 2016 asked
+for the measurement by name; unanswered 2016-2026; threshold 26.4 kJ/mol on C53's ledger).
+W-02 a Whittle-index performance bound at M=1, N to infinity, alpha to 0 - Weber & Weiss 1990,
+Hu & Frazier 2017, Zhang & Frazier 2021 and Gast 2023 all fix the active fraction; Brown & Smith
+2020 is finite-N per instance; no located bound covers the foraging regime. W-13 no published
+specificity, and no abiotic-route occurrence frequency, for any exoplanet biosignature - which is
+C28's own result. W-06 threshold angle vs statocyte number: all published columella stimulation
+is at 90 degrees, ~10 formulations returned nothing, and the discriminator 1.73 vs 3.00 is
+unreachable without the series. W-04 no soil production rate has ever been measured under
+agriculture - every 10Be rate is a ridge crest, hillslope or basin outlet. W-15 decided against
+convenience: C52's empty lever-less bird arm is a fact about nature (migration and torpor are
+alternative solutions to one deficit, so controlling for migration removes the treatment group),
+and the wall is the missing ring-recovery phi for resident heterotherms outside Britain plus the
+absent negative-record avian homeothermy compilation.
+
+Access problems are excluded and listed separately as "behind a paywall, not a wall" - Kadmon
+1992, the JSTOR parid tables, Montgomery 2007's SI, Gough 2010, Verheijen 2009, Griebling 2026,
+DIISE, and the Scopus/WoS/S2/Lens keys - so that no coverage hole is quoted as a literature
+absence.
+
+Cheapest and independently publishable, ranked: W-03 (DMS photochemical lifetime on K2-18b from
+a model with CO2; C54's inversion needs tau >= 6.95e3 yr), W-07 (a fitted enzyme cycles-to-
+failure beta; every current value is asserted from the geometric model), W-09 (cycle a latch to
+failure; the number does not exist for any latch), W-01, W-23 (the controlled-refill flower
+array, now the only possible test of the 1.34x GUD prediction after C48).
+
+Closing statement, recorded verbatim in walls.md section 8: twenty-three walls in two days is a
+statement about the cost asymmetry between searching and measuring, not about the instrument's
+power. A register of walls is a work order for other people; it is not a contribution to any of
+the fields it names.
+
+
+---
+
+## 2 · Add to `vault/00-index.md`
+
+Under the method / instrument section, alongside `[[novelty-audit]]` and `[[program]]`:
+
+
+- [[walls]] — **23 named absences the vault hit by trying to compute past them**, distinguished
+  from Layer-1 gaps: an absence *within* one field, not between two. 11 measurement · 7 dataset ·
+  1 theorem · 3 control · 1 build. Headline entries: CH₄ adsorption enthalpy on a Mars analogue at
+  180–240 K (Hu 2016 asked; unmeasured 2016–2026, threshold 26.4 kJ mol⁻¹); a Whittle-index
+  performance bound at `M` = 1, `α` → 0 (every located result fixes the active fraction); no
+  published specificity for any exoplanet biosignature; `θ_min` vs statocyte number `M` (all
+  columella stimulation is at 90°, so 1.73 vs 3.00 is unreachable); a soil production rate under
+  agriculture (every ¹⁰Be rate is a ridge crest or outlet); and ring-recovery `φ` for resident
+  temperate heterothermic birds — where C52's empty treatment group is ruled **a fact about
+  nature**, not a wall. Paywalled sources are excluded to an appendix as access problems.
+  Cheapest-and-publishable five: the K2-18b DMS lifetime, a fitted enzyme `β`, a latch cycled to
+  failure, the Mars adsorption measurement, the controlled-refill flower array
