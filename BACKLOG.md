@@ -2,7 +2,7 @@
 
 **Status 2026-09-05 (after rounds 1–2):** ✅ done and committed, ⚠ partial. Rounds: `aa0f842` (round 1), `60beb4a` (round 2), round 3 = this commit.
 
-**Staged, not yet applied** (from round 3, in `audits/staged/PENDING-log-R3C.md`): C11 aperture-sensitivity rows (A at 2× and 0.5×), per-gap `expected` blocks for G28/G6/G25, `information-audit.md` Part C negative-control design. New follow-ups: fetch a concept-scoped N_universe so O/E is not a floor; run the Kadmon 1992 test of C25; C5 preprint draft.
+**Round 4 (applied):** C11 aperture rows, `expected` blocks with fetched N_universe (G28 100,685; G6 13,830; G25 void, floor binds), information-audit Part C design, G28 5-vs-8 reconciled, Q5 mechanism corrected. Preprint draft in `papers/charnov-gittins/`. **Open follow-ups:** run the Kadmon 1992 test of C25; refs.bib has 12 unverified DOIs; abstract is 216 words.
 
 Five Opus 4.8 audits (math/physics, sources, method, structure, scope). ~130 raw actionables, merged and deduplicated to 62. Grouped into batches an agent can run as one job. Effort: S = under 1 hour, M = a few hours, L = a session.
 

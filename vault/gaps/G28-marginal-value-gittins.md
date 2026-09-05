@@ -17,7 +17,7 @@ uses-move: []
 rests-on: []
 tags: [node/gap, crosses/nothing, evidence/citation-intersection, standing/narrowed]
 last-checked: 2026-09-03
-note: "Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs control 225/1,013 = 22.2% - a factor of 45. Denominators reconciled in the Provenance table. Griebling 2026 LOCATED, doi 10.1016/j.anbehav.2026.123491, and confirmed to cite Charnov 1976 and Gittins 1979."
+note: "Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs control 225 against a 3,906 Auer base - control ratio 62.5, denominator-invariant, replacing the old factor of 45. Denominators reconciled in the Provenance table. Griebling 2026 LOCATED, doi 10.1016/j.anbehav.2026.123491, and confirmed to cite Charnov 1976 and Gittins 1979."
 ---
 
 # Marginal value theorem and the Gittins index
@@ -36,7 +36,9 @@ note: "Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs cont
 
 ## Why this entry forced a new field in [[relationship-description]]
 
-The count alone is uninteresting: 8 co-citers, against a Gittins-citer base whose size depends
+> **Two counts, two runs (reconciled 2026-09-05).** The **8** in this section is the 2026-09-03 OpenAlex-base run (1,542 Gittins citers; same run as the Sutton & Barto control, 181/1,542 = 11.7%). The **5** in "The citation intersection" section is the OpenCitations + Crossref reference-list run (1,013 base), which the control ratio 62.5 and the null model are computed on. The three extra OpenAlex hits are indexed there but not in OpenCitations; all eight/five are cognitive-neuroscience mediators either way, so the topology claim does not depend on which run is used.
+
+The count alone is uninteresting: 8 co-citers (OpenAlex run; 5 on the OpenCitations run), against a Gittins-citer base whose size depends
 on the provider (see the Provenance table below: 986-1,544) and a Charnov base of 5,424. Under verdict scoring
 that reads "small number, gap holds," and the thinking stops.
 
@@ -56,7 +58,7 @@ expresses it.
 
 | Pair | Co-citers |
 |---|---|
-| Charnov and Gittins | **8** (0.5% of the Gittins base) |
+| Charnov and Gittins | **8** (0.5% of the 1,542 OpenAlex base; 5 of 1,013 on the OpenCitations run) |
 | **Gittins and Sutton & Barto** | **181 (11.7%)** |
 
 Operations research and reinforcement learning are **one closed literature**. It is
@@ -109,7 +111,7 @@ Crossref returned the identical five DOIs.**
 |---|---|
 | Intersection | **5 of 1,013 Gittins citers — 0.49%** |
 | Coverage | 1,006/1,010 citers (99.4%) had DOI-bearing reference lists |
-| **Positive control: Gittins × Auer 2002** | **225 — 22.2%.** A factor of **45** |
+| **Positive control: Gittins × Auer 2002** | **225.** Control ratio **62.5** *(corrected 2026-09-05 from "a factor of 45")* |
 | Control: Charnov × Auer 2002 | 3 (0.08%) — so the isolation is not an artifact of Gittins 1979's age |
 
 **Which denominator, and the arithmetic.** Both headline percentages are computed against the
@@ -118,13 +120,54 @@ against any of the live counts in the Provenance table:
 
 - intersection: `5 / 1,013 = 0.004936` → **0.49%**
 - positive control: `225 / 1,013 = 0.2221` → **22.2%**
-- ratio: `0.2221 / 0.004936 = 45.0` → the stated **factor of 45**
+- old ratio: `0.2221 / 0.004936 = 45.0` → the **"factor of 45"**, now **withdrawn**
 
 The `1,006/1,010` coverage line uses a slightly different figure (1,010) because four DOIs
 failed to resolve on the reference-list pass; it is a coverage statistic, not the denominator of
 either percentage. **Neither percentage is recomputed against Crossref's 986 or OpenAlex's
 1,544** — doing so would move 0.49% to 0.51% or 0.32% respectively, and 22.2% to 22.8% or 14.6%.
-The factor-of-45 is denominator-invariant, since both numerator sets share the base.
+**Correction, 2026-09-05 (from `audits/staged`): the factor of 45 is replaced by the control
+ratio 62.5.** The 45 divides both numerator sets by the *same* 1,013 Gittins base, which cancels
+the base but not the fact that the two *partner* sets differ in size — Charnov's citer set (5,424)
+is 39% larger than Auer's (3,906), so the gap side is being asked to hit a larger target. The
+denominator-invariant statistic per [[citation-intersection]] is
+
+```
+(O/E)_gap / (O/E)_control  =  (225/3,906) / (5/5,424)  =  0.05760 / 0.000922  =  62.5
+```
+
+which is independent of `N_universe` entirely. Correcting 45 → **62.5** makes the isolation
+slightly *stronger* than the note previously claimed.
+
+### Expected under independence — *added 2026-09-05 from `audits/staged`*
+
+`E = |A|·|B|/N`, per [[citation-intersection]]. Inputs: `|citers(Gittins 1979)| = 1,013`
+(run-time enumeration, 2026-09-03), `|citers(Charnov 1976)| = 5,424`, `O = 5`; control partner
+Auer 2002 `|B| = 3,906` (Crossref `is-referenced-by-count`, 2026-09-05), `O = 225`.
+
+**`N_universe`, fetched 2026-09-05** — OpenAlex, works in either the foraging/behavioural-ecology
+or the bandit/optimal-stopping concept clusters, from Charnov's publication year:
+
+```
+https://api.openalex.org/works?filter=concepts.id:C165287380|C9343608|C123197309|C99414536,
+  from_publication_date:1976-01-01,to_publication_date:2026-09-05&per-page=1&mailto=...
+meta.count = 100,685
+```
+
+(C165287380 Foraging, C9343608 Behavioral ecology, C123197309 Multi-armed bandit,
+C99414536 Optimal stopping — the *union*, per the method note.)
+
+| `N` route | `N` | E (gap) | **O/E (gap)** | E (control) | O/E (control) |
+|---|---|---|---|---|---|
+| Union floor (flatters the claim) | 6,432 / 4,694 | 854 | **0.0059** | 843 | 0.267 |
+| **Fetched concept-scoped `N`** | **100,685** | **54.6** | **0.092** | 39.3 | **5.73** |
+| 10× `N` (sensitivity) | 1,006,850 | 5.46 | 0.916 | 3.93 | 57.3 |
+
+**Is the low count a finding?** *Yes at the fetched `N`.* `E = 54.6 > 1`, so 5 observed against
+~55 expected is a real deficit, and the control moves the *other* way (`O/E = 5.73`, a joined
+literature) at the same denominator. **At 10× `N` it is not:** `O/E → 0.92`, indistinguishable
+from chance, so the raw `O/E` is not safe to quote alone. **Quote the control ratio 62.5**, which
+is invariant across every row above.
 
 **The positive-control query.** Auer, Cesa-Bianchi & Fischer 2002, *Finite-time Analysis of the
 Multiarmed Bandit Problem*, *Machine Learning* 47:235-256, **`10.1023/A:1013689704352`**

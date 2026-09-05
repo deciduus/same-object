@@ -62,6 +62,38 @@ this table requires re-resolving those six DOIs first.
 **No contact in either direction across 1,033 works.** Coverage this high is what makes a zero
 a finding rather than an absence of data.
 
+### Expected under independence — *added 2026-09-05 from `audits/staged`*
+
+`E = 172 × 861 / N`, per [[citation-intersection]]. At the union floor `N = 1,033` (this note's
+own "1,033 works") `E = 143` against `O = 0` — but that is a *floor*, and `E ∝ 1/N`, so the zero
+had to be tested against a real denominator.
+
+**`N_universe`, fetched 2026-09-05** — OpenAlex, works in either the advanced-composite-materials
+or the functional-diversity concept cluster, from the earliest anchor year (O'Brien 2011):
+
+```
+https://api.openalex.org/works?filter=concepts.id:C200329591|C2988890453,
+  from_publication_date:2011-01-01,to_publication_date:2026-09-05&per-page=1&mailto=...
+meta.count = 13,830
+```
+
+(C200329591 Advanced composite materials, C2988890453 Functional diversity. OpenAlex has **no**
+"multifunctional materials", "structural battery", "ecosystem multifunctionality" or "Hill
+numbers" concept — these two are the closest defensible proxies for the two sides, and the scope
+is therefore an approximation, stated as one.)
+
+| `N` route | `N` | E | O | **O/E** |
+|---|---|---|---|---|
+| Union floor (flatters the claim) | 1,033 | 143 | 0 | **0** |
+| **Fetched concept-scoped `N`** | **13,830** | **10.7** | 0 | **0** |
+| 10× `N` (sensitivity) | 138,300 | 1.07 | 0 | **0**, but only just — `E ≈ 1` |
+
+**Is the zero a finding?** *Yes.* The staged note recorded this as a weakening pending a fetched
+`N`: the zero was said to require a universe below ~1.5×10⁵ works. The fetched universe is
+**13,830**, an order of magnitude below that threshold, giving `E = 10.7 > 1`. **The zero
+survives, and the weakening is retracted.** It survives 10× only marginally (`E = 1.07`), so the
+scope of the concept filter is now the load-bearing assumption rather than the count.
+
 ### The positive control is the load-bearing part
 
 **Byrnes 2014 × Jost 2006 = 17**, reproduced exactly by both sources. That control matters more

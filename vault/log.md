@@ -1729,3 +1729,43 @@ nulls from orthogonal access bases are the null-side form of the orthogonal-lane
 AARO in disclosure-ledger §4 in one sentence; short of it, Version B stays *uncorroborated*, and
 [[Q1-what-gets-checked]] says the second check is unfunded/classification-gated rather than tried
 and failed.
+
+## [2026-09-05] method | Staged R3C edits landed in the three notes their author did not own
+
+`computed/C11-flyby-reservoir-audit.md` §2.0 gains the aperture-sensitivity retrofit required by
+`reservoir-audit` Part C step 5: the assumed cross-section is now stated per reservoir, `A` is
+reported at 2x and 0.5x aperture under the stated linear-`F_max` scaling, and **no verdict
+changes** — Lorentz 1.7x10^6 -> 8.5x10^5, thermal 160 -> 80, drag 18 -> **9**. The drag row is
+the one the rule was written for: at 2x aperture it sits exactly on the F7 `1 < A < 10`
+`NOT TESTED` boundary and is carried by the sign argument, not by `A`.
+
+`method/information-audit.md` gains **Part C — negative controls (design; NOT RUN)**, mirroring
+`reservoir-audit` Part D: C.1 a device whose entropy books already close, C.2 a blind
+pre-registered case, C.3 an adversarial case with a later-corrected sink attribution. Until C.1
+and C.2 run, "validated 3/3" reads as *validated against positives only, non-blind*.
+
+## [2026-09-05] correction | G28's "factor of 45" is wrong; the control ratio is 62.5
+
+`gaps/G28-marginal-value-gittins.md` body and frontmatter `note`. The 45 divides both numerator
+sets by the same 1,013 Gittins base, cancelling the base but not the difference in *partner* set
+size — Charnov's citer set (5,424) is 39% larger than Auer's (3,906). The denominator-invariant
+statistic per `method/citation-intersection.md` is `(225/3,906)/(5/5,424) = 62.5`. Correcting
+45 -> 62.5 makes the isolation slightly **stronger**. Quote the control ratio, never the raw O/E.
+
+## [2026-09-05] computed | N_universe fetched for three gaps; G6's weakening is retracted, G25's concept scope is void
+
+OpenAlex `works?filter=...&per-page=1`, all fetched 2026-09-05, `meta.count`:
+
+- **G28** — `concepts.id:C165287380|C9343608|C123197309|C99414536,from_publication_date:1976-01-01,to_publication_date:2026-09-05` -> **100,685**. `E = 54.6`, `O/E = 0.092`. `E > 1`, so the low count **is** a finding; at 10x `N`, `O/E = 0.92` and it is not. Control at the same `N`: `O/E = 5.73`.
+- **G6** — `concepts.id:C200329591|C2988890453,from_publication_date:2011-01-01,to_publication_date:2026-09-05` -> **13,830**. `E = 10.7`, `O = 0`. R3C recorded G6's zero as a real weakening pending a fetched `N` below ~1.5x10^5 works. The fetched universe is an order of magnitude under that. **The zero survives and the weakening is retracted.** Scope caveat: OpenAlex has no "multifunctional materials", "structural battery", "ecosystem multifunctionality" or "Hill numbers" concept, so Advanced composite materials x Functional diversity are proxies. At 10x `N`, `E = 1.07` — marginal.
+- **G25** — `concepts.id:C170748874|C113709454,from_publication_date:1974-01-01,to_publication_date:2026-09-05` -> **8,851**, which is **void as a universe**: `|citers(Shannon 1948 pt I, W1995875735)| = 82,198` (OpenAlex `cited_by_count`, 2026-09-05) is larger than it. Shannon's citer set does not fit inside any nameable concept scope. The union floor `N = 83,818` binds: `E = 1,624`, `O/E = 0.022`, and at 10x floor `O/E = 0.222`. `E >> 1` on every valid row, so the low count is a finding and, unusually, `N`-insensitive across an order of magnitude. This also settles the note's open "one query": `f_Shannon = 0.98` at the floor, far above 3.85% — the proofreading literature **under**-cites Shannon.
+
+`method/positive-controls.md` restated with the fetched denominators; its G6 row's
+"`E < 1` above `N ~ 1.5x10^5`" caveat is retired.
+
+---
+
+
+## [2026-09-05] correction | G28 carried two co-citer counts (8 and 5) from two runs without saying so
+
+The 8 is the 2026-09-03 OpenAlex-base run (1,542 citers), the 5 is the OpenCitations/Crossref reference-list run (1,013). Both now labelled in the note. Surfaced by drafting the preprint (`papers/charnov-gittins/`). Also: Q5 gave a revisitability mechanism for the regrowth sign; C25 derives it from forgone regrowth. Q5 now says which is derived.

@@ -198,6 +198,42 @@ standing cannot carry a claim its own instrument contradicts. Contact surface 16
 (the OpenAlex number, the one measured at full coverage). `evidence` is unchanged and is now
 better supported than before. Logged in [[log]].
 
+### Expected under independence — *added 2026-09-05 from `audits/staged`*
+
+The staged version of this block said `E` was not computable because `|citers(Shannon 1948)|` was
+never logged. It is computable now, from the same 2026-09-05 OpenAlex run as the citer-set
+re-intersection above: `|citers(Hopfield 1974, W2074616759)| = 1,656`,
+`|citers(Shannon 1948 pt I, W1995875735)| = 82,198` (OpenAlex `cited_by_count`, fetched
+2026-09-05), `O = 36`.
+
+**`N_universe`, fetched 2026-09-05** — OpenAlex, works in either the proofreading or the
+coding-theory concept, from Hopfield's publication year:
+
+```
+https://api.openalex.org/works?filter=concepts.id:C170748874|C113709454,
+  from_publication_date:1974-01-01,to_publication_date:2026-09-05&per-page=1&mailto=...
+meta.count = 8,851
+```
+
+(C170748874 Proofreading, C113709454 Coding theory; OpenAlex has no "kinetic proofreading"
+concept.) **This fetch fails as a universe, and the failure is itself the result.** `N = 8,851`
+is an order of magnitude *smaller* than `|citers(Shannon)| = 82,198`; a universe cannot be
+smaller than a subset of itself. Shannon 1948's citer set is not contained in any
+proofreading-or-coding-theory scope — it spans most of quantitative science. So for this pair the
+concept-scoped route is void and the **union floor is the binding denominator.**
+
+| `N` route | `N` | E | O | **O/E** |
+|---|---|---|---|---|
+| Concept-scoped fetch | 8,851 | 15,379 | 36 | 0.0023 — **void**, `N < |B|` |
+| **Union floor** `|A|+|B|−O` | **83,818** | **1,624** | 36 | **0.022** |
+| 10× floor (sensitivity) | 838,180 | 162 | 36 | **0.222** |
+
+**Is the low count a finding?** *Yes, on every valid row.* `E ≫ 1` throughout (1,624 down to 162),
+so the 36 is a genuine deficit rather than a small-numbers artifact — and unlike [[G6-multifunctionality]]
+this conclusion is insensitive to `N` across an order of magnitude, because the union floor is
+already large. The remaining caveat is the one the note already carries: the load-bearing figure
+is the *content* of the 36, not the count.
+
 The next probe is unchanged and is now better aimed: `10.1016/j.tpb.2019.03.007` is the closest
 thing to the missing shared axis that exists, and it is a fitness-landscape paper, not an
 energy-per-error one.

@@ -101,6 +101,23 @@ Gittins × Auer **225**.
 
 **Control ratio = 62.5**, denominator-invariant: `(225/3,906)/(5/5,424) = 0.0576/0.000922`.
 
+**`N_universe` fetched 2026-09-05** *(added from `audits/staged`)* — OpenAlex, union of the
+foraging/behavioural-ecology and bandit/optimal-stopping concepts from Charnov's year:
+
+```
+works?filter=concepts.id:C165287380|C9343608|C123197309|C99414536,
+  from_publication_date:1976-01-01,to_publication_date:2026-09-05   →  meta.count = 100,685
+```
+
+| `N` | E (gap) | O/E (gap) | E (control) | O/E (control) |
+|---|---|---|---|---|
+| 6,432 / 4,694 (union floors) | 854 | 0.0059 | 843 | 0.267 |
+| **100,685 (fetched)** | **54.6** | **0.092** | 39.3 | **5.73** |
+| 1,006,850 (10×, sensitivity) | 5.46 | 0.916 | 3.93 | 57.3 |
+
+`E = 54.6 > 1` at the fetched `N`, so **the low count is a finding there**; at 10× it is not
+(`O/E = 0.92`). The control ratio 62.5 is unchanged on every row.
+
 Two things follow. **(a)** The note's headline "factor of 45" is the same comparison done against
 a shared 1,013 base without correcting for the two partner sets' different sizes; correcting it
 moves 45 → **62.5**, i.e. the isolation is slightly *stronger* than claimed, and now stated in a
@@ -128,6 +145,25 @@ than 3.85% of this universe?** If more, the proofreading literature under-cites 
 less, it over-cites him. *That is the query to run:* `cited_by_count` for
 `10.1002/j.1538-7305.1948.tb01338.x` over the same concept/year window used for `N`.
 
+**`N_universe` fetched 2026-09-05, and it fails** *(added from `audits/staged`)*. OpenAlex
+`works?filter=concepts.id:C170748874|C113709454,from_publication_date:1974-01-01,to_publication_date:2026-09-05`
+returns `meta.count = 8,851` — but `|citers(Shannon 1948 pt I, W1995875735)| = 82,198`
+(OpenAlex `cited_by_count`, 2026-09-05), so the concept-scoped `N` is *smaller than one of its
+own subsets* and is void. **Shannon's citer set does not fit inside any nameable concept scope.**
+The union floor binds instead, against the note's current full-coverage numbers
+(`|citers(Hopfield)| = 1,656`, `O = 36`):
+
+| `N` | E | O | O/E |
+|---|---|---|---|
+| 8,851 (concept-scoped) | 15,379 | 36 | **void** — `N < |B|` |
+| **83,818 (union floor)** | **1,624** | 36 | **0.022** |
+| 838,180 (10×, sensitivity) | 162 | 36 | 0.222 |
+
+`E ≫ 1` on every valid row, so **the low count is a finding**, and unusually for this project it
+is insensitive to `N` across an order of magnitude. This also answers the "one query" above:
+`f_Shannon = 82,198/83,818 = 0.98` at the floor, far above 3.85% — this literature **under**-cites
+Shannon relative to the universe that contains both sets.
+
 **The load-bearing claim is denominator-free.** The gap is not the 16 — it is the **0** works
 with coding-theory content in the inspected 416. `O = 0` gives `O/E = 0` for any positive `E`,
 so no choice of `N` rescues it. The 28.4% coverage, not the null model, is what limits this
@@ -144,13 +180,22 @@ across six anchor pairings, 1,033 works total.
 | 10⁴ | 14.8 | 0 | 0 |
 | 10⁵ | 1.48 | 0 | 0 |
 | 10⁶ | 0.148 | 0 | — *uninformative* |
+| **13,830 — fetched 2026-09-05** | **10.7** | 0 | **0** *(a finding: `E > 1`)* |
+| 138,300 (10×, sensitivity) | 1.07 | 0 | 0, marginal |
 
 **This is the clearest demonstration of why the null model was needed.** At the union floor the
 zero is spectacular: 143 expected, none observed. Against a whole-of-science denominator, fewer
 than one co-citer is expected anyway and the zero carries no information. **A zero intersection
 is a finding only if the two literatures share a universe small enough that `E > 1`.** G6's
-claim therefore requires a stated concept-scoped `N` below ~1.5×10⁵ works, and that number has
-not been fetched.
+claim therefore required a stated concept-scoped `N` below ~1.5×10⁵ works.
+
+**That number has now been fetched** *(added 2026-09-05 from `audits/staged`)*. OpenAlex
+`works?filter=concepts.id:C200329591|C2988890453,from_publication_date:2011-01-01,to_publication_date:2026-09-05`
+returns `meta.count = 13,830` — an order of magnitude *under* the ~1.5×10⁵ threshold, giving
+`E = 10.7` and leaving the zero standing. Caveat on scope: OpenAlex has no "multifunctional
+materials", "structural battery", "ecosystem multifunctionality" or "Hill numbers" concept, so
+C200329591 (Advanced composite materials) and C2988890453 (Functional diversity) are proxies for
+the two sides, not exact scopes.
 
 The positive control `Byrnes 2014 × Jost 2006 = 17` cannot be put in these units:
 `|citers(Jost 2006)|` is **not recorded** in the note.

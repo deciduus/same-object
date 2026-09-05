@@ -133,6 +133,33 @@ All `A` below use the post-Oberth conservative `F_req = 5.28×10⁻⁴ N` (§1).
 | Tidal / gravitational-gradient coupling | `0` (static field) | — | `F·Δu = 0` | **NOT FORMABLE** |
 | Earth-bound dark-matter halo (Adler) | ~few×10² m/s | set by `ρ_DM, σ` | `≤ 1` by construction | **SURVIVES (as spec)** |
 
+### 2.0 Aperture sensitivity — *added 2026-09-05 from `audits/staged`*
+
+[[reservoir-audit]] Part C step 5 now requires the assumed coupling cross-section to be stated
+and `A` reported at **2×** and **0.5×** that aperture. An exclusion that does not survive the 2×
+row is `NOT TESTED`, not `RULED OUT`. Nothing below is recomputed; all values are the current
+post-Oberth ones (`F_req = 5.28×10⁻⁴ N`) and **no verdict changes.**
+
+**Scaling assumed:** `A = F_req/F_max` with `F_max` linear in the aperture for all three
+reservoirs — Lorentz `F = QvB` with `Q = CV` and capacitance linear in effective conducting
+radius; drag `F = ½ρV²C_dA` linear in frontal area; thermal `F = P_rad/c` with radiated power
+linear in radiating area. Hence `A(2×) = A/2` and `A(0.5×) = 2A`. Stating this scaling is what
+makes the sensitivity two lines rather than a re-derivation.
+
+| Reservoir | Assumed aperture (nominal) | `F_max` | **A (nominal)** | A (2× aperture) | A (0.5× aperture) | Verdict |
+|---|---|---|---|---|---|---|
+| Earth rotation via geomagnetic field (Lorentz) | spacecraft floating-charge capacitance `C ≈ 10⁻¹⁰ F` at `V ≈ 10 V`, i.e. a ~1 m effective conducting radius; **no deployed conductor** | `QV_pB ≈ 3.1×10⁻¹⁰ N` | **1.7×10⁶** | 8.5×10⁵ | 3.4×10⁶ | **RULED OUT** — survives 2× by six orders |
+| Anisotropic thermal radiation | full spacecraft radiating envelope at `P_rad ≤ ~1 kW`, `η = 1` (fully collimated) | `P_rad/c ≈ 3.34×10⁻⁶ N` | **160** | 80 | 320 | **RULED OUT** — survives 2× by ~2 orders; also excluded on sign |
+| Atmosphere / exosphere drag at 539 km | NEAR frontal area with `C_d` order unity, `ρ ≈ 10⁻¹³ kg/m³` | `≈ 3×10⁻⁵ N` | **18** | **9** | 36 | **RULED OUT** — survives 2×, but this is the row where the rule bites |
+
+**The drag row is the one the aperture rule was written for.** `A = 18` nominal falls to **9** at
+twice the assumed frontal area — still an exclusion, but a one-order one resting on an exospheric
+density marked UNVERIFIED and solar-cycle dependent. Per [[reservoir-audit]] F7 (`1 < A < 10` on
+unverified inputs is `NOT TESTED`, not `RULED OUT`), **the drag exclusion at 2× aperture sits
+exactly on that boundary and is carried by the sign argument, not by `A`.** The Lorentz and
+thermal exclusions are aperture-insensitive to any defensible factor: an aperture large enough to
+rescue the Lorentz coupling would need to be ~10⁶ times NEAR's, which is not a spacecraft.
+
 ### 2.1 Earth rotation via the geomagnetic field — RULED OUT, `A ≈ 1.7×10⁶`
 
 The tempting candidate: `K = 2ΩR_⊕/c` *contains Earth's rotation*, so the formula reads like a

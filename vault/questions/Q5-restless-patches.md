@@ -40,6 +40,8 @@ leaving*?
 That extra term is the thing to derive, and it should be signed: a fast-regrowing patch is worth
 leaving *sooner*, because it will be there when you return.
 
+> **Mechanism corrected 2026-09-05.** That sentence gives a *revisitability* reason. [[C25-whittle-foraging]] derives the same sign from a different mechanism: the `−r(1−x)²` term is regrowth *forgone by occupying the patch*, and the r→0 limit recovers MVT only under non-revisitability. Same sign, different cause; C25's is the derived one. The revisitability effect is C5 §6 row 6 (switching costs), quantified there as the residual `λx²`.
+
 ## Why it might be answerable
 
 Same two lines as [[C5-charnov-gittins]]. The Whittle relaxation is standard and the regenerative

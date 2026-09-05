@@ -53,6 +53,20 @@ these units at all, so "the signal separates cleanly" is currently supported by 
 specified control pair (Gittins x Auer) and by two gaps whose zeros are denominator-sensitive.
 The separation is real where it has been measured; the table overstated how much of it had been.
 
+**Fetched denominators, 2026-09-05** *(added from `audits/staged`)*. The union floors above are
+no longer the only route for the three gap/control rows: concept-scoped `N` has been fetched from
+OpenAlex for all three (filters and dates in each gap note and in [[citation-intersection]]).
+
+| Row | fetched `N` | E at that `N` | O | **O/E** | Is the count a finding? |
+|---|---|---|---|---|---|
+| Gittins x Auer (control) | 100,685 | 39.3 | 225 | **5.73** | joined literature, as intended |
+| Gap: Gittins x Charnov | 100,685 | 54.6 | 5 | **0.092** | **yes** (`E > 1`); fails at 10x `N` |
+| Gap: engineering x ecology | 13,830 | 10.7 | 0 | **0** | **yes** (`E > 1`); marginal at 10x `N` |
+| Gap: Hopfield x Shannon | union floor 83,818 (concept fetch void, `N < |B|`) | 1,624 | 36 | **0.022** | **yes**, and `N`-insensitive |
+
+This retires the "`E < 1` above `N ~ 1.5x10^5`" caveat on the G6 row: the fetched universe is
+13,830.
+
 **What it adds.** The control ratio `(O/E)_gap / (O/E)_control` is invariant under the choice of
 `N` and is therefore the statistic to quote. For G28 it is **62.5**, replacing the note's
 denominator-dependent "factor of 45".

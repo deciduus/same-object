@@ -281,6 +281,37 @@ which is exactly the unread bridge G25 measures at a 3.8% citation intersection.
 
 ---
 
+## Part C — negative controls (design; NOT RUN) — *added 2026-09-05 from `audits/staged`*
+
+The 3/3 of Part A is a positive-only control set, and it is not blind: all three cases
+(Bérut 2012, Toyabe 2010, Koski 2014) are textbook results whose entropy sink is stated in the
+source the audit quotes, and Bérut has only one sink available by construction, so it cannot
+discriminate. **The audit has never been shown to return "no unnamed sink."** Mirrors
+[[reservoir-audit]] Part D.
+
+**C.1 — A device whose entropy books already close.** Feed a system with a fully accounted
+entropy budget and no unnamed sink: a measured, near-quasistatic isothermal gas expansion, or a
+Carnot-cycle heat engine at published efficiency, where `ΔS_total` is accounted to within
+measurement uncertainty by the named reservoirs alone. **What counts as returning nothing:** the
+sink enumeration terminates with the *already-named* sinks supplying the full balance,
+`ΔS_residual` reported as an interval containing zero, and **no new sink specified.** If the
+audit names an additional sink here, the Toyabe result — where naming the demon's memory register
+as the unnamed sink is the audit's headline success — is an artefact of the procedure.
+
+**C.2 — A blind case.** Compute the sink for one case *before* reading the source's conclusion,
+and record the pre-registration in the note with a date, the source withheld until after. The
+three existing cases cannot be un-read, so this needs a fourth. **What counts as passing:** the
+pre-registered sink matches the published one, and the pre-registration is timestamped ahead of
+the read.
+
+**C.3 — An adversarial case.** A published claim whose sink attribution was **later corrected**.
+The audit passes if it reproduces the correction, not the original attribution.
+
+**Until C.1 and C.2 are run, "validated 3/3" should be read as *validated against positives only,
+non-blind*.**
+
+---
+
 ## Standing
 
 Part A: **passed, three for three**, with the entropy sink correctly identified in every case —
