@@ -61,6 +61,7 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 | [[C19-hormesis-biphasic-fit]] | Fitted shot-peening biphasic curve: window ≥15× matches biology's 10-20× | REPACKAGED | Curve fit on published data + toxicology hormesis formalism; note: "not a universal constant, not a theorem" | Calabrese hormesis quantification (decades old); over-peening is a named engineering effect |
 | [[C20-release-the-constant]] | M6 as an integer operator; re-derives gecko contact-splitting blind | REPACKAGED | Note: matrix augmentation is textbook (Szirtes); the directed operator + blind validation is "underexplored, not first" | Szirtes' applied dimensional analysis (adds/suppresses variables for singular matrices) |
 | [[C33-lolp-starvation]] / [[G34-lolp-starvation-risk]] | Grid adequacy and bird winter energetics run one reserve recursion with one shadow price, but report different functionals | **REPACKAGED** (graded 2026-09-05, `audits/g34-adversarial.md`) | The dynamic program is **ruin theory** (Lundberg 1903, Cramér 1930) in both fields, and the demand-side reading — counting load reduction toward adequacy — is **mature grid practice** (MISO *Demand Response 101* 2024; PJM capacity auction; "negawatt" since Lovins 1989), so the borrowing runs **grid → bird**, not bird → grid | Both halves are old; and the quantitative leg failed its own positive control — rev.1's `P(starve) = 8.25e-8` is withdrawn (policy overshot Brodin 2017's 0.74 g/day by 2.26×; `C_WU = 6 kJ` zeroed). Prior-art sweep ran on Europe PMC + WebSearch only (S2 429, OpenAlex budget), so the C5 §11 bar is not met on the engineering side |
+| [[C35-soil-ha]] / [[C42-soil-ha-theory]] / [[C43-soil-ha-replication]] | Soil on C6's `Ha` axis (conventional agriculture 0.011, no-till 0.21, native vegetation 1.31); USDA `T` sets `Ha` ≡ 1 by construction and exceeds measured formation by 22.6–54.3× | **REPACKAGED (+ CORRECTED)**, with **§5 REDISCOVERED** (graded 2026-09-05, four-leg deep inquiry) | The erosion÷formation ratio is mainstream soil science: **Verheijen et al. 2009** (*Earth-Sci. Rev.*, `10.1016/j.earscirev.2009.02.003`) sets tolerable ≡ formation and reports actual arable erosion at 3–40× the upper tolerable limit; **Montgomery 2007** states the discrepancy at 1–2 orders of magnitude; **Evans et al. 2020** (*Environ. Res. Lett.*, `10.1088/1748-9326/aba2fd`) already publishes the dimensioned version as soil lifespan `L = D/(E−F)` over 10,030 plot-years; and the USDA's own Erosion Index `EI` = erosion/`T` is `1/Ha` with `T` swapped for the formation rate. `T` = 5 short ton/ac = 1 inch per 29.5 yr, so `Ha ≡ 1` at `T` is `T`'s **definition** | The `Ha` framing is the weakest of the three available framings (C42), `A = Ha/(1+Ha)` has **no meaning for a stock** and its column is deleted, and `k_r` carries an unreported factor-2 depth ambiguity (Heimsath `P(300 mm)` = 0.0386 vs Montgomery median 0.017). Corrected: `T` had been quoted from a secondary range while the note's own primary source states it |
 
 ## Grade table — theorem-bridges
 
@@ -98,6 +99,7 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 | [[G27-collective-decision]] | **Overturned/withdrawn** — anchored on "Paxos", a proper noun | CORRECTED |
 | [[G28-marginal-value-gittins]] | Charnov's rule IS the Gittins index; identity supplied by C5 | LOCATED (identity itself = C5, NOVEL) |
 | [[G34-lolp-starvation-risk]] | Shared reserve recursion + shared shadow price, different estimands; 20 pairings, two providers, 0 | LOCATED (narrowed 2026-09-05: the first-passage framing and C33's headline numbers were wrong) |
+| [[G36-wear-erosion-damage]] | **Leg 1 only.** Tribology and agricultural soil-erosion modelling fit the same species of constant to the same measurement and cite each other nowhere — 40 decade-binned cells 1936–2022 × 1945–1995, two providers, all zero, nine controls firing, `E` = 75.6 at the narrow scoped `N`. But the gap names **no missing object**: the Archard form does not transfer (divisor vs threshold; `K_soil` is not constant), so what soil science lacks is not a law but the other field's forty years of published failure to predict its own constant. **Leg 2 (Miner ↔ aggregate breakdown) withdrawn on sign** — MWD is non-monotone under wet–dry cycling, Miner's `D` cannot be. `topology` stays **disjoint**: the proposed mediator (Hsu, Dietrich & Sklar 2008) is read by geomorphology and by neither soil anchor, so any Archard borrowing there is **one-way, geomorphology → tribology** | LOCATED (narrowed 2026-09-05) |
 
 ## Grade table — instruments and question-notes
 
@@ -137,6 +139,21 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 4. **[[C4-inclination-sensing-limit]] — a new sensing-limit derivation forcing cross-cell pooling.**
    No published statocyte-pooling proposal was found in ~10 queries, and it emits a falsifiable
    ~500-root experiment. Hedged: the Berg-Purcell machinery is textbook and the search was thin.
+5. **NEW CANDIDATE, 2026-09-05, not yet graded NOVEL — [[C43-soil-ha-replication]]'s
+   `ρ(T, P) = −0.180`.** Across **1,053 US sites** (OCTOPUS ¹⁰Be denudation joined point-in-polygon
+   to SSURGO `tfact` via the USDA Soil Data Access API), the USDA's tolerable-soil-loss `T` is
+   **anti-correlated** with measured soil formation (Spearman ρ = −0.180, p = 4.5e-9; every
+   robustness specification negative, down to −0.303 on mineral horizons only). The mechanism is
+   named: `T` is assigned on profile **depth**, an inventory, and depth anti-correlates with
+   formation **rate** because thin soil sits on the steep limb of the production function. `tfact`
+   class 1 is calibrated (median ratio 0.93); classes 3–5 run at 24–47×. **This reclassifies `T`
+   from a bad estimate of a formation rate to not an estimate of a rate at all**, which is
+   strictly stronger than the prior art ([[C35-soil-ha]] §5, Verheijen 2009, Montgomery 2007), all
+   of which allows `T` to be a formation estimate that is merely too generous. It is stated here
+   as **the one candidate in this cluster for a genuinely new empirical claim, pending its own
+   adversarial pass** — and it was found in the data rather than pre-specified (C43's own
+   pre-registration covered the median and the sign test, not the class mechanism), so on this
+   project's rules it is a hypothesis for someone else to test until that pass is run.
 
 ## The results most at risk of being unrecognized rediscoveries
 

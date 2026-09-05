@@ -3618,3 +3618,473 @@ place in a method note that is otherwise all mandatory.**
 > Worked in full: [[C41-uncited-parent-sweep]], on eight pairs. Its headline is a negative —
 > the double-rediscovery outcome (iii) fired in 3 of 8 rows, so this step is a **diagnostic
 > that sharpens a gap's description**, not a filter expected to overturn most gaps.
+
+## [2026-09-05] computed | C42: soil has no steady state above P0; C35's A column withdrawn and C35 regraded REPACKAGED
+
+C42-soil-ha-theory writes the soil-depth balance dD/dt = P(D) − E with Heimsath et al. 1997's
+exponential soil production function P(D) = P0·exp(−D/D*) (DOI 10.1038/41056, Crossref-verified
+2026-09-05; P0 = 0.077 mm/yr, D* = 434 mm, VERIFIED-SECONDARY on the parameters) and asks what
+C6's Ha = k_r/k_d and A = Ha/(1+Ha) mean for a stock.
+
+Results. (a) The steady state is D_ss = D*·ln(P0/E), unique and globally asymptotically stable
+because d/dD[P−E] < 0 everywhere — but it exists only if E < P0. Every managed erosion rate in
+C35, including BOTH USDA T values, exceeds P0 = 0.077 mm/yr, so there is no steady state and the
+profile runs to bedrock: the exact structural mirror of C31's draining fleet. (b) A = Ha/(1+Ha)
+has no availability reading. C35 §6's gloss ("steady-state thickness relative to the thickness
+the same formation rate would sustain against zero erosion") is WRONG and is withdrawn here —
+zero erosion gives D → ∞ under an exponential P, so the denominator diverges. The only surviving
+reading, P/(P+E), is a monotone rescaling of Ha and carries no extra information; the A column
+should be deleted for every soil row. (c) Derived the exact time to bedrock
+t_bed = D0/E + (D*/E)·ln[(E − P0·e^(−D0/D*))/(E − P0)], checked numerically to 3e-10.
+
+The depth-loss horizon for a 300 mm A-horizon: conventional agriculture ~197 yr (Montgomery
+median 1.537 mm/yr) or 202 yr at a round 1.5 mm/yr; USDA T = 5 ton/ac/yr 355 yr; T = 1 ton/ac/yr
+1,930 yr; no-till 4,615 yr; native vegetation thickens.
+
+Prior art, and it is the correction. Evans, Quinton, Davies & Zhao 2020, Environ. Res. Lett.
+15:0940b2, DOI 10.1088/1748-9326/aba2fd (Crossref-verified 2026-09-05; text read) define "soil
+lifespan" as L = D/(E − F) with D = 300 mm — that IS the horizon above, published, and C35 does
+not cite it. The USDA's own Erosion Index EI = potential erosion / T is 1/Ha with T substituted
+for the formation rate. Verheijen et al. 2009 (DOI 10.1016/j.earscirev.2009.02.003,
+Crossref-verified) reviews T vs actual erosion for Europe. So: the horizon is prior art, the
+T-vs-measured-P discrepancy is Montgomery 2007's (C35 supplies its number, 10.1–50.7×), and the
+Ha framing is the project's and is the weakest of the three. **C35-soil-ha is regraded
+REPACKAGED**, one grade below its own §6 self-assessment, for a reason §6 did not identify: it
+defended against C6's novelty grade, not against soil science's prior art.
+
+Five failure boundaries: (a) depth-dependent P — BREAKS, no scalar Ha describes a soil, and the
+humped production function makes the endgame worse not better; (b) conveyor not pool — BREAKS
+flux equivalence, depth Ha is an upper bound on quality Ha since erosion takes carbon-rich
+topsoil and production adds carbon-free saprolite; (c) cover feedback — the one place soil is
+structurally RICHER than C6, since two decreasing curves can cross twice and give a genuine
+unstable threshold depth D_crit, which is the collapse point C6 §3.2 denies Ha = 1 ever was
+(asserted, not solved; the Kirkby attribution is UNVERIFIED); (d) time scales — 10^4-yr
+cosmogenic P against decadal E SURVIVES as a policy comparison, FAILS for any dynamical claim,
+so "native vegetation is at Ha ≈ 1" is not balance observed; (e) bulk density — SURVIVES,
+rho_b 1100–1600 moves T:k_r from 10–51× to 8–60×, never near 1, though compaction biases it with
+a sign.
+
+Also found, and it is bigger than the rho_b band: Heimsath's P at D = 300 mm is 0.0386 mm/yr,
+2.3× Montgomery's compiled median of 0.017 that C35 uses as k_r throughout. A median across
+sites of unstated depth is not P at a stated depth, so every soil Ha carries a factor-~2
+ambiguity from a variable neither source reports. No sign or order of magnitude changes.
+
+Produced by: python _scripts/c42_soil_theory.py (no network). DOIs via Crossref
+(mailto=deciduusleaf@gmail.com), fetched 2026-09-05.
+
+Correction to the task brief as given: the DOI supplied for Evans et al. 2020 was
+10.1016/j.envsci.2020.09.019, which Crossref resolves to López-Rodríguez et al., "Delineating
+participation in conservation governance", Environ. Sci. Policy 114:486–496 — a different paper
+in a different journal. The correct record is 10.1088/1748-9326/aba2fd, Environ. Res. Lett.
+
+
+## 2. For `vault/00-index.md` — computed block, insert after the `C35-soil-ha` line
+
+
+- [[C42-soil-ha-theory]] — **soil is a stock, and the mapping is structural-only.** Writing dD/dt = P(D) − E with Heimsath 1997's P(D) = P0·exp(−D/D*) gives a unique globally stable steady state D_ss = D*·ln(P0/E) that **exists only if E < P0 = 0.077 mm/yr** — which no managed row of C35 satisfies, including both USDA T values, so the profile runs to bedrock in the finite time D0/E + (D*/E)·ln[(E − P0·e^(−D0/D*))/(E − P0)], derived here. A = Ha/(1+Ha) has no availability reading and C35 §6's thickness gloss is withdrawn: the only surviving sense, P/(P+E), is a monotone rescaling of Ha. The 300 mm depth-loss horizon is **197 yr** under conventional agriculture and **355 yr** at T = 5 ton/ac/yr — and it is prior art, Evans et al. 2020 ERL 15:0940b2's "soil lifespan" L = D/(E−F), uncited by C35; the USDA's Erosion Index is already 1/Ha with T for k_r. **C35 regraded REPACKAGED.** Five boundaries: state-dependent P breaks the scalar Ha, the conveyor breaks flux equivalence (depth Ha bounds quality Ha from above), cover feedback gives a real threshold depth D_crit where C6's Ha = 1 never was, the 10⁴-yr/decadal window mismatch survives only as policy comparison, bulk density survives (8–60×)
+
+
+## [2026-09-05] computed + verification | C35's falsifier run against real data: T does not track measured formation, and Borrelli 2017 turned out to be fetchable after all
+
+[[C43-soil-ha-replication]] executes the paired test [[C35-soil-ha]] section 5 named. Pre-registered
+in `audits/blind-brief-c43-2026-09-05.md`, sha256
+`dbae0496666126c4070f518f16d1bf997f6c6b9165469284f940440b5e7ef727`, hashed before any site-level
+value was fetched.
+
+Two live APIs, both worked, both named: OCTOPUS v2.2 WFS
+(`http://geoserver.octopusdata.org/geoserver/wfs`, GetCapabilities and GetFeature CSV, 200) for
+Be-10 denudation with coordinates, and USDA-NRCS Soil Data Access
+(`https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest`, POST T-SQL with
+`SDA_Get_Mukey_from_intersection_with_WktWgs84`) for `tfact` and `dbthirdbar_r` at each point.
+Re-runnable: `python _scripts/c43_soil_data.py` from `vault/`.
+
+**Two corrections to citations C35 and its brief carried.** (a) Stockmann et al. 2014 "How fast
+does soil grow?" is *Geoderma* 216:48-61, not *Earth-Science Reviews* — Crossref
+`10.1016/j.geoderma.2013.10.007`, fetched 2026-09-05, `container-title: Geoderma`. (b) Bui et al.
+2011 on Australian tolerable erosion is *Agriculture, Ecosystems & Environment* 144:136-144,
+`10.1016/j.agee.2011.07.022`, not *Geoderma*; it is closed access and was not used.
+
+**One provenance upgrade that C35 must eventually take.** C35 section 6 records Borrelli et al.
+2017 as unfetchable and its 2.8 Mg/ha/yr as VERIFIED-SECONDARY. It is gold open access:
+OpenAlex `doi:10.1038/s41467-017-02142-7` gives `oa_url = https://www.nature.com/articles/
+s41467-017-02142-7.pdf`, fetched 2026-09-05 (9.06 MB, 13 pp.), and the printed text reads
+"an area-specific soil erosion average of 2.8 Mg ha-1 yr-1" for 2001. C43 does not edit C35;
+this is the standing instruction to do so.
+
+
+## 2. Line for `vault/00-index.md`, in the computed block next to `[[C35-soil-ha]]`
+
+
+- [[C43-soil-ha-replication]] — **C35's falsifier, run.** Pre-registered (brief sha256 dbae0496...) and executed against OCTOPUS Be-10 denudation joined point-in-polygon to SSURGO `tfact` via the USDA Soil Data Access API. The pre-registered test is reported with its power stated in the note. Spearman rho(T, P) is the load-bearing number: it decides whether `T` is a biased formation estimate or not a formation estimate at all. Adds non-US erosion-vs-formation rows (Europe, Australia, China) to C35's axis from Borrelli 2017 and Panagos 2015, both now full-text-read
+
+
+## [2026-09-05] correction | G36 narrowed to leg 1 and mediated; C35 §5 regraded REDISCOVERED
+
+
+Body: leg 2 withdrawn as a fatigue analogy — MWD is non-monotone and reverses sign between bare
+and vegetated soil under identical wet–dry cycling (PMC12907374, 2026), so Miner's monotone `D`
+is the wrong formalism and `Ha` is the right one; `topology` disjoint → mediated, via
+bedrock-incision geomorphology (Sklar & Dietrich 2001 co-cited with Archard 1953, Meng & Ludema
+1995 and Nearing 1989 on OpenCitations 2026-09-05; Hsu, Dietrich & Sklar 2008 writes Archard's
+law out in full and names tribology); `crosses` formalism(4) → metaphor(2) on C35 §4's own
+demonstration that the functional form does not survive; the `T`-versus-formation discrepancy
+located in Montgomery 2007, Verheijen 2009 and the soil-loss-tolerance review literature, so C35
+§5 is a rediscovery; `T` = 5 short ton/ac/yr shown to equal 1 inch per 29.5 years, making the
+"`T` was defined as the assumed production rate" claim quantitative; `T`-range provenance
+conflict with Montgomery's own 5–12 t/ha/yr logged. **All of C35's unit conversions reproduce
+exactly and are not in question.** Produced by `audits/g36-adversarial.md`.
+
+
+## [2026-09-05] verification | G36 failure mode 6 closed: soil side extended to 1936-2022, still 40 zeros, on two providers
+
+The standing hole in G36 was that its soil anchors were all 1989-2001, so a pooled zero could not
+be told from a vocabulary that had moved. Six soil anchors added and Crossref-verified: Yoder 1936
+(10.2134/agronj1936.00021962002800050001x), Ellison 1948 (10.2136/sssaj1948.036159950012000c0107x),
+Wischmeier & Smith 1959 (10.2136/sssaj1959.03615995002300030027x), Emerson 1967 (10.1071/sr9670047),
+Borrelli 2017 (10.1038/s41467-017-02142-7), Rieke 2022 (10.1016/j.geoderma.2022.116156). Ellison
+1947 (Agricultural Engineering 28) and the Wischmeier & Smith USLE handbooks (Agriculture Handbook
+282/537) have no DOI in Crossref and were replaced by the nearest DOI-bearing work of the same
+decade and lineage. All 40 mechanics x soil cells are 0 on OpenCitations and 0 on Semantic Scholar
+wherever S2 sees both anchors. Two new age controls fire - Yoder 1936 x Le Bissonnais 1996 = 110
+(OC) / 105 (S2) and Wischmeier & Smith 1959 x RUSLE 1991 = 26 - so the pre-1970 anchors are visible
+to the instrument and their zero is a measurement. Standing unchanged: live.
+
+## [2026-09-05] method | Two provider traps recorded: an S2 coverage hole is not a zero; chapter DOIs inflate a cell
+
+Semantic Scholar holds no record for Miner 1945 (10.1115/1.4009458) or RUSLE 1991
+(10.1080/00224561.1991.12456571); both rows are recorded as err, never as zeros. OpenAlex returned
+"insufficient budget ... resets at midnight utc" on the second call of the round and contributed
+nothing. Separately, the Sklar & Dietrich x Borrelli 2017 cell read 23 hits which resolve to ONE
+monograph deposited with chapter-level DOIs (Rhoads 2020, River Dynamics, 10.1017/9781108164108 and
+.001-.022) plus one review article. Any book-heavy cell will read high for the same reason.
+
+## [2026-09-05] honest null | G36's mediated-topology objection run and rejected: the mediator does not carry
+
+The adversary's move on G36 is that soil science need not cite Archard because bedrock-incision
+geomorphology already runs a wear model. Run, both providers: Sklar & Dietrich 2001/2004 x each
+mechanics anchor is 0-1, and their own deposited reference lists (59 and 12 DOIs, OpenCitations
+2026-09-05) contain none of the four mechanics anchors. No work co-cites a mechanics anchor and a
+soil anchor. The two alternative mediators are flat zero - Van Oost 2000 (tillage erosion) x Archard
+= 0 and Shao 2001 (wind-erosion abrasion) x Archard = 0 - while Van Oost x Nearing = 26/28 confirms
+tillage erosion sits inside soil erosion. topology stays disjoint; contact-surface stays 0. Two
+named nearest misses were found and inspected: Lefebvre & Jop 2013 (Phys. Rev. E 88, 032205), which
+co-cites Sklar, Archard and Meng & Ludema, and Bodek & Jerolmack 2021 (Earth Surf. Dynam. 9, 1531),
+which co-cites Sklar and Paris & Erdogan.
+
+
+---
+
+## D1 — open disagreement with the adversarial leg, for whoever reconciles them
+
+`PENDING-log-G36ADV.md` proposes `topology: mediated` with the mediator
+*"bedrock-incision geomorphology (Sklar & Dietrich 2001; Hsu, Dietrich & Sklar 2008, JGR Earth
+Surf. 113, which writes Archard's law out in full and cites Archard 1953)"*. This leg tested that
+claim and reaches the opposite verdict. The two findings, so the reconciler can weigh them:
+
+1. **The Archard citation in Hsu 2008 is not corroborated by metadata, and is not settled.**
+   Crossref deposits **102** references for `10.1029/2007JF000778`; **none** matches `archard`,
+   `wear` or `tribolog` in structured or unstructured form, and OpenCitations resolves 85 of them
+   to DOIs without `10.1063/1.1721448`. Deposited lists can be incomplete and a printed
+   bibliography is a different object, so **this does not disprove the adversarial leg's claim** —
+   it means the claim rests on a full-text read that neither leg has recorded. **Do not apply
+   either verdict on this point without opening the PDF.**
+2. **The second hop is empty, which decides the topology on its own.** Hsu 2008 has 69 citers
+   (OpenCitations, 2026-09-05) and its intersection with **all six** soil anchors — Nearing 1989,
+   Le Bissonnais 1996, Amézketa 1999, Denef 2001, Yoder 1936, Borrelli 2017 — is **0**, while the
+   control Hsu × Sklar & Dietrich 2004 fires at 7. Whatever Hsu cites, **no soil-science work
+   reaches the mechanics literature through it.** A mediator nothing traverses does not make a
+   topology mediated, so `topology: disjoint` was kept and the whole probe written into G36's
+   Provenance block rather than the frontmatter.
+
+The two legs do **not** conflict on `crosses` or on leg 2's fate; this leg took no view on either
+and did not touch the claim sections.
+
+---
+
+## D2 — cells that should stop being quoted
+
+The Meng & Ludema row and the four small soil anchors fall at or below `E = 1` once a field-scale
+denominator is used (`N ≈ 1.0×10⁵` from Semantic Scholar bulk phrase totals): Meng × Rieke 2022 is
+`E = 0.87`, Meng × Emerson 1967 `E = 1.96`, Meng × W&S 1959 `E = 3.00`, and Ellison 1948's whole
+row is uninformative at any `N` because its citer set is 21 works. They are corroboration, not
+evidence, and G36's Provenance now says so. The load-bearing cells are Archard, Miner and Paris
+against Yoder 1936, Nearing 1989, Le Bissonnais 1996, Amézketa 1999, Denef 2001 and Borrelli 2017.
+
+
+## [2026-09-05] correction | G36 narrowed: leg 2 withdrawn on sign, leg 1 survives as a citation gap with no missing object; topology stays disjoint
+
+Four legs ran against G36-wear-erosion-damage and C35-soil-ha on 2026-09-05: an adversarial
+review, a provenance re-run, and two computations (C42-soil-ha-theory, C43-soil-ha-replication).
+G36 standing live -> narrowed.
+
+Leg 2 (cumulative fatigue <-> aggregate breakdown under wet-dry cycling) is WITHDRAWN ON SIGN.
+Miner's D = sum n_i/N_i is monotone non-decreasing and carries no repair term. Mean weight
+diameter is not monotone under wet-dry cycling: aggregates can STRENGTHEN, MWD rising in
+vegetated soil and falling in bare soil under an identical protocol, and rising over early cycles
+before falling later within a single treatment. Two opposed rates run at once, so the state
+variable is not a damage fraction and a Weibull beta fitted to MWD(n) would be a shape parameter
+fitted to a series that changes direction. G36's "what would close it" item 3 is withdrawn with
+it. The replacement object is C6-damage-healing-ratio itself: MWD(n) approaches a
+treatment-specific asymptote MWD_inf set by Ha = k_r/k_d, from below where re-aggregation wins and
+from above where breakdown does, so the sign of dMWD/dn at n = 1 does not predict MWD_inf. Needs
+>=3 cycle points; Denef 2001 and Amezketa 1999 print cycle-resolved tables and are the cheap test.
+
+Leg 1 (wear <-> erosion detachment) SURVIVES, but only as a citation gap with NO MISSING OBJECT.
+crosses stays formalism(4) because K, K_r, K_i and K_USLE are one species of object - an
+empirically fitted dimensional constant standing in for an unresolved contact mechanism,
+unpredicted from bulk properties in both fields - but the note now says explicitly that the
+formalism DOES NOT TRANSFER. Archard's resistance is a divisor and his law passes through the
+origin; WEPP's is a threshold and below tau_c detachment is exactly zero; C35 section 4's
+dimensionless soil analogue K_soil is not a constant but sweeps orders of magnitude within one
+soil as tau varies. So soil science is not missing a law it could import from tribology. What it
+is missing is the other field's forty years of published failure to predict its own constant.
+
+topology stays DISJOINT, against the adversarial leg's proposed mediated. A mediator must be read
+by BOTH sides. The proposed mediator, Hsu, Dietrich & Sklar 2008 (10.1029/2007JF000778), is read
+by neither soil anchor: Hsu x all six soil anchors (Nearing, Le Bissonnais, Amezketa, Denef,
+Yoder, Borrelli) = 0 on OpenCitations 2026-09-05, while the control Hsu x Sklar & Dietrich 2004
+fires at 7; Sklar & Dietrich's own deposited reference lists (59 and 12 DOIs) contain none of the
+four mechanics anchors. The adversarial leg reports that Hsu 2008 writes Archard's e_v = kWx/H out
+in full and cites Archard 1953 in its printed text; Crossref's 102 deposited references for that
+DOI contain no archard/wear/tribolog match and OpenCitations resolves 85 of them without
+10.1063/1.1721448. A deposited list can be incomplete and a printed bibliography is a different
+object, so the metadata does not disprove the claim - IT IS AN OPEN DISAGREEMENT NEEDING A
+FULL-TEXT READ, and it is recorded as one in G36's new "Narrowing" section. Ruling applied: if the
+full text confirms the citation it is a ONE-WAY BORROW, geomorphology -> tribology, which does not
+make the topology mediated, because nothing traverses back to soil science.
+
+computed-in on G36 extended to C35-soil-ha, C42-soil-ha-theory and C43-soil-ha-replication.
+contact-surface stays 0. The 40-cell decade grid, the nine controls and the E figures are
+unchanged and the Provenance block was not edited.
+
+## [2026-09-05] correction | C35 corrected on the T range, the A column and the grade: section 5 is REDISCOVERED, and C43's site-level anti-correlation is the only new thing in the cluster
+
+C35-soil-ha corrected on ten points; ALL OF ITS UNIT CONVERSIONS AND ARITHMETIC REPRODUCE EXACTLY
+and none is in question.
+
+(1) T-range provenance. C35 quoted T only as 1-5 short ton/ac/yr from secondary NRCS summaries
+while Montgomery 2007 - its own VERIFIED-PRIMARY source for every other rate - states T as 5-12
+t/ha/yr at rho_b = 1200 kg/m3, about 0.42-1.00 mm/yr (0.41 mm/yr at the low end). Montgomery's
+range is now the primary input, row 8; the 1-5 short ton/ac policy range is retained as the
+secondary policy range, row 8b, and labelled as such. (2) The ratio is restated as 22.6-54.3x on
+Montgomery's range at this note's rho_b 1300 (0.385-0.923 mm/yr against a formation median of
+0.017), Ha = 0.018-0.044; the previous 10.1-50.7x and Ha = 0.020-0.099 are kept as the secondary
+reading. (3) The A = Ha/(1+Ha) column is DELETED for every soil row per C42 section 3 - a stock
+has no functional/damaged partition, bedrock is absorbing so nothing cycles, and the only
+surviving reading P/(P+E) is a monotone rescaling of Ha carrying no extra information. Non-soil
+rows keep A. (4) C35 section 6's gloss on A - "steady-state profile thickness relative to the
+thickness the same formation rate would sustain against zero erosion" - is WITHDRAWN AS FALSE:
+under an exponential production function zero erosion gives D -> infinity and the denominator
+diverges.
+
+(5) Section 5 is REGRADED REDISCOVERED. Verheijen, Jones, Rickson & Smith 2009 (Earth-Sci. Rev.
+94:23-38, 10.1016/j.earscirev.2009.02.003, Crossref-verified) sets tolerable = formation at 0.3-1.4
+t/ha/yr for Europe and reports actual arable erosion at 3-40x the upper tolerable limit, from which
+the ratio follows by one division; Montgomery 2007's abstract states the discrepancy at one to two
+orders of magnitude; and the arithmetic confirms the provenance - T = 5 short ton/ac/yr = 0.862
+mm/yr at rho_b 1300 = 1 inch per 29.5 years, the Soil Conservation Service's "1 inch in 30 years"
+renewal assumption to within 1.8%. So Ha = 1 at T is T's construction, not a convention this vault
+uncovered. (6) The policy-relevant dimensioned numbers are now cited and stated: Evans, Quinton,
+Davies, Zhao & Govers 2020, Environ. Res. Lett. 15:0940b2, DOI 10.1088/1748-9326/aba2fd
+(Crossref-verified; note the brief's DOI 10.1016/j.envsci.2020.09.019 is a DIFFERENT PAPER,
+Lopez-Rodriguez et al. in Environ. Sci. Policy) defines soil lifespan L = D/(E-F) at D = 300 mm
+over 10,030 plot-years from 255 sites - prior art C35 did not cite - and C42 section 4 supplies the
+exact time to bedrock: 197 yr under conventional agriculture, 355 yr at T = 5 short ton/ac, 1,930
+yr at T = 1. (7) A factor-2 depth ambiguity is now stated in section 6: Heimsath's P at D = 300 mm
+is 0.0386 mm/yr against Montgomery's compiled median of 0.017 used as k_r throughout, and a median
+across sites of unstated depth is not P at a stated depth. That is larger than the +-18% rho_b band
+C35 does discuss and changes no sign and no order of magnitude.
+
+(8) Borrelli et al. 2017 is fetchable after all - gold OA, OpenAlex doi:10.1038/s41467-017-02142-7
+-> nature.com/articles/s41467-017-02142-7.pdf, read in full by C43, printed text "an area-specific
+soil erosion average of 2.8 Mg ha-1 yr-1" for 2001 - so the global-mean k_d is upgraded from
+VERIFIED-SECONDARY to VERIFIED-PRIMARY. One datum came with it: Borrelli's own generic global
+T-value of 10 Mg/ha/yr is 0.769 mm/yr at rho_b 1300, 45x Montgomery's formation median, i.e. the
+Ha = 1 construction is being carried into global erosion modelling ABOVE the top of the USDA range.
+(9) Section 5's falsifier, named but never run, was run on 1,053 US sites in C43 and did not fire.
+(10) Two citations the brief carried are corrected: Stockmann et al. 2014 "How fast does soil
+grow?" is Geoderma 216:48-61 (10.1016/j.geoderma.2013.10.007), not Earth-Science Reviews; Bui et
+al. 2011 is Agric. Ecosyst. Environ. (10.1016/j.agee.2011.07.022), not Geoderma.
+
+Grades: C35 REPACKAGED (+ CORRECTED) with section 5 REDISCOVERED; G36 LOCATED (narrowed). The one
+candidate for a genuinely new empirical claim in the whole cluster is C43's site-level Spearman
+rho(T, P) = -0.180, p = 4.5e-9, and it is logged in novelty-audit.md as pending its own
+adversarial pass. All three grades are in vault/novelty-audit.md.
+
+## [2026-09-05] computed | C42: soil has no steady state above P0; C35's A column withdrawn and C35 regraded REPACKAGED
+
+C42-soil-ha-theory writes the soil-depth balance dD/dt = P(D) - E with Heimsath et al. 1997's
+exponential soil production function P(D) = P0*exp(-D/D*) (DOI 10.1038/41056, Crossref-verified
+2026-09-05; P0 = 0.077 mm/yr, D* = 434 mm, VERIFIED-SECONDARY on the parameters) and asks what
+C6's Ha = k_r/k_d and A = Ha/(1+Ha) mean for a stock.
+
+Results. (a) The steady state is D_ss = D*.ln(P0/E), unique and globally asymptotically stable
+because d/dD[P-E] < 0 everywhere - but it exists only if E < P0. Every managed erosion rate in
+C35, including BOTH USDA T values, exceeds P0 = 0.077 mm/yr, so there is no steady state and the
+profile runs to bedrock: the exact structural mirror of C31's draining fleet. (b) A = Ha/(1+Ha)
+has no availability reading. C35 section 6's gloss ("steady-state thickness relative to the
+thickness the same formation rate would sustain against zero erosion") is WRONG and is withdrawn -
+zero erosion gives D -> infinity under an exponential P, so the denominator diverges. The only
+surviving reading, P/(P+E), is a monotone rescaling of Ha and carries no extra information; the A
+column is deleted for every soil row. (c) Derived the exact time to bedrock
+t_bed = D0/E + (D*/E).ln[(E - P0.e^(-D0/D*))/(E - P0)], checked numerically to 3e-10.
+
+The depth-loss horizon for a 300 mm A-horizon: conventional agriculture ~197 yr (Montgomery median
+1.537 mm/yr) or 202 yr at a round 1.5 mm/yr; USDA T = 5 ton/ac/yr 355 yr; T = 1 ton/ac/yr 1,930
+yr; no-till 4,615 yr; native vegetation thickens.
+
+Prior art, and it is the correction. Evans, Quinton, Davies & Zhao 2020, Environ. Res. Lett.
+15:0940b2, DOI 10.1088/1748-9326/aba2fd (Crossref-verified 2026-09-05; text read) define "soil
+lifespan" as L = D/(E - F) with D = 300 mm - that IS the horizon above, published, and C35 did not
+cite it. The USDA's own Erosion Index EI = potential erosion / T is 1/Ha with T substituted for the
+formation rate. Verheijen et al. 2009 (DOI 10.1016/j.earscirev.2009.02.003, Crossref-verified)
+reviews T vs actual erosion for Europe. So: the horizon is prior art, the T-vs-measured-P
+discrepancy is Montgomery 2007's (C35 supplies its number), and the Ha framing is the project's and
+is the weakest of the three. C35-soil-ha is regraded REPACKAGED, one grade below its own section 6
+self-assessment, for a reason section 6 did not identify: it defended against C6's novelty grade,
+not against soil science's prior art.
+
+Five failure boundaries: (a) depth-dependent P - BREAKS, no scalar Ha describes a soil, and the
+humped production function makes the endgame worse not better; (b) conveyor not pool - BREAKS flux
+equivalence, depth Ha is an upper bound on quality Ha since erosion takes carbon-rich topsoil and
+production adds carbon-free saprolite; (c) cover feedback - the one place soil is structurally
+RICHER than C6, since two decreasing curves can cross twice and give a genuine unstable threshold
+depth D_crit, which is the collapse point C6 section 3.2 denies Ha = 1 ever was (asserted, not
+solved; the Kirkby attribution is UNVERIFIED); (d) time scales - 10^4-yr cosmogenic P against
+decadal E SURVIVES as a policy comparison, FAILS for any dynamical claim, so "native vegetation is
+at Ha ~ 1" is not balance observed; (e) bulk density - SURVIVES, rho_b 1100-1600 moves T:k_r from
+10-51x to 8-60x, never near 1, though compaction biases it with a sign.
+
+Also found, and it is bigger than the rho_b band: Heimsath's P at D = 300 mm is 0.0386 mm/yr, 2.3x
+Montgomery's compiled median of 0.017 that C35 uses as k_r throughout. A median across sites of
+unstated depth is not P at a stated depth, so every soil Ha carries a factor-~2 ambiguity from a
+variable neither source reports. No sign or order of magnitude changes.
+
+Produced by: python _scripts/c42_soil_theory.py (no network). DOIs via Crossref
+(mailto=deciduusleaf@gmail.com), fetched 2026-09-05.
+
+Correction to the task brief as given: the DOI supplied for Evans et al. 2020 was
+10.1016/j.envsci.2020.09.019, which Crossref resolves to Lopez-Rodriguez et al., "Delineating
+participation in conservation governance", Environ. Sci. Policy 114:486-496 - a different paper in
+a different journal. The correct record is 10.1088/1748-9326/aba2fd, Environ. Res. Lett.
+
+## [2026-09-05] computed + verification | C35's falsifier run against real data: T does not track measured formation, and Borrelli 2017 turned out to be fetchable after all
+
+C43-soil-ha-replication executes the paired test C35-soil-ha section 5 named. Pre-registered
+in `audits/blind-brief-c43-2026-09-05.md`, sha256
+`dbae0496666126c4070f518f16d1bf997f6c6b9165469284f940440b5e7ef727`, hashed before any site-level
+value was fetched.
+
+Two live APIs, both worked, both named: OCTOPUS v2.2 WFS
+(`http://geoserver.octopusdata.org/geoserver/wfs`, GetCapabilities and GetFeature CSV, 200) for
+Be-10 denudation with coordinates, and USDA-NRCS Soil Data Access
+(`https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest`, POST T-SQL with
+`SDA_Get_Mukey_from_intersection_with_WktWgs84`) for `tfact` and `dbthirdbar_r` at each point.
+Re-runnable: `python _scripts/c43_soil_data.py` from `vault/`.
+
+Two corrections to citations C35 and its brief carried. (a) Stockmann et al. 2014 "How fast
+does soil grow?" is Geoderma 216:48-61, not Earth-Science Reviews - Crossref
+`10.1016/j.geoderma.2013.10.007`, fetched 2026-09-05, `container-title: Geoderma`. (b) Bui et al.
+2011 on Australian tolerable erosion is Agriculture, Ecosystems & Environment 144:136-144,
+`10.1016/j.agee.2011.07.022`, not Geoderma; it is closed access and was not used.
+
+One provenance upgrade that C35 must eventually take. C35 section 6 records Borrelli et al.
+2017 as unfetchable and its 2.8 Mg/ha/yr as VERIFIED-SECONDARY. It is gold open access:
+OpenAlex `doi:10.1038/s41467-017-02142-7` gives `oa_url = https://www.nature.com/articles/
+s41467-017-02142-7.pdf`, fetched 2026-09-05 (9.06 MB, 13 pp.), and the printed text reads
+"an area-specific soil erosion average of 2.8 Mg ha-1 yr-1" for 2001. (APPLIED 2026-09-05 by the
+integration pass; C35 section 6 now records it as VERIFIED-PRIMARY.)
+
+## [2026-09-05] verification | G36 failure mode 6 closed: soil side extended to 1936-2022, still 40 zeros, on two providers
+
+The standing hole in G36 was that its soil anchors were all 1989-2001, so a pooled zero could not
+be told from a vocabulary that had moved. Six soil anchors added and Crossref-verified: Yoder 1936
+(10.2134/agronj1936.00021962002800050001x), Ellison 1948 (10.2136/sssaj1948.036159950012000c0107x),
+Wischmeier & Smith 1959 (10.2136/sssaj1959.03615995002300030027x), Emerson 1967 (10.1071/sr9670047),
+Borrelli 2017 (10.1038/s41467-017-02142-7), Rieke 2022 (10.1016/j.geoderma.2022.116156). Ellison
+1947 (Agricultural Engineering 28) and the Wischmeier & Smith USLE handbooks (Agriculture Handbook
+282/537) have no DOI in Crossref and were replaced by the nearest DOI-bearing work of the same
+decade and lineage. All 40 mechanics x soil cells are 0 on OpenCitations and 0 on Semantic Scholar
+wherever S2 sees both anchors. Two new age controls fire - Yoder 1936 x Le Bissonnais 1996 = 110
+(OC) / 105 (S2) and Wischmeier & Smith 1959 x RUSLE 1991 = 26 - so the pre-1970 anchors are visible
+to the instrument and their zero is a measurement. Standing at the time of this run: live;
+narrowed the same day by the integration pass, on leg 2 and on the missing-object question, NOT on
+any of these measurements.
+
+## [2026-09-05] method | Two provider traps recorded: an S2 coverage hole is not a zero; chapter DOIs inflate a cell
+
+Semantic Scholar holds no record for Miner 1945 (10.1115/1.4009458) or RUSLE 1991
+(10.1080/00224561.1991.12456571); both rows are recorded as err, never as zeros. OpenAlex returned
+"insufficient budget ... resets at midnight utc" on the second call of the round and contributed
+nothing. Separately, the Sklar & Dietrich x Borrelli 2017 cell read 23 hits which resolve to ONE
+monograph deposited with chapter-level DOIs (Rhoads 2020, River Dynamics, 10.1017/9781108164108 and
+.001-.022) plus one review article. Any book-heavy cell will read high for the same reason.
+
+## [2026-09-05] honest null | G36's mediated-topology objection run and rejected: the mediator does not carry
+
+The adversary's move on G36 is that soil science need not cite Archard because bedrock-incision
+geomorphology already runs a wear model. Run, both providers: Sklar & Dietrich 2001/2004 x each
+mechanics anchor is 0-1, and their own deposited reference lists (59 and 12 DOIs, OpenCitations
+2026-09-05) contain none of the four mechanics anchors. No work co-cites a mechanics anchor and a
+soil anchor. The two alternative mediators are flat zero - Van Oost 2000 (tillage erosion) x Archard
+= 0 and Shao 2001 (wind-erosion abrasion) x Archard = 0 - while Van Oost x Nearing = 26/28 confirms
+tillage erosion sits inside soil erosion. topology stays disjoint; contact-surface stays 0. Two
+named nearest misses were found and inspected: Lefebvre & Jop 2013 (Phys. Rev. E 88, 032205), which
+co-cites Sklar, Archard and Meng & Ludema, and Bodek & Jerolmack 2021 (Earth Surf. Dynam. 9, 1531),
+which co-cites Sklar and Paris & Erdogan.
+
+
+---
+
+## 2. For `vault/00-index.md` — computed block, insert after the `C35-soil-ha` line
+
+Copied verbatim from `PENDING-log-C42.md` §2 and `PENDING-log-C43.md` §2.
+
+
+- [[C42-soil-ha-theory]] — **soil is a stock, and the mapping is structural-only.** Writing dD/dt = P(D) − E with Heimsath 1997's P(D) = P0·exp(−D/D*) gives a unique globally stable steady state D_ss = D*·ln(P0/E) that **exists only if E < P0 = 0.077 mm/yr** — which no managed row of C35 satisfies, including both USDA T values, so the profile runs to bedrock in the finite time D0/E + (D*/E)·ln[(E − P0·e^(−D0/D*))/(E − P0)], derived here. A = Ha/(1+Ha) has no availability reading and C35 §6's thickness gloss is withdrawn: the only surviving sense, P/(P+E), is a monotone rescaling of Ha. The 300 mm depth-loss horizon is **197 yr** under conventional agriculture and **355 yr** at T = 5 ton/ac/yr — and it is prior art, Evans et al. 2020 ERL 15:0940b2's "soil lifespan" L = D/(E−F), uncited by C35; the USDA's Erosion Index is already 1/Ha with T for k_r. **C35 regraded REPACKAGED.** Five boundaries: state-dependent P breaks the scalar Ha, the conveyor breaks flux equivalence (depth Ha bounds quality Ha from above), cover feedback gives a real threshold depth D_crit where C6's Ha = 1 never was, the 10⁴-yr/decadal window mismatch survives only as policy comparison, bulk density survives (8–60×)
+
+
+
+- [[C43-soil-ha-replication]] — **C35's falsifier, run.** Pre-registered (brief sha256 dbae0496...) and executed against OCTOPUS Be-10 denudation joined point-in-polygon to SSURGO `tfact` via the USDA Soil Data Access API. The pre-registered test is reported with its power stated in the note. Spearman rho(T, P) is the load-bearing number: it decides whether `T` is a biased formation estimate or not a formation estimate at all. Adds non-US erosion-vs-formation rows (Europe, Australia, China) to C35's axis from Borrelli 2017 and Panagos 2015, both now full-text-read
+
+
+## 3. Also owed on `vault/00-index.md`
+
+- The **G36 standing line** must change from `live` to **narrowed** to match the note
+  (`CLAUDE.md`: the index is canonical for standings, so this is a real inconsistency until it is
+  merged). Its one-line summary is also stale — it still says "three soil anchors (1996, 1999,
+  2001)" and "thirteen anchor pairings", both superseded by the 40-cell 1936–2022 grid, and it
+  still asserts leg 2. Suggested replacement:
+
+
+- [[G36-wear-erosion-damage]] — *citation-intersection* — **NARROWED 2026-09-05.** Tribology and agricultural soil-erosion modelling fit the same species of constant to the same measurement and cite each other nowhere: 40 decade-binned cells (four mechanics anchors 1945–1995 × ten soil anchors 1936–2022), 0 on OpenCitations and 0 on Semantic Scholar wherever S2 sees both anchors, nine controls firing, E = 75.6 on Archard × Nearing at the narrow scoped N and 7.6 at 10×. But the gap names **no missing object** — the Archard form does not transfer (divisor vs threshold; C35 §4's K_soil is not constant) — and **leg 2 (Miner ↔ aggregate breakdown) is withdrawn on sign**, because MWD is non-monotone under wet–dry cycling while Miner's D cannot be. topology stays disjoint: the proposed mediator (Hsu 2008) is read by neither soil anchor. Computed in C35, C42, C43
+
+
+- The **C35 line** is stale on one number: it says "overstates measured soil formation by 10-51x",
+  which is the secondary policy range; the primary figure is **22.6–54.3×** on Montgomery's own
+  stated `T` range. Suggested replacement:
+
+
+- [[C35-soil-ha]] — **soil on C6's axis.** Conventional agriculture Ha = 0.011, no-till 0.21, native vegetation 1.31 (Montgomery 2007 Table 1, VERIFIED-PRIMARY). The USDA T-value is Ha = 1 by construction and overstates measured soil formation by 22.6-54.3x on Montgomery's own T range (10.1-51x on the secondary 1-5 ton/ac policy range); Archard's linearity survives only above WEPP's shear threshold, and the formalism does not transfer. **§5 regraded REDISCOVERED 2026-09-05** (Verheijen 2009, Montgomery 2007); the A column is deleted for soil rows per C42
+
+
+## 4. Adjudication of `PENDING-log-G36ADV.md`, so it can be deleted
+
+| Proposal | Disposition |
+|---|---|
+| **P1** frontmatter | **PART-APPLIED.** `standing: narrowed` applied. `crosses: metaphor` / rank 2 **REJECTED** — the two sides genuinely write constitutive laws of the same species; the note now says instead that the formalism does not *transfer*. `topology: mediated` + `mediator:` **REJECTED** — see §1's first entry and the open disagreement. `note:` rewritten rather than appended |
+| **P2** epigraph | **APPLIED in substance, reworded.** "Never once citing them" is narrowed to agricultural soil-erosion modelling and the missing-object claim is withdrawn. The Europe PMC "soil is the abrader, never the abraded" figure was **not** reproduced here — it rests on one instrument and is one short of the C5 §11 bar; it belongs in the backlog, not in the note |
+| **P3** what-would-close-it item 3 | **APPLIED**, rewritten in the note's own voice; the `dMWD/dn` prediction is kept |
+| **P4** strongest objection item 2 | **APPLIED**, rewritten |
+| **P5** C35 §5 claim box | **APPLIED in substance.** §5 is regraded REDISCOVERED with Verheijen 2009 and Montgomery 2007 named and the 1-inch-in-29.5-years arithmetic stated. The residue is stated more narrowly than P5 proposed: C43's site-level ρ(T, P) is the project's own, and it is the only thing in the cluster that is |
+| **P6** C35 §2 row 8 | **APPLIED**, as rows 8 (Montgomery, primary) and 8b (policy range, secondary) |
+| **P7** C35 §6 Evans 2020 | **APPLIED**, in §5 rather than §6, with the corrected DOI `10.1088/1748-9326/aba2fd` and alongside C42's time-to-bedrock |
+| **P8** C35 §4 Hsu 2008 | **NOT APPLIED.** It rests on the same unverified full-text read as the mediator claim. Recorded in G36's Narrowing section as an open disagreement and a possible one-way borrow instead |
+| **P9** novelty-audit rows | **APPLIED**, reworded, plus a fifth entry for C43's ρ(T, P) as the one new-claim candidate |
+| **P10** log entry | **SUPERSEDED** by §1 above, which reaches a different verdict on topology and on `crosses` |
+| **P11** backlog lines | **NOT APPLIED** — `BACKLOG.md` was out of scope for the integration pass. Still owed, and the highest-value line is unchanged: **read Hsu, Dietrich & Sklar 2008 in full** and settle whether it cites Archard 1953, which is the one document that decides the open disagreement. Verheijen 2009 in full, Li et al. 2009 on the "1 inch in 30 years" provenance, an NRCS primary on `T`, the positive control on the mediator, the P3 test on Denef 2001 / Amézketa 1999, and the C43 adversarial pass are the rest |
+
+## 5. Files to delete once §1–§3 are merged
+
+`PENDING-log-C42.md`, `PENDING-log-C43.md`, `PENDING-log-G36ADV.md`, `PENDING-log-G36PROV.md`,
+and this file. The integration pass was not authorised to delete them.
