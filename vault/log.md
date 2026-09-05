@@ -1769,3 +1769,352 @@ OpenAlex `works?filter=...&per-page=1`, all fetched 2026-09-05, `meta.count`:
 ## [2026-09-05] correction | G28 carried two co-citer counts (8 and 5) from two runs without saying so
 
 The 8 is the 2026-09-03 OpenAlex-base run (1,542 citers), the 5 is the OpenCitations/Crossref reference-list run (1,013). Both now labelled in the note. Surfaced by drafting the preprint (`papers/charnov-gittins/`). Also: Q5 gave a revisitability mechanism for the regrowth sign; C25 derives it from forgone regrowth. Q5 now says which is derived.
+
+## [2026-09-05] computed | C30: Venus phosphine audited — step-0 halt, and every abiotic route excluded by A = 10^2 to 10^15 conditional on the detection
+
+Ran [[reservoir-audit]] Part C on the Greaves et al. 2020 phosphine claim
+(`10.1038/s41550-020-1174-4`). **Step 0 returns `NO AGREED OBSERVABLE`**: the 266.94 GHz
+feature is ~2σ on re-reduction (Snellen 2020, `10.1051/0004-6361/202039717`), bootstrap-
+insignificant (Thompson 2020, `10.1093/mnrasl/slaa187`), SO₂-degenerate (Villanueva 2021,
+`10.1038/s41550-021-01422-z`), and `<0.8 ppb` above 75 km from SOFIA (Cordiner 2022,
+`10.1029/2022GL101055`) — while the claim itself moved from 20 ppb to ~1–7 ppb on
+recalibration, and Greaves et al. 2023 (`10.1029/2023GL103539`) extract `~3 ppb at 5.7σ` from
+Cordiner's *own* SOFIA data. Same photons, opposite verdicts: METHOD §5 systematics.
+
+Run conditionally, `S_req = 1×10⁸ molecules cm⁻² s⁻¹ = 26 kg/s = 2.41×10¹⁰ mol/yr` (Bains
+et al. 2021, `10.1089/ast.2020.2352`, full PDF read 2026-09-05). Availability ratios computed
+this session: volcanic **8.0×10³** (and 7.0×10³ by an independent P-outgassing route),
+lightning **1.4×10⁵**, meteoritic **8.0×10⁴**, photochemistry **≥10⁵**, surface/subsurface
+**10⁸–10¹⁵**, tribochemical **≥10²**. Arithmetic in `_scripts/c30_phosphine.py`.
+
+## [2026-09-05] method | Bains-calibration: the audit reproduces a published enumeration route-for-route, and declines one exclusion Bains asserts
+
+The exclusion list matches Bains et al. 2021's on every row Bains bounds. **One substantive
+divergence, and it runs conservative:** at Bains' *own* extremal aperture (`τ` inflated 10³×,
+their supplementary transport-only bound of `1.3×10⁵ cm⁻² s⁻¹`) the volcanic row falls to
+`A = 8.0`, which under [[reservoir-audit]] F7 is `NOT TESTED`, not `RULED OUT`. Bains reject
+that scenario on physical grounds (transport assumptions *"not physically plausible, or even
+self-consistent"*) — a mechanism argument the ledger is not entitled to make. Two further
+divergences are wording: F2 ("of the routes considered" vs the title's "cannot be explained"),
+and scoring the biotic row as a ledger state rather than as prose.
+
+## [2026-09-05] honest null | the biotic row SURVIVES the same ledger that excludes every abiotic route — and that is a fact about the ledger
+
+Bains 2021's own thermodynamics puts the reducing power needed to make PH₃ from phosphate
+inside the range of terrestrial biochemicals (NADH and two Fe–S proteins suffice); Lingam &
+Loeb 2020 (arXiv:2009.07835) put the required biomass orders of magnitude *below* Earth's
+aerial biosphere. So `A ≤ 1` on both legs and the biotic route is not excluded. Per
+[[reservoir-audit]] F4, `A ≤ 1` is necessary and never sufficient — the ledger is blind to
+water activity, to concentrated H₂SO₄, and to membrane integrity, which is where Bains locate
+the real obstacles. Recorded as *specified, not endorsed*, exactly as C11's dark-matter row.
+
+## [2026-09-05] method | first Part-D negative-control datum: the instrument was TOLD to halt, and D.2 needs a new failure class
+
+The step-0 halt was pre-announced in `audits/scout-03-astrobiology.md` and in the
+commissioning instruction, so it was executed, not discovered. **Part D's question — can this
+audit produce a null unprompted? — is still unanswered.** What the run does establish: the
+step-0 state is reachable and well-defined on a real input, and Venus exhibits a failure class
+D.2 did not anticipate — not "a central value inside its own error bar" but **"a central value
+that is a function of the reduction pipeline."** A genuine blind control still needs the K2-18b
+run, with the halt not pre-announced.
+
+## [2026-09-05] computed | the 266.94 GHz observable is degenerate in principle, not in practice
+
+Computed this session: PH₃ `1–0` at 266.9445 GHz and SO₂ `J=30(9,21)–31(8,24)` at
+266.943329 GHz are separated by **1.17 MHz = 1.32 km/s**, comparable to the several-km/s line
+widths reported. More 266.94 GHz spectroscopy therefore cannot settle the case at the
+resolutions flown, however long it integrates. The discriminating observables are the vertical
+profile, the P-bearing companion inventory (P₂H₄, P₄, PO), and in-situ mass spectrometry on a
+descent probe through 50–60 km. Isotopes are unavailable: ³¹P has no stable partner.
+
+
+## [2026-09-05] computed | C26: the EWS-to-hazard discriminator fails its own controls, and C18's beta axis is estimator-dependent
+
+Opened as the missing object of G29: convert a published ecological early-warning series into a
+prognostics-style remaining-useful-life distribution and read off its Weibull shape `β`. Built
+with `vault/_scripts/c26_ews.py` (stdlib + numpy) on the Cariaco Basin Younger-Dryas → Preboreal
+greyscale record (2,111 points; the `YD2PB_grayscale` series shipped with the `earlywarnings` R
+package, behind Dakos *et al.* 2008 PNAS, `10.1073/pnas.0802430105`) and NASA C-MAPSS
+`train_FD001`/`train_FD004`, all fetched 2026-09-05.
+
+**Result: negative, and reported as one.** Cariaco gives `β = 5.84`, 95% CI [1.98, 10.63] — but a
+*stationary AR(1) surrogate with no bifurcation at all* gives `β = 7.39` (one-sided surrogate
+`p = 0.66`), and the same record with the transition removed gives `β = 4.97`. The
+drift-to-noise statistic fails too (`p = 0.35`). The fitted first-passage mean over-predicts the
+observed time-to-transition by about **8×** (3,861 yr against 491 yr of remaining record). So
+the scout's proposed `β > 1` bifurcation / `β ≈ 1` noise-induced discriminator is **not
+measurable from a single ecological series**.
+
+**Correction to `C18-durability-axis`, not a refutation of it.** On the *same* 100 C-MAPSS
+units, the ensemble-lifetime Weibull MLE gives `β = 4.41` [3.90, 5.30] and the
+degradation-to-first-passage route gives `β = 0.97` [0.78, 1.20] — a factor of 4.5 from the
+estimator alone. **C18's `β` axis is well-defined only once the estimator is named.** C18's own
+worked cases are all of the first kind and stay internally consistent.
+
+What could not be fetched, and is left as an empty row rather than an estimate: the Carpenter
+*et al.* 2011 *Science* (`10.1126/science.1203672`) Peter Lake chlorophyll series (no reachable
+machine-readable archive; **no number from that paper appears in C26, not even from its
+figures**) and the IMS bearing run-to-failure set (~6 GB of raw vibration, out of budget).
+
+## [2026-09-05] gap | G29 opened live: ecology's early-warning signals and industrial prognostics compute the same first-passage law and do not meet — nine zeros under decade-appropriate anchors
+
+Opened from `audits/scout-02-resilience.md` candidate #1, whose OpenAlex provenance is carried
+verbatim: Scheffer 2009 (`10.1038/nature08227`) × Si 2011 (`10.1016/j.ejor.2010.11.018`),
+`N_A = 4,891`, `N_B = 2,098`, `O = 2`, `N_universe = 15,304`, `E = 670`, `O/E = 0.0030`; control
+Scheffer × Wissel 1984 (`10.1007/bf00384470`) `O = 321`, `O/E = 1.26`; control ratio 0.0013.
+
+**Re-run on a second provider, because OpenAlex refused.** `api.openalex.org/works?filter=cites:`
+returned HTTP 429 for this whole session (~90 attempts, backoff to 20 s, ~40 minutes; single-work
+`works/<id>` fetches succeeded throughout). The re-run therefore used **OpenCitations**
+(`api.opencitations.net/index/v1/citations/<doi>`, citer DOI sets intersected, 2026-09-05):
+`N_A = 3,934`, `N_B = 1,783`, **`O = 1`**, `E = 458`, `O/E = 0.0022`; control Scheffer × Wissel
+`O = 268`, `O/E = 2.89`; **control ratio 7.6 × 10⁻⁴**, same order as the scout's on a different
+instrument. The finding survives the union floor (`E = 1,227`) and 10× the concept scope
+(`E = 45.8`).
+
+**A cleaning trap worth recording.** OpenCitations returns citation records with an **empty
+`citing` DOI**. Deduplicated as a set, one blank key manufactures a false intersection in *every*
+pairing; dropping blanks moves Scheffer × Randall & Antoni from 1 to **0** and every other row
+down by one. Any future citer-set intersection on this provider must drop blank DOIs first.
+
+**`failure-modes` mode 6 was run and the zero survives it.** Year bins 2009–2013 / 2014–2018 /
+2019–2026 give `O = 0 / 0 / 1` against a control that is joined in every bin at a stable
+`O/N_B ≈ 0.73–0.82`. Under decade-appropriate anchors on *both* sides — Scheffer 2001, Dakos
+2008, Wissel 1984 against Si 2011, Jardine 2006, Randall & Antoni 2011 — the 3 × 3 matrix is
+**nine zeros**. The object did not travel under an earlier name.
+
+**All three co-citers inspected to a verdict**, and the scout's "two papers wide" is now
+"three, and thinner than that": `10.1007/s42524-021-0176-y` (*Frontiers of Engineering
+Management* 2021) bridges the two *terminologies* and transfers no formalism;
+`10.3390/s23020965` (*Sensors* 2023) is engineering reading ecology — the wrong direction;
+`10.2139/ssrn.7266197` (2026) is an **SSRN preprint**, which the scout did not note.
+
+**Standing: live**, `contact-surface: 3`, `crosses: vocabulary`, `topology: direct`.
+[[C26-ews-hazard-shape]] closes the computation the gap named and returns a negative, which
+sharpens the gap rather than narrowing it: the literatures do not meet, and the reason may be
+good — the transfer ecology needs from prognostics is not the hazard model but the *fleet*.
+
+
+## [2026-09-05] gap | G30 opened — the Weibull shape parameter β is fitted twice, as a hazard law and as a stock-outflow input, with 0 co-citers between the two anchors
+
+Reliability engineering and industrial ecology fit the same two-parameter Weibull to the same
+random variable (time from entry-into-service to exit-from-service of a population of nominally
+identical artefacts) and both report the shape parameter. Reliability reads β as a hazard law and
+selects a maintenance policy from it; industrial ecology passes the fitted β into a stock-driven
+outflow model and does not interpret it. Anchors: Weibull 1951 `10.1115/1.4010337` (OpenAlex
+`W2727420541`, `cited_by_count` = 11,512) × Oguchi et al. 2015 `10.1021/es505245q`
+(`W2320647648`, 103) → **`meta.count` = 0**, OpenAlex `works?filter=cites:…`, fetched 2026-09-05
+(via `audits/scout-01-circularity.md`). Same-B control Müller 2006 × Oguchi 2015 = **15**;
+control ratio `(0/103)/(15/103)` = 0, isolation unbounded and denominator-free. Contact surface
+**1** — a single co-citer on the Murakami Part I pairing, a 2023 *RCR* agent-based-model paper
+that cites both as separate ingredients and puts no two β on one axis. Opened `live`, evidence
+`citation-intersection`, crosses `formalism`, exit `computation`, `next-step-cost: S`.
+
+## [2026-09-05] computed | C27 — 21 published product-lifespan Weibull fits placed on C18's β axis; products span β = 1.00 to 6.0 and split into a memoryless and a wear-out band
+
+Fetched primary parameters: LBNL (Lutz et al. 2011, `osti.gov/servlets/purl/1182737`, PDF read in
+full) gives nine US residential appliance classes with β and standard errors — gas boiler
+**1.000 ± 0.148**, room air-conditioner **1.07–1.08**, electric water heater **1.174 ± 0.020**,
+refrigerator **1.272 ± 0.187**, gas water heater **1.307 ± 0.061**, heat pump **1.525 ± 0.525**,
+freezer **1.885 ± 0.730**, central AC **2.094 ± 0.271**, gas furnace **2.218 ± 0.320**. Held et
+al. 2021 (`10.1186/s12544-020-00464-0`, Table 1 via PMC7829067) gives European passenger cars
+**β = 2.0–6.0**, characteristic life 8.0–35.1 yr. Against [[C18-durability-axis]]'s enzyme and
+organic-flow-reactant rows at β = 1 and Li-ion at β = 12.7: **every product class lies at or above
+the enzyme corner and below Li-ion, and the banding cuts across product categories** — a gas
+boiler groups with an enzyme, a gas furnace groups with a passenger car. Discriminator stated in
+`H = 4^(β−1)`, the hazard-fold over one factor of four in age. Arithmetic in
+`vault/_scripts/c27_beta.py`, no network calls.
+
+## [2026-09-05] verification | LBNL Table 10 (room air-conditioners, post-2000) is internally inconsistent; ten of eleven other rows reproduce exactly
+
+Re-deriving `median = θ + η(ln2)^(1/β)` and `mean = θ + ηΓ(1+1/β)` from each row's own printed
+(β, η, θ) reproduces the published median and mean to ±0.01 yr for ten of eleven LBNL rows. Table
+10 does not: β = 1.08, η = 10.27, θ = 0 give median **7.31** and mean **9.97** yr against the
+printed 8.36 and 11.27; the printed median implies η ≈ 11.96. Flagged, not corrected; β is
+unaffected and is the only quantity C27 uses.
+
+## [2026-09-05] correction | the DOI circulated for Murakami 2010 "Lifespan of commodities" resolves to a different paper
+
+`10.1111/j.1530-9290.2010.00272.x` is **not** *Lifespan of Commodities*. Crossref resolves it to
+*"Environmental Metrics"*, *J. Ind. Ecol.* 2010, `is-referenced-by-count` = 25 (fetched
+2026-09-05). The correct DOIs are `10.1111/j.1530-9290.2010.00250.x` (Part I, 172) and
+`10.1111/j.1530-9290.2010.00251.x` (Part II, 116), both Crossref-verified the same day. Recorded
+because the wrong DOI was carried into a task brief and would have silently produced a wrong
+citation.
+
+## [2026-09-05] honest null | the mode-6 decade-binned re-run for G30 could not be made; both instruments failed and no number from either is quoted
+
+Weibull 1951 anchors a 75-year citer window, the textbook [[failure-modes]] mode-6 danger. (a)
+The OpenAlex citer-decade route is blocked: the API now returns an explicit
+`{"error":"Rate limit exceeded","message":"Insufficient budget … Resets at midnight UTC",
+"retryAfter":54004}` on every endpoint including `/concepts?search=`, so the concept IDs for
+"reliability engineering", "industrial ecology" and "product lifetime" were never resolved and
+**no concept-scoped `N_universe` exists** — every `E` for G30 remains a union floor (102.1) and no
+`O/E` is quotable. (b) The Crossref term-frequency route was run over seven decade bins for six
+decade-appropriate term sets and **is not selective**: every term's counts track the growth of the
+Crossref corpus itself (e.g. "lifespan distribution" 27,451 → 279,154 and "discard function"
+22,679 → 286,670 across the same bins, with near-identical curves), because `query.bibliographic`
+and `query.title` are relevance queries, not phrase matches. The mode-6 check on G30 is
+**outstanding, not passed**, and the note says so.
+
+## [2026-09-05] method | a mediating literature for G30 was found while computing C27, and it threatens the note's own `topology: disjoint`
+
+Lutz et al. 2011 (LBNL) cites Weibull 1951 directly, fits delayed Weibulls to US appliance stocks
+from RECS/AHS surveys, prints β with standard errors, and **states the hazard reading** ("β … the
+shape parameter, which determines the way in which the failure rate changes"), while separating
+physical from consumer/economic lifetime via the delay parameter. It does not take the classifying
+step and it cites neither Oguchi nor Murakami, so no Weibull × Oguchi intersection can see it.
+`topology` is left `disjoint` only because that literature is not yet anchored and counted;
+`citers(Weibull 1951) ∩ citers(Lutz 2011)` and `citers(Lutz 2011) ∩ citers(Oguchi 2015)` should be
+expected to move it to `mediated`. Recorded before the fact rather than after.
+
+
+## [2026-09-05] gap | G31 opened: biosignature assessment has no base-rate term, and no citation to the field that does
+
+Audit `scout-03-astrobiology.md` Job-2 candidate G-E, taken verbatim as starting provenance and
+then re-run independently. Catling et al. 2018 (`10.1089/ast.2017.1737`) x Hanley & McNeil 1982
+(`10.1148/radiology.143.1.7063747`), OpenAlex `cites:W2949593113,cites:W2157825442`, 2026-09-05:
+intersection **0**, `E = 30.8` at the audit's fetched `N = 152,971`.
+
+**The OpenAlex re-run could not be made.** The intersection filter returned
+`{"error":"Rate limit exceeded", "dailyRemainingUsd":0}` — daily budget exhausted, probably by
+the parallel agents. Work IDs and `cited_by_count` were fetched before exhaustion. The re-run was
+therefore done on **OpenCitations** (`api.opencitations.net/index/v1/citations/<doi>`, 2026-09-05)
+with a **second anchor pair** — Schwieterman et al. 2018 `10.1089/ast.2017.1729` x Altman & Bland
+1994 `10.1136/bmj.308.6943.1552` — plus two further B-side anchors for the mode-6 decade re-run
+(Deeks 2001 `10.1136/bmj.323.7305.157`; QUADAS-2 2011
+`10.7326/0003-4819-155-8-201110180-00009`).
+
+**Eight pairings, all zero.** Pooled: 565 astro citers x 32,176 diagnostic citers, intersection
+**0**, `E = 118.8` at `N = 152,971` and still `E = 11.9` at 10x — the zero survives an order of
+magnitude of denominator, which the single Schwieterman x Altman pairing does **not** (`E = 0.56`
+at 10x, the G6 lesson). **The control reproduces the audit exactly on a different provider:**
+Catling x Kass & Raftery = **4**, the same four DOIs OpenAlex returned, all astro-native Bayesian
+model comparison, none diagnostic-test theory. Five DOIs re-resolved through Crossref the same
+day. Decade bins (1982 ROC / 1994 sens-spec / 2001 diagnostic review / 2011 QUADAS-2; citing
+works 2010s and 2020s): zero in every bin.
+
+`standing: live`, `evidence: citation-intersection`, `crosses: formalism`, `exit: computation`,
+`next-step-cost: S`. Open risk stated in the note: the zero may measure a citation-community
+boundary rather than a conceptual absence. The 565 citers have **not** been read.
+
+
+
+## [2026-09-05] computed | C28: at a prevalence of 1-in-1,000, an O2 detection needs specificity 0.999 to be worth believing
+
+Built the object G31 says is missing. O2 alone (not the O2+CH4 pair, which needs a two-test
+combination rule) as a diagnostic test: "disease" = life present, "test +" = O2 above threshold.
+The abiotic-source enumeration was taken from Meadows et al. 2018 `10.1089/ast.2017.1727`
+(Crossref 2026-09-05, cited-by 301) at **review level — full text not read**; the abstract was
+fetched from Europe PMC and states in the authors' own words that the paper covers both false
+positives and false negatives for O2.
+
+**Six abiotic routes, zero published probabilities.** That empty column is the result. The field
+attaches a *discriminant* to each false-positive scenario and a *rate* to none, so specificity is
+not merely unpublished — it is not estimable from the published literature. Prevalence is
+therefore carried as a free parameter.
+
+`PPV = sens*prev / [sens*prev + (1-spec)(1-prev)]`, computed over prevalence 1e-3 .. 0.5 and
+specificity 0.9 .. 0.999 (`vault/_scripts/c28_roc.py`). Break-even prevalence
+`p* = (1-spec)/(sens + 1-spec)`: **0.091 at spec 0.90, 0.0099 at spec 0.99, 0.0010 at spec
+0.999.** Inverted: at prevalence 1e-3 a detection needs **spec >= 0.999** to be more likely true
+than false, and >= 0.99989 to reach PPV 0.9.
+
+Second half: what the diagnostic frame adds that the CoLD scale (Green et al. 2021
+`10.1038/s41586-021-03804-9`) lacks is a **base-rate slot**. Ascending CoLD rungs raises LR+ and
+nothing else; the row of the PPV table is chosen by prevalence, so two identical CoLD-6 claims
+from a 20-target and a 10,000-target survey carry different posteriors and the same grade.
+Also: ordinal levels do not multiply, likelihood ratios do; and nobody has drawn the operating
+curve. Honest limit recorded in the note: the arithmetic is Bayes' rule, the contribution is the
+framing plus one number nobody has stated.
+
+
+---
+
+
+## [2026-09-05] computed | Ecological recovery has a decreasing hazard: Weibull beta = 0.587 [0.510, 0.668] over 221 censored records
+
+C29-recovery-beta fits Jones & Schmitz 2009's own Table S1 (240 recovery studies, doi
+10.1371/journal.pone.0005653.s001, fetched 2026-09-05) as a right-censored survival problem:
+"Recovered? = Yes" is an event at the stated return time, "No" is right-censoring at the stated
+end of observation. 221 usable rows, 127 events, 94 censored (42.5%). Pooled Weibull shape
+beta = 0.587, profile-likelihood 95% CI [0.510, 0.668]; four of five habitat classes have a CI
+entirely below 1 (Forest 0.769, Marine 0.644, Brackish 0.501, Terrestrial 0.570), Freshwater
+0.893 [0.644, 1.186] covers 1. Robust to the free-text range coding (0.580-0.590) and to
+dropping the censored rows (0.640). This is the first entry in the vault sitting at beta < 1
+with a fitted CI rather than by inference, and it places ecological recovery at the opposite
+end of C18's axis from Li-ion wear-out. Produced by vault/_scripts/c29_recovery.py.
+Honest limit recorded in the note: beta < 1 on a pooled meta-analysis is equally the signature
+of genuine deceleration and of a fast/slow mixture, and this dataset cannot separate them.
+
+## [2026-09-05] correction | Moreno-Mateos et al. 2017 recovery-debt DOI was wrong in the brief
+
+The DOI given as 10.1038/s41467-017-00109-4 returns Crossref HTTP 404. The recovery-debt paper
+is "Anthropogenic ecosystem disturbance and the recovery debt", Nature Communications 8:14163,
+doi 10.1038/ncomms14163 (Crossref, fetched 2026-09-05, is-referenced-by-count = 293). The
+wrong DOI was not used for any count. Same pattern as the three mis-resolved anchors that
+audits/scout-02-resilience.md discarded: guessed DOIs for Nature-family papers resolve to the
+wrong work often enough that Crossref verification is not optional.
+
+## [2026-09-05] gap | G32 opened - Weibull hazard shape x ecological recovery-time distributions
+
+Rank 2 of audits/scout-02-resilience.md, opened at evidence: citation-intersection with a
+computation exit that C29 then took. Provenance and the mode-6 decade re-run are in the note.
+Instrument note: OpenAlex returned HTTP 429 on every intersection attempt for the whole session
+(five agents in parallel on the polite pool), so the re-run was carried out on OpenCitations
+instead, and the note states which numbers are the scout's OpenAlex figures and which are this
+run's OpenCitations figures. Two providers, two coverage bases; they are not interchangeable
+and the note does not pool them.
+
+
+## [2026-09-05] gap | G33 opened `narrowed`: reliability's repair-rate ratio is never formed for a remanufactured fleet, and one real bridge exists
+
+Barlow & Hunter 1960 (`10.1287/opre.8.1.90`) x Guide 2000 (`10.1016/s0272-6963(00)00034-6`),
+both Crossref-verified 2026-09-05. **The Guide DOI ending `-7` 404s; the correct suffix is
+`-6`.** OpenAlex reports intersection = **1** (scout run, 2026-09-05); **OpenCitations COCI,
+fetched independently this session, reports 0** over |A| = 1,131 and |B| = 845 citers. Both
+numbers are true of their own object: COCI indexes DOI-bearing Crossref reference lists and the
+bridging work is a dissertation, whose reference list Crossref does not carry.
+`contact-surface: 1` recorded on the gap-unfavourable reading.
+
+The bridge is **Alqahtani, *Warranty cost analysis with preventive maintenance strategy for
+remanufactured products in reverse supply chain*, PhD, Northeastern University, DOI
+`10.17760/d20249105`** (Crossref record fetched 2026-09-05: type dissertation, sole author,
+Northeastern University Library). It carries Barlow-Hunter preventive-maintenance mathematics
+onto remanufactured fleets — a real crossing — and its output is warranty **cost**, not a rate
+ratio and not an availability. **Full text NOT obtained** (handle redirects to
+`repository.library.northeastern.edu`, HTTP 418 to WebFetch / 403 to curl; fulltext.pdf over the
+10 MB cap; Routledge pages for the derived book `10.1201/b22308` 403), so "forms no ratio" is
+UNVERIFIED and is the note's stated weak link.
+
+Isolation rests on the control ratio, which is denominator-invariant: Barlow & Hunter x Dekker
+1996 = 89/966 against 1/1,093, **~100x**. Mode-6 decade binning run on the COCI sets: the true
+overlap window is only 2000s-2020s (Guide cannot be cited before 2000), and the co-citer count
+is 0 in each of those three decades while both citer sets peak together in the 2010s — a
+synchronic separation, not a renaming.
+
+## [2026-09-05] correction | OpenAlex 429 on this vault is a spent daily budget, not IP rate limiting
+
+`audits/scout-01-circularity.md` recorded the 2026-09-05 429s as "IP-level, sustained across
+~25 min of backoff". The 429 body seen this session is
+`"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at
+midnight UTC"` with `retryAfter` = 53,949 s. Three retries at 20/40/60 s backoff returned the
+same. **No backoff inside a session can recover it**, and every scoped `N_universe` blocked on
+2026-09-05 must be re-fetched on a later UTC day. Single-work `works/<id>` lookups still
+succeeded earlier the same session, so the budget is consumed per request, not per host block.
+
+## [2026-09-05] computed | C31: Ha = L/T for a product fleet, and C6's A = Ha/(1+Ha) is wrong once cores fail to return
+
+Wind-turbine fleet put on C6's axis: **Ha = 86.8** (k_d = 8.367/yr, k_r = 726.4/yr from
+Carroll et al. 2016 via C1 §3.2), **A = 0.9886**, between trabecular bone (19.9) and the US
+grid. Derived here: with core return rate `r`, the three-state chain gives **A = Ha/(Ha + r)**,
+reducing to C6's form only at `r = 1`; with a lossy loop and no new production there is **no
+interior steady state at all**, the structural mirror of C6 §4.2's ratchet finding. Prediction:
+**A_circ = r·y ≤ r** — core return rate is a ceiling on circular content that no yield gain can
+lift. Closest published case, Huster et al. 2023 (`10.1007/s13243-023-00130-3`, open access,
+PDF fetched 2026-09-05): German EV batteries, L = 10 yr, r ∈ {0.50, 0.75, 1.00} → **2032
+circular ceiling 0.75 at their central return rate, 0.50 at their low one, before any yield
+loss.** Three remanufacturing rows left **empty**: the missing input is the mean core
+out-of-service time `T`, published nowhere reached. Cat Reman publishes mass with no unit
+denominator; the field's own KPI toolbox (Graham et al. 2015, `10.1186/s13243-015-0019-2`) has
+Lead Time, Cycle Time and salvage rates and forms no ratio. Arithmetic: `_scripts/c31_ha.py`.

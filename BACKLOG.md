@@ -1,5 +1,7 @@
 # Merged backlog — 2026-09-05
 
+**Round 5 (scout → open → compute), 2026-09-05:** five gaps opened with computations — G29/C26 (EWS × prognostics: honest negative, β discriminates nothing; β is estimator-dependent, corrects C18), G30/C27 (product lifespans on the β axis, boiler ≈ enzyme, furnace ≈ car), G31/C28 (biosignature PPV needs spec ≥ 0.999 at prevalence 10⁻³; specificity not estimable from the literature), G32/C29 (ecosystem recovery β = 0.59, decreasing hazard, 221 records), G33/C31 (circular ceiling A_circ ≤ core return rate; EV batteries cap at 0.75). C30 Venus phosphine audit: step-0 halt, no agreed observable; conditional run matches Bains route-for-route. **New follow-ups:** OpenAlex daily budget exhausts with >4 parallel agents — stagger or use OpenCitations; re-fit C29 on Moreno-Mateos 2017 as the independent test; C18 must name its estimator per row; reservoir-audit needs the new D.2 failure class ("central value is a function of the pipeline"); mode-6 decade check outstanding on G30.
+
 **Status 2026-09-05 (after rounds 1–2):** ✅ done and committed, ⚠ partial. Rounds: `aa0f842` (round 1), `60beb4a` (round 2), round 3 = this commit.
 
 **Round 4 (applied):** C11 aperture rows, `expected` blocks with fetched N_universe (G28 100,685; G6 13,830; G25 void, floor binds), information-audit Part C design, G28 5-vs-8 reconciled, Q5 mechanism corrected. Preprint draft in `papers/charnov-gittins/`. **Open follow-ups:** run the Kadmon 1992 test of C25; refs.bib has 12 unverified DOIs; abstract is 216 words.

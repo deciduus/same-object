@@ -153,6 +153,10 @@ Requiring about $100 of kitchen equipment:
 - Corrections are logged in `vault/log.md` rather than silently fixed. The pattern of
   errors is itself information — and one entry there is a correction *of* a correction.
 
+## What this is a proof of
+
+Not "AI did science." Something narrower and more useful: **an AI system can run a standard of evidence a human set, at scale, and report honestly when its own results fail it.** The corrections log is the demonstration. Four results graded novel became three. The gap called the strongest finding got smaller on re-test. A "fix" turned out to be wrong and was reversed in the open. A person alone lacks the hours to re-test forty claims in a day; a model alone lacks the standing to decide what counts. Together, with the human choosing the question, the scope rule, and what survives, it is a working loop. Read `vault/log.md` first if you want to judge it.
+
 ## AI use disclosure
 
 This vault is AI-assisted research. Claude Fable 5.1 (Anthropic) orchestrates: it audits, writes task briefs, integrates results, and decides what is committed. Claude Opus 4.8 agents, run through Claude Code, do the derivations, database queries, prior-art searches, fits, and drafting, each under a written brief. The human author (Landon Holden) sets the questions, the scope rule, and the evidence standards, and reviews and takes responsibility for every claim. All queries, counts, and corrections are logged in `vault/log.md` and `audits/`. Models are not authors. Cite this disclosure if you reuse the material in a context that requires it.
