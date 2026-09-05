@@ -431,7 +431,7 @@ Run on any device reported to produce useful work without carried fuel.
 
 ---
 
-## Part D — negative controls (D.1/D.2 design, NOT YET RUN; D.3 has one contaminated datum)
+## Part D — negative controls (D.1 RUN 2026-09-05, single-agent blind; D.2 unrun; D.3 has one contaminated datum)
 
 Part A is a soft-positive set, Part B a hard-positive set. **There is no input on which this
 instrument has ever returned "nothing here."** Step 11 guarantees an output by construction — if
@@ -590,6 +590,46 @@ mentions the expected outcome is contaminated by construction and must be logged
 Archive the filled template at `audits/blind-brief-<case>-<YYYY-MM-DD>.md` **before** dispatching,
 and cite that path in the resulting note's negative-control section.
 
+### D.4 — `NO RESIDUAL`: the third output state, and the first negative-control datum
+
+**D.1 — RUN, 2026-09-05: [[C46-reservoir-audit-negative-control]].** A 90 m rotor at 11 m/s
+reporting 2.0 MW with a stated `C_p = 0.44`, briefed on the D.3a five-line template archived and
+hashed before dispatch (`audits/blind-brief-c46-2026-09-05.md`, sha256
+`5e39ef6f84ed2c6eec4b17c434a6db7717683744df1bf099983c36c0ca922308`). All three D.1 conditions
+are met: `A = 0.386 ≤ 1` at the swept disc and consistent with the accounted value
+(`0.193 / 0.771` at 2× / 0.5× aperture), the step-11 union is non-empty and already occupied by
+the stated `C_p`, and no second reservoir is demanded. The `−0.282 MW` gap between aerodynamic
+and electrical power is a drivetrain efficiency of `0.876`, a line the published loss budget
+already carries. **The instrument can return nothing — but not in the shape this section
+predicted.** Part D assumed a null would be a halt; the D.1 null is **`NO RESIDUAL`**, fired at
+**step 11 after all thirteen steps ran**, and it is a third state distinct from D.2's
+`NO OBSERVABLE TO EXPLAIN` and D.3's `NO AGREED OBSERVABLE`, which are both step-0 refusals to
+audit. **`NO RESIDUAL` is hereby named as an output state alongside step 10's four.** A halt says
+*there is nothing to audit*; `NO RESIDUAL` says *the audit ran and the books balance*.
+
+| Output | Fires at | Case | What it says |
+|---|---|---|---|
+| `NO OBSERVABLE TO EXPLAIN` (D.2) | step 0(a) halt | unrun | the observable is inside its own error bar |
+| `NO AGREED OBSERVABLE` (D.3) | step 0(b) halt | [[C30-venus-phosphine-audit]] | the central value is a function of the pipeline |
+| **`NO RESIDUAL`** (D.1) | **step 11, after a full run** | [[C46-reservoir-audit-negative-control]] | the reservoirs considered supply the coupling; nothing is left over |
+
+**What this datum does not establish**, both stated in C46 §4: the blind was **single-agent** —
+the brief was written by the agent that ran it, which removes pre-announcement contamination but
+not recognition — and the case is **textbook**, the worked example of the Wind Energy Handbook,
+so it exercises the arithmetic path rather than the judgement. Step 0(a) also had to be
+improvised: the brief gave no uncertainty and the run assigned ±3%, so a mandatory first step
+was satisfied by inventing its missing input.
+
+**The next D.1-class case must be one the agent cannot recognise as resolved**, briefed by a
+**different agent** per D.3a. Named: a published **Betz-exceeding diffuser-augmented turbine**
+claim, where `C_p > 16/27` is reported because the coefficient is normalised to the throat area
+rather than the diffuser exit area — the correct output is `NO RESIDUAL` once step 5's aperture
+row is written honestly, so the audit's own aperture discipline is what decides it. Second
+candidate: a low-head hydro or vortex-turbine efficiency claim above its theoretical ceiling,
+later traced to an overstated head or an unmetered bypass flow.
+
+C46 also returns **F9** below: on generator-form inputs the energy leg is a tautology.
+
 ### The deliverable
 
 One sentence, per the audit's own discipline: **the input class on which this audit returns
@@ -662,6 +702,16 @@ mandatory reductions table is now Part C step 0(b); a spanning set halts the aud
 conditional.** Designed as D.3; the first datum ([[C30-venus-phosphine-audit]]) is contaminated
 because the halt was pre-announced — see D.3a for the blind-brief protocol that would fix it.
 
+**F9 — for a generator the energy leg is an identity, not a weak test.** Step 2's generator form
+`F_req = P_useful/v` is divided straight back out by step 8's `Σ = P_useful/(F·Δu)`, so `Σ ≡ 1`
+whenever `Δu = v`, exactly and for every input. F1 says Σ rarely fires; on generator-form inputs
+it **cannot** fire, and a passing Σ on such a row carries no information at all. Found by
+[[C46-reservoir-audit-negative-control]] (`Σ = 1.0000` on a turbine whose whole ledger balances).
+**Fix: for devices whose useful output *is* the extracted power, either skip the energy leg and
+say so, or state a non-tautological `F_req` — one measured independently of `P_useful` (rotor
+thrust, reaction force, momentum-deficit in the wake) — and report Σ against that.** Every Part A
+row that used the generator form should be re-read accordingly: its Σ was never a check.
+
 ---
 
 ## Standing
@@ -674,11 +724,13 @@ strongest evidence this procedure works. The EmDrive returns a checkable mass-fl
 specification rather than a verdict. The flyby anomaly returns
 `UNRESOLVED-IN-SOURCES` and a sign-based exclusion of the Pioneer mechanism.
 
-**The procedure is sound enough to point at an unresolved case**, with five conditions: run
+**The procedure is sound enough to point at an unresolved case**, with six conditions: run
 **step 0 before anything else — significance, and the table of independent reductions of the
 same raw data** (F8, added 2026-09-05); report the **aperture as a named row with `A` at 2x and
-0.5x** (step 5, F3, added 2026-09-05); run the availability leg and not only Σ; run METHOD §5 on
-the measurement first; and prefix every negative with *of the reservoirs considered*.
+0.5x** (step 5, F3, added 2026-09-05); run the availability leg and not only Σ; **on
+generator-form inputs (`F_req = P_useful/v`) skip the energy leg or supply a non-tautological
+`F_req`, because Σ ≡ 1 there identically** (F9, added 2026-09-05); run METHOD §5 on the
+measurement first; and prefix every negative with *of the reservoirs considered*.
 
 The instrument is a [[positive-controls]] construction applied to physics rather than to
 citation counts — the five Part A rows are the known-closed pairs, and they are what makes the
@@ -686,10 +738,14 @@ Part B results mean anything.
 
 **What that construction is still missing, stated plainly:** [[positive-controls]] is half of a
 control set. Part A is soft-positive, Part B hard-positive, and **there is no negative control** —
-no input on which this audit has been shown to return nothing. Part D specifies three (D.1, D.2, D.3) and **none has been run uncontaminated**: D.1 and D.2 are
-unrun, and D.3's first datum ([[C30-venus-phosphine-audit]], 2026-09-05) halted correctly but had
-the halt pre-announced in its commissioning brief, so it shows the state is reachable, not that
-the instrument reaches it unprompted. Every "validated" claim above should still be read as
-*validated against positives only*.
+no input on which this audit has been shown to return nothing. Part D specifies three (D.1, D.2, D.3) and **one has now been run against a hashed brief**:
+[[C46-reservoir-audit-negative-control]] (D.1, 2026-09-05) ran all thirteen steps on a
+Betz-calibrated turbine and returned **`NO RESIDUAL`** unprompted, demanding no second reservoir
+— the first input on which this instrument has been shown to return nothing. It is a **weak**
+yes: the blind was single-agent and the case textbook (D.4). D.2 remains unrun, and D.3's first
+datum ([[C30-venus-phosphine-audit]], 2026-09-05) halted correctly but had the halt
+pre-announced in its commissioning brief, so it shows the state is reachable, not that the
+instrument reaches it unprompted. Every "validated" claim above should still be read as
+*validated against positives, plus one textbook negative*.
 
 See [[Q9-fuel-free-is-an-assumption]], [[C8-momentum-harvesting-metric]], [[positive-controls]].

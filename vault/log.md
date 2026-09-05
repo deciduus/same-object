@@ -4224,3 +4224,94 @@ diffuser-augmented turbine claim (`C_p` normalised to throat rather than exit ar
 low-head hydro efficiency claim above its ceiling, briefed by a different agent. C46 also
 returns **F9**: for a generator, `F_req = P_useful/v` at step 2 makes `Σ = 1` at step 8
 identically, so the energy leg is a tautology, not merely weak.
+
+## [2026-09-05] computed | The Whittle GUD ratio is 1.27 at the MVT anchor and 1.06 with the subsidy learned, and the index does not out-earn Charnov's rule in a 20-patch network
+
+C45 ran C25's §5 rule forward as a policy on a complete graph of N = 20 patches (10 fast, 10
+slow, uniform travel, lambda = 1, G_max = 1, dynamics exactly C25 §1) against a pre-registration
+hashed before the script existed. What was wrong: C25's callout advertised "~1.34x the MVT
+giving-up density" without saying that the number is a ratio *at the MVT anchor*
+nu = lambda·GUD_MVT^2 = 0.09. Sweeping nu moves the ratio 1.02 -> 1.66. At C25's own anchor the
+network returns GUD_fast = 0.3987 against C25's single-patch 0.4019 (0.8%) and a ratio of
+1.2708 +/- 0.0002; at the pre-registered calibration (nu learned as the realised long-run intake
+rate, 0.2732) the ratio is 1.0600 +/- 0.0002. What it is now: the sign is calibration-free, the
+magnitude is not, and the field prediction is a between-type GUD ratio in [1.06, 1.27] at
+r·tau = 0.2, with a usable design window r_fast·tau in [0.2, 1] — at r_fast·tau = 10 the forager
+makes zero slow-patch visits and the ratio is undefined. The harder result: Whittle loses to
+MVT-with-regrowth on intake in all twelve sweep cells, by -13.27% +/- 0.03% at the pre-registered
+calibration and -0.48% +/- 0.03% when each policy gets its own rate-optimal threshold. C25 §7's
+"no optimality gap is stated" is therefore not an abstract caveat; the gap is measured and
+negative. The "value of the index" framing is dropped from C25 and the paper: what survives is
+dGUD/dr > 0 and the between-type contrast. The derivation is untouched — W(x) = lambda·x^2 −
+r(1−x)^2 is still the Whittle index of the relaxed arm, still unconditionally indexable, still
+reduces to C5 eq. (4) under non-revisitability. Produced by `vault/_scripts/c45_whittle_sim.py`,
+20 seeds, brief `audits/blind-brief-c45-2026-09-05.md`.
+
+
+## 2. For `vault/log.md`
+
+
+## [2026-09-05] method | The paper now states the field prediction as a ratio band [1.06, 1.27] and makes no claim of improved intake
+
+Propagation of C45 into `papers/charnov-gittins/paper.md`. Three minimal edits, no number in the
+derivation or in Table 1 changed. Section 3's falsifiable-statement paragraph gains one sentence
+giving the network results (1.271 at the MVT anchor, 1.060 with nu learned) and states the
+quantity to power for as a between-type GUD ratio in [1.06, 1.27] at r·tau = 0.2, not a single
+number. Table 1's caption now says the GUD/GUD_MVT column is a ratio *at this anchor*.
+Limitations item 3 (the optimality gap) records that the gap is simulated and negative — the
+Whittle policy loses 13.3% at the pre-registered calibration and 0.5% at rate-optimal thresholds
+— and states explicitly that no claim of improved intake is made. What was wrong: the paper's
+Section 3 could be read as asserting that a forager using W does better than one using R*. It
+never derived that, and it is now measured false in the one network where it has been checked.
+
+
+## 3. For `vault/log.md`
+
+
+## [2026-09-05] negative control | The reservoir audit CAN return nothing: NO RESIDUAL is a third output state, fired at step 11 after a full run, and F9 says the energy leg is a tautology for generators
+
+Part D of `vault/method/reservoir-audit.md` gains D.4 and the F-list gains F9, both from
+[[C46-reservoir-audit-negative-control]]. What was wrong: Part D assumed the instrument's null
+output would be a halt. It is not. On a 90 m rotor at 11 m/s reporting 2.0 MW with a stated
+C_p = 0.44, briefed on the D.3a five-line template archived and hashed before dispatch
+(`audits/blind-brief-c46-2026-09-05.md`, sha256 5e39ef6f84ed2c6eec4b17c434a6db7717683744df1bf099
+983c36c0ca922308), all thirteen steps ran and none was skipped: P_avail = 5.1863 MW (script
+`vault/_scripts/c46_betz.py`), Betz ceiling 3.0734 MW, required C_p = 0.3856 = 0.651 of Betz,
+A = 0.386 at the swept disc and 0.193 / 0.771 at 2x / 0.5x aperture. The ambient flow SURVIVES
+with a property the stated C_p already supplies, gravitational / geomagnetic / thermal candidates
+are NOT FORMABLE, no second reservoir is demanded, and the -0.282 MW aerodynamic-to-electrical
+gap is a drivetrain efficiency of 0.876 already in the published loss budget. What it is now:
+NO RESIDUAL fires at step 11 after a complete run and is a distinct third state from D.2's
+NO OBSERVABLE TO EXPLAIN and D.3's NO AGREED OBSERVABLE, both step-0 halts; it is named in Part D
+as a state alongside step 10's four. This is the first input on which the instrument has been
+shown to return nothing unprompted, and it is a weak yes: the blind is single-agent (the brief
+was written by the agent that ran it) and the case is textbook (the worked example of the Wind
+Energy Handbook), so it exercises the arithmetic path, not the judgement. Step 0(a) also had to
+be improvised — the brief gave no uncertainty and the run assigned +/-3%. Next D.1-class case
+named and it must be briefed by a different agent: a published Betz-exceeding diffuser-augmented
+turbine claim whose C_p is normalised to throat rather than exit area. New failure mode F9: for a
+generator, step 2's F_req = P_useful/v is divided straight back out by step 8, so Sigma = 1
+identically and the energy leg can never fire — not merely weak (F1) but tautological. Fix
+recorded: on generator-form inputs skip the energy leg and say so, or state a non-tautological
+F_req measured independently of P_useful. The Standing paragraph's condition count goes five to
+six to carry that fix.
+
+
+## 4. For `vault/log.md`
+
+
+## [2026-09-05] correction | C43's T-vs-P anti-correlation is a fact about the USDA tfact assignment rule, not about tolerable-loss standards in general
+
+[[C44-soil-ha-world]] supplies the control group C43 lacked, and C43 gains a "Scope 2026-09-05"
+paragraph restating its claim. What was wrong: C43 could be read as "tolerable-loss values
+overstate soil formation." What it is now: the USDA's does, and its European counterpart does
+not. Across 600 sites with a European per-country erosion number, Verheijen et al. 2009's
+proposed range gives median T/P = 0.22 at its 0.30 t/ha/yr lower bound and 1.01 at its
+1.40 t/ha/yr upper bound — calibrated to measured formation, or conservative — while the same
+pipeline puts USDA tfact = 1 at 4.17 [3.42, 4.87] and tfact = 5 at 20.88 [17.11, 24.39] over
+1,164 sites, bracketing C43's own per-site median of 22.3. The mechanism is C43 §3's, now with a
+control: Verheijen's range was derived from the soil-formation literature and tfact was assigned
+from profile depth and fragility. Borrelli et al. 2017's "generic T-value" of 10 Mg/ha/yr sits at
+median T/P = 10.1 over 5,611 sites — the USDA-shaped convention carried into global erosion
+modelling. Produced by `vault/_scripts/c44_world.py`; OCTOPUS v2.2 WFS and Panagos et al. 2015
+Table 1, both fetched 2026-09-05.

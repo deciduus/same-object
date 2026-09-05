@@ -152,6 +152,21 @@ One extra from the Borrelli read: its **"generic tolerable soil erosion threshol
 `Ha ≡ 1` construction C35 identified in USDA practice is being carried into global erosion
 modelling at a value above the top of the USDA range.
 
+## Scope 2026-09-05 — the claim is about the USDA convention, not tolerable-loss standards
+
+[[C44-soil-ha-world]] supplies the control group this note lacked. Where a *non-US* national
+tolerable-loss number exists, the anti-correlation and the overstatement do not appear:
+Verheijen et al. 2009's proposed European range sits at median `T`/`P` = **0.22** at its lower
+bound (0.30 t/ha/yr) and **1.01** at its upper (1.40 t/ha/yr) across 600 sites — calibrated to
+measured formation, or conservative — while the same pipeline puts the USDA at **4.17** for
+`tfact` = 1 and **20.88** for `tfact` = 5, bracketing this note's per-site median of 22.3. The
+mechanism §3 names is why: Verheijen's range was derived *from* the soil-formation literature
+and `tfact` was assigned from profile depth and fragility. **So C43's claim is restated as a
+statement about the USDA `tfact` assignment rule, not about tolerable-loss standards in
+general.** The one number that does generalise badly is Borrelli et al. 2017's "generic
+`T`-value" of 10 Mg ha⁻¹ yr⁻¹, at median `T`/`P` = **10.1** over 5,611 sites — the USDA-shaped
+convention, carried into global erosion modelling.
+
 ## 6. Honesty
 
 **¹⁰Be integrates 10³–10⁴ yr; `tfact` is an annual management permit.** No statistic here repairs

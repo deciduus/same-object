@@ -227,6 +227,15 @@ fast type is left at a strictly higher standing crop, by the amount in (4)–(5)
 `ΔGUD` of zero within error falsifies the transfer; a *negative* `ΔGUD` falsifies it and MVT
 together.
 
+**Magnitude, after [[C45-whittle-network-sim]] (2026-09-05).** The 1.34× is the ratio *at the
+MVT anchor* `ν = λ·GUD_MVT² = 0.09`, and the anchor is doing most of the work: run forward in a
+20-patch network, the same anchor returns **1.2708 ± 0.0002** (`GUD_fast = 0.3987` against this
+table's single-patch 0.4019, 0.8%), while learning `ν` as the network's realised long-run intake
+rate returns **1.0600 ± 0.0002**. **The sign is calibration-free; the magnitude is not.** The
+between-type ratio to predict is therefore **~1.06 to ~1.27 depending on how `ν` is set**, and
+the usable design window is `r_fast·τ ∈ [0.2, 1]` — at `r_fast·τ = 10` the simulated forager
+never visits the slow type at all and the ratio is undefined.
+
 ## 6. Dataset
 
 **Kadmon & Shmida (1992), *Evolutionary Ecology* 6:142–151, `10.1007/BF02270708`** — departure
@@ -282,7 +291,12 @@ unsuitable as-is: Possingham (1989) *Am. Nat.* 133:42–60, `10.1086/284900` (ve
   among `N` patches is `N → ∞` with active fraction `1/N → 0`, which is **not** the regime the
   asymptotic-optimality theorems cover. Q5 anticipated "an approximation with a stated
   optimality gap"; the gap is **not** stated here. Honest status: an indexable heuristic with
-  a signed comparative static, not a bounded approximation.
+  a signed comparative static, not a bounded approximation. **Measured, 2026-09-05
+  ([[C45-whittle-network-sim]]): the gap is negative.** In a 20-patch network the Whittle
+  policy earns −13.27% ± 0.03% against MVT-with-regrowth at the pre-registered calibration and
+  −0.48% ± 0.03% when each policy is given its own rate-optimal threshold — negative in all
+  twelve sweep cells. At `M = 1` the index is not merely un-bounded; it is empirically no
+  better than the classical rule it generalises, and the classical rule is simpler.
 - The singular-arc argument in §3 is a continuous-time relaxation. The discrete-time index may
   differ at `O(Δt)`; not checked.
 
@@ -401,3 +415,56 @@ of the 2026-09-05 external review, which recomputed `W`, `W'`, `dGUD/dr` and the
 the *then-current* arrival convention and reproduced them. That review did not question the
 convention. This correction supersedes it for the residence column only; §9's three scope
 clarifications are unaffected.
+
+## 10. Network simulation 2026-09-05 — [[C45-whittle-network-sim]]
+
+The §5 rule was run forward as a policy on a complete graph of `N = 20` patches (10 fast, 10
+slow, uniform travel `τ`, `λ = 1`, `G_max = 1`, dynamics exactly §1), against a hashed
+pre-registration. Nothing in §1–§4 changes: `W(x) = λx² − r(1−x)²` is still the Whittle index of
+the relaxed single-arm problem, still unconditionally indexable, still reduces to C5 eq. (4)
+under non-revisitability. What changes is what §5 and §7 may claim.
+
+**1. The sign survives; the magnitude is a calibration.** Fast patches are abandoned at a
+strictly higher standing crop in every cell (the CI excludes 1). But the ratio sweeps 1.02 →
+1.66 as the habitat subsidy `ν` is moved. At this note's own anchor, `ν = λ·GUD_MVT² = 0.09`,
+the network returns `GUD_fast = 0.3987` against §5's single-patch **0.4019 — 0.8%** — and a
+ratio of **1.2708 ± 0.0002**. At the pre-registered calibration (`ν` learned as the realised
+long-run intake rate, converging to 0.2732) the ratio is **1.0600 ± 0.0002**. §7's "`ν` is
+anchored, not solved" is therefore not a bookkeeping caveat: it is the largest term in the
+predicted effect size. **The 1.34× must always be read as "1.34 at the MVT anchor".**
+
+**2. For P-067.** Expected effect size **~1.27 at the anchor, ~1.06 with `ν` learned**; power
+the test for the low end. Usable window `r_fast·τ ∈ [0.2, 1]` (ratio ~1.27 down to ~1.23 at the
+anchor). At `r_fast·τ = 10` the forager makes **zero slow-patch visits** in every scored run at
+every `τ`, so the contrast is undefined — a design that maximises regrowth contrast to maximise
+signal destroys the measurement. MVT-with-regrowth is genuinely type-blind under one habitat
+rate (ratio 0.996–1.000 in all twelve cells), so it remains the correct null and a measured
+ratio indistinguishable from 1.00 is a clean negative.
+
+**3. The harder fact: the index does not out-earn Charnov's rule.** Against MVT-with-regrowth in
+the same network the Whittle policy earns **−13.27% ± 0.03%** at the pre-registered calibration
+and **−0.48% ± 0.03%** when each policy is given its own post-hoc rate-optimal threshold —
+negative in **all twelve** sweep cells (−11.7% to −45.9%). And the intake-optimal Whittle
+threshold (`ν* = 0.030`) is not the C25-predicted policy: it yields a fast/slow GUD ratio of
+1.659, outside the predicted band in the other direction.
+
+**What this does to the framing.** The "value of the index" reading — that a forager using `W`
+does better than one using `R*` — is **dropped**. It was never derived here (§7: no optimality
+gap is stated) and it is now measured to be false in the one network where it has been checked.
+What survives is what the derivation actually supports: the index exists and is exact for the
+relaxed arm; `dGUD/dr > 0` (eq. 5) is a signed comparative static; and the **between-type GUD
+contrast** is the observable. The Whittle rule is a *description of the optimal single-patch
+departure rule*, not a better foraging policy.
+
+**4. Two side results.** §5's homogeneous-habitat degeneracy is confirmed exactly — 100.00%
+destination agreement with fullest-greedy at `r·τ = 0.05, 0.2, 1, 10` — and is worse than
+stated: "visit the fullest" carries no leaving rule and earns **3.1% of MVT's rate**, so the
+referee attack §7 anticipates is answered by noting the destination half alone is nearly
+worthless. §9 item 2's transit reordering is measured for the first time: it fires on 12–34% of
+departures and rises with `τ`.
+
+**What the simulation does not settle.** It tests the rule, not the animal; no forager was
+observed. `ν` is still learned, not solved — the principled object (the subsidy at which the
+relaxed problem has active fraction `1/N`) was not computed. `dt` was not varied. Stochastic
+patches, competitors and handling-time-limited intake are all §7 assumptions and none was
+relaxed.

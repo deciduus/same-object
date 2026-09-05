@@ -358,7 +358,9 @@ $t^{*}_{\mathrm{MVT}}=\ln(1/u_0)/\lambda=1.204$; an earlier version forced arriv
 patch ($x=1$), a state the passive dynamics forbid in steady state, which overstated the ratio
 by up to a factor of 3.8 and concealed that the ratio is *non-monotone* in $r$ --- rising from
 $0$ at $r\tau=0$, peaking at $0.356$ near $r\tau=2$, and falling back toward $0$ as
-$r\to\infty$:
+$r\to\infty$. The $\mathrm{GUD}/\mathrm{GUD}_{\mathrm{MVT}}$ column is a ratio *at this anchor*:
+run forward as a policy in a 20-patch network the same anchor returns $1.271$ and a learned
+$\nu$ returns $1.060$, so the magnitude is anchor-dependent and only the sign is not:
 
 | $r\tau$ | $\mathrm{GUD}(r)$ | $\Delta\mathrm{GUD}$ | $\mathrm{GUD}/\mathrm{GUD}_{\mathrm{MVT}}$ | $x_{\mathrm{arr}}$ | $t^{*}(r)$ | $t^{*}/t^{*}_{\mathrm{MVT}}$ |
 |---|---|---|---|---|---|---|
@@ -374,7 +376,11 @@ $\lambda$, differing only in measured regrowth rate $r$. MVT predicts *equal* gi
 densities, because the threshold $R^{*}$ is a habitat property and not a patch property.
 The Whittle rule predicts the fast type is left at a strictly higher standing crop, by the
 amount in (5)--(6). A measured $\Delta\mathrm{GUD}$ of zero within error falsifies the
-transfer; a *negative* $\Delta\mathrm{GUD}$ falsifies the transfer and MVT together.
+transfer; a *negative* $\Delta\mathrm{GUD}$ falsifies the transfer and MVT together. A
+20-patch network simulation of this rule recovers a fast/slow GUD ratio of $1.271$ at the
+MVT anchor $\nu=\lambda u_0^{2}$ used above and $1.060$ when $\nu$ is instead learned as the
+network's realised long-run intake rate, so the quantity a field test should be powered for
+is a between-type GUD ratio in $[1.06,\,1.27]$ at $r\tau=0.2$, not a single number.
 
 # A test
 
@@ -498,7 +504,12 @@ In the order a referee will reach for them.
    $\alpha\to0$ --- the regime every foraging application is in --- has no Whittle-index
    performance bound we could locate, and closing it is open work.** The honest status of
    Section 3 is unchanged: an indexable heuristic with a signed comparative static, not a
-   bounded approximation.
+   bounded approximation. **Simulated, the gap is negative.** In a 20-patch network the
+   Whittle policy does *not* out-earn the MVT-with-regrowth rule: it loses $13.3\%$ of
+   the intake rate at the pre-registered calibration of $\nu$ and $0.5\%$ when each
+   policy is given its own rate-optimal threshold, in every cell of the sweep. **We
+   therefore make no claim that the index improves intake.** What the extension claims
+   is the signed comparative static (6) and the between-type contrast it implies.
 
 4. **$\nu$ is anchored, not solved.** The equilibrium subsidy is fixed by agreement with MVT
    at $r\to0$ rather than computed from an $N$-patch fixed point. Table 1 is a statement
