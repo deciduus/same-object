@@ -4809,3 +4809,177 @@ test it; a controlled-refill array can."*
 withdrawn), **P-089** (done, C49, four method returns), **P-092** (done, C46, `NO RESIDUAL`, F9),
 **P-093** (done, C50, D.2 fires). Two of the seven closed by **failing**, which is the point of
 having written the minus branch into the row before running it.
+
+## [2026-09-05] computed | C51: nothing about a claim's subject predicts its survival — only the round it was made in, and that is confounded with how the outcome was read
+
+Pre-registered meta-analysis of the vault's own graded record. Brief
+`audits/blind-brief-c51-2026-09-05.md`, sha256
+`8844d375b302b987d7bc83ebbb8f2e4157f26df7f93fd7bcdc6517ac697d786a`, hashed before any outcome
+column was read or coded. 87 claims coded (C1–C22, C25–C50, G1–G37 as they exist, Q1–Q10),
+82 graded, dataset at `_scripts/c51_data/claims.csv` with a per-row `source_line`.
+
+Overall survival 26/82 = 0.317. Of four pre-registered hypotheses: **H1** (derivations and
+catalogues outlive correlations) fails on n — direction as predicted, correlation perfectly
+separated at 0/6, Fisher p = 0.1639 on n = 49. **H2** (famous pairs are more often prior art)
+fails and reverses — famous 1/11 = 0.091 against obscure 18/71 = 0.254, p = 0.4430. **H3**
+(post-blind-brief claims die at a higher rate) is falsified in direction — blind-brief claims
+survive at 0.500 against 0.292, and the broader round variable gives post-audit 17/35 = 0.486
+against early 9/47 = 0.191, Fisher p = 0.0078. **H4** (scale-mismatched data joins die) is
+direction-only per the brief's own n gate: mismatch 0/3, same-scale 2/2, smaller margin 2.
+
+Two findings the programme should act on and one it should not. Act on: computation on
+already-published numbers is the weakest move at 3/16, while pre-registered enumeration (5/7)
+and instrument runs (3/5) are the strongest — their honest null is still a publishable object.
+And an adversarial pass is not a kill mechanism: survival with a pass 0.312, without 0.324;
+what the passes did was convert `live` into `narrowed`, the fate of 26 of 82 claims. Do **not**
+act on H3b as evidence the vault got better: early claims were graded mostly by the novelty
+audit, post-audit claims mostly by their own callouts, and that difference in *how the outcome
+was read* could manufacture the whole p = 0.0078. Said so in C51 §5.
+
+Logistic model declared in the brief was not fitted: the counts gate passed but `correlation` is
+completely separated on the outcome, so the MLE does not exist and a penalised fit would report
+a coefficient the data do not contain.
+
+New: `vault/computed/C51-vault-meta-analysis.md`, `vault/_scripts/c51_meta.py`,
+`vault/_scripts/c51_data/claims.csv`, `audits/blind-brief-c51-2026-09-05.md`.
+
+
+## 2. Add to `vault/00-index.md`
+
+In the computed-notes section, after the C50 line:
+
+
+- [[C51-vault-meta-analysis]] — across 82 graded claims, no property of a claim's subject
+  predicts survival; only the round it was made in does, and that is confounded with how the
+  outcome was read. Correlations 0/6; scale-mismatched joins 0/3; an adversarial pass moves
+  survival by 1.2 points and moves `live` to `narrowed` instead.
+
+
+C51 is unreachable by wikilink from `00-index.md` until this line lands, so `_lint.py` reports
+one reachability WARNING against it in the meantime (a warning, not an error; lint still exits 0).
+That warning is this file's whole reason to
+exist; it clears the moment §2 is applied.
+
+## 3. Gitignore exception required
+
+`.gitignore` carries `vault/_scripts/*_data/`, which would swallow the coded dataset. Add,
+immediately after that line:
+
+
+!vault/_scripts/c51_data/
+
+
+`c51_data/claims.csv` is the analysis's evidence and must be committed. This agent did not edit
+`.gitignore`.
+
+
+## [2026-09-05] honest null | C52: the mammal half of the setpoint→survival claim is Turbill 2011; the bird half cannot be run because the migrant rule empties its treatment arm
+
+P-008 run against `audits/blind-brief-c52-2026-09-05.md`, sha256
+`bc2259e6984a3895a199f3585dc11ffad496162af7a50cb65c79948cac9f2547` over all 14,767 bytes,
+hashed before any adult-annual-survival value was fetched. Arithmetic
+`python _scripts/c52_survival.py`; verify the brief with `--verify-brief`.
+
+Prior-art check run BEFORE the join, as the brief required: Turbill, Bieber & Ruf 2011,
+Proc. R. Soc. B, `10.1098/rspb.2011.0190` (Crossref 2026-09-05, `is-referenced-by-count` = 283;
+abstract via Europe PMC, PMID 21450735) already reports that hibernators have ~15% higher annual
+survival than similar-sized non-hibernators under phylogenetic GLS. **The mammal leg of the C38
+§5 survival clause is REDISCOVERED**, not this project's. P-008 was written without knowing that
+and should be rewritten to name Turbill 2011 as its baseline. Semantic Scholar returned HTTP 429
+throughout, so the prior-art reach is Crossref + Europe PMC + web only.
+
+The only new leg is birds. It does not run: of 27 British species with BTO ring-recovery adult
+annual survival, exactly 3 appear in the Ruf & Geiser 2015 appendix (*Apus apus* φ = 0.808,
+*Caprimulgus europaeus* 0.700 ± 0.05, *Delichon urbicum* 0.410) and all 3 are obligate
+long-distance migrants, removed by a rule fixed in the hashed brief. Lever-bearing arm n = 0.
+The lever-less arm is also n = 0, for an independent reason: the brief's asymmetric coding rule
+requires an explicit negative from a second source, COMBINE covers mammals only, and no avian
+compilation states homeothermy per species. **In temperate avifauna the metabolic lever and
+long-distance migration are alternative solutions to the same winter energy problem, so any
+migration-controlled test of the lever on birds removes its own treatment group.**
+
+What was wrong before: C40's lever coding had to infer "lever-less" from absence in a
+positive-record compilation. Under the asymmetric rule that refuses that inference, only
+240 of 671 small (<100 g) temperate (|lat| ≥ 35°) Chiroptera/Rodentia/Eulipotyphla can be coded
+at all — 24 lever-bearing, 216 lever-less, 425 UNCODED (63.3%), 6 conflicts
+(`_scripts/c52_data/lever_codes.csv`, sha256
+`e6554ce84043db91d1a996d0e54626be8126f31150948bbda68284f76e7be0e2`, written before any φ was
+read). C40's 75-species table was reachable only by inferring the other ~64%.
+
+φ sources: BTO BirdFacts worked (27/27 slugs; `pied-wagtail` HTTP 404). The Amniote database
+(Myhrvold et al. 2015, `10.1890/15-0846R.1`) has **no** `adult_survival` field — asserted in code,
+recorded as a negative result. No open mammal φ compilation was obtained. COMBINE
+`max_longevity_d` was available as a pre-authorised downgraded proxy and was **not used**:
+longevity was not substituted for φ, which is the failure C40 §6.1 discloses.
+
+Void-by-construction control, reported so it is never quoted as a result: under the two moves
+the brief forbids (code lever-less by absence, keep migrants) the same data give a naive
+Δφ = +0.147, which the brief's own 2× mass matching alone reduces to +0.059, bootstrap 95% CI
+[−0.132, +0.295] (seed 20260905), sign test 2/3, p = 0.500, gate not met at 3 pairs.
+
+P-072 falsifier: 8 Europe PMC formulations found no new lever-less species with a published
+reserve margin. Count of lever-less species with a published margin remains 1 (*Sorex araneus*,
+−69%); above +100%: 0. NOT FALSIFIED over a reach of n = 1 — P-072's own quotability condition
+(a ≥10-candidate scan) is not met, so the falsifier is still a formality, not a test.
+
+Nothing in C38, C40 or the index changes standing. H1 is NOT TESTED — not supported, not refuted.
+
+
+## 2. Add to `vault/00-index.md`, in the computed-notes list
+
+
+- [[C52-setpoint-survival-ringing]] — **P-008 run on real `phi`, pre-registered, and it does not run: the mammal leg is Turbill 2011 and the bird leg has an empty treatment arm.** Brief `bc2259e6...` (14,767 bytes) hashed before any survival value was fetched; the prior-art check was run **before** the join and found Turbill, Bieber & Ruf 2011 (`10.1098/rspb.2011.0190`, Crossref 283 cites) already reporting **~15% higher annual survival in hibernators than similar-sized non-hibernators** under phylogenetic GLS — **the mammal leg of C38 §5's survival clause is REDISCOVERED.** The only new leg, birds, is structurally unrunnable: of **27** British species with BTO ring-recovery adult annual survival, exactly **3** are Ruf & Geiser heterotherms (*Apus apus* 0.808, *Caprimulgus europaeus* 0.700, *Delichon urbicum* 0.410) and **all 3 are obligate long-distance migrants**, removed by a rule fixed in advance → lever-bearing arm **n = 0**; the lever-less arm is **n = 0** too, because the asymmetric coding rule needs an explicit negative and no avian compilation states homeothermy. **In temperate avifauna the lever and migration are alternative solutions to the same winter energy problem, so a migration-controlled avian test deletes its own treatment group.** That rule also shows what C40 paid: only **240 of 671** small temperate mammals can be coded without inferring "lever-less" from absence (24/216/**425 UNCODED**/6 conflicts). The Amniote database has **no** `adult_survival` field; **longevity was not substituted for `phi`**. Void-by-construction control: the forbidden rules give Δ`phi` = **+0.147** unmatched, which the pre-registered 2× mass matching alone collapses to **+0.059, 95% CI [−0.132, +0.295]**, sign test 2/3, p = 0.500. P-072 scan: still **0** above +100%, over a reach of **n = 1** — the ≥10-candidate condition is not met, so the falsifier remains a formality. **H1 NOT TESTED.**
+
+
+## [2026-09-05] method | 25 failure modes named from one day's caught failures; the most frequent is the unattributed count
+
+New note: vault/method/failure-taxonomy.md. Every 2026-09-05 correction, honest null and
+adversarial hit in this log was read as a specimen of a failure mode rather than as a fact about
+its own claim. 25 modes, six groups (Provenance, Statistics, Instruments, Reasoning, Process,
+Framing), 79 logged instances. Each mode carries its instances with wikilinks, how it was caught
+(audit, adversary, replication, positive control, negative control, self-test, pre-registration,
+lint, the human), the guard now standing, and which actor owns it — the model, the tooling, the
+orchestration, or the human.
+
+Most frequent: P2, the unattributed count (7) — a figure promoted without provider, endpoint and
+fetch date. Then P1, two numbers in one field (6: the 578/595 two-objects case, G28's 5-and-8
+dual count, G29's frontmatter contradicting its own table, Griebling cited in two contradictory
+roles) and P4, a published margin adopted as if computed (6, of which three are C30's single
+habit). Three modes have no guard at all: the single-agent blind (C46, C50), stale watchers in
+the orchestration loop, and the frontmatter-vs-body half of P1.
+
+Observed catch counts by earliest catch: audit 11 modes, adversary 7, replication and controls 3,
+self-test and calibration 2, pre-registration 1, the human 1, **lint 0**. Lint blocks schema
+drift and catches none of these; the cheapest effective guards are the calibration query and the
+printed drop count; the only guard that caught the fatal ones (C43's pseudoreplication, G36 leg
+2's sign error, G34's metaphor) is one adversary per claim.
+
+Distinct from [[failure-modes]], which is about how a measured zero can be fake inside the
+citation-intersection instrument; this one is about the whole agent-run research loop and is
+cross-linked from it. The note ends by recording that it was written by an agent of the same kind
+that committed the failures, and that the counts are of caught failures, not committed ones.
+
+
+---
+
+## 2. Add to `vault/00-index.md`, in the method / instruments section
+
+
+- [[failure-taxonomy]] — **25 failure modes from one day of agent-run science, grouped
+  Provenance / Statistics / Instruments / Reasoning / Framing / Process, with the actor and the
+  guard for each.** 79 instances, all from 2026-09-05. Most frequent: the unattributed count (7).
+  Three modes have no guard yet. Observed catch counts: audit 11, adversary 7, replication and
+  controls 3, self-test and calibration 2, lint 0. Companion to [[failure-modes]], which covers
+  the same question for one instrument.
+
+
+---
+
+## 3. Optional cross-link in `vault/method/failure-modes.md`
+
+`failure-taxonomy` already points at `failure-modes`. The reciprocal line, if the owner of that
+file wants it, belongs under its title:
+
+
+Scoped to one instrument. For the whole research loop — provenance, statistics, reasoning,
+process and framing — see [[failure-taxonomy]].

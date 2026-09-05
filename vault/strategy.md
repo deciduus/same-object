@@ -69,3 +69,9 @@ best stem — the one genuinely-novel result, needing no data access. Earn Layer
   as [[C9-moving-coupling-point]] proved a device could not.
 - **Formalise the discrete cores.** Several objects are integer-lattice or order-theoretic and
   have not been treated as such.
+
+## Orchestrator note, 2026-09-05 evening — what the day's record implies
+
+Three results survived every audit: [[C5-charnov-gittins]] (a proof), [[C16-same-class-catalogue]] (a pre-registered catalogue), [[C4-inclination-sensing-limit]] (a derivation with a named discriminating experiment). Everything that died was an empirical correlation found in a join, or a resemblance between two famous objects. The instrument is good at exact structure and honest audit, and bad at finding new correlations in other people's data. That is its shape, not a defect.
+
+Two things follow. First, the vault's own graded record — ~50 claims with method type, data type, join scale, blind-brief status, adversarial outcome and prior-art grade — is a dataset no one else holds, and "what predicts whether an AI-generated cross-domain claim survives review" is a meta-research question with no possible prior art. Second, the failure modes caught today (pseudoreplication, published margins adopted as computed, phantom keys, pre-announced halts, join artefacts) are a taxonomy other people running agents on science need. Both are now scheduled ([[C51-vault-meta-analysis]], [[failure-taxonomy]]). Substantive science continues in parallel with the adversary written into the brief (P-008).

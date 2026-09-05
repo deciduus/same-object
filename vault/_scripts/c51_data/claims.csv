@@ -1,0 +1,88 @@
+id,type,move,famous,provenance,blind_brief,adversarial,scale_mismatch,claim_kind,round,outcome,survived,source_line,notes
+C1,computed,computation,obscure,primary,0,0,na,number,early,PRIOR_ART,0,novelty-audit grade table C1 REPACKAGED,"headline struck and rebuilt 2026-09-05 (log 1081/1095); prior-art grade takes precedence over the narrowing"
+C2,computed,computation,obscure,secondary,0,0,na,number,early,PRIOR_ART,0,novelty-audit grade table C2 REPACKAGED,stress-strength-interference 1967 applied to biology
+C3,computed,computation,famous,secondary,0,0,na,taxonomy,early,PRIOR_ART,0,novelty-audit grade table C3 REPACKAGED (+CORRECTED),"Landauer x Shannon both >2000; the note itself withdrew the absence claim"
+C4,computed,derivation,obscure,secondary,0,1,na,number,early,SURVIVED,1,novelty-audit grade table C4 SPLIT: part (c) NOVEL (hedged),"only part (c) survives; parts (a) and (b) are prior art - one row cannot hold a three-way split"
+C5,computed,derivation,famous,secondary,0,1,na,identity,early,SURVIVED,1,novelty-audit NOVEL; C5 section 11 kill-check held 2026-09-05,strongest result in the vault
+C6,computed,derivation,obscure,secondary,0,1,na,identity,early,PRIOR_ART,0,novelty-audit C6 REPACKAGED downgraded from NOVEL 2026-09-05,Erlang-B complement of an M/M/1/1 loss system (log 817)
+C7,computed,catalogue,obscure,secondary,0,0,na,taxonomy,early,PRIOR_ART,0,novelty-audit grade table C7 REPACKAGED,surviving conditional moved to C16
+C8,computed,derivation,obscure,secondary,0,1,na,identity,early,PRIOR_ART,0,novelty-audit C8 REPACKAGED confirmed after Greason read in full,four separate arithmetic corrections 2026-09-05 (log 717-749)
+C9,computed,derivation,obscure,secondary,0,1,na,identity,early,PRIOR_ART,0,novelty-audit C9 REDISCOVERED,thermoacoustics; Bezsudnov-Snarskii 2014
+C10,computed,computation,obscure,secondary,0,0,na,number,early,PRIOR_ART,0,novelty-audit grade table C10 REPACKAGED,curve fit on 7 published datasets
+C11,computed,instrument,obscure,primary,0,0,na,number,early,PRIOR_ART,0,novelty-audit grade table C11 REPACKAGED,three corrections 2026-09-05; output is a specification not a result
+C12,computed,derivation,obscure,secondary,0,1,na,identity,early,PRIOR_ART,0,novelty-audit grade table C12 REPACKAGED,SNF actually computed 2026-09-05 and the note demoted (log 985)
+C13,computed,citation_compare,obscure,primary,0,0,na,taxonomy,early,PRIOR_ART,0,novelty-audit grade table C13 REPACKAGED (+CORRECTED),verification not discovery
+C14,computed,derivation,obscure,secondary,0,0,na,number,early,PRIOR_ART,0,novelty-audit grade table C14 REPACKAGED,control-theory passivity index is the rigorous twin
+C15,computed,computation,obscure,secondary,0,0,na,number,early,PRIOR_ART,0,novelty-audit grade table C15 LOCATED,"AMBIGUOUS: a clean negative graded LOCATED; the brief puts LOCATED in the prior-art class but no prior art was actually found"
+C16,computed,catalogue,obscure,primary,0,1,na,taxonomy,early,SURVIVED,1,novelty-audit C16 NOVEL,blind class rule re-applied 2026-09-05 changed 11 of 24 rows and the conditional held (log 1006)
+C17,computed,derivation,obscure,secondary,0,0,na,identity,early,PRIOR_ART,0,novelty-audit grade table C17 REPACKAGED,the JPA field's own published B*sqrt(G) = const
+C18,computed,computation,obscure,secondary,0,1,na,taxonomy,early,PRIOR_ART,0,novelty-audit grade table C18 REPACKAGED,also narrowed 2026-09-05: the axis was not well defined and rows mixed objects and estimators (log 2171)
+C19,computed,computation,obscure,secondary,0,1,na,number,early,WITHDRAWN,0,log 2026-09-05 C19's 73x fitted hormesis window withdrawn,three separate corrections killed the headline number
+C20,computed,derivation,obscure,secondary,0,0,na,identity,early,PRIOR_ART,0,novelty-audit grade table C20 REPACKAGED,Szirtes' applied dimensional analysis
+C21,computed,catalogue,obscure,primary,0,0,na,taxonomy,early,SURVIVED,1,C21 callout Verdict: NO - not beyond what the method's own selection filter forces,honest null; the stated verdict stands
+C22,computed,computation,obscure,primary,0,0,na,correlation,early,NARROWED,0,C22 callout Directionally supported not quantitatively established,ledger totals recounted twice 2026-09-05 (log 1639)
+C25,computed,derivation,obscure,secondary,0,1,na,identity,post,WITHDRAWN,0,C48 callout kills the graded prediction twice over,"the Whittle derivation is intact but the graded prediction is dead - AMBIGUOUS between NARROWED and WITHDRAWN"
+C26,computed,computation,famous,primary,0,1,na,number,post,WITHDRAWN,0,C26 callout RESULT - the discriminator fails and the failure is the finding,pre-registered null; the note stands as the record of a failed claim
+C27,computed,computation,obscure,primary,0,1,na,taxonomy,post,NARROWED,0,log 2026-09-05 C27's RAC natural experiment is withdrawn; P1 is untested,the 21-fit beta table stands
+C28,computed,computation,obscure,secondary,0,1,na,number,post,NARROWED,0,log 2026-09-05 C28's callout attributed a specificity range to an enumeration that supports none,break-even formula stands; the illustrative numbers were restated
+C29,computed,computation,obscure,primary,0,1,na,number,post,SURVIVED,1,C29 callout beta = 0.587 [0.510 0.668]; replicated at 0.733 in C32,prediction 1 failed but the headline beta < 1 stands
+C30,computed,instrument,obscure,primary,0,1,na,taxonomy,post,NARROWED,0,C30 callout Step 0 returns NO AGREED OBSERVABLE; log 2377/2391/2403 withdraw three ledger rows,headline halt stands; several exclusion rows withdrawn or restated
+C31,computed,computation,obscure,secondary,0,0,na,identity,post,SURVIVED,1,log 2106 C31: C6's A = Ha/(1+Ha) is wrong once cores fail to return,a correction to C6 that itself stands
+C32,computed,replication,obscure,primary,0,1,na,correlation,post,WITHDRAWN,0,C32 callout Prediction 1 of C29 is a FAIL in substance; log 2480 pooled beta = 0.733 is not identifiable,log 2229 - the two meta-analyses share ~95 primary studies
+C33,computed,computation,obscure,secondary,0,1,na,number,post,WITHDRAWN,0,log 3296 C33: P(starve) withdrawn and 3310 the two-way table is withdrawn both directions,positive control failed (log 3283); the recursion survives but the numbers do not
+C34,computed,computation,famous,secondary,0,0,na,number,post,SURVIVED,1,C34 callout alpha ~ 45 against the wafer's 0.3-5; Haldane-Muller right to +1.6%,no corrections section
+C35,computed,data_join,obscure,primary,0,1,mismatch,number,post,PRIOR_ART,0,novelty-audit C35/C42/C43 row REPACKAGED (+CORRECTED) with section 5 REDISCOVERED,Verheijen 2009 and Montgomery 2007 publish the ratio; USDA T map-unit joined to point 10Be formation
+C36,computed,computation,obscure,primary,0,1,na,number,post,NARROWED,0,log 3385 C36's governance ordering re-coded blind: direction survives test declared underpowered,balanced RAM Legacy panel
+C37,computed,derivation,obscure,secondary,0,0,na,identity,post,SURVIVED,1,C37 callout Conditional not exact under five stated conditions,born narrowed rather than narrowed later - AMBIGUOUS
+C38,computed,data_join,obscure,primary,0,0,same,taxonomy,post,SURVIVED,1,novelty-audit G34/C33 section - no published figure exists for the demand-side share,one of two things in the cluster the audit says is genuinely new
+C39,computed,replication,obscure,primary,1,1,na,correlation,post,NARROWED,0,C39 callout the direction survives a blind re-code the test does not,rule sha256-hashed before C36 was opened
+C40,computed,replication,obscure,primary,1,1,na,correlation,post,NARROWED,0,C40 callout PARTIAL PASS and the pass is the weak half - UNDERPOWERED by the brief's own pre-declared gate,rho = +0.63 at n = 4
+C41,computed,catalogue,obscure,primary,0,1,na,taxonomy,post,SURVIVED,1,C41 callout NO - 3 of 8 not most,honest null; the stated answer stands
+C42,computed,derivation,obscure,secondary,0,1,na,identity,post,SURVIVED,1,C42 callout Structural-only,the note that corrected C35 and C6; its own result stands
+C43,computed,data_join,obscure,primary,1,1,mismatch,correlation,post,WITHDRAWN,0,C43 section Withdrawal 2026-09-05 (adversarial + C47),pseudoreplication at 0.5 degree cells plus a basin-gradient confound; fails to replicate on 114 sites
+C44,computed,data_join,obscure,primary,1,1,same,number,post,SURVIVED,1,C44 callout PRE-REGISTERED TEST: H1 PASSES,5611 sites joined site-to-site; H2 not posable
+C45,computed,simulation,obscure,primary,1,1,na,number,post,WITHDRAWN,0,C45 callout PRE-REGISTERED 3 of 5 PREDICTIONS FAIL,only the sign transfers
+C46,computed,instrument,obscure,primary,1,1,na,taxonomy,post,SURVIVED,1,C46 callout reached step 11 and the step-11 union came back already occupied,negative control behaved as pre-registered
+C47,computed,data_join,obscure,primary,1,1,mismatch,correlation,post,WITHDRAWN,0,C47 callout H1 PARTIAL H2 FAILS H3 FAILS,800 CONUS points against map-unit tfact; pre-registered 90% gate missed at 64.6%
+C48,computed,derivation,obscure,secondary,1,1,na,identity,post,SURVIVED,1,C48 callout DERIVED NOT TESTED,the re-derivation stands; it is C25's prediction that dies
+C49,computed,instrument,obscure,primary,1,1,na,taxonomy,post,SURVIVED,1,C49 callout Step 0 returns four verdicts because methane on Mars is four observables,instrument output stands
+C50,computed,instrument,obscure,primary,1,1,na,taxonomy,post,SURVIVED,1,C50 callout NO OBSERVABLE TO EXPLAIN fired at step 0(a),fabricated-thruster negative control behaved as pre-registered
+G1,gap,citation_compare,famous,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G1 STANDING: NARROWED,thermo branch closed as a rediscovery; momentum branch survives
+G2,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G2 STANDING: NARROWED,C15 shows the axis is non-constructible
+G3,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G3 STANDING: NARROWED,
+G4,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G4 STANDING: NARROWED,downgraded to a single-review omission
+G5,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G5 STANDING: NARROWED,missing object supplied by C6
+G6,gap,citation_compare,obscure,primary,0,1,na,number,early,SURVIVED,1,gaps/G6 STANDING: LIVE contact surface 0,log 1755 - the weakening is retracted; best-measured gap in the vault
+G7,gap,citation_compare,obscure,primary,0,1,na,taxonomy,early,NARROWED,0,gaps/G7 STANDING: NARROWED,TECDOC-626 citer trace completed 2026-09-05 (log 1353/3440)
+G8,gap,citation_compare,famous,primary,0,1,na,number,early,WITHDRAWN,0,gaps/G8 STANDING: OVERTURNED - do not cite as a gap,absence claim killed by 575 Landauer-neural papers; contact surface restated to 35
+G9,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G9 STANDING: NARROWED,
+G11,gap,citation_compare,obscure,primary,0,1,na,taxonomy,early,NARROWED,0,gaps/G11 STANDING: NARROWED,100x energy error and a source misdescription fixed; withdrawn then restored
+G12,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G12 STANDING: NARROWED,held in strongest form; the 2023 JEB review defers reusability
+G17,gap,citation_compare,obscure,primary,0,1,na,taxonomy,early,NARROWED,0,gaps/G17 STANDING: NARROWED,restored with the correction that a citation is not a follow-up
+G19,gap,citation_compare,obscure,primary,0,0,na,number,early,SURVIVED,1,gaps/G19 STANDING: LIVE contact surface 0,46 works inspected; all 39 Alexander citers are biomechanics
+G20,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,WITHDRAWN,0,gaps/G20 STANDING: OVERTURNED - do not cite as a gap,symmorphosis IS a design-margin formalism; direction inverted
+G21,gap,citation_compare,obscure,primary,0,1,na,taxonomy,early,NARROWED,0,gaps/G21 STANDING: NARROWED,three Vogel quotes traced to a magazine feature not either book (log 1264)
+G22,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,SURVIVED,1,gaps/G22 STANDING: LIVE,the criterion itself is graded REPACKAGED by the novelty audit - AMBIGUOUS
+G23,gap,citation_compare,obscure,primary,0,0,na,taxonomy,early,NARROWED,0,gaps/G23 STANDING: NARROWED,C19 supplied partial numbers that were later withdrawn
+G25,gap,citation_compare,famous,primary,0,1,na,number,early,NARROWED,0,gaps/G25 STANDING: NARROWED,the old zero was a 28.4% coverage artifact; 36 co-citers on the 100% re-run
+G27,gap,citation_compare,famous,primary,0,1,na,number,early,NARROWED,0,gaps/G27 STANDING: NARROWED (was overturned on a string count that tested the wrong pair),a correction of a correction
+G28,gap,citation_compare,famous,primary,0,1,na,number,early,NARROWED,0,gaps/G28 STANDING: NARROWED,identity supplied by C5; two co-citer counts carried from two runs without saying so (log 1769)
+G29,gap,citation_compare,famous,primary,0,1,na,number,post,SURVIVED,1,gaps/G29 STANDING: LIVE,frontmatter zero corrected to 1 in one decade bin (log 2343)
+G30,gap,citation_compare,obscure,primary,0,1,na,number,post,SURVIVED,1,gaps/G30 STANDING: LIVE,a mediating literature found while computing C27 threatens topology disjoint (log 1960)
+G31,gap,citation_compare,obscure,primary,0,0,na,number,post,SURVIVED,1,gaps/G31 STANDING: LIVE contact surface 0,
+G32,gap,citation_compare,obscure,primary,0,1,na,number,post,NARROWED,0,gaps/G32 STANDING: NARROWED topology mediated (fire ecology),log 2561 - the positive control was the counter-example
+G33,gap,citation_compare,obscure,primary,0,0,na,number,post,NARROWED,0,gaps/G33 STANDING: NARROWED,opened already narrowed; one real bridge exists
+G34,gap,citation_compare,obscure,primary,0,1,na,number,post,NARROWED,0,gaps/G34 STANDING: NARROWED; audits/g34-adversarial.md,LOLE is not a first-passage quantity; graded REPACKAGED
+G35,gap,citation_compare,obscure,primary,0,0,na,number,post,SURVIVED,1,gaps/G35 STANDING: LIVE contact surface 0,0 co-citers on 18 of 18 pairings
+G36,gap,citation_compare,famous,primary,0,1,na,number,post,NARROWED,0,gaps/G36 STANDING: NARROWED; audits/g36-adversarial.md,leg 2 withdrawn on sign; T-vs-formation is Verheijen 2009
+G37,gap,citation_compare,obscure,primary,0,0,na,number,post,SURVIVED,1,gaps/G37 STANDING: LIVE contact surface 0,
+Q1,question,catalogue,obscure,none,0,0,na,taxonomy,early,ungraded,0,Q1 callout - nobody has measured it,open question carrying no graded claim
+Q2,question,catalogue,obscure,secondary,0,0,na,number,early,SURVIVED,1,Q2 callout It has happened at least five times in twenty gaps,a rate computed over the vault's own record
+Q3,question,catalogue,obscure,none,0,0,na,taxonomy,early,ungraded,0,Q3 callout the strangest thing found in the whole audit,no graded claim
+Q4,question,derivation,obscure,secondary,0,0,na,taxonomy,early,PRIOR_ART,0,novelty-audit instruments table Q4 LOCATED,a located gap with a discriminating curve fit delivered in C10
+Q5,question,derivation,famous,secondary,0,0,na,taxonomy,early,ungraded,0,Q5 callout the break is named located and has machinery waiting,no graded claim
+Q6,question,catalogue,obscure,none,0,0,na,taxonomy,early,ungraded,0,Q6 callout the tone was downstream of the data model,method note
+Q7,question,catalogue,obscure,primary,0,1,na,taxonomy,early,SURVIVED,1,novelty-audit instruments table Q7 NOVEL,same finding as C16; the one result selection bias cannot touch
+Q8,question,catalogue,obscure,none,0,0,na,taxonomy,early,ungraded,0,Q8 callout an entire population of disagreements never framed as a disagreement,no graded claim
+Q9,question,derivation,obscure,secondary,0,1,na,identity,early,PRIOR_ART,0,novelty-audit instruments table Q9 REPACKAGED (+CORRECTED),inversion of the C8 identity
+Q10,question,catalogue,obscure,primary,0,1,na,taxonomy,early,WITHDRAWN,0,Q10 callout TESTED 2026-09-03 - the strong reading is refuted,C21 was the test

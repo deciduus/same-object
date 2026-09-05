@@ -27,3 +27,4 @@ Thumbs.db
 **/.oc-cache/
 **/.cache/
 vault/_scripts/*_data/
+!vault/_scripts/c51_data/
