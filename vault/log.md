@@ -4088,3 +4088,139 @@ Copied verbatim from `PENDING-log-C42.md` §2 and `PENDING-log-C43.md` §2.
 
 `PENDING-log-C42.md`, `PENDING-log-C43.md`, `PENDING-log-G36ADV.md`, `PENDING-log-G36PROV.md`,
 and this file. The integration pass was not authorised to delete them.
+
+## [2026-09-05] computed | Soil's Ha ledger goes global: 5,611 sites, median Ha = 0.41 — and the US T finding does not generalise
+
+P-001 (Track A) ran C43's join off United States ground. Pre-registered in
+`audits/blind-brief-c44-2026-09-05.md`, sha256
+724ae9034bbc61761dad85b1c32ea32479708f4098e51a76b9e94634e806ab6b, hashed before any site was
+joined to an erosion value.
+
+**What produced the numbers.** OCTOPUS v2.2 WFS `GetFeature`, all four 10-Be layers, globally,
+no bbox (C43 used a CONUS bbox): 5,611 sites in 55 countries with a positive `EBE_MMKYR`. The
+418 `crn_xxl` / `crn_inprep` records all carry `EBE_MMKYR = -9999.99` and contribute nothing.
+Erosion from Borrelli et al. 2017 (`10.1038/s41467-017-02142-7`), continental means printed in
+the article, plus Panagos et al. 2015 Table 1 per-country means for 11 European countries
+(600 sites). `rho_b` = 1300 kg/m3.
+
+**H1 passes:** median `Ha` = 0.4102, bootstrap 95% CI [0.3877, 0.4385], 3,787 of 5,611 below 1,
+p = 1.5e-154; non-US n = 4,447, median 0.4631, p = 7.8e-90. Africa 0.027, Oceania 0.177, South
+America 0.162, North America 0.284, Asia 0.618 — and Europe 3.29, which is an Alpine sampling
+artefact (235 of 841 European sites are Swiss; excluding them gives 1.51).
+
+**H2 was NOT TESTED, as the brief predicted in advance.** No country outside the US publishes a
+per-site tolerable-loss layer; nothing was back-filled from the US result.
+
+**The correction to how C43 should be read.** Against the published national numbers, median
+`T`/`P` is 0.22–1.01 in Europe (Verheijen et al. 2009's proposed 0.3–1.4 t/ha/yr), 4.17–20.88
+in the US (USDA `tfact` 1–5 short ton/ac/yr) and 10.10 globally (Borrelli's generic 10 t/ha/yr
+`T`-value). C43's finding is therefore **local to the USDA convention** and is not a general
+fact about tolerable-loss values: Europe's proposal is calibrated to measured formation where
+the USDA's is 4–21x it. C43 is not wrong and nothing in it is withdrawn; what changes is the
+scope of the claim it supports.
+
+**Two access facts worth keeping.** The Borrelli 25 km GeoTIFF is behind an ESDAC registration
+form ("Registration is requested: Yes") and was not obtained; the paper's Data Availability
+names only the article and its SI, and no SI file carries a country table. So `E` is constant
+within continent for 5,011 of the 5,611 sites, and every per-country `Ha` outside the 11
+Panagos countries varies through `P` alone.
+
+**One unregistered observation to treat as a hypothesis.** Where `E` does vary at country level,
+Spearman rho(`P`, `E`) = +0.706 (n = 600, p = 1.4e-91) — a RUSLE product and 10-Be denudation
+track each other hard, most plausibly because the DEM enters both. The brief named this failure
+mode before the number was seen. It is the opposite sign to C43's rho(`T`, `P`) = -0.18.
+
+
+## 2. Add to `vault/00-index.md`, in the computed-notes list, after the `C43` line
+
+
+- [[C44-soil-ha-world]] — **the soil ledger, worldwide and site-level, and the limit of C43.** P-001 (Track A). Pre-registered (brief sha256 724ae903...) and run on **5,611 OCTOPUS ¹⁰Be sites in 55 countries**, no bbox, joined to Borrelli 2017's erosion rates. **H1 passes:** median `Ha` = `P`/`E` = **0.410** (CI [0.388, 0.439]; 3,787/5,611 below 1, p = 1.5e-154); non-US median 0.463. Negative on five of six continents — Africa 0.027, Oceania 0.177, South America 0.162, North America 0.284, Asia 0.618 — with **Europe 3.29 an Alpine sampling artefact** (1.51 without Switzerland). **H2 NOT TESTED and not back-filled**: no country outside the US publishes a per-site tolerable-loss layer. Its replacement is the finding — median `T`/`P` is **0.22–1.01 in Europe** (Verheijen 2009's proposed 0.3–1.4 t/ha/yr), **4.17–20.88 in the US** (USDA `tfact` 1–5) and **10.10 globally** (Borrelli's generic `T`), so **C43's anti-correlation is local to the USDA convention, not a fact about tolerable-loss values**; Europe's proposal is calibrated where the USDA's is 4–21× measured formation. Land use still beats geography: cropland `Ha` 0.078 against forest 6.19, a factor of 79, versus 23 across continents. Access facts: the Borrelli 25 km GeoTIFF is behind an ESDAC registration form, so `E` is constant within continent for 5,011 sites; and unregistered, ρ(`P`, `E`) = **+0.706** where `E` varies at country level — a RUSLE product and ¹⁰Be denudation share the DEM, the opposite sign to C43's ρ(`T`, `P`) = −0.18
+
+
+## [2026-09-05] simulation | C25's Whittle rule run forward in a 20-patch network: 3 of 5 pre-registered predictions fail, the fast/slow GUD ratio is 1.06 not 1.34, and the value of the index is -0.5%
+
+Programme item P-053, pre-registered against `audits/blind-brief-c45-2026-09-05.md`, sha256
+fbc48359b5215f6a3f2c4f6cefee4ce7a73257c7c8121c33ef8615f0d49714a7, written and hashed before
+`vault/_scripts/c45_whittle_sim.py` existed. Complete graph, N = 20 (10 fast, 10 slow), uniform
+travel tau, dt = 0.01, burn-in 200, 1000 scored time units, 20 seeds, four policies. P1 FAILS:
+the fast/slow giving-up-density ratio under the Whittle rule is 1.0600 +/- 0.0002 against a
+pre-registered 1.30 +/- 0.10. P4 FAILS with the wrong sign: the Whittle policy earns -13.27%
++/- 0.03% against MVT-with-regrowth at the pre-registered calibration, negative in all twelve
+sweep cells (-11.7% to -45.9%), and -0.48% +/- 0.03% when each policy is given its own post-hoc
+rate-optimal threshold. P2 fails on the letter (MVT ratio 0.9975 +/- 0.0002, CI misses 1.000 by
+0.25%, a dt overshoot) and passes on the substance. P3 PASSES: the type-ranking flips across
+transit on 0.119 / 0.274 / 0.337 of departures at tau = 0.5 / 1 / 2, monotone increasing as
+predicted -- C25 section 9 item 2 measured for the first time. P5 PASSES exactly: 100.00%
+destination agreement with fullest-greedy in a homogeneous network at all four r.
+
+What was wrong, and it is a calibration, not the network. C25 section 5 anchors the habitat
+subsidy at nu = lam*GUD_MVT^2 = 0.09; the brief pre-registered nu as the learned long-run intake
+rate, which the fixed point returns as 0.2732. Re-run at C25's own anchor, the single-patch
+table survives the network to 0.8%: GUD_fast = 0.3987 against C25's 0.4019, GUD_slow = 0.3138
+against the small-r expansion's 0.3163, ratio 1.2708 +/- 0.0002 -- inside the brief's band. So
+C25 section 7's third hole ("nu is anchored, not solved") is the whole of the discrepancy, and
+C25's 1.34 must be read as "1.34 at the MVT anchor". Two further results the brief did not ask
+for: at r_fast*tau = 10 the forager visits slow patches ZERO times in every scored run, so the
+between-type contrast P-067 wants is undefined at large regrowth contrast and the usable window
+is r_fast*tau in [0.2, 1]; and "visit the fullest" with no leaving rule is not a policy at all
+-- it earns 0.0098, 3.1% of the MVT rate, with a residence of exactly one dt, which sharpens
+C25 section 5's degeneracy into a statement about the destination half only. Expected effect
+size for P-067 is now 1.27, not 1.34.
+
+
+## 2. For `vault/00-index.md`, in the `## Computed` list
+
+
+- [[C45-whittle-network-sim]] — **P-053: the C25 index run forward as a policy, and 3 of 5 pre-registered predictions fail.** Pre-registered (brief sha256 `fbc48359...`). 20 patches, 10 fast / 10 slow, complete graph, uniform `τ`, 20 seeds. Fast/slow GUD ratio **1.0600 ± 0.0002** against a briefed 1.30 ± 0.10 (**P1 FAIL** — only the sign transfers), and the **value of the index is negative**: −13.27% ± 0.03% against MVT-with-regrowth at the pre-registered calibration, negative in all twelve sweep cells, **−0.48% ± 0.03%** at each policy's own rate-optimal threshold (**P4 FAIL, wrong sign**). The discrepancy is located exactly and it is *not* the network: at C25's own anchor `ν = λ·GUD_MVT² = 0.09` the single-patch table survives to **0.8%** (`GUD_fast` 0.3987 vs 0.4019) and the ratio is **1.2708 ± 0.0002**, inside the band — so C25 §7's "`ν` is anchored, not solved" is the whole of it. **P3 PASS**: type-ranking flips across transit on 0.119 / 0.274 / 0.337 of departures at `τ` = 0.5 / 1 / 2, C25 §9's transit reordering measured. **P5 PASS**: 100.00% destination agreement with fullest-greedy in a homogeneous network — but fullest-greedy alone earns 3.1% of the MVT rate, so the degeneracy is about the *destination* half only. For P-067: expected effect size **1.27**, usable window `r_fast·τ ∈ [0.2, 1]` — at `r_fast·τ = 10` slow patches receive **zero** visits and the contrast is undefined
+
+
+## [2026-09-05] negative control | The reservoir audit CAN return nothing: blind D.1 run on a Betz-calibrated turbine returns NO RESIDUAL at step 11, a third null state distinct from both step-0 halts
+
+First negative control of [[reservoir-audit]] run against a brief archived and hashed before
+the run (`audits/blind-brief-c46-2026-09-05.md`, sha256 5e39ef6f84ed2c6eec4b17c434a6db7717683744
+df1bf099983c36c0ca922308; five-line D.3a template, no verdict word, no D-class label). Case: a
+90 m rotor reporting 2.0 MW at 11 m/s, rho = 1.225, stated C_p = 0.44. All thirteen steps ran,
+none skipped. P_avail = 5.1863 MW (script `vault/_scripts/c46_betz.py`), Betz ceiling 3.0734 MW,
+required C_p = 0.3856 = 0.651 of Betz, A = 0.386 at the swept disc (0.193 at 2x aperture, 0.771
+at 0.5x). Ambient flow SURVIVES with a required property the stated C_p already supplies; the
+gravitational, geomagnetic and thermal candidates are NOT FORMABLE (Delta u = 0 or undefined);
+no second reservoir demanded. The -0.282 MW aerodynamic-to-electrical gap is a drivetrain
+efficiency of 0.876, already in the published loss budget. What was wrong: Part D assumed the
+audit's null output would be a halt. It is not — `NO RESIDUAL` fires at step 11 after a complete
+run, and is a distinct third state from D.2's `NO OBSERVABLE TO EXPLAIN` (step-0(a) halt) and
+D.3's `NO AGREED OBSERVABLE` (step-0(b) halt, C30). Two caveats logged, not buried: the blind is
+single-agent (the brief was written by the agent that ran it — weaker than D.3a's two-agent
+design, stronger than C30's pre-announced halt), and the case is textbook and was recognised on
+sight. New failure mode F9: for a generator, F_req = P_useful/v at step 2 forces Sigma = 1 at
+step 8, so the energy leg is not merely weak (F1) but a tautology that can never fire.
+
+
+## 2. For `vault/00-index.md`, in the `## Computed` list
+
+
+- [[C46-reservoir-audit-negative-control]] — **the audit's first negative control, run blind against a hashed brief.** A Betz-calibrated 90 m turbine: `P_avail = 5.186 MW`, Betz ceiling `3.073 MW`, required `C_p = 0.3856` (0.651 of Betz), `A = 0.386` at the swept disc and `0.193 / 0.771` at 2× / 0.5× aperture. The ambient flow `SURVIVES` with a property the stated `C_p = 0.44` already supplies; **no second reservoir demanded, no residual**. Answers Part D: the audit *can* return nothing — but `NO RESIDUAL` fires at **step 11 after a full run**, a third null state distinct from both step-0 halts. Blind is single-agent and the case is textbook, so the datum is weaker than D.3a asks for. New F9: on generator-form inputs `Σ = 1` identically
+
+
+## 3. Proposed one-paragraph update for `reservoir-audit.md` Part D (PROPOSED ONLY — not applied)
+
+To be inserted in Part D, after D.1's "What would count as a failure" paragraph:
+
+
+**D.1 — RUN, 2026-09-05: [[C46-reservoir-audit-negative-control]].** A 90 m rotor at 11 m/s
+reporting 2.0 MW with a stated `C_p = 0.44`, briefed on the D.3a five-line template archived and
+hashed before dispatch (`audits/blind-brief-c46-2026-09-05.md`). All three D.1 conditions are
+met: `A = 0.386 ≤ 1` at the swept disc and consistent with the accounted value (`0.193 / 0.771`
+at 2× / 0.5× aperture), the step-11 union is non-empty and already occupied by the stated `C_p`,
+and no second reservoir is demanded. **The instrument can return nothing — but not in the shape
+this section predicted.** Part D assumed a null would be a halt; the D.1 null is `NO RESIDUAL`,
+fired at **step 11 after all thirteen steps ran**, and it is a third state distinct from D.2's
+`NO OBSERVABLE TO EXPLAIN` and D.3's `NO AGREED OBSERVABLE`, which are both step-0 refusals to
+audit. It should be named as a state alongside step 10's four. Two things the datum does not
+establish, both stated in C46 §4: the blind was **single-agent** — the brief was written by the
+agent that ran it, which removes pre-announcement but not recognition — and the case is
+**textbook**, so it exercises the arithmetic path rather than the judgement. The next D.1-class
+case must be one the agent cannot recognise as resolved: a published Betz-exceeding
+diffuser-augmented turbine claim (`C_p` normalised to throat rather than exit area) or a
+low-head hydro efficiency claim above its ceiling, briefed by a different agent. C46 also
+returns **F9**: for a generator, `F_req = P_useful/v` at step 2 makes `Σ = 1` at step 8
+identically, so the energy leg is a tautology, not merely weak.
