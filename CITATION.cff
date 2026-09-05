@@ -6,7 +6,7 @@ authors:
   - family-names: Holden
     given-names: Landon Kade
 license: CC-BY-4.0
-repository-code: "https://github.com/deciduus/biomimicry"
+repository-code: "https://github.com/deciduus/same-object"
 abstract: "An open research vault in cross-domain synthesis: citation-intersection gap finding, computed cross-field axes, the Charnov-Gittins identity and its restless-bandit extension, pre-registered predictions, and a full corrections log."
 keywords:
   - literature-based discovery
