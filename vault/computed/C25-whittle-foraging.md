@@ -267,3 +267,48 @@ regrowth term) and leaves Q5's optimality-gap question open. And it does not tou
 no index at all.
 
 Script: `vault/_scripts/c25_whittle.py` (stdlib only; reproduces §2, §4, §5).
+
+## 9. Review response — 2026-09-05
+
+An external review of `papers/charnov-gittins/paper.md` by an unnamed language model
+(`papers/charnov-gittins/reviews/2026-09-05-gemini-flash-3.8.md`) recomputed `W(x)`, `W'(x)`,
+`dGUD/dr` and the §5 table by hand and confirmed all of them. **No number in this note
+changed.** Three scope clarifications were added to the paper and are mirrored here.
+(Numbered §9 rather than §8 because §8 is occupied; the paper's `C25 §8` references are
+unaffected.)
+
+**1. The sparse-activation gap is now named, not just noted.** §7's "no optimality gap is
+stated" stands. What is new is that the gap was searched for and is open. Weber & Weiss 1990
+(`10.2307/3214547`, verified Crossref 2026-09-05) assumes `N → ∞` with the active fraction
+`α = M/N` **fixed**. So do the papers that sharpen it: Hu & Frazier (arXiv:1707.00205) and
+Zhang & Frazier (arXiv:2107.11911, *Beating the Central Limit Theorem*, both verified via the
+arXiv API 2026-09-05) hold the pulled fraction constant, and Gast, Gaujal & Yan
+(`10.1007/s11134-023-09875-x`, verified Crossref 2026-09-05 — the candidate DOI
+`10.1007/s11134-022-09855-2` does **not** resolve) require activations to scale
+proportionally with arms. Brown & Smith (`10.1287/mnsc.2019.3342`, verified Crossref
+2026-09-05) is the nearest usable object: their Lagrangian upper bound is a **finite-`N`**
+bound and is therefore evaluable at `M = 1`, but their optimality claim is again for many
+items, so it would give a numerical certificate for a particular patch network rather than an
+asymptotic guarantee for the index. The single-server queueing literature the reviewer
+pointed at is the closest structural match to `M = 1`, but it proves heavy-traffic limits for
+a system with arrivals, not an `N → ∞` limit over a fixed patch set. **Conclusion: no located
+result covers `M = 1`, `α → 0`.
+Foraging's own regime is uncovered, and this is open work, not an oversight.**
+
+**2. The zero-switching-delay scope is now stated where the index is stated.** `W(x)` in §3 is
+derived with no transit interval. During a transit of length `τ` every passive patch advances
+by `ẋ = r(1−x)`. Because `W` is strictly increasing in `x` and the passive flow is
+order-preserving on `[0,1]`, patches of a **common `r`** keep their rank across transit, so
+within-type priority is untouched. Across types the advance over `τ` is `(1−x)(1−e^{−rτ})`,
+which is increasing in `r`, so arrival rank can invert departure rank. And `τ` enters only
+through the renewal-cycle anchor that fixes `ν`, so a mixed-`r` habitat has **one** `ν` set by
+the whole network, not one per patch type — which is precisely why §5's claim is a relative,
+between-type statement at fixed habitat quality. None of this supplies the missing bound; §7's
+"largest hole" entry is unchanged.
+
+**3. GUD scope.** GUD in §1 and §5 is **Charnov's** quantity: residual density at departure
+under pure rate maximisation. Brown's operational GUD (Brown 1988, `10.1007/BF00395696`,
+verified Crossref 2026-09-05) is the broader `H = C + P + MOC`, adding metabolic and predation
+cost. Those enter this model as shifts in the shadow price `V'(x)`, not as new state. The sign
+result `dGUD/dr > 0` is asserted for the Charnov quantity only. §7 assumption 3 already said
+the model has no predation term; this makes the vocabulary match the assumption.

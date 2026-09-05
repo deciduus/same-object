@@ -173,3 +173,95 @@ the author should decide deliberately between citing and deleting them:
 - `scully2025` is a 2025 Gittins tutorial with 240 occurrences of "Gittins" and zero of
   "foraging", "Charnov" or "marginal value" -- the strongest single piece of
   contemporary negative evidence for the gap, and currently uncited.
+
+## Revision 2026-09-05 (review 1)
+
+Responds to the external model review in
+`reviews/2026-09-05-gemini-flash-3.8.md` (vetted by the orchestrator the same day; the
+reviewer's arithmetic re-check confirmed every number, and its praise is disregarded because
+it had no literature access). **No number, table entry or result was altered, and no
+Limitations item was softened.** Four insertions:
+
+- **A. Sparse-activation limit.** Limitations item 3 and `vault/computed/C25-whittle-foraging.md`
+  now say exactly which asymptotic-optimality regimes exist and that none covers a fixed
+  active set of size `M = 1` with `N → ∞`.
+- **B. Zero switching delay.** A paragraph in Section 3.3, immediately after equation (4),
+  states what a transit of length `τ` does to the index ranking: within-type rank preserved,
+  across-type rank not, one global `ν` for a mixed-`r` network.
+- **C. GUD scope.** Section 3.1 now defines GUD as Charnov's residual density at departure
+  under pure rate maximisation and distinguishes it from Brown's operational
+  `H = C + P + MOC` (@brown1988, added to `refs.bib`).
+- **D. Polish.** The `δ → 0` passage in Section 2.1 names the dominating bound; an
+  Acknowledgements section records the review.
+
+`refs.bib` gained six entries: `brown1988`, `weberweiss1990`, `brownsmith2020` and `gast2023`
+verified against `api.crossref.org/works/{doi}` on 2026-09-05, and `zhangfrazier2021` and
+`hufrazier2017` verified against the arXiv API the same day and cited as preprints (neither
+has a Crossref record or a journal reference). Each carries a `note` recording the provider,
+the fetch date, and what was *not* obtained — no full text was read for any of the six. Two
+candidate identifiers supplied with the review were wrong and are corrected in the `note`
+fields: the DOI `10.1007/s11134-022-09855-2` does not resolve (the Gast, Gaujal & Yan record
+is `10.1007/s11134-023-09875-x`), and Zhang & Frazier's subtitle is *Beating the Central Limit
+Theorem*, not "beating the Lagrangian relaxation".
+
+## Revision 2026-09-05 (review 1)
+
+External review by an unnamed language model, held at
+`reviews/2026-09-05-gemini-flash-3.8.md`. The reviewer had the paper only. It recomputed the
+current-patch index, the habitat-arm index, the discounted MVT limit, `W(x) = λx² − r(1−x)²`,
+`W'(x) > 0`, `dGUD/dr` and Table 1 by hand and confirmed all of them.
+
+**No number, result or Limitations entry changed.** The revision adds scope, and one
+Limitations item was strengthened rather than softened.
+
+| Review point | Where addressed |
+|---|---|
+| A. Asymptotic gap (`α = M/N` fixed vs. foraging's `M = 1`, `α → 0`) | Limitations item 3, rewritten and expanded; `C25-whittle-foraging` §9 item 1 |
+| B. Zero-delay paradox | New paragraph in §3.3 after eq. (4); `C25` §9 item 2 |
+| C. GUD scope (Charnov vs. Brown's `H = C + P + MOC`) | §3.1, after GUD is defined; `C25` §9 item 3 |
+| Polish: dominated convergence at `δ → 0` | §2.1 |
+| Polish: acknowledge the review | New "Acknowledgements" section |
+
+### Does any located result cover `α → 0`?
+
+**No.** This was searched, and the answer is stated in the paper as an open gap rather than
+papered over. Weber & Weiss 1990 assumes `N → ∞` with `α` fixed. Hu & Frazier
+(arXiv:1707.00205) and Zhang & Frazier (arXiv:2107.11911) hold the pulled fraction constant
+in a finite-horizon setting. Gast, Gaujal & Yan (2023) require activations to scale
+proportionally with arms. Brown & Smith (2020) give a Lagrangian upper bound that is
+finite-`N` and therefore evaluable at `M = 1`, but prove optimality only for many items, so
+it yields a numerical certificate for a specific network, not an asymptotic guarantee for the
+index at `α → 0`. Limitations item 3 says so in those terms.
+
+### References added to `refs.bib`
+
+Six entries, appended in a commented block at the end of the file. Every DOI was resolved at
+`api.crossref.org/works/{doi}?mailto=deciduusleaf@gmail.com` on 2026-09-05 and checked
+field-by-field; the two preprints were verified against the arXiv API the same day. No full
+text was obtained for any of the six, and each `note` says so.
+
+| Key | Identifier | Status |
+|---|---|---|
+| `weberweiss1990` | `10.2307/3214547` | verified Crossref — *J. Appl. Probab.* 27(3):637–648, 1990 |
+| `brownsmith2020` | `10.1287/mnsc.2019.3342` | verified Crossref — *Management Science* 66(7):3029–3050, 2020 |
+| `gast2023` | `10.1007/s11134-023-09875-x` | **DOI corrected** — see below |
+| `zhangfrazier2021` | arXiv:2107.11911 | **title corrected** — see below; no Crossref record, cited as a preprint |
+| `hufrazier2017` | arXiv:1707.00205 | verified arXiv API; no Crossref record, cited as a preprint |
+| `brown1988` | `10.1007/BF00395696` | verified Crossref — *Behav. Ecol. Sociobiol.* 22(1):37–47, 1988 |
+
+Two candidate identifiers supplied with the review brief were wrong and were corrected
+against the providers:
+
+- **Gast, Gaujal & Yan.** `10.1007/s11134-022-09855-2` does not resolve (Crossref returns
+  "Resource not found"). The record was relocated by `query.bibliographic` and the correct
+  DOI is `10.1007/s11134-023-09875-x`, *Queueing Systems* 104(1–2):107–150, 2023-05-21.
+- **Zhang & Frazier.** The candidate title *"beating the Lagrangian relaxation"* is not the
+  paper's title. arXiv:2107.11911 is *Restless Bandits with Many Arms: Beating the Central
+  Limit Theorem*.
+
+### Vault
+
+`vault/computed/C25-whittle-foraging.md` gained a section mirroring the three changes. It is
+numbered **§9**, not §8, because §8 ("What it does not settle") already exists; the paper's
+existing `C25 §8` traceability comments are unaffected. A log entry is staged in
+`vault/PENDING-log-REV1.md` for merging into `vault/log.md`.

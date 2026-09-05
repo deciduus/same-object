@@ -122,7 +122,9 @@ $\delta\ge0$. All the discount dependence in the final rule lives in the outside
 
 Passing $\delta\to0$ inside the supremum requires justification. It is cheap here: for
 fixed $s$ the ratio is continuous in $\delta$ at $0$ by dominated convergence provided
-$g'$ is bounded on $[t,t+s]$, and under concavity the maximiser is the same point for all
+$g'$ is bounded on $[t,t+s]$ --- the hypothesis of dominated convergence is met because the
+integrand $e^{-\delta u}g'(u)$ is then bounded on the compact interval $[0,s]$, uniformly in
+$\delta\ge0$, so the constant bound is itself the dominating function --- and under concavity the maximiser is the same point for all
 $\delta$, so the interchange is trivial rather than delicate. It would break for unbounded
 $g'$, and non-concave $g$ loses the shortcut and needs a genuine uniform-integrability
 argument. <!-- C5 §2 -->
@@ -240,7 +242,14 @@ it is the one that can be pushed through.
 ## Model
 
 One patch is an arm; the forager activates one at a time. Normalise $G_{\max}=1$, so the
-state *is* the giving-up density (GUD) at departure. State $x\in[0,1]$; active,
+state *is* the giving-up density (GUD) at departure. **GUD is used here in Charnov's sense:
+the residual resource density in the patch at the moment of departure under pure rate
+maximisation.** This is narrower than the operational quantity of @brown1988, for which the
+harvest rate at departure equals $H = C + P + \mathrm{MOC}$ --- metabolic cost, predation
+cost, and the missed-opportunity cost of not doing something else. In the present model $C$
+and $P$ have no separate term; they would enter as shifts in the shadow price $V'(x)$, which
+is what prices the resource left behind. The sign result $d\mathrm{GUD}/dr>0$ below is stated
+for the Charnov quantity. State $x\in[0,1]$; active,
 $\dot x=-\lambda x$ with reward rate $\lambda x$; passive, $\dot x = r(1-x)$ with reward
 rate $0$; travel $\tau$ per transition; $\delta\to0$. Starting a visit at $x=1$ the active
 dynamics integrate to $g(t)=1-e^{-\lambda t}$, Charnov's concave gain in its standard
@@ -282,6 +291,20 @@ worthless because the patch is capped and cannot bank it. Reading (4): $\lambda 
 the immediate rate $\lambda x$ discounted by the fraction $x$ of it that represents
 bankable resource; $-r(1-x)^{2}$ is the regrowth forgone by occupying the patch instead of
 letting it refill. Both terms push the same way --- stay less. <!-- C25 §3 -->
+
+**What zero switching delay does and does not cost us.** Equation (4) is derived for zero
+switching *delay*: the relaxed single-arm problem has no transit interval. Reinstating travel
+changes the state the forager arrives at, because during a transit of length $\tau$ every
+passive patch advances under $\dot x = r(1-x)$. Three consequences, and no more. (i) Within a
+single patch type, transit does not disturb the priority order: $W$ is strictly increasing in
+$x$ and the passive flow is order-preserving on $[0,1]$, so patches of a common $r$ keep their
+rank across the transit. (ii) Across types with different $r$, rank *can* change during
+transit, because two patches advance by different amounts over the same $\tau$; the ranking at
+departure is therefore not the ranking at arrival, and this is exactly the between-type
+contrast the prediction rests on. (iii) $\tau$ enters only through the renewal-cycle anchor
+that fixes the global subsidy $\nu$ --- so a habitat mixing patch types has **one** $\nu$, set
+by the network as a whole, not one $\nu$ per type. Nothing here supplies the optimality gap
+that a genuine switching-delay analysis would; see Limitations items 2 and 3.
 
 ## The two limits
 
@@ -443,11 +466,30 @@ In the order a referee will reach for them.
    is not the problem Whittle solved, and the $r\tau$ axis of Table 1 is therefore a
    *reporting convention* ($\lambda\tau=1$), not a derived scaling.
 
-3. **No optimality gap is stated.** Whittle indices are optimal only asymptotically, and the
-   Weber--Weiss regime is many arms with a *fixed* active fraction. A single forager among
-   $N$ patches is $N\to\infty$ with active fraction $1/N\to0$, which is not the regime those
-   theorems cover. The honest status of Section 3 is an indexable heuristic with a signed
-   comparative static, not a bounded approximation.
+3. **No optimality gap is stated, and the regime we need is not covered.** Whittle indices
+   are optimal only asymptotically, and the Weber--Weiss regime [@weberweiss1990] is many
+   arms with a *fixed* active fraction $\alpha=M/N$. A single forager among $N$ patches is
+   $M=1$, $N\to\infty$, $\alpha\to0$, which is not the regime that theorem covers. We looked
+   for one that does and did not find it. The many-arm literature that sharpens Weber--Weiss
+   keeps its hypothesis: Hu & Frazier [@hufrazier2017] and Zhang & Frazier
+   [@zhangfrazier2021] work in the finite-horizon version of Whittle's regime with the
+   pulled fraction held constant --- the latter obtaining an $O(1)$ rather than
+   $O(\sqrt{N})$ gap under a non-degeneracy condition --- and Gast, Gaujal & Yan [@gast2023]
+   sharpen the average-reward rate to exponential in $N$ under indexability plus a global
+   attractor, again with activations scaling proportionally to arms. The nearest applicable
+   object is Brown & Smith's Lagrangian upper bound on the optimal value [@brownsmith2020],
+   which is a *finite-$N$* bound and so can be evaluated at $M=1$; but their optimality
+   result is likewise stated for many items, so it would certify a numerical bound for a
+   given patch network, not an asymptotic guarantee for the index at $\alpha\to0$. The
+   single-server queueing literature, where one server does serve many classes
+   [@ninomora2001; @glazebrook2006], is the closest structural match to $M=1$, but its
+   optimality statements are heavy-traffic limits for a system with arrivals, not
+   $N\to\infty$ limits for a fixed set of patches, so they answer a different question. **We
+   therefore name the gap rather than close it: the sparse-activation limit $M=1$,
+   $\alpha\to0$ --- the regime every foraging application is in --- has no Whittle-index
+   performance bound we could locate, and closing it is open work.** The honest status of
+   Section 3 is unchanged: an indexable heuristic with a signed comparative static, not a
+   bounded approximation.
 
 4. **$\nu$ is anchored, not solved.** The equilibrium subsidy is fixed by agreement with MVT
    at $r\to0$ rather than computed from an $N$-patch fixed point. Table 1 is a statement
@@ -475,6 +517,13 @@ vocabulary; a single sentence below the frequency cutoff could still exist), and
 et al. (2026). The claim is "appears unwritten", not "is unwritten".
 
 <!-- C25 §7, §8; C5 §10, §11.4 -->
+
+# Acknowledgements
+
+An external review by an unnamed language model, dated 2026-09-05 and on file in the
+repository at `papers/charnov-gittins/reviews/`, independently recomputed the index, its
+derivative, and Table 1, and confirmed them; its three substantive points are addressed in
+Section 3 and in Limitations.
 
 # Use of AI tools
 

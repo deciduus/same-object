@@ -2118,3 +2118,52 @@ loss.** Three remanufacturing rows left **empty**: the missing input is the mean
 out-of-service time `T`, published nowhere reached. Cat Reman publishes mass with no unit
 denominator; the field's own KPI toolbox (Graham et al. 2015, `10.1186/s13243-015-0019-2`) has
 Lead Time, Cycle Time and salvage rates and forms no ratio. Arithmetic: `_scripts/c31_ha.py`.
+
+## [2026-09-05] review response | External review of the Charnov–Gittins preprint: three scope clarifications, six references added, no number changed
+
+An unnamed external language model reviewed `papers/charnov-gittins/paper.md` with the paper
+only (no vault). It recomputed by hand the current-patch index, the habitat-arm index, the
+discounted MVT limit, `W(x) = λx² − r(1−x)²`, `W'(x) > 0`, `dGUD/dr` and Table 1
+(`r/λ = 1`: GUD 0.5450, `t*` 0.607) and confirmed every one. Review on file at
+`papers/charnov-gittins/reviews/2026-09-05-gemini-flash-3.8.md`.
+
+**No result, number or Limitations entry was withdrawn or softened.** Three scope statements
+were added to the paper and mirrored in [[C25-whittle-foraging]] §9.
+
+1. *Sparse-activation gap, now named as open.* Weber & Weiss 1990 (`10.2307/3214547`) needs a
+   fixed active fraction `α = M/N`; foraging is `M = 1`, `α → 0`. Four candidate covering
+   results were checked and none covers `α → 0`: Hu & Frazier (arXiv:1707.00205) and Zhang &
+   Frazier (arXiv:2107.11911) hold the pulled fraction constant; Gast, Gaujal & Yan
+   (`10.1007/s11134-023-09875-x`) scale activations with arms; Brown & Smith
+   (`10.1287/mnsc.2019.3342`) give a finite-`N` Lagrangian bound evaluable at `M = 1` but
+   prove optimality only in the many-item regime. Single-server queueing results, the closest
+   structural match to `M = 1`, prove heavy-traffic limits for a system with arrivals, which
+   is a different limit. Three further searches ("restless bandit" + "single active arm";
+   "Whittle index" + "one arm at a time"; "polling system" + "Whittle index") returned nothing
+   that drops the fixed-fraction hypothesis. Limitations item 3 now says the gap is open and
+   names it, rather than only noting its absence.
+2. *Zero switching delay.* A paragraph after eq. (4) states that `W` is derived with no
+   transit; that the passive flow over `τ` preserves within-type rank (because `W` is strictly
+   increasing in `x` and the flow is order-preserving) but can reorder patches of differing
+   `r`; and that `τ` enters only through the renewal-cycle anchor, so a mixed-`r` network has
+   one global `ν`.
+3. *GUD scope.* §3.1 now says GUD here is Charnov's residual density at departure under pure
+   rate maximisation, and that Brown's operational `H = C + P + MOC` (Brown 1988,
+   `10.1007/BF00395696`) enters this model as shifts in the shadow price `V'(x)`;
+   `dGUD/dr > 0` is stated for the Charnov quantity.
+
+**Verification, and one DOI corrected.** All four Crossref-held DOIs above were resolved at
+`api.crossref.org/works/{doi}?mailto=deciduusleaf@gmail.com` on 2026-09-05 and checked
+field-by-field. The candidate DOI supplied for Gast, Gaujal & Yan,
+`10.1007/s11134-022-09855-2`, **does not resolve** ("Resource not found"); the record was
+relocated by bibliographic query and the correct DOI is `10.1007/s11134-023-09875-x`,
+*Queueing Systems* 104(1–2):107–150, 2023. The candidate title for Zhang & Frazier,
+*"beating the Lagrangian relaxation"*, is also **wrong**; the arXiv API (2026-09-05) gives
+*Restless Bandits with Many Arms: Beating the Central Limit Theorem*. Both arXiv entries are
+cited as preprints: neither carries a Crossref record or a journal reference. Six entries were
+added to `refs.bib`, each with a `note` recording provider, date and what was not obtained
+(no full text was read for any of the six).
+
+**Polish.** The `δ → 0` passage now names the dominating function explicitly (`e^{−δu}g'(u)`
+is bounded on the compact `[0, s]` uniformly in `δ ≥ 0`, so a constant dominates), and an
+Acknowledgements section records the review.
