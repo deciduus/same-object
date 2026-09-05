@@ -3491,3 +3491,130 @@ not a zero" contract requires. **Where a second opinion was obtainable it agreed
 same DOI on both. Where it was not, this round's numbers rest on one provider, and with OpenAlex
 budget-locked that is a stated limitation of the round, not a silent one. Provider `N` spreads,
 where both answered, ran 4–18% — consistent with the 10–25% band in [[citation-sources]].
+
+## [2026-09-05] computed | C38's setpoint prediction pre-registered and run: partial pass, strong half is a proxy
+
+C38 section 5 predicted (i) reserve margin monotone in torpor depth and (ii) lever-less small
+endotherms paying in mortality rather than in supply-side reserve, and named Ruf & Geiser 2015
+crossed with ring-recovery survival as the test. C40 wrote and sha256-hashed a blind brief
+first (audits/blind-brief-c40-2026-09-05.md, sha256 1e2bc903...db5dff over its first 7811
+bytes) fixing the ordinal predictor, the <100 g / |lat|>=35 deg / resident-only filter, the
+join key, both statistics and the sample-size gates, then fetched outcome data.
+
+Obtained: Ruf & Geiser 2015's per-species Appendix, 214 species with T / BM / Tb_min /
+TMR_min / TMR_rel / TBD_max / LAT, open at PMC4351926 - C38 section 5 recorded this appendix
+as "not obtained", and that gap is now closed. Also AnAge build 14 and PanTHERIA 1.0 WR05.
+
+T1 (torpor class vs published margin, margins cited from C38 not recomputed): rho = +0.6325,
+exact two-sided p = 0.5000, n = 4. Direction as predicted; UNDERPOWERED by the brief's own
+gate (n >= 8 and two classes with n >= 3). The pre-fixed migrant filter removed both
+hummingbird rows, which are C38's largest margins - the filter was fixed before they counted.
+
+T2 (survival): no open compilation of adult annual phi for small mammals exists. AnAge carries
+IMR for 43 of 4645 species and none of the frame. The brief's pre-authorised PROXY (maximum
+longevity) was used, flagged PROXY throughout. 75 species, 25 mass- and latitude-matched
+pairs, 21/24 in the predicted direction, one-sided sign p = 0.00014. Two sensitivities that
+matter more than the headline: drop Chiroptera (bat longevity is bought by flight, not by
+torpor) -> 11/15, p = 0.0592; code torpor by the literal brief-source-1 rule -> 11/18,
+p = 0.240. T2's p-value is a function of the torpor coding, not of the survival data.
+
+T3 (falsifier scan): 0 lever-less species with a published margin > +100%. NOT FALSIFIED, over
+a sample of one - the only lever-less species with a published margin is Sorex araneus.
+
+Blind broken, disclosed: the clade-level torpor coding rule for the 57 species Ruf & Geiser do
+not carry at species level was written with the longevity column already on screen. Script
+_scripts/c40_setpoint.py; --verify-brief rechecks the hash.
+
+
+## 2. Index line inserted into `00-index.md` by this run
+
+
+- [[C40-setpoint-survival-test]] — **C38 §5's setpoint prediction, pre-registered against a
+sha256-hashed brief, comes back a partial pass whose strong half is a proxy.** Torpor class vs
+published margin: Spearman rho = +0.63, exact p = 0.500, n = 4 — direction as predicted,
+UNDERPOWERED by the brief's own gate, and the pre-fixed migrant filter is what cost it the two
+hummingbird rows. Survival: no open compilation of adult annual phi for small mammals exists, so
+the brief's pre-authorised PROXY (AnAge maximum longevity) was used — 75 species, 25 mass- and
+latitude-matched pairs, 21/24 in the predicted direction, one-sided p = 0.00014; drop Chiroptera,
+whose longevity is bought by flight, and it is 11/15, p = 0.059; code torpor by the literal
+source-1 rule and it is 11/18, p = 0.240. Falsifier scan: **0** lever-less species with a
+published margin > +100%, over a sample of one. New asset: Ruf & Geiser 2015's per-species
+Appendix (214 species, TMR_rel / Tb_min / TBD_max / latitude), which C38 said was not obtained,
+is open at PMC4351926
+
+
+(The line as inserted is a single unwrapped line; it is wrapped here for readability.)
+
+## 3. What this run did NOT touch
+
+`C38-reserve-margin-across-species.md`, `C33-lolp-starvation.md`, `G34-lolp-starvation-risk.md`
+and `log.md` are unmodified. C38's rows are cited, never re-derived or re-graded.
+
+
+## [2026-09-05] honest null | The C37 "uncited parent" pattern is not general: 3 of 8, not most
+
+C37 found grid adequacy and bird starvation each rebuilding Cramer-Lundberg ruin theory with
+neither citing it, and asked whether the project's cross-domain gaps are usually two fields
+that both rediscovered an older parent. C41 named a candidate parent for eight confirmed
+same-object pairs and measured all three pairwise citer-set intersections (A x B, A x P,
+B x P) on OpenCitations and Semantic Scholar, 2026-09-05, script _scripts/c41_parents.py.
+
+Result: 2 class-i (both sides meet the parent), 3 class-ii (one side), 3 class-iii (neither -
+the C37 pattern). The hypothesis is NOT supported, and the sample was the most favourable
+one available. What survives is a diagnostic: in 5 of 8 rows the third anchor names WHICH
+side is isolated, which a two-way intersection cannot. Ecology co-cites Kramers 1940 21-23
+times while prognostics does so 0 times; reliability meets Wright 1936 5-6 times while
+adaptive management does not.
+
+Six anchors are invisible to Semantic Scholar (three monograph DOIs, Wald 1945, Kimura 1963
+and Charnov 1976), and Kaplan-Meier 1958 exceeds its paging cap, so rows 1, 2 and 4 are
+single-provider. Lundberg 1903, Cramer 1930, Feller 1968, Erlang 1917, Snell 1952,
+Chow-Robbins-Siegmund 1971, Cox 1962 and Crow 1974 have no usable DOI and were replaced by
+an indexable member of the same literature; Snell's proposed DOI 404s at Crossref.
+
+
+## 2. Proposed line for `00-index.md`, in the computed block
+
+
+- [[C41-uncited-parent-sweep]] — **is C37's uncited-parent pattern general? No — 3 of 8.** Eight confirmed same-object pairs, a named candidate parent theory each, and all three pairwise citer-set intersections on two providers (OpenCitations, Semantic Scholar, 2026-09-05): 2 rows where both sides meet the parent, 3 where one does, **3 double rediscoveries**. The hypothesis that cross-domain gaps are usually two fields that both rediscovered an older formalism is not supported on the project's own most favourable sample. What survives is a diagnostic that fires in 5 of 8 rows: the third anchor names *which* side is isolated — ecology co-cites Kramers 1940 21–23 times against prognostics' 0, reliability meets Wright 1936 5–6 times against adaptive management's 0 — turning a symmetric "gap" into a one-way borrow. Union-floor `E` only; six anchors invisible to Semantic Scholar, so rows 1, 2 and 4 are single-provider
+
+
+## 3. PROPOSED edit to `method/citation-intersection.md` — NOT APPLIED
+
+**The trigger the brief set was not met.** It asked for a mandatory "parent search first" step
+*if most gaps turn out to be class iii*. Three of eight is not most, so the proposal below is
+deliberately weaker: an optional third anchor, justified by its diagnostic value rather than by
+a base rate. **Do not apply it as written without deciding whether an optional step earns a
+place in a method note that is otherwise all mandatory.**
+
+> ### The third anchor: search for the parent
+>
+> A two-way intersection `A × B` answers "do these literatures meet?". It cannot answer "is
+> either of them already inside an older literature that contains the shared object?" — and
+> when a gap is stated as a *shared formalism*, that older literature usually exists and is
+> nameable. Before quoting an `A × B` zero, name the candidate parent theory `P`, find a
+> **citable** anchor for it, and run all three intersections.
+>
+> Four outcomes, each a different claim:
+>
+> | | `A × P` | `B × P` | reading |
+> |---|---|---|---|
+> | **(i)** | > 0 | > 0 | Both fields are already in the parent literature. The gap is the sibling link only, and is smaller than it looks |
+> | **(ii)** | > 0 | 0 | **One-way borrow.** One field stands outside a literature the other is inside. Repair is a one-directional import, not an introduction — see [[one-way-borrowing]] |
+> | **(iii)** | 0 | 0 | **Double rediscovery.** Two fields rebuilt the parent independently. The strongest form of the gap claim, and the rarest |
+> | **(iv)** | — | — | The parent has no usable DOI. Say so; do not report a zero |
+>
+> **Outcome (iv) is common and must be reported, not worked around.** Pre-1960 classics and
+> monographs are badly indexed: [[C41-uncited-parent-sweep]] could not reach Lundberg 1903,
+> Cramér 1930, Feller 1968, Erlang 1917, Snell 1952, Chow–Robbins–Siegmund 1971, Cox 1962 or
+> Crow 1974 at all, and Semantic Scholar holds no record for three monograph DOIs, for Wald
+> 1945, or for Charnov 1976. A substituted anchor is a proxy for the literature, never the
+> parent itself, and the substitution belongs in the note.
+>
+> **Two cautions.** The intersection measures **co-citation, not descent**: `A × P > 0` says
+> the two literatures share readers, not that A cites P. And **the parent is a judgement** —
+> a different `P` can move a row's class, so name the alternatives you rejected.
+>
+> Worked in full: [[C41-uncited-parent-sweep]], on eight pairs. Its headline is a negative —
+> the double-rediscovery outcome (iii) fired in 3 of 8 rows, so this step is a **diagnostic
+> that sharpens a gap's description**, not a filter expected to overturn most gaps.
