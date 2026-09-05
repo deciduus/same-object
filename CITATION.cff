@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this vault or any result in it, please cite it as below."
+title: "Gradient Coupling Inquiry: a cross-domain gap-finding vault"
+type: software
+authors:
+  - family-names: Holden
+    given-names: Landon Kade
+license: CC-BY-4.0
+repository-code: "https://github.com/deciduusleaf/biomimicry"
+abstract: "An open research vault in cross-domain synthesis: citation-intersection gap finding, computed cross-field axes, the Charnov-Gittins identity and its restless-bandit extension, pre-registered predictions, and a full corrections log."
+keywords:
+  - literature-based discovery
+  - citation intersection
+  - marginal value theorem
+  - Gittins index
+  - biomimicry
+  - meta-research

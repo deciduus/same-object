@@ -1,0 +1,27 @@
+{
+  "title": "Gradient Coupling Inquiry: a cross-domain gap-finding vault",
+  "description": "An open research vault in cross-domain synthesis. Method: find places where two fields quantify the same object in different vocabularies and never cross-cite, measured by citation intersection; then build the missing shared object or prove it cannot exist. Includes the identity between Charnov's marginal value theorem and the Gittins index (C5), its restless-bandit extension with a giving-up-density prediction (C25), computed availability and repair-ratio axes for living tissue, a same-class disagreement catalogue with pre-registered predictions, and a full corrections log. Every count names its provider and fetch date.",
+  "creators": [
+    { "name": "Holden, Landon Kade" }
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "access_right": "open",
+  "keywords": [
+    "literature-based discovery",
+    "citation intersection",
+    "optimal foraging",
+    "marginal value theorem",
+    "Gittins index",
+    "restless bandit",
+    "biomimicry",
+    "reliability",
+    "availability",
+    "hormesis",
+    "meta-research",
+    "ecology",
+    "circularity"
+  ],
+  "language": "eng"
+}
