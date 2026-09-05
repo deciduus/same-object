@@ -20,7 +20,7 @@ last-checked: 2026-09-05
 exit: computation
 extends-to: [sustainability, ecology]
 next-step-cost: S
-note: "Power-system adequacy and small-bird winter energetics both compute P(a stored reserve hits zero before a horizon) by backward stochastic dynamic programming, and both read the shadow price off the same value function. Four anchor pairings, intersection 0 in every decade bin, against E floors 166-350; same-side controls 25.2% and 12.8% of the smaller set."
+note: "Power-system adequacy and small-bird winter energetics both compute P(a stored reserve hits zero before a horizon) by backward stochastic dynamic programming, and both read the shadow price off the same value function. Two providers now: OpenCitations, four pairings, 0; Semantic Scholar, a 4x4 grid of decade-spread anchors 1978-2020 against 1987-2017, 0 in all sixteen cells and in every decade bin, 2,713 grid citers against 906 bird citers with not one work in both. Pooled E = 55.5 at a scoped N of 44,299 and 5.55 at 10x, so the zero is quotable across two orders of magnitude of denominator. Caveat: Semantic Scholar corroborates but cannot establish it alone - its power-side positive control fails (thin reference-list coverage), so the calibration rests on OpenCitations (25.2% and 12.8%)."
 ---
 
 # Loss-of-load probability and starvation risk are the same first-passage problem
@@ -34,7 +34,9 @@ note: "Power-system adequacy and small-bird winter energetics both compute P(a s
 > by backward stochastic dynamic programming on a value function over the reserve state; both
 > read a shadow price off the derivative of that value function — **value of lost load** on one
 > side, **marginal fitness value of a unit of fat** on the other. Two quantities matching, not
-> one, and across four anchor pairings the two literatures have never co-cited a single work.
+> one, and across **twenty anchor pairings on two independent citation indexes** — four on
+> OpenCitations, sixteen on Semantic Scholar spanning grid anchors from 1978 to 2020 against bird
+> anchors from 1987 to 2017 — the two literatures have never co-cited a single work.
 
 ## The two vocabularies
 
@@ -63,7 +65,9 @@ The power side's canon: Billinton & Allan, *Reliability Evaluation of Power Syst
 Assessment of Electric Power Systems Using Monte Carlo Methods* (Springer, 1994), DOI
 `10.1007/978-1-4899-1346-3`, Crossref count 1,095. Both fetched 2026-09-05.
 
-## Provenance — re-derived counts, blank keys dropped
+## Provenance — two providers, re-derived counts, blank keys dropped
+
+### Provider 1: OpenCitations
 
 **Provider** OpenCitations, endpoint `https://api.opencitations.net/index/v1/citations/<doi>`.
 **Run 2026-09-05** by `vault/_scripts/c33_lolp.py cites`, which carries its own fetcher rather
@@ -122,6 +126,178 @@ standard citation for the 1-day-in-10-years criterion), and the ecology side use
 risk* and *energy reserves* from Lima 1986 onward. The two names did not drift; they coexisted
 and stayed apart.
 
+---
+
+## Second provider: Semantic Scholar, 4x4 anchor grid
+
+**OpenAlex was attempted first and refused.** `api.openalex.org/works/https://doi.org/10.2307/1939235?mailto=deciduusleaf@gmail.com`,
+2026-09-05, returns HTTP 429 `{"error":"Rate limit exceeded","message":"Insufficient budget …
+Resets at midnight UTC"}`. No OpenAlex number in this note is fetched; the concept-scoped
+`N_universe` the previous revision listed as outstanding is therefore still not available from
+OpenAlex, and the estimate below is a substitute, not that number.
+
+**Provider** Semantic Scholar Graph API, endpoint
+`https://api.semanticscholar.org/graph/v1/paper/DOI:<doi>/citations?fields=externalIds,title,year&limit=1000&offset=…`,
+paginated to exhaustion, ~1.6 s between requests. **Run 2026-09-05** by a standalone fetcher
+written for this leg (not `_scripts/intersect.py`, which was under concurrent repair).
+Enumerated citer counts matched each anchor's own `citationCount` exactly on all eight anchors,
+so no pagination was truncated. Intersections were computed on `paperId` **and** re-computed on
+normalised DOI as a duplicate-record check; the two agree everywhere.
+
+**Anchor set widened to test [[failure-modes]] mode 6 properly.** The previous revision's grid
+side was two 1990s books, so its 1980s bin was structurally empty. Four anchors per side, one
+per decade of first publication:
+
+| | Anchor | DOI | Year | S2 citers |
+|---|---|---|---|---|
+| **G78** | Billinton & Harrington, *Reliability Evaluation in Energy Limited Generating Capacity Studies*, IEEE Trans. PAS | `10.1109/tpas.1978.354711` | 1978 | 74 |
+| **G94** | Billinton & Li, *Reliability Assessment … Monte Carlo Methods* | `10.1007/978-1-4899-1346-3` | 1994 | 1,595 |
+| **G11** | Denholm & Hand, *Grid flexibility and storage required …*, Energy Policy | `10.1016/j.enpol.2011.01.019` | 2011 | 955 |
+| **G20** | *Additional Capacity Value From Synergy of Variable Renewable Energy and Energy Storage*, IEEE Trans. Sust. Energy | `10.1109/tste.2019.2940421` | 2020 | 93 |
+| **B87** | McNamara & Houston, Ecology | `10.2307/1939235` | 1987 | 551 |
+| **B93** | Houston & McNamara, Ornis Scand. | `10.2307/3676736` | 1993 | 260 |
+| **B06** | Brodin, *Theoretical models of adaptive energy management in small wintering birds*, Phil. Trans. R. Soc. B | `10.1098/rstb.2006.1812` | 2006 | 117 |
+| **B17** | Brodin, Nilsson & Nord, *Adaptive temperature regulation in the little bird in winter: predictions from a stochastic dynamic programming model*, Oecologia | `10.1007/s00442-017-3923-3` | 2017 | 44 |
+
+**Billinton & Allan 1996 (`10.1007/978-1-4899-1860-4`) is not in Semantic Scholar** — the DOI
+returns `Paper with id … not found`, 2026-09-05. The OpenCitations table's headline pairing
+therefore has no Semantic Scholar counterpart, and G94 carries the 1990s grid decade here.
+
+### The 4x4 grid: sixteen pairings, sixteen zeros
+
+| **O** | B87 (1987) | B93 (1993) | B06 (2006) | B17 (2017) |
+|---|---|---|---|---|
+| **G78 (1978)** | 0 | 0 | 0 | 0 |
+| **G94 (1994)** | 0 | 0 | 0 | 0 |
+| **G11 (2011)** | 0 | 0 | 0 | 0 |
+| **G20 (2020)** | 0 | 0 | 0 | 0 |
+
+Union of the four grid citer sets **2,713**; union of the four bird citer sets **906**;
+intersection of the two unions **0**. **Not one of 3,619 distinct works cites any grid anchor
+and any bird anchor.** This agrees with the OpenCitations run, which used a partly different
+anchor set and a wholly different citation index.
+
+### Per-decade, both sides populated
+
+Binning every citer by its own publication decade, the 1980s hole in the previous revision is
+now closed: G78 has **19** citers in the 1980s and 11 in the 1990s, so the 1980s bin has a live
+grid side to compare against B87's 34.
+
+| Decade | G78 | G94 | G11 | G20 | B87 | B93 | B06 | B17 | **O, all 16 pairings** |
+|---|---|---|---|---|---|---|---|---|---|
+| 1980s | 19 | 0 | 0 | 0 | 34 | 0 | 0 | 0 | **0** |
+| 1990s | 11 | 23 | 0 | 0 | 119 | 54 | 0 | 0 | **0** |
+| 2000s | 12 | 355 | 0 | 0 | 162 | 82 | 7 | 0 | **0** |
+| 2010s | 28 | 825 | 527 | 0 | 149 | 88 | 72 | 13 | **0** |
+| 2020s | 4 | 385 | 422 | 92 | 82 | 35 | 37 | 31 | **0** |
+| undated | 0 | 7 | 6 | 1 | 5 | 1 | 1 | 0 | **0** |
+
+**The honest window widens from 1994-onwards to 1978-onwards.** Mode 6's objection to the
+previous revision — that the pre-1994 zero was an artifact of anchor vintage, not a measurement
+— no longer applies to the 1980s or 1990s rows.
+
+### Null model at three denominators
+
+`N` was not obtainable from OpenAlex. **Estimated instead from Semantic Scholar's
+`paper/search/bulk` total**, boolean phrase match over title and abstract, `year=1987-2026`,
+fetched 2026-09-05:
+
+```
+paper/search/bulk?query="power system reliability" | "resource adequacy" | "loss of load"
+  | "generating capacity reliability" | "behavioral ecology" | "behavioural ecology"
+  | "energy reserves" | "starvation risk" | "optimal foraging" | "energy homeostasis"
+  &year=1987-2026                                            ->  total = 44,299
+```
+
+(The two halves separately: power terms **7,414**, ecology terms **36,895**.) **This is an
+estimate, not a concept scope.** It is a phrase match on two term-lists this note chose, so it
+inherits every weakness [[failure-modes]] lists for string queries; it is quoted only as a
+denominator, never as a count of anything. It does pass the sanity check that voided the
+[[citation-intersection]] G25 row: `N = 44,299` comfortably exceeds both citer-set unions.
+
+Against the **pooled** measurement (`|A| = 2,713`, `|B| = 906`, `O = 0`):
+
+| `N` | E = 2,713·906/N | O | O/E | verdict |
+|---|---|---|---|---|
+| **3,619 (union floor)** | **679.2** | 0 | **0** | finding, but floor flatters it |
+| **44,299 (S2 bulk estimate)** | **55.5** | 0 | **0** | **finding — `E` far above 1** |
+| 442,990 (10x, sensitivity) | 5.55 | 0 | **0** | **finding — `E > 1`** |
+| 4,429,900 (100x) | 0.55 | 0 | — | *uninformative* |
+
+**The zero survives two orders of magnitude of denominator**, which is the test
+[[citation-intersection]] says G6 only barely passed and G28 failed. That robustness comes from
+pooling: taken singly, only 5 of the 16 cells clear `E > 1` at the scoped `N` (largest
+G94 x B87, `E = 19.8`; smallest G78 x B17, `E = 0.07`). **The load-bearing statistic here is the
+pooled union, not any individual cell**, and the 4x4 grid's value is coverage of the decade
+window, not sixteen independent tests.
+
+### Same-side controls — and one that fails
+
+| | `N_A` | `N_B` | **O** | O as % of smaller set |
+|---|---|---|---|---|
+| ecology: B93 x B06 | 260 | 117 | **25** | **21.4%** |
+| ecology: B06 x B17 | 117 | 44 | **10** | **22.7%** |
+| ecology: B87 x B93 | 551 | 260 | **28** | **10.8%** |
+| ecology: B87 x B06 | 551 | 117 | 4 | 3.4% |
+| ecology: B87 x B17 | 551 | 44 | 2 | 4.5% |
+| ecology: B93 x B17 | 260 | 44 | 1 | 2.3% |
+| power: G94 x G20 | 1,595 | 93 | 3 | 3.2% |
+| power: G94 x G11 | 1,595 | 955 | **1** | **0.1%** |
+| power: G11 x G20 | 955 | 93 | **0** | **0.00%** |
+| power: G78 x G94, G78 x G11, G78 x G20 | 74 | 1,595 / 955 / 93 | **0** | **0.00%** |
+
+**The ecology leg of this instrument is calibrated; the power leg is not.** Four of six power
+controls return zero, including `G11 x G20` — two storage-adequacy papers nine years apart,
+where contact is certain. That is a **positive-control failure**, and under
+[[positive-controls]] it means a Semantic Scholar zero involving a grid anchor cannot be read as
+absence of contact on its own.
+
+**Diagnosed, not assumed.** Twelve of G20's 93 citers were pulled and their reference lists
+inspected: **seven have no reference list in Semantic Scholar at all** (`references` returns
+zero rows), and none of the remaining five records Denholm & Hand 2011. The mechanism is thin
+reference-list coverage of the recent power-engineering corpus, not a genuine disjointness. So:
+
+> **Semantic Scholar corroborates the zero; it does not independently establish it.**
+> OpenCitations is the calibrated instrument here (power x power control **25.2%**, ecology x
+> ecology **12.8%**), and the two-provider claim rests on OpenCitations' controls plus Semantic
+> Scholar's agreement, its properly calibrated ecology leg, and its decade coverage.
+
+### Controls inspected
+
+First five of each nonzero control, newest first — all topically where they should be, so the
+pipeline detects contact when it exists:
+
+- **power G94 x G20 (3):** `10.1109/TIA.2022.3228977` (fast frequency response reserve
+  planning), `10.1109/SyNERGYMED55767.2022.9941435` (*Capacity Value of Pumped-Hydro Energy
+  Storage*), `10.3390/en14165146` (*Battery Energy Storage Contribution to System Adequacy*).
+- **power G94 x G11 (1):** *The Potential of Energy Storage Systems with Respect to Generation
+  Adequacy and Economic Viability* (2013).
+- **ecology B87 x B93 (28):** `10.1007/s10641-021-01176-7`, `10.1111/OIK.03476`,
+  `10.1098/rspb.2015.2443`, `10.1007/s11252-016-0546-0`, `10.1111/1365-2664.12383`.
+- **ecology B93 x B06 (25):** `10.7120/09627286.31.1.013`, `10.1093/BEHECO/ARAA134`,
+  `10.1111/JAV.01766`, and two 2019 records without DOIs.
+- **ecology B06 x B17 (10):** `10.1016/j.jtherbio.2025.104059`, `10.1111/1365-2656.13999`,
+  `10.1096/fj.202201613R`, and two 2022 bioRxiv preprints of the same two papers.
+- **ecology B87 x B06 (4):** `10.1098/rspb.2015.2443`, `10.1890/13-1795.1`,
+  `10.1098/rspb.2009.1000` (*How climate change might influence the starvation-predation risk
+  trade-off response*).
+- **ecology B87 x B17 (2):** `10.1098/rsbl.2019.0211`, `10.1098/rspb.2018.2370` — both torpor
+  and energy-expenditure papers.
+- **ecology B93 x B17 (1):** `10.1016/j.jtbi.2018.05.010`, *Optimal gut size of small birds*.
+
+**Cross-domain hits requiring inspection: none.** All sixteen cells are empty, on `paperId` and
+on DOI.
+
+### One anchor DOI corrected
+
+The 2000s bird anchor is **`10.1098/rstb.2006.1812`**, not `10.1098/rstb.2007.2074`. The latter
+DOI resolves, on both Crossref and Semantic Scholar (2026-09-05), to *Synthetic Turing
+protocells: vesicle self-reproduction through symmetry-breaking instabilities* — an unrelated
+paper. Brodin's *Theoretical models of adaptive energy management in small wintering birds* is
+Phil. Trans. R. Soc. B, issued 2006-04-19, Crossref `is-referenced-by-count` 106, fetched
+2026-09-05.
+
+
 ## Hits inspected
 
 **There are none to inspect on the four cross-domain pairings** — the intersection is empty, so
@@ -169,9 +345,17 @@ from a wintering parid, and fit the same first-passage model to both. That is th
 
 ## What could not be fetched
 
-- **A concept-scoped `N_universe` from OpenAlex.** Not attempted for this note; the OpenAlex leg
-  the scout report asks for (it lost its one probe to HTTP 429) is still outstanding, so every
-  number here is **single-provider**, one instrument short of this project's two-sources standard.
+- **A concept-scoped `N_universe` from OpenAlex.** Attempted 2026-09-05 and refused with
+  `Insufficient budget … Resets at midnight UTC` (HTTP 429), so OpenAlex answered nothing on this
+  run and the `N` above is a Semantic Scholar phrase-match **estimate**, not a concept scope.
+  Re-run the OpenAlex concept query after the budget resets and replace the 44,299 row.
+- **A Semantic Scholar counterpart to Billinton & Allan 1996.** The DOI is absent from that
+  index, so the OpenCitations headline pairing is not reproduced on the second provider; G94
+  stands in for the 1990s grid decade.
+- **A passing power-side positive control on Semantic Scholar.** Four of six return zero and the
+  cause is diagnosed (missing reference lists), but no substitute grid control that *passes* on
+  that provider has been found. Until one is, the second provider's grid-side zeros are
+  corroboration, not independent evidence.
 - **Houston & McNamara 1993 full text.** Paywalled at JSTOR; the DOI, title, journal, volume,
   pages and Crossref citation count were verified, the model's parameter values were not. C33
   therefore takes its bird parameters from an open-access successor model rather than from this

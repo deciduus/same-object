@@ -2812,3 +2812,470 @@ the site serves no data endpoint. Fischer & Lindenmayer 2000's relocation table 
 IUCN reintroduction databases were also not reached; those rows are **empty, not estimated**.
 MIL-HDBK-189's 0.3–0.6 band is marked **UNVERIFIED** — quoted from the reliability-growth
 literature, not read from the handbook.
+
+## [2026-09-05] computed | C37: the LOLP-starvation identity is conditional, not exact - and ruin theory is the uncited parent of both
+
+
+C33 §1 asserted that the storage-constrained loss-of-load recursion and the small-bird
+starvation recursion are "the same dynamic program" and called it exact. C37 states the
+theorem properly and finds five conditions it needs: discrete time, absorbing boundary at 0,
+a reserve cap, additive inflow/outflow, and the objective `P(absorb before T)` with terminal
+condition `Φ(x) = 1{x>0}` under a common discount factor. Under those the two backward
+recursions are the same operator iteration and VoLL and `∂V/∂x` are the same Lagrange
+multiplier on the same reserve constraint; the proof is a three-line finite-horizon backward
+induction. Three of the five conditions fail as each field normally practises it: the grid
+minimises EENS, a *magnitude*, not a probability (coinciding only under constant severity or
+`VoLL → ∞`); the bird's predation cost is a state-dependent killing rate, an interior
+absorption that is not a boundary crossing and has no grid analogue; and a non-indicator
+terminal fitness makes the bird's value function not a probability at all. Grid LOLP is
+shown to be the bird's `S` under a fixed policy (the evaluation half of the same DP), which
+repairs the "no control" objection rather than breaking anything. C33's §1 claim is
+re-scoped, not retracted; none of C33's arithmetic changes.
+
+Second finding, new: **both fields are solving the Cramér–Lundberg ruin problem and neither
+cites it.** OpenCitations, run 2026-09-05 by `vault/_scripts/c37_identity.py cites`, 8 blank
+`citing` records dropped: Asmussen & Albrecher, *Ruin Probabilities* 2nd ed. (DOI
+`10.1142/7431`, N = 515) shares **zero** citers with Billinton & Allan 1996 (N = 2,058),
+with McNamara & Houston 1987 (N = 422) and with Houston & McNamara 1993 (N = 196). The two
+anchor `N` reproduce C33's exactly. Eight web formulations returned no source stating the
+identity; the nearest grid-side approach (Deulkar, Nair & Kulkarni, arXiv:1904.04771, 2019)
+reaches the same object as a Markov-modulated fluid queue with no ruin-theory language.
+Honest limit, stated in C37 §5: the test cannot distinguish "did not know" from "cited
+Feller instead".
+
+## 2. Line for `vault/00-index.md`, computed block, after the `C36-conservation-duane` line
+
+
+- [[C37-lolp-starvation-identity]] — **the LOLP–starvation identity, made precise and then broken in three places.** Under five stated conditions the storage-constrained loss-of-load recursion and the small-bird starvation recursion are the same operator iteration, and VoLL and `∂V/∂x` are the same multiplier on the same reserve constraint. Grid LOLP is the bird's `S` under a fixed policy. But the grid minimises EENS (a magnitude) not a probability, the bird's predation hazard is an interior killing rate with no grid analogue, and a non-indicator terminal fitness makes the bird's value function not a probability — so exact on a restricted pair, structural-only on the pair the fields actually solve. Both are Cramér–Lundberg ruin problems; Asmussen & Albrecher (N = 515) shares 0 citers with all three anchors
+
+
+## [2026-09-05] computed | The parid's 2-4x reserve margin replicates across 8 species and is a
+## demand-side artifact, not a supply-side one
+
+C33 s4 computed a dusk-reserve/overnight-draw margin of +57.1% (typical night) and +31.0% (cold
+night) for a 10-13 g parid from Brodin, Nilsson & Nord 2017, and showed it collapsing to
++10.0%/-8.3% with nocturnal hypothermia removed. It asked whether that 2-4x over the grid's
+15-20% planning reserve margin was a blue-tit artifact.
+
+C38 recomputes the identical division for every other system with published numbers.
+VERDICT: not an artifact, but the headline phrasing was wrong. The biological range is
+-74% to +2400%, three orders wide -- wider than any grid band -- and the sorting variable is
+the demand-side lever, not the taxon.
+
+  lever ENGAGED:  rufous hummingbird torpid +2421%, bat (Hranac medians) +383%, rufous
+                  normothermic +354%, deer mouse warm-acclimated +265%, bat selected roost
+                  +99%, bat mean microclimate +75%, parid +57%
+  NERC 2025 LTRA design band, 15 of 15 assessment areas:  7.0% - 26.3%
+  lever WITHDRAWN or DEGRADED: parid normothermic +10%/-8.3%, cold-acclimated deer mouse
+                  +1.5%, bat in worst available microclimate -2.8%, bat under WNS -27%
+  NO LEVER AT ALL: common shrew -38% to -74% -- Sorex cannot hold a 16 h winter night on
+                  stored energy at any dusk fat load, and forages through it instead
+
+Every animal above the NERC band is exercising a lever; every animal that falls into or below
+the band is the SAME KIND of animal with the lever off. C33's mechanism claim, inferred from one
+species by switching one parameter, replicates with the switch thrown by nature.
+
+Grid rows are VERIFIED-PRIMARY from NERC, 2025 Long-Term Reliability Assessment, "Summary of
+Planning Reserve Margins and Reference Margin Levels by Assessment Area", pp. 175-176, PDF
+fetched from nerc.com 2026-09-05 and text-extracted.
+
+TWO CITATIONS IN THE BRIEF WERE WRONG AND ARE CORRECTED IN C38 s6, both Crossref-verified
+2026-09-05 (mailto=deciduusleaf@gmail.com):
+  - "Shankar 2020 J. Avian Biol., Hummingbirds budget energy flexibly" conflates two papers.
+    "Hummingbirds budget energy flexibly in response to changing resources" is Funct. Ecol.
+    33:1904-1916 (2019), 10.1111/1365-2435.13404. The J. Avian Biol. 51 (2020) paper is
+    "Hummingbird torpor in context", 10.1111/jav.02305.
+  - "Hiebert 1993 Physiol. Zool." is The Auk 110:787-797, 10.2307/4088634.
+Lehikoinen 1987 10.2307/3676769, Humphries 2002 10.1038/nature00828 and Geiser & Ruf 1995
+10.1086/physzool.68.6.30163788 were all verified exactly as the brief gave them.
+
+TWO PUBLISHED SOURCES CONTRADICT THEMSELVES; C38 uses one side and flags both. Eberts 2019
+Table 1 heads its column "kJ" while its own footnote and Results give J (J is correct).
+Ruf & Geiser 2015's Results text ("~40%/~30%/~6%") disagrees with its own Table 2
+(35.3%/18.8%/4.3%); Table 2 is used.
+
+THE LARGEST HOLE, stated in C38 s6: the great-tit/willow-tit leg failed completely. Haftorn
+1992, Lehikoinen 1987, Gosler 1996, both Bednekoff & Houston 1994 papers and Houston & McNamara
+1993 are all paywalled at JSTOR and none was read. The species C33's falsifier is written
+against is the species this replication could not reach. Humphries 2002 is paywalled and
+file-restricted at its green-OA record, so the hibernator rows are built on Haase 2019
+(10.1371/journal.pone.0222311) and Hranac 2021 (10.1002/ece3.7641) instead, named as a
+substitution.
+
+Arithmetic: vault/_scripts/c38_margins.py, no network, every input a transcribed literal.
+G34 and C33 were NOT edited by this leg.
+
+
+## 2. Paste into `vault/00-index.md`, in the `## Computed` block, after the `C33` line
+
+
+- [[C38-reserve-margin-across-species]] — **replication of C33's reserve margin across 8 species: not a blue-tit artifact, but the headline was wrong.** The biological range is −74% to +2400%, three orders wide and wider than any grid band, and the sorting variable is the demand-side lever, not the taxon. Lever engaged: rufous hummingbird +2421% torpid / +354% normothermic, little brown bat +383% (Hranac medians) and +75–99% (Haase), deer mouse +265%, parid +57%. NERC 2025 LTRA design band across all 15 assessment areas: 7.0–26.3%. Lever withdrawn or degraded, all falling into or below that band: parid normothermic +10%/−8.3%, cold-acclimated deer mouse +1.5%, bat in the worst available microclimate −2.8%, bat under white-nose syndrome −27%. No lever at all — the common shrew — −38% to −74%, structurally unable to hold a 16 h winter night. C33's demand-side mechanism replicates with the switch thrown by nature instead of by a parameter. The great-tit leg failed entirely: every gram-level parid dusk/dawn table is paywalled at JSTOR
+
+
+## 3. Reciprocation deliberately NOT done
+
+`G34-lolp-starvation-risk`'s `computed-in:` still lists only `[[C33-lolp-starvation]]`. C38 is a
+replication of C33 §4, not a second closure of G34, and the brief forbade editing G34. If the
+merger judges that C38 should also be an edge on G34, that is a separate decision — make it
+explicitly and log it, do not fold it into this paste.
+
+
+## [2026-09-05] correction | G34: LOLE is not a first-passage quantity; title and thesis corrected
+The gap was titled "...are the same first-passage problem". On the bird side 0 is absorbing and
+P(starve) is a first-passage probability; on the grid side 0 is NOT absorbing — load is shed, the
+shortfall ends, storage recharges — so LOLE = Sum_t P(x(t)<=0)*dt is an expected occupation time
+counting repeated crossings. Those are different functionals of the same process. What the two
+fields share is the state recursion and the shadow price, not the estimand. C33 sec 1's clause
+"only the aggregation differs, and the aggregation is a reporting convention" is withdrawn. The
+error was visible in C33's own sec 5.5 ("terminal vs restorable") and in table B's saturation for
+Ireland, and was not carried into sec 1 or the title. Produced by adversarial review,
+audits/g34-adversarial.md attack 3.
+
+## [2026-09-05] correction | C33: simulated policy is not the paper's optimal policy; daily gain overshoots by 2.3x
+C33 sec 3 computed P(starve) = 8.25e-8 "under the policy the paper reports as optimal under almost
+all conditions — forage intensively every daylight period". Brodin et al. 2017 attaches that
+qualifier to hypothermia alone; on foraging it reports a switch to cautious foraging (behaviour 2,
+alpha = 60 kJ) after noon. The paper states its own outcome: total daily fat gain 0.74 g = 27.4 kJ
+at the model's 37 kJ/g. C33's budget gives 76.80 - 15.0 = 61.8 kJ = 1.67 g, a 2.3x overshoot. The
+five-order-of-magnitude LOLE separation in sec 3 is therefore substantially a policy artifact.
+Source: Europe PMC PMC5596050 full text fetched 2026-09-05.
+
+## [2026-09-05] correction | C33: warming-up cost C_WU omitted; hypothermia lever overstated ~4x
+Brodin Table 2 gives C_WU = "0 or 6 kJ" and the paper reports both treatments (Fig. 3a, dashed vs
+solid). C33's sec 2 parameter table omits C_WU and its 21.0 kJ hypothermic overnight draw is the
+C_WU = 0 branch. Charging 6 kJ gives 27.0 kJ against 30.0 kJ normothermic — the hypothermia lever
+saves 3 kJ, not 9. The paper's own stabilised cycle corroborates ~27.4 kJ (0.74 g/day). The
+demand-side claim in sec 4 falls from a 47-point lever (57% -> 10%) to ~12 points (22% -> 10%).
+The omitted branch was the one that flattered the note.
+
+## [2026-09-05] correction | C33: +57% reserve margin compares an energy ratio against a capacity ratio
+Planning reserve margin is (firm capacity - peak load)/peak load, MW/MW at one annual instant. The
+bird's (x_dusk - R)/R is kJ/kJ over a 16-hour integral. The like-for-like grid quantity is the
+energy margin over the critical period (stored energy entering the net-peak window over the energy
+discharged across it); for 4-hour storage sized to a 4-hour net peak that is ~0-0.25. On the
+paper's own budget the bird's margin is 12/27.4 = +43.8%, so the honest statement is ~0.44 against
+~0-0.25, roughly 2x — and PRM should not be named. Note also that the margin is algebraically just
+x_start / R: the whole sec 4 prediction is one ratio of two model parameters.
+
+## [2026-09-05] method | G34's citation-intersection anchors measure a literature G34's own scope excludes
+All four cross-domain pairings in G34 are anchored on Billinton & Allan 1996 and Billinton & Li
+1994 — classic LOLP, a capacity-outage probability table convolved against a load-duration curve,
+with no integrated state and therefore no reserve. G34's own "What survives" section says the
+comparison must be to storage-constrained adequacy, not to that. The concession was never carried
+into the measurement. The in-scope zero exists and is already measured — Denholm & Hand 2011 x
+Houston & McNamara 1993, N_A 794, N_B 196, intersection 0, audits/scout-06-energy-systems.md
+candidate #3 — but is imported rather than run inside G34 with its own decade bins.
+
+## [2026-09-05] verification | G34's analogy is not prior art; bio-inspired power systems contact is word-level only
+Europe PMC, 12 two-phrase conjunctions plus 3 calibration controls, and 4 WebSearch formulations,
+all 2026-09-05. No source states the reserve-margin/fat or LOLP/starvation identity. The
+prediction that bio-inspired power-systems work would prove to be swarm/metaheuristic is confirmed
+by name: all 8 hits on '"loss of load probability" AND "bird"' are optimisation algorithms named
+after birds (black-winged kite, honey badger); the 3 hits on '"loss of load expectation" AND
+"foraging"' are metaheuristic sizing papers. Grade on the analogy: not REDISCOVERED, not merely
+LOCATED. Instruments were degraded — Semantic Scholar returned HTTP 429 on 12 queries and OpenAlex
+returned an exhausted daily budget — so the C5 sec 11 bar (>=8 formulations, >=2 working indices)
+is NOT met on the engineering side and an IEEE-side sweep is still owed.
+
+## [2026-09-05] method | Europe PMC FULL_TEXT: field prefix silently returns 0 — a fake-zero trap
+The first prior-art pass used FULL_TEXT:"..." AND FULL_TEXT:"..." on
+https://www.ebi.ac.uk/europepmc/webservices/rest/search and returned 0 on all ten queries,
+including FULL_TEXT:"fat reserves" alone, which cannot be zero. The endpoint does not honour that
+field prefix and returns 0 for everything. Bare-quoted phrases work ('"fat reserves"' -> 3,992).
+This is failure-modes mode 1 (a field/punctuation artifact, not a synonym problem) and it would
+have manufactured ten clean confident zeros. Candidate for the homographs/failure-modes register.
+
+## [2026-09-05] correction | C33: the demand-side reading is borrowed grid -> bird, not bird -> grid
+C33 sec 4 calls "the bird buys most of its adequacy on the demand side" the transferable claim.
+Demand response counted as capacity toward resource adequacy is mature grid practice (MISO Demand
+Response 101, 2024; PJM capacity auction; "negawatt" since Lovins 1989). The concept runs grid ->
+bird. What is new is the quantity — no published figure exists for the demand-side share of an
+animal's adequacy margin — and that quantity is currently uncertain by a factor of ~4 (see the
+C_WU entry above).
+
+
+---
+
+## Exact replacement sentences
+
+Reproduced verbatim from `audits/g34-adversarial.md` § *Proposed edits to G34 and C33*. Apply
+there; nothing in this file is a vault edit.
+
+### G34
+
+**H1.** `# Loss-of-load probability and starvation risk are the same first-passage problem`
+→ `# Loss-of-load probability and starvation risk are the same reserve recursion, read out by different functionals`
+
+**Blockquote, first sentence.** Replace `Power-system reliability engineering asks *what is the
+probability that a stored reserve hits zero before the horizon ends, given stochastic income and a
+stochastic draw* and calls the answer **loss-of-load probability**.` with:
+
+> Power-system reliability engineering propagates a stored reserve under stochastic income and a
+> stochastic draw and reports **how much time the reserve spends at or below zero** — loss-of-load
+> probability and its aggregate, loss-of-load expectation. Behavioural ecology propagates the same
+> state under the same drivers and reports **whether an overwintering bird's fat reserve ever
+> reaches zero** — starvation probability. **The state recursion is shared and the shadow price is
+> shared; the estimand is not.** The grid's zero is a reflecting boundary and its statistic is an
+> expected occupation time; the bird's zero is absorbing and its statistic is a first-passage
+> probability.
+
+**Frontmatter `note:`.** Replace with:
+
+> `note: "Power-system adequacy and small-bird winter energetics propagate the same stochastic reserve recursion by backward SDP and read the same shadow price off the value function, but aggregate it into different functionals (occupation time vs first passage). Storage-constrained anchor pairing (Denholm & Hand 2011 x Houston & McNamara 1993) intersection 0 at 794 x 196; classic-LOLP anchors also 0 but are out of the claimed scope; same-side controls 25.2% and 12.8% of the smaller set."`
+
+**After the provenance table.** Insert:
+
+> **Anchor scope, stated against this note's own restriction.** The four Billinton pairings above
+> measure the **classic-LOLP** literature, which *"What survives"* below explicitly places outside
+> this note's scope. They are retained as an out-of-scope control. **The in-scope measurement is
+> the storage-constrained pairing, Denholm & Hand 2011 × Houston & McNamara 1993, `N_A` 794,
+> `N_B` 196, ∩ = 0** (`audits/scout-06-energy-systems.md` candidate #3, OpenCitations 2026-09-05).
+> Until that pairing is re-run inside this note with its own decade bins, the in-scope zero is
+> imported, not measured here.
+
+**End of "What survives".** Append:
+
+> **A second scope restriction, from `audits/g34-adversarial.md`.** Even under storage-constrained
+> scoping, **LOLE is not a first-passage quantity**: unserved load is shed and the reserve
+> recovers, so the grid's zero is not absorbing and LOLE counts repeated crossings. The bird's
+> `P(starve)` is a first-passage probability on an absorbing boundary. **What the two fields share
+> is the state recursion and the shadow price, not the estimand.** The claim is corrected to that,
+> and the word "first-passage" is removed from the grid side throughout.
+
+### C33
+
+**§1.** Replace `Same functional equation, same absorbing boundary, same backward sweep — only the
+aggregation differs, and the aggregation is a reporting convention.` with:
+
+> Same state recursion, same backward sweep — **and there the identity stops.** The bird's zero is
+> absorbing and `P(starve)` is a first-passage probability. **The grid's zero is not absorbing**:
+> load is shed, the shortfall ends, and storage recharges, so `LOLE` is an expected **occupation
+> time** of a non-absorbing process, counting repeated crossings. First-passage probability and
+> expected occupation time are different functionals of the same process and they diverge exactly
+> where the risk is interesting — a system that dips below zero ten times for an hour each has
+> LOLE 10 h and would have died at the first dip. **The aggregation is not a reporting
+> convention; it is the difference between the two estimands.**
+
+**§1, displayed recursion.** `0 absorbing` → `0 absorbing on the bird side only; reflecting on the
+grid side`.
+
+**§2, parameter table.** Add row:
+
+> `| C_WU | extra warming-up cost, hypothermic bird | **0 or 6 kJ** — the paper reports both | Table 2, Eq. 10 |`
+
+**§2, derived budget.** Replace `Overnight draw \`45 × 16/24 × 0.7\` = **21.0 kJ** hypothermic
+(25.2 cold)` with:
+
+> Overnight draw, `C_WU = 0`: `45 × 16/24 × 0.7` = **21.0 kJ** hypothermic (25.2 cold). **With the
+> paper's other treatment, `C_WU = 6 kJ`: 27.0 kJ hypothermic (31.2 cold)** — against 30.0 kJ
+> normothermic, so the hypothermia lever saves **3 kJ, not 9**. **The paper's own stabilised cycle
+> independently puts the overnight draw at ≈27.4 kJ**: it reports a total daily fat gain of
+> **0.74 g**, which at the model's 37 kJ/g is 27.4 kJ, and in a stabilised cycle the night's draw
+> equals the day's gain. **Every number below that uses 21.0 kJ is the low-draw branch, and it is
+> the branch that flatters this note.**
+
+**§3, policy sentence.** Replace `under the policy the paper reports as optimal under almost all
+conditions — forage intensively every daylight period, maximum hypothermia every night` with:
+
+> under **maximum foraging** — forage intensively every daylight period, maximum hypothermia every
+> night. **This is not the paper's optimal policy and the note previously mis-described it as
+> such.** The paper's "under almost all conditions" qualifier attaches to hypothermia alone; on
+> foraging it reports the bird switching to cautious foraging (behaviour 2, α = 60 kJ) after noon
+> once dusk fat is within reach. **The consequence is measurable: this note's budget gives 61.8 kJ
+> (1.67 g) of net daily fat gain against the paper's own reported 0.74 g — a 2.3× overshoot. The
+> `8.25 × 10⁻⁸` is therefore an upper bound on safety, and the five-decade separation in §3 is
+> substantially an artifact of the policy, not a property of the bird.** Re-running under the
+> mixed behaviour-1/behaviour-2 policy is the outstanding fix.
+
+**§3, table B heading.** `### B. Grid criterion → bird units` →
+`### B. Grid criterion → bird units — illustrative only, not a result`, and prepend:
+
+> **This direction converts an expected occupation time into a first-passage probability, and
+> those are different functionals (§1).** The saturation for Ireland is the symptom, not a
+> curiosity. The table is retained to show the scale, and **no claim in this note rests on it.**
+
+**§4, comparator.** Replace `roughly **two to four times** the 15–20% grid convention (ESIG 2024:
+WECC-CAMX PRM ≥ 15%, mainland Spain ≥ 10%)` with:
+
+> **and the grid's planning reserve margin is the wrong comparator for it.** PRM is
+> `(firm capacity − peak load)/peak load`, **MW/MW at a single annual instant**; the bird's ratio
+> is **kJ/kJ over a 16-hour integral**. Both are dimensionless and they are not the same
+> dimensionless number. **The like-for-like quantity is the energy margin over the critical
+> period** — stored energy entering the net-peak window over the energy discharged across it,
+> equivalently residual state of charge at the end of the critical period as a fraction of that
+> period's energy. For the 4-hour storage fleets that dominate current accreditation, sized to a
+> 4-hour net peak, that margin is **≈0–0.25**. On the paper's own budget the bird's margin is
+> `12 / 27.4` = **+43.8%** on a typical night (not +57.1%). **The honest statement is: ≈0.44
+> against ≈0–0.25, roughly 2×** — and PRM should not be named.
+
+**§4, headline claim.** Replace `**The bird meets a far stricter adequacy standard than any grid
+while carrying a supply-side margin that is only modestly larger, because it buys most of its
+adequacy on the demand side.** That is the transferable claim.` with:
+
+> **The demand-side reading is the grid's own, not a transfer from the bird.** Demand response
+> counted as capacity toward resource adequacy is mature grid practice — MISO's *Demand Response
+> 101* (2024), PJM's capacity auction, and "negawatt" as a term since Lovins 1989. **The borrowing
+> here runs grid → bird.** What is new is not the concept but the **quantity**: no published
+> figure exists for the demand-side share of an animal's adequacy margin. **On the low-draw branch
+> that share is large (57% → 10% when hypothermia is removed); on the paper's own budget, with the
+> 6 kJ warming cost charged, it is 22% → 10% — a 12-point lever, not a 47-point one.** The claim
+> is the existence and rough size of the quantity, and its size is currently uncertain by a factor
+> of four.
+
+**§4, falsifier.** Append:
+
+> **The second falsifier is not yet tested even in-model.** The normothermic rows above are a
+> counterfactual inside one parameterisation — `x_dusk` held at its `ε = 30%` optimum with `ε`
+> switched off. A bird that genuinely cannot use hypothermia would **re-optimise `x_dusk` upward**,
+> which is what the DP exists to compute. Re-running Brodin's DP at `ε = 0` and reading the new
+> optimal dusk reserve is a small job and is the minimum before the demand-side mechanism is
+> claimed.
+
+**§5.** Append items 8 and 9:
+
+> 8. **Species label vs parameter source.** The paper labels its animal a non-hoarding parid,
+>    "such as a blue tit", but states that **"the parameter values are taken from data on willow
+>    tits"** and flags that blue tits "may not be as cold-adapted". The willow tit is additionally
+>    **a large-scale hoarder**, and the model deliberately excludes caching. A cache is a second
+>    reserve invisible to a fat-only formalism, so the margins here are a **lower bound** for any
+>    hoarding species — and the grid analogue, off-book contracted firm imports, is exactly what
+>    PRM accounting argues about.
+> 9. **Prior-art instruments were degraded on 2026-09-05.** The adversarial prior-art sweep behind
+>    these corrections ran on **Europe PMC + WebSearch only**: Semantic Scholar returned HTTP 429
+>    on 12 queries and OpenAlex returned an exhausted daily budget. No source states the analogy in
+>    what was reachable, but the C5 §11 bar (≥8 formulations across ≥2 working indices) is **not**
+>    met on the engineering side.
+
+---
+
+## Not proposed, and why
+
+- **No `standing:` change.** The gap survives as a narrowed claim; `live` is still correct and
+  nothing here meets the bar in `failure-modes` for `overturned`.
+- **No `crosses:` change.** `formalism` (rank 4) still holds: the shared object is the state
+  recursion plus the shadow price, which is a formalism-level correspondence. The estimand
+  difference narrows what is shared; it does not drop it to `vocabulary`.
+- **No edit to `vault/_scripts/c33_lolp.py`.** The policy and `C_WU` faults are in the script, but
+  fixing them is a recomputation, not a text edit, and the recomputed numbers should land in C33
+  in one motion rather than as a sequence of partial corrections.
+
+
+## [2026-09-05] verification | G34's zero survives a second index and a 4x4 decade grid - but Semantic Scholar's power-side control fails
+
+
+G34 was single-provider (OpenCitations only), four pairings, both grid anchors 1990s books, no
+scoped `N`. OpenAlex was tried first and refused (HTTP 429, `Insufficient budget … Resets at
+midnight UTC`, 2026-09-05), so Semantic Scholar's Graph API was used instead. Anchors were
+widened to four per side, one per decade: grid 1978 / 1994 / 2011 / 2020, bird 1987 / 1993 /
+2006 / 2017. **All sixteen cross-domain pairings return 0**, on `paperId` and independently on
+normalised DOI. Pooling the anchors: 2,713 distinct grid citers, 906 distinct bird citers, and
+**not one work in both**. The 1980s bin, which the previous revision had to declare
+uninformative because no citer of a 1994 book can predate 1994, is now populated on both sides
+(19 grid citers vs 34 bird citers) and is still zero — so the honest window widens from
+1994-onwards to **1978-onwards** and [[failure-modes]] mode 6 is answered rather than deferred.
+`N_universe` was estimated at **44,299** from Semantic Scholar `paper/search/bulk` (documented
+phrase query, `year=1987-2026`), giving pooled `E = 55.5` and `E = 5.55` at 10x, so the zero is
+a finding across two orders of magnitude of denominator. **The caveat is the load-bearing part:
+four of six Semantic Scholar power-side positive controls return zero**, including two
+storage-adequacy papers nine years apart where contact is certain. Diagnosed by pulling twelve
+citers' reference lists — seven have no reference list in that index at all. So Semantic Scholar
+*corroborates* the zero and calibrates cleanly on the ecology side (10.8-22.7%), but cannot
+establish the grid side alone; the calibration still rests on OpenCitations (25.2% / 12.8%).
+Standing unchanged at `live`, contact surface unchanged at 0.
+
+
+## [2026-09-05] correction | Brodin's wintering-bird energy-management review is 10.1098/rstb.2006.1812, not 10.1098/rstb.2007.2074
+
+
+The DOI `10.1098/rstb.2007.2074` was carried into this leg's brief as Brodin 2007, *Theoretical
+models of adaptive energy management in small wintering birds*. It resolves, on Crossref and on
+Semantic Scholar (both 2026-09-05), to *Synthetic Turing protocells: vesicle self-reproduction
+through symmetry-breaking instabilities* — an unrelated Phil. Trans. B paper. The correct record
+is **`10.1098/rstb.2006.1812`**, Phil. Trans. R. Soc. B, issued 2006-04-19, Crossref
+`is-referenced-by-count` 106, fetched 2026-09-05. Nothing in the vault had yet been built on the
+wrong DOI; it is logged because a plausible-looking DOI that resolves to a real paper in the
+right journal is exactly the failure this project's numbers rule exists to catch.
+
+## 2. Addition for `vault/method/citation-sources.md`
+
+Two provider facts worth recording alongside the existing endpoint traps:
+
+- **OpenAlex is now metered.** Anonymous and `mailto:` requests can return HTTP 429 with
+  `{"error":"Rate limit exceeded","message":"Insufficient budget … Resets at midnight UTC"}`.
+  This is a *budget* exhaustion, not a per-second throttle — retrying with backoff never
+  succeeds. Plan for OpenAlex to be unavailable for a whole session and have a second provider
+  ready.
+- **Semantic Scholar has two rate-limit pools, and `/paper/search` is the strict one.**
+  `/paper/DOI:<doi>`, `/citations` and `/references` sustain roughly 1 request per 1.5 s
+  unauthenticated; `/paper/search` returned 429 through seven exponential backoffs up to 72 s.
+  Use **`/paper/search/bulk`** instead — it accepts boolean phrase syntax (`"a" | "b"`,
+  `"a" + "b"`), respects `year=`, returns an exact `total`, and shares the permissive pool.
+- **Semantic Scholar's reference-list coverage of recent power engineering is thin.** Of twelve
+  citers of a 2020 IEEE capacity-value paper, seven had no reference list at all. Any zero this
+  provider reports on an engineering literature needs its own same-side positive control before
+  it is read as absence. See the worked failure in
+  [[G34-lolp-starvation-risk]]'s provenance block.
+
+## 3. `00-index.md`
+
+No standing change, so no index edit is required. G34 stays `live`, `contact-surface: 0`,
+`evidence: citation-intersection`.
+
+
+## [2026-09-05] method | Citation toolkit: six providers behind one interface, so no single rate limit blocks a round
+## [2026-09-05] correction | Semantic Scholar is NOT "429 unauthenticated" - that reading was a shared-pool spike, not a property
+## [2026-09-05] verification | Scheffer 2009 x Si 2011 = 1 confirmed on a second provider (Semantic Scholar), same hit DOI
+
+
+**Entry 1.** `vault/_scripts/providers/` now holds one stdlib-only adapter per provider behind a
+common `citers(doi) -> set` interface — `opencitations`, `openalex`, `semanticscholar`,
+`europepmc`, `lens` (token-gated), `scopus` (documented stub). `intersect.py` gains
+`--providers=a,b`, `--all` (per-provider table plus a consensus min/max line) and
+`--list-providers`. The default single-provider behaviour, the blank-key filter, `--enrich`,
+`--json` and `--selftest` are unchanged, and `--selftest` reproduces the audit's
+3,934 / 1,783 / **1** exactly. Every adapter **raises** rather than returning an empty set when a
+provider cannot see an anchor, because a failed fetch and a zero intersection are different
+facts and the project has already had to correct one for the other.
+
+**Entry 2.** `citation-sources.md` recorded "Semantic Scholar — 429 unauthenticated" from a
+2026-09-03 burst. Paced at ~1.1 s, Semantic Scholar enumerated 4,605 citer records for Scheffer
+2009 and 2,095 for Si 2011 with no key at all, 2026-09-05. The old row measured a *shared* pool
+under contention and wrote it down as a property of the provider — the same error shape as the
+"OpenAlex budget-locked" claim in three gap notes that had expired by the next probe. The table
+row is corrected and the correction is stated in place rather than the old row being deleted.
+
+**Entry 3.** `audits/07-provenance-rounds3-6.md` re-derived G29's Scheffer × Si intersection of
+**1** from OpenCitations. Semantic Scholar, independently assembled, returns the same
+intersection of 1 and **the same hit DOI** `10.1007/s42524-021-0176-y`, from N_A 3,957 / N_B
+1,891 against OpenCitations' 3,934 / 1,783. Two providers, 1% and 6% apart on N, identical hit.
+
+## 2. Numbers a G34 agent may want
+
+Billinton & Allan 1996 (`10.1007/978-1-4899-1860-4`) × McNamara & Houston 1987
+(`10.2307/1939235`), OpenCitations `api.opencitations.net/index/v1/citations/<doi>`,
+fetched **2026-09-05**:
+
+| | N_A | N_B | ∩ | blanks dropped |
+|---|---|---|---|---|
+| opencitations | 2,058 | 422 | **0** | 1 |
+
+**One provider only.** OpenAlex was budget-exhausted (`retryAfter` 47,052 s); Semantic Scholar
+and Europe PMC both fail to index the Billinton & Allan book DOI. Union floor `N = 2,480` gives
+`E = 350`, so the zero is not trivially explained by a small universe — **but a field-scale `N`
+is still owed** before `O/E` is quotable, per `citation-intersection.md`, and a single-provider
+zero should be re-run against OpenAlex after the daily budget resets at midnight UTC.
+
+**Do not substitute Semantic Scholar's Billinton & Allan.** S2 holds
+`10.1007/978-1-4615-7731-7` — the **1984 first edition**, 3,001 citations — which is a different
+work with a different citer set.
+
+## 3. Not done, deliberately
+
+- **No `00-index.md` link for this file**, per the same convention as `PENDING-log-C37`. Lint
+  reports it as a warning, not an error.
+- **No Lens or Scopus token fabricated.** Both adapters are gated and say what the owner must do.
+- **Scopus/WoS left as a stub.** Both bind entitlement to an institutional IP range, so an
+  adapter written off-campus cannot be tested, and an untested one that swallowed an auth failure
+  into an empty set would write a false zero. The exact citing-works endpoints and env var names
+  are in `vault/_scripts/providers/scopus.py` and in `citation-sources.md`.
+- **No gap or computed note touched.**

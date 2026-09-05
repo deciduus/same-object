@@ -8,6 +8,8 @@ next-step-cost: S
 
 # Loss-of-load expectation and starvation probability, on one axis
 
+> **UNDER REVISION 2026-09-05.** A four-leg deep inquiry ([[C37-lolp-starvation-identity]] theory, [[C38-reserve-margin-across-species]] replication, `audits/g34-adversarial.md`, two-provider provenance in [[G34-lolp-starvation-risk]]) found: LOLE is an expected occupation time, not a first-passage probability; the simulated foraging policy overshoots Brodin 2017's own daily gain 2.3×; the 6 kJ warm-up cost was zeroed; and +57% is an energy ratio compared against a capacity margin. The numbers below are superseded until this note is rewritten.
+
 > **A published blue-tit winter model runs at a starvation probability of `8.2×10⁻⁸` per
 > 100-night winter — an LOLE of `6.6×10⁻⁷` unserved hours per winter, about five orders of
 > magnitude safer than the North American grid's 1-day-in-10-years criterion — and it buys that
