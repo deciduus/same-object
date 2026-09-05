@@ -220,6 +220,18 @@ Small-`r` expansion, from (5) at `r → 0⁺`:
 GUD(r)  ≈  u₀ + [ (1 − u₀)² / (2u₀) ] · (r/λ)   =  0.300 + 0.817·(r/λ)   at u₀ = 0.30
 ```
 
+**Boundary condition, 2026-09-05: the prediction requires *saturating* renewal.**
+[[C48-kadmon-regrowth-test]] re-derives the index under **linear** renewal (`ẋ = c` up to a cap),
+which is what Kadmon (1992) actually measured in *Anchusa*. There the index degenerates:
+`W(x) = −c` on the whole interior `(0, 1)` and `W(1) = λ`, i.e. a **step function** with no
+`x`-dependence off the cap, so Whittle and MVT are **indistinguishable** as policies — and the
+comparative static reverses sign: **`dGUD/dc ≤ 0`**, against `dGUD/dr > 0` here. The sign in (5)
+is therefore a property of saturating renewal, not of restlessness. Two consequences: **Kadmon's
+system cannot test this prediction** (P-068 closes on the negative branch), and **P-088's
+artificial-flower array must implement saturating refill by construction, with a
+linear-refill arm as a negative control** — a null on the linear arm is then a check on the
+apparatus, and a null on the saturating arm is a real falsification.
+
 **The falsifiable statement.** Two patch types in one habitat, matched in `G_max` and `λ`,
 differing only in measured regrowth rate `r`. MVT predicts **equal** giving-up densities (the
 threshold `R*` is a habitat property, not a patch property). The Whittle rule predicts the
@@ -266,8 +278,13 @@ unsuitable as-is: Possingham (1989) *Am. Nat.* 133:42–60, `10.1086/284900` (ve
 **Assumed.**
 
 1. Passive dynamics `ẋ = r(1−x)`. **Kadmon (1992) measured linear renewal** in *Anchusa*,
-   `ẋ = const` up to a cap, not saturating-exponential. The derivation runs the same way with
-   linear renewal but (3) changes; the *sign* of (5) survives, the coefficients do not.
+   `ẋ = const` up to a cap, not saturating-exponential. **Corrected 2026-09-05**: it was written
+   here that "the *sign* of (5) survives, the coefficients do not." It does not.
+   [[C48-kadmon-regrowth-test]] carries out the linear-renewal derivation: `W(x) = −c` on
+   `(0, 1)` and `W(1) = λ`, a **step function**, so the Whittle policy is indistinguishable from
+   MVT, and the comparative static is **`dGUD/dc ≤ 0`** — the opposite sign. **Saturating
+   renewal is a boundary of the prediction, not a convenience**: §5's contrast is testable only
+   in a system whose patches refill saturatingly, which Kadmon's does not.
 2. Active intake proportional to standing crop (`λx`). Handling-time-limited foragers violate
    this.
 3. Deterministic patches, stationary habitat, identical foragers, no learning, no competition,
@@ -277,6 +294,10 @@ unsuitable as-is: Possingham (1989) *Am. Nat.* 133:42–60, `10.1086/284900` (ve
 
 **Not closed.**
 
+- **The renewal form is a boundary, not an assumption to be relaxed.** Under linear renewal the
+  index is a step function and the regrowth effect vanishes or reverses ([[C48-kadmon-regrowth-test]]).
+  Any test of §5 must state the measured renewal form first, and any array built for it must
+  implement saturating refill and carry a linear-refill negative control.
 - **`τ` is outside the Whittle relaxation.** The index (3) is derived for zero switching
   *delay*. Travel is re-inserted only at the level of the renewal cycle and the equilibrium
   subsidy `ν`. A restless bandit with switching delay is not the problem Whittle solved, and

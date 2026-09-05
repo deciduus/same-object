@@ -171,15 +171,23 @@ why the leg-1 computation is the harder of the two and leg 2 was done first.
 > hidden convention this vault uncovered — **it is `T`'s construction.** The ratio below is
 > retained as arithmetic on an established finding.
 >
-> **The residue that is the project's own**, and it is not this section: [[C43-soil-ha-replication]]
-> ran the falsifier below on **1,053 US sites** (OCTOPUS ¹⁰Be denudation joined point-in-polygon to
-> SSURGO `tfact`) and found not only median `T`/`P` = **22.3** [18.9, 25.9] but
-> **Spearman ρ(`T`, `P`) = −0.180, p = 4.5e-9** — across sites `T` runs *the wrong way*, because
-> `T` is assigned on profile depth (an inventory) and depth anti-correlates with formation rate.
-> `tfact` class 1 is calibrated (median ratio 0.93); classes 3–5 run at 24–47×. **That
-> site-level anti-correlation reclassifies `T` from a bad estimate of a rate to not an estimate of
-> a rate, it is nowhere in the prior art above, and it is the one candidate here for a genuinely
-> new empirical claim** — pending its own adversarial pass.
+>
+> **The residue — WITHDRAWN 2026-09-05. There is none.** This paragraph asserted that
+> [[C43-soil-ha-replication]]'s site-level **Spearman ρ(`T`, `P`) = −0.180** was "nowhere in the
+> prior art above" and "the one candidate here for a genuinely new empirical claim". Its own
+> adversarial pass (`audits/c43-adversarial.md`) killed it: the correlation is spatial
+> pseudoreplication plus a basin-gradient confound (0.5° cell medians ρ = −0.041, p = 0.58;
+> cluster bootstrap over 48 source studies 95% CI [−0.341, +0.053]; rank-partial on slope
+> −0.074; the sign **reverses** to +0.237 on low-gradient basins), it fails to replicate on 114
+> independent sites ([[C47-tfact-mechanism-test]]: ρ = +0.090, p = 0.34, 95% CI [−0.095,
+> +0.269]), and the depth-assignment mechanism is Skidmore 1982 / Schertz 1983 / Johnson 1987 /
+> Alexander 1988. The "`tfact` = 1 is calibrated, median ratio 0.93" line falls with it (12.40 on
+> the 7 low-gradient sites of that class). **Stated plainly: the soil thread yields no novel
+> claim.** What it yields is a well-provenanced re-computation — median `T`/`P` ≈ 22 across 1,053
+> US sites — already published in dimensioned form by Montgomery 2007, Stockmann et al. 2014,
+> Evans et al. 2020, Kwang et al. 2023 and, at site level for 14 midwestern prairies, Quarrier et
+> al. 2023. That is worth having; it is not new.
+
 
 **The `T`-value convention sets `Ha ≡ 1`. That is `T`'s definition, not a finding.**
 

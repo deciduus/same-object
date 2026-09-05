@@ -371,17 +371,37 @@ Run on any device reported to produce useful work without carried fuel.
    If the rows span "detected" and "not detected", halt with `NO AGREED OBSERVABLE` (D.3) and do
    not proceed unconditionally. A conditional run downstream of this halt may claim calibration
    against a known enumeration; it may **not** assert its residual specification as real.
+   **(c) Replicability of the observable.** If the observable rests on **one instrument, one
+   team, and no independently published reduction of the same records**, 0(b) cannot be run at
+   all — there is nothing to tabulate. This is not a halt: proceed **conditionally**, and label
+   every downstream row as resting on an `UNREPLICABLE OBSERVABLE`. Added 2026-09-05 from
+   [[C49-mars-methane-audit]], whose only surviving observable (the Gale near-surface seasonal
+   cycle, TLS on Curiosity) has never had an independent reduction published.
    **No `A`, no `Σ`, no candidate enumeration may be written before the table exists.**
+
+   **A case may carry more than one observable, and step 0 then returns more than one state.**
+   C49 is the demonstration: "methane on Mars" is four observables returning
+   `NO OBSERVABLE TO EXPLAIN`, `NO AGREED OBSERVABLE`, `NOT FORMABLE` and
+   `UNREPLICABLE OBSERVABLE` respectively. Run step 0 per observable, not per case.
 
    | Case | Step-0 finding | Verdict |
    |---|---|---|
    | [[C11-flyby-reservoir-audit]] — NEAR flyby | one agreed number across groups: `ΔV∞ = +13.46 ± 0.13 mm/s`, `13.46/0.13 ≈ 100σ`; no reduction reports a null for NEAR | **agreed observable → proceed** |
    | [[C30-venus-phosphine-audit]] — Venus PH₃ | same SOFIA photons → `<0.8 ppb` (Cordiner 2022) and `3 ppb at 5.7σ` (Greaves 2023); same ALMA photons → `20 ppb` then `1–7 ppb`; significance carried by the passband polynomial order | **pipeline-dependent → halt, `NO AGREED OBSERVABLE`** |
-   | D.2 fabricated thruster | one reduction, `F = (0.4 ± 3.0) µN`; central value inside its own error bar | **halt, `NO OBSERVABLE TO EXPLAIN`** |
+   | D.2 fabricated thruster ([[C50-reservoir-audit-d2-control]], run 2026-09-05) | one reduction, `F = (0.4 ± 3.0) µN`, 0.13σ; central value inside its own error bar | **halt, `NO OBSERVABLE TO EXPLAIN`** |
+   | [[C49-mars-methane-audit]] — Mars CH₄, globally mixed background | TGO `< 0.05 ppbv`, an interval containing zero | **halt, `NO OBSERVABLE TO EXPLAIN`** |
+   | [[C49-mars-methane-audit]] — Mars CH₄, ground-based plumes | Mumma 2009's 45 ppbv against Zahnle, Freedman & Catling 2011's re-reduction of the same spectra to a telluric artefact | **halt, `NO AGREED OBSERVABLE`** (F8's second case after Venus) |
+   | [[C49-mars-methane-audit]] — Mars CH₄, Gale seasonal cycle | 0.41 ± 0.16 ppbv, 2.56σ; **one instrument (TLS), one team, no independent reduction ever published** | **`UNREPLICABLE OBSERVABLE` → proceed conditionally, label everything** |
 
 1. **State the observable in units.** Thrust in N, or power in W, with its uncertainty and the
    input power that accompanied it. Per METHOD §3: enter observables, never absences.
    *"Produces 1.2 mN at 1 kW"* is a row. *"Uses an unknown energy source"* is not.
+   **Diagnostic, added 2026-09-05 (C49):** if the enumeration later returns `A ≫ 10⁴` on an
+   *ordinary* candidate, do not report an exclusion — go back to this step. An availability
+   ratio that large is nearly always a **mis-specified observable**, not an excluded reservoir.
+   C49's 2019 21 ppbv spike read as a global quantity demands 2.27e8 t/yr of removal at
+   `A = 1.9e7`; the correct output is that the observable is local and the global reading is
+   `NOT FORMABLE`.
 2. **Compute the required coupling** `F_req` from the observable — for a thruster
    `F_req = m·a`; for a generator `F_req = P_useful / v`.
 3. **Enumerate candidate reservoirs.** Anything the device is in physical contact or field
@@ -422,6 +442,14 @@ Run on any device reported to produce useful work without carried fuel.
    - `NOT FORMABLE` — the candidate names no `Δu`, so no `Σ` exists. A statement about the
      model, not the device;
    - `NOT TESTED` — you did not have the numbers. Say which.
+   - `NOT DISCRIMINATED` — the row's aperture is free, so `A` carries no information about it.
+     See F10; on a mass-budget input every **source** row is of this kind.
+   - **`EXCHANGE REQUIRED`** — the observable is **periodic**, and its amplitude cannot be met by
+     any one-way reservoir: the residual demands transfer in **both** directions at the amplitude
+     rate. Added 2026-09-05 from [[C49-mars-methane-audit]], whose Gale seasonal cycle needs
+     3,820 t/yr in each direction with an effective residence time of 0.944 yr, 318× shorter than
+     photochemistry. `EXCHANGE REQUIRED` is a statement that the surviving specification is
+     **two-signed**, which no `SURVIVES` row can express.
 11. **Write the residual specification, never a verdict.** The output is the union of the
     `SURVIVES` rows' required properties: *"a reservoir of mass flux ≥ X at relative velocity
     ≥ Y, coupling with force Z."* If the union is empty, the output is *"of the reservoirs
@@ -431,7 +459,7 @@ Run on any device reported to produce useful work without carried fuel.
 
 ---
 
-## Part D — negative controls (D.1 RUN 2026-09-05, single-agent blind; D.2 unrun; D.3 has one contaminated datum)
+## Part D — negative controls (D.1 RUN 2026-09-05, single-agent blind; **D.2 RUN 2026-09-05, labelled-synthetic input**; D.3 has one contaminated datum)
 
 Part A is a soft-positive set, Part B a hard-positive set. **There is no input on which this
 instrument has ever returned "nothing here."** Step 11 guarantees an output by construction — if
@@ -440,7 +468,8 @@ specification. An instrument that cannot return a null is not validated, it is o
 
 This section specifies the negative controls and, crucially, **what output would count as
 the instrument correctly returning nothing.** D.1 and D.2 are design only — neither is run here,
-and no number in them is a result. **D.3 is different: it was written after a real run
+and no number in them is a result. **D.2 has since been run** ([[C50-reservoir-audit-d2-control]], 2026-09-05) on a labelled
+synthetic input; see D.4. **D.3 is different: it was written after a real run
 ([[C30-venus-phosphine-audit]], 2026-09-05) surfaced a failure class D.2 did not anticipate, and
 its status is stated honestly in D.3a — the datum exists but is contaminated.**
 
@@ -607,11 +636,27 @@ predicted.** Part D assumed a null would be a halt; the D.1 null is **`NO RESIDU
 audit. **`NO RESIDUAL` is hereby named as an output state alongside step 10's four.** A halt says
 *there is nothing to audit*; `NO RESIDUAL` says *the audit ran and the books balance*.
 
-| Output | Fires at | Case | What it says |
-|---|---|---|---|
-| `NO OBSERVABLE TO EXPLAIN` (D.2) | step 0(a) halt | unrun | the observable is inside its own error bar |
-| `NO AGREED OBSERVABLE` (D.3) | step 0(b) halt | [[C30-venus-phosphine-audit]] | the central value is a function of the pipeline |
-| **`NO RESIDUAL`** (D.1) | **step 11, after a full run** | [[C46-reservoir-audit-negative-control]] | the reservoirs considered supply the coupling; nothing is left over |
+| Output | Fires at | Case | **Ran before firing** | What it says |
+|---|---|---|---|---|
+| `NO OBSERVABLE TO EXPLAIN` (D.2) | step 0(a) halt | [[C50-reservoir-audit-d2-control]] (synthetic) | **nothing** | the observable is inside its own error bar |
+| `NO AGREED OBSERVABLE` (D.3) | step 0(b) halt | [[C30-venus-phosphine-audit]] | **the reductions table only** | the central value is a function of the pipeline |
+| **`NO RESIDUAL`** (D.1) | **step 11, after a full run** | [[C46-reservoir-audit-negative-control]] | **steps 0–10 in full** | the reservoirs considered supply the coupling; nothing is left over |
+
+**D.2 fired at step 0(a) on the first input built for it, with nothing enumerated — but the input
+was labelled synthetic, so it validates the wording of step 0(a), not the instrument's
+judgement.** `F = 0.4 µN` with 1σ = 3.0 µN at 50 W is 0.13σ; no `F_req`, no candidate list, no
+aperture, no `A`, no `Σ`, no residual was written. Brief hashed before dispatch
+(`audits/blind-brief-c50-2026-09-05.md`, sha256
+`fae035f866bf1bbfa4136b6f3dc44c26d57a98743091b69174f451e44ac97ca6`); the blind was single-agent
+again. C50 also settles that **the conditional-run licence belongs to step 0(b) only**, so
+computing the photon-rocket bound `P/c = 0.167 µN` after a 0(a) halt is not permitted.
+**The unlabelled replacement is named in [[C50-reservoir-audit-d2-control]] §4: Tajmar et al.
+2021, `10.1007/s12567-021-00385-1`, briefed by a different agent on its reported thrusts and
+uncertainties alone.** The unlabelled D.1 replacement is the diffuser-augmented (Betz-exceeding)
+turbine named below.
+
+**Three null states are now observed at three distinct steps** — a 0(a) halt, a 0(b) halt, and a
+step-11 `NO RESIDUAL` after a full run — which is the column above.
 
 **What this datum does not establish**, both stated in C46 §4: the blind was **single-agent** —
 the brief was written by the agent that ran it, which removes pre-announcement contamination but
@@ -712,6 +757,21 @@ say so, or state a non-tautological `F_req` — one measured independently of `P
 thrust, reaction force, momentum-deficit in the wake) — and report Σ against that.** Every Part A
 row that used the generator form should be re-read accordingly: its Σ was never a check.
 
+**F10 — on a mass budget the source aperture is free, so only sink rows are reproducible.**
+Found by [[C49-mars-methane-audit]] (2026-09-05). When the input is a **burden and a lifetime**
+rather than a thrust, the sink leg's aperture is **fixed by the observable** — `P_avail` is
+`burden/τ`, and both terms come from the measurement — while a source's aperture is whatever
+area the analyst assigns it. C49's own case: gas-phase photochemistry is `RULED OUT` at
+`A = 319` and survives the 2× row, reproducibly; but UV degradation of meteoritic organics runs
+`A = 0.164` against the background and `A = 52.3` against the seasonal amplitude, and
+serpentinisation microseepage runs `A = 0.025` **only on Oehler & Etiope 2017's own 30,000 km²
+Nili Fossae aperture** — change the aperture and the row changes with it. The same free
+parameter explains C49's one located divergence from Yung et al. 2018: 75,000 t/yr against
+7.36e5 t/yr, a factor of 9.8 that is **entirely** local-vs-global aperture, F3 made checkable.
+**Rule: on a mass-budget input, report source rows as `NOT DISCRIMINATED`, never as `SURVIVES`;
+only sink rows may be quoted as exclusions.** This is F3 sharpened into a per-row verdict rather
+than a caution.
+
 ---
 
 ## Standing
@@ -724,13 +784,21 @@ strongest evidence this procedure works. The EmDrive returns a checkable mass-fl
 specification rather than a verdict. The flyby anomaly returns
 `UNRESOLVED-IN-SOURCES` and a sign-based exclusion of the Pioneer mechanism.
 
-**The procedure is sound enough to point at an unresolved case**, with six conditions: run
+**The procedure is sound enough to point at an unresolved case**, with eight conditions: run
 **step 0 before anything else — significance, and the table of independent reductions of the
 same raw data** (F8, added 2026-09-05); report the **aperture as a named row with `A` at 2x and
 0.5x** (step 5, F3, added 2026-09-05); run the availability leg and not only Σ; **on
 generator-form inputs (`F_req = P_useful/v`) skip the energy leg or supply a non-tautological
-`F_req`, because Σ ≡ 1 there identically** (F9, added 2026-09-05); run METHOD §5 on the
+`F_req`, because Σ ≡ 1 there identically** (F9, added 2026-09-05); **on a
+mass-budget input report source rows as `NOT DISCRIMINATED` and quote only sink rows as
+exclusions** (F10, added 2026-09-05); **treat `A ≫ 10⁴` on an ordinary candidate as a
+mis-specified observable and return to step 1** (added 2026-09-05); run METHOD §5 on the
 measurement first; and prefix every negative with *of the reservoirs considered*.
+
+**Output states, current count.** Step 10 now has six per-candidate states — `RULED OUT`,
+`SURVIVES`, `NOT FORMABLE`, `NOT TESTED`, `NOT DISCRIMINATED`, `EXCHANGE REQUIRED` — plus the
+run-level `NO RESIDUAL` and the three step-0 conditions `NO OBSERVABLE TO EXPLAIN`,
+`NO AGREED OBSERVABLE` and `UNREPLICABLE OBSERVABLE`.
 
 The instrument is a [[positive-controls]] construction applied to physics rather than to
 citation counts — the five Part A rows are the known-closed pairs, and they are what makes the
@@ -738,12 +806,15 @@ Part B results mean anything.
 
 **What that construction is still missing, stated plainly:** [[positive-controls]] is half of a
 control set. Part A is soft-positive, Part B hard-positive, and **there is no negative control** —
-no input on which this audit has been shown to return nothing. Part D specifies three (D.1, D.2, D.3) and **one has now been run against a hashed brief**:
+no input on which this audit has been shown to return nothing. Part D specifies three (D.1, D.2, D.3) and **two have now been run against hashed briefs**:
 [[C46-reservoir-audit-negative-control]] (D.1, 2026-09-05) ran all thirteen steps on a
 Betz-calibrated turbine and returned **`NO RESIDUAL`** unprompted, demanding no second reservoir
 — the first input on which this instrument has been shown to return nothing. It is a **weak**
-yes: the blind was single-agent and the case textbook (D.4). D.2 remains unrun, and D.3's first
-datum ([[C30-venus-phosphine-audit]], 2026-09-05) halted correctly but had the halt
+yes: the blind was single-agent and the case textbook (D.4). D.2 has one labelled-synthetic datum
+([[C50-reservoir-audit-d2-control]], 2026-09-05: a 0(a) halt with nothing enumerated, but the
+brief labelled the case synthetic in its first line, so it tests the wording of step 0(a) rather
+than the instrument's judgement — the unlabelled replacement is Tajmar et al. 2021), and D.3's
+first datum ([[C30-venus-phosphine-audit]], 2026-09-05) halted correctly but had the halt
 pre-announced in its commissioning brief, so it shows the state is reachable, not that the
 instrument reaches it unprompted. Every "validated" claim above should still be read as
 *validated against positives, plus one textbook negative*.

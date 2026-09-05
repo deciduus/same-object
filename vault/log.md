@@ -4631,3 +4631,181 @@ datum tests the wording of step 0(a), not the instrument's judgement; and the bl
 single-agent again. Next case named: Tajmar et al. 2021, doi:10.1007/s12567-021-00385-1
 (Crossref, fetched 2026-09-05), briefed by a different agent on its reported thrusts and
 uncertainties alone.
+
+## [2026-09-05] correction | C43's rho(T,P) = -0.180 withdrawn: spatial pseudoreplication, a slope confound, and a failed replication
+
+**Was.** [[C43-soil-ha-replication]] reported "Spearman rho(`T`, `P`) = -0.180 (p = 4.46e-9)" as a
+pre-registered H2 pass in its strong form — "`T` does not merely overstate formation; across sites
+it runs the wrong way" — and [[C35-soil-ha]] §5 called it "the one candidate here for a genuinely
+new empirical claim".
+
+**Is.** Withdrawn. `audits/c43-adversarial.md` re-analysed C43's own cache
+(`_scripts/c43_data/sites.json`, 1,053 rows, C43's own `spearman`/`median`/`boot_ci`, seed
+20260905): 0.5-degree cell medians n = 189, **rho = -0.041, p = 0.58**; 1-degree n = 100,
+**+0.023**; cluster bootstrap over the 48 source studies, 2,000 draws, **95% CI [-0.341, +0.053]**;
+rank-partial on `SLP_AVE`, **rho(`tfact`,`P` given slope) = -0.074** (from -0.206); and the **sign
+reverses** on low-gradient basins — `SLP_AVE` < 100, **+0.237, p = 0.0014**. The negative lives
+only in `SLP_AVE` >= 300. The largest correlation in the dataset is one C43 never reported,
+**rho(slope, `P`) = +0.610, p = 2.1e-108**. Independently, [[C47-tfact-mechanism-test]] (P-079,
+pre-registered, 114 outcrop sites C43 did not use) returns **rho(`tfact`,`P`) = +0.090, p = 0.34,
+95% CI [-0.095, +0.269]** — C43's -0.206 lies outside it. Two dependent numbers fall with it:
+"`tfact` = 1 is calibrated, median `T`/`P` = 0.93" (12.40 on the 7 low-gradient sites of that
+class) and §3's ratio column, which a full `P`-shuffle already reproduces at +0.255.
+
+**What produced the new numbers.** No new data on the re-analysis leg: three specifications C43
+did not run — spatial aggregation, a cluster bootstrap over source studies, and stratification on
+the `SLP_AVE` field its own cache carried. Fresh data on the replication leg: C47's independent
+sites. H2's honest pre-registered outcome is **"no relation detected"**, not a pass.
+
+**What does not fall.** H1. Median `T`/`P` = **23.98** [12.11, 34.44] over 189 0.5-degree cells,
+90% above 2; study-median 7.89, 83% of 48 studies above 2.
+
+Applied to: C43 (top callout replaced, `## Withdrawal 2026-09-05` added, §3 mechanism paragraphs
+marked withdrawn in place rather than deleted — the data and the join description are kept), C35
+§5, [[novelty-audit]].
+
+## [2026-09-05] correction | "T is assigned on profile depth, not formation" is 44-year-old prior art, and the surviving magnitude is published five times over
+
+**Was.** C43 §3 and C35 §5 presented the depth-based assignment of `T` as this project's own
+mechanism, found in the data.
+
+**Is.** REDISCOVERED. Crossref-verified 2026-09-05 (`api.crossref.org`,
+`mailto=deciduusleaf@gmail.com`): **Skidmore 1982**, *Soil Loss Tolerance*,
+`10.2134/asaspecpub45.c8`, chapter 8 of a volume titled *Determinants of Soil Loss Tolerance*;
+**Schertz 1983**, `10.1080/00224561.1983.12436238`, `is-referenced-by-count` = 45; **Johnson
+1987**, "Soil loss tolerance: fact or myth?", `10.1080/00224561.1987.12456064`, count = 25;
+**Alexander 1988**, `10.1097/00010694-198801000-00005`, count = 61. C47 further finds the rule is
+depth **times a renewability group** (NSSH Part 618 subpart B §618.91), not depth alone — depth
+alone predicts 64.6% of values at 800 random CONUS points. And C43 never fetched a depth field at
+all: its SDA query returns `comppct_r`, `tfact` and `dbthirdbar_r`, so the causal clause was
+asserted and measured nowhere in the note.
+
+The magnitude that survives is published: **Montgomery 2007** (`10.1073/pnas.0611508104`),
+**Stockmann et al. 2014** (`10.1016/j.geoderma.2013.10.007`), **Evans et al. 2020**
+(`10.1088/1748-9326/aba2fd`), **Kwang, Thaler & Larsen 2023** (`10.1029/2022EF003104`), and at
+site level for 14 midwestern prairies **Quarrier et al. 2023** (`10.1130/G50667.1`), which frames
+in-situ 10Be explicitly against the USDA tolerance and argues cosmogenic nuclides should redefine
+it. **The soil thread therefore yields no novel claim** — what it yields is a well-provenanced
+re-computation, and C35 §5 now says so plainly.
+
+**Novelty count unchanged at 3** (C5, C16/Q7, C4c): the withdrawn C43 statistic was carried in
+[[novelty-audit]] as "NEW CANDIDATE, not yet graded NOVEL" and was never counted. Its entry is now
+**WITHDRAWN / REDISCOVERED** and removed from the strongest-genuinely-novel list.
+
+**Prior-art leg limitation, stated.** OpenAlex returned budget-exhausted and Semantic Scholar HTTP
+429 throughout, so the leg is Crossref + Europe PMC + web and does **not** meet the C5 §11 bar.
+
+## [2026-09-05] correction | The EU "by contrast" clause is circular, misattributed, and factually backwards
+
+**Was.** "The EU's proposed tolerable rates sit at 0.2-1.0x measured formation", used as a
+contrast against the USDA and sourced to [[C44-soil-ha-world]] §6's Verheijen 2009 rows.
+
+**Is.** Three independent failures. **(a) Circular.** Verheijen et al. 2009
+(`10.1016/j.earscirev.2009.02.003`, Crossref-verified, `is-referenced-by-count` = 595) *defines*
+its upper limit as equal to soil formation and reads 0.3-1.4 t/ha/yr off a review of European
+formation rates, so dividing it by a formation rate recovers its own construction — it is a
+**positive control on the pipeline**, and §6 now heads those rows that way. **(b)
+Misattributed.** It is a review's recommendation, adopted nowhere. The EU's actual proposal,
+COM(2023)416 Annex I, was "<= 2 t ha-1 y-1", and the adopted **Directive (EU) 2025/2360** (OJ L,
+26.11.2025, ELI `data.europa.eu/eli/dir/2025/2360/oj`, in force 16 Dec 2025) **deleted it**:
+erosion moved to Annex I Part B, "established at Member State level", under a column headed
+"non-binding sustainable target values". **As of 2026 the EU has no operative numeric tolerable
+soil loss value.** **(c) Backwards.** Through C44's own pipeline (`c44_data/sites.json`,
+rho_b = 1300 kg/m3) against the 89 German OCTOPUS sites (median `P` = 0.0443 mm/yr): EU-proposed
+2 t/ha/yr gives `T`/`P` = **3.47**; Swiss VBBo 2 and 4 give **3.47** and **6.94**; Lower Saxony's
+operative 13 t/ha/yr harmful-change trigger gives **22.56**, against C43's US headline of 22.3.
+And **Switzerland's VBBo (SR 814.12) Annex 3, the one operative European tolerable-erosion table,
+assigns its value by rootable soil depth** (2 t/ha/yr to 70 cm, 4 above) — the very rule the
+withdrawn sentence presented as the USDA's distinguishing defect.
+
+**What produced the new numbers.** EUR-Lex and the COM(2023)416 annexes PDF read 2026-09-05; VBBo
+Annex 3 and BBodSchV 2023 §9 / DIN 19708 located the same day; the `T`/`P` column computed from
+C44's existing cache. **C44's finding restated correctly:** numbers *defined from* soil formation
+match soil formation; numbers not so defined — USDA, EU-proposed, Swiss, German — sit at **3-23x**
+measured rates, on both continents. It is not a US-versus-Europe contrast. C44 §4's `rho = +0.71`
+between country-level RUSLE erosion and 10Be denudation is recorded as the **DEM artefact the
+brief predicted before the number was seen**, and its former reading as "the exact opposite of
+C43's sign" is withdrawn with C43's sign.
+
+## [2026-09-05] method | Cluster-bootstrap and spatial declustering added to the depth-gate checklist for any site-level join
+
+C43 is the first note in this vault to compute an inferential p on thousands of geographic points
+drawn from a compilation of other people's field campaigns, and its p = 4.5e-9 was wrong by
+roughly eight orders of magnitude for one reason: **the 1,053 sites are not 1,053 independent
+draws.** Five source studies supply 29% of them; sites within a study share region, lithology,
+relief and often the same SSURGO map units.
+
+**Rule adopted.** Any future site-level join must, before quoting a p-value, report (a) the number
+of independent source studies or spatial clusters, (b) the statistic recomputed on cluster
+medians, and (c) a cluster bootstrap CI — and must fix the declustering unit **in the
+pre-registration**, because on C43 that choice moves rho from -0.18 to +0.02. **Second rule.**
+When a compilation carries a topographic field (`SLP_AVE`, relief, elevation), its correlation
+with the outcome must be reported alongside the correlation of interest: C43 carried `SLP_AVE`,
+never reported it, and it was both the largest correlation in the dataset (+0.610 with `P`) and
+the confound that killed the finding. Companion to [[failure-modes]], which covers the ways a
+measured **zero** can be fake; this is the way a measured **nonzero** can be fake.
+
+## [2026-09-05] method | Four additions to the reservoir audit from C49, and D.2's first datum from C50
+
+[[reservoir-audit]] gained four things C49 proposed and one Part D revision C50 proposed; both
+were staged as proposals and are now written into the method note.
+
+From [[C49-mars-methane-audit]] (P-089): **(1) F10** — on a mass-budget input the **source**
+aperture is free while the **sink** aperture is fixed by the observable (`P_avail` = burden/tau),
+so source rows carry no information and are reported **`NOT DISCRIMINATED`**, never `SURVIVES`;
+only sink rows are quotable as exclusions. C49's own case: photochemistry `RULED OUT` at
+`A` = 319 reproducibly, against source rows running `A` = 0.164 to 52.3 depending on the aperture
+chosen, and a factor-9.8 divergence from Yung et al. 2018 that is **entirely** local-vs-global
+aperture. **(2) `EXCHANGE REQUIRED`**, a sixth step-10 state, for a **periodic** observable whose
+amplitude no one-way reservoir can meet — C49's Gale seasonal cycle needs 3,820 t/yr in each
+direction at tau_eff = 0.944 yr, 318x shorter than photochemistry. **(3) `UNREPLICABLE
+OBSERVABLE`**, a fourth step-0 condition: one instrument, one team, no independent reduction ever
+published, so 0(b) cannot be run at all — proceed **conditionally** and label everything. **(4)**
+a step-1 diagnostic: **`A` >> 1e4 on an ordinary candidate reports a mis-specified observable, not
+an excluded reservoir** (C49's global reading of the 2019 spike, `A` = 1.9e7). Step 0 also now
+runs **per observable, not per case**: C49's four observables return four different states.
+
+From [[C50-reservoir-audit-d2-control]] (P-093): **D.2 is run**, at step 0(a), on
+`F = (0.4 +/- 3.0) uN` at 50 W — 0.13 sigma — with **nothing** enumerated. Part D's D.4 table
+gains a **"ran before firing"** column with the three values *nothing* / *the reductions table
+only* / *steps 0-10 in full*, which is what now distinguishes the three null states. The datum is
+weak by construction: the brief labelled the case synthetic in its first line, so it validates the
+wording of step 0(a), not the instrument's judgement, and the blind was single-agent again. Also
+settled: the conditional-run licence belongs to **step 0(b) only**, so computing `P/c` = 0.167 uN
+after a 0(a) halt is a temptation, not an output. **Next unlabelled cases named:** Tajmar et al.
+2021 (`10.1007/s12567-021-00385-1`) for D.2, briefed by a different agent on its reported thrusts
+and uncertainties alone; a Betz-exceeding diffuser-augmented turbine for D.1. Standing count
+updated: step 10 now has six per-candidate states, plus `NO RESIDUAL` and three step-0 conditions,
+and the procedure carries eight conditions rather than six.
+
+## [2026-09-05] correction | C25's regrowth prediction is specific to saturating renewal; under linear renewal the index is a step function and the sign reverses
+
+**Was.** [[C25-whittle-foraging]] §7 assumption 1 said that although Kadmon (1992) measured
+**linear** renewal in *Anchusa*, "the derivation runs the same way with linear renewal but (3)
+changes; the *sign* of (5) survives, the coefficients do not."
+
+**Is.** It does not survive. [[C48-kadmon-regrowth-test]] carries the derivation out: under
+`x_dot = c` up to a cap the Whittle index is **`W(x) = -c` on the interior (0,1) with
+`W(1) = lambda`** — a **step function** with no `x`-dependence off the cap, so the Whittle policy
+and MVT are **indistinguishable** as policies — and the comparative static is **`dGUD/dc <= 0`**,
+the opposite sign to §5's `dGUD/dr > 0`.
+
+**Consequences.** (a) **Kadmon 1992 cannot test the prediction**, which closes P-068 on its
+negative branch, the branch the programme row named in advance. (b) **P-088 is promoted** and its
+specification tightens: the artificial-flower array must implement **saturating** refill by
+construction, and must carry a **linear-refill negative-control arm** — a null on the linear arm
+checks the apparatus, a null on the saturating arm falsifies the transfer. (c) The saturating form
+is now stated as a **boundary of the prediction** in C25 §5 and §7, and as a Limitations item in
+`papers/charnov-gittins/paper.md`: *"The prediction is specific to saturating patch renewal; under
+linear renewal the Whittle index degenerates to a step function and the regrowth effect vanishes
+or reverses (vault C48). The Kadmon 1992 system, which measured linear renewal, therefore cannot
+test it; a controlled-refill array can."*
+
+## [2026-09-05] method | Seven programme items closed and their outcomes recorded
+
+[[program]] gains a `## Done 2026-09-05` block: **P-001** (C44, world ledger, §6 corrected),
+**P-053** (C45, ordering survives, magnitude calibration-dependent, optimality gap negative),
+**P-068** (done on the negative branch, P-088 promoted), **P-079** (done, H2/H3 fail, C43
+withdrawn), **P-089** (done, C49, four method returns), **P-092** (done, C46, `NO RESIDUAL`, F9),
+**P-093** (done, C50, D.2 fires). Two of the seven closed by **failing**, which is the point of
+having written the minus branch into the row before running it.

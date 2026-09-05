@@ -261,3 +261,22 @@ exclusion the instrument has published is uncontrolled. Two hours.
 | Q10's strong reading | Tested and refuted: objects do not concentrate, Hill N2 ≈ 9 of 11. What survives is a claim about the toolkit, not about knowledge | [[C21-rediscovery-clustering]] |
 | The disclosure ledger as a research thread | Witness-referent confirmed 0/9, the intersection cell is empty, and all 11 witnesses are American and US-program-adjacent, so the corpus has no cross-national independence. Keep it as a worked example of evidence-lane discipline; P-046 is the cheap exception | [[C22-ledger-faceting]] |
 | Layer-1 gap opening as the default activity | The depth gate: Layer 2 is broad but shallow — ~20 gaps touched, almost every one built, verified, parked. Depth on one thread, not more gaps | [[strategy]] |
+
+---
+
+## Done 2026-09-05
+
+Seven items closed the same day. Outcome stated, not activity; a negative branch is a closure.
+
+| ID | Status | Outcome |
+|---|---|---|
+| P-001 | **done** | [[C44-soil-ha-world]]: 5,611 sites, 55 countries, median `Ha` = 0.410 [0.388, 0.439], negative on five of six continents. H2 not posable — no non-US per-site `T` layer exists. Its §6 reading was **corrected 2026-09-05**: Verheijen is a positive control by construction, Directive (EU) 2025/2360 deleted the EU threshold, Germany's operative 13 t/ha/yr gives `T`/`P` = 22.6 and Switzerland's VBBo assigns `T` by rootable depth — so the 3–23× overstatement is not a US peculiarity |
+| P-053 | **done** | [[C45-whittle-network-sim]]: the GUD ordering survives in a 20-patch network but the magnitude is calibration-dependent (1.27× at the MVT anchor, 1.06× at the learned ν), and the optimality gap at `M` = 1 is **negative** — −13.3% at the pre-registered ν, −0.5% with each policy at its own rate-optimal threshold, in every sweep cell |
+| P-068 | **done — negative branch** | [[C48-kadmon-regrowth-test]]: under Kadmon's *measured linear* renewal `W(x) = −c` on (0,1) and `W(1) = λ` — a step function, so Whittle and MVT are indistinguishable — and `dGUD/dc ≤ 0`, the opposite sign. Kadmon 1992 **cannot** test the prediction. **P-088 promoted**, and its array must implement saturating refill with a linear-refill negative-control arm |
+| P-079 | **done — H2/H3 fail** | [[C47-tfact-mechanism-test]]: pre-registered, 114 independent outcrop sites. ρ(`tfact`, `P`) = **+0.090**, p = 0.34, 95% CI [−0.095, +0.269] — C43's −0.206 lies outside it. The NSSH 618.91 rule is **depth × a renewability group**, not depth alone (depth alone predicts 64.6% of values). With `audits/c43-adversarial.md`, C43's ρ(`T`,`P`) = −0.180 is **withdrawn**; the soil thread's novel claim is gone and what survives is median `T`/`P` ≈ 22, already published |
+| P-089 | **done** | [[C49-mars-methane-audit]]: "methane on Mars" is four observables returning four step-0 states. Only the Gale seasonal cycle survives, conditionally, on a condition Part C had no row for. Gas-phase photochemistry `RULED OUT` at `A` = 319; the residual is an `EXCHANGE REQUIRED` surface reservoir moving ≥ 3,820 t/yr in **each** direction, τ_eff = 0.944 yr. Returned F10, the `EXCHANGE REQUIRED` state, the `UNREPLICABLE OBSERVABLE` step-0 condition and the `A ≫ 10⁴` diagnostic — all four now in [[reservoir-audit]] |
+| P-092 | **done** | [[C46-reservoir-audit-negative-control]]: D.1 ran all thirteen steps on a Betz-calibrated turbine and returned **`NO RESIDUAL`** unprompted (`A` = 0.386 at the swept disc), demanding no second reservoir. Weak yes — single-agent blind, textbook case. Also returned **F9**: on generator-form inputs the energy leg is an identity |
+| P-093 | **done** | [[C50-reservoir-audit-d2-control]]: D.2 fired at step 0(a) on (0.4 ± 3.0) µN — 0.13σ — with **nothing** enumerated. Three null states now observed at three distinct steps. The input was labelled synthetic, so it validates the wording of 0(a), not the judgement; the unlabelled replacement is **Tajmar et al. 2021** (`10.1007/s12567-021-00385-1`), and D.1's is a diffuser-augmented Betz-exceeding turbine |
+
+**Still open in these threads:** P-088 (now the only route to the C25 prediction), P-090, P-091,
+P-094 and P-095 for the instruments, and P-033 / P-054 for soil.

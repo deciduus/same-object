@@ -13,9 +13,10 @@ next-step-cost: M
 > **[0.388, 0.439]**; **3,787 of 5,611 below 1**, sign-test p = 1.5e-154). Outside the United
 > States: n = 4,447, median **0.463**, p = 7.8e-90. The ledger is negative on five of six
 > continents. **H2 could not be posed**: no country outside the US publishes a per-site
-> tolerable-loss layer, and none was back-filled. Its replacement is the finding — **the US
-> `T` is ~20× measured formation and Europe's *proposed* `T` is ~1×**, so C43's result is
-> **local to the USDA convention, not a fact about tolerable-loss values.**
+> tolerable-loss layer, and none was back-filled. Its replacement, **corrected
+> 2026-09-05**, is the finding — **numbers *defined from* soil formation match soil formation;
+> numbers not so defined (USDA, EU-proposed, Swiss, German) sit at 3–23× measured rates, on both
+> continents.** The `Ha` ledger by country stands. It is **not** a US-versus-Europe contrast.
 
 Programme item **P-001**, Track A. Takes [[C43-soil-ha-replication]]'s join off US ground.
 Re-runnable: `python _scripts/c44_world.py` from `vault/`. Pre-registered in
@@ -120,14 +121,16 @@ tectonically active topography.
   have fast basins.
 - **Country-level `E`** (Panagos 2015, 11 countries, n = 600): **ρ = +0.706, p = 1.4e-91.**
 
-**That positive ρ is the run's most interesting number and it is a warning, not a result.**
+**That positive ρ is the run's most interesting number and it is a warning, not a result — and
+the brief predicted exactly this artefact before the number was seen.**
 Where `E` actually varies at country level, modelled erosion and measured denudation track each
 other hard. The honest reading is **shared inputs**: RUSLE's LS-factor is computed from a DEM,
 and ¹⁰Be denudation is driven by the same relief. The brief named this failure mode in §6
-before the number was seen. **It is also the exact opposite of C43's sign.** A *modelled*
-erosion layer tracks formation **positively** (ρ = +0.71); the USDA's *policy* layer tracks it
-**negatively** (ρ = −0.18). Both cannot be measuring the same thing about a landscape, and the
-one that is anti-correlated with relief is the permit, not the model.
+before the number was seen. **Corrected 2026-09-05:** this ρ was read as
+"the exact opposite of C43's sign", the USDA policy layer tracking formation negatively at
+ρ = −0.18. **C43's −0.18 is withdrawn** (pseudoreplication and the same relief confound), so
+there is no opposition to report. What is left is the DEM artefact the brief predicted: shared
+relief on both sides of a modelled-erosion-vs-¹⁰Be comparison.
 
 ## 5. `Ha` by land cover — Borrelli's strata, not these sites
 
@@ -146,32 +149,52 @@ continent: Africa 0.008, Oceania 0.013, South America 0.045, North America 0.050
 Europe 0.238. C43 §5 reported the same shape — the spread between land uses inside one region
 exceeds the spread between regions — on continental means; it survives at site level.
 
-## 6. H2 replaced: `T`/`P` where a national number exists
+## 6. H2 replaced: `T`/`P` where a national number exists — **corrected 2026-09-05**
 
 H2 as posed is **NOT TESTED**. No non-US per-site tolerable-loss layer was found; the European
 Soil Database has no `tfact` analogue, and Verheijen et al. 2009 is a proposed range, not a
 mapped attribute. The brief pre-authorised this outcome and forbade back-filling.
 
-| Standard | `T` t/ha/yr | n sites | median `T`/`P` | 95% CI | above 2 |
-|---|---:|---:|---:|:-:|---:|
-| **EU**, Verheijen 2009 lower | 0.30 | 600 | **0.22** | [0.16, 0.25] | 6/600 |
-| **EU**, Verheijen 2009 upper | 1.40 | 600 | **1.01** | [0.76, 1.17] | 178/600 |
-| **USA**, USDA `tfact` = 1 | 2.24 | 1,164 | 4.17 | [3.42, 4.87] | 724/1,164 |
-| **USA**, USDA `tfact` = 5 | 11.21 | 1,164 | **20.88** | [17.11, 24.39] | 1,051/1,164 |
-| **global**, Borrelli's generic `T` | 10.00 | 5,611 | **10.10** | [9.37, 10.73] | 4,439/5,611 |
+> **Correction 2026-09-05 (`audits/c43-adversarial.md`).** The Verheijen rows are a **positive
+> control on the pipeline, not a contrast.** Verheijen et al. 2009
+> (`10.1016/j.earscirev.2009.02.003`, Crossref-verified, `is-referenced-by-count` = 595) *sets*
+> its tolerable limit equal to soil formation and reads 0.3–1.4 t/ha/yr off a review of European
+> formation rates; dividing it by a formation rate recovers its own construction. It is also
+> **not the EU's number** — it is a review's recommendation, adopted by no jurisdiction. The EU's
+> actual proposal, **COM(2023)416 Annex I, "≤ 2 t ha⁻¹ y⁻¹"**, was **deleted** by the adopted
+> **Directive (EU) 2025/2360** (OJ L, 26.11.2025, ELI `data.europa.eu/eli/dir/2025/2360/oj`, in
+> force 16 Dec 2025): erosion sits in Annex I **Part B**, "established at Member State level",
+> under a column headed **"non-binding sustainable target values"**. **As of 2026 the EU has no
+> operative numeric tolerable soil loss value at all.**
+
+| Standard | status | `T` t/ha/yr | n sites | median `T`/`P` | 95% CI | above 2 |
+|---|---|---:|---:|---:|:-:|---:|
+| **EU**, Verheijen 2009 lower — *positive control* | review proposal, **defined from formation** | 0.30 | 600 | **0.22** | [0.16, 0.25] | 6/600 |
+| **EU**, Verheijen 2009 upper — *positive control* | review proposal, **defined from formation** | 1.40 | 600 | **1.01** | [0.76, 1.17] | 178/600 |
+| **USA**, USDA `tfact` = 1 | in force | 2.24 | 1,164 | 4.17 | [3.42, 4.87] | 724/1,164 |
+| **USA**, USDA `tfact` = 5 | in force | 11.21 | 1,164 | **20.88** | [17.11, 24.39] | 1,051/1,164 |
+| **global**, Borrelli's generic `T` | modelling convention | 10.00 | 5,611 | **10.10** | [9.37, 10.73] | 4,439/5,611 |
 
 The USA rows bracket C43's per-site median of **22.3**, which is the cross-check that this
 different pipeline reproduces the earlier one.
 
-**The multi-country finding is a difference in kind.** Europe's *proposed* tolerable loss sits
-at `T`/`P` ≈ **1.0** at its upper bound and **0.22** at its lower — it is **calibrated to
-measured formation, or conservative**. The USDA's is **4–21×** it. The number being carried
-into global erosion modelling as a "generic `T`-value" is **10×**. So the C43 result does not
-generalise as "tolerable-loss values overstate formation"; it generalises as **"the USDA's does,
-by a factor its own European counterpart does not."** Verheijen's 0.3–1.4 was derived *from* the
-soil-formation literature; `tfact` was assigned from profile depth. The two conventions differ
-because one was built to be a formation rate and the other never was — which is exactly C43 §3's
-mechanism, now with a control group.
+**The independent European numbers, on the 89 German OCTOPUS sites** (median `P` = 0.0443 mm/yr,
+same pipeline, ρ_b = 1300 kg/m³) — the least Alpine-contaminated European sample available:
+
+| Standard | status | t/ha/yr | `T` mm/yr | median `T`/`P`, DEU |
+|---|---|---:|---:|---:|
+| COM(2023)416 Annex I | **proposed, then deleted** | 2.00 | 0.1538 | **3.47** |
+| Switzerland VBBo (SR 814.12) Annex 3, rootable depth ≤ 70 cm | **in force** | 2.00 | 0.1538 | 3.47 |
+| Switzerland VBBo Annex 3, rootable depth > 70 cm | **in force** | 4.00 | 0.3077 | **6.94** |
+| Lower Saxony harmful-change trigger (DIN 19708 basis) | **in force** | 13.00 | 1.0000 | **22.56** |
+
+**Germany's operative trigger lands at 22.6 — against C43's US headline of 22.3.** And
+**Switzerland's VBBo Annex 3, the one genuinely operative European tolerable-erosion table,
+assigns its value by rootable soil depth** — precisely the assignment rule the earlier reading
+presented as the USDA's distinguishing defect. So the finding is **not** "the USDA's tolerable
+loss overstates formation by a factor its European counterpart does not". It is: **numbers
+defined from formation match formation; numbers not so defined sit at 3–23×, on both
+continents.**
 
 Australia, China and India carry 297, 699 and 295 sites and **no published national `T` number
 was verified for them in this run**. That is the single highest-value missing row and it is a
@@ -209,8 +232,10 @@ median, CI and sign test, §4's two ρ, and §6's `T`/`P` medians.
 
 **What this adds.** `Ha` remains REPACKAGED in this vault's novelty audit and C44 inherits that
 grade. What is new is (a) a pre-registered, site-level, 55-country execution of the ledger C35
-and C43 had only computed from regional means, (b) the demonstration that C43's US `T` result
-does **not** generalise — Europe's proposed `T` is calibrated where the USDA's is 20× out — and
+and C43 had only computed from regional means, (b) — **withdrawn 2026-09-05** — had read "the demonstration that C43's US `T` result does not
+generalise: Europe's proposed `T` is calibrated where the USDA's is 20× out." The Verheijen rows
+are a positive control by construction and the operative European numbers land at 3.5–22.6×, so
+what §6 actually shows is that the 3–23× overstatement is **not** a US peculiarity; and
 (c) the ρ = +0.71 between a RUSLE product and ¹⁰Be denudation, which is a caution for every
 study that treats the two as independent measurements of the same landscape.
 

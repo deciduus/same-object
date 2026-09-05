@@ -8,17 +8,80 @@ next-step-cost: M
 
 # The paired test of `T` against measured soil formation, and soil's `Ha` outside the US
 
-> **PRE-REGISTERED TEST: H1 PASSES, H2 PASSES.** At **1,053 US sites** where a ¹⁰Be denudation
-> rate and a USDA `tfact` were joined point-in-polygon, the median `T`/`P` is **22.3**
-> (bootstrap 95% CI **[18.9, 25.9]**; 877 of 1,053 above 2, sign-test p = 2e-112) — inside the
-> 10.1–50.7× band [[C35-soil-ha]] §5 predicted, so **C35's falsifier does not fire**. The
-> secondary hypothesis passes in its strong form: **Spearman ρ(`T`, `P`) = −0.180**
-> (p = 4.5e-9). `T` does not merely overstate formation; across sites it runs **the wrong way**.
+> **WITHDRAWN 2026-09-05 — the anti-correlation is pseudoreplication and a slope confound; it
+> fails to replicate (C47); the mechanism is 1982–1988 prior art. What survives: median `T`/`P`
+> ≈ 22 at 1,053 sites, consistent with published work.**
+>
+> The original callout read "PRE-REGISTERED TEST: H1 PASSES, H2 PASSES … Spearman ρ(`T`, `P`) =
+> −0.180 (p = 4.5e-9). `T` does not merely overstate formation; across sites it runs the wrong
+> way." **H1 stands.** **H2's honest pre-registered outcome is "no relation detected", not a
+> pass.** See `## Withdrawal 2026-09-05` below.
 
 Executes the dataset C35 §5 named. Re-runnable: `python _scripts/c43_soil_data.py` from `vault/`.
 Pre-registered in `audits/blind-brief-c43-2026-09-05.md`, sha256
 `dbae0496666126c4070f518f16d1bf997f6c6b9165469284f940440b5e7ef727`, hashed before any site-level
 value was fetched.
+
+---
+
+## Withdrawal 2026-09-05 (adversarial + C47)
+
+`audits/c43-adversarial.md` re-analysed this note's **own cache**
+(`_scripts/c43_data/sites.json`, 1,053 rows, this note's own `spearman`/`median`/`boot_ci`,
+seed 20260905, 2026-09-05) with three things the note never ran — spatial aggregation, a cluster
+bootstrap over source studies, and stratification on the `SLP_AVE` field the cache already
+carried. **ρ(`T`, `P`) = −0.180 is withdrawn as a finding.**
+
+| Test | n units | ρ(`T`, `P`) | p / CI |
+|---|---:|---:|---|
+| raw sites (this note's headline) | 1,053 | −0.180 | p = 4.5e-9 |
+| 0.5° cell medians | 189 | **−0.041** | **p = 0.58** |
+| 1° cell medians | 100 | **+0.023** | p = 0.82 |
+| source-study medians | 48 | −0.291 | p = 0.045 (ρ(`tfact`,`P`) = −0.202, **p = 0.17**) |
+| cluster bootstrap over 48 studies, 2,000 draws | — | median −0.172 | **95% CI [−0.341, +0.053]** |
+| rank-partial on basin gradient | 1,053 | — | **ρ(`tfact`,`P` given slope) = −0.074** (was −0.206) |
+| low-gradient basins, `SLP_AVE` < 100 | 179 | — | **ρ(`tfact`,`P`) = +0.237, p = 0.0014** (sign reverses) |
+| low-gradient basins, `SLP_AVE` < 150 | 294 | — | ρ(`tfact`,`P`) = +0.172, p = 0.0031 |
+| steep basins, `SLP_AVE` ≥ 300 | 343 | −0.276 | p = 2.0e-07 — the whole negative lives here |
+| **independent replication** — [[C47-tfact-mechanism-test]], 114 outcrop sites this note did not use | 114 | — | **ρ(`tfact`,`P`) = +0.090, p = 0.34, 95% CI [−0.095, +0.269]**; this note's −0.206 lies **outside** it |
+
+The largest correlation in the dataset is one this note never reported: **ρ(slope, `P`) =
++0.610, p = 2.1e-108**, against ρ(slope, `tfact`) = −0.245. About two thirds of the association
+is topography. The honest causal story is *steep basins denude fast and carry thin, low-`tfact`
+soils* — a statement about relief, not about the assignment rule. The 1,053 sites are not 1,053
+independent draws: five studies supply 29% of them, so **the p-value was the
+pseudoreplication, not the effect.**
+
+Two dependent numbers fall with it. §3's "`tfact` = 1 is calibrated, median `T`/`P` = 0.93" is a
+steep-catchment artefact — only 7 of the 99 `tfact` = 1 sites are low-gradient and on those the
+median is **12.40**. And §3's ratio column is largely forced: shuffling `P` at random still
+yields ρ(`tfact`, `T`/`P`) = **+0.255** [0.204, 0.298] against the observed +0.376, because `T`
+is proportional to `tfact` by construction.
+
+**Prior art for the mechanism** (Crossref-verified 2026-09-05, `mailto=deciduusleaf@gmail.com`):
+
+- **Skidmore 1982**, *Soil Loss Tolerance*, `10.2134/asaspecpub45.c8` — chapter 8 of an ASA
+  volume titled *Determinants of Soil Loss Tolerance*
+- **Schertz 1983**, *The basis for soil loss tolerances*, `10.1080/00224561.1983.12436238`,
+  J. Soil Water Conserv. 38(1):10–14, `is-referenced-by-count` = 45
+- **Johnson 1987**, *Soil loss tolerance: fact or myth?*, `10.1080/00224561.1987.12456064`,
+  J. Soil Water Conserv. 42(3):155–160, count = 25
+- **Alexander 1988**, *Rates of soil formation: implications for soil-loss tolerance*,
+  `10.1097/00010694-198801000-00005`, Soil Science 145(1):37–45, count = 61
+
+Prior art for the **surviving magnitude**: Montgomery 2007 (`10.1073/pnas.0611508104`),
+Stockmann et al. 2014 (`10.1016/j.geoderma.2013.10.007`), Evans et al. 2020
+(`10.1088/1748-9326/aba2fd`), Kwang, Thaler & Larsen 2023 (`10.1029/2022EF003104`), and at site
+level for 14 midwestern prairies **Quarrier et al. 2023** (`10.1130/G50667.1`). What survives
+every specification: **median `T`/`P` ≈ 22 at 1,053 sites** (0.5° cell medians 23.98
+[12.11, 34.44], 90% of 189 cells above 2; study-median 7.89, 83% of 48 studies above 2) —
+consistent with published work, and not new.
+
+**The data and the join are kept**, and so is every number in §1–§2 and §4–§6. What is
+withdrawn is the correlation as a finding and §3's mechanism paragraphs, marked WITHDRAWN in
+place below rather than deleted. Also unmeasured: this note's SDA query returns `comppct_r`,
+`tfact` and `dbthirdbar_r` and **no depth field**, so "depth anti-correlates with formation" was
+never tested on these 1,053 points.
 
 ---
 
@@ -70,7 +133,9 @@ Seven rows of the 1,053, at the extremes and the quartiles of the ratio. The ful
 
 - median `T`/`P` = **22.322**, percentile bootstrap 95% CI **[18.882, 25.918]**, 10,000 resamples, seed 20260905
 - sign test on log ratio > log 2: **877 of 1,053** above, exact two-sided **p = 2.12e-112**
-- **Spearman ρ(`T`, `P`) = −0.180, p = 4.46e-9**
+- ~~**Spearman ρ(`T`, `P`) = −0.180, p = 4.46e-9**~~ **WITHDRAWN 2026-09-05** — see
+  `## Withdrawal 2026-09-05`; declustered ρ = −0.041 (p = 0.58), cluster-bootstrap CI
+  [−0.341, +0.053]
 - median `Ha_T` = **0.045** — a `T`-permitted US field runs at one twenty-second of replacement
 - only **13.0%** of sites fall in the falsifier window `T`/`P` ∈ [0.5, 2]
 
@@ -79,8 +144,11 @@ Seven rows of the 1,053, at the extremes and the quartiles of the ratio. The ful
 Mineral surface horizons only (ρ_b ≥ 1000, n = 918): median **18.21**, CI [14.72, 21.85],
 ρ = **−0.303**. Every specification lands between 16 and 23 and every ρ is negative.
 
-**The `tfact`-class table is the finding.** Under H2 the third column should be flat and the
-fourth should rise with `tfact`. Both do the opposite.
+**WITHDRAWN 2026-09-05 — the `tfact`-class table is description, not evidence.** It read "the
+`tfact`-class table is the finding. Under H2 the third column should be flat and the fourth
+should rise with `tfact`. Both do the opposite." Column 3 cannot be flat: `T` is proportional to
+`tfact` by construction, and a full `P`-shuffle still returns ρ(`tfact`, `T`/`P`) = +0.255.
+Column 4's gradient is the slope confound. The table is retained as description.
 
 | `tfact` (ton/ac/yr) | n | median `T`/`P` | median `P` (mm/yr) |
 |:-:|---:|---:|---:|
@@ -90,8 +158,17 @@ fourth should rise with `tfact`. Both do the opposite.
 | 4 | 136 | **47.35** | 0.0255 |
 | 5 | 498 | 29.93 | 0.0288 |
 
-**Soils permitted to lose the most are the soils measured to make the least**, by a factor of six
-in `P` between class 1 and class 4–5. Spearman ρ(`tfact`, `P`) = −0.206.
+~~**Soils permitted to lose the most are the soils measured to make the least**, by a factor of
+six in `P` between class 1 and class 4–5. Spearman ρ(`tfact`, `P`) = −0.206.~~ **WITHDRAWN
+2026-09-05**: partial ρ on `SLP_AVE` = −0.074, sign reverses to +0.237 on low-gradient basins,
+and C47's 114 independent sites return +0.090 [−0.095, +0.269].
+
+**WITHDRAWN 2026-09-05 — the mechanism paragraphs below are prior art and were never tested
+here.** Retained verbatim, not deleted, because the withdrawal is the record. The depth rule is
+Skidmore 1982 / Schertz 1983 / Johnson 1987 / Alexander 1988; [[C47-tfact-mechanism-test]] reads
+it from NSSH Part 618 subpart B §618.91 and finds it is depth **× a renewability group**, not
+depth alone; and this note fetched no depth field, so the causal clause is asserted and measured
+nowhere in it.
 
 **The mechanism, and it is not a fluke.** `T` is assigned on **profile depth and fragility** — a
 deep soil gets 5, a shallow or fragile one gets 1. Depth is an **inventory**. ¹⁰Be denudation is a
@@ -101,8 +178,10 @@ construction of the two conventions. **`T` is a stock-based permit written in th
 and it has never been a formation-rate estimate at all.** That is stronger than C35's §5 claim,
 which allowed `T` to be a formation estimate that was merely 10–51× too generous.
 
-The one place the convention is nearly right is **`tfact` = 1**, median ratio **0.93** — inside
-the falsifier window. The permit for shallow, fragile soils is calibrated. The permit for deep
+~~The one place the convention is nearly right is **`tfact` = 1**, median ratio **0.93** — inside
+the falsifier window. The permit for shallow, fragile soils is calibrated.~~ **WITHDRAWN
+2026-09-05**: only 7 of the 99 `tfact` = 1 sites are low-gradient and on those the median `T`/`P`
+is **12.40**. The calibrated-looking class is a bundle of steep bedrock catchments. The permit for deep
 soils, which is 498 of 1,053 sites, is not.
 
 ## 4. How much of this is the denudation-for-production substitution?
@@ -154,6 +233,14 @@ modelling at a value above the top of the USDA range.
 
 ## Scope 2026-09-05 — the claim is about the USDA convention, not tolerable-loss standards
 
+> **Corrected 2026-09-05.** The Verheijen contrast below is a **positive control, not a
+> contrast**: Verheijen et al. 2009 *defines* its 0.3–1.4 t/ha/yr as the soil formation rate, so
+> dividing it by measured formation recovers its own construction. It is a review's proposal, not
+> the EU's; **Directive (EU) 2025/2360 deleted** the COM(2023)416 ≤ 2 t/ha/yr threshold. Germany's
+> operative 13 t/ha/yr trigger gives `T`/`P` = **22.6** on German sites, and **Switzerland's VBBo
+> Annex 3 assigns `T` by rootable depth** — the very rule this note presented as a USDA defect.
+> See [[C44-soil-ha-world]] §6.
+
 [[C44-soil-ha-world]] supplies the control group this note lacked. Where a *non-US* national
 tolerable-loss number exists, the anti-correlation and the overstatement do not appear:
 Verheijen et al. 2009's proposed European range sits at median `T`/`P` = **0.22** at its lower
@@ -197,8 +284,10 @@ was found in the data and must be treated as a hypothesis for someone else to te
 **What this does and does not add.** It does not add a dimensionless group; `Ha` remains
 REPACKAGED in this vault's novelty audit and C43 inherits that grade. What is new is (a) a
 pre-registered per-site execution of a falsifier a vault note had only named, on 1,053 joins from
-two live public APIs, and (b) the sign of ρ(`T`, `P`), which reclassifies `T` from a bad estimate
-of a rate to not an estimate of a rate.
+two live public APIs, and ~~(b) the sign of ρ(`T`, `P`), which reclassifies `T` from a bad estimate
+of a rate to not an estimate of a rate.~~ **(b) is WITHDRAWN 2026-09-05.** What is left is (a)
+plus a stated null: `tfact` carries essentially no information about measured denudation
+(~3% of rank variance, and the residual sign is topographic).
 
 **Next.** The clean version of this test needs the Montgomery SI or an equivalent per-site
 soil-production compilation with coordinates — a request to the authors, or a page-image OCR of

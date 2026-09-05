@@ -516,7 +516,12 @@ In the order a referee will reach for them.
    about *relative* GUD across patch types at one habitat quality --- which is what the
    falsifiable claim needs --- but not an absolute prediction of GUD.
 
-5. **Modelling assumptions that the named dataset violates or that the model omits.**
+5. **The prediction is specific to saturating patch renewal; under linear renewal the
+   Whittle index degenerates to a step function and the regrowth effect vanishes or reverses
+   (vault C48). The Kadmon 1992 system, which measured linear renewal, therefore cannot test
+   it; a controlled-refill array can.**
+
+6. **Modelling assumptions that the named dataset violates or that the model omits.**
    Passive dynamics are assumed saturating-exponential; Kadmon (1992) measured linear
    renewal. Active intake is assumed proportional to standing crop, which
    handling-time-limited foragers violate. Patches are deterministic, the habitat
