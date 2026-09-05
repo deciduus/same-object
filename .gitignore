@@ -22,3 +22,7 @@ vault/.obsidian/workspace-mobile.json
 Thumbs.db
 *.tmp
 *.bak
+
+# script caches and downloaded datasets
+vault/_scripts/.oc-cache/
+vault/_scripts/*_data/
