@@ -2,7 +2,7 @@
 id: G34
 name: G34-lolp-starvation-risk
 type: gap
-standing: live
+standing: narrowed
 evidence: citation-intersection
 contact-surface: 0
 crosses: formalism
@@ -15,28 +15,31 @@ mutual-with: []
 computed-in: ["[[C33-lolp-starvation]]"]
 uses-move: []
 rests-on: ["[[availability-formula]]"]
-tags: [node/gap, crosses/formalism, evidence/citation-intersection, standing/live]
+tags: [node/gap, crosses/formalism, evidence/citation-intersection, standing/narrowed]
 last-checked: 2026-09-05
 exit: computation
 extends-to: [sustainability, ecology]
 next-step-cost: S
-note: "Power-system adequacy and small-bird winter energetics both compute P(a stored reserve hits zero before a horizon) by backward stochastic dynamic programming, and both read the shadow price off the same value function. Two providers now: OpenCitations, four pairings, 0; Semantic Scholar, a 4x4 grid of decade-spread anchors 1978-2020 against 1987-2017, 0 in all sixteen cells and in every decade bin, 2,713 grid citers against 906 bird citers with not one work in both. Pooled E = 55.5 at a scoped N of 44,299 and 5.55 at 10x, so the zero is quotable across two orders of magnitude of denominator. Caveat: Semantic Scholar corroborates but cannot establish it alone - its power-side positive control fails (thin reference-list coverage), so the calibration rests on OpenCitations (25.2% and 12.8%)."
+note: "Power-system adequacy and small-bird winter energetics propagate the same stochastic reserve recursion by backward SDP and read the same shadow price off the value function, but aggregate it into different functionals - expected occupation time on the grid, first passage in the bird - so the shared object is the recursion and the shadow price, not the estimand. Both are special cases of a ruin-theory parent (Lundberg 1903) that neither field cites: a triple zero. In-scope storage-constrained pairing Denholm & Hand 2011 x Houston & McNamara 1993 gives 794 x 196, intersection 0; the four Billinton anchors are the classic static COPT x LDC literature this note disclaims and are retained as an out-of-scope control. Two providers: OpenCitations four pairings 0, Semantic Scholar 4x4 grid 0 in all sixteen cells and every decade bin, 2,713 grid citers against 906 bird citers with no work in both. Pooled E = 55.5 at a scoped N of 44,299 and 5.55 at 10x. Narrowed 2026-09-05: the headline first-passage framing and C33's P(starve) were wrong; the structural identity survives."
 ---
 
-# Loss-of-load probability and starvation risk are the same first-passage problem
+# Loss-of-load probability and starvation risk are the same reserve recursion, read out by different functionals
 
-**STANDING: LIVE** · evidence: citation-intersection · contact surface: 0 · last checked 2026-09-05
+**STANDING: NARROWED** · evidence: citation-intersection · contact surface: 0 · last checked 2026-09-05
 
-> Power-system reliability engineering asks *what is the probability that a stored reserve hits
-> zero before the horizon ends, given stochastic income and a stochastic draw* and calls the
-> answer **loss-of-load probability**. Behavioural ecology asks the identical question of an
-> overwintering bird's fat reserve and calls the answer **starvation probability**. Both solve it
-> by backward stochastic dynamic programming on a value function over the reserve state; both
-> read a shadow price off the derivative of that value function — **value of lost load** on one
-> side, **marginal fitness value of a unit of fat** on the other. Two quantities matching, not
-> one, and across **twenty anchor pairings on two independent citation indexes** — four on
-> OpenCitations, sixteen on Semantic Scholar spanning grid anchors from 1978 to 2020 against bird
-> anchors from 1987 to 2017 — the two literatures have never co-cited a single work.
+> **Narrowed 2026-09-05.** Power-system reliability engineering propagates a stored reserve under
+> stochastic income and a stochastic draw and reports **how much time the reserve spends at or
+> below zero** — loss-of-load probability and its aggregate, loss-of-load expectation. Behavioural
+> ecology propagates the same state under the same drivers and reports **whether an overwintering
+> bird's fat reserve ever reaches zero** — starvation probability. **The state recursion is shared
+> and the shadow price is shared; the estimand is not.** The grid's zero is a reflecting boundary
+> and its statistic is an expected occupation time; the bird's zero is absorbing and its statistic
+> is a first-passage probability. Both are special cases of a **ruin-theory** parent (Lundberg
+> 1903, Cramér 1930) that **neither field cites** — a triple zero, of which the citation
+> intersection below measures one branch. Across **twenty anchor pairings on two independent
+> citation indexes** — four on OpenCitations, sixteen on Semantic Scholar spanning grid anchors
+> from 1978 to 2020 against bird anchors from 1987 to 2017 — the two literatures have never
+> co-cited a single work.
 
 ## The two vocabularies
 
@@ -94,6 +97,16 @@ ecology-side control reproduces its 25. **Read the separation off the last colum
 **`N` is a union floor throughout, and is labelled as one.** No concept-scoped OpenAlex
 denominator was fetched for this note (see *What could not be fetched*), so the `E` column is
 the largest defensible `E` and therefore flatters the claim, per [[citation-intersection]].
+
+**Anchor scope, stated against this note's own restriction.** The four Billinton pairings above
+measure the **classic-LOLP** literature — a capacity-outage probability table convolved against a
+load-duration curve, with no integrated state and therefore no reserve — which *"What survives"*
+below explicitly places **outside this note's scope**. They are retained as an **out-of-scope
+control**, not as the note's evidence. **The in-scope measurement is the storage-constrained
+pairing, Denholm & Hand 2011 × Houston & McNamara 1993, `N_A` 794, `N_B` 196, ∩ = 0**
+(`audits/scout-06-energy-systems.md` candidate #3, OpenCitations 2026-09-05; the same pairing is
+cell G11 × B93 of the Semantic Scholar grid below, also 0). Until that pairing is re-run inside
+this note with its own decade bins, the in-scope zero is **imported, not measured here**.
 
 ### Mode-6 decade re-run
 
@@ -318,29 +331,56 @@ That is the standing limitation of citer-set intersection and it is not repaired
 
 ## What survives
 
-The claim as stated survives, with one scope restriction taken from the scout's own adversarial
-objection and adopted here rather than argued with. **The comparison is not to classic
+The claim survives **in narrowed form**, with two scope restrictions taken from adversarial
+objections and adopted rather than argued with. **The comparison is not to classic
 LOLP-of-a-thermal-fleet.** Classic LOLP convolves a capacity-outage probability table against a
 load-duration curve and has no integrated state at all, so there is no reserve and no
 first-passage problem — that version of the grid side is *not* the same object as the bird's fat
 reserve, and if the gap were scoped to it the gap would be false. **The comparison is to
 storage-constrained adequacy**: LOLE computed on a system whose adequacy depends on a
 state-of-charge trajectory. That is the modern variable-renewables-plus-storage formulation, it
-is exactly a first-passage problem, and it is the scope this note claims.
+carries a genuine reserve state, and it is the scope this note claims. **It is still not a
+first-passage problem** — see the second restriction below.
+
+**A second scope restriction, from `audits/g34-adversarial.md`, and it is why this note is
+`narrowed`.** Even under storage-constrained scoping, **LOLE is not a first-passage quantity**:
+unserved load is shed and the reserve recovers, so the grid's zero is not absorbing and LOLE
+counts repeated crossings. The bird's `P(starve)` is a first-passage probability on an absorbing
+boundary. **What the two fields share is the state recursion and the shadow price, not the
+estimand.** The claim is corrected to that, and the word "first-passage" is removed from the grid
+side throughout. [[C37-lolp-starvation-identity]] gives the surviving identity as a theorem with
+five conditions and shows that two of them (absorbing boundary at 0; objective = `P(absorb before
+T)`) fail as each field is normally practised.
+
+**And the computation leg's headline numbers did not survive.** [[C33-lolp-starvation]] rev.1
+reported a bird `P(starve)` of `8.25 x 10^-8` and "five orders of magnitude safer than the grid";
+both are **withdrawn**. The simulated foraging policy overshot Brodin 2017's own reported daily
+fat gain (0.74 g) by 2.26x, the 6 kJ warming-up cost was silently zeroed, and no fixed-gain
+forward propagation can estimate the first passage of a state-dependent DP. The surviving
+quantitative claim is the **energy margin over the critical period**: `12/27.4` = **+43.8%** for
+the bird against **~0%** for a duration-matched 4-hour storage fleet, with the demand-side
+(hypothermia) lever worth **12 points**, not 47. The mechanism — a movable metabolic setpoint
+sorts the margin — replicates across 19 systems in [[C38-reserve-margin-across-species]].
+
+**The parent both fields skip.** A reserve driven by stochastic income against a stochastic draw,
+first passage to zero, is **ruin theory** — Lundberg 1903, Cramér 1930. Power-system adequacy
+does not cite it, behavioural ecology does not cite it, and they do not cite each other. The
+citation intersection here measures one leg of that triple zero.
 
 `crosses: formalism` (rank 4) rather than `data`: the two fields share the dynamic program and
-the shadow-price construction, but no dataset has been put through both.
+the shadow-price construction, but no dataset has been put through both. The estimand difference
+narrows what is shared; it does not drop the rank.
 
 ## What would close it
 
 Closed in one motion by [[C33-lolp-starvation]], which (i) writes both problems in one notation
 and shows the LOLP recursion and the starvation backward equation are the same dynamic program,
-(ii) computes a published bird model's winter starvation probability as an LOLE and a published
-grid criterion as a per-night starvation risk, and (iii) states the bird's optimal reserve as a
-planning reserve margin against the grid's 15–20% convention. What C33 does **not** do, and what
+(ii) **withdrew** its two-way conversion between a bird starvation probability and an LOLE,
+because those are different functionals, and (iii) states the bird's optimal reserve as an
+energy margin over the critical period against a duration-matched storage fleet. What C33 does **not** do, and what
 would finish the job: put one dataset through both formalisms — take a real state-of-charge
 trace from a storage-constrained adequacy study and a real dusk-fat/overnight-expenditure series
-from a wintering parid, and fit the same first-passage model to both. That is the step from
+from a wintering parid, and fit the same reserve recursion to both. That is the step from
 `crosses: formalism` to `crosses: data`. See [[what-closes-a-gap]].
 
 ## What could not be fetched

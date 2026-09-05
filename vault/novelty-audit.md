@@ -60,6 +60,7 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 | [[C18-durability-axis]] | Shared durability axis is Weibull shape β, not cycle count; flow batteries fail like enzymes | REPACKAGED | Weibull β is textbook reliability; the cross-domain axis + reclassification is the packaging | Battery-side Weibull fits are standard; enzyme β=1 inferred from bulk first-order kinetics |
 | [[C19-hormesis-biphasic-fit]] | Fitted shot-peening biphasic curve: window ≥15× matches biology's 10-20× | REPACKAGED | Curve fit on published data + toxicology hormesis formalism; note: "not a universal constant, not a theorem" | Calabrese hormesis quantification (decades old); over-peening is a named engineering effect |
 | [[C20-release-the-constant]] | M6 as an integer operator; re-derives gecko contact-splitting blind | REPACKAGED | Note: matrix augmentation is textbook (Szirtes); the directed operator + blind validation is "underexplored, not first" | Szirtes' applied dimensional analysis (adds/suppresses variables for singular matrices) |
+| [[C33-lolp-starvation]] / [[G34-lolp-starvation-risk]] | Grid adequacy and bird winter energetics run one reserve recursion with one shadow price, but report different functionals | **REPACKAGED** (graded 2026-09-05, `audits/g34-adversarial.md`) | The dynamic program is **ruin theory** (Lundberg 1903, Cramér 1930) in both fields, and the demand-side reading — counting load reduction toward adequacy — is **mature grid practice** (MISO *Demand Response 101* 2024; PJM capacity auction; "negawatt" since Lovins 1989), so the borrowing runs **grid → bird**, not bird → grid | Both halves are old; and the quantitative leg failed its own positive control — rev.1's `P(starve) = 8.25e-8` is withdrawn (policy overshot Brodin 2017's 0.74 g/day by 2.26×; `C_WU = 6 kJ` zeroed). Prior-art sweep ran on Europe PMC + WebSearch only (S2 429, OpenAlex budget), so the C5 §11 bar is not met on the engineering side |
 
 ## Grade table — theorem-bridges
 
@@ -96,6 +97,7 @@ result that *might* be a rediscovery is graded REPACKAGED or flagged, never NOVE
 | [[G25-proofreading-coding]] | kT-per-error-suppression shared, neither field reads other; 1,463 citers intersected | LOCATED (project's strongest-measured gap) |
 | [[G27-collective-decision]] | **Overturned/withdrawn** — anchored on "Paxos", a proper noun | CORRECTED |
 | [[G28-marginal-value-gittins]] | Charnov's rule IS the Gittins index; identity supplied by C5 | LOCATED (identity itself = C5, NOVEL) |
+| [[G34-lolp-starvation-risk]] | Shared reserve recursion + shared shadow price, different estimands; 20 pairings, two providers, 0 | LOCATED (narrowed 2026-09-05: the first-passage framing and C33's headline numbers were wrong) |
 
 ## Grade table — instruments and question-notes
 
@@ -191,3 +193,25 @@ threat to C5 is now Griebling et al. 2026, not the books — see C5 §11*); and
 mechanism by which [[kedem-caplan]] was a rediscovery all along, and Morrison-Osterle 1965 sat
 invisible). Every NOVEL grade above should be read as "appears unwritten in what we reached," with
 "appears" carrying its full weight. See [[what-closes-a-gap]], [[reading-not-counting]], [[precedent]].
+
+## G34 / C33 — what is actually new, 2026-09-05
+
+The graded row above is **REPACKAGED**, and the two halves that make it so are both old: the
+backward recursion on a stored reserve with an absorbing boundary is **ruin theory**, and reading
+demand reduction as adequacy is **standard grid practice**. Two things in this cluster are not
+old, and they are the only things worth claiming:
+
+1. **The ruin-parent triple zero.** Power-system adequacy does not cite ruin theory, behavioural
+   ecology does not cite ruin theory, and the two do not cite each other. The third leg is the one
+   the project measured — 20 anchor pairings on two independent citation indexes, 0 in every cell
+   and every decade bin ([[G34-lolp-starvation-risk]]). Two fields independently re-deriving a
+   1903 actuarial result and neither naming it is the finding; the analogy between them is not.
+2. **The cross-species margin/setpoint table.** [[C38-reserve-margin-across-species]] puts 19
+   systems on one energy-margin axis and shows the sorting variable is neither taxon nor body mass
+   nor horizon but **whether the metabolic setpoint is movable and currently moved** — the same
+   animal crosses the engineered band when its lever is withdrawn, and the one species with no
+   lever (*Sorex araneus*) cannot hold a winter night at any dusk fat load. **No published figure
+   exists for the demand-side share of an animal's adequacy margin**, and that quantity, not the
+   concept, is the transferable object.
+
+Everything else in the cluster is located, corrected, or withdrawn.

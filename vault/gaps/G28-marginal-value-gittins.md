@@ -107,6 +107,22 @@ Anchors are the primary works themselves — Charnov `10.1016/0040-5809(76)90040
 `10.1111/j.2517-6161.1979.tb01068.x`, no proxy substitution needed. **OpenCitations and
 Crossref returned the identical five DOIs.**
 
+**Re-derived on the repaired instrument, 2026-09-05 (FIX1 blank-key re-check).** This run is a
+*reference-list* intersection (the `cited` field), and the repaired `_scripts/intersect.py` filters
+blank `cited` keys as well as blank `citing` ones, so the trap applies on this endpoint too. Re-run
+as a citer-set intersection on the same two anchors, `--providers=opencitations,semanticscholar`:
+**intersection 5 → 5**, and the same five DOIs — `10.1007/978-3-319-51721-6_6`,
+`10.1016/b978-0-12-820480-1.00058-9`, `10.1016/j.anbehav.2026.123491`,
+`10.1103/physreve.97.022110`, `10.3758/s13423-016-1158-7`. What the re-run adds is a *de-blanked
+base*: OpenCitations enumerates 1,026 citing records for Gittins 1979 of which **14 carry an empty
+`citing` field**, giving **1,012** distinct citer DOIs, and 4,115 for Charnov of which 28 are blank,
+giving **4,087**. So the `citation-count` endpoint's 1,026 in the Provenance table is an
+*unfiltered* server-side figure and 1,012 is the de-blanked enumeration of the same object; the
+note's 1,013 run-time base sits between them and is not disturbed. **Semantic Scholar has no record
+for Charnov 1976 `10.1016/0040-5809(76)90040-x`** — a coverage hole, reported as `err` and excluded
+from the consensus, never as a zero. The percentages, the control ratio 62.5 and the standing are
+all unchanged.
+
 | Check | Result |
 |---|---|
 | Intersection | **5 of 1,013 Gittins citers — 0.49%** |

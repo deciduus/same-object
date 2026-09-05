@@ -3279,3 +3279,215 @@ work with a different citer set.
   into an empty set would write a false zero. The exact citing-works endpoints and env var names
   are in `vault/_scripts/providers/scopus.py` and in `citation-sources.md`.
 - **No gap or computed note touched.**
+
+## [2026-09-05] honest null | C33: the positive control FAILS - Brodin's 0.74 g/day is not reproducible from the open text
+The adversarial review's highest-value item was to re-run the forward propagation under the
+paper's own mixed foraging policy with C_WU = 6 kJ and check it against Brodin, Nilsson & Nord
+2017's own stated total daily fat gain of 0.74 g. Run: it does not reproduce, and it cannot. The
+paper says the bird "should keep on foraging all daylight hours until dusk", switching between
+behaviour 1 (alpha = 80 kJ) and behaviour 2 (alpha = 60 kJ) after noon. Every mixture of those two
+has a floor of 60 x 0.96 - 15.0 = 42.60 kJ = 1.15 g/day, still 1.56x the paper's own 0.74 g. The
+policy C33 rev.1 actually simulated (behaviour 1 all day) gives 61.80 kJ = 1.67 g = 2.26x. The
+missing parameters are named in the paper but not given: the mass-dependent foraging metabolism
+(Table 1 fn a) and the mass-dependent gain ceiling ("up to 1 g of fat"). C33 rev.2 therefore FITS
+a single effective alpha_eff = 44.15 kJ/day to the paper's 0.74 g/day and labels it a fit
+everywhere. Source: Europe PMC PMC5596050 full text, re-read 2026-09-05.
+
+## [2026-09-05] correction | C33: P(starve) withdrawn - an open-loop propagation cannot estimate a state-dependent DP's first passage
+Under the calibrated policy the 100-night starvation probability is 0.9992; under the rev.1
+max-foraging policy with C_WU = 6 kJ charged it is 2.31e-5 (rev.1 printed 8.25e-8 with C_WU = 0).
+The bracket spans the whole probability scale, so the estimator is uninformative, and the reason
+is structural: Brodin's bird runs a state-dependent optimal policy from the backward DP - it
+forages harder when its reserve is low - and no fixed-gain forward propagation can represent that
+feedback. C33's P(starve) = 8.25e-8 and LOLE = 6.6e-7 h/winter are WITHDRAWN with no replacement
+number, and so is the "five orders of magnitude safer than the grid" headline. The paper's own
+published figures are the quotable ones and they bound everything: winter survival 0.71 with
+hypothermia and 0.13 without (Results, Fig. 2), i.e. P(die) = 0.29 all causes, so P(starve) <=
+0.29 = 3.4e-3 per night. The withdrawn 8.25e-8 sat 6.5 orders below the paper's own ceiling,
+which alone rejects it. This is one step worse than PENDING-log-G34ADV expected: that file
+predicted the numbers could be reissued with a tolerance after a re-run. They cannot.
+
+## [2026-09-05] correction | C33: the two-way LOLE <-> P(starve) table is withdrawn, both directions
+Rev.1 converted between the two using an invented 8-hour "mean remaining night" charge. LOLE is an
+expected occupation time of a non-absorbing process; P(starve) is a first-passage probability on
+an absorbing one. The 8-hour charge does not make them one object, and the saturation of the
+Ireland row was the symptom rather than a curiosity. No like-for-like replacement was found: a
+per-period first-passage probability for a storage-constrained adequacy study was searched for and
+not located this session. The union bound P(first hit 0 within a year) <= LOLE = 0.1 d/yr bounds
+the grid from ABOVE only and therefore cannot order the two systems in either direction. Stated as
+a null.
+
+## [2026-09-05] correction | C33: reserve margin restated like-for-like as an energy margin; +57.1% -> +43.8%
+Planning reserve margin is (firm capacity - peak load)/peak load, MW/MW at one annual instant; the
+bird's ratio is kJ/kJ over a 16-hour integral. The like-for-like quantity is the energy margin over
+the critical period. On the paper's own budget the bird's margin is x_start/R = 12/27.4 = +43.8%,
+against ~0% for a 4-hour lithium fleet sized to a 4-hour net peak - roughly 2x, not "two to four
+times the 15-20% convention", and PRM is no longer named. NERC's 7.0-26.3% band (2025 LTRA
+pp. 175-176) is retained as a CAPACITY quantity for context only. With C_WU = 6 kJ charged the
+hypothermia lever is +12.2 points (22.2% -> 10.0%), not +47.1 (57.1% -> 10.0%); the cold-night
+margin falls from +31.0% to +5.8%. Better still, the paper reports the lever in its own currency:
+winter survival 0.13 -> 0.71, a 58-point published lever that C33 should have quoted from the
+start.
+
+## [2026-09-05] method | c33_lolp.py compute rewritten: four policies, C_WU charged, positive control as section 0
+The script's compute half now (i) prints the positive control FIRST and states pass/fail, (ii)
+carries ALPHA1 and ALPHA2 separately and a C_WU constant defaulting to 6 kJ charged in the first
+daylight period after a hypothermic night, (iii) runs four labelled daylight policies including a
+CALIBRATED one, (iv) prints the paper's own 0.13/0.71 survival as the ceiling on everything it
+computes, and (v) ends with an explicit null on the grid-side first-passage number. One unresolved
+ambiguity is now printed rather than hidden: Brodin's Eq. 7 writes the unsuccessful-period gain as
+Delta*G_i*delta, i.e. gain reduced TO 20%, while Table 2's wording is "reduced energy gain
+unsuccessful foraging 20%", i.e. reduced BY 20%. The script takes the second reading; the two
+differ by 12% on realised daily gain and the calibration absorbs the difference.
+
+## [2026-09-05] vocabulary | G34 standing live -> narrowed
+The gap's H1 claimed the two fields solve "the same first-passage problem". They do not: the
+grid's zero is reflecting and its statistic is an expected occupation time. The title, the
+blockquote and the frontmatter note are rewritten to "the same reserve recursion, read out by
+different functionals", the four Billinton anchors are demoted to an out-of-scope classic-LOLP
+control with the in-scope Denholm & Hand 2011 x Houston & McNamara 1993 zero (794 x 196, 0) stated
+in their place, and the computation leg's withdrawn numbers are carried into "What survives".
+PENDING-log-G34ADV proposed NO standing change on the grounds that the gap survives as a narrowed
+claim; that is exactly what `narrowed` is for in this vault's vocabulary, and the headline number
+being wrong as well as the headline framing puts it over the bar. standing: narrowed, and the
+STANDING line in the body with it.
+
+## [2026-09-05] method | G34/C33 graded REPACKAGED, with the two things that are actually new
+Added to vault/novelty-audit.md. The dynamic program is ruin theory (Lundberg 1903, Cramer 1930)
+in both fields and the demand-side reading is mature grid practice (MISO Demand Response 101 2024,
+PJM capacity auction, "negawatt" since Lovins 1989), so the borrowing runs grid -> bird. What is
+new: (1) the ruin-parent TRIPLE zero - neither field cites ruin theory and neither cites the
+other, the third leg measured across 20 anchor pairings on two providers, 0 in every cell and
+decade bin; (2) the cross-species margin/setpoint table in C38 - 19 systems on one energy-margin
+axis, sorted by whether the metabolic setpoint is movable and currently moved, with no published
+figure existing for the demand-side share of an animal's adequacy margin.
+
+
+---
+
+## What is still owed
+
+1. **Re-run the in-scope intersection inside G34 with its own decade bins** — Denholm & Hand 2011
+   × Houston & McNamara 1993 and × McNamara & Houston 1987, OpenCitations, same blank-key filter
+   and mode-6 binning as the Billinton rows. The zero is currently imported from
+   `audits/scout-06-energy-systems.md` candidate #3.
+2. **Re-run Brodin's backward DP itself**, not a forward propagation under a fixed policy. That is
+   the only instrument that can produce a defensible `P(starve)` for this model, and it is also the
+   only version of C33's second falsifier the formalism can answer (re-optimise `x_dusk` at
+   `ε = 0`).
+3. **A cited duration-dependent ELCC or storage-adequacy study** reporting either a per-period
+   first-passage statistic or an energy margin over the critical period. Both grid-side numbers in
+   C33 §4 (`≈0%`) are reasoned from duration matching, not fetched.
+4. **Repeat the prior-art sweep on a power-engineering index.** Europe PMC + WebSearch only is one
+   instrument short of the C5 §11 bar, and the NOVEL-on-the-analogy finding rests on it.
+
+
+## [2026-09-05] method | C36's governance ordering re-coded blind: direction survives, test declared underpowered by its own pre-registration
+
+C36 §5 grouped management programmes as "statutory" vs "RFMO/weak" *after* seeing their
+Crow-AMSAA beta, and said so. C39 redoes the coding blind: a three-component rule (mandated
+assessment cycle / assessment-triggered rebuilding obligation / stated response deadline, 0-1
+each) was written into `audits/blind-brief-c39-2026-09-05.md` with the ten-region list and the
+prediction, and sha256-hashed (885ffef666798d784ec67260dbf7573a236e81007b893d6a24e3fa8f3d405d3d,
+first 4,615 bytes) before `computed/C36-conservation-duane.md` was opened. Regions were then
+scored from statute and regulation text only (MSA 16 U.S.C. 1854(e); CFP Reg. 1380/2013;
+Fisheries Act ss. 6.1-6.2 and Fishery (General) Regs; GFCM; IOTC; CCAMLR).
+
+Result: Spearman rho = -0.709 on n = 8 joined regions, exact two-sided p = 0.0596 (40,320
+permutations enumerated); score-3 mean beta 0.841 vs score-<=1 mean beta 1.234, difference
+-0.392, one-sided permutation p = 0.0476 (21 splits). The direction predicted in advance holds.
+The brief also pre-declared that either comparison group falling below 3 members makes the test
+underpowered, and the score-<=1 group has 2 members - so the pre-registered verdict is
+UNDERPOWERED, direction only, and it is recorded as such rather than as a pass. The blind is
+partial: the AI coder had prior knowledge of which regions did well, and six beta values appeared
+in the instruction that commissioned the work. Melnychuk et al. 2017 PNAS
+(10.1073/pnas.1609915114, DOI verified at Crossref 2026-09-05) was checked as an external
+pre-registered index; pnas.org returns 403 and no open per-region FMI score table was reached, so
+the second external code was not run.
+
+
+## 2. Line for `vault/00-index.md` (computed notes list, after the C36 line)
+
+
+- [[C39-duane-governance-blind]] — C36's governance ordering re-coded blind against a pre-hashed rule: rho = −0.709, exact p = 0.0596, n = 8; direction holds, test underpowered by its own pre-registration
+
+
+## [2026-09-05] verification | the two load-bearing `∩ = 1` rows in G27 are real bridges, not phantoms; `narrowed` stands
+
+The whole reversion of [[G27-collective-decision]] from `overturned` to `narrowed`, and its
+`contact-surface: 26 → 1`, rested on two intersections of exactly 1 — the one value the
+OpenCitations blank-`citing` artefact manufactures out of nothing. All four G27 pairings re-run on
+the filtered script, 2026-09-05: Dorigo × Paxos **0 → 0**, Seeley × Paxos **0 → 0**, Dorigo ×
+(Byzantine + FLP) **1 → 1**, Seeley × (Byzantine + FLP) **1 → 1**. Citer-set sizes unchanged on
+every anchor (Dorigo 8,814, Seeley 267, Paxos 1,914, Byzantine + FLP 6,735), which establishes
+that G27's published figures were already post-filter. The Seeley pairing's single hit reproduces
+**on Semantic Scholar as the identical DOI**; the Dorigo pairing errors on S2, which has no record
+for `10.1109/3477.484436` — a coverage hole, not a zero. Produced by: `_scripts/intersect.py`,
+blanks dropped, 2026-09-05.
+
+## [2026-09-05] verification | ACM TAAS 2012 confirmed to cite both of G27's anchors, from the publisher's own deposit
+
+The bridge was found by a citation index, so it was checked against a second, independent object:
+the publisher-deposited reference list. Crossref, 2026-09-05, `10.1145/2168260.2168264` — Saffre &
+Simaitis, *Host selection through collective decision*, *ACM Trans. Autonomous and Adaptive
+Systems*, April 2012, `reference-count` = 43. Its abstract names both sides ("inspired by
+biological swarms", "the emergence of a consensus within a population of agents", host selection
+in application migration). Its deposited references contain Seeley & Buhrman 1999
+`10.1007/s002650050536` **and** Fischer, Lynch & Paterson 1985 `10.1145/3149.214121`, plus Seeley
+2003 `10.1007/s00265-003-0598-z`. **It cites both anchors.** Had it not, G27 would have reverted
+to `standing: overturned` with `contact-surface: 0`; it does, so **nothing moves**.
+
+## [2026-09-05] verification | G7's bare OpenCitations 1 is confirmed, and the citer is nuclear
+
+[[G7-how-passive]] quoted a single citer of the TECDOC-626 proxy anchor
+`10.3327/jaesj.34.1116` — a bare 1 on a small anchor, the artefact's signature shape. Re-enumerated
+on the filtered script, 2026-09-05: the anchor returns **one record and zero blank keys**, so there
+was no phantom available to inflate it, and **Semantic Scholar independently returns the same
+single citer**. Identified by Crossref: `10.3390/en13112898`, Zeliang et al., *Integral PWR-Type
+Small Modular Reactor Developmental Status, Design Characteristics and Passive Features: A
+Review*, *Energies* 2020 — a nuclear SMR review, i.e. **inside** the nuclear literature and
+consistent with the note's "all 57 citers are nuclear" finding rather than a counterexample to it.
+The 1 stands; no standing, tag or `contact-surface` moves.
+
+## [2026-09-05] verification | G25, G28 and G8's intersections all re-derive unchanged; only a set size moves
+
+Three notes re-run, no standing changed in any of them. **[[G25-proofreading-coding]]**: Hopfield
+1974 × Shannon 1948 pt II — sets **1,542 → 1,542** (51 blanks dropped) and **9,771 → 9,771** (70
+dropped), intersection **8 → 8**, same eight DOIs; already post-filter as published.
+**[[G28-marginal-value-gittins]]**: intersection **5 → 5**, the same five DOIs, on the endpoint the
+repair also covers (`cited`, reference-list side). Newly recorded there is the *de-blanked base* —
+Gittins 1,026 records, 14 blank, **1,012** distinct citers; Charnov 4,115 records, 28 blank,
+**4,087** — which shows the Provenance table's OpenCitations 1,026 is an unfiltered server-side
+count of the same object the 1,012 enumerates. The control ratio 62.5 is untouched.
+**[[G8-energy-per-bit-axis]]**: intersection **35 → 35**, same 35 DOIs, `N_A` **4,292 → 4,292**;
+the pooled `N_B` is corrected **3,881 → 3,882** (Laughlin 1,012 + Attwell 3,054), which is one
+*low*, so it is a transcription slip and not the phantom — the phantom only ever reads high. The
+0.82% / 0.90% percentages are unchanged to two figures and the overturn is untouched. Produced by:
+`_scripts/intersect.py`, blanks dropped, 2026-09-05.
+
+## [2026-09-05] correction | G19's OpenCitations citer count was a counted list and reads one high: 40 → 39
+
+[[G19-safety-factor-derived-twice]] tabulated OpenCitations citers of `10.1006/jtbi.1996.0270` at
+**40 records counted**, with the `/citation-count/` endpoint "agreeing at 40". Re-enumerated with
+blank keys dropped, 2026-09-05: of the 40 records **one carries an empty `citing` field**, so the
+distinct citing set is **39**. The two 40s were never independent confirmation — `/citation-count/`
+is an *unfiltered* server-side count, so it agrees with the raw record list by construction and
+says nothing about the de-blanked set; the note now says so. Semantic Scholar, run as a second
+provider, returns **34** after dropping 3 blanks, and is added to the table. Nothing load-bearing
+moves: this note's finding is the *composition* of the citing set — comparative biomechanics
+throughout — not its cardinality, and the provider spread the note already reports (28–46) simply
+widens by one at the OpenCitations row. `standing`, `evidence` and `contact-surface` unchanged.
+
+## [2026-09-05] method | Semantic Scholar's coverage holes are `err` rows, and four of this round's anchors fall in them
+
+Running a second provider was the point of the round, and on four of the six notes it could not
+answer. Semantic Scholar has **no record at all** for Dorigo, Maniezzo & Colorni 1996
+`10.1109/3477.484436`, Shannon 1948 pt II `10.1002/j.1538-7305.1948.tb00917.x`, Landauer 1961
+`10.1147/rd.53.0183`, or Charnov 1976 `10.1016/0040-5809(76)90040-x` — four canonical, heavily
+cited works. The adapter raises rather than returning an empty set, `--providers` prints the row as
+`err`, and the consensus line excludes it, exactly as `_scripts/intersect.py`'s "a failed fetch is
+not a zero" contract requires. **Where a second opinion was obtainable it agreed exactly**: Seeley
+× Paxos 0 on both, Seeley × (Byzantine + FLP) 1 on both and on the same DOI, G7's single citer the
+same DOI on both. Where it was not, this round's numbers rest on one provider, and with OpenAlex
+budget-locked that is a stated limitation of the round, not a silent one. Provider `N` spreads,
+where both answered, ran 4–18% — consistent with the 10–25% band in [[citation-sources]].

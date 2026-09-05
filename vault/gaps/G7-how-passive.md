@@ -139,6 +139,17 @@ still findable.
 | Europe PMC | `www.ebi.ac.uk/europepmc/webservices/rest/search?query="TECDOC-626"&format=json` | 2026-09-05 | **0** |
 | Europe PMC | same, `"TECDOC 626"` | 2026-09-05 | **0** |
 | OpenCitations | `api.opencitations.net/index/v1/citations/10.3327/jaesj.34.1116` (the 1992 *J. At. Energy Soc. Japan* note introducing TECDOC-626 — the only DOI-bearing proxy that exists) | 2026-09-05 | **1** |
+| Semantic Scholar | `api.semanticscholar.org/graph/v1/paper/DOI:10.3327/jaesj.34.1116/citations` (same proxy anchor, second provider) | 2026-09-05 | **1** (the identical DOI) |
+
+**The bare 1 is confirmed, not a phantom** *(FIX1 blank-key re-check, 2026-09-05)*. A single hit
+on a small anchor is exactly the shape the OpenCitations blank-`citing` artefact manufactures, so
+it was re-enumerated with the repaired `_scripts/intersect.py`: the anchor returns **one record and
+zero blank keys**, so there was no phantom to drop, and **Semantic Scholar independently returns
+the same single citer**. The hit is `10.3390/en13112898` — Zeliang, Mi, Tokuhiro, Lu & Rezvoi,
+*Integral PWR-Type Small Modular Reactor Developmental Status, Design Characteristics and Passive
+Features: A Review*, *Energies* 2020 (Crossref, 2026-09-05). It is a nuclear SMR review, so it
+falls **inside** the nuclear literature and is consistent with — not a counterexample to — the
+"every citer is nuclear" finding the 57 carries. The 1 stands.
 
 Europe PMC returning 0 is a **calibrated zero**, not evidence: it is biomedicine-weighted and
 indexes essentially no nuclear-engineering literature, exactly the miscalibration

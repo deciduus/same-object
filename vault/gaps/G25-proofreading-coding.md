@@ -145,6 +145,15 @@ set of B, intersect. Coverage is then 100% of what the provider indexes. Script:
 | Shannon 1948 pt II `10.1002/j.1538-7305.1948.tb00917.x` | **9,771** |
 | **intersection** | **8** |
 
+**Re-derived on the repaired instrument, 2026-09-05 (FIX1 blank-key re-check).** Re-run with
+`_scripts/intersect.py` after the blank-`citing` filter landed: Hopfield **1,542 → 1,542** (51
+blank/DOI-less records dropped), Shannon pt II **9,771 → 9,771** (70 dropped), intersection
+**8 → 8**, the same eight DOIs. Nothing moved — these figures were already post-filter when
+published. **Semantic Scholar has no record for Shannon 1948 pt II
+`10.1002/j.1538-7305.1948.tb00917.x`** — a coverage hole, reported as `err` and excluded from the
+consensus, never as a zero; it does index Hopfield (1,285 citers after dropping 174 blanks), so
+the hole is on the Shannon side only. Standing, evidence and `contact-surface` are unchanged.
+
 **Shannon 1948 part I could not be fetched from OpenCitations at all.**
 `api.opencitations.net/index/v1/citations/10.1002/j.1538-7305.1948.tb01338.x` returns
 **HTTP 500** (`something unexpected happened - SystemExit: 1 (line 1412)`) after ~3 min 47 s,

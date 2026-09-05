@@ -40,8 +40,18 @@ alligator limb bones, crab claw cuticle, intestinal lactase capacity.
 | **OpenAlex** | `api.openalex.org/works?filter=doi:10.1006/jtbi.1996.0270` → `cited_by_count` (W2144457609) | **46** | 2026-09-05 |
 | Crossref | `api.crossref.org/works/10.1006/jtbi.1996.0270?mailto=...` → `is-referenced-by-count` | **36** | 2026-09-05 |
 | OpenCitations | `api.opencitations.net/index/v1/citations/10.1006/jtbi.1996.0270`, records counted | **40** | 2026-09-05 |
-| OpenCitations | `.../citation-count/10.1006/jtbi.1996.0270` | **40** (agrees with the counted list) | 2026-09-05 |
+| OpenCitations | `.../citation-count/10.1006/jtbi.1996.0270` | **40** — an *unfiltered* server-side count, so it agrees with the raw record list, not with the de-blanked set | 2026-09-05 |
+| Semantic Scholar | `api.semanticscholar.org/graph/v1/paper/DOI:10.1006/jtbi.1996.0270/citations`, blanks dropped | **34** | 2026-09-05 |
 | Europe PMC | not re-run this session; earlier figure was 28 | 28 | 2026-09-03 |
+
+**Re-checked on the repaired instrument, 2026-09-05 (FIX1 blank-key re-check).** The
+OpenCitations figure was a *counted list*, so the blank-`citing` trap applies to it: re-enumerated
+with `_scripts/intersect.py` after the filter landed, the endpoint returns 40 records of which
+**one carries an empty `citing` field**, giving **40 → 39** distinct citing DOIs. Semantic Scholar,
+run as an independent second provider, returns 34 after dropping 3 blanks. Nothing load-bearing
+moves: this note's finding is the *composition* of the citing set, not its cardinality, and the
+five providers still spread 28–46 exactly as the note already says they do. **Standing, evidence
+and `contact-surface` are unchanged.**
 
 **46 was never stale — it is OpenAlex, and OpenAlex still returns 46 today.**
 [[stress-strength-interference]] previously called it "stale (real: 36/39/28)"; that was a

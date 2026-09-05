@@ -68,7 +68,7 @@ indexes; script `vault/_scripts/intersect.py`, recipe in [[citation-sources]]):
 | Anchor | DOI | N citers |
 |---|---|---|
 | A - thermodynamic cost of a bit | Landauer 1961, *IBM J. Res. Dev.* 5(3):183, `10.1147/rd.53.0183` | **4,292** |
-| B - energy per bit in neurons | Laughlin, de Ruyter van Steveninck & Anderson 1998, `10.1038/236` **+** Attwell & Laughlin 2001, `10.1097/00004647-200110000-00001` (pooled) | **3,881** |
+| B - energy per bit in neurons | Laughlin, de Ruyter van Steveninck & Anderson 1998, `10.1038/236` **+** Attwell & Laughlin 2001, `10.1097/00004647-200110000-00001` (pooled) | **3,882** |
 | **intersection** | | **35** (0.82% of A, 0.90% of B) |
 
 Null model, `N = 1.6x10^8` DOIs: expected co-citers under independence = 0.10, so
@@ -76,6 +76,15 @@ Null model, `N = 1.6x10^8` DOIs: expected co-citers under independence = 0.10, s
 
 Anchor DOIs verified against Crossref (`api.crossref.org/works/<doi>?mailto=...`, 2026-09-05):
 Landauer `is-referenced-by-count` 4,339; Laughlin 983; Attwell 3,040.
+
+**Re-derived on the repaired instrument, 2026-09-05 (FIX1 blank-key re-check).** Re-run with
+`_scripts/intersect.py` after the blank-`citing` filter landed, `--providers=opencitations,semanticscholar`:
+OpenCitations `N_A` **4,292 → 4,292** (180 blank/DOI-less records dropped), pooled `N_B`
+**3,881 → 3,882** (Laughlin 1,012 + Attwell 3,054, 80 blanks dropped; the published 3,881 was one
+*low*, not one high — a transcription slip, not the phantom), intersection **35 → 35**, the same
+35 DOIs. The percentages are unchanged to two figures (0.82% / 0.90%). **Semantic Scholar has no
+record for Landauer 1961 `10.1147/rd.53.0183`** — a coverage hole, reported as `err` and excluded
+from the consensus, never as a zero. The overturn is untouched: `contact-surface` stays **35**.
 
 **All 35 were inspected by title (Crossref, 2026-09-05).** They are not noise - they are the
 claimed connection, already done:

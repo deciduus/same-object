@@ -17,7 +17,7 @@ uses-move: []
 rests-on: []
 tags: [node/gap, crosses/formalism, evidence/citation-intersection, standing/narrowed]
 last-checked: 2026-09-05
-note: "Overturned on a query that never tested this gap - ants vs bees is swarm-internal. Citer-set intersection of swarm anchors against consensus anchors returns 0, 0, 1, 1 (OpenCitations, 2026-09-05); the one real bridge is ACM TAAS 2012. The 26 and 551 are UNSOURCED. Reverted to narrowed 2026-09-05 (orchestrator, on the agent's evidence)."
+note: "Overturned on a query that never tested this gap - ants vs bees is swarm-internal. Citer-set intersection of swarm anchors against consensus anchors returns 0, 0, 1, 1 (OpenCitations, 2026-09-05); the one real bridge is ACM TAAS 2012. All four counts and all four set sizes re-derived unchanged on the blank-key-filtered script 2026-09-05, and the bridge confirmed against its own Crossref reference list, so the two 1s are not the phantom. The 26 and 551 are UNSOURCED. Reverted to narrowed 2026-09-05 (orchestrator, on the agent's evidence)."
 ---
 
 # Collective decision
@@ -99,6 +99,48 @@ Both hits inspected (Crossref, 2026-09-05):
   making inside a distributed-systems venue, citing the Byzantine/FLP canon.
 
 **So the honest contact surface is 1, not 26.**
+
+### Re-derived on the repaired instrument, and the two 1s survive
+
+Every count above was produced *before* `_scripts/intersect.py` dropped blank `citing` keys, and
+an OpenCitations blank inflates every intersection by exactly 1 — so a phantom and a real bridge
+are the same number, and this note's whole reversion rests on two of them. All four pairings were
+therefore re-run, 2026-09-05, `--providers=opencitations,semanticscholar` (OpenAlex budget-locked):
+
+| Pairing | old ∩ | new ∩ (OpenCitations) | new ∩ (Semantic Scholar) |
+|---|---|---|---|
+| Dorigo 1996 × Paxos | 1 → **0** unchanged | **0** (blanks dropped: 107) | `err` — S2 has no record for Dorigo `10.1109/3477.484436` |
+| Seeley 1999 × Paxos | 0 | **0** (74 dropped) | **0** |
+| Dorigo 1996 × (Byzantine + FLP) | 1 | **1** (143 dropped) | `err` — same coverage hole |
+| Seeley 1999 × (Byzantine + FLP) | 1 | **1** (110 dropped) | **1**, the *same DOI* |
+
+Citer-set sizes are unchanged on every anchor — Dorigo **8,814**, Seeley **267**, Paxos **1,914**,
+Byzantine + FLP pooled **6,735** — which shows these figures were already post-filter when first
+published. Semantic Scholar's two `err` rows are a coverage hole on the Dorigo DOI, **not zeros**,
+and are excluded from the consensus per [[citation-sources]].
+
+**Both 1s are real, and they are the two works already inspected**, not new hits: the Dorigo row
+still resolves to `10.1201/9781420038880.bmatt`, the back-matter bibliography that was never
+counted as a bridge, and the Seeley row still resolves to `10.1145/2168260.2168264`.
+
+### The one real bridge, verified against its own reference list
+
+Because `narrowed` rather than `overturned` rests entirely on that single work existing, it was
+checked a second way — not by the citation index that found it, but by the publisher's own
+deposited metadata (Crossref `api.crossref.org/works/10.1145/2168260.2168264?mailto=…`, 2026-09-05):
+
+- **Saffre & Simaitis, *Host selection through collective decision*, ACM Trans. Autonomous and
+  Adaptive Systems, April 2012**, `reference-count` = 43.
+- Abstract: "a collective decision-making framework **inspired by biological swarms** and capable
+  of supporting the emergence of a **consensus** within a population of agents … applicability to
+  **host selection** … in application migration scenarios." Both sides of the gap, in one abstract.
+- Its deposited reference list contains **Seeley & Buhrman 1999** `10.1007/s002650050536` — the
+  swarm anchor — **and** Seeley 2003 `10.1007/s00265-003-0598-z`, **and** Fischer, Lynch &
+  Paterson 1985 `10.1145/3149.214121` — the consensus anchor.
+
+It cites both anchors, in a distributed-systems venue, for the thing the gap names. **The bridge
+is real, so `standing` stays `narrowed` and `contact-surface` stays 1**; had it not cited both,
+this note would have reverted to `overturned` with `contact-surface: 0`.
 
 ### Why `overturned` should be reverted
 
