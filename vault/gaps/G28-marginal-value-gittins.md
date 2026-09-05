@@ -17,7 +17,7 @@ uses-move: []
 rests-on: []
 tags: [node/gap, crosses/nothing, evidence/citation-intersection, standing/narrowed]
 last-checked: 2026-09-03
-note: "Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs control 22.2% - a factor of 45. But 'no direct contact at all' is now false: Griebling 2026 cites both."
+note: "Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs control 225/1,013 = 22.2% - a factor of 45. Denominators reconciled in the Provenance table. Griebling 2026 LOCATED, doi 10.1016/j.anbehav.2026.123491, and confirmed to cite Charnov 1976 and Gittins 1979."
 ---
 
 # Marginal value theorem and the Gittins index
@@ -36,7 +36,8 @@ note: "Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs cont
 
 ## Why this entry forced a new field in [[relationship-description]]
 
-The count alone is uninteresting: 8 co-citers out of 1,542 and 5,424. Under verdict scoring
+The count alone is uninteresting: 8 co-citers, against a Gittins-citer base whose size depends
+on the provider (see the Provenance table below: 986-1,544) and a Charnov base of 5,424. Under verdict scoring
 that reads "small number, gap holds," and the thinking stops.
 
 **Inspecting the eight is where the finding actually is.** All eight are cognitive and
@@ -55,7 +56,7 @@ expresses it.
 
 | Pair | Co-citers |
 |---|---|
-| Charnov and Gittins | **8** (0.5% of Gittins) |
+| Charnov and Gittins | **8** (0.5% of the Gittins base) |
 | **Gittins and Sutton & Barto** | **181 (11.7%)** |
 
 Operations research and reinforcement learning are **one closed literature**. It is
@@ -111,6 +112,27 @@ Crossref returned the identical five DOIs.**
 | **Positive control: Gittins × Auer 2002** | **225 — 22.2%.** A factor of **45** |
 | Control: Charnov × Auer 2002 | 3 (0.08%) — so the isolation is not an artifact of Gittins 1979's age |
 
+**Which denominator, and the arithmetic.** Both headline percentages are computed against the
+**same base of 1,013** — the citer set actually enumerated at run time (2026-09-03), *not*
+against any of the live counts in the Provenance table:
+
+- intersection: `5 / 1,013 = 0.004936` → **0.49%**
+- positive control: `225 / 1,013 = 0.2221` → **22.2%**
+- ratio: `0.2221 / 0.004936 = 45.0` → the stated **factor of 45**
+
+The `1,006/1,010` coverage line uses a slightly different figure (1,010) because four DOIs
+failed to resolve on the reference-list pass; it is a coverage statistic, not the denominator of
+either percentage. **Neither percentage is recomputed against Crossref's 986 or OpenAlex's
+1,544** — doing so would move 0.49% to 0.51% or 0.32% respectively, and 22.2% to 22.8% or 14.6%.
+The factor-of-45 is denominator-invariant, since both numerator sets share the base.
+
+**The positive-control query.** Auer, Cesa-Bianchi & Fischer 2002, *Finite-time Analysis of the
+Multiarmed Bandit Problem*, *Machine Learning* 47:235-256, **`10.1023/A:1013689704352`**
+— DOI verified against Crossref 2026-09-05 (title, authors and journal all match;
+`is-referenced-by-count` = 3,906). The control is the **set intersection of the citer list of
+Gittins 1979 with the citer list of Auer 2002** — i.e. works citing both — computed on the same
+1,013-work Gittins base, giving 225.
+
 **All five inspected. Zero are real bridges.** Bhat/Bénichou/Redner 2018 (*Phys. Rev. E*, read
 in full) cites both in separate background lists and never uses the phrase "marginal value
 theorem."
@@ -125,7 +147,21 @@ one paper, unconnected. Again.
 The note said **"operations research and behavioural ecology have no direct contact at all."**
 **That is no longer true.** Griebling et al., *Animal Behaviour* (2026) cites Charnov 1976,
 Gittins 1979 **and** the Gittins 2011 book — direct ecology → operations-research contact.
-Not obtained; **an outstanding check**, alongside Houston & McNamara 1999.
+
+**LOCATED and verified, 2026-09-05.** Griebling, Johnson & Benson-Amram, *Raccoons optimally
+forage for information: exploration-exploitation trade-offs in innovation*, *Animal Behaviour*,
+April 2026, **`10.1016/j.anbehav.2026.123491`** (Crossref works search on
+`query.bibliographic=Griebling+Animal+Behaviour+2026`, then the full record at
+`api.crossref.org/works/10.1016/j.anbehav.2026.123491?mailto=...`). Its deposited reference list
+(100 references) **contains Charnov 1976 `10.1016/0040-5809(76)90040-X`, Gittins 1979
+`10.1111/j.2517-6161.1979.tb01068.x`, and Gittins 2011** — so the co-citation is confirmed from
+the primary record, not inferred. **Full text still not obtained**, so whether it *states the
+equivalence* remains an outstanding check, alongside Houston & McNamara 1999.
+
+Note this is the same paper already listed among the eight co-citers above
+(*Raccoons optimally forage for information*) — so the "direct contact" and the
+"joined only by a third field" readings are in tension, and the honest statement is that this
+one work is behavioural ecology proper, not neuroscience.
 
 **Restated:** contact is *newly emergent and vanishingly thin* — 0.49% against a 22.2% control —
 and no work read in full states the equivalence.
@@ -224,3 +260,26 @@ as such.* It sharpens what would have to be written, and makes writing it slight
 Green 1987, Stephens & Krebs 1986, and Houston & McNamara 1999 are books that could not be
 obtained. **The last is the most likely place for a stated relation to be hiding**, and this
 entry stays provisional on it.
+
+## Provenance: the Gittins-citer denominators
+
+Four different Gittins-citer counts appeared in this note (1,542, 1,013, 1,010, and an implied
+base for "0.5%"). They are one number measured by different instruments. Replaced by this table.
+
+Anchors: Charnov 1976 `10.1016/0040-5809(76)90040-x`; Gittins 1979
+`10.1111/j.2517-6161.1979.tb01068.x` (Crossref, 2026-09-05: *Bandit Processes and Dynamic
+Allocation Indices*, J. R. Stat. Soc. B — correct work).
+
+| Provider | Endpoint | N citers of Gittins 1979 | Date |
+|---|---|---|---|
+| **Run-time enumeration** (provider not recorded; OpenCitations COCI is the likely source, since it and Crossref "returned the identical five DOIs") | — | **1,013** | 2026-09-03 |
+| Crossref | `api.crossref.org/works/10.1111/j.2517-6161.1979.tb01068.x?mailto=...` → `is-referenced-by-count` | **986** | 2026-09-05 |
+| OpenCitations | `api.opencitations.net/index/v1/citation-count/10.1111/j.2517-6161.1979.tb01068.x` | **1,026** | 2026-09-05 |
+| OpenAlex | `api.openalex.org/works?filter=doi:10.1111/j.2517-6161.1979.tb01068.x` → `cited_by_count` (W3125634603) | **1,544** | 2026-09-05 |
+
+**1,542 was OpenAlex** (1,544 today — two works' growth, consistent). **1,013 is closest to
+OpenCitations** (1,026 today). **986 is Crossref.** The 1,010/1,006 pair is the subset that
+survived reference-list retrieval, not a separate measurement of the base.
+
+The percentages in this note are all computed against **1,013**; see the arithmetic under
+*The citation intersection* above.

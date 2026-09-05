@@ -15,7 +15,7 @@ mutual-with: []
 computed-in: ["[[C17-offset-from-threshold]]"]
 uses-move: ["[[M2-use-the-noise]]"]
 rests-on: []
-tags: [node/gap, crosses/formalism, evidence/single-review, standing/narrowed]
+tags: [node/gap, crosses/formalism, evidence/full-text-read, standing/narrowed]
 last-checked: 2026-09-03
 note: "Bibliography audited directly: 595 refs, and it carries no titles at all, so prior subject characterisation read data that is not there. Only the offset-from-threshold figure of merit survives."
 ---
@@ -36,8 +36,16 @@ regenerative amplification and the Hopf bifurcation*. The field-level claim is f
 Muñoz, *Rev. Mod. Phys.* 90, 031001 (2018), pulled from
 [arXiv:1712.04499](https://arxiv.org/pdf/1712.04499) and extracted, 34 pages.
 
-**The count is 595 references, not 578.** The 578 figure is **UNVERIFIED** and should be treated
-as approximate.
+**The printed bibliography holds 595 references.** The **578** figure that had been quoted is
+not an error: it is Crossref's publisher-deposited `reference-count` for this DOI
+(`https://api.crossref.org/works/10.1103/RevModPhys.90.031001`, fetched 2026-09-05, returning
+`reference-count: 578` and `references-count: 578`). Deposited list and printed bibliography are
+two different objects and both numbers are true of their own object — APS depositing
+unstructured references is also why the deposited list has no titles.
+
+**What was actually defective was the attribution.** The 578 arrived with no provider, no
+endpoint and no fetch date, so nobody could tell which object it counted; it was then promoted
+as publishable without the bibliography ever being opened. Corrected 2026-09-05.
 
 **And the bibliography carries no article titles — only venues.** So every previous
 subject-keyword characterisation of this reference list was reading data that is not in it.

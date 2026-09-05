@@ -17,7 +17,7 @@ uses-move: []
 rests-on: ["[[stress-strength-interference]]"]
 tags: [node/gap, crosses/nothing, evidence/citation-intersection, standing/live]
 last-checked: 2026-09-03
-note: "All 46 citing works individually inspected. Symmorphosis itself is contested (~28 works)."
+note: "46 is the OpenAlex count and is confirmed live, not stale; Crossref returns 36 and OpenCitations 40 for the same work. Citing works individually inspected, all comparative biomechanics. The 753-works figure is withdrawn as a string artifact."
 ---
 
 # Safety factor, derived independently twice
@@ -28,11 +28,39 @@ note: "All 46 citing works individually inspected. Symmorphosis itself is contes
 
 ## Contact surface
 
-Alexander's *Theory of Mixed Chains Applied to Safety Factors in Biological Systems* has **46
-citations. All 46 were fetched and inspected. Every one is comparative biomechanics** —
+Alexander's *A Theory of Mixed Chains Applied to Safety Factors in Biological Systems*
+(*J. Theor. Biol.* 1997, **`10.1006/jtbi.1996.0270`**) has **46 citations by OpenAlex's count.
+The citing works were fetched and inspected; every one is comparative biomechanics** —
 alligator limb bones, crab claw cuticle, intestinal lactase capacity.
 
-Engineering's stress-strength interference literature: **753 works**, not one biological.
+### The count, by provider (B2 reconciliation)
+
+| Provider | Endpoint | N | Date |
+|---|---|---|---|
+| **OpenAlex** | `api.openalex.org/works?filter=doi:10.1006/jtbi.1996.0270` → `cited_by_count` (W2144457609) | **46** | 2026-09-05 |
+| Crossref | `api.crossref.org/works/10.1006/jtbi.1996.0270?mailto=...` → `is-referenced-by-count` | **36** | 2026-09-05 |
+| OpenCitations | `api.opencitations.net/index/v1/citations/10.1006/jtbi.1996.0270`, records counted | **40** | 2026-09-05 |
+| OpenCitations | `.../citation-count/10.1006/jtbi.1996.0270` | **40** (agrees with the counted list) | 2026-09-05 |
+| Europe PMC | not re-run this session; earlier figure was 28 | 28 | 2026-09-03 |
+
+**46 was never stale — it is OpenAlex, and OpenAlex still returns 46 today.**
+[[stress-strength-interference]] previously called it "stale (real: 36/39/28)"; that was a
+provider disagreement misread as an error, and it is corrected there. All four providers agree
+on the *composition* — comparative biomechanics throughout — which is the load-bearing claim.
+Which provider the original run used is **not determinable from the note**; 46 matches OpenAlex
+exactly, which is the strongest available inference.
+
+### The engineering side: 753 is withdrawn
+
+**"Engineering's stress-strength interference literature: 753 works" is withdrawn.** It was a
+**string-match artifact** — a relaxed Crossref query for the phrase returns ~1.8M, so 753 was an
+arbitrary cut of a string search, not a count of a literature. See [[citation-sources]], "String
+counts are not citation counts." No replacement figure is offered, because a defensible one
+requires a defined anchor set rather than a phrase.
+
+The finding does not rest on either number: the intersection is a **measured, inspected zero**,
+confirmed in [[stress-strength-interference]] against four IEEE / *Microelectronics Reliability*
+interference papers (84 citers) → **0 overlap**.
 
 ## The trade runs both ways
 

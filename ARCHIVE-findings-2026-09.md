@@ -1,7 +1,19 @@
-# Findings
+# Archived findings — snapshot to 2026-09
 
-Status ledger. Every entry is either a measured gap, a finding with numbers, or a closed
-item. Corrections are logged at the bottom rather than silently fixed.
+> **ARCHIVED. Superseded by `vault/00-index.md` on 2026-09-05.**
+>
+> - **Do not use this file for current standings.** The vault notes and `vault/00-index.md` are
+>   canonical. Where this file and a vault note disagree, the vault note is right.
+> - This file uses the **retired verdict vocabulary** — HOLDS / WEAKENED / COLLAPSED /
+>   WITHDRAWN — preserved here as history. The live closed vocabulary is
+>   `standing: live | narrowed | withdrawn | overturned`, enforced by `vault/_lint.py`. See
+>   `vault/method/relationship-description.md` for why the old taxonomy was retired.
+> - The **corrections log below has been migrated into `vault/log.md`** as dated entries marked
+>   `[migrated from FINDINGS.md]`. That log is now the live one.
+> - Renamed from `FINDINGS.md` on 2026-09-05 (backlog D14).
+
+Status ledger as it stood in 2026-09. Every entry is either a measured gap, a finding with
+numbers, or a closed item. Corrections were logged at the bottom rather than silently fixed.
 
 ---
 
@@ -54,7 +66,11 @@ colloquium citing zero engineering, laser, MEMS or superconducting work"*, and p
 publishable as-is. The PDF was finally extracted (Muñoz, *RMP* 90:031001, via
 arXiv:1712.04499):
 
-- **595 references, not 578.**
+- **595 references in the printed bibliography.** *(Corrected 2026-09-05: 578 is not an error —
+  it is Crossref's publisher-deposited `reference-count` for this DOI,
+  `https://api.crossref.org/works/10.1103/RevModPhys.90.031001`, fetched 2026-09-05. Deposited
+  list and printed bibliography are different objects. The real defect was that the number was
+  quoted with no provider, endpoint or fetch date. See `vault/log.md`.)*
 - **The bibliography has no article titles at all** — only venues. Every subject-keyword
   characterisation of it was reading data that is not there.
 - **Five IEEE entries**, so "zero engineering" is false as worded. Zero laser / MEMS /
@@ -890,7 +906,11 @@ statement the deterministic safety-factor literature cannot make.
 
 ---
 
-## Corrections log
+## Corrections log — MIGRATED
+
+**These entries now live in `vault/log.md`**, dated 2026-09-05 and marked
+`[migrated from FINDINGS.md]`. That log is the live one; the table below is kept only so the
+archive stays readable on its own.
 
 Kept visible rather than silently fixed, because the pattern of errors is itself
 information.

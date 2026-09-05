@@ -15,7 +15,7 @@ mutual-with: []
 computed-in: []
 uses-move: []
 rests-on: []
-tags: [node/gap, crosses/vocabulary, evidence/string-protocol, standing/narrowed]
+tags: [node/gap, crosses/vocabulary, evidence/full-text-read, standing/narrowed]
 last-checked: 2026-09-03
 note: "Outcome distribution still uncomputed. Our own four discriminating features tested: one refuted (Homestake), three narrowed, and the neutron-lifetime example was wrong on the facts."
 ---

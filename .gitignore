@@ -12,3 +12,13 @@ sources/raw/
 # scratch / tooling
 __pycache__/
 *.pyc
+
+# Obsidian per-machine UI state
+vault/.obsidian/workspace.json
+vault/.obsidian/workspace-mobile.json
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak

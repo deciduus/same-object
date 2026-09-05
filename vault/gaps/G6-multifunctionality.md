@@ -15,7 +15,7 @@ mutual-with: []
 computed-in: []
 uses-move: []
 rests-on: ["[[hill-number-multifunctionality]]"]
-tags: [node/gap, crosses/word, evidence/full-text-read, standing/live]
+tags: [node/gap, crosses/word, evidence/citation-intersection, standing/live]
 last-checked: 2026-09-03
 note: "Survived both standards. Intersection 0 across six anchor pairings at 77-100% coverage; 1,033 works, no contact either direction. Control Byrnes x Jost = 17, reproduced by both sources."
 ---
@@ -33,6 +33,23 @@ note: "Survived both standards. Intersection 0 across six anchor pairings at 77-
 Run on six anchor pairings — Byrnes 2023 and Byrnes 2014 against Snyder 2015, the 2020 residual
 performance paper, and O'Brien 2011. **OpenCitations set-overlap and an independent Crossref
 reference-list scan, in both directions, both return zero.**
+
+**Providers, endpoints and date for this table.** Run **2026-09-03**. Two independent
+instruments, in both directions:
+
+- **OpenCitations** set-overlap — citer lists from
+  `opencitations.net/index/coci/api/v1/citations/<doi>` (now 301-redirecting to
+  `api.opencitations.net/index/v1/citations/<doi>`), intersected as DOI sets.
+- **Crossref** reference-list scan — `api.crossref.org/works/<doi>?mailto=...`, reading
+  `message.reference` from the full record (`?select=reference` returns HTTP 400; see
+  [[citation-sources]]).
+- Coverage denominators ("COCI citers / Crossref cited-by") are the two providers' own counts of
+  the same citer set, so the coverage column is a **ratio between the two providers**, not a
+  retrieval-success rate.
+
+**The individual anchor DOIs for the six pairings were not recorded at time of run** and are not
+reconstructable from this note; the pairings are identified only by author-year above. Re-running
+this table requires re-resolving those six DOIs first.
 
 | Check | Result |
 |---|---|
@@ -86,7 +103,10 @@ the gap is about which *formalism* is used, not what score it returns.
 
 ## The homograph, unchanged
 
-The bare word returns **9,570** hits, entirely materials science. Every query in the re-read
+The bare word returns **9,570** hits, entirely materials science. **Provider not recorded at
+time of run** — the note does not say which index produced 9,570, and no endpoint or query string
+was logged, so this figure is *not currently reproducible*. It is a scale indicator, not a
+measurement, and nothing in this note depends on it. Date of run: 2026-09-03. Every query in the re-read
 was anchored on formalism names — "Hill numbers", "effective number of functions",
 "multifunctional efficiency", "sum of property ratios" — and never on the bare word. That is
 the only way to keep the two senses apart. See [[homographs]].

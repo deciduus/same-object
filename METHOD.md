@@ -46,7 +46,8 @@ and the shared figure of merit follows within a decade.
 **Every other gap on the list is missing exactly that.** Closing one does not require a
 review article. It requires a theorem.
 
-And in three cases the theorem already exists, unread in an adjacent field:
+And in four cases the theorem already exists, unread in an adjacent field — all four
+citation-tested and all four still unread, see `vault/computed/C13-unread-theorem-audit.md`:
 
 | Gap | The unread result |
 |---|---|
@@ -71,13 +72,23 @@ Also useful: **reference-list audits.** Take a major review in field A and count
 of its references come from field B. That single number carries more weight than any
 amount of argument — which is exactly why it must be verified before it is quoted.
 
-**Hard precondition, learned the expensive way.** This project reported a *Reviews of Modern
-Physics* colloquium on biological criticality as having **578 references, zero from
-engineering**, and promoted it as publishable. When the PDF was finally extracted it had
-**595 references**, and **the bibliography carries no article titles at all** — only venues.
-The subject characterisation had been reading a field that is not in the data, and five IEEE
-entries make "zero engineering" false as worded. The unverified number had propagated into five
-files before anyone opened the source.
+**Hard precondition, learned the expensive way — twice.** This project reported a *Reviews of
+Modern Physics* colloquium on biological criticality as having **578 references, zero from
+engineering**, and promoted it as publishable. When the PDF was finally extracted, its printed
+bibliography held **595 references**, and **carried no article titles at all** — only venues.
+
+We then recorded that as *"578 was wrong."* **It was not.** Crossref's publisher-deposited
+`reference-count` for `10.1103/RevModPhys.90.031001` is exactly **578**
+(`https://api.crossref.org/works/10.1103/RevModPhys.90.031001`, fetched 2026-09-05). 578 is the
+deposited list; 595 is the printed bibliography. Two different objects, two true numbers — and
+APS depositing unstructured references is also why the deposited list has no titles.
+
+**The defect was never the digits. It was that the number was unattributed** — quoted and
+promoted without a provider, an endpoint or a fetch date, and without anyone opening the
+bibliography it was being used to characterise. An unattributed 595 would have failed the same
+rule. What is genuinely false is the claim built on top: five IEEE entries make "zero
+engineering" wrong as worded, and the subject characterisation had been reading a field that is
+not in the data. The unattributed number reached five files before anyone opened the source.
 
 So: fetch the reference list itself, check which fields it actually contains, and state which
 field you classified on. "Zero engineering *by venue*" is supportable. "Zero engineering" is a
@@ -167,7 +178,9 @@ empirical support:
    to an 8% one purely by relaxing an assumption, with no new data.
 4. **The interesting survivors are over-determined.** The neutron lifetime matters because
    an independent relation over-determines it and picks a side. G is *less* interesting
-   than its 13σ suggests, because nothing over-determines it.
+   than its **~9.9σ** suggests, because nothing over-determines it. (That figure was carried as
+   "13σ" until 2026-09-03; the largest pair computable from CODATA-2018's own input table is
+   ~9.9σ. See `vault/method/fine-structure-discrepancy.md`.)
 
 ### How discrepancies actually end
 
@@ -182,8 +195,8 @@ The transferable finding: **institutionalize cross-method agreement as a require
 
 ## 6. The analytical frame
 
-Five moves recur across every field surveyed. None of them is "build a stronger thing."
-All five are **structural** rather than **magnitude** moves — they change the arrangement,
+Six moves recur across every field surveyed. None of them is "build a stronger thing."
+All six are **structural** rather than **magnitude** moves — they change the arrangement,
 not the amount.
 
 | Move | Statement |
@@ -480,27 +493,26 @@ default.** Before reporting a zero:
 
 ### Which prior findings are safe
 
-Re-run completed. Results:
+Re-run completed, and its results were folded into the vault. **The verdict labels this section
+used to carry (HOLDS / WEAKENED / COLLAPSED / DOWNGRADED / WITHDRAWN) are retired** — they
+forced choices the evidence did not support, and `vault/_lint.py` now rejects them in any
+machine field. See `vault/method/relationship-description.md` for what replaced them.
 
-| Finding | Verdict |
-|---|---|
-| G25 proofreading vs coding theory | **HOLDS** — reference-list intersection, 1,463 citers pulled |
-| G1 gradient coupling | **HOLDS** — 9 of 10 alternate formulations still zero, calibration passed |
-| G6 multifunctionality | **HOLDS** — every ecology term against every engineering term is 0 |
-| G19 Alexander vs stress-strength | **HOLDS** — all 46 citing works individually inspected |
-| G18 peak-to-average vs metabolic scope | **HOLDS** — true co-citation plus a 159-work control |
-| G28 marginal value theorem vs Gittins | **HOLDS** - survived the full alternate-name gauntlet |
-| G2, G3, G5, G7, G23 | **HOLD** - see batch one |
-| G9 discrepancy base rate | **WEAKENED** - the class half is covered by metrology and epidemiology; the base-rate half survives |
-| G20 resize vs throttle | **WEAKENED** - symmorphosis *is* a design-margin formalism |
-| G21 dimensionless regime map | **WEAKENED** - narrow to "no tabulated map with crossover conditions" |
-| G22 scale-transfer triage | **WEAKENED** - agents disagree; see FINDINGS |
-| **G11 plant gravisensing limits** | **COLLAPSED** - synonym artifact; the thermal-threshold analysis exists |
-| **G12 latch cycles-to-failure** | **COLLAPSED** - S-N curves published for locust cuticle |
-| **G17 overconfident uncertainties** | **COLLAPSED** - 279 citations, with a direct quantitative follow-up |
-| G4 criticality as design | **DOWNGRADED** — 99 papers link Hopf bifurcation to the cochlea. A single-review omission, not a field gap |
-| **G27 collective decision** | **WITHDRAWN** — 26 hits in the original query, 551 under synonyms |
-| **The energy-per-bit axis claim** | **WITHDRAWN** — 575 papers link Landauer to neural systems |
+**Do not read a standing from this file.** Every gap's current standing lives in its note's
+`standing:` field — a closed vocabulary of `live`, `narrowed`, `withdrawn`, `overturned` —
+alongside an `evidence:` grade of `citation-intersection`, `full-text-read`, `string-protocol`,
+`single-review` or `not-assessed`. `vault/00-index.md` is canonical; `vault/triage.base` sorts
+the queue by weakest evidence first. The pre-vault snapshot of this table survives, with its old
+vocabulary intact as history, in `ARCHIVE-findings-2026-09.md`.
+
+What survives the re-run as a *method* statement, rather than a per-gap verdict:
+
+- **Reference-list intersection beats string matching** wherever the citer count is tractable.
+  The project's most robust finding was measured by pulling citers and intersecting their
+  bibliographies, not by querying strings.
+- **String-protocol findings have survived under half the time** when re-tested by citation
+  intersection. Any gap still carrying `evidence: string-protocol` should be read as provisional.
+- **A string count cannot overturn a gap either**, for the same reason it cannot confirm one.
 
 ### Positive controls now available
 
@@ -527,6 +539,24 @@ late-life mortality plateau or heterogeneous-redundancy results.
 - **Closed** — the signature is threefold: shared vocabulary, shared canonical citations, and
   **performance reported as a fraction of a theoretical bound.** That third property is the
   most diagnostic; a field that quotes its result as "86% of capacity" has a shared axis.
+
+### Retired gap IDs
+
+Eight G-numbers are cited in this file and in `ARCHIVE-findings-2026-09.md` but have **no vault
+note**, and none is coming back. They are listed here so that no ID is silently reused and no
+reader hunts for a file that does not exist. Reasons are drawn from the archived findings; there
+are deliberately **no tombstone notes** — an ID with nothing to describe does not earn one.
+
+| ID | Was | Why it has no note |
+|---|---|---|
+| G10 | Sub-38.6 µm gravity — untested regime below the shortest-range test | An experimental frontier, not a cross-domain gap: one field, no second literature to intersect. Fails the three-part test at step 1 |
+| G13 | Measure a negative energy density (Wigner tomography on dynamical-Casimir output) | An undone experiment inside one field. Nothing to co-cite; belongs to `unexplored-window.html`, not the gap catalogue |
+| G14 | Weigh vacuum energy (cryogenic balance on Casimir cavities) | Same class as G13 — under construction, no result. A proposal, not a measured absence |
+| G15 | Settle the Casimir puzzle (plasma vs Drude model) | An open dispute internal to one literature; both sides read each other. There is no missing shared axis |
+| G16 | Classical-gravity noise floor as a model-independent bound | A single 2026 theory result awaiting a measurement. One field, no crossing |
+| G18 | Peak-to-average / turndown ratio vs factorial aerobic scope | Real and measured (co-citation 0 twice, against a 159-work internal control) but never written up as a vault note. Live candidate — re-open under a **new** ID with a full evidence block rather than reviving this one |
+| G24 | Miner's rule vs bone fatigue | Not a zero: ~6 works over ~28 years. Thin, not absent, so it fails the third clause of the test. Its cautionary value — the apostrophe artifact — was promoted into §11 and `vault/method/failure-modes.md` |
+| G26 | Crypsis vs stealth / signal detection theory | Reclassified NOT YET A SHARED OBJECT: 0 of 169 camouflage papers cite either founding text, and the fields measure different things. Nothing was borrowed and lost, so there is no gap to describe |
 
 ---
 

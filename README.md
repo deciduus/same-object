@@ -1,13 +1,38 @@
 # Gradient Coupling Inquiry
 
-An open-ended research project. The starting question was whether biomimicry has anything
-to say about anomalous propulsion claims. It became something more useful: a repeatable
-method for locating **cross-domain gaps** — principles that several fields discovered
-independently, quantified in their own vocabulary, and never put on a shared axis.
+An inquiry in **cross-domain synthesis**, run under one rule: **a thread is in scope if it can
+reach a checkable claim.** The starting question was whether biomimicry has anything to say
+about anomalous propulsion claims. It became something more useful: a repeatable method for
+locating **cross-domain gaps** — principles that several fields discovered independently,
+quantified in their own vocabulary, and never put on a shared axis.
+
+The method is to find places where two fields quantify the *same physical object* in different
+vocabularies, never cross-cite, and therefore each hold half of a result — then either build the
+missing shared object or prove it cannot exist. The recurring objects are the ones that govern
+how living and engineered systems **persist**: how available a repairable thing is, how it fails
+as a distribution rather than a mean, how much repair a finite budget buys, what dose of stress
+strengthens it before it breaks, and when to abandon a depleting patch. Those are the physics of
+durability, maintenance, recovery and foraging — which is to say they are the physics that
+**ecology, circularity and conservation** are made of, and the physics any account of life
+elsewhere would also have to obey. So the named destinations are biomimicry, ecology,
+conservation, sustainability, circularity, **astrobiology**, and **meta-research** on how
+science resolves disagreements. Nothing is excluded for being unfashionable; a thread is
+excluded when it cannot reach a number someone else could check.
+
+This reads as biomimicry in the strict sense: not copying shapes, but transporting *quantified*
+design laws between biology, engineering and ecosystem-scale resource use, in whichever
+direction the gap runs.
 
 Twenty such gaps are documented in `vault/gaps/`, each with measured co-citation evidence.
-**Six have a unifying theorem already written and sitting unread in an adjacent field** —
-which has become the dominant finding of the project.
+**Four "the unifying theorem already exists, unread" claims have been citation-tested and all
+four survive** — Kirkwood's disposable soma, the availability formula, stress-strength
+interference, and Hill-number multifunctionality (`vault/computed/C13-unread-theorem-audit.md`,
+fetches 2026-09-03). A fifth, Kedem–Caplan, failed the same test: it is in active use, and that
+failure is recorded rather than quietly dropped (`vault/novelty-audit.md`). Six theorem notes
+sit in `vault/theorems/`; four of them are the tested ones. That pattern — the result exists, in
+a literature the field that needs it does not read — is the dominant finding of the project, and
+it is hardened only to the citation-intersection level: a parallel derivation that never cites
+the anchor is still invisible to it.
 
 Nineteen were then **re-tested against a harder standard**, and roughly half were damaged:
 two overturned, seven narrowed, one withdrawn. That audit, not the original catalogue, is the
@@ -24,19 +49,29 @@ fixed without saying so. See `METHOD.md` §8.
 
 | File | What it is |
 |---|---|
-| `vault/` | The vault. 49 linked markdown notes, plain files, opens in Obsidian. Start at `vault/00-index.md` |
+| `vault/` | The vault. **92 linked markdown notes** as of 2026-09-05 (20 in `gaps/`, 22 in `computed/`), plain files, opens in Obsidian. **Canonical for all standings.** Start at `vault/00-index.md` |
 | `vault/_lint.py` | Schema check. Run from `vault/` before committing |
 | `vault/triage.base` | Obsidian Bases view — the re-test queue, sorted by weakest evidence first |
 | `VISION.md` | The four-layer ladder: literature → computation → hypothesis → experiment |
 | `METHOD.md` | How the inquiry is run — the gap test, the co-citation audit, the claims register, verification discipline |
-| `FINDINGS.md` | Status ledger — confirmed gaps, findings with numbers, closed items, corrections log |
-| `inquiry-map.html` | The living map. Layered graph, 62 nodes, notes persist server-side |
+| `ARCHIVE-findings-2026-09.md` | **Archived history, superseded 2026-09-05.** The old status ledger, in the retired HOLDS/WEAKENED/WITHDRAWN vocabulary. Not current; do not read standings from it |
+| `CLAUDE.md` | Working rules for anyone (human or agent) editing this repo — canonical sources, closed vocabularies, lint-before-commit |
+| `BACKLOG.md` | The open work: 62 actionables in five batches, with IDs |
+| `audits/` | Five 2026-09-05 audit reports (math/physics, sources, method, structure, scope) — the full reasoning behind every backlog line |
+| `inquiry-map.html` | The living map. Layered graph, **77 nodes**, notes persist server-side |
 | `claims-register.html` | Reported behavior → candidate mechanism → discriminating test |
 | `unexplored-window.html` | Where the parameter space is genuinely open |
 | `gradient-coupling-dossier.html` | The original evidence ledger — documented / testimony / refuted |
+| `error-energy-axis.html` | The kT-normalized energy-per-bit / error-rate axis, as far as it has been built |
+| `findings-synthesis.html` | Ranked findings, predictions and negatives, as of its snapshot date |
 
-The four HTML files are published as private artifacts. The map carries a database, so
-notes added to nodes persist across sessions and can be read back.
+**The six HTML files are snapshots, and they drift.** They are published as private artifacts
+and are regenerated by hand, so any of them can lag the vault — where a page and a vault note
+disagree, the vault note is right. `inquiry-map.html` is the special case: the notes added to
+its nodes live in a **server-side artifact database, not in this repository**, so they are not
+in git, not diffable, and not recoverable from a clone. Read them back through the published
+artifact, and treat anything only recorded there as unbacked until it is written into a vault
+note.
 
 ---
 
@@ -81,7 +116,9 @@ Why? Someone gave it a **theorem** that fixed the denominator, and the shared fi
 merit followed within a decade.
 
 Every other gap is missing exactly that. Closing one does not need a review article. It
-needs a theorem — and in six cases the theorem already exists, unread.
+needs a theorem — and in four citation-tested cases the theorem already exists, unread
+(`vault/computed/C13-unread-theorem-audit.md`). A fifth candidate, Kedem–Caplan, turned out to
+be in active use when read rather than counted.
 
 ---
 
@@ -111,5 +148,5 @@ Requiring about $100 of kitchen equipment:
   Rows stay valid regardless of how any account is assessed.
 - Verification: a figure is quotable only if the source names the fetch that produced it.
   Two research failures in this project had the same tell — specific numbers with no URL.
-- Corrections are logged in `FINDINGS.md` rather than silently fixed. The pattern of
-  errors is itself information.
+- Corrections are logged in `vault/log.md` rather than silently fixed. The pattern of
+  errors is itself information — and one entry there is a correction *of* a correction.

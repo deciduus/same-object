@@ -8,6 +8,10 @@ Checks:
   4. every [[wikilink]] resolves to a real note
   5. every note is reachable from 00-index.md
   6. gap notes carry a STANDING line in the body
+  7. gap `tags` agree with the evidence / standing / crosses fields
+  8. sources/ notes: no BOM, type source, tier, **URL:** and Date fetched: lines
+  9. optional exit / extends-to / next-step-cost fields use their vocabularies
+ 10. --idx-check: the generated gaps block in 00-index.md is up to date
 """
 import io, os, re, sys
 
@@ -15,21 +19,41 @@ STANDING = {"live", "narrowed", "withdrawn", "overturned"}
 EVIDENCE = {"citation-intersection", "full-text-read", "string-protocol",
             "single-review", "not-assessed"}
 RETIRED  = {"holds", "weakened", "collapsed"}
-TYPES    = {"gap", "move", "method", "theorem", "computed", "index", "question"}
+TYPES    = {"gap", "move", "method", "theorem", "computed", "index", "question",
+            "source"}
 CROSSES  = {"nothing": 0, "word": 1, "metaphor": 2,
             "vocabulary": 3, "formalism": 4, "data": 5}
 TOPOLOGY = {"disjoint", "direct", "mediated"}
 EDGES    = ("borrows-from", "lends-to", "mutual-with",
             "computed-in", "uses-move", "rests-on")
 
+# optional fields — validated only when present (D25 schema; not yet populated)
+EXIT       = {"prediction", "computation", "experiment", "specification", "none-yet"}
+EXTENDS_TO = {"astrobiology", "ecology", "circularity", "conservation",
+              "sustainability", "none"}
+NEXT_COST  = {"S", "M", "L"}
+OPTIONAL   = {"exit": EXIT, "next-step-cost": NEXT_COST}
+
 def notes():
     for root, dirs, files in os.walk("."):
-        # sources/ is an archive of primary documents, not knowledge notes — skip it
+        # sources/ is an archive of primary documents, checked separately (see sources())
         if "sources" in dirs:
             dirs.remove("sources")
+        # _templates/ holds copy-fill stubs, not notes
+        if "_templates" in dirs:
+            dirs.remove("_templates")
         for f in files:
             if f.endswith(".md"):
                 yield os.path.join(root, f)
+
+def sources():
+    d = os.path.join(".", "sources")
+    if not os.path.isdir(d):
+        return
+    for f in sorted(os.listdir(d)):
+        if f.endswith(".md"):
+            yield os.path.join(d, f)
+
 
 def front(text):
     m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
@@ -41,7 +65,7 @@ def front(text):
             d[k.strip()] = v.strip().strip('"')
     return d
 
-def main():
+def main(argv=()):
     errs, warns = [], []
     stems, index_links = set(), set()
     docs = {}
@@ -92,6 +116,24 @@ def main():
                 if k not in fm:
                     errs.append(f"{p}: missing edge field '{k}'")
 
+            tags = [x.strip() for x in
+                    fm.get("tags", "").strip("[]").split(",") if x.strip()]
+            for prefix, val in (("evidence", e), ("standing", s), ("crosses", c)):
+                want = f"{prefix}/{val}"
+                if want not in tags:
+                    have = [x for x in tags if x.startswith(prefix + "/")]
+                    errs.append(f"{p}: tags missing '{want}'"
+                                + (f" (has {have[0]})" if have else ""))
+
+        for k, vocab in OPTIONAL.items():
+            if k in fm and fm[k] and fm[k] not in vocab:
+                errs.append(f"{p}: {k} '{fm[k]}' not in {sorted(vocab)}")
+        if fm.get("extends-to"):
+            for v in [x.strip().strip('"\'') for x in
+                      fm["extends-to"].strip("[]").split(",") if x.strip()]:
+                if v not in EXTENDS_TO:
+                    errs.append(f"{p}: extends-to '{v}' not in {sorted(EXTENDS_TO)}")
+
         for k, v in fm.items():
             if k in ("standing", "evidence", "type") and v.lower() in RETIRED:
                 errs.append(f"{p}: retired vocabulary '{v}' in machine field '{k}'")
@@ -101,6 +143,22 @@ def main():
             if stem == "00-index": index_links.add(link)
             if link not in stems:
                 errs.append(f"{p}: dead wikilink [[{link}]]")
+
+    for p in sources():
+        text = io.open(p, encoding="utf-8").read()
+        if text.startswith("﻿"):
+            errs.append(f"{p}: UTF-8 BOM at start of file — breaks frontmatter parsing. "
+                        f"Written by PowerShell Set-Content; rewrite without a BOM")
+            text = text.lstrip("﻿")
+        fm = front(text)
+        if fm.get("type") != "source":
+            errs.append(f"{p}: sources/ note must have type 'source', got '{fm.get('type')}'")
+        if not fm.get("tier"):
+            errs.append(f"{p}: no tier")
+        if not re.search(r"^>?\s*\*\*URL:\*\*\s*\S", text, re.M):
+            errs.append(f"{p}: no '**URL:**' line in body")
+        if not re.search(r"Date fetched:", text):
+            errs.append(f"{p}: no 'Date fetched:' line in body")
 
     for s in sorted(stems - index_links - {"00-index"}):
         warns.append(f"not linked from 00-index: {s}")

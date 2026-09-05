@@ -5,12 +5,33 @@ commitment.
 
 ---
 
+## Scope
+
+This is an inquiry in **cross-domain synthesis**, and its scope rule is a single sentence: **a
+thread is in scope if it can reach a checkable claim.** Not a discipline list, not a topic
+whitelist — a test.
+
+What the rule keeps letting in is the physics of how living and engineered systems *persist*:
+availability under repair, failure as a distribution rather than a mean, what a finite repair
+budget buys, the dose of stress that strengthens before it breaks, and when to leave a depleting
+patch. Those objects are shared, so the named destinations follow from them rather than from
+taste: **biomimicry, ecology, conservation, sustainability, circularity, astrobiology**, and
+**meta-research** on how science resolves disagreements. Each is somewhere a quantified design
+law can be carried across a gap and made to emit a number.
+
+That is biomimicry in the strict sense — not copying shapes, but transporting *quantified*
+design laws between biology, engineering and ecosystem-scale resource use, in whichever
+direction the gap runs. The rule is not weakened to admit any of these: a thread in any of them
+is dropped the moment it stops being able to reach something checkable.
+
+---
+
 ## The ladder
 
 | Layer | What it is | Status |
 |---|---|---|
-| **1 · Find the gap** | Two fields quantify the same object, no cross-citation | **Done, 24 times** |
-| **2 · Apply the formalism and compute** | Take the unread result, run it on the other field's published numbers | **Live now on ~6 items** |
+| **1 · Find the gap** | Two fields quantify the same object, no cross-citation | **20 gap notes in `vault/gaps/` (2026-09-05)**, plus retired IDs listed in `METHOD.md` |
+| **2 · Apply the formalism and compute** | Take the unread result, run it on the other field's published numbers | **22 computed notes in `vault/computed/` (2026-09-05)** |
 | **3 · Generate a prediction** | The computed result implies something checkable | Follows from 2 |
 | **4 · Test it** | Experiment, at whatever scale is honest | Aspiration |
 
@@ -28,7 +49,7 @@ or apparatus, and it is where a real contribution first becomes possible.
 ### Arithmetic — hours to days
 Published numbers, one formula, a result nobody has computed.
 
-1. ~~**Availability for living tissue.**~~ **DONE** - see FINDINGS.md C1. PSII = 0.883,
+1. ~~**Availability for living tissue.**~~ **DONE** - see `vault/computed/C1-availability-living-tissue.md`. PSII = 0.883,
    cortical bone = 0.984, and the engineering formula proved *identical* to the photosystem
    steady state rather than merely analogous. Original entry: A = MTBF/(MTBF+MTTR), which is structurally
    identical to the photosystem repair steady state k_REP/(k_REP+k_PI). Repair rates for
@@ -44,7 +65,7 @@ Published numbers, one formula, a result nobody has computed.
 
 ### Tractable — weeks
 4. ~~**Stress-strength interference applied to Alexander's biological cases.**~~ **DONE** -
-   see FINDINGS.md C2. The robust output is a sensitivity result: for bone, failure
+   see `vault/computed/C2-probabilistic-safety-factors.md`. The robust output is a sensitivity result: for bone, failure
    probability is governed by tissue variability, not locomotor variability. And the
    remodeling objection inverted the trade - engineering's fixed-at-manufacture assumption
    is the zero-gain limit of a loop biology runs with positive gain. Original entry: He gave
@@ -69,8 +90,11 @@ Published numbers, one formula, a result nobody has computed.
 
 - **Testimony sets the specification, never the mechanism.**
 - **A figure is quotable only if the source names the fetch that produced it.**
-- **Corrections stay visible.** The log is the credibility asset, not a liability — a method
-  that never overturns its own claims is not being run honestly.
+- **Corrections stay visible.** `vault/log.md` is the credibility asset, not a liability — a
+  method that never overturns its own claims is not being run honestly. It now carries a
+  correction *of* a correction.
+- **Standings live in the vault.** `vault/00-index.md` is canonical;
+  `ARCHIVE-findings-2026-09.md` is history.
 - **Classify every result** as TRUE GAP / ONE-WAY BORROWING / CLOSED.
 - **Run a positive control** alongside any new gap claim.
 - **A gap finding does not expire and does not need funding.** It costs a query to find and

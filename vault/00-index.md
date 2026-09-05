@@ -13,6 +13,10 @@ retired, and [[verdict-scoring]] for what went wrong with it.
 Open in Obsidian for the graph view. Everything is plain markdown and git-tracked.
 Run `python _lint.py` from this directory before committing.
 
+**This index is canonical for standings.** `ARCHIVE-findings-2026-09.md` at the repo root is
+archived history in the retired vocabulary — never read a standing from it. Working rules for
+editing agents are in `CLAUDE.md`.
+
 ## Start here
 
 - **[[strategy]]** — three layers of reach, and why the current focus is **Layer 2**: produce new resultants, lay groundwork, hold Layer 3
@@ -121,34 +125,37 @@ Not catalogue entries. Numbers this project produced.
 
 ## Gaps
 
+<!-- IDX:GAPS -->
+
 <!-- generated from frontmatter by _idx.py; edit the notes, not this list -->
 
 ### Live
-- [[G19-safety-factor-derived-twice]] — *citation-intersection* — All 46 citing works individually inspected. Symmorphosis itself is contested (~28 works).
-- [[G25-proofreading-coding]] — *citation-intersection* — 1,463 citers pulled and bibliographies intersected. The project's strongest finding.
-- [[G6-multifunctionality]] — *citation-intersection* — **The only entry to survive both standards.** Intersection 0 across six pairings, 1,033 works, coverage 77–100%. Control reproduces at 17.
-- [[G22-scale-transfer-triage]] — *full-text-read* — **Upgraded to live.** Perricone 2021 searched directly: Buckingham 0, dimensionless 0, screening 0. The paper asks for the guidelines, so it cannot be them.
+- [[G19-safety-factor-derived-twice]] — *citation-intersection* — 46 is the OpenAlex count and is confirmed live, not stale; Crossref returns 36 and OpenCitations 40 for the same work. Citing works individually inspected, all comparative biomechanics. The 753-works figure is withdrawn as a string artifact.
+- [[G25-proofreading-coding]] — *citation-intersection* — 1,463 citers pulled, 416 reference lists retrieved - 28.4% coverage, well below the 77-100% standard set by G6. The project's strongest finding, on the thinnest coverage.
+- [[G6-multifunctionality]] — *citation-intersection* — Survived both standards. Intersection 0 across six anchor pairings at 77-100% coverage; 1,033 works, no contact either direction. Control Byrnes x Jost = 17, reproduced by both sources.
+- [[G22-scale-transfer-triage]] — *full-text-read* — Disagreement adjudicated on the full text: Buckingham 0, dimensionless 0, screening 0. The paper asks for the guidelines, so it cannot be them. Holds.
 
 ### Narrowed
-- [[G11-plant-gravisensing]] — *full-text-read* — Restored and restated. The withdrawal misdescribed its own source; the original claim was off by 100x. Neither was catchable by counting.
-- [[G28-marginal-value-gittins]] — *citation-intersection* — Holds and narrows. 0.49% against a 22.2% control, a factor of 45 — but "no direct contact at all" is now false: Griebling 2026 cites both.
 - [[G17-overconfident-uncertainties]] — *citation-intersection* — Restored with correction. A citation is not a follow-up. Specimen case for the symmetry rule.
-- [[G1-gradient-coupling]] — *full-text-read* — Thermodynamic branch is already unified and in active use. Gap survives only across the momentum branch: soaring, sails, tethers.
-- [[G2-metastability-metric]] — *full-text-read* — Biology-side absence was false. Cross-class axis still missing, and may be missing because it is hard: PCM is non-Arrhenius.
-- [[G3-cycle-life]] — *full-text-read* — One leg bridged by name in PNAS. Surviving leg: catalysis durability against energy storage, 0 both ways.
-- [[G5-repair-number]] — *full-text-read* — The zero survived the homograph. "No time in it" did not. The missing object is the ratio, not the rate.
-- [[G7-how-passive]] — *full-text-read* — The ladder is reinvented in at least four fields, not nuclear-only. No field has a number, so the metric gap is sharper.
-- [[G4-criticality-as-design]] — *full-text-read* — The bibliography was finally opened: 595 refs, **no titles at all**, so every prior characterisation of it read data that is not there.
-- [[G21-dimensionless-regime-map]] — *full-text-read* — The previous narrowing rested on typography. Absent: one Pi-space co-locating organisms and processes.
-- [[G12-latch-fatigue]] — *full-text-read* — **Held in the strongest form.** The 2023 JEB review names re-usability and explicitly defers it. The latch paper measures one cycle, on dried specimens.
-- [[G23-hormesis-formalism]] — *full-text-read* — Shot peening names its own descending limb. Surviving: nobody parameterises the curve, and the mechanochemistry work reports one operating point.
-- [[G9-discrepancy-base-rate]] — *full-text-read* — Bailey 2017 computed the distribution of discrepancy MAGNITUDES over 41,000 measurements. The distribution of OUTCOMES is still uncomputed.
-- [[G21-dimensionless-regime-map]] — *full-text-read* — The previous narrowing rested on typography. Vogel gives crossovers in prose. Absent: one Pi-space co-locating organisms and processes.
+- [[G28-marginal-value-gittins]] — *citation-intersection* — Holds but narrows. Intersection 5 of 1,013 Gittins citers (0.49%) vs control 225/1,013 = 22.2% - a factor of 45. Denominators reconciled in the Provenance table. Griebling 2026 LOCATED, doi 10.1016/j.anbehav.2026.123491, and confirmed to cite Charnov 1976 and Gittins 1979.
+- [[G1-gradient-coupling]] — *full-text-read* — Thermodynamic branch is already unified: the ZT-form q is in active use for thermoelectric, electrokinetic, hydronic and oxphos. Gap survives only across the momentum branch.
+- [[G11-plant-gravisensing]] — *full-text-read* — Restored and restated. The withdrawal cited an experimental paper as if it were a derivation. But the original gap's premise was also wrong: the sensor measures inclination, not force, and its noise floor is active agitation at ~10x thermal.
+- [[G12-latch-fatigue]] — *full-text-read* — Held on full-text read. The 2023 JEB LaMSA review names re-usability and defers it; the click-beetle latch paper measures one cycle on dried specimens.
+- [[G2-metastability-metric]] — *full-text-read* — Single figure of merit killed by the prefactor (C15): tau_0 spans ~20 orders. Salvage: a 2D map separates chemistry (barrier) from biology (prefactor). Nuclear and PCM don't embed at all.
+- [[G21-dimensionless-regime-map]] — *full-text-read* — Surviving half closed by construction: C12 builds the co-located Pi-space as an integer kernel. Froude and Peclet are vectors in one lattice; transport crossovers are lattice-locked.
+- [[G23-hormesis-formalism]] — *full-text-read* — Headline sentence false: shot peening names its own descending limb (over-peening). What survives is the parameterised curve - no ceiling amplitude, no window width, no sweep.
+- [[G3-cycle-life]] — *full-text-read* — Narrowed: Hanson PNAS 2021 adopts CCR 'guided by catalyst engineering' as the in vivo TTN - that leg is bridged one-way. The unbridged leg is energy storage: cycle life vs TTN = 0.
+- [[G4-criticality-as-design]] — *full-text-read* — Bibliography audited directly: 595 refs, and it carries no titles at all, so prior subject characterisation read data that is not there. Only the offset-from-threshold figure of merit survives.
+- [[G5-repair-number]] — *full-text-read* — Zero survives the homograph (all 6 MTTR hits are IT). But 'no time in it' is wrong: CDHM has healing rate constants. The missing object is the ratio, not the rate.
+- [[G7-how-passive]] — *full-text-read* — Ladder reinvented independently in exoskeletons, structural control and facades - not nuclear-only. Read one in full. No field has a NUMBER, so the metric gap holds and is sharper.
+- [[G9-discrepancy-base-rate]] — *full-text-read* — Outcome distribution still uncomputed. Our own four discriminating features tested: one refuted (Homestake), three narrowed, and the neutron-lifetime example was wrong on the facts.
 
 ### Overturned
-- [[G20-resize-vs-throttle]] — *full-text-read* — Computing has the symmorphosis question with formulas, under the name *over-provisioning accuracy*. And safety factors are native to mechanical engineering — the direction was inverted.
+- [[G20-resize-vs-throttle]] — *full-text-read* — Overturned. Computing has the symmorphosis question with formulas under the name over-provisioning accuracy, and safety factors are native to mechanical engineering - the direction was inverted.
 - [[G27-collective-decision]] — *string-protocol* — Overturned. The zero was anchored on Paxos, an algorithm name rather than a literature. Message complexity may still be untested.
 - [[G8-energy-per-bit-axis]] — *string-protocol* — Overturned. The specific figure in C3 may still be novel; the absence claim was not.
+
+<!-- /IDX:GAPS -->
 
 ## Theorems sitting unread
 
@@ -168,6 +175,7 @@ is still invisible to it.
 
 ## Method
 
+- [[recipes]] — step-by-step: how to add a gap, how to add a computed note. Follow it rather than improvising a note shape
 - [[co-citation-audit]] — the measurement that made this checkable
 - [[reservoir-audit]] — **validated five for five, and it reproduces Pioneer to 7%.** Run in 1998 it would not have named the cause; it would have said a thermal explanation needs 3.2% anisotropy — a number a model can check
 - [[evidence-lanes]] — **no lane gets 100% trust.** Every lane (academic included) has a characteristic bias; the referee is method + convergence across orthogonally-biased lanes, not authority within one

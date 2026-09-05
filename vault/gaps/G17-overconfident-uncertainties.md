@@ -47,13 +47,24 @@ The finding is real. Its original phrasing was too absolute.
 - **The bulk** are risk analysis and expert elicitation — the paper travelled into decision
   science, where overconfidence was already a live topic.
 - **Roughly six** are physics or metrology, engaging the actual claim:
-  - Bailey, *Not Normal: the uncertainties of scientific measurements*, R. Soc. Open Sci.
-    (2016) — the direct quantitative follow-up. Analyses repeated-measurement datasets of
-    physical constants and finds the errors are **heavy-tailed, not Gaussian**.
+  - Bailey, D. C., *Not Normal: the uncertainties of scientific measurements*,
+    **R. Soc. Open Sci. 4:160600 (2017)**, doi **`10.1098/rsos.160600`** — the direct
+    quantitative follow-up. Analyses repeated-measurement datasets of physical constants and
+    finds the errors are **heavy-tailed, not Gaussian**.
+    *(Citation corrected: this note previously gave the year as 2016 and no volume, page or DOI.
+    Verified against Crossref, `api.crossref.org/works/10.1098/rsos.160600?mailto=...`,
+    2026-09-05 — title, author, journal, volume 4, article 160600 and issued year 2017 all
+    confirmed.)*
   - *Blind Analysis as a Correction for Confirmatory Bias in Physics and in Psychology* (2015)
   - *Assessing accuracy in measurement: the dilemma of safety versus precision in the
     adjustment of the fundamental physical constants* (2019)
   - *Escape from Zanzibar: The Epistemic Value of Precision in Measurement* (2022)
+
+**Screening protocol not recorded.** The note gives four of the "roughly six" by title and none
+by DOI, and does not record how the 279 citing works were reduced to six — no query, no
+inclusion criterion, no provider, no date. The 279 → 6 enumeration is therefore **not
+recoverable from this note**, and the "roughly six" figure rests on an unlogged manual read. It
+should be re-run from a recorded citer list before being quoted as a count.
 
 ## What crosses
 

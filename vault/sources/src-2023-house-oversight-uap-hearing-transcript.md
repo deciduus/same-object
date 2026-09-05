@@ -1,4 +1,4 @@
-﻿---
+---
 name: src-2023-house-oversight-uap-hearing-transcript
 type: source
 tier: DOCUMENTED (primary — official GPO hearing transcript) / contains TESTIMONIAL content

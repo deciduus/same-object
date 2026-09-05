@@ -20,10 +20,17 @@ Take a major review in field A and count how many of its references come from fi
 
 **Open the bibliography first.** This project ran that audit on a *Reviews of Modern Physics*
 colloquium on biological criticality, reported it as **578 references citing zero engineering
-work**, and promoted it as publishable. When someone finally extracted the PDF it was
-**595 references** — and **the bibliography carries no article titles at all**, only venues.
+work**, and promoted it as publishable. When someone finally extracted the PDF, its printed
+bibliography held **595 references** — and **carried no article titles at all**, only venues.
 The subject characterisation was reading a field that does not exist in the data, and five
 IEEE entries make "zero engineering" false as worded. See [[G4-criticality-as-design]].
+
+**Correction, 2026-09-05: 578 was not a wrong number.** Crossref's publisher-deposited
+`reference-count` for `10.1103/RevModPhys.90.031001` is **578**
+(`https://api.crossref.org/works/10.1103/RevModPhys.90.031001`, fetched 2026-09-05). Deposited
+list and printed bibliography are different objects; both counts are true of their own object.
+**The failure was that the number arrived unattributed** — no provider, no endpoint, no fetch
+date — so nobody could tell which object it described. That is the lesson, not the digits.
 
 The precondition, therefore:
 

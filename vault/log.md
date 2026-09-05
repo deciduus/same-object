@@ -5,6 +5,129 @@ type: method
 
 # Operations log
 
+## [2026-09-05] correction of a correction | 578 was never wrong — Crossref deposited 578, the printed PDF has 595
+
+This project recorded a flagship lesson as *"578 was wrong, the real count is 595."* That
+correction is itself wrong as worded, and the audit of 2026-09-05 caught it.
+
+**Crossref**, `https://api.crossref.org/works/10.1103/RevModPhys.90.031001`, fetched
+**2026-09-05**, returns `message.reference-count: 578` and `message.references-count: 578` for
+Muñoz, *Rev. Mod. Phys.* 90:031001 (2018), publisher American Physical Society.
+
+**Two objects, two true numbers.** 578 is the publisher-deposited reference list; 595 is the
+bibliography printed in the PDF (extracted from arXiv:1712.04499). A deposited list and a
+printed bibliography are not the same object and are not obliged to agree. This also explains
+the "no article titles at all" finding: APS deposits unstructured references.
+
+**So what the actual defect was.** Not a hallucinated number. The number was **unattributed** —
+reported and promoted as publishable without naming the provider, the endpoint or the fetch
+date, and without anyone opening the bibliography it was used to characterise. An unattributed
+578 and an unattributed 595 fail the same rule. The subject-matter claim built on top of it
+("zero engineering") remains false as worded: five IEEE entries, and a title-free bibliography
+cannot support a claim about subject matter at all.
+
+**Rewritten in:** `METHOD.md` §2, [[co-citation-audit]], [[G4-criticality-as-design]],
+`ARCHIVE-findings-2026-09.md`, and this log. No file now says 578 was simply wrong.
+
+## [2026-09-05] verification | OpenAlex returns 46 citing works for Alexander 1997
+
+Recorded so the G19 / [[stress-strength-interference]] reconciliation has a trace before it is
+run. **OpenAlex `cited_by_count` = 46** for Alexander, *A theory of mixed chains applied to
+safety factors in biological systems* (doi 10.1006/jtbi.1996.0270), checked **2026-09-05** per
+`audits/02-sources-citations.md`.
+
+This contradicts the vault's own retraction: [[stress-strength-interference]] withdrew the "46
+citations" figure as stale (offering 36/39/28 instead) while [[G19-safety-factor-derived-twice]]
+still asserts 46. The external check says 46 stands, so the retraction is the error — the same
+failure mode as the 578 entry above, uncaught until now. The "753 works" figure is a separate
+question and is still a string-match artifact until someone attaches a provider and a date to
+it. Reconciliation is backlog B2; this entry exists so that work starts from a dated number
+rather than from a preference.
+
+## [2026-09-05] migration | corrections log moved out of FINDINGS.md
+
+`FINDINGS.md` was renamed to `ARCHIVE-findings-2026-09.md` and marked superseded by
+[[00-index]] (backlog D14). Its **Corrections log** section is reproduced below, one entry
+each, so that the live log is the only place corrections have to be looked for. Every entry is
+preserved and marked `[migrated from FINDINGS.md]`. The date on each is the **migration** date,
+2026-09-05 — the archive did not date its rows individually, and no date has been invented.
+
+## [2026-09-05] correction (archived) | Neurons vs Landauer  [migrated from FINDINGS.md]
+
+Claimed 10⁴; actually **10⁶–10⁸**. The 10⁴ is ATP *molecules*, and one ATP ≈ 20 kT
+
+## [2026-09-05] correction (archived) | Vesicle cost  [migrated from FINDINGS.md]
+
+Claimed 2.34 × 10⁴ ATP; actually **1.64 × 10⁵**. Kills the "one vesicle ≈ one bit" line
+
+## [2026-09-05] correction (archived) | Halbach as a 20° switch  [migrated from FINDINGS.md]
+
+Wrong. Field varies as the **half**-angle — 20° changes it by 1.5%; null is at 180°
+
+## [2026-09-05] correction (archived) | Siberian permafrost seeds  [migrated from FINDINGS.md]
+
+Not seed germination — tissue culture from immature fruit tissue
+
+## [2026-09-05] correction (archived) | Fat vs TNT  [migrated from FINDINGS.md]
+
+Barrier height is not the main reason. **TNT carries its own oxidizer**, so the reaction is intramolecular and can propagate supersonically. A power-density difference
+
+## [2026-09-05] correction (archived) | Enzymes "not consumed"  [migrated from FINDINGS.md]
+
+Wrong. 10³–10⁷ turnovers, then scrapped
+
+## [2026-09-05] correction (archived) | G apparatus transplant  [migrated from FINDINGS.md]
+
+Two agents disagreed on rebuild vs transplant; balance of evidence and the paper title favour **transplant**. Flagged, not settled
+
+## [2026-09-05] correction (archived) | Loihi energy figure  [migrated from FINDINGS.md]
+
+Quoted 23.6 pJ/SOP — not in the primary paper. Removed
+
+## [2026-09-05] correction (archived) | Frugality asymmetry  [migrated from FINDINGS.md]
+
+**Claim did not survive.** Reproductive effort runs ~25% of an annual energy budget. Conflated numerosity with cost per unit, then with total share. Biology is not profligate with reproduction — it is expensive, which is what life-history theory is about
+
+## [2026-09-05] correction (archived) | Meteor vs Galileo contrast  [migrated from FINDINGS.md]
+
+**Wrong as stated.** The Galileo Project does publish calibration, a 41% acceptance rate and 36% detection efficiency. The real contrast is capability - multi-station astrometry gives range, an infrared array does not
+
+## [2026-09-05] correction (archived) | Crypsis as a forgotten bridge  [migrated from FINDINGS.md]
+
+**Wrong.** 0 of 169 camouflage papers cite either founding text of signal detection theory. Nothing was borrowed and lost; the fields measure different things. Reclassified NOT YET A SHARED OBJECT
+
+## [2026-09-05] correction (archived) | G27, collective decision  [migrated from FINDINGS.md]
+
+**Withdrawn.** 26 hits in the original query. The zero was anchored on Paxos, an algorithm name rather than a literature
+
+## [2026-09-05] correction (archived) | The energy-per-bit axis claim  [migrated from FINDINGS.md]
+
+**Withdrawn.** 575 papers connect Landauer to neural systems. The specific figure may survive; the absence claim does not
+
+## [2026-09-05] correction (archived) | G4, criticality  [migrated from FINDINGS.md]
+
+**Downgraded.** 99 papers link Hopf bifurcation to the cochlea. A single-review omission, not a field gap
+
+## [2026-09-05] correction (archived) | G11 plant gravisensing  [migrated from FINDINGS.md]
+
+**Withdrawn.** Synonym artifact - the field says gravisensing, and the thermal-threshold calculation exists
+
+## [2026-09-05] correction (archived) | G12 latch cycles-to-failure  [migrated from FINDINGS.md]
+
+**Withdrawn.** S-N curves published for locust cuticle in 2013
+
+## [2026-09-05] correction (archived) | G17 overconfident uncertainties  [migrated from FINDINGS.md]
+
+**Withdrawn.** 279 citations including a direct quantitative follow-up. String matching would have confirmed it; the citation graph destroyed it
+
+## [2026-09-05] correction (archived) | G21, G22, G9  [migrated from FINDINGS.md]
+
+**Weakened.** Each overstated; narrower claims survive in all three
+
+## [2026-09-05] correction (archived) | Hessdalen citation  [migrated from FINDINGS.md]
+
+An agent invented a paper attribution. See `METHOD.md` §4
+
 ## [2026-09-03] verification | C8 novelty risk resolved by reading Greason in full
 
 The novelty audit's top rediscovery risk was [[C8-momentum-harvesting-metric]] (Σ), because
@@ -352,15 +475,21 @@ factors are *native* to mechanical engineering, so "never reached mechanical eng
 inverted the direction of travel.
 
 **[[G4-criticality-as-design]]: we had characterised a bibliography we never opened.** The
-Muñoz *RMP* reference list was finally extracted. **595 refs, not 578** — and **it carries no
-article titles at all**, only venues. Every prior subject-keyword characterisation of it was
-reading data that does not exist. Five IEEE entries, so "zero engineering" is false as worded.
-The review cites Stoop's theory papers and omits his cochlea *hardware*.
+Muñoz *RMP* reference list was finally extracted. The printed PDF bibliography holds **595
+refs** against the **578** that had been quoted — and **it carries no article titles at all**,
+only venues. Every prior subject-keyword characterisation of it was reading data that does not
+exist. Five IEEE entries, so "zero engineering" is false as worded. The review cites Stoop's
+theory papers and omits his cochlea *hardware*.
+
+*(Corrected 2026-09-05 — see the entry at the top of this log. 578 is not an error: it is
+Crossref's publisher-deposited `reference-count`. Two objects, both true. The defect was that
+the number was unattributed.)*
 
 **Propagation traced and corrected.** The 578 figure was tracked back through the session
 transcript to a research agent's report, and from there to my own relay of it as *"directly
 publishable as-is... needs nothing but a database query"* — asserted without ever opening the
-bibliography. It had reached **five files**: `FINDINGS.md`, `README.md`, `METHOD.md`,
+bibliography, and without naming where it came from. It had reached **five files**: `FINDINGS.md`
+(now `ARCHIVE-findings-2026-09.md`), `README.md`, `METHOD.md`,
 `vault/method/co-citation-audit.md` and the published `inquiry-map.html`. All corrected except
 the artifact, which needs a republish.
 
@@ -509,3 +638,78 @@ the `topology` vocabulary, that `mediated` and the `mediator` field agree, that
 
 `triage.base` and [[graph-view]]. Both are core Obsidian. Bases reads YAML frontmatter only,
 which is why the migration had to land first.
+
+## [2026-09-05] provenance | G25's coverage was 28.4%, and the note never said so
+
+[[G25-proofreading-coding]] is the project's headline citation-intersection finding, and its
+coverage figure was buried inside a table cell: **416 reference lists retrieved out of 1,463
+citers = 28.4%.** [[G6-multifunctionality]] ran the same instrument at **77.5–100%**. Surfaced
+the number in the body and in the frontmatter `note`, with the G6 comparison stated as the
+standard this note does not meet. Added a full `## Provenance` block: both anchor DOIs verified
+live against Crossref (Hopfield 1974 `10.1073/pnas.71.10.4135`; Shannon 1948
+`10.1002/j.1538-7305.1948.tb01338.x` — both correct), and citer counts re-derived today:
+**Crossref 1,340 / OpenCitations 1,593 / OpenAlex 1,656** against the original **1,463**. The
+24% spread between providers is larger than two days of growth, so **1,463 is provider-dependent
+and its provider was never logged.** The 3.8% and the coding-theory zero are computed inside the
+416 actually inspected and survive the ambiguity.
+
+## [2026-09-05] provenance | four Gittins denominators were one number, badly measured
+
+[[G28-marginal-value-gittins]] carried 1,542, 1,013, 1,010 and an implied base for "0.5%".
+Replaced with one provider table: run-time enumeration **1,013** (2026-09-03, provider not
+logged, most likely OpenCitations), **Crossref 986**, **OpenCitations 1,026**, **OpenAlex 1,544**
+— all fetched 2026-09-05. **1,542 was OpenAlex**; today it returns 1,544, which confirms the
+identification. Stated explicitly that **both headline percentages use 1,013** and showed the
+arithmetic: `5/1013 = 0.49%`, `225/1013 = 22.2%`, ratio `45.0`. The factor of 45 is
+denominator-invariant; the individual percentages are not. Added the positive control's anchor —
+Auer, Cesa-Bianchi & Fischer 2002, **`10.1023/A:1013689704352`**, verified against Crossref —
+and stated the query behind 22.2% as a set intersection of the two citer lists.
+
+## [2026-09-05] verification | Griebling 2026 located; it is the raccoon paper
+
+The one asserted direct ecology→operations-research contact in [[G28-marginal-value-gittins]]
+was an unlocated reference. **Found via Crossref works search:** Griebling, Johnson &
+Benson-Amram, *Raccoons optimally forage for information: exploration–exploitation trade-offs in
+innovation*, *Animal Behaviour*, April 2026, **`10.1016/j.anbehav.2026.123491`**. Its deposited
+reference list (100 refs) **contains Charnov 1976, Gittins 1979 and Gittins 2011**, so the
+co-citation is confirmed from the primary record rather than inferred. **Full text not
+obtained**, so whether it states the equivalence remains open.
+
+**And it is already in the note's own list of eight co-citers** — the paper cited as evidence
+that "operations research and behavioural ecology are joined almost entirely by a third field"
+is the same paper cited as evidence of direct contact. That tension is now stated in the note:
+this one work is behavioural ecology proper, not neuroscience. No `00-index` edit was needed.
+
+## [2026-09-05] correction | "46 citations was stale" was itself the error
+
+[[stress-strength-interference]] had corrected [[G19-safety-factor-derived-twice]]'s "46
+citations" for Alexander 1997 to "36/39/28, the 46 was stale." **Re-fetched today: OpenAlex
+returns 46, OpenCitations 40, Crossref 36.** 46 is not stale — it is OpenAlex, and it is
+current. A provider disagreement had been misread as a decayed number. Reversed the correction
+in the theorem note, added the provider/endpoint/date table to both files, and made them agree.
+`standing` untouched. **The "753 works" withdrawal stands** — that one really was a string
+artifact (relaxed matching returns ~1.8M) — and G19 still asserted it; now withdrawn there too,
+with no replacement offered, because a defensible figure needs an anchor set rather than a
+phrase. The finding is unaffected either way: the intersection is a measured, inspected zero.
+
+## [2026-09-05] provenance | two figures marked unreproducible rather than guessed
+
+[[G6-multifunctionality]]: added provider, endpoint and date to the six-pairing intersection
+table (OpenCitations set-overlap + Crossref reference-list scan, both directions, 2026-09-03),
+and noted that the coverage column is a **ratio between two providers' counts**, not a retrieval
+success rate. Two things are recorded as *not* recorded rather than reconstructed: the **six
+anchor DOIs** were never logged, and the **9,570 homograph hits** have no provider, endpoint or
+query behind them — marked "provider not recorded at time of run" and demoted to a scale
+indicator. [[G17-overconfident-uncertainties]]: Bailey *Not Normal* corrected to **R. Soc. Open
+Sci. 4:160600 (2017), `10.1098/rsos.160600`** (was "2016", no volume, no DOI; verified against
+Crossref). The **279 → 6 screening is not recoverable** — four of six given by title only, no
+DOIs, no criterion, no provider — so a "screening protocol not recorded" admission was added
+instead of a fabricated enumeration.
+
+## [2026-09-05] method | the OpenCitations trap has moved
+
+`opencitations.net/index/coci/api/v1/` now **301-redirects to `api.opencitations.net/index/v1/`**,
+and on the new host `/citation-count/` **no longer returns the bogus constant `1`** documented in
+[[citation-sources]] — it agreed exactly with a counted `/citations/` list (Alexander 1997:
+40 = 40). Recorded in G25's provenance block. The Crossref `?select=reference` → HTTP 400 trap
+was not re-tested; full records were pulled as the method already prescribes.

@@ -1,4 +1,4 @@
-﻿---
+---
 name: src-odni-2021-preliminary-assessment
 type: source
 tier: DOCUMENTED (primary, first-party US government record)

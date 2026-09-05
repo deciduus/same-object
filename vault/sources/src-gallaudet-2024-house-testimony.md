@@ -1,4 +1,4 @@
-﻿---
+---
 name: src-gallaudet-2024-house-testimony
 type: source
 tier: TESTIMONIAL (primary written statement, first-party record of the testimony)
