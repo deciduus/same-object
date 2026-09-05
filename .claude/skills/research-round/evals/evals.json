@@ -1,0 +1,51 @@
+{
+  "skill_name": "research-round",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "You are orchestrating the biomimicry vault at C:/Users/glutt/Projects/biomimicry/.claude/worktrees/fable-orchestrator-review-a6876a. The user says: 'keep pushing on C5, the Charnov = Gittins bridge. What's the next round?' Read vault/strategy.md, vault/program.md, vault/computed/C25-whittle-foraging.md and vault/computed/C45-whittle-network-sim.md, then write a round plan to a file named round-plan.md in the output directory: the diagnosis, the method shape chosen and why, the agents you would launch with their full briefs (file ownership, what to read, steps, report line), and how you would integrate. Do not launch agents; plan only.",
+      "expected_output": "A round plan that diagnoses first, picks derivation-first (not another comparison or the same four legs), uses a researcher then critic then revise then second critic gauntlet, writes complete briefs with file ownership and the PENDING-log convention, includes refsweep before any novelty claim, and ends with an integration checklist.",
+      "files": [],
+      "assertions": [
+        "Diagnosis names the previous round's method shape and the different shape chosen now",
+        "Plan sequences researcher -> critic 1 -> revise -> critic 2 (critic 2 reads the revised note), not critics in parallel",
+        "Every researcher brief requires a hashed pre-registration before any outcome is fetched",
+        "Every researcher brief names at least one positive control (a number the source already reports)",
+        "Each API budget (OpenAlex, Semantic Scholar) has exactly one owning agent",
+        "Briefs route log entries to a PENDING-log file, not to log.md or 00-index.md",
+        "Plan requires a refsweep / anchor-reference prior-art check before any novelty claim",
+        "Critics are forbidden from reading the vault's prior view and from editing notes directly"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "You are orchestrating the biomimicry vault at C:/Users/glutt/Projects/biomimicry/.claude/worktrees/fable-orchestrator-review-a6876a. An agent just reported: 'C55 finds that across 900 OCTOPUS sites, soil erosion rate correlates with mean annual precipitation at rho = 0.31, p = 2e-20; this is a new empirical law linking erosion to climate.' Write critic-briefs.md in the output directory: the exact brief you would give a critic agent to attack this claim, and a second brief for a second critic with a different angle. Plan only; do not launch.",
+      "expected_output": "Two critic briefs that are file-scoped, forbid reading the vault's prior view, demand refsweep prior-art on the anchors, a pseudoreplication-by-source bootstrap, covariates (slope, lithology), a join-scale check, effect size with CI, the comparator clause, and a surviving-sentence output; the second critic takes a different angle (theory or units) from the first (empirical).",
+      "files": [],
+      "assertions": [
+        "The second critic reads the first critic's report and the revised note, not the first draft",
+        "Critic is forbidden from reading the vault's prior view of the claim",
+        "Brief requires a prior-art search on the anchors' own reference lists (refsweep or equivalent)",
+        "Brief requires clustering / bootstrap by source study to test pseudoreplication",
+        "Brief requires a join-scale / same-object check (basin denudation vs point; gridded climate vs site)",
+        "Brief asks whether the claim was pre-registered (hash) or found in the data",
+        "Output format includes a verdict (KILL / NARROW / SURVIVES), a grade, and a surviving sentence",
+        "Critic writes only to audits/ and a PENDING file, not to the vault note"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "You are orchestrating the biomimicry vault at C:/Users/glutt/Projects/biomimicry/.claude/worktrees/fable-orchestrator-review-a6876a. The last three rounds were scout sweeps that produced only kills. The user says 'what's next?'. Write next-move.md in the output directory: a short diagnosis of the record and one concrete round with a method shape that is not a scout or a same-object comparison, with agent briefs. Plan only.",
+      "expected_output": "A diagnosis that names why scouts produced kills, a different method shape (derivation-first, instrument-first, simulation, or build), concrete briefs with file ownership, and no new scout.",
+      "files": [],
+      "assertions": [
+        "Diagnosis names the previous rounds' shape (scout) and explains why it produced kills",
+        "Proposed round's shape is one of derivation-first, instrument-first, simulation, or build, and is not a scout or same-object comparison",
+        "Every brief lists file ownership (may touch / must not touch) and one owner per API budget",
+        "Round includes a sequential critic step after a researcher output (not parallel with it)",
+        "Every brief that predicts a number requires a hashed pre-registration and a positive control",
+        "Plan picks from program.md, walls.md, or an existing derived prediction rather than inventing a new comparison"
+      ]
+    }
+  ]
+}

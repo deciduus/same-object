@@ -28,3 +28,4 @@ Thumbs.db
 **/.cache/
 vault/_scripts/*_data/
 !vault/_scripts/c51_data/
+research-round-workspace/
