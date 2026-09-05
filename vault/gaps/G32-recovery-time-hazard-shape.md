@@ -2,30 +2,30 @@
 id: G32
 name: G32-recovery-time-hazard-shape
 type: gap
-standing: live
+standing: narrowed
 evidence: citation-intersection
-contact-surface: 0
+contact-surface: 1
 crosses: formalism
 crosses-rank: 4
-topology: disjoint
-mediator:
+topology: mediated
+mediator: fire-ecology-weibull-10.1016/S0065-2504(08)60216-0
 borrows-from: ["[[C18-durability-axis]]"]
 lends-to: []
 mutual-with: []
 computed-in: ["[[C29-recovery-beta]]", "[[C32-recovery-beta-replication]]"]
 uses-move: []
 rests-on: ["[[C18-durability-axis]]"]
-tags: [node/gap, crosses/formalism, evidence/citation-intersection, standing/live]
+tags: [node/gap, crosses/formalism, evidence/citation-intersection, standing/narrowed, narrowed/b-side-anchor]
 last-checked: 2026-09-05
 exit: computation
 extends-to: [ecology, conservation]
 next-step-cost: S
-note: "Ecology reports a mean return time where reliability reports a hazard shape. Weibull 1951 x five recovery/return-time anchors: intersection 0 on OpenCitations, every decade bin, against E floors 145-1933. Ecology-internal controls 7-31. Closed by computation in C29: beta = 0.587 [0.510, 0.668], decreasing hazard. Replication 2026-09-05 (C32, Moreno-Mateos 2017, 3,688 rows): pooled decreasing hazard survives (β = 0.733), the per-habitat ordering does NOT (Spearman ρ = 0.10, p = 0.95); ~30% study overlap between datasets."
+note: "NARROWED 2026-09-05 (audit 07): the B side was never varied, so the old zero measured who cites Weibull 1951, not who fits a Weibull. Re-run against survival-analysis anchors (Cox 1972, Kaplan-Meier 1958, Muenchow 1986) on OpenCitations 2026-09-05: fire ecology DOES cite them (Johnson & Gutsell 1994 x Cox = 11, x Kaplan-Meier = 3, x Muenchow = 2; Clark 1989 x Cox = 2, x Kaplan-Meier = 1), while the recovery meta-analyses do not (Jones & Schmitz and Moreno-Mateos 0 on all three; Pimm 2/1/0 and Crouzeilles 2/1/0, all six hits inspected and none fits a hazard to a recovery duration). The gap survives only as: RECOVERY ecology, not ecology, lacks the shape parameter. Johnson & Gutsell 1994 is reclassified from control to counter-example and mediator. Computation unchanged: C29 beta = 0.587 [0.510, 0.668]; C32 replication pooled beta = 0.733, per-habitat ordering fails (Spearman rho = 0.10, p = 0.95). Computation: C29 β = 0.587 on exact return times; C32 replication on current-status data yields NO identifiable shape (β 0.733 → 0.051 under the correct likelihood) and the per-habitat ordering fails (ρ = 0.10, p = 0.95); only the qualitative early-or-never shape survives."
 ---
 
 # Recovery time as a hazard shape
 
-**STANDING: LIVE** · evidence: citation-intersection · contact surface: 0 · last checked 2026-09-05
+**STANDING: NARROWED** · evidence: citation-intersection · contact surface: 1 · topology: mediated (fire ecology) · last checked 2026-09-05
 
 > **Disturbance ecology and reliability engineering both estimate the distribution of a
 > time-to-event under stress, and only one of them reports a distribution.** Ecology's
@@ -34,7 +34,10 @@ note: "Ecology reports a mean return time where reliability reports a hazard sha
 > `(β, η)`, and the shape `β` is the half that says which failure law is operating (Weibull 1951).
 > This is [[C18-durability-axis]]'s central asymmetry — *everyone publishes the mean, one field
 > also publishes the distribution* — restated on the recovery axis rather than the failure axis.
-> **The gap claim is that ecology's recovery literature has never imported the shape parameter.**
+> **The gap claim, as re-scoped 2026-09-05: ecology's *recovery* literature — the return-time and
+> restoration-meta-analysis line — has never imported the shape parameter. The unqualified form
+> ("ecology has never imported it") is false: fire ecology fits Weibull hazards to fire intervals
+> and cites the survival-analysis canon while doing it.**
 
 ## The two vocabularies
 
@@ -112,7 +115,7 @@ anchors it is an under-inclusive scope and is shown for sensitivity, not as the 
 | Weibull 1951 × Moreno-Mateos 2017 | 281 | **0** | 0 | 273 | 172 | 17.2 |
 | Weibull 1951 × Crouzeilles 2016 | 560 | **0** | 1 | 528 | 344 | 34.4 |
 | Weibull 1951 × Hillebrand & Kunze 2020 | 147 | **0** | 1 | 145 | **90.2** | 9.0 |
-| **control** Weibull 1951 × Johnson & Gutsell 1994 (fire ecology) | 307 | **0** | 0 | 297 | 188 | 18.8 |
+| *(counter-example, not a control — see below)* Weibull 1951 × Johnson & Gutsell 1994 (fire ecology) | 307 | **0** | 0 | 297 | 188 | 18.8 |
 
 **Every `E` exceeds 1 at every denominator tried, including 10× the fetched one.** By
 [[citation-intersection]]'s own rule that is the condition under which a zero is a finding, and it
@@ -177,12 +180,146 @@ number is wrong until both are shown to measure the same object. The fire row is
 a gap row, and the discrepancy makes it a weak control in either direction — it is reported for
 that reason and nothing in the claim rests on it.
 
+### The B side, varied (2026-09-05, audit 07 re-test)
+
+Every row above anchors B on **Weibull 1951**, a *J. Appl. Mech.* methods paper. Users of a
+distribution routinely cite neither its founding paper nor each other, so those zeros measure
+*who cites a 1951 paper*, not *who fits a Weibull* — [[failure-modes]] mode 1 (the synonym trap)
+on the B side, the mirror of the mode-6 step already run on A. This section runs the missing half.
+
+**Provider.** OpenCitations, `api.opencitations.net/index/v1/citations/<doi>`, fetched
+**2026-09-05**, `User-Agent: biomimicry/1.0 (mailto:deciduusleaf@gmail.com)`. Citer-DOI sets,
+**blank `citing` keys dropped before intersecting**. Raw/clean citer counts:
+Pimm 2,458/**2,445**; Jones & Schmitz 288/**286**; Moreno-Mateos 281/**281**; Crouzeilles
+561/**560**; Johnson & Gutsell 307/**307**; Clark 1989 96/**96**; Cox 1972 35,957/**35,863**;
+Kaplan–Meier 1958 38,157/**38,056**; Muenchow 1986 148/**148**.
+
+**B-side anchors, Crossref-verified 2026-09-05.**
+
+| Anchor | DOI | Title / venue |
+|---|---|---|
+| Cox 1972 | `10.1111/j.2517-6161.1972.tb00899.x` | *Regression Models and Life-Tables*, JRSS-B (`is-referenced-by-count` 36,657) |
+| Kaplan & Meier 1958 | `10.1080/01621459.1958.10501452` | *Nonparametric Estimation from Incomplete Observations*, JASA (76,647) |
+| Muenchow 1986 | **`10.2307/1938524`** | *Ecological Use of Failure Time Analysis*, *Ecology* 67(1) — ecology's own survival-analysis primer |
+| Johnson & Gutsell 1994 | `10.1016/S0065-2504(08)60216-0` | *Fire Frequency Models, Methods and Interpretations*, Adv. Ecol. Res. 25 (294) |
+| Clark 1989 | **`10.2307/3566083`** | *Ecological Disturbance as a Renewal Process*, *Oikos* 56(1) |
+
+> **Two DOI corrections made here.** The Muenchow DOI carried in the re-test brief,
+> `10.2307/1938954`, resolves to a 1982 *Ecology* paper on cotton-rat thermoregulation — a wrong
+> work, not a dead link. The correct DOI is `10.2307/1938524`, recovered by Crossref
+> bibliographic search 2026-09-05. Clark 1989 had no DOI on file and is `10.2307/3566083`.
+
+`E` floors below use the union floor `N = N_A + N_B − O`; it flatters the gap and is labelled as a
+floor. What carries the section is not `E` but the **contrast between the two A-side blocks**,
+which share the B side and therefore need no denominator at all.
+
+| A anchor | B anchor | `N_A` | `N_B` | **O** | `E` floor | `O/E` |
+|---|---|---|---|---|---|---|
+| **Recovery ecology** | | | | | | |
+| Pimm 1984 | Cox 1972 | 2,445 | 35,863 | **2** | 2,289.1 | 0.0009 |
+| Pimm 1984 | Kaplan–Meier 1958 | 2,445 | 38,056 | **1** | 2,297.5 | 0.0004 |
+| Pimm 1984 | Muenchow 1986 | 2,445 | 148 | **0** | 139.6 | 0 |
+| Jones & Schmitz 2009 | Cox 1972 | 286 | 35,863 | **0** | 283.7 | 0 |
+| Jones & Schmitz 2009 | Kaplan–Meier 1958 | 286 | 38,056 | **0** | 283.9 | 0 |
+| Jones & Schmitz 2009 | Muenchow 1986 | 286 | 148 | **0** | 97.5 | 0 |
+| Moreno-Mateos 2017 | Cox 1972 | 281 | 35,863 | **0** | 278.8 | 0 |
+| Moreno-Mateos 2017 | Kaplan–Meier 1958 | 281 | 38,056 | **0** | 278.9 | 0 |
+| Moreno-Mateos 2017 | Muenchow 1986 | 281 | 148 | **0** | 96.9 | 0 |
+| Crouzeilles 2016 | Cox 1972 | 560 | 35,863 | **2** | 551.4 | 0.0036 |
+| Crouzeilles 2016 | Kaplan–Meier 1958 | 560 | 38,056 | **1** | 551.9 | 0.0018 |
+| Crouzeilles 2016 | Muenchow 1986 | 560 | 148 | **0** | 117.1 | 0 |
+| **Fire ecology** | | | | | | |
+| Johnson & Gutsell 1994 | Cox 1972 | 307 | 35,863 | **11** | 304.5 | 0.036 |
+| Johnson & Gutsell 1994 | Kaplan–Meier 1958 | 307 | 38,056 | **3** | 304.6 | 0.0099 |
+| Johnson & Gutsell 1994 | Muenchow 1986 | 307 | 148 | **2** | 100.3 | 0.020 |
+| Clark 1989 | Cox 1972 | 96 | 35,863 | **2** | 95.7 | 0.021 |
+| Clark 1989 | Kaplan–Meier 1958 | 96 | 38,056 | **1** | 95.8 | 0.010 |
+| Clark 1989 | Muenchow 1986 | 96 | 148 | **0** | 58.2 | 0 |
+
+And the two A-side blocks against each other (recovery ↔ fire):
+
+| Pair | O | Hit |
+|---|---|---|
+| Jones & Schmitz 2009 × Clark 1989 | **1** | `10.1016/j.biocon.2013.08.029`, *Challenges of ecological restoration: lessons from forests in northern Europe*, Biol. Conserv. 2013 |
+| Pimm 1984 × Johnson & Gutsell 1994 | 0 | — |
+| Pimm 1984 × Clark 1989 | 0 | — |
+| Jones & Schmitz 2009 × Johnson & Gutsell 1994 | 0 | — |
+| Moreno-Mateos 2017 × Johnson & Gutsell 1994; × Clark 1989 | 0; 0 | — |
+| Crouzeilles 2016 × Johnson & Gutsell 1994; × Clark 1989 | 0; 0 | — |
+
+**Every hit inspected (Crossref titles, 2026-09-05).**
+
+*Recovery block, six hits, none of them a hazard fitted to a recovery duration:*
+
+| Hit | What it is | Verdict |
+|---|---|---|
+| `10.1057/s41299-017-0014-7` | *Influence Your Firm's Resilience Through Its Reputation*, Corporate Reputation Review 2017 | not ecology at all |
+| `10.1098/rspb.2004.2722` | *Life-history trade-offs and ecological dynamics in the evolution of longevity*, Proc. B 2004 | survival analysis of **organism** lifespan, not ecosystem recovery |
+| `10.1186/s44419-025-00002-z` | kelp sporophyte sensitivity to marine heatwaves, Ocean Ecosystems 2026 | survival of individuals under heatwave; no recovery-time hazard |
+| `10.1016/j.biocon.2013.08.029` | *Challenges of ecological restoration*, Biol. Conserv. 2013 | narrative review; co-cites, does not fit |
+| `10.1111/rec.12879` | transgenic chestnut litter and **wood frog larval** survival, Restor. Ecol. 2018 | Cox model on tadpole survival in a restoration experiment |
+| `10.1177/1940082918807178` | enrichment-planted **seedling** performance, Trop. Conserv. Sci. 2018 | Cox model on seedling survival |
+| `10.1016/j.ecoleng.2021.106237` | cloud-forest **tree-species** performance, Ecol. Eng. 2021 | Kaplan–Meier on planted-tree survival |
+
+So where recovery ecology touches survival analysis at all, it fits a hazard to the **survival of
+individual organisms** — a seedling, a tadpole, a kelp sporophyte — never to the **duration of an
+ecosystem's return to a reference state**, which is the object of this gap.
+
+*Fire block, on point:*
+
+| Hit | What it is |
+|---|---|
+| `10.3390/f7070131` | ***Quantifying Fire Cycle from Dendroecological Records Using Survival Analyses***, Forests 2016 — the object, explicitly |
+| `10.1071/wf12021` | fire frequency in northern-Australian savannas from a satellite fire atlas, IJWF 2012 |
+| `10.1139/x05-005` | fire frequency, Timiskaming mixedwood, Can. J. For. Res. 2005 |
+| `10.1890/1051-0761(2000)010[0225:wpwaow]2.0.co;2` | ***White pine weevil attack on white spruce: a survival time analysis***, Ecol. Appl. 2000 |
+| `10.1002/2017jg003826` | forest **fire cycles** post-Little-Ice-Age, JGR-Biogeosciences 2017 |
+| the remaining 8 Cox / Kaplan–Meier co-citers | all fire-interval or forest-disturbance survival fits (e.g. `10.1016/j.foreco.2016.10.035`, `10.1071/wf15120`, `10.3390/f7100211`) |
+
+One of the Clark 1989 × Cox 1972 co-citers is **Johnson & Gutsell 1994 itself**
+(`10.1016/s0065-2504(08)60216-0` is in both citer sets): the review that tabulates fire-interval
+Weibull shape and scale parameters cites the survival-analysis canon while doing it.
+
+## Counter-example: fire ecology already has the shape parameter
+
+**Johnson & Gutsell 1994 is not a control and never was.** It is *Fire Frequency Models, Methods
+and Interpretations* (Adv. Ecol. Res. 25, Crossref-verified `10.1016/S0065-2504(08)60216-0`) — an
+ecology review **of Weibull hazard fitting**, which tabulates shape and scale parameters for named
+boreal and chaparral stands. `audits/scout-02-resilience.md` §3 said so plainly at the time:
+
+> "fire ecology *does* touch Weibull - it just does not touch maintenance theory"
+
+and proposed closing that scout's candidate 3 using "Johnson & Gutsell's tabulated **shape and
+scale** parameters". This note demoted that sentence into a control row and kept the unqualified
+claim. That was the error; it is corrected here. The fire row is the **counter-example**, and its
+zero against Weibull 1951 is now positively explained — fire ecology reaches the Weibull hazard
+through Cox, Kaplan–Meier and Muenchow, not through the 1951 paper.
+
+A control that does not fire is not a control. The four **ecology-internal** controls above do that
+job and are unaffected.
+
+## Topology: mediated, and the mediator is fire ecology
+
+The two literatures are not disjoint for want of a concept; they are separated by one hop. Fire
+ecology holds the estimator (11 / 3 / 2 co-citers with the survival canon) and is co-cited with the
+recovery literature exactly **once** (Jones & Schmitz × Clark 1989 = 1,
+`10.1016/j.biocon.2013.08.029`). The path recovery-ecology → fire-ecology → hazard-shape exists and
+is one hit wide at its first leg, which is why `topology` is now `mediated`, `mediator` is Johnson
+& Gutsell 1994, and `contact-surface` is **1** — the gap-unfavourable reading, recording that one
+co-citation rather than the 0 hits of the exactly-right kind.
+
+
 ## What survives
 
-**The claim survives in its strong form, and it is a formalism gap rather than a word gap.** Both
-fields carry a quantified estimator for the same censored duration; ecology's estimator is a first
-moment and reliability's is a two-parameter distribution, and no work cites both anchors in any
-decade. What does **not** survive is any presumption that importing `β` carries a mechanism with
+**The claim survives in a narrowed form, and it is still a formalism gap rather than a word gap.**
+What does not survive is the general form. *Ecology* has the shape parameter: fire ecology fits
+Weibull hazards to fire intervals and cites Cox, Kaplan-Meier and Muenchow while doing it. What
+survives is the *recovery* scope — the return-time line (Pimm) and the restoration and
+recovery-debt meta-analyses (Jones & Schmitz, Moreno-Mateos, Crouzeilles) report a mean, a yes/no
+or a deficit, and their only contact with survival analysis is at the level of an individual
+organism's survival, never the duration of an ecosystem's return. Both fields carry a quantified
+estimator for the same censored duration; recovery ecology's estimator is a first moment and
+reliability's is a two-parameter distribution. What does **not** survive is any presumption that importing `β` carries a mechanism with
 it — see the metaphor risk above and [[C29-recovery-beta]] §6.
 
 ## What would close it
@@ -214,3 +351,28 @@ Neighbouring work on the same instrument: [[C26-ews-hazard-shape]] (hazard shape
 `G29-early-warning-prognostics` is being opened in parallel and is not yet linkable here), and
 [[C27-product-lifespan-beta]] via [[G30-weibull-product-lifespan]] (the same estimator on
 consumer-product lifespans).
+
+## Corrections 2026-09-05 (audit 07)
+
+1. **The B-side anchor was never varied** — every row of the anchor-pair table sat on Weibull 1951,
+   so the zero measured citation traffic to one 1951 *J. Appl. Mech.* paper, not use of the
+   estimator. Fixed by *The B side, varied*: three survival-analysis B anchors × six A anchors,
+   OpenCitations 2026-09-05.
+2. **The claim was overstated.** "Ecology's recovery literature has never imported the shape
+   parameter" was written and read as if it said "ecology has never imported it". The general form
+   is **false**; the narrow form holds. Blockquote, *What survives*, `note:` and the STANDING line
+   are re-scoped to *recovery* ecology.
+3. **Johnson & Gutsell 1994 was mislabelled a positive control.** It is the counter-example — an
+   ecology review of Weibull hazard fitting — and is now a named counter-example and the
+   `mediator`. `audits/scout-02-resilience.md` §3 said this before this note was written.
+4. **`standing: live` → `narrowed`; `topology: disjoint` → `mediated`; `contact-surface: 0` → `1`.**
+   The surviving gap is narrower than the one first opened: recovery ecology, not ecology.
+5. **Two anchor DOIs corrected/added.** Muenchow 1986 is `10.2307/1938524`, not `10.2307/1938954`
+   (which resolves to a 1982 cotton-rat thermoregulation paper). Clark 1989 is `10.2307/3566083`.
+6. **Instrument note.** `_scripts/intersect.py` was **not** used; its current version carries the
+   blank-`citing`-key bug this note already documented. A purpose-written fetch dropping empty
+   `citing` values before set construction produced every number in *The B side, varied*.
+7. **Not fixed here** (other audit-07 items, other files): the ecology-internal control range
+   printed as 7–31 where the blanks-stripped values are 6–30, and the two anchor DOIs missing from
+   the Provenance block for Hillebrand & Kunze 2020 (`10.1111/ele.13457`) and Johnson & Gutsell
+   1994 (`10.1016/S0065-2504(08)60216-0`), recorded above instead.

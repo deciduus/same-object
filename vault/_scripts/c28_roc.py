@@ -14,6 +14,15 @@ is that the astrobiology literature publishes NO value for any of the three.
 Run:  python c28_roc.py        (from vault/_scripts/)
 """
 
+# ILLUSTRATIVE INPUTS, NOT MEASURED ONES.  No specificity for the O2 test is
+# published, and the note's abiotic-source section shows that none is currently
+# estimable from the literature: the enumeration of false-positive mechanisms is a
+# list, not a rate over a reference population.  The SPECS grid below is a span
+# chosen to display the arithmetic, and every number this script prints inherits
+# that status.  The note's real OUTPUT is the inversion in spec_required(): given
+# an assumed prevalence, what specificity would a believable detection need.
+# The callout was corrected 2026-09-05 (audit 06) for describing this grid as a
+# range "the field's own false-positive enumeration can plausibly support".
 PREVS = [1e-3, 3e-3, 1e-2, 3e-2, 0.1, 0.3, 0.5]
 SPECS = [0.900, 0.950, 0.990, 0.999]
 

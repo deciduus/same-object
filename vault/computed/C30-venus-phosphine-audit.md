@@ -16,13 +16,18 @@ extends-to: astrobiology
 > which two teams extract with opposite sign of significance *from the same photons*, is
 > METHOD §5's same-method disagreement, not a measurement. **The audit halts.**
 > Run **conditionally** — *if* 1 ppb above 55 km were real — `S_req = 1×10⁸ cm⁻² s⁻¹
-> = 26 kg/s = 2.41×10¹⁰ mol/yr`, and every abiotic route fails the availability leg: volcanic
-> `8×10³`, meteoritic `8×10⁴`, lightning `1.4×10⁵`, subsurface geochemistry `10⁸–10¹⁵`.
-> **The exclusion list matches Bains et al. 2021's exactly. One row diverges, against Bains:**
-> at their *own* extremal aperture (`τ ×10³`) the volcanic row falls to `A = 8`, which under
-> [[reservoir-audit]] F7 is `NOT TESTED`, not `RULED OUT`. **And the biotic row `SURVIVES` the
-> same ledger** (`A ≤ 1` on redox energetics and on required biomass) — a statement about the
-> ledger's resolving power, not about life.
+> = 26 kg/s = 2.41×10¹⁰ mol/yr`, and every abiotic route **with a published flux bound** fails
+> the availability leg: volcanic `8×10³`, meteoritic `8×10⁴`, lightning `1.4×10⁵`. **The
+> exclusion list matches Bains et al. 2021's — necessarily so on three rows, which are Bains'
+> own stated margins re-divided, and with a row-7 exception the ledger alone does not earn.**
+> **No row now diverges:** at Bains' *own* extremal aperture the volcanic bound `1.3×10⁵
+> cm⁻² s⁻¹` is `1,066 t/yr` (not the `800 t/yr` first recorded), so `A = 10.7`, *outside*
+> [[reservoir-audit]] F7's `1 < A < 10` band — **`RULED OUT`, as Bains say.** **And the biotic
+> row no longer `SURVIVES` unqualified:** Jordan, Shorttle & Rimmer 2022 (*Nat. Commun.*) show
+> the three proposed sulfur energy-metabolisms produce the observed SO₂ depletion only by
+> violating other atmospheric constraints, capping cloud biomass at `~10⁻⁵–10⁻³ mg m⁻³` — four
+> to six orders below Earth's aerial `44 mg m⁻³`. The row survives only in its **low-biomass,
+> unspecified-metabolism** form; every *named* energy source proposed for it is excluded.
 
 See [[reservoir-audit]] (Part C procedure, Part D.2 design, F3/F4/F7),
 [[specification-instruments]], [[information-audit]] Part C, [[C11-flyby-reservoir-audit]] (the
@@ -102,15 +107,28 @@ identity, not an approximation, which is why the sensitivity line is two divisio
 | 2 | **Volcanic phosphide (P³⁻) extrusion + hydrolysis** | Truong & Lunine 2021; rebutted on eruption rate by Bains 2022 (`10.1073/pnas.2121702119`) | `10.1073/pnas.2021689118` | extraordinary plume volcanism | **not computed** | — | — | **NOT TESTED** — neither PNAS paper fetched |
 | 3 | **Lightning / electrical discharge** | Bains 2021: PH₃ *"produced by lightning in one Venusian year under some very optimistic assumptions is 3.5 tonnes … 5 orders of magnitude lower than … necessary"* | `10.1089/ast.2020.2352` | `5.7 t/yr` (3.5 t per 0.6152 Earth-yr Venus year) | **1.4×10⁵** | 7.0×10⁴ | 2.8×10⁵ | **RULED OUT** |
 | 4 | **Meteoritic / cometary delivery of phosphides** | Bains 2021: 20–70 kt/yr accretion, 6% Fe/Ni, 0.25% P, hydrolysis *"100% efficient"* → *"~10 tonnes of phosphine … every year"* | same | `1×10¹ t/yr` | **8.0×10⁴** | 4.0×10⁴ | 1.6×10⁵ | **RULED OUT** |
-| 5 | **Atmospheric photochemistry (H/P radical chains)** | Bains 2021: *"at least 5 orders of magnitude below the rate required"* | same | ≤`8 t/yr` | **≥1×10⁵** | ≥5×10⁴ | ≥2×10⁵ | **RULED OUT** |
-| 6 | **Surface / subsurface geochemistry** | Bains 2021: crust/mantle f(O₂) *"8–15 orders of magnitude too high to support reduction of phosphate"* | same | ≤`10⁻³ t/yr` | **10⁸–10¹⁵** | /2 | ×2 | **RULED OUT** — widest margin on the ledger |
-| 7 | **Tribochemical / mechanochemical (Glindemann)** | Bains 2021: scaled to global earthquake activity, *"at least two orders of magnitude too small"*; crust *"extremely desiccated with no local hydrogen source"* | same | ≤`8×10³ t/yr` | **≥1×10²** | ≥50 | ≥2×10² | **RULED OUT**, but the *narrowest* abiotic margin — see F7 note below |
+| 5 | **Atmospheric photochemistry (H/P radical chains)** | Bains 2021: *"at least 5 orders of magnitude below the rate required"* | same | ≤`8 t/yr` **back-derived** | **≥1×10⁵ `RESTATED`** | ≥5×10⁴ | ≥2×10⁵ | **RULED OUT** (Bains' own margin, not an independent division) |
+| 7 | **Tribochemical / mechanochemical (Glindemann)** | Bains 2021: scaled to global earthquake activity, *"at least two orders of magnitude too small"*; crust *"extremely desiccated with no local hydrogen source"* | same | ≤`8×10³ t/yr` **back-derived** | **≥1×10² `RESTATED`** | ≥50 | ≥2×10² | **RULED OUT**, but the *narrowest* abiotic margin — see F7 note below |
 | 8 | **Cloud-droplet photochemistry in H₂SO₄** | Bains 2021 §5.2: *"completely unknown"*; Frontiers 2024: an *"open option"*, *"uncertain by many orders of magnitude"* | `10.3389/fspas.2024.1372057` | **bounded by nobody** | — | — | — | **NOT TESTED** — the only genuinely unquantified abiotic row |
 | 9 | **Large-impact transient reduced atmosphere** | Bains 2021: needs an impact ≥ the ~4.48 Ga terrestrial event; *"even the Chicxulub impactor … did not manage to significantly change the redox state"*; recurrence 50–100 Myr, no recent Venus crater on radar | `10.1089/ast.2020.2352` | epoch-excluded | — | — | — | **NOT FORMABLE** now |
-| 10 | **Aperture inflation itself** (`τ ×10³`) | Bains 2021 Supp.: destruction assumed transport-only, surface→98 km at `K_z = 2200 cm² s⁻¹`, `T = 2.2×10¹⁰ s`; bound falls to **`1.3×10⁵ cm⁻² s⁻¹`** = 800 t/yr, *"~10⁻³ times the rate estimated from a full photochemical model"* | same | `S_req` falls `769×` | **volcanic A → 8.0** | 4.0 | 16 | **the row that bites — §3** |
+| 10 | **Aperture inflation itself** (Bains' extremal `τ`) | Bains 2021 Supp.: destruction assumed transport-only, surface→98 km at `K_z = 2200 cm² s⁻¹`, `T = 2.2×10¹⁰ s`; bound falls to **`1.3×10⁵ cm⁻² s⁻¹`** = **1,066 t/yr** (recomputed 2026-09-05), *"~10⁻³ times the rate estimated from a full photochemical model"* | same | `S_req` falls `769×`, not `1000×` | **volcanic A → 10.7** | 5.3 | 21 | **RULED OUT** — `A > 10`, outside F7's band; the divergence D1 dissolves (§3) |
 | 11 | **The observable is SO₂, not PH₃** | Villanueva 2021; Lincowski 2021 | `10.1038/s41550-021-01422-z` | n/a | — | — | — | **NOT FORMABLE** |
 | 12 | **The observable is a passband-fitting artefact** | Snellen 2020; Thompson 2020 | `10.1051/0004-6361/202039717` | n/a | — | — | — | **the step-0 row (§1)** |
-| 13 | **BIOTIC — same ledger** | Bains 2021: reducing phosphate to PH₃ *"is not beyond that deployed by terrestrial biochemistry"* (NADH and two Fe–S proteins suffice, FADH₂ and ubiquinone do not); Lingam & Loeb 2020: required biomass *"orders of magnitude lower than … Earth's aerial biosphere"* | `10.1089/ast.2020.2352`; [arXiv:2009.07835](https://arxiv.org/abs/2009.07835) | not flux-limiting | **≤1** | ≤0.5 | ≤2 | **SURVIVES (as spec)** |
+| 13 | **BIOTIC — same ledger** | Bains 2021: reducing phosphate to PH₃ *"is not beyond that deployed by terrestrial biochemistry"* (NADH and two Fe–S proteins suffice, FADH₂ and ubiquinone do not); Lingam & Loeb 2020: required biomass *"orders of magnitude lower than … Earth's aerial biosphere"* (no figure given) | `10.1089/ast.2020.2352`; [arXiv:2009.07835](https://arxiv.org/abs/2009.07835) | not flux-limiting | **≤1**, energy leg only | ≤0.5 | ≤2 | **NARROWED — see row 14** |
+| 14 | **BIOTIC, by named energy source** | **Jordan, Shorttle & Rimmer 2022, *Nat. Commun.*** (Crossref, fetched 2026-09-05; open access PMC9198073): all three proposed sulfur energy-metabolisms *"can produce SO₂-depletions, but do so by violating other observational constraints on Venus's atmospheric chemistry"*; maximum sulfur-metabolising cloud biomass *"~10⁻⁵ − 10⁻³ mg m⁻³"* against Earth's aerial biosphere at `44 mg m⁻³` | `10.1038/s41467-022-30804-8` | biomass ceiling, not a PH₃ flux | **A not formable** — a biomass constraint, not a flux ratio | — | — | **RULED OUT for the named metabolisms.** Jordan et al. leave open *"a low mass biosphere … releas[ing] relatively small amounts of trace metabolic gases"*, explicitly naming phosphine — so row 13 survives only with **no energy source named** |
+
+### Off the `A`-ranked table: the row that is not a flux
+
+| # | Route | Bains 2021's bound | `A` | Verdict |
+|---|---|---|---|---|
+| 6 | **Surface / subsurface geochemistry** | crust/mantle **oxygen fugacity** *"8-15 orders of magnitude too high to support reduction of phosphate"* | **`A: not formable as flux — fugacity margin only`** | **RULED OUT (no flux bound published)** — on Bains' redox argument, not on this ledger |
+
+**Why it is off the table.** The note previously carried `A = 10⁸–10¹⁵` and a back-derived
+`S_max ≤ 10⁻³ t/yr`. That is a units error: `f(O₂)` and PH₃ production flux are related through
+a redox equilibrium, not linearly, so an order-count in fugacity does not transfer to an
+order-count in flux. No `S_max` in tonnes per year is published for this route, so no `A` exists.
+The row's exclusion stands on Bains' thermodynamics; the ledger simply does not score it, and
+`10¹⁵` must not be quoted as the ledger's widest margin (it was, in §6 — corrected).
 
 ---
 
@@ -120,9 +138,20 @@ identity, not an approximation, which is why the sensitivity line is two divisio
 whole content of Bains' title.
 
 **`RULED OUT` (`A > 1`, robust at 2× aperture):** volcanic (`8.0×10³`, `7.0×10³` independently),
-lightning (`1.4×10⁵`), meteoritic (`8.0×10⁴`), photochemistry (`≥10⁵`), surface/subsurface
-geochemistry (`10⁸–10¹⁵`) — all surviving the 2× row by three or more orders. These are the
-exclusions the ledger actually earns.
+lightning (`1.4×10⁵`), meteoritic (`8.0×10⁴`) — three or more orders clear of the 2× row.
+Photochemistry (`≥10⁵`) and tribochemistry (`≥10²`) are also excluded, but see the next
+paragraph: those two `A` values are `RESTATED`, not computed.
+
+**Which rows the ledger computes, and which it only restates.** *Computed here, from a flux the
+source states in physical units:* rows **1** (100 t/yr of PH₃), **1b** (`10⁹ g P/s` against
+Earth's `143 kg/s`), **3** (3.5 t per Venus year), **4** (~10 t/yr), and **10** (`1.3×10⁵
+cm⁻² s⁻¹` over Venus' `4.602×10¹⁸ cm²`). Those five are independent divisions and are the
+ledger's actual work. *Restated, not computed:* rows **5** and **7**, where Bains publish only a
+shortfall in orders of magnitude ("at least 5", "at least two") and the `S_max` column was
+back-derived from that shortfall — dividing it by `S_req` returns Bains' own margin, so those two
+rows cannot corroborate Bains, and §4's calibration claim is **tautological on them**. *Not
+formable at all:* row **6**, an oxygen-fugacity margin (above). So the ledger independently
+reproduces five of Bains' exclusions and echoes two.
 
 **Marginal — the audit's own finding, not Bains':**
 
@@ -131,29 +160,48 @@ exclusions the ledger actually earns.
   on an unmeasured input is thin, and it holds only because a *separate, non-ledger* argument
   buttresses it (no crustal hydrogen source). **Recorded `RULED OUT`; the ledger alone gives
   `NOT TESTED`.**
-- **Row 10 — the row the step-5 aperture rule was written for.** At Bains' *own* extremal
-  aperture (`τ ×10³`), `S_req` falls to 800 t/yr and the volcanic `A` falls from `8.0×10³` to
-  **`8.0`**, into `1 < A < 10` on contested inputs: under [[reservoir-audit]] F7 that is
-  **`NOT TESTED`, not `RULED OUT`.** Bains reach the same destination differently — conceding
-  the arithmetic and rejecting the *transport assumptions* as *"not physically plausible, or
-  even self-consistent"* (a mechanism argument, and a persuasive one). **The divergence is
-  procedural, not factual, and runs conservative** — the instrument declines an exclusion
-  Bains asserts.
+- **Row 10 — the row the step-5 aperture rule was written for, recomputed 2026-09-05.** At
+  Bains' *own* extremal aperture the required flux falls to `1.3×10⁵ cm⁻² s⁻¹`. Converting from
+  the note's own chain — `1.3×10⁵ cm⁻² s⁻¹ × 4.602×10¹⁸ cm²` (Venus, `r = 6051.8 km`)
+  `= 5.98×10²³ molecules/s ÷ 6.022×10²³ mol⁻¹ = 0.993 mol/s × 33.998 g/mol = 33.8 g/s
+  × 3.1557×10⁷ s/yr = 1.07×10⁹ g/yr` — **`S_req = 1,066 t/yr`**, against the volcanic
+  `100 t/yr`: **`A = 10.7`.** The lifetime inflation is Bains' stated `769×`, not a round `10³`;
+  the earlier `800 t/yr` was `8×10⁵ ÷ 1000`, and `_scripts/c30_phosphine.py` printed the `769×`
+  ratio all along. `10.7` is **outside** [[reservoir-audit]] F7's `1 < A < 10` band, so the row
+  is **`RULED OUT`**, and **the audit's only claimed divergence from Bains (D1) dissolves.**
+  What survives is weaker and true: the volcanic exclusion is *aperture-fragile* — three orders
+  of margin at nominal `τ` become a factor of ten at Bains' extremal `τ`, and a further `1.07×`
+  of lifetime inflation would put it inside F7's band. The aperture row still earns its place;
+  it just no longer overturns anything.
 
 **`NOT TESTED`:** rows 2 (PNAS pair not fetched) and 8 (cloud-droplet photochemistry in H₂SO₄,
 bounded by nobody). **`NOT FORMABLE`:** rows 9 (impact, epoch-excluded) and 11 (SO₂ — the
 observable dissolves).
 
-**`SURVIVES`: row 13, the biotic route — the availability leg does not exclude it.** Bains' own
-thermodynamics puts the required reducing power inside the range of terrestrial biochemicals;
-Lingam & Loeb's biomass requirement sits orders of magnitude *below* Earth's aerial biosphere.
-`A ≤ 1` on both the energy and the standing-crop legs. **Per [[reservoir-audit]] F4, `A ≤ 1` is
-necessary and never sufficient** — Bains spend pages on obstacles the ledger is blind to: water
-activity, concentrated H₂SO₄ that *"rapidly destroys the large majority of terrestrial
-biochemicals"*, membrane integrity against that gradient. **So the audit returns: of the routes
-considered, this ledger excludes every abiotic route and does not exclude the biotic one — a
-measurement of the ledger's resolving power, not evidence for life.** Same discipline as
-`C11`'s dark-matter row: *specified, not endorsed*.
+**`NARROWED`, not `SURVIVES`: rows 13–14, the biotic route.** The energy leg alone still passes:
+Bains' own thermodynamics puts the required reducing power inside the range of terrestrial
+biochemicals, and Lingam & Loeb's biomass requirement is *"orders of magnitude lower than …
+Earth's aerial biosphere"* (they publish no figure, so that comparison cannot be closed
+numerically here). **But the row was graded `SURVIVES` while a paper adverse to it went unread.**
+Jordan, Shorttle & Rimmer 2022 (`10.1038/s41467-022-30804-8`, *Nat. Commun.*, Crossref +
+open-access full text fetched 2026-09-05 — the DOI this note recorded as "not located", and not
+a Bains paper at all) couple each of the three proposed Venusian sulfur energy-metabolisms to a
+photochemical-kinetics code: **all three reproduce the observed SO₂ depletion only by violating
+other observational constraints on the atmosphere**, which caps sulfur-metabolising cloud biomass
+at `~10⁻⁵–10⁻³ mg m⁻³` — four to six orders below Earth's aerial biosphere at `44 mg m⁻³`, not
+the "orders of magnitude lower and therefore comfortable" reading row 13 rested on. So **every
+*named* energy source so far proposed for a Venusian cloud biosphere is excluded.** What is not
+excluded is what Jordan et al. themselves leave standing — *"a low mass biosphere present, the
+only observable effect of which is to release relatively small amounts of trace metabolic
+gases"*, with phosphine named among them. **The honest state of the biotic row is `NARROWED`: it
+clears the availability leg only with its metabolism unspecified, which makes it a specification
+of an unknown, exactly like row 8.** Per [[reservoir-audit]] F4, `A ≤ 1` was never sufficient
+anyway — Bains spend pages on obstacles the ledger is blind to: water activity, concentrated
+H₂SO₄ that *"rapidly destroys the large majority of terrestrial biochemicals"*, membrane
+integrity against that gradient. **So the audit returns: of the routes considered, this ledger
+excludes every abiotic route with a published flux bound and narrows the biotic one to an unnamed
+metabolism — a measurement of the ledger's resolving power, not evidence for life.** Same
+discipline as `C11`'s dark-matter row: *specified, not endorsed*.
 
 ---
 
@@ -184,21 +232,24 @@ required coupling itself is the specification:
 
 ### The scoring — does the audit's exclusion list match Bains 2021's?
 
-**Yes, on every row Bains bounds.** Their summary lists photochemistry (`≥5` orders),
-equilibrium thermodynamics (`~100 kJ/mol` too costly), surface and subsurface chemistry
-(`8–15` orders), volcanism, lightning, meteoritic delivery, tribochemistry and impacts — and
-the audit, run from Bains' own fluxes with the `A`-ledger imposed on top, excludes exactly that
-set and nothing else. **This is the Pioneer-style calibration result: the instrument reproduces
-a published enumeration's verdict list, route for route.** Weaker than Pioneer's, because it
-read the answer's own numbers rather than pre-resolution inputs — see §6.
+**Yes on every row Bains bounds — but the claim is worth less than it first reads, and §3 now
+says how much less.** Their summary lists photochemistry (`≥5` orders), equilibrium
+thermodynamics (`~100 kJ/mol` too costly), surface and subsurface chemistry (`8–15` orders of
+**oxygen fugacity**), volcanism, lightning, meteoritic delivery, tribochemistry and impacts —
+and the audit excludes that set and nothing else. **Of those, only five rows (1, 1b, 3, 4, 10)
+are independent divisions of a published flux; rows 5 and 7 re-divide Bains' own stated margin,
+so agreement there is tautological, and row 6 carries no flux at all.** The Pioneer-style
+calibration claim therefore holds on five rows, not eight, and is weaker than Pioneer's twice
+over: it read the answer's own numbers rather than pre-resolution inputs (see §6), and on two
+rows it read the answer itself.
 
-**Three divergences, all of them procedural:**
+**Two divergences remain, both procedural; a third was withdrawn on audit:**
 
 | # | Bains 2021 | This audit | Why |
 |---|---|---|---|
-| D1 | Volcanism `RULED OUT` even at the extremal-`τ` scenario, rejected on physical grounds | **`NOT TESTED` at `τ ×10³`** (`A = 8.0`) | Step 5 makes the aperture a first-class row; F7 forbids a `1 < A < 10` exclusion on contested inputs. Bains' rejection is a mechanism argument the ledger may not make |
+| ~~D1~~ | Volcanism `RULED OUT` even at the extremal-`τ` scenario, rejected on physical grounds | **`RULED OUT` — same verdict.** *Withdrawn 2026-09-05* | The divergence rested on `A = 8.0`, which came from a round `τ ×10³`. Bains' own extremal bound is `1.3×10⁵ cm⁻² s⁻¹ = 1,066 t/yr`, a `769×` inflation, giving **`A = 10.7`** — outside F7's `1 < A < 10` band. The ledger and Bains agree; what remains is that the exclusion is **aperture-fragile**, a sensitivity result, not a disagreement |
 | D2 | Title: "cannot be explained by conventional processes" | **"of the routes considered"** | F2. Bains hedge in the body (*"every plausible … process"*), but the title is a verdict where the body is a specification — the failure mode this instrument exists to avoid |
-| D3 | Biotic row at length; "not ruled out on thermodynamic grounds", inside habitability caveats | **`SURVIVES`, `A ≤ 1`, flagged F4** | Same conclusion as a ledger state, not prose. The gain: the biotic row sits *on the same table*, scored by the same rule |
+| D3 | Biotic row at length; "not ruled out on thermodynamic grounds", inside habitability caveats | **`NARROWED`: `A ≤ 1` on the energy leg, flagged F4, and rows 13–14 split** | Same conclusion as a ledger state, not prose. The gain: the biotic row sits *on the same table*, scored by the same rule — and when Jordan, Shorttle & Rimmer 2022 excluded every *named* metabolism, the table registered it as a state change rather than a paragraph |
 
 **And one divergence Bains could not have made:** rows 11–12. They state plainly *"We have
 assumed here that it is present, at ~1 ppb, and that presence requires an explanation."* Step 0
@@ -249,17 +300,81 @@ coupled transport–photochemistry profile and "the aperture" is a vertical func
 collapses to a scalar. `10.1051/0004-6361/202142548` exists precisely because the PH₃
 photochemical network is uncertain by orders of magnitude; a chemist would say every `A` here
 inherits that, and the three-order exclusions are really one-to-two-order exclusions with a long
-tail. **That moves no verdict** — the smallest robust abiotic `A` is `10²`, the largest `10¹⁵` —
-**but it does move row 10, already the row this audit refuses to call excluded.** Second attack:
+tail. **That moves no verdict at nominal aperture** — the smallest robust abiotic `A` is `10²`, and
+the largest *computed* one is `1.4×10⁵` (lightning; the former "largest, `10¹⁵`" was the
+fugacity-margin row 6, which carries no `A` at all — corrected 2026-09-05) — **but it does move
+row 10, where the margin is now a factor of `10.7` and a further `1.07×` of lifetime inflation
+would carry it inside F7's `NOT TESTED` band.** Second attack:
 the exercise is conditional on an observable §1 says does not exist. True, and in the callout.
 
-**Not obtained this session.** Lincowski 2021 (`10.3847/2041-8213/abde47`) and Akins 2021
+**Not obtained.** Lincowski 2021 (`10.3847/2041-8213/abde47`) and Akins 2021
 (`10.3847/2041-8213/abd56a`) — DOIs Crossref-verified, texts not fetched, so the SO₂-degeneracy
 claim rests on Villanueva's abstract and Cordiner's account of it. Truong & Lunine 2021 and the
-Bains 2022 PNAS reply — neither fetched, so row 2 is `NOT TESTED` rather than scored. Bains
-et al. 2022 *Nat. Commun.* (`10.1038/s41467-022-30804-8`) — not located under that DOI; the
-biotic row therefore rests on Bains 2021 §biology and on Lingam & Loeb, whose DOI Crossref did
-not return (cited by arXiv id). Greaves 2021 Addendum — not fetched; `1–7 ppb` is quoted from
+Bains 2022 PNAS reply — neither fetched, so row 2 is `NOT TESTED` rather than scored. `10.1038/s41467-022-30804-8` — **located and read 2026-09-05**; it is
+**Jordan, Shorttle & Rimmer 2022**, *Nat. Commun.*, "Proposed energy-metabolisms cannot explain
+the atmospheric chemistry of Venus", not a Bains paper (Crossref, `mailto` query, fetched
+2026-09-05; full text via Europe PMC `PMC9198073`). It is now row 14 and it re-graded row 13.
+Lingam & Loeb's DOI Crossref still did not return (cited by arXiv id), and they publish no
+numeric biomass density, so the row-13 biomass leg remains qualitative. Greaves 2021 Addendum — not fetched; `1–7 ppb` is quoted from
 Cordiner 2022. **No peer-reviewed JCMT-Venus re-detection paper with an abundance was found**
 (searched 2026-09-05); the Frontiers review's "high significance" is a claim, not a number, and
 §1 row 10 must not be quoted as a detection.
+
+---
+
+## Corrections 2026-09-05 (audit 06/07)
+
+Seven changes, all against `audits/06-math-rounds3-6.md` and `audits/07-provenance-rounds3-6.md`.
+Logged in `PENDING-log-FIX2` pending merge into `log.md`.
+
+1. **Row 10 recomputed; divergence D1 withdrawn (audit 06, HIGH).** The row equated Bains'
+   extremal bound `1.3×10⁵ cm⁻² s⁻¹` with `800 t/yr` — that figure is `8×10⁵ ÷ 1000`, a round
+   `τ ×10³`, not a conversion. Over Venus' `4.602×10¹⁸ cm²` the bound is **`1,066 t/yr`**
+   (`769×` down, the ratio `_scripts/c30_phosphine.py` already printed), so the volcanic
+   **`A = 10.7`, not `8.0`** — *outside* [[reservoir-audit]] F7's `1 < A < 10` band. Verdict
+   moves `NOT TESTED` → **`RULED OUT`**. D1, the note's only claimed divergence from Bains, is
+   struck from the §4 table; the callout's "One row diverges, against Bains" is gone. What
+   survives is the weaker true claim: the volcanic exclusion is *aperture-fragile*.
+2. **Row 6 relabelled as a fugacity margin (audit 06, HIGH).** `A = 10⁸–10¹⁵` converted an
+   **oxygen-fugacity** excess into a flux ratio, with the `S_max ≤ 10⁻³ t/yr` column
+   back-derived to make it land. `f(O₂)` maps to production flux through a redox equilibrium,
+   not linearly. The row now reads **`A: not formable as flux — fugacity margin only`** and is
+   moved out of the `A`-ranked ledger into its own block; verdict restated as
+   **`RULED OUT (no flux bound published)`**, on Bains' thermodynamics rather than on this
+   ledger.
+3. **Rows 5 and 7 marked `RESTATED` (audit 06, HIGH).** Their `S_max` values were back-derived
+   from Bains' own "at least 5 orders" / "at least two orders", so `A` returns Bains' margin.
+   §3 now states which five rows (1, 1b, 3, 4, 10) are independent divisions and which two are
+   echoes, and §4 concedes the calibration claim is tautological on those two.
+4. **`10.1038/s41467-022-30804-8` located; it is not by Bains (audit 07, HIGH).** §6 recorded it
+   "not located under that DOI". Crossref returns it cleanly: **Jordan, Shorttle & Rimmer 2022,
+   *Nat. Commun.*, "Proposed energy-metabolisms cannot explain the atmospheric chemistry of
+   Venus"** (fetched 2026-09-05, `mailto` query; open-access full text, Europe PMC
+   `PMC9198073`). A lookup failure had been recorded as a bibliographic fact, and the missed
+   paper is adverse to the row the note graded `SURVIVES`.
+5. **Biotic row re-graded `SURVIVES` → `NARROWED` (audit 07, HIGH).** Jordan et al. show all
+   three proposed sulfur energy-metabolisms reproduce the SO₂ depletion only by violating other
+   atmospheric constraints, capping sulfur-metabolising cloud biomass at `~10⁻⁵–10⁻³ mg m⁻³`
+   against Earth's aerial `44 mg m⁻³`. Added as **row 14**. Every *named* energy source is
+   excluded; what remains is the low-biomass trace-gas biosphere Jordan et al. themselves leave
+   open, phosphine named. The row clears the availability leg only with its metabolism
+   unspecified. Recorded honestly rather than as a flux `A`, because a biomass ceiling is not a
+   flux ratio — the same discipline change 2 enforces on row 6.
+6. **Callout qualified (audit 06, MED).** "every abiotic route fails the availability leg" now
+   reads "every abiotic route **with a published flux bound**" — rows 2 and 8 are `NOT TESTED` —
+   and "matches Bains' exactly" is qualified by the restated rows and the row-7 exception the
+   body already recorded. §6's "the largest robust abiotic `A` is `10¹⁵`" is corrected: `10¹⁵`
+   was the fugacity row; the largest computed `A` is `1.4×10⁵`.
+7. **`_scripts/c30_phosphine.py` made to agree with the table (audit 06).** Added Venus' surface
+   area and a `flux_to_t_yr()` conversion; the extremal-aperture line now computes `1,066 t/yr`
+   and `A = 10.7` from the `769×` ratio instead of a hard-coded `1e3`; rows 5 and 7 are tagged
+   `[RESTATED]`; row 6 moved to a `FUGACITY_ONLY` block with no `A`; a cross-check prints
+   `1×10⁸ cm⁻² s⁻¹ → 8.20×10⁵ t/yr` against Bains' quoted `8×10⁵`, confirming the conversion
+   chain on a value Bains state independently.
+
+**What the pattern says.** Three of the seven are the same error: **a published margin adopted
+as if it were a computed one** — the round `τ ×10³` (1), the fugacity order-count (2), the
+back-derived shortfalls (3). The ledger's value is the independent division; wherever it
+restated instead, it produced agreement it had not earned. The fourth class is audit 02's:
+**a failed lookup written down as a fact about the literature** (4), which cost the note the one
+paper that bore on its most consequential row (5).

@@ -1,0 +1,4997 @@
+[
+    {
+        "oci": "06203558255-06170953057",
+        "citing": "10.1016/j.eneco.2021.105709",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061504234418-06170953057",
+        "citing": "10.1063/5.0204281",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-03-01",
+        "timespan": "P7Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06202241246-06170953057",
+        "citing": "10.1016/j.egyr.2022.06.076",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-11",
+        "timespan": "P6Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06802644385-06170953057",
+        "citing": "10.1109/iyce45807.2019.8991579",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-07",
+        "timespan": "P2Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06260136151-06170953057",
+        "citing": "10.1021/acs.chemrev.1c00148",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-07-06",
+        "timespan": "P4Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062303946123-06170953057",
+        "citing": "10.1108/ijesm-07-2022-0007",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-04-07",
+        "timespan": "P6Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06480167799-06170953057",
+        "citing": "10.1007/978-3-031-37108-0_31",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062303946110-06170953057",
+        "citing": "10.1108/ijesm-12-2021-0005",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-07-04",
+        "timespan": "P6Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012694432-06170953057",
+        "citing": "10.3390/en18112994",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06-05",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061903971274-06170953057",
+        "citing": "10.3390/en16114373",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-05-27",
+        "timespan": "P6Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605998909-06170953057",
+        "citing": "10.1109/icce63647.2025.10930167",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-01-11",
+        "timespan": "P8Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061501080531-06170953057",
+        "citing": "10.1016/j.jclepro.2022.130418",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013541456-06170953057",
+        "citing": "10.1088/2753-3751/ae331f",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-01-21",
+        "timespan": "P9Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0653080498-06170953057",
+        "citing": "10.1016/j.apenergy.2023.121880",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-12",
+        "timespan": "P7Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923177-06170953057",
+        "citing": "10.1016/j.apenergy.2022.118561",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-03",
+        "timespan": "P5Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010462948-06170953057",
+        "citing": "10.1016/j.ijhydene.2025.04.016",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-05",
+        "timespan": "P8Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061404310305-06170953057",
+        "citing": "10.1016/j.est.2024.113911",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06404390769-06170953057",
+        "citing": "10.1016/j.ijhydene.2022.12.091",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-03",
+        "timespan": "P6Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0645029653-06170953057",
+        "citing": "10.1016/j.cherd.2017.12.019",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-03",
+        "timespan": "P1Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06310370239-06170953057",
+        "citing": "10.1016/j.renene.2024.120013",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-03",
+        "timespan": "P7Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923691-06170953057",
+        "citing": "10.1016/j.apenergy.2021.117821",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-12",
+        "timespan": "P5Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061404162286-06170953057",
+        "citing": "10.1109/isgt59692.2024.10454147",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-02-19",
+        "timespan": "P7Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061501250134-06170953057",
+        "citing": "10.1016/j.enconman.2022.115641",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-05",
+        "timespan": "P5Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0610677978-06170953057",
+        "citing": "10.1016/j.energy.2018.11.119",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-02",
+        "timespan": "P2Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0604805391-06170953057",
+        "citing": "10.1016/j.enconman.2023.117823",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0606497706-06170953057",
+        "citing": "10.2139/ssrn.5032132",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06102316738-06170953057",
+        "citing": "10.1016/j.apenergy.2017.08.143",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-11",
+        "timespan": "P1Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06460128538-06170953057",
+        "citing": "10.1016/j.energy.2023.128623",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-12",
+        "timespan": "P7Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013404763-06170953057",
+        "citing": "10.1109/icrera66237.2025.11283756",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-10-27",
+        "timespan": "P8Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06401647407-06170953057",
+        "citing": "10.3390/en14061691",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-03-18",
+        "timespan": "P4Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06704736797-06170953057",
+        "citing": "10.3390/challe14040047",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06270412339-06170953057",
+        "citing": "10.1016/j.spc.2024.02.006",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-02",
+        "timespan": "P7Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061302378552-06170953057",
+        "citing": "10.1016/j.est.2019.101027",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-02",
+        "timespan": "P3Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012194751-06170953057",
+        "citing": "10.1016/j.segan.2025.101827",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014704996-06170953057",
+        "citing": "10.1016/s1872-5813(25)60606-2",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06104357478-06170953057",
+        "citing": "10.1016/j.apenergy.2023.121767",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-12",
+        "timespan": "P7Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014746430-06170953057",
+        "citing": "10.1007/s11573-025-01242-x",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-10-22",
+        "timespan": "P8Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06330525985-06170953057",
+        "citing": "10.1016/j.ref.2024.100638",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0608953047-06170953057",
+        "citing": "10.1016/j.isci.2025.112811",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-07",
+        "timespan": "P8Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062201620729-06170953057",
+        "citing": "10.3390/en11051113",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-05-02",
+        "timespan": "P1Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06180669098-06170953057",
+        "citing": "10.1016/j.energy.2022.123302",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-04",
+        "timespan": "P5Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06180831761-06170953057",
+        "citing": "10.1016/j.applthermaleng.2020.115225",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-06",
+        "timespan": "P3Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061104247718-06170953057",
+        "citing": "10.2139/ssrn.4684360",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061301624064-06170953057",
+        "citing": "10.3390/en13030619",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-02-01",
+        "timespan": "P3Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923499-06170953057",
+        "citing": "10.1016/j.apenergy.2021.118075",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-01",
+        "timespan": "P5Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704288625-06170953057",
+        "citing": "10.1016/j.applthermaleng.2024.123961",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062101920361-06170953057",
+        "citing": "10.1016/j.apenergy.2020.116370",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-03",
+        "timespan": "P4Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06340595223-06170953057",
+        "citing": "10.1007/978-3-031-73122-8_27",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06310361580-06170953057",
+        "citing": "10.1016/j.epsr.2023.109915",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061502857405-06170953057",
+        "citing": "10.1016/j.intfin.2021.101317",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-05",
+        "timespan": "P4Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06330442325-06170953057",
+        "citing": "10.1051/e3sconf/202454010023",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06370185477-06170953057",
+        "citing": "10.1016/j.est.2023.106764",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-05",
+        "timespan": "P6Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062604416435-06170953057",
+        "citing": "10.1016/j.enpol.2024.114083",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-05",
+        "timespan": "P7Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06101648627-06170953057",
+        "citing": "10.3390/en14164853",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-08-09",
+        "timespan": "P4Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06440111989-06170953057",
+        "citing": "10.1016/j.rser.2023.113571",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-09",
+        "timespan": "P6Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013840541-06170953057",
+        "citing": "10.1016/j.est.2025.119878",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923437-06170953057",
+        "citing": "10.1016/j.apenergy.2021.118143",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06801553364-06170953057",
+        "citing": "10.1109/tpwrd.2020.3017355",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-08",
+        "timespan": "P4Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06902343858-06170953057",
+        "citing": "10.1109/eeeic.2018.8494344",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-06",
+        "timespan": "P1Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062304417454-06170953057",
+        "citing": "10.1016/j.heliyon.2024.e32581",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-06",
+        "timespan": "P7Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062604416569-06170953057",
+        "citing": "10.1016/j.enpol.2024.114206",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-08",
+        "timespan": "P7Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0653081331-06170953057",
+        "citing": "10.1016/j.apenergy.2023.120881",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-05",
+        "timespan": "P6Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06801631131-06170953057",
+        "citing": "10.3390/en13184703",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-09-09",
+        "timespan": "P3Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0606144152-06170953057",
+        "citing": "10.3390/en18071560",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-03-21",
+        "timespan": "P8Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0606355535-06170953057",
+        "citing": "10.2139/ssrn.5077049",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402398659-06170953057",
+        "citing": "10.1175/jamc-d-20-0162.1",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-12",
+        "timespan": "P4Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062401913313-06170953057",
+        "citing": "10.1016/j.apenergy.2019.05.091",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-10",
+        "timespan": "P2Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062403449525-06170953057",
+        "citing": "10.1557/s43581-022-00037-9",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-08-18",
+        "timespan": "P5Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014114060-06170953057",
+        "citing": "10.1016/j.applthermaleng.2025.127897",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0690775270-06170953057",
+        "citing": "10.1002/er.7374",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-10-20",
+        "timespan": "P4Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402272742-06170953057",
+        "citing": "10.1016/j.ceramint.2020.07.142",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-04",
+        "timespan": "P4Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06404864066-06170953057",
+        "citing": "10.1016/j.solcom.2024.100088",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-12",
+        "timespan": "P8Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014004026-06170953057",
+        "citing": "10.1016/j.renene.2025.124918",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-03",
+        "timespan": "P9Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011036122-06170953057",
+        "citing": "10.3390/en18184912",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09-16",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06703046001-06170953057",
+        "citing": "10.1049/iet-gtd.2019.0818",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-11-07",
+        "timespan": "P3Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06180600294-06170953057",
+        "citing": "10.1016/j.seta.2019.04.010",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-08",
+        "timespan": "P2Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0637061475-06170953057",
+        "citing": "10.1088/1748-9326/aabe9d",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-06-01",
+        "timespan": "P1Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061601634121-06170953057",
+        "citing": "10.3390/en12153013",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-08-05",
+        "timespan": "P2Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0608612555-06170953057",
+        "citing": "10.1016/j.egyr.2025.05.018",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062201912575-06170953057",
+        "citing": "10.1016/j.apenergy.2020.115852",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-12",
+        "timespan": "P4Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06701876535-06170953057",
+        "citing": "10.1017/9781108645997.004",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-05-30",
+        "timespan": "P2Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0606256454-06170953057",
+        "citing": "10.1016/j.eneco.2025.108334",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062602120152-06170953057",
+        "citing": "10.1016/j.joule.2018.06.020",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-10",
+        "timespan": "P1Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06101648154-06170953057",
+        "citing": "10.3390/en14175320",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-08-27",
+        "timespan": "P4Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062401913348-06170953057",
+        "citing": "10.1016/j.apenergy.2019.05.066",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-09",
+        "timespan": "P2Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607839639-06170953057",
+        "citing": "10.1007/s43995-023-00032-2",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062101920084-06170953057",
+        "citing": "10.1016/j.apenergy.2021.116805",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-05",
+        "timespan": "P4Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06016762965-06170953057",
+        "citing": "10.24632/jses.50.4_59",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-07-31",
+        "timespan": "P7Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06220666736-06170953057",
+        "citing": "10.1016/j.energy.2021.119834",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-04",
+        "timespan": "P4Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06303557810-06170953057",
+        "citing": "10.1016/j.eneco.2018.10.019",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-10",
+        "timespan": "P1Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061301141740-06170953057",
+        "citing": "10.1109/access.2020.2964896",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020",
+        "timespan": "P3Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402078789-06170953057",
+        "citing": "10.1109/powerafrica49420.2020.9219813",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-08",
+        "timespan": "P3Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0660706746-06170953057",
+        "citing": "10.3390/cleantechnol3040051",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-12-20",
+        "timespan": "P5Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014359825-06170953057",
+        "citing": "10.3390/app16010466",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-01",
+        "timespan": "P9Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061404116021-06170953057",
+        "citing": "10.15837/ijccc.2023.5.5554",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061902378582-06170953057",
+        "citing": "10.1109/eem.2017.7981857",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-06",
+        "timespan": "P0Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0604906814-06170953057",
+        "citing": "10.1109/aupec62273.2024.10807392",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11-20",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062401248819-06170953057",
+        "citing": "10.1016/j.solener.2020.08.075",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-09",
+        "timespan": "P3Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06250664927-06170953057",
+        "citing": "10.1016/j.energy.2019.116539",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-01",
+        "timespan": "P3Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06701626082-06170953057",
+        "citing": "10.3390/en13205291",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-10-12",
+        "timespan": "P3Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06120940523-06170953057",
+        "citing": "10.1016/j.rser.2021.111180",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-08",
+        "timespan": "P4Y9M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010423472-06170953057",
+        "citing": "10.3390/en18164377",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-08-17",
+        "timespan": "P8Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061302378244-06170953057",
+        "citing": "10.1016/j.est.2020.101471",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-08",
+        "timespan": "P3Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06320109473-06170953057",
+        "citing": "10.1073/pnas.2303109120",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-07-10",
+        "timespan": "P6Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704341302-06170953057",
+        "citing": "10.3390/en17051257",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-03-06",
+        "timespan": "P7Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013068240-06170953057",
+        "citing": "10.1016/j.jenvman.2025.127753",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-12",
+        "timespan": "P9Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06270454408-06170953057",
+        "citing": "10.1109/epdc62178.2024.10571773",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-04-23",
+        "timespan": "P7Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061801137228-06170953057",
+        "citing": "10.1109/access.2019.2942134",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019",
+        "timespan": "P2Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06302318963-06170953057",
+        "citing": "10.3390/su9050836",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-05-16",
+        "timespan": "P0Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06401086415-06170953057",
+        "citing": "10.1016/j.jclepro.2018.12.045",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-03",
+        "timespan": "P2Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061903445016-06170953057",
+        "citing": "10.1002/ange.202208223",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-09-06",
+        "timespan": "P5Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06110950278-06170953057",
+        "citing": "10.1016/j.rser.2022.112760",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-10",
+        "timespan": "P5Y11M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0660671961-06170953057",
+        "citing": "10.1016/j.ijhydene.2021.03.136",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-07",
+        "timespan": "P4Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061304096220-06170953057",
+        "citing": "10.1016/j.energy.2024.130258",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-03",
+        "timespan": "P7Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0620677729-06170953057",
+        "citing": "10.1016/j.fuel.2021.120845",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-09",
+        "timespan": "P4Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062404275129-06170953057",
+        "citing": "10.1038/s41560-024-01578-8",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-07-05",
+        "timespan": "P7Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014066897-06170953057",
+        "citing": "10.1016/j.seta.2026.104867",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140944780-06170953057",
+        "citing": "10.1016/j.rser.2019.03.045",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-07",
+        "timespan": "P2Y8M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06203558633-06170953057",
+        "citing": "10.1016/j.eneco.2021.105264",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-06",
+        "timespan": "P4Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061701247409-06170953057",
+        "citing": "10.1016/j.enconman.2020.113160",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-10",
+        "timespan": "P3Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061101950737-06170953057",
+        "citing": "10.3390/su14052622",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02-24",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704369019-06170953057",
+        "citing": "10.1016/j.apenergy.2024.123493",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-08",
+        "timespan": "P7Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011138797-06170953057",
+        "citing": "10.1049/rpg2.70095",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-01",
+        "timespan": "P8Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06270504932-06170953057",
+        "citing": "10.1109/icredg61679.2024.10607787",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-03-06",
+        "timespan": "P7Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061204117762-06170953057",
+        "citing": "10.1016/j.ecmx.2024.100527",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-01",
+        "timespan": "P7Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402494174-06170953057",
+        "citing": "10.1016/j.enpol.2018.12.009",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-04",
+        "timespan": "P2Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062203969164-06170953057",
+        "citing": "10.3390/en16052190",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-02-24",
+        "timespan": "P6Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06260483942-06170953057",
+        "citing": "10.1080/14693062.2021.1993776",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-10-29",
+        "timespan": "P4Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061803553597-06170953057",
+        "citing": "10.1049/stg2.12078",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-06-15",
+        "timespan": "P5Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015025252-06170953057",
+        "citing": "10.1016/j.eneco.2025.109008",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-12",
+        "timespan": "P9Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061703884609-06170953057",
+        "citing": "10.3390/en16073114",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-03-29",
+        "timespan": "P6Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06023711754-06170953057",
+        "citing": "10.18174/642585",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06330172825-06170953057",
+        "citing": "10.1016/j.jenvman.2022.117003",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-02",
+        "timespan": "P6Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609453783-06170953057",
+        "citing": "10.1016/j.seta.2025.104414",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0650985848-06170953057",
+        "citing": "10.3390/gases1020007",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-04-21",
+        "timespan": "P4Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061401348947-06170953057",
+        "citing": "10.1016/j.ref.2020.10.001",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-03",
+        "timespan": "P4Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140944859-06170953057",
+        "citing": "10.1016/j.rser.2019.01.061",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-05",
+        "timespan": "P2Y6M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061604277978-06170953057",
+        "citing": "10.1186/s13007-024-01283-3",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10-25",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0604953792-06170953057",
+        "citing": "10.1016/j.renene.2024.122234",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-02",
+        "timespan": "P8Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06504669014-06170953057",
+        "citing": "10.1016/j.est.2023.109990",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-01",
+        "timespan": "P7Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06102316434-06170953057",
+        "citing": "10.1016/j.apenergy.2017.09.115",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-11",
+        "timespan": "P1Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06104698719-06170953057",
+        "citing": "10.1016/j.esr.2024.101510",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-09",
+        "timespan": "P7Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014263059-06170953057",
+        "citing": "10.2139/ssrn.4609488",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0646072422-06170953057",
+        "citing": "10.1051/e3sconf/202341403009",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06101648158-06170953057",
+        "citing": "10.3390/en14175330",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-08-27",
+        "timespan": "P4Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061601304271-06170953057",
+        "citing": "10.1016/j.cie.2022.108059",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-06",
+        "timespan": "P5Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062404414232-06170953057",
+        "citing": "10.2139/ssrn.4899244",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06504647011-06170953057",
+        "citing": "10.1016/j.ejor.2023.11.041",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-06",
+        "timespan": "P7Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06401700540-06170953057",
+        "citing": "10.1109/tac.2020.3034198",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-08",
+        "timespan": "P4Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06203558945-06170953057",
+        "citing": "10.1016/j.eneco.2020.104892",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-09",
+        "timespan": "P3Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605809852-06170953057",
+        "citing": "10.1016/j.apenergy.2024.125159",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-03",
+        "timespan": "P8Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607167670-06170953057",
+        "citing": "10.1109/aece62803.2024.10911489",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11-22",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06026211173-06170953057",
+        "citing": "10.32920/25260829.v1",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061103453688-06170953057",
+        "citing": "10.1016/j.renene.2022.07.120",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-09",
+        "timespan": "P5Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014723808-06170953057",
+        "citing": "10.2139/ssrn.6051798",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026",
+        "timespan": "P9Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013487515-06170953057",
+        "citing": "10.1016/j.rser.2025.116308",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-01",
+        "timespan": "P9Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062501918542-06170953057",
+        "citing": "10.1016/j.apenergy.2018.10.071",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-02",
+        "timespan": "P2Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061501922280-06170953057",
+        "citing": "10.1016/j.esr.2020.100538",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-11",
+        "timespan": "P4Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0634079992-06170953057",
+        "citing": "10.3390/wevj14010013",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-01-05",
+        "timespan": "P6Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012692174-06170953057",
+        "citing": "10.1016/j.rser.2025.115986",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-10",
+        "timespan": "P8Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0630438242-06170953057",
+        "citing": "10.1016/j.jeem.2022.102653",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-05",
+        "timespan": "P5Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06110596229-06170953057",
+        "citing": "10.5547/01956574.41.6.aeic",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-09-01",
+        "timespan": "P3Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061801027125-06170953057",
+        "citing": "10.1177/0958305x211014870",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-06-15",
+        "timespan": "P4Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011010369-06170953057",
+        "citing": "10.1109/aaiee64965.2025.11100534",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04-25",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06170671295-06170953057",
+        "citing": "10.1016/j.ijhydene.2017.10.170",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-12",
+        "timespan": "P1Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605566230-06170953057",
+        "citing": "10.1016/j.resconrec.2025.108127",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012883344-06170953057",
+        "citing": "10.1016/j.cie.2025.111379",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-10",
+        "timespan": "P8Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012369033-06170953057",
+        "citing": "10.1016/j.oceaneng.2025.121190",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062501918905-06170953057",
+        "citing": "10.1016/j.apenergy.2018.08.034",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-11",
+        "timespan": "P2Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06702280247-06170953057",
+        "citing": "10.1039/c8se00061a",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018",
+        "timespan": "P1Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013459697-06170953057",
+        "citing": "10.2139/ssrn.5766451",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015331685-06170953057",
+        "citing": "10.1109/induscon66435.2025.11241435",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-10-14",
+        "timespan": "P8Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015283037-06170953057",
+        "citing": "10.3390/en19020334",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-01-09",
+        "timespan": "P9Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704369055-06170953057",
+        "citing": "10.1016/j.apenergy.2024.123748",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062104357985-06170953057",
+        "citing": "10.36688/imej.5.113-121",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06504872581-06170953057",
+        "citing": "10.1007/978-981-97-0507-8_6",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061803968328-06170953057",
+        "citing": "10.3390/en16176139",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-08-23",
+        "timespan": "P6Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061303810313-06170953057",
+        "citing": "10.2139/ssrn.3974592",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021",
+        "timespan": "P4Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062204256948-06170953057",
+        "citing": "10.1109/pesgm46819.2021.9637883",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062401695220-06170953057",
+        "citing": "10.3390/jmse9070758",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-07-09",
+        "timespan": "P4Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010296559-06170953057",
+        "citing": "10.1038/s44286-025-00207-9",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04-18",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06202455298-06170953057",
+        "citing": "10.1021/acsaem.7b00089",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-01-16",
+        "timespan": "P1Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06803957009-06170953057",
+        "citing": "10.1109/jiot.2022.3197242",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-12-15",
+        "timespan": "P6Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011990128-06170953057",
+        "citing": "10.1007/s42835-025-02388-y",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09-08",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061102675812-06170953057",
+        "citing": "10.1016/j.jup.2020.101024",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-06",
+        "timespan": "P3Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140944754-06170953057",
+        "citing": "10.1016/j.rser.2019.04.038",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-07",
+        "timespan": "P2Y8M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061401067176-06170953057",
+        "citing": "10.1016/j.jclepro.2022.131082",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-04",
+        "timespan": "P5Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402602675-06170953057",
+        "citing": "10.3389/fenrg.2021.618229",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-02-17",
+        "timespan": "P4Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704368924-06170953057",
+        "citing": "10.1016/j.apenergy.2024.123612",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-09",
+        "timespan": "P7Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06103422352-06170953057",
+        "citing": "10.1016/b978-0-323-85527-3.00016-9",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015095921-06170953057",
+        "citing": "10.1016/j.rineng.2025.106813",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140756162-06170953057",
+        "citing": "10.1002/er.4013",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-02-12",
+        "timespan": "P1Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06220252333-06170953057",
+        "citing": "10.2166/wst.2019.262",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-07-31",
+        "timespan": "P2Y8M",
+        "journal_sc": "no",
+        "author_sc": "yes"
+    },
+    {
+        "oci": "062404009410-06170953057",
+        "citing": "10.1002/adfm.202301999",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-03-28",
+        "timespan": "P6Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013534490-06170953057",
+        "citing": "10.1109/iecon58223.2025.11221717",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-10-14",
+        "timespan": "P8Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06904425244-06170953057",
+        "citing": "10.1016/j.enconman.2024.118515",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-07",
+        "timespan": "P7Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062602119606-06170953057",
+        "citing": "10.1016/j.joule.2020.08.001",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-10",
+        "timespan": "P3Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061103447789-06170953057",
+        "citing": "10.1016/j.eneco.2022.106239",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-09",
+        "timespan": "P5Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06028953364-06170953057",
+        "citing": "10.58837/chula.the.2021.137",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021",
+        "timespan": "P4Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06802476708-06170953057",
+        "citing": "10.1016/j.erss.2020.101644",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-12",
+        "timespan": "P4Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061302048584-06170953057",
+        "citing": "10.1002/aenm.202001174",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-05-25",
+        "timespan": "P3Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061103458234-06170953057",
+        "citing": "10.1002/anie.202208223",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-09-06",
+        "timespan": "P5Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015464181-06170953057",
+        "citing": "10.1016/j.renene.2025.124718",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06501777196-06170953057",
+        "citing": "10.1016/j.ijggc.2019.102858",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-01",
+        "timespan": "P3Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06104698721-06170953057",
+        "citing": "10.1016/j.esr.2024.101512",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-09",
+        "timespan": "P7Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0640675158-06170953057",
+        "citing": "10.1016/j.energy.2017.09.064",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-12",
+        "timespan": "P1Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061203435708-06170953057",
+        "citing": "10.1016/j.apenergy.2022.119780",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-11",
+        "timespan": "P6Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061602391335-06170953057",
+        "citing": "10.1016/j.est.2018.12.026",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-02",
+        "timespan": "P2Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062501451183-06170953057",
+        "citing": "10.1111/cobi.13740",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-07-05",
+        "timespan": "P4Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061702089949-06170953057",
+        "citing": "10.1109/tste.2021.3104982",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-01",
+        "timespan": "P5Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061303508678-06170953057",
+        "citing": "10.1016/j.ijpe.2022.108711",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-01",
+        "timespan": "P6Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0648044972-06170953057",
+        "citing": "10.1021/acsenergylett.1c02471",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-12-15",
+        "timespan": "P5Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061504234370-06170953057",
+        "citing": "10.1063/5.0215493",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-09-01",
+        "timespan": "P7Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06503940340-06170953057",
+        "citing": "10.1016/j.apenergy.2022.120205",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-12",
+        "timespan": "P6Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06603063538-06170953057",
+        "citing": "10.1049/iet-gtd.2018.6948",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-08-21",
+        "timespan": "P3Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06903567595-06170953057",
+        "citing": "10.1016/j.procs.2022.09.333",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062501918417-06170953057",
+        "citing": "10.1016/j.apenergy.2018.11.069",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-02",
+        "timespan": "P2Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605603375-06170953057",
+        "citing": "10.1016/j.seja.2025.100097",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061204252900-06170953057",
+        "citing": "10.2139/ssrn.4897758",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062603960084-06170953057",
+        "citing": "10.1109/cyber59472.2023.10256601",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-07-11",
+        "timespan": "P6Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061103959522-06170953057",
+        "citing": "10.2139/ssrn.4091324",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015600780-06170953057",
+        "citing": "10.2139/ssrn.4650413",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061203457992-06170953057",
+        "citing": "10.1002/admt.202200403",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-05-18",
+        "timespan": "P5Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061701990090-06170953057",
+        "citing": "10.1007/978-3-030-46931-3_8",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020",
+        "timespan": "P3Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061501922314-06170953057",
+        "citing": "10.1016/j.esr.2020.100539",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-09",
+        "timespan": "P3Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06310187722-06170953057",
+        "citing": "10.3390/su151310734",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-07-07",
+        "timespan": "P6Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06410100454-06170953057",
+        "citing": "10.1016/j.seta.2023.103441",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-12",
+        "timespan": "P7Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061402924995-06170953057",
+        "citing": "10.1109/ceepe51765.2021.9475703",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-04-23",
+        "timespan": "P4Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0608955893-06170953057",
+        "citing": "10.1016/j.epsr.2025.112205",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607691041-06170953057",
+        "citing": "10.2139/ssrn.5059218",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06320351881-06170953057",
+        "citing": "10.2139/ssrn.4692997",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061402148620-06170953057",
+        "citing": "10.1016/j.desal.2021.115088",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-09",
+        "timespan": "P4Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0608728437-06170953057",
+        "citing": "10.3390/en18123195",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06-18",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062304239201-06170953057",
+        "citing": "10.1016/j.rser.2023.114001",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06301320614-06170953057",
+        "citing": "10.1016/j.isci.2019.10.017",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-11",
+        "timespan": "P3Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013083954-06170953057",
+        "citing": "10.1016/j.energy.2025.138796",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06130945890-06170953057",
+        "citing": "10.1016/j.rser.2019.109573",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-02",
+        "timespan": "P3Y3M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06901648864-06170953057",
+        "citing": "10.3390/en13164147",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-08-11",
+        "timespan": "P3Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06904467538-06170953057",
+        "citing": "10.1016/j.procs.2024.09.545",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704368539-06170953057",
+        "citing": "10.1016/j.apenergy.2024.124088",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062102240473-06170953057",
+        "citing": "10.1049/stg2.12061",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-03-29",
+        "timespan": "P5Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06240658959-06170953057",
+        "citing": "10.1016/j.energy.2019.116700",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-02",
+        "timespan": "P3Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901939439-06170953057",
+        "citing": "10.3390/su11113230",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-06-11",
+        "timespan": "P2Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402377200-06170953057",
+        "citing": "10.1515/eng-2020-0073",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020",
+        "timespan": "P3Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605642346-06170953057",
+        "citing": "10.3390/su17031311",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-02-06",
+        "timespan": "P8Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062602119451-06170953057",
+        "citing": "10.1016/j.joule.2021.03.021",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-05",
+        "timespan": "P4Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609975774-06170953057",
+        "citing": "10.1016/j.xcrp.2025.102771",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-08",
+        "timespan": "P8Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013332006-06170953057",
+        "citing": "10.1016/j.jup.2026.102148",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-04",
+        "timespan": "P9Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06530100650-06170953057",
+        "citing": "10.1016/j.renene.2023.04.132",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-08",
+        "timespan": "P6Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062103534945-06170953057",
+        "citing": "10.1016/j.segan.2022.100941",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-12",
+        "timespan": "P6Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0608639179-06170953057",
+        "citing": "10.1016/j.renene.2025.123237",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-08",
+        "timespan": "P8Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06102488272-06170953057",
+        "citing": "10.1016/j.joule.2017.10.011",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-11",
+        "timespan": "P1Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061904291474-06170953057",
+        "citing": "10.1016/j.eneco.2024.107671",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-08",
+        "timespan": "P7Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061304290880-06170953057",
+        "citing": "10.1016/j.est.2024.114324",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-12",
+        "timespan": "P8Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015414990-06170953057",
+        "citing": "10.1016/j.rser.2025.116570",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06240658469-06170953057",
+        "citing": "10.1016/j.energy.2020.117204",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-05",
+        "timespan": "P3Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011383133-06170953057",
+        "citing": "10.1016/j.nucengdes.2025.114138",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-08",
+        "timespan": "P8Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062602515608-06170953057",
+        "citing": "10.1109/eeeic/icpseurope51590.2021.9584523",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-09-07",
+        "timespan": "P4Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014406464-06170953057",
+        "citing": "10.1016/j.energy.2026.140569",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061401920493-06170953057",
+        "citing": "10.3390/su12030922",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-01-27",
+        "timespan": "P3Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06902120165-06170953057",
+        "citing": "10.1016/j.erss.2019.101279",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-01",
+        "timespan": "P3Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061802747359-06170953057",
+        "citing": "10.1016/j.ijepes.2021.107754",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-05",
+        "timespan": "P5Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011575707-06170953057",
+        "citing": "10.1109/eem64765.2025.11050229",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-05-27",
+        "timespan": "P8Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923656-06170953057",
+        "citing": "10.1016/j.apenergy.2021.117858",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-12",
+        "timespan": "P5Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06302482077-06170953057",
+        "citing": "10.1016/j.enpol.2020.112045",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-02",
+        "timespan": "P4Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015258925-06170953057",
+        "citing": "10.1016/j.enpol.2025.114952",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06701625554-06170953057",
+        "citing": "10.3390/en13215847",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-11-09",
+        "timespan": "P4Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010945044-06170953057",
+        "citing": "10.1038/s41598-025-06091-w",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-07-02",
+        "timespan": "P8Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06190984245-06170953057",
+        "citing": "10.1016/j.scitotenv.2022.153533",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-06",
+        "timespan": "P5Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062602119437-06170953057",
+        "citing": "10.1016/j.joule.2021.03.028",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-06",
+        "timespan": "P4Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061603461211-06170953057",
+        "citing": "10.1039/d2ee01023b",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012925799-06170953057",
+        "citing": "10.2139/ssrn.5355034",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605404551-06170953057",
+        "citing": "10.1109/appeec61255.2024.10922382",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10-25",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402493777-06170953057",
+        "citing": "10.1016/j.enpol.2019.06.057",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-09",
+        "timespan": "P2Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607023805-06170953057",
+        "citing": "10.3390/land13122043",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11-28",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061403449261-06170953057",
+        "citing": "10.1016/j.ijft.2022.100196",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-11",
+        "timespan": "P6Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061903441524-06170953057",
+        "citing": "10.1080/00036846.2022.2101609",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-08-17",
+        "timespan": "P5Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06304842540-06170953057",
+        "citing": "10.1016/j.segan.2024.101539",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-12",
+        "timespan": "P8Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061102392128-06170953057",
+        "citing": "10.1016/j.est.2021.103883",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605310313-06170953057",
+        "citing": "10.1016/j.erss.2024.103882",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-02",
+        "timespan": "P8Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062501918436-06170953057",
+        "citing": "10.1016/j.apenergy.2018.11.021",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-02",
+        "timespan": "P2Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06250323375-06170953057",
+        "citing": "10.1016/j.spc.2022.04.021",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-07",
+        "timespan": "P5Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06201324419-06170953057",
+        "citing": "10.1016/j.isci.2020.101867",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-12",
+        "timespan": "P4Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061104399088-06170953057",
+        "citing": "10.1109/icemce60359.2023.10491026",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-10-20",
+        "timespan": "P6Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06501777445-06170953057",
+        "citing": "10.1016/j.ijggc.2018.12.019",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-02",
+        "timespan": "P2Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06029084490-06170953057",
+        "citing": "10.70251/hyjr2348.35755763",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06503797897-06170953057",
+        "citing": "10.1109/ictc49870.2020.9289206",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-10-21",
+        "timespan": "P3Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402493567-06170953057",
+        "citing": "10.1016/j.enpol.2019.111054",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-01",
+        "timespan": "P3Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06250912110-06170953057",
+        "citing": "10.1016/j.clrc.2021.100042",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-12",
+        "timespan": "P5Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06302464562-06170953057",
+        "citing": "10.1007/978-981-13-9528-4_62",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020",
+        "timespan": "P3Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06901656987-06170953057",
+        "citing": "10.1007/978-3-030-84529-2_32",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021",
+        "timespan": "P4Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011255522-06170953057",
+        "citing": "10.2139/ssrn.4663999",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609092578-06170953057",
+        "citing": "10.64628/aai.9cn57vne7",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-01-25",
+        "timespan": "P5Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062301626780-06170953057",
+        "citing": "10.3390/en10111926",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-11-21",
+        "timespan": "P1Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062403946104-06170953057",
+        "citing": "10.1109/access.2023.3297494",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605290596-06170953057",
+        "citing": "10.1016/j.apor.2025.104514",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-05",
+        "timespan": "P8Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061701598053-06170953057",
+        "citing": "10.1142/s201000782240005x",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06104357596-06170953057",
+        "citing": "10.1016/j.apenergy.2023.121016",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-06",
+        "timespan": "P6Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062204213018-06170953057",
+        "citing": "10.1016/j.apenergy.2023.122416",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-02",
+        "timespan": "P7Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015347686-06170953057",
+        "citing": "10.1016/j.esr.2025.102021",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-01",
+        "timespan": "P9Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062503989001-06170953057",
+        "citing": "10.4995/inn2020.2020.11878",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020",
+        "timespan": "P3Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06290423716-06170953057",
+        "citing": "10.1016/j.isci.2023.108028",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-11",
+        "timespan": "P7Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06110950694-06170953057",
+        "citing": "10.1016/j.rser.2022.112281",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-05",
+        "timespan": "P5Y6M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06520101518-06170953057",
+        "citing": "10.1016/j.renene.2023.01.099",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-03",
+        "timespan": "P6Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061202269625-06170953057",
+        "citing": "10.1109/ei252483.2021.9712991",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-10-22",
+        "timespan": "P4Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0670559635-06170953057",
+        "citing": "10.1016/j.renene.2019.12.071",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-04",
+        "timespan": "P3Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923728-06170953057",
+        "citing": "10.1016/j.apenergy.2021.117680",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-01",
+        "timespan": "P5Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402602604-06170953057",
+        "citing": "10.3389/fenrg.2021.646975",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-03-30",
+        "timespan": "P4Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061903560196-06170953057",
+        "citing": "10.1016/j.est.2022.106091",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-12",
+        "timespan": "P6Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06404773224-06170953057",
+        "citing": "10.1109/eeeic/icpseurope61470.2024.10751160",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-06-17",
+        "timespan": "P7Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061203887103-06170953057",
+        "citing": "10.1109/naps56150.2022.10012154",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-10-09",
+        "timespan": "P5Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609598494-06170953057",
+        "citing": "10.1016/j.xcrp.2025.102616",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901251535-06170953057",
+        "citing": "10.1016/j.enconman.2018.10.101",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-01",
+        "timespan": "P2Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061803914368-06170953057",
+        "citing": "10.1109/mps58874.2023.10187501",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-06-21",
+        "timespan": "P6Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061702761142-06170953057",
+        "citing": "10.1016/j.ijepes.2022.108278",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-10",
+        "timespan": "P5Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06203858935-06170953057",
+        "citing": "10.1016/j.jpowsour.2022.232081",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-11",
+        "timespan": "P6Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0690565329-06170953057",
+        "citing": "10.1016/j.renene.2018.10.042",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-04",
+        "timespan": "P2Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06802476048-06170953057",
+        "citing": "10.1016/j.erss.2021.102469",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-05",
+        "timespan": "P5Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704341206-06170953057",
+        "citing": "10.3390/en17112588",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-05-27",
+        "timespan": "P7Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062104408575-06170953057",
+        "citing": "10.3390/en17092162",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-04-30",
+        "timespan": "P7Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062303505255-06170953057",
+        "citing": "10.1016/j.enpol.2022.113334",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-01",
+        "timespan": "P6Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06601495874-06170953057",
+        "citing": "10.1016/j.future.2019.09.036",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-09",
+        "timespan": "P3Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061802272222-06170953057",
+        "citing": "10.1109/isgt-asia.2019.8881612",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-05",
+        "timespan": "P2Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607523162-06170953057",
+        "citing": "10.1016/j.ees.2025.01.001",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-03",
+        "timespan": "P8Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06260484214-06170953057",
+        "citing": "10.1080/14693062.2018.1546164",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-11-22",
+        "timespan": "P2Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06360185624-06170953057",
+        "citing": "10.1016/j.est.2023.108173",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-11",
+        "timespan": "P7Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06150838265-06170953057",
+        "citing": "10.1016/j.applthermaleng.2022.118547",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-07",
+        "timespan": "P5Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061104413205-06170953057",
+        "citing": "10.1109/mepcon58725.2023.10462375",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-12-19",
+        "timespan": "P7Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0680749342-06170953057",
+        "citing": "10.1016/j.eng.2019.11.015",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-07",
+        "timespan": "P3Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06120795986-06170953057",
+        "citing": "10.1680/jensu.19.00014",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-10-01",
+        "timespan": "P3Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06701431674-06170953057",
+        "citing": "10.1061/(asce)ey.1943-7897.0000472",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-10",
+        "timespan": "P0Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0653080588-06170953057",
+        "citing": "10.1016/j.apenergy.2023.120828",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-04",
+        "timespan": "P6Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609303608-06170953057",
+        "citing": "10.2139/ssrn.5388260",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062103443787-06170953057",
+        "citing": "10.1016/j.esr.2022.100921",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-09",
+        "timespan": "P5Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062201923763-06170953057",
+        "citing": "10.1007/978-3-030-43473-1_9",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020",
+        "timespan": "P3Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06110950728-06170953057",
+        "citing": "10.1016/j.rser.2022.112212",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-05",
+        "timespan": "P5Y6M",
+        "journal_sc": "yes",
+        "author_sc": "yes"
+    },
+    {
+        "oci": "06402333706-06170953057",
+        "citing": "10.3390/su9040532",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-03-31",
+        "timespan": "P0Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06302510620-06170953057",
+        "citing": "10.1007/978-3-030-13068-8_114",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-09-19",
+        "timespan": "P2Y10M",
+        "journal_sc": "no",
+        "author_sc": "yes"
+    },
+    {
+        "oci": "06014749487-06170953057",
+        "citing": "10.1016/j.solener.2026.114440",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-05",
+        "timespan": "P9Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06340392532-06170953057",
+        "citing": "10.1016/j.seta.2024.103625",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-02",
+        "timespan": "P7Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014175626-06170953057",
+        "citing": "10.1016/j.renene.2025.124814",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06350359983-06170953057",
+        "citing": "10.1016/j.eiar.2023.107329",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062201913227-06170953057",
+        "citing": "10.1016/j.apenergy.2020.115114",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-06",
+        "timespan": "P3Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0634061399-06170953057",
+        "citing": "10.1088/1748-9326/ac7603",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-06-27",
+        "timespan": "P5Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013269054-06170953057",
+        "citing": "10.3390/en18236256",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11-28",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06403979001-06170953057",
+        "citing": "10.1109/ifetc53656.2022.9948495",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-08-21",
+        "timespan": "P5Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06023913201-06170953057",
+        "citing": "10.2139/ssrn.4376382",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06320559753-06170953057",
+        "citing": "10.1109/icpst61417.2024.10602275",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-05-09",
+        "timespan": "P7Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06104866733-06170953057",
+        "citing": "10.1109/icecet61485.2024.10698415",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-07-25",
+        "timespan": "P7Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0610324312-06170953057",
+        "citing": "10.1049/iet-rpg.2017.0065",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-12-07",
+        "timespan": "P1Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06404869925-06170953057",
+        "citing": "10.2139/ssrn.4665103",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06804773797-06170953057",
+        "citing": "10.1016/j.rser.2024.114366",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-05",
+        "timespan": "P7Y6M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061904408628-06170953057",
+        "citing": "10.3390/en17225660",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11-13",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0606217846-06170953057",
+        "citing": "10.3390/en16227652",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-11-18",
+        "timespan": "P7Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062404405797-06170953057",
+        "citing": "10.1109/icscc62041.2024.10690608",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-07-25",
+        "timespan": "P7Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014635608-06170953057",
+        "citing": "10.3724/j.issn.2097-4981.jecc-2025-0066",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11-01",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06201084968-06170953057",
+        "citing": "10.2478/pead-2022-0005",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06304359710-06170953057",
+        "citing": "10.1016/j.jpowsour.2023.233372",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-10",
+        "timespan": "P6Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402602512-06170953057",
+        "citing": "10.3389/fenrg.2021.680355",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-05-07",
+        "timespan": "P4Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06280166315-06170953057",
+        "citing": "10.1016/b978-0-323-90544-2.00006-3",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140945102-06170953057",
+        "citing": "10.1016/j.rser.2018.07.021",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-12",
+        "timespan": "P2Y1M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014519838-06170953057",
+        "citing": "10.2139/ssrn.6160617",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026",
+        "timespan": "P9Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0606479700-06170953057",
+        "citing": "10.1109/cac63892.2024.10865546",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-11-01",
+        "timespan": "P8Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011741779-06170953057",
+        "citing": "10.1145/3757892.3757905",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-07",
+        "timespan": "P8Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609383482-06170953057",
+        "citing": "10.1016/j.renene.2025.123207",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06170491600-06170953057",
+        "citing": "10.1002/wene.300",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-05-15",
+        "timespan": "P1Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0608016504-06170953057",
+        "citing": "10.1016/j.energy.2025.135815",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-05",
+        "timespan": "P8Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06180632703-06170953057",
+        "citing": "10.1007/s40565-019-0527-4",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-05-08",
+        "timespan": "P2Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06401076427-06170953057",
+        "citing": "10.3390/ijerph19063471",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-03-15",
+        "timespan": "P5Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061304198739-06170953057",
+        "citing": "10.1016/j.jmst.2024.02.011",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013184997-06170953057",
+        "citing": "10.1117/12.2607263",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-11-11",
+        "timespan": "P5Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06901742989-06170953057",
+        "citing": "10.1007/s40518-020-00173-1",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-01-04",
+        "timespan": "P4Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06350444956-06170953057",
+        "citing": "10.1088/1748-9326/ad5d7d",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-08-07",
+        "timespan": "P7Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010437586-06170953057",
+        "citing": "10.1016/j.est.2025.118192",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014105252-06170953057",
+        "citing": "10.3390/pr11102896",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-09-30",
+        "timespan": "P6Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062602602706-06170953057",
+        "citing": "10.3390/fluids5030123",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-07-26",
+        "timespan": "P3Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012655876-06170953057",
+        "citing": "10.1016/j.ifacol.2025.08.108",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607227695-06170953057",
+        "citing": "10.5194/wes-2023-59",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061903550456-06170953057",
+        "citing": "10.3390/en15228747",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-11-21",
+        "timespan": "P6Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062301922153-06170953057",
+        "citing": "10.1016/j.apenergy.2019.114021",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-01",
+        "timespan": "P3Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0633099961-06170953057",
+        "citing": "10.1049/gtd2.12686",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-04-24",
+        "timespan": "P6Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0641070597-06170953057",
+        "citing": "10.1109/ei256261.2022.10116573",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-11-11",
+        "timespan": "P6Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901251334-06170953057",
+        "citing": "10.1016/j.enconman.2018.12.116",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-03",
+        "timespan": "P2Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06290447642-06170953057",
+        "citing": "10.1002/adma.202407394",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-08-15",
+        "timespan": "P7Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014090270-06170953057",
+        "citing": "10.2139/ssrn.5917253",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06310605956-06170953057",
+        "citing": "10.1039/bk9781839165818-00152",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10-16",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061501922347-06170953057",
+        "citing": "10.1016/j.esr.2020.100482",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-05",
+        "timespan": "P3Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013023832-06170953057",
+        "citing": "10.1016/j.ijhydene.2025.153260",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-01",
+        "timespan": "P9Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061203435765-06170953057",
+        "citing": "10.1016/j.apenergy.2022.119781",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-10",
+        "timespan": "P5Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014006997-06170953057",
+        "citing": "10.1016/j.esr.2025.101959",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607255588-06170953057",
+        "citing": "10.1016/j.applthermaleng.2025.125609",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06320189212-06170953057",
+        "citing": "10.1016/b978-0-443-15274-0.50495-9",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06460186280-06170953057",
+        "citing": "10.1039/d3ya00104k",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607236573-06170953057",
+        "citing": "10.1109/auteee62881.2024.10869770",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-12-27",
+        "timespan": "P8Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06202546185-06170953057",
+        "citing": "10.1016/j.jngse.2020.103482",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-09",
+        "timespan": "P3Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06240658898-06170953057",
+        "citing": "10.1016/j.energy.2019.116777",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-03",
+        "timespan": "P3Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0670558985-06170953057",
+        "citing": "10.1016/j.renene.2020.04.080",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-08",
+        "timespan": "P3Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062104203211-06170953057",
+        "citing": "10.1186/s42162-024-00303-9",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-01-10",
+        "timespan": "P7Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06026277593-06170953057",
+        "citing": "10.33540/2107",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06304705571-06170953057",
+        "citing": "10.1016/j.omega.2024.103198",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-02",
+        "timespan": "P8Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140297091-06170953057",
+        "citing": "10.4018/ijsesd.289216",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06904281926-06170953057",
+        "citing": "10.1016/j.enconman.2024.118203",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-03",
+        "timespan": "P7Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0638076029-06170953057",
+        "citing": "10.7836/kses.2023.43.2.001",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-04-30",
+        "timespan": "P6Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061702090661-06170953057",
+        "citing": "10.1109/tste.2018.2816588",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-10",
+        "timespan": "P1Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062101251460-06170953057",
+        "citing": "10.3389/frai.2021.690237",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-07-30",
+        "timespan": "P4Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062301070685-06170953057",
+        "citing": "10.1016/j.jclepro.2020.122370",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-10",
+        "timespan": "P3Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012714184-06170953057",
+        "citing": "10.1002/aesr.202500124",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0680674339-06170953057",
+        "citing": "10.1016/j.ijhydene.2020.09.081",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-05",
+        "timespan": "P4Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014121122-06170953057",
+        "citing": "10.1016/j.rineng.2025.108275",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-03",
+        "timespan": "P9Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013923644-06170953057",
+        "citing": "10.1016/j.est.2026.120532",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-03",
+        "timespan": "P9Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010733428-06170953057",
+        "citing": "10.1007/978-3-031-97755-8_3",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-10-01",
+        "timespan": "P8Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062204392207-06170953057",
+        "citing": "10.2139/ssrn.4768227",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06301634451-06170953057",
+        "citing": "10.3390/en14092630",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-05-04",
+        "timespan": "P4Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06350606872-06170953057",
+        "citing": "10.5194/wes-8-1693-2023",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06220299247-06170953057",
+        "citing": "10.2139/ssrn.3310222",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018",
+        "timespan": "P1Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06604677091-06170953057",
+        "citing": "10.2139/ssrn.4724027",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013609113-06170953057",
+        "citing": "10.2139/ssrn.4628594",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010807306-06170953057",
+        "citing": "10.1007/s00202-025-03078-8",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04-18",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06101246905-06170953057",
+        "citing": "10.1007/s00202-020-00919-6",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-01-16",
+        "timespan": "P3Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06440111687-06170953057",
+        "citing": "10.1016/j.rser.2022.113134",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-04",
+        "timespan": "P6Y5M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704123737-06170953057",
+        "citing": "10.1109/bulef59783.2023.10406255",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-09-16",
+        "timespan": "P6Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015259378-06170953057",
+        "citing": "10.1007/978-981-96-9009-1_30",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010507772-06170953057",
+        "citing": "10.1080/20421338.2025.2474851",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04-16",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06320461692-06170953057",
+        "citing": "10.3390/su152015032",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06440111902-06170953057",
+        "citing": "10.1016/j.rser.2023.113298",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-07",
+        "timespan": "P6Y8M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06203559136-06170953057",
+        "citing": "10.1016/j.eneco.2019.104661",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-02",
+        "timespan": "P3Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062601950384-06170953057",
+        "citing": "10.1016/j.apenergy.2018.01.040",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-05",
+        "timespan": "P1Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609355381-06170953057",
+        "citing": "10.1109/icssas66150.2025.11081032",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06-11",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0620672394-06170953057",
+        "citing": "10.1016/j.energy.2018.08.152",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-11",
+        "timespan": "P2Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06901742987-06170953057",
+        "citing": "10.1007/s40518-020-00170-4",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-01-03",
+        "timespan": "P4Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06280157271-06170953057",
+        "citing": "10.1016/j.jclepro.2023.137806",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-08",
+        "timespan": "P6Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014700169-06170953057",
+        "citing": "10.2139/ssrn.4639808",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06804773458-06170953057",
+        "citing": "10.1016/j.rser.2023.114122",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-03",
+        "timespan": "P7Y4M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06302069855-06170953057",
+        "citing": "10.1109/icpsasia48933.2020.9208513",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-07",
+        "timespan": "P3Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062504364319-06170953057",
+        "citing": "10.1016/j.energy.2024.132334",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014942983-06170953057",
+        "citing": "10.1109/icosta48221.2020.1570614180",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-02",
+        "timespan": "P3Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402257081-06170953057",
+        "citing": "10.1016/j.egyr.2021.06.007",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-11",
+        "timespan": "P5Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0670559482-06170953057",
+        "citing": "10.1016/j.renene.2020.01.059",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-06",
+        "timespan": "P3Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062204353962-06170953057",
+        "citing": "10.1016/j.fuel.2024.131808",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-08",
+        "timespan": "P7Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06402493334-06170953057",
+        "citing": "10.1016/j.enpol.2019.111203",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-04",
+        "timespan": "P3Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061801544606-06170953057",
+        "citing": "10.1109/tpwrs.2021.3049616",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-07",
+        "timespan": "P4Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014297054-06170953057",
+        "citing": "10.52825/pv-symposium.v2i.2654",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11-21",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06180599670-06170953057",
+        "citing": "10.1016/j.seta.2021.101200",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-06",
+        "timespan": "P4Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061303547651-06170953057",
+        "citing": "10.1063/5.0127241",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0670558730-06170953057",
+        "citing": "10.1016/j.renene.2020.06.042",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-10",
+        "timespan": "P3Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015279315-06170953057",
+        "citing": "10.2139/ssrn.4659554",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062604400533-06170953057",
+        "citing": "10.1109/icetran62308.2024.10645110",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-06-03",
+        "timespan": "P7Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061804383103-06170953057",
+        "citing": "10.1109/access.2024.3370163",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0629076400-06170953057",
+        "citing": "10.1007/s11356-022-24939-w",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-12-28",
+        "timespan": "P6Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06170598159-06170953057",
+        "citing": "10.1016/j.seta.2021.101796",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010894950-06170953057",
+        "citing": "10.1080/23302674.2025.2548435",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09-06",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607946231-06170953057",
+        "citing": "10.1016/j.rser.2025.115383",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04",
+        "timespan": "P8Y5M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061903545061-06170953057",
+        "citing": "10.1155/2022/7949419",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-11-07",
+        "timespan": "P6Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0605292853-06170953057",
+        "citing": "10.1016/j.jup.2025.101928",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-08",
+        "timespan": "P8Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062201620928-06170953057",
+        "citing": "10.3390/en11040910",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-04-12",
+        "timespan": "P1Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0620557472-06170953057",
+        "citing": "10.1016/j.renene.2022.06.118",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-08",
+        "timespan": "P5Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062604038960-06170953057",
+        "citing": "10.26599/nre.2023.9120045",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-03",
+        "timespan": "P6Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06340569220-06170953057",
+        "citing": "10.1002/aenm.202304479",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-04-08",
+        "timespan": "P7Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062604377481-06170953057",
+        "citing": "10.1016/j.energy.2024.132146",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-09",
+        "timespan": "P7Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06360107846-06170953057",
+        "citing": "10.2139/ssrn.4566515",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06026211172-06170953057",
+        "citing": "10.32920/25260829",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06404694196-06170953057",
+        "citing": "10.1002/sd.2885",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-01-08",
+        "timespan": "P7Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010914521-06170953057",
+        "citing": "10.2139/ssrn.5359261",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062304260452-06170953057",
+        "citing": "10.20944/preprints201906.0046.v1",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06103888791-06170953057",
+        "citing": "10.3389/fenrg.2022.952684",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-08-17",
+        "timespan": "P5Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0646067729-06170953057",
+        "citing": "10.1016/j.enconman.2023.116726",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-02",
+        "timespan": "P6Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06026721814-06170953057",
+        "citing": "10.51935/9789617128437",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062204187193-06170953057",
+        "citing": "10.3390/su16051890",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-02-25",
+        "timespan": "P7Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061603575268-06170953057",
+        "citing": "10.1109/icaect49130.2021.9392581",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-02-19",
+        "timespan": "P4Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06170491536-06170953057",
+        "citing": "10.1002/wene.374",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-04-14",
+        "timespan": "P3Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06170671289-06170953057",
+        "citing": "10.1016/j.ijhydene.2017.10.147",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-01",
+        "timespan": "P1Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013897982-06170953057",
+        "citing": "10.1016/j.est.2026.120368",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-03",
+        "timespan": "P9Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06703747938-06170953057",
+        "citing": "10.1109/pvsc45281.2020.9300587",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-06-14",
+        "timespan": "P3Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140662864-06170953057",
+        "citing": "10.1016/j.ijhydene.2019.02.044",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-08",
+        "timespan": "P2Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0632092381-06170953057",
+        "citing": "10.2139/ssrn.4472215",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015179212-06170953057",
+        "citing": "10.32604/ee.2025.068199",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06230674270-06170953057",
+        "citing": "10.1016/j.energy.2020.117908",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-08",
+        "timespan": "P3Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061703884544-06170953057",
+        "citing": "10.3390/en16031430",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-02-01",
+        "timespan": "P6Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06150954974-06170953057",
+        "citing": "10.1016/j.rser.2017.08.076",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-01",
+        "timespan": "P1Y2M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061401613361-06170953057",
+        "citing": "10.3390/en12224224",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-11-06",
+        "timespan": "P3Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062601990275-06170953057",
+        "citing": "10.1007/s10311-021-01322-8",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-10-06",
+        "timespan": "P4Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062504355116-06170953057",
+        "citing": "10.1016/j.oceaneng.2024.117598",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-06",
+        "timespan": "P7Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06160468069-06170953057",
+        "citing": "10.1016/j.epsr.2019.105891",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-10",
+        "timespan": "P2Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062101427071-06170953057",
+        "citing": "10.3390/cli9090136",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-08-28",
+        "timespan": "P4Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011272788-06170953057",
+        "citing": "10.1016/j.rser.2025.116341",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-01",
+        "timespan": "P9Y2M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06304818309-06170953057",
+        "citing": "10.1016/j.solener.2024.112867",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-09",
+        "timespan": "P7Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062604251568-06170953057",
+        "citing": "10.1016/j.fuel.2024.131223",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-06",
+        "timespan": "P7Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923272-06170953057",
+        "citing": "10.1016/j.apenergy.2021.118467",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-03",
+        "timespan": "P5Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06101246773-06170953057",
+        "citing": "10.1007/s00202-020-01054-y",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-07-03",
+        "timespan": "P3Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06280156825-06170953057",
+        "citing": "10.1016/j.jclepro.2022.135545",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-01",
+        "timespan": "P6Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061102392895-06170953057",
+        "citing": "10.1016/j.est.2021.103010",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-09",
+        "timespan": "P4Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0606835232-06170953057",
+        "citing": "10.1007/s12273-024-1216-4",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-12-03",
+        "timespan": "P8Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062101540923-06170953057",
+        "citing": "10.1109/tpwrs.2017.2710481",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-01",
+        "timespan": "P1Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06203558496-06170953057",
+        "citing": "10.1016/j.eneco.2021.105446",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-09",
+        "timespan": "P4Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06903321295-06170953057",
+        "citing": "10.1155/2021/9472957",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-12-31",
+        "timespan": "P5Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062602501558-06170953057",
+        "citing": "10.1117/12.2607256",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-11-11",
+        "timespan": "P5Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061701635949-06170953057",
+        "citing": "10.3390/en12061037",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-03-18",
+        "timespan": "P2Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06490143660-06170953057",
+        "citing": "10.3389/fenrg.2022.1074916",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-01-18",
+        "timespan": "P6Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609823346-06170953057",
+        "citing": "10.1016/j.ijhydene.2025.150675",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-08",
+        "timespan": "P8Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06160955014-06170953057",
+        "citing": "10.1016/j.rser.2016.11.233",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-04",
+        "timespan": "P0Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010502822-06170953057",
+        "citing": "10.1016/j.enconman.2025.120269",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-11",
+        "timespan": "P9Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06150465394-06170953057",
+        "citing": "10.1016/j.epsr.2021.107729",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-04",
+        "timespan": "P5Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062101158402-06170953057",
+        "citing": "10.1021/acs.estlett.0c00349",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-06-01",
+        "timespan": "P3Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061702090592-06170953057",
+        "citing": "10.1109/tste.2018.2846696",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-04",
+        "timespan": "P2Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061903927947-06170953057",
+        "citing": "10.1016/j.ecolind.2023.110778",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-10",
+        "timespan": "P6Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0650841263-06170953057",
+        "citing": "10.1038/s41560-022-00979-x",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02-14",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062503539821-06170953057",
+        "citing": "10.16925/in.v13i23.2070",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-09-01",
+        "timespan": "P0Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061604120848-06170953057",
+        "citing": "10.12677/jwrr.2022.111001",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "",
+        "timespan": "",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062404357221-06170953057",
+        "citing": "10.2139/ssrn.4841677",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024",
+        "timespan": "P7Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06015441744-06170953057",
+        "citing": "10.1016/j.rser.2025.116602",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-03",
+        "timespan": "P9Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06150325375-06170953057",
+        "citing": "10.1080/13602381.2022.2093528",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-07-22",
+        "timespan": "P5Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06012597347-06170953057",
+        "citing": "10.1016/j.rser.2025.115874",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06140944627-06170953057",
+        "citing": "10.1016/j.rser.2019.04.062",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-09",
+        "timespan": "P2Y10M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061102675722-06170953057",
+        "citing": "10.1016/j.jup.2021.101179",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-04",
+        "timespan": "P4Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061901923332-06170953057",
+        "citing": "10.1016/j.apenergy.2021.118339",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-02",
+        "timespan": "P5Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0640229615-06170953057",
+        "citing": "10.1061/(asce)wr.1943-5452.0001109",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-10",
+        "timespan": "P2Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0649087282-06170953057",
+        "citing": "10.2139/ssrn.3975198",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021",
+        "timespan": "P4Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06023876479-06170953057",
+        "citing": "10.21203/rs.3.rs-2775574/v1",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023",
+        "timespan": "P6Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06310600516-06170953057",
+        "citing": "10.1109/epdc62178.2024.10571672",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-04-23",
+        "timespan": "P7Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0609839114-06170953057",
+        "citing": "10.1109/access.2025.3566375",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06802069464-06170953057",
+        "citing": "10.1016/b978-0-12-820539-6.00005-4",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021",
+        "timespan": "P4Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06330537548-06170953057",
+        "citing": "10.1177/01956574241288973",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-10-28",
+        "timespan": "P7Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06604788728-06170953057",
+        "citing": "10.3390/su16114470",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-05-24",
+        "timespan": "P7Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061103307844-06170953057",
+        "citing": "10.1155/2021/6635829",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-06-29",
+        "timespan": "P4Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06203558808-06170953057",
+        "citing": "10.1016/j.eneco.2020.105051",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-01",
+        "timespan": "P4Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06120658746-06170953057",
+        "citing": "10.1016/j.ijhydene.2019.10.085",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-12",
+        "timespan": "P3Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06010438396-06170953057",
+        "citing": "10.1109/iccep65222.2025.11143737",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-06-24",
+        "timespan": "P8Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061801919968-06170953057",
+        "citing": "10.1016/j.apenergy.2022.119391",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-09",
+        "timespan": "P5Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0680563272-06170953057",
+        "citing": "10.1016/j.renene.2019.09.089",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-03",
+        "timespan": "P3Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06603853555-06170953057",
+        "citing": "10.1016/j.jenvman.2022.116232",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-12",
+        "timespan": "P6Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0660672153-06170953057",
+        "citing": "10.1016/j.ijhydene.2021.05.034",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-07",
+        "timespan": "P4Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0630677599-06170953057",
+        "citing": "10.1016/j.energy.2017.11.080",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-12",
+        "timespan": "P1Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06310370659-06170953057",
+        "citing": "10.1016/j.renene.2023.119685",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-01",
+        "timespan": "P7Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "0607229584-06170953057",
+        "citing": "10.1016/j.enbuild.2025.115459",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-04",
+        "timespan": "P8Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06240658171-06170953057",
+        "citing": "10.1016/j.energy.2020.117601",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-06",
+        "timespan": "P3Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06150670272-06170953057",
+        "citing": "10.1016/j.ijhydene.2018.07.099",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-09",
+        "timespan": "P1Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06110563208-06170953057",
+        "citing": "10.1016/j.renene.2018.06.079",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-01",
+        "timespan": "P2Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014539545-06170953057",
+        "citing": "10.2139/ssrn.5759779",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025",
+        "timespan": "P8Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06102316814-06170953057",
+        "citing": "10.1016/j.apenergy.2017.07.116",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2017-11",
+        "timespan": "P1Y0M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061201624083-06170953057",
+        "citing": "10.3390/en13061508",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-03-22",
+        "timespan": "P3Y4M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06014961075-06170953057",
+        "citing": "10.1016/j.renene.2025.124903",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2026-02",
+        "timespan": "P9Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061704163454-06170953057",
+        "citing": "10.1038/s44172-023-00155-3",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-01-05",
+        "timespan": "P7Y2M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "062503517683-06170953057",
+        "citing": "10.1016/j.rser.2022.113002",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-01",
+        "timespan": "P6Y2M",
+        "journal_sc": "yes",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061604268859-06170953057",
+        "citing": "10.1016/j.applthermaleng.2024.122980",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-06",
+        "timespan": "P7Y7M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06502488272-06170953057",
+        "citing": "10.1016/j.enpol.2018.11.006",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2019-02",
+        "timespan": "P2Y3M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06110596233-06170953057",
+        "citing": "10.5547/01956574.42.1.thof",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021",
+        "timespan": "P4Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061902492483-06170953057",
+        "citing": "10.1016/b978-0-12-824324-4.00028-7",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022",
+        "timespan": "P5Y",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061601250764-06170953057",
+        "citing": "10.1016/j.enconman.2021.114866",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2021-12",
+        "timespan": "P5Y1M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06013322138-06170953057",
+        "citing": "10.1109/mlsd65526.2025.11220266",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-09-24",
+        "timespan": "P8Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06901648887-06170953057",
+        "citing": "10.3390/en13164132",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2020-08-10",
+        "timespan": "P3Y9M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06310496930-06170953057",
+        "citing": "10.3390/w16071039",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2024-04-04",
+        "timespan": "P7Y5M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06902120586-06170953057",
+        "citing": "10.1016/j.erss.2018.04.021",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2018-07",
+        "timespan": "P1Y8M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06903462066-06170953057",
+        "citing": "10.1016/j.enconman.2022.116165",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2022-10",
+        "timespan": "P5Y11M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "06011682857-06170953057",
+        "citing": "10.3390/en18112777",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2025-05-27",
+        "timespan": "P8Y6M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    },
+    {
+        "oci": "061203891514-06170953057",
+        "citing": "10.1016/j.ijepes.2023.109143",
+        "cited": "10.1016/j.rser.2016.06.082",
+        "creation": "2023-09",
+        "timespan": "P6Y10M",
+        "journal_sc": "no",
+        "author_sc": "no"
+    }
+]

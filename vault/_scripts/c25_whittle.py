@@ -10,7 +10,8 @@ MODEL (G_max normalised to 1, so x = standing crop = GUD when left behind):
   PASSIVE (patch unoccupied):  xdot =  r*(1-x) ; intake rate 0 (+ Whittle subsidy nu)
   travel time tau; discount -> 0 (average reward).
 
-DERIVED IN THE NOTE (relative value V(x) = x - x^2/2, so V'(x) = 1-x):
+DERIVED IN THE NOTE (singular arc, d rho / d a = 0; V'(x) = 1-x is the
+indifference condition rearranged, NOT an independent check -- see note s3):
   WHITTLE INDEX        W(x) = lam*x**2 - r*(1-x)**2
   MVT / C5 baseline    nu(x) = lam*x            (valid only when patches are
                                                  non-revisitable, i.e. V' == 0)
@@ -52,6 +53,17 @@ def residence(x_arr, x_dep, lam=LAM):
     return math.log(x_arr / x_dep) / lam
 
 
+def arrival_state(x_dep, rho, ltau=LTAU):
+    """Standing crop found on RE-arrival at a patch left at x_dep, after tau
+    units away under the passive dynamics xdot = r(1-x):
+        x_arr = 1 - (1 - x_dep) * exp(-r*tau),   r*tau = rho*ltau (lam = 1).
+    This is the self-consistent steady-cycle arrival state under round-robin
+    visitation (note section 7, assumption 4).  The note previously reported
+    residence times from a FULL patch (x_arr = 1), which the passive dynamics
+    forbid in steady state for any finite r; corrected 2026-09-05 (audit 06)."""
+    return 1.0 - (1.0 - x_dep) * math.exp(-rho * ltau)
+
+
 # --------------------------------------------------------------------------
 def section_indexability():
     print("A. INDEXABILITY  (W must be strictly increasing in x on [0,1])")
@@ -85,17 +97,30 @@ def section_prediction(u0=0.30):
           " G_max=1)" % LTAU)
     print("   Habitat indifference index nu anchored at the MVT baseline:")
     print("   GUD_MVT = u0 = %.2f, nu = lam*u0^2 = %.4f\n" % (u0, u0 * u0))
-    hdr = ("   r*tau |   GUD_W  |  dGUD   | GUD_W/GUD_MVT | t* (arr=1) |"
-           " t*_W/t*_MVT")
+    hdr = ("   r*tau |   GUD_W  |  dGUD   | GUD/GUD_MVT |  x_arr  |"
+           "  t_full  | t_f/t_MVT |  t_cycle | t_c/t_MVT")
     print(hdr)
     print("   " + "-" * (len(hdr) - 3))
     t_mvt = residence(1.0, u0)
+    rows = []
     for rho in (0.0, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0, 50.0):
         x = gud_whittle(rho, u0)
-        t = residence(1.0, x)
-        print("   %6.2f | %7.4f  | %+7.4f | %11.3f   | %8.3f   | %9.3f"
-              % (rho * LTAU, x, x - u0, x / u0, t, t / t_mvt))
+        x_arr = arrival_state(x, rho)
+        t_full = residence(1.0, x)          # arrival at a FULL patch
+        t_cyc = residence(x_arr, x)         # self-consistent steady cycle
+        rows.append((rho, t_cyc / t_mvt))
+        print("   %6.2f | %7.4f  | %+7.4f | %9.3f   | %6.4f  | %7.3f  |"
+              " %8.3f  | %7.3f  | %8.3f"
+              % (rho * LTAU, x, x - u0, x / u0, x_arr,
+                 t_full, t_full / t_mvt, t_cyc, t_cyc / t_mvt))
     print()
+    peak = max(rows, key=lambda p: p[1])
+    print("   t_cycle/t_MVT is NON-MONOTONE in r: it rises from 0 at r*tau = 0,")
+    print("   peaks at %.3f near r*tau = %.2f, and falls back toward 0 as"
+          % (peak[1], peak[0] * LTAU))
+    print("   r -> infinity.  The t_full column (arrival forced to x = 1) is")
+    print("   monotone decreasing and hides this; it is NOT the steady-cycle")
+    print("   residence.  t_MVT = ln(1/u0)/lam = %.4f\n" % t_mvt)
     print("   dGUD/d(r/lam) at r->0+ = (1-u0)^2 / (2*u0) = %.4f"
           % dgud_dr(u0, 0.0))
     print("   => small-r expansion:  GUD(r) ~ u0 + (1-u0)^2/(2 u0) * (r/lam)\n")

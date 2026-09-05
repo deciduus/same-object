@@ -157,12 +157,32 @@ repairability/spare-parts rules are the obvious case, against the LBNL refrigera
 mean**, which would say the intervention converted a loss process into a wear-out process — i.e.
 that units are now being kept until they physically fail.
 
-**P1 already has one natural-experiment measurement, and it passes.** LBNL's room air-conditioners
-were fitted separately on pre-2000 and post-2000 survey data (Tables 9, 10): the **mean fell
-14.75 → 11.27 yr (−24%) while β moved 1.067 → 1.08, i.e. by 0.01, well inside the ±0.06–0.09
-standard errors.** A large change in the timescale, no change in the failure law. That is P1's
-signature observed in the direction of *shortening*; P1 asserts the symmetric behaviour under
-lengthening.
+**P1 has no measurement yet. The "natural experiment" this note previously claimed is
+withdrawn.** An earlier version paired LBNL's room air-conditioners fitted separately on pre-2000
+and post-2000 survey data (Tables 9, 10) — "the mean fell 14.75 → 11.27 yr (−24%) while β moved
+1.067 → 1.08, well inside the standard errors" — and called it a passing natural-experiment
+measurement of P1. It is not one, for three independent reasons, any one of which is sufficient:
+
+1. **The two rows are not comparable, by this note's own §6(c).** The pre-2000 fit carries
+   `θ = 8.0` and the post-2000 fit `θ = 0`. §6(c) states that a large `θ` "absorbs early exits and
+   therefore **inflates `β`** relative to a delay-free fit — those two `β` are not directly
+   comparable with the `θ = 0` rows." The comparison being offered as evidence is precisely the
+   one the honesty section rules out, three sections later.
+2. **The mean shift uses a figure §3 has just shown is self-inconsistent.** 11.27 yr is Table 10's
+   *published* mean; §3's internal-consistency check re-derives **9.97 yr** from Table 10's own
+   `(β = 1.08, η = 10.27, θ = 0)`, and flags Table 10's scale parameter as inconsistent with its
+   own median. Using the published mean gives −24%; using the row's own parameters gives −32%.
+   The note cannot quote a number it has itself flagged as unreliable as the measured effect.
+3. **No intervention occurred.** P1 is a claim about behaviour *under a mean-shifting
+   intervention*. These are two survey vintages fitted separately — a change of measurement
+   period, with no policy, no treatment and no control. Whatever moved the mean between them is
+   unidentified, and could as easily be a change in the survey instrument as a change in the
+   product.
+
+The honest status is therefore: **P1 is stated and untested.** It remains falsifiable exactly as
+written above — the EU ecodesign case against the LBNL refrigerator baseline is still the obvious
+first test, and it has not been run here. The RAC pair is retained in §3 as two tabulated rows,
+not as a paired measurement.
 
 **Prediction P2 (which class moves).** Of the classes above, the one whose `β` *should* shift under
 a durability intervention is a `β ≥ 2` class, not a `β ≈ 1` one — a repair right cannot make a
@@ -223,3 +243,33 @@ the two-band structure among products does not.
 
 See [[G30-weibull-product-lifespan]], [[C18-durability-axis]], [[G3-cycle-life]],
 [[citation-intersection]].
+
+## Corrections 2026-09-05 (audit 06)
+
+`audits/06-math-rounds3-6.md` item 15. No fitted value changed; a claimed *measurement* is
+withdrawn.
+
+**§5's "natural experiment" is withdrawn.** The note read: "**P1 already has one
+natural-experiment measurement, and it passes.** … the mean fell 14.75 → 11.27 yr (−24%) while β
+moved 1.067 → 1.08, i.e. by 0.01, well inside the ±0.06–0.09 standard errors." It now reads that
+**P1 is stated and untested**. Three independent defects, any one fatal:
+
+| # | defect | where the note already said so |
+|---|---|---|
+| 1 | The pre-2000 row carries `θ = 8.0`, the post-2000 row `θ = 0`; a large `θ` absorbs early exits and inflates `β` | §6(c), verbatim: "those two `β` are not directly comparable with the `θ = 0` rows" |
+| 2 | The quoted post-2000 mean 11.27 yr is the one figure §3's consistency check rejects; the row's own `(β = 1.08, η = 10.27, θ = 0)` give **9.97 yr**, so the shift is **−32%**, not −24% | §3, "Table 10's scale parameter is internally inconsistent with its own median" |
+| 3 | No intervention occurred — two survey vintages fitted separately, no treatment, no control, no identified cause | — (this one was simply not noticed) |
+
+Defect 1 is the sharpest: §5 was offering as its evidence exactly the comparison §6(c) forbids,
+one section later in the same note. Defect 2 means the note quoted, as its measured effect, a
+number it had itself flagged as unreliable eight paragraphs earlier.
+
+**What is unchanged.** Every `β`, `η`, `θ` and `H` in §3 stands; the ten-of-eleven internal
+consistency check stands; P1 and P2 stand **as predictions**, falsifiable exactly as written, with
+the EU ecodesign case against the LBNL refrigerator baseline still the obvious first test. The RAC
+pre-2000 and post-2000 rows remain in §3 as two tabulated fits — they are simply not a pair.
+
+**Script.** `vault/_scripts/c27_beta.py` gains section `[4]`, which prints both mean shifts
+(−24% from the published mean, −32% from the row's own parameters), the `θ` mismatch, and the
+verdict `P1 is STATED AND UNTESTED`, so the withdrawn claim cannot be re-imported from the
+numbers.

@@ -17,7 +17,7 @@ uses-move: []
 rests-on: ["[[availability-formula]]", "[[C6-damage-healing-ratio]]"]
 tags: [node/gap, crosses/vocabulary, evidence/citation-intersection, standing/narrowed]
 last-checked: 2026-09-05
-note: "One bridge exists and was identified: Alqahtani 2017, a Northeastern PhD applying Barlow-Hunter preventive maintenance to remanufactured product warranties. It moves the policy mathematics across and never forms a rate ratio or an availability. OpenCitations returns 0 on the same pairing, so contact-surface 1 is provider-dependent."
+note: "One bridge exists and was identified: Alqahtani 2017, a Northeastern PhD applying Barlow-Hunter preventive maintenance to remanufactured product warranties. It moves the policy mathematics across and never forms a rate ratio or an availability. OpenCitations returns 0 on the same pairing, so contact-surface 1 is provider-dependent. Re-run 2026-09-05 with the blank-key-filtering intersect.py: zero blank citing records in either payload, 1,131/845/0 unchanged, standing unchanged."
 exit: computation
 extends-to: [circularity, sustainability]
 next-step-cost: S
@@ -81,6 +81,7 @@ short is a better demonstration of the gap than any citer count.
 | DOI verification | Crossref `api.crossref.org/works/<doi>?mailto=deciduusleaf@gmail.com`, **2026-09-05**, both titles/years/journals matched |
 | Provider 1 | OpenAlex `works?filter=cites:W2109281751,cites:W2029123070`, `meta.count` = **1** (scout run, 2026-09-05). `N_A` = 1,368, `N_B` = 1,093 (`cited_by_count`, re-read this session and unchanged) |
 | Provider 2 | **OpenCitations COCI**, `api.opencitations.net/index/v1/citations/<doi>`, fetched **2026-09-05** here. `\|A\|` = **1,131**, `\|B\|` = **845**, intersection = **0** |
+| **Blank-key re-check** | Re-run 2026-09-05 with the repaired `_scripts/intersect.py`. Barlow & Hunter: 1,131 raw records, **0** blank `citing`, 1,131 unique. Guide 2000: 845 raw, **0** blank, 845 unique. **The phantom is absent from both payloads**, so the OpenCitations `∩ = 0` was never inflated and no count moves. Note that absence on these two anchors is not evidence of absence elsewhere — the same run found 713 blanks in one 19,229-record payload — see [[citation-sources]] |
 | Union floor `N` | 2,460 (OpenAlex); `E` = 607.8; `O/E` = 0.00165 — **a floor, not quotable alone** |
 | Scoped `N_universe` | **NOT OBTAINED.** See below |
 | Control (same A anchor) | Barlow & Hunter × Dekker 1996 (`10.1016/0951-8320(95)00076-3`) = **89** of 966 (scout, 2026-09-05) |

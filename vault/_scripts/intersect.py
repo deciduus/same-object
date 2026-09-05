@@ -37,6 +37,16 @@ USAGE
                   be inspected by hand.  Inspection is mandatory: a count is not a
                   finding until every hit has been read.
     --json FILE   also write the full result as JSON.
+    --selftest    fetch one small known DOI pair and assert no blank key survives.
+
+BLANK-KEY TRAP
+--------------
+OpenCitations /citations/ returns some records with an **empty `citing` field**.
+Building the set without filtering adds a phantom "" element, which inflates
+N_A, N_B and -- because the phantom is in every set -- **every intersection by
+exactly 1**.  This script drops blank/whitespace `citing` (and `cited`) keys
+before building sets and prints how many it dropped.  Any count taken from an
+older run of this script may read one high.
 
 Set the polite-pool address with the MAILTO env var (default below).
 """
@@ -86,24 +96,85 @@ def slug(doi):
     return doi.replace("/", "_").replace(".", "-")
 
 
-def citers(doi, cache_dir=None):
-    """Set of DOIs (lowercased) of works citing `doi`, per OpenCitations."""
+def _key(row, field):
+    """Normalised DOI out of one OpenCitations record field, or "" if absent."""
+    c = (row.get(field) or "").strip().lower()
+    if c.startswith("coci =>"):
+        c = c.split("=>", 1)[1].strip()
+    return c.strip()
+
+
+def citers(doi, cache_dir=None, stats=None):
+    """Set of DOIs (lowercased) of works citing `doi`, per OpenCitations.
+
+    THE BLANK-KEY TRAP.  Some /citations/ records carry an **empty `citing`
+    field**.  De-duplicating without filtering adds a phantom "" element to the
+    set, which inflates N_A, N_B *and every intersection by exactly 1* (the
+    phantom is shared by every set, so it always joins).  Blank and
+    whitespace-only keys are dropped here, and the number dropped is reported.
+    """
     url = "%s/citations/%s" % (OC, urllib.parse.quote(doi))
     data = cached_json(url, cache_dir, "cit_" + slug(doi))
-    out = set()
+    out, dropped = set(), 0
     for row in data:
-        c = (row.get("citing") or "").strip().lower()
-        if c.startswith("coci =>"):
-            c = c.split("=>", 1)[1].strip()
+        c = _key(row, "citing")
         if c:
             out.add(c)
+        else:
+            dropped += 1
+    print("  %s/citations/%s -> %d records, %d blank `citing` dropped, %d unique"
+          % (OC, doi, len(data), dropped, len(out)), file=sys.stderr)
+    if stats is not None:
+        stats[doi] = {"raw": len(data), "blank_dropped": dropped, "unique": len(out)}
     return out
 
 
-def references(doi, cache_dir=None):
+def references(doi, cache_dir=None, stats=None):
+    """Set of DOIs `doi` cites.  Same blank-key filter, on the `cited` field."""
     url = "%s/references/%s" % (OC, urllib.parse.quote(doi))
     data = cached_json(url, cache_dir, "ref_" + slug(doi))
-    return {(r.get("cited") or "").strip().lower() for r in data if r.get("cited")}
+    out, dropped = set(), 0
+    for row in data:
+        c = _key(row, "cited")
+        if c:
+            out.add(c)
+        else:
+            dropped += 1
+    print("  %s/references/%s -> %d records, %d blank `cited` dropped, %d unique"
+          % (OC, doi, len(data), dropped, len(out)), file=sys.stderr)
+    if stats is not None:
+        stats[doi] = {"raw": len(data), "blank_dropped": dropped, "unique": len(out)}
+    return out
+
+
+SELFTEST_A = "10.1038/nature08227"          # Scheffer et al. 2009
+SELFTEST_B = "10.1016/j.ejor.2010.11.018"   # Si et al. 2011
+
+
+def selftest(cache_dir=None):
+    """Fetch one small known DOI pair and assert no blank key survives.
+
+    Asserts (a) no member of either citer set is empty or whitespace and (b) the
+    intersection contains no empty key, then reports what the count would have
+    been unfiltered, so the phantom is visible rather than merely absent.
+    """
+    stats = {}
+    A = citers(SELFTEST_A, cache_dir, stats)
+    B = citers(SELFTEST_B, cache_dir, stats)
+    for name, S in (("A", A), ("B", B)):
+        bad = [x for x in S if not x or not x.strip()]
+        assert not bad, "blank key survived in set %s: %r" % (name, bad)
+    inter = A & B
+    assert not any((not x or not x.strip()) for x in inter), "blank key in intersection"
+    print("selftest OK: A=%s |A|=%d (%d blanks dropped); B=%s |B|=%d (%d blanks dropped); "
+          "|A n B|=%d, no blank keys survive"
+          % (SELFTEST_A, len(A), stats[SELFTEST_A]["blank_dropped"],
+             SELFTEST_B, len(B), stats[SELFTEST_B]["blank_dropped"],
+             len(inter)))
+    if stats[SELFTEST_A]["blank_dropped"] or stats[SELFTEST_B]["blank_dropped"]:
+        print("  (unfiltered, the phantom \"\" would have joined both sets and "
+              "reported |A n B| = %d)" % (len(inter) + 1))
+    return 0
 
 
 def crossref_meta(doi):
@@ -126,6 +197,12 @@ def crossref_meta(doi):
 def main(argv):
     args = [a for a in argv if not a.startswith("--")]
     flags = [a for a in argv if a.startswith("--")]
+    if "--selftest" in flags:
+        cache = None
+        for f in flags:
+            if f.startswith("--cache="):
+                cache = f.split("=", 1)[1]
+        return selftest(cache)
     if len(args) < 2:
         print(__doc__)
         return 2
@@ -135,11 +212,18 @@ def main(argv):
             cache = f.split("=", 1)[1] if "=" in f else cache
     a_doi, b_dois = args[0], args[1:]
 
-    A = citers(a_doi, cache)
+    stats = {}
+    A = citers(a_doi, cache, stats)
     B = set()
     for d in b_dois:
-        B |= citers(d, cache)
+        B |= citers(d, cache, stats)
     inter = sorted(A & B)
+    total_blank = sum(v["blank_dropped"] for v in stats.values())
+    print("blank `citing` records dropped: %d across %d anchor fetch(es)"
+          % (total_blank, len(stats)))
+    if total_blank:
+        print("  (without the filter every count below would read one higher; "
+              "see vault/method/citation-sources.md)")
 
     print("provider: OpenCitations  endpoint: %s/citations/<doi>" % OC)
     print("anchor A: %s   N_A = %d" % (a_doi, len(A)))

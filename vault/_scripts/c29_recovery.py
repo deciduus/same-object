@@ -246,6 +246,18 @@ def main():
         h, _, _ = build(rows, mode)
         print(_line(f"pooled, range={mode}", fit_weibull([x for v in h.values() for x in v])))
     print()
+    print("recovery-debt corollary (note section 5.3):")
+    pf = fit_weibull(pooled)
+    if pf is not None:
+        b, eta = pf[3], pf[6]
+        for t in (10.0, 20.0, 40.0, 100.0):
+            ratio = t ** (b - 1.0)
+            print(f"  h({t:5.0f} yr) / h(1 yr) = {t:.0f}^(beta-1) = {t:.0f}^({b - 1.0:+.3f})"
+                  f" = {ratio:.4f}   (1/ratio = {1.0 / ratio:.2f}x less promising)")
+        print(f"  fitted beta = {b:.3f}, eta = {eta:.1f} yr.  NOTE: an earlier hand")
+        print("  computation of the 40-yr row gave 0.30 / 'three times'; the correct")
+        print("  values are 0.218 and ~4.6x.  Corrected 2026-09-05 (audit 06).")
+    print()
     print("ecology's own estimator, for contrast:")
     ev_t = [t for t, e in pooled if e == 1]
     print(f"  mean return time over RECOVERED rows only = {np.mean(ev_t):.2f} yr "

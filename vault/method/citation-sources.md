@@ -72,6 +72,20 @@ some clients drop the User-Agent across it.
   47 s (2026-09-05). Part II (9,771 citers) returns 200 in ~19 s. **For anchors above roughly
   10,000 citers, use OpenAlex instead** — see the recipe below. A 500 here is a size failure, not
   a missing work; never record it as a zero.
+- **`/citations/<doi>` returns records with an empty `citing` field — the phantom co-citer.**
+  De-duplicating `row["citing"]` without filtering puts a single blank key `""` into the set. That
+  key is in *every* set built the same way, so it inflates `N_A`, `N_B` **and every intersection by
+  exactly 1** — and an intersection of 1 is exactly the size at which a gap claim turns into a
+  bridge claim. Measured 2026-09-05: Scheffer 2009 3,999 records → 65 blanks → 3,934 unique;
+  Hanley & McNeil 1982 19,229 → 713 → 18,516; Catling 2018 201 → 14 → 187. Some sets carry none
+  (Barlow & Hunter 1960: 0 of 1,131), so a run that looks clean on one anchor is not evidence the
+  trap is absent on another. `vault/_scripts/intersect.py` drops blank and whitespace-only `citing`
+  (and `cited`) keys before building sets, prints how many it dropped per anchor, and has a
+  `--selftest` that fetches a known small pair and asserts no blank key survives. **Any count taken
+  from a pre-2026-09-05 run of that script, or from any hand-rolled set build, may read one high;
+  re-run before quoting it.** First caught in `audits/scout-04-conservation-genetics.md`, where an
+  uncorrected pass reported five phantom "1-hit" candidates that are clean zeros.
+
 - **Crossref `?select=reference` returns HTTP 400.** Pull the full record and read
   `message.reference` from it.
 - **String counts are not citation counts.** A relaxed Crossref match for "753 works" returned

@@ -17,7 +17,7 @@ uses-move: []
 rests-on: []
 tags: [node/gap, crosses/vocabulary, evidence/citation-intersection, standing/live]
 last-checked: 2026-09-05
-note: "Ecology's early-warning indicators and industrial prognostics estimate the same first-passage-to-threshold object and do not meet. OpenAlex Scheffer 2009 x Si 2011 = 2 against E = 670; OpenCitations re-run = 1 against E = 458, control Scheffer x Wissel = 268 (control ratio 7.6e-4). Zero in all three decade bins and across a 3x3 matrix of decade-appropriate anchors. All 3 co-citers inspected; none transfers the formalism, and one is an SSRN preprint. C26 computed the missing object and the discriminator failed."
+note: "Ecology's early-warning indicators and industrial prognostics estimate the same first-passage-to-threshold object and do not meet. OpenAlex Scheffer 2009 x Si 2011 = 2 against E = 670; OpenCitations re-run = 1 against E = 458, control Scheffer x Wissel = 268 (control ratio 7.6e-4). Zero in the 2009-2013 and 2014-2018 decade bins and 1 in 2019-2026, and zero across a 3x3 matrix of decade-appropriate anchors. All 3 co-citers inspected; none transfers the formalism, and one is an SSRN preprint. C26 computed the missing object and the discriminator failed. Re-run 2026-09-05 with the blank-key-filtering intersect.py: every count unchanged, standing unchanged."
 exit: computation
 extends-to: [ecology, conservation]
 next-step-cost: S
@@ -103,6 +103,14 @@ provider**, which is the stronger test anyway.
   (e.g. `oci:06022989134-06260366631`). Deduplicated as a set, a single blank key produces a
   **false intersection in every pairing**. Blanks are dropped; without that step every row below
   reads one higher, and the Randall row reads 1 instead of 0.
+- **Re-verified 2026-09-05 with the repaired `_scripts/intersect.py`** (blank/whitespace `citing`
+  keys dropped before the sets are built, drop count printed, `--selftest` asserting no blank key
+  survives). Raw records → blanks dropped → unique citers: Scheffer 3,999 → 65 → **3,934**;
+  Si 1,795 → 12 → **1,783**; Randall 2,237 → 12 → **2,225**; Jardine 3,668 → 15 → **3,653**;
+  Wissel 374 → 13 → **361**. **Every count in the table below is unchanged**, because this note's
+  original run already stripped the blanks by hand. The phantom **was** present in the raw
+  payloads of all five anchors: unfiltered, the four rows would read 2 / 1 / 2 / 269 instead of
+  1 / 0 / 1 / 268. `contact-surface: 3`, `standing: live` and the tags are unchanged.
 
 | Pairing | `N_A` | `N_B` | **`O`** | Hits |
 |---|---|---|---|---|

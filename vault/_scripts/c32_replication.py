@@ -63,6 +63,15 @@ the recovered rows.  Run `--likelihood current-status` for the estimator that ha
 this correctly (each row contributes log F(T) if recovered, log S(T) if not); the
 headline uses `--likelihood c29` because P1 is a comparison of estimators, not of data.
 
+CORRECTED 2026-09-05 (audit 06).  That last sentence understates the problem and the
+note no longer relies on it.  These ARE current-status data, so `--likelihood c29` is
+simply the wrong likelihood for them, and under the right one the shape degenerates
+(pooled beta 0.733 -> 0.051, eta -> billions of years).  The Weibull SHAPE IS NOT
+IDENTIFIABLE from this database.  Every run now prints all three variants together,
+under 'ROBUSTNESS ACROSS LIKELIHOOD AND UNIT', so no single beta can be quoted from
+here as a measurement.  What survives is the qualitative fact underneath: the
+recovered fraction is nearly FLAT in elapsed time (also printed).
+
 Rows with Xs == Xr (already at the reference at t=0), T <= 0, or a missing field are
 dropped and counted.
 
@@ -87,6 +96,7 @@ USAGE
 import argparse
 import collections
 import math
+import os
 import re
 import sys
 
@@ -351,6 +361,33 @@ def main():
     ap.add_argument("--jones-xls", default=None)
     args = ap.parse_args()
 
+    if not os.path.isfile(args.xlsx):
+        sys.stderr.write(
+            "\n"
+            "c32_replication.py: cannot run -- the input file was not found.\n"
+            "\n"
+            "  looked for: %s\n"
+            "\n"
+            "This script needs Moreno-Mateos et al. 2017's per-study database:\n"
+            "\n"
+            "  file    'Moreno, Jones database.xlsx'  (400,066 bytes, 3,816 rows)\n"
+            "  deposit Dryad doi:10.5061/dryad.t5c97\n"
+            "  page    https://datadryad.org/dataset/doi:10.5061/dryad.t5c97\n"
+            "\n"
+            "The file is NOT in this repository and is not redistributed here: it is a\n"
+            "third-party deposit under Dryad's terms, and datadryad.org sits behind a\n"
+            "proof-of-work bot check, so it cannot be fetched non-interactively.  Download\n"
+            "it with an ordinary browser, then re-run with an explicit path:\n"
+            "\n"
+            "  python c32_replication.py --xlsx \"/path/to/Moreno, Jones database.xlsx\"\n"
+            "\n"
+            "Every number in vault/computed/C32-recovery-beta-replication.md comes from\n"
+            "that run.  The three pooled-beta variants the note's section 5 reports are\n"
+            "printed together by this script under 'ROBUSTNESS ACROSS LIKELIHOOD AND\n"
+            "UNIT'; the current-status row is the one entitled to the data.\n"
+            "\n" % args.xlsx)
+        return 2
+
     rows = load(args.xlsx)
     recs, dropped = survival(rows)
     if args.study_level:
@@ -425,6 +462,45 @@ def main():
     for k, v in sorted(byd.items(), key=lambda kv: -len(kv[1])):
         if len(v) >= 30:
             print(_line(k[:26], fit_weibull(v, L)))
+
+    # ------------------------------------------------ robustness, section 5
+    # The note's section-5 "what is not damaged" table.  Printed unconditionally so the
+    # three pooled variants are never quoted apart from one another again: the first two
+    # share a likelihood that section 2(b) shows is the WRONG one for current-status data,
+    # so their agreement is not robustness.  Corrected 2026-09-05 (audit 06).
+    print("\nROBUSTNESS ACROSS LIKELIHOOD AND UNIT  (note section 5)")
+    print(f"  {'variant':<44s} {'beta':>6s}  {'95% profile CI':>16s} {'eta(yr)':>12s}")
+    print("  " + "-" * 82)
+    om = survival(rows)[0]                      # always the outcome-measure unit
+    sl = study_level(om)
+    om_pairs = [(r["time"], r["event"]) for r in om]
+    for label, pairs, lik in (
+            ("outcome-measure rows, C29 likelihood", om_pairs, "c29"),
+            ("study x habitat, C29 likelihood", [(r["time"], r["event"]) for r in sl], "c29"),
+            ("outcome-measure rows, CURRENT-STATUS (correct)", om_pairs, "current-status")):
+        f = fit_weibull(pairs, lik)
+        if f is None:
+            continue
+        print(f"  {label:<44s} {f[3]:6.3f}  [{f[4]:6.3f}, {f[5]:6.3f}] {f[6]:12.4g}")
+    print("  The first two agree with each other because they share a likelihood written")
+    print("  for exact event times.  These are current-status (case-1 interval-censored)")
+    print("  data, so the third row is the one entitled to them; it disagrees by a factor")
+    print("  of ~14.  CONCLUSION: the Weibull SHAPE IS NOT IDENTIFIABLE from this")
+    print("  database.  Do not quote 0.733 (or 0.721, or 0.051) as a measurement of the")
+    print("  object C29 measured on Jones & Schmitz's reported return times.")
+
+    print("\nWHAT SURVIVES: recovered fraction vs elapsed time (no Weibull involved)")
+    edges = [(0, 2), (2, 5), (5, 10), (10, 20), (20, 40), (40, 80), (80, 1e9)]
+    print(f"  {'T (yr)':<12s} {'n':>6s} {'fraction recovered':>20s}")
+    for lo_e, hi_e in edges:
+        sub = [r for r in recs if lo_e < r["time"] <= hi_e]
+        if not sub:
+            continue
+        lbl = f"({lo_e:g},{hi_e:g}]" if hi_e < 1e8 else f">{lo_e:g}"
+        frac = sum(r["event"] for r in sub) / len(sub)
+        print(f"  {lbl:<12s} {len(sub):6d} {frac:20.3f}")
+    print("  Nearly flat over a ~190-fold span of elapsed time.  THIS is the qualitative")
+    print("  claim the replication delivers -- early-or-never -- and it is all of it.")
 
     if args.overlap and args.jones_xls:
         overlap(args.xlsx, args.jones_xls)

@@ -8,9 +8,11 @@ next-step-cost: S
 # The O₂ biosignature as a diagnostic test
 
 > **A detection of atmospheric O₂ is more likely true than false only above a break-even
-> prevalence `p* = (1−spec)/(sens + 1−spec)` — which at the specificities the field's own
-> false-positive enumeration can plausibly support (0.90–0.99) is a base rate of 1-in-11 to
-> 1-in-101 planets bearing life.** Turned around: if life is present on 1 in 1,000 of the
+> prevalence `p* = (1−spec)/(sens + 1−spec)` — which at *illustrative* specificities of
+> 0.90–0.99 is a base rate of 1-in-11 to 1-in-101 planets bearing life. No specificity for the
+> O₂ test is published, and the body below shows none is currently estimable from the
+> literature: 0.90–0.99 is a span chosen to show the arithmetic, not a range the field's
+> false-positive enumeration supports.** Turned around: if life is present on 1 in 1,000 of the
 > planets we look at, the O₂ test must have specificity **≥ 0.999** for a detection to be worth
 > believing. This narrows [[G31-biosignature-diagnostic-theory]] by building the object the gap
 > says is missing. **It does not close it**: prevalence is unknown, no specificity has ever been
@@ -193,3 +195,29 @@ is not.
   claim would need — not a PPV read off a guessed column.
 - **`sens = 1.0` is used as the favourable bound, not as a belief.** The field's own
   false-negative discussion makes it clearly false for Earth's own history.
+
+## Corrections 2026-09-05 (audit 06)
+
+`audits/06-math-rounds3-6.md` item 13. No arithmetic changed; the callout was claiming an
+evidential grade for its inputs that the body denies them.
+
+**The pull-quote attributed a specificity range to the field.** It read: "at the specificities
+the field's own false-positive enumeration can plausibly support (0.90–0.99)". The body says the
+opposite in two places — §"The abiotic-source enumeration" concludes "**specificity is not
+merely unpublished; it is not currently estimable from the published literature**", and §Honesty
+says "The specificity values 0.9–0.999 are illustrative, not measured." An enumeration of
+false-positive *mechanisms* is a list; a specificity is a rate over a reference population, and
+the field has never defined that population. The enumeration therefore supports **no**
+specificity, plausibly or otherwise.
+
+| | old | new |
+|---|---|---|
+| status of 0.90–0.99 | "the specificities the field's own false-positive enumeration can plausibly support" | "*illustrative* specificities … No specificity for the O₂ test is published, and the body below shows none is currently estimable" |
+
+Every number is unchanged: `p* = (1−spec)/(sens + 1−spec)` still gives 1-in-11 to 1-in-101 over
+that span, and the note's real output — **the inversion**, that `prev = 10⁻³` demands
+`spec ≥ 0.999` for a detection to be worth believing — is untouched and is not an assumption
+about specificity but a *requirement* on it, which is why it was worth stating. The change is
+that the callout now carries the same disclaimer the body always did.
+`vault/_scripts/c28_roc.py` carries a matching comment on the `SPECS` grid so the illustrative
+status travels with the numbers.

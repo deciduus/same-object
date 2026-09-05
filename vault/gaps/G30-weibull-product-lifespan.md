@@ -20,7 +20,7 @@ last-checked: 2026-09-05
 exit: computation
 extends-to: [circularity, sustainability]
 next-step-cost: S
-note: "Reliability and industrial ecology fit the same two-parameter Weibull to the same random variable and report the same shape parameter; reliability reads it as a hazard law and chooses a maintenance policy, industrial ecology reads it as a stock-outflow input and never interprets it. Weibull 1951 x Oguchi 2015 = 0 co-citers against the same-B control Mueller 2006 x Oguchi 2015 = 15. Denominator is a union floor only."
+note: "Reliability and industrial ecology fit the same two-parameter Weibull to the same random variable and report the same shape parameter; reliability reads it as a hazard law and chooses a maintenance policy, industrial ecology reads it as a stock-outflow input and never interprets it. Weibull 1951 x Oguchi 2015 = 0 co-citers against the same-B control Mueller 2006 (10.1016/j.ecolecon.2005.09.025) x Oguchi 2015 = 15. Control ratio restated in the denominator-invariant form: B is held fixed and A swapped, so the invariant divides by |A| - (15/511)/(0/11,512), unbounded, with the 22x size asymmetry running against the gap. Denominator is a union floor only. Cross-checked on OpenCitations 2026-09-05 with the blank-key-filtering intersect.py: 0 / 1 / 0 / 15, all four agree, standing unchanged."
 ---
 
 # The Weibull shape parameter is fitted twice — as a hazard law and as a stock-outflow input
@@ -75,13 +75,61 @@ correct DOIs are `…00250.x` (Part I) and `…00251.x` (Part II).
 | **Weibull × Oguchi 2015** | **0** | OpenAlex `works?filter=cites:W2727420541,cites:W2320647648`, `meta.count`, 2026-09-05 |
 | Weibull × Murakami 2010 Part I | **1** | same endpoint, `cites:W2727420541,cites:W2603909978`, 2026-09-05 |
 | Weibull × Bakker 2014 | **0** | same endpoint, `cites:W2727420541,cites:W2005386442`, 2026-09-05 |
-| **Control: Müller 2006 × Oguchi 2015** | **15** | same endpoint, 2026-09-05; `|citers(Müller 2006)| = 511` |
+| **Control: Müller 2006 × Oguchi 2015** | **15** | same endpoint, 2026-09-05; `|citers(Müller 2006)| = 511`. **Anchor identified 2026-09-05:** Müller, *Stock dynamics for forecasting material flows — case study for housing in the Netherlands*, *Ecological Economics* 59:142–156 (2006), DOI [`10.1016/j.ecolecon.2005.09.025`](https://doi.org/10.1016/j.ecolecon.2005.09.025), Crossref-verified 2026-09-05 (`is-referenced-by-count` = 460). The OpenAlex W-id is still not fetched |
 | `E` at union floor, Oguchi pairing | **102.1** (`11,512·103/11,615`) | arithmetic, `_scripts/c27_beta.py` |
 | `O/E` at union floor | **0** | — |
 | Murakami pairing | `E = 182.1`, `O/E = 0.0055` | arithmetic |
 | **Concept-scoped `N_universe`** | **NOT OBTAINED** | see below |
-| Control ratio, shared **B** | `(0/103)/(15/103)` = **0** → isolation unbounded | denominator-invariant |
+| Control ratio, shared **B** | see the restatement below — the old `(0/103)/(15/103)` form is withdrawn | — |
 | Cost to close | **4–6 h desk**, no data access (scout-01 estimate) | — |
+
+### Blank-key re-check and an independent OpenCitations run, 2026-09-05
+
+The counts in the table above are **OpenAlex server-side `meta.count` intersections**, so the
+OpenCitations blank-`citing` phantom ([[citation-sources]]) cannot have touched them: OpenAlex
+returns a count of works, never a set of DOI strings for this note to de-duplicate. The trap is
+nevertheless checked here, because the same three pairings were re-run on OpenCitations with the
+repaired `_scripts/intersect.py` (blank/whitespace keys dropped before the sets are built, drop
+count printed):
+
+| Pairing | raw records A / B | blanks dropped A / B | `\|A\|` | `\|B\|` | **O** | O unfiltered | phantom present? |
+|---|---|---|---|---|---|---|---|
+| Weibull 1951 × Oguchi 2015 | 9,272 / 96 | 33 / 0 | 9,239 | 96 | **0** | 0 | no — Oguchi's payload is clean, so nothing joins |
+| Weibull 1951 × Murakami I | 9,272 / 172 | 33 / 0 | 9,239 | 172 | **1** (`10.1016/j.resconrec.2023.107216`) | 1 | no |
+| Weibull 1951 × Bakker 2014 | 9,272 / 611 | 33 / 1 | 9,239 | 610 | **0** | **1** | **yes** — unfiltered this row is a phantom bridge |
+| **Control:** Müller 2006 × Oguchi 2015 | 439 / 96 | 0 / 0 | 439 | 96 | **15** | 15 | no |
+
+**Every OpenCitations figure agrees with the OpenAlex figure it replicates** (0 / 1 / 0 / 15), on a
+provider assembled independently, which is the [[citation-sources]] two-sources-agreeing check. The
+citer-set *sizes* differ by provider as expected (Oguchi 96 vs 103, Müller 439 vs 511, Weibull 9,239
+vs 11,512) and are not pooled. **No count in this note moves; `standing: live`, `contact-surface: 1`,
+`topology: disjoint` and the tags are unchanged.** The Bakker row is the warning: had it been built
+without the filter it would have reported a bridge that does not exist.
+
+### The control ratio, restated in denominator-invariant form
+
+The old `(0/103)/(15/103)` divided both sides by the **same** base, which is the error
+[[citation-intersection]] names for G28: it silently assumes the two partner sets are the same size.
+Here the partner set **is** literally the same — Oguchi 2015 is held fixed and the *mathematics-side*
+anchor is swapped — so `|B_gap| = |B_ctrl|` and dividing by it cancels nothing. **When B is held
+fixed and A is swapped, the invariant divides by the side that varies**, `|A|`:
+
+```
+(O_ctrl/|A_ctrl|) / (O_gap/|A_gap|)
+  OpenAlex        (15/511)   / (0/11,512)  =  0.02935 / 0  ->  unbounded
+  OpenCitations   (15/439)   / (0/9,239)   =  0.03417 / 0  ->  unbounded
+```
+
+Written the general way round — `(O_gap/|B_gap|)/(O_ctrl/|B_ctrl|)` — the gap side is
+`0/103 = 0` against the control's `15/103 = 0.146`, i.e. **0**, and the isolation is again
+unbounded. The value does not move; what moves is that the statement no longer rests on a shared
+base. And the asymmetry runs the **gap-unfavourable** way: `|A_gap|` (Weibull, 11,512) exceeds
+`|A_ctrl|` (Müller, 511) by 22×, so the gap side had 22× more chances to produce a co-citer and
+produced none. That strengthens the reading rather than flattering it.
+
+**A ratio with a zero denominator is less informative than a finite one**, exactly as
+[[G31-biosignature-diagnostic-theory]] records: it says only that the gap side is exactly zero and
+cannot be compared with G28's finite 62.5.
 
 **The denominator is missing, and the note says so rather than quoting `O/E`.** Two attempts:
 

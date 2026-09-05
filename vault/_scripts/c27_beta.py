@@ -101,6 +101,35 @@ def main():
     print("\n  denominator-invariant control ratio, shared B = Oguchi 2015:")
     print("    (O_gap/|B|) / (O_ctl/|B|) = (0/103)/(15/103) = 0  -> isolation infinite")
 
+    # ------------------------------------------------------------------ [4]
+    # The RAC pre-2000 vs post-2000 pair was once offered in note section 5 as a
+    # "natural experiment" that P1 passes.  WITHDRAWN 2026-09-05 (audit 06).
+    # This block prints the three reasons so the claim cannot be re-imported.
+    print("\n[4] The withdrawn RAC 'natural experiment' (note section 5)")
+    rows = {r[0]: r for r in LBNL}
+    pre, post = rows["RAC, surveys <2000"], rows["RAC, surveys >2000"]
+    for lab, r in (("pre-2000 (Table 9)", pre), ("post-2000 (Table 10)", post)):
+        print(f"  {lab:<22} beta={r[1]:.3f}  eta={r[2]:6.2f}  theta={r[3]:.3f}"
+              f"  mean(pub)={r[5]:6.2f}  mean(calc)={mean(r[1], r[2], r[3]):6.2f}")
+    d_pub = (post[5] - pre[5]) / pre[5] * 100.0
+    d_calc = (mean(post[1], post[2], post[3]) - pre[5]) / pre[5] * 100.0
+    print(f"  mean shift using PUBLISHED post-2000 mean : {pre[5]:.2f} ->"
+          f" {post[5]:.2f} yr  ({d_pub:+.0f}%)")
+    print(f"  mean shift using the row's OWN parameters : {pre[5]:.2f} ->"
+          f" {mean(post[1], post[2], post[3]):.2f} yr  ({d_calc:+.0f}%)")
+    print("  WITHDRAWN, three independent reasons:")
+    print(f"    (1) theta differs: {pre[3]:.1f} vs {post[3]:.1f} yr.  Section 6(c) says a")
+    print("        large theta absorbs early exits and INFLATES beta, so these two")
+    print("        beta are not directly comparable.  The pair is the very")
+    print("        comparison the honesty section rules out.")
+    print("    (2) the published post-2000 mean (11.27) is the one section 3 flags as")
+    print("        internally inconsistent with its own (beta, eta, theta); the row's")
+    print("        own parameters give 9.97, i.e. -32% rather than -24%.")
+    print("    (3) no intervention occurred -- two survey vintages fitted separately,")
+    print("        no treatment, no control, no identified cause of the mean shift.")
+    print("  => P1 is STATED AND UNTESTED.  There is no natural-experiment")
+    print("     measurement of it in this note.")
+
 
 if __name__ == "__main__":
     main()

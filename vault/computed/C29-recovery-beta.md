@@ -156,11 +156,13 @@ let this pass.
    split is not machine-runnable here; Moreno-Mateos 2017 reports per-variable effect sizes and
    is.
 3. **The recovery-debt corollary.** `β = 0.587` and `η = 39.4 yr` imply that a system still
-   unrecovered at 40 years has an annual recovery hazard **≈ 0.30×** its hazard in year one
-   (`h(40)/h(1) = 40^(β−1) = 40^(−0.413)`). That is a number a restoration programme can be held
-   to: **conditional on 40 years of failure, the next year is three times less promising than the
-   first year was** — which is the opposite of the "give it time" default and is checkable against
-   any long-term restoration monitoring series with dated non-recoveries.
+   unrecovered at 40 years has an annual recovery hazard **≈ 0.218×** its hazard in year one
+   (`h(40)/h(1) = 40^(β−1) = 40^(−0.413) = 0.2179`). That is a number a restoration programme can
+   be held to: **conditional on 40 years of failure, the next year is ~4.6 times less promising
+   than the first year was** — which is the opposite of the "give it time" default and is
+   checkable against any long-term restoration monitoring series with dated non-recoveries.
+   (An earlier version of this note gave 0.30× and "three times"; `40^(−0.413) = 0.2179` and its
+   inverse is 4.59. The correction **strengthens** the corollary — see Corrections below.)
 
 ## 6. §Honesty — what this fit does not establish
 
@@ -223,3 +225,38 @@ agreement is worth less than an independent one; and in Moreno-Mateos' data the 
 is **nearly flat in elapsed time** (0.29 at ≤2 yr to 0.36 at >80 yr), which is "early-or-never" in
 its most extreme form and simultaneously a warning that elapsed time carries little information
 about recovery status. No number above this section is changed.
+
+## Corrections 2026-09-05 (audit 06)
+
+`audits/06-math-rounds3-6.md` item 5. One arithmetic error, in the one number §5.3 offers as
+holdable.
+
+**§5.3, the recovery-debt corollary.** The note wrote `h(40)/h(1) = 40^(β−1) = 40^(−0.413)` and
+then reported "≈ 0.30×" and "three times less promising". `40^(−0.413) = 0.21795`, and its
+inverse is **4.59**.
+
+| | old | new |
+|---|---|---|
+| `h(40)/h(1)` | 0.30× | **0.218×** |
+| conditional penalty | "three times less promising" | **"~4.6 times less promising"** |
+
+`β = 0.587` and `η = 39.4 yr` are unchanged — the error was in a hand evaluation of the power,
+not in the fit. **The correction strengthens the note's own claim**: the hazard decay over four
+decades is steeper than reported, so the "give it time" default is contradicted more sharply,
+not less. (For what it is worth, `20^(−0.413) = 0.290`, so the discarded 0.30 is what a 20-year
+horizon would have given; the exponent was applied to the wrong base.)
+
+**Propagation checked.** The 0.30 figure appears nowhere else in this note, in
+`vault/_scripts/c29_recovery.py` (the corollary was hand-computed and was never in the script),
+or in `[[C32-recovery-beta-replication]]`. It does not appear in `[[G32-recovery-time-hazard-shape]]`
+either. `vault/_scripts/c29_recovery.py` now **computes** the corollary from the fitted `β` at
+10 / 20 / 40 / 100 years and prints the correction note, so the number can no longer drift from
+the fit. Everything else in §5.3 — the falsifiability framing, the monitoring-series test —
+stands as written.
+
+**A separate line, not owned by this pass.** `[[C32-recovery-beta-replication]]`'s own
+correction (below, and in `vault/PENDING-log-FIX3.md`) shows that C32's pooled `β = 0.733` is
+not a measurement of the same object this note measured, because the Moreno-Mateos database is
+current-status data. That does **not** touch the corollary above, which is computed from *this*
+note's `β = 0.587` on Jones & Schmitz's reported return times — exact event times, not
+current-status.

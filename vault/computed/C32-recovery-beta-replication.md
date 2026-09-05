@@ -6,7 +6,7 @@ extends-to: [ecology, conservation]
 next-step-cost: M
 ---
 
-# Replicating [[C29-recovery-beta]] on Moreno-Mateos 2017: `β < 1` reproduces, the per-habitat *ordering* does not.
+# Replicating [[C29-recovery-beta]] on Moreno-Mateos 2017: early-or-never reproduces qualitatively, the per-habitat *ordering* does not, and no `β` is identifiable.
 
 > **Prediction 1 of [[C29-recovery-beta]] §5 — that the per-habitat Weibull `β` would rank-correlate
 > positively across two independent recovery meta-analyses — is a FAIL in substance and a
@@ -15,12 +15,20 @@ next-step-cost: M
 > prediction named flips with a defensible change of analysis unit and is indistinguishable from
 > zero either way.**
 
-What *does* replicate is the thing C29 put its name on second: pooled `β = 0.733`
-(95% profile CI 0.703–0.764) on 3,688 recovery records from a different meta-analysis, `β < 1`
-with the CI clear of 1, and `β < 1` in four of five habitat classes. **The corner of
-[[C18-durability-axis]]'s axis holds. The map within the corner does not.** Replicates the
-computation of [[G32-recovery-time-hazard-shape]]; uses the estimator of
-[[C29-recovery-beta]] unchanged.
+What replicates is **weaker than a number, and the note must not pretend otherwise.** Under
+C29's likelihood this database gives pooled `β = 0.733` (95% profile CI 0.703–0.764) on 3,688
+records, `β < 1` in four of five habitat classes. But §2(b) establishes that these are
+*current-status* (case-1 interval-censored) data, so C29's exact-event-time likelihood is the
+**wrong** one here; under the correct current-status likelihood the same rows give
+`β = 0.051 [0.014, 0.089]` with `η` in the billions of years — a factor of 14 away.
+**The shape parameter is therefore not identifiable from this database.** What survives is the
+qualitative claim underneath it: the fraction of outcome measures that have reached their
+reference is nearly *flat* in elapsed time (0.29 at ≤2 yr, 0.36 above 80 yr, over a 190-fold
+span), which is "early-or-never" in its most extreme form and is what both likelihoods are
+reacting to. **The corner of [[C18-durability-axis]]'s axis holds qualitatively; neither the
+map within the corner nor any specific `β` does.** Replicates the computation of
+[[G32-recovery-time-hazard-shape]] *qualitatively only*; uses the estimator of
+[[C29-recovery-beta]] unchanged, and shows that on this dataset that estimator is misapplied.
 
 ## 1. Target and why this one
 
@@ -209,8 +217,18 @@ fails in the large one is more consistent with "residual mixture" than with eith
   survival, that is "early-or-never" in its most extreme form. Read as measurement, **it means `T`
   carries almost no information about recovery status in this dataset**, so the per-habitat `β`
   differences in §3 are driven mainly by how the `T` distribution differs between habitats. That
-  is a sufficient explanation for prediction 1's failure on its own, and it is a warning about
-  C29's `β` as much as about this one.
+  is a sufficient explanation for prediction 1's failure on its own.
+
+  **What transfers to C29, and what does not.** An earlier version of this bullet said the flat
+  table "is a warning about C29's `β` as much as about this one". That transfer was stated in the
+  wrong direction and is withdrawn. The **current-status objection does not reach C29**: Jones &
+  Schmitz report a stated `Return Time` per recovered study, i.e. exact event times, so C29's
+  likelihood is the right one for C29's data. What *does* transfer, and was not named, is
+  **design-chosen censoring times**: `T` is a design variable on both sides — Moreno-Mateos'
+  chronosequences choose their elapsed window, and Jones & Schmitz's censored rows are censored
+  at study end-dates chosen by funding and publication, not by a follow-up that ran out. C29 §6
+  already flags informative censoring as "the worst problem here"; this note supplies the
+  independent second instance of it, which is the honest read-across.
 - **Pseudo-replication.** 3,688 rows, 353 studies, up to 72 outcome measures from one study. The
   CIs in §3 are far too narrow: they treat correlated measures as independent. Collapsing to one
   record per study × habitat (recovered if any measure recovered, at the study's median `T`) gives
@@ -228,8 +246,91 @@ fails in the large one is more consistent with "residual mixture" than with eith
 - **`η` is not comparable across the two notes.** C29's pooled `η` was 39.4 yr against 79.9 yr
   here, but the event-time overstatement in §2(b) inflates this one by an unknown factor. Nothing
   in this note rests on `η`.
-- **What is *not* damaged.** `β < 1` pooled, on a different meta-analysis with a different
-  recovery criterion, a different unit of observation and a 69% censoring rate, at
-  `0.733 [0.703, 0.764]`. Both the analysis-unit variants agree (0.733 and 0.721). The
-  infant-mortality corner of [[C18-durability-axis]] survives; what does not survive is any claim
-  that `β` resolves *between* ecosystem types.
+- **What is *not* damaged — and it is a qualitative claim, not a number.** Three likelihood
+  variants were run on these data:
+
+  | variant | likelihood | pooled `β` | 95% CI |
+  |---|---|---|---|
+  | Outcome-measure rows (headline §3) | C29's, exact event times | 0.733 | [0.703, 0.764] |
+  | Study × habitat (pseudo-replication fix) | C29's, exact event times | 0.721 | [0.658, 0.786] |
+  | **Outcome-measure rows, correct likelihood** | **current-status (case-1)** | **0.051** | **[0.014, 0.089]** |
+
+  The first two agree with each other because they share a likelihood that §2(b) shows is the
+  wrong one for this data; that agreement is **not** robustness. The third disagrees by a factor
+  of 14 and is the one entitled to the data. **Under the correct likelihood the Weibull shape is
+  not identifiable from this database**, and no value of `β` — 0.733, 0.721 or 0.051 — should be
+  quoted from here as a measurement of the object [[C29-recovery-beta]] measured. `η` is worse
+  still (billions of years under the correct likelihood) and nothing rests on it.
+
+  What survives all three variants is one qualitative fact, read straight off the raw data
+  without any Weibull at all: **the recovered fraction is nearly flat in elapsed time** — 0.287 at
+  `T ≤ 2` yr against 0.360 at `T > 80` yr, a 190-fold span of time for a 0.07 change in fraction.
+  Whatever else is true, ecosystems in this database that have not reached their reference early
+  overwhelmingly do not reach it later. That is **early-or-never as a qualitative claim**, it is
+  the corner of [[C18-durability-axis]] that C29 named, and it is all this replication delivers.
+
+  What does **not** survive: any specific `β`; the `η` scale; any claim that `β` resolves
+  *between* ecosystem types (prediction 1, failed in §4); and the earlier framing of 0.733 as a
+  robust replication of 0.587.
+
+## Corrections 2026-09-05 (audit 06)
+
+`audits/06-math-rounds3-6.md` items 10 and 11. No number changed; what changed is which
+numbers the note is willing to certify.
+
+**1. The headline `β` was certified as robust by a comparison that omitted the disagreeing
+variant.** §5's "what is *not* damaged" bullet read: "`β < 1` pooled … at `0.733 [0.703, 0.764]`.
+Both the analysis-unit variants agree (0.733 and 0.721)." Those two variants share **C29's
+likelihood**, which §2(b) of this same note establishes is the wrong likelihood for
+current-status data. The third variant — the correct current-status likelihood, run and reported
+three bullets earlier in the same section — gives `β = 0.051 [0.014, 0.089]`, a factor of 14
+away, with `η` in the billions of years. Quoting the agreement of two runs of the wrong
+estimator as robustness was the defect.
+
+| pooled `β` | likelihood | status |
+|---|---|---|
+| 0.733 [0.703, 0.764] | C29's, exact event times | wrong likelihood for this data |
+| 0.721 [0.658, 0.786] | C29's, exact event times, study × habitat | wrong likelihood for this data |
+| **0.051 [0.014, 0.089]** | **current-status (case-1)** | **the one entitled to the data** |
+
+The callout and §5 now say plainly: **under the correct likelihood the Weibull shape is not
+identifiable from this database**, and no specific `β` may be quoted from here.
+
+**What survives, stated as a qualitative claim.** The recovered fraction is nearly flat in
+elapsed time — 0.287 at `T ≤ 2` yr, 0.360 at `T > 80` yr, across a 190-fold span. That is read
+straight off the raw data with no Weibull involved, it is what both likelihoods are reacting to,
+and it is **early-or-never as a qualitative statement**. The infant-mortality corner of
+[[C18-durability-axis]] survives on that basis and on no other.
+
+**What does not survive.** Any specific `β` from this database; the `η` scale; any claim that
+`β` resolves between ecosystem types (prediction 1 already failed in §4); and the framing of
+`0.733` as a robust replication of C29's `0.587`.
+
+**2. The read-across to C29 was pointed the wrong way.** §5 said the flat table "is a warning
+about C29's `β` as much as about this one". It is not. Jones & Schmitz report a stated
+`Return Time` per recovered study — **exact event times** — so the current-status pathology is
+specific to Moreno-Mateos and does not transfer. What *does* transfer, and was unnamed, is
+**design-chosen censoring times**, shared by both datasets. §5 now states both directions.
+
+**Proposed C29-facing sentence** (for whoever edits [[C29-recovery-beta]]; not applied here
+beyond the note it already carries):
+
+> C32's replication does **not** confirm `β = 0.587` numerically: the Moreno-Mateos database is
+> current-status data, and under the correct likelihood its shape parameter is not identifiable
+> (`β = 0.051 [0.014, 0.089]`, `η` in the billions of years), so the `β = 0.733` sometimes quoted
+> from it is a run of *this* note's likelihood on data that likelihood does not fit. What C32
+> independently corroborates is the qualitative shape only — the recovered fraction is nearly
+> flat in elapsed time — and what it independently *falsifies* is prediction 5.1, the
+> per-habitat ordering. The current-status objection does not reach this note's own fit; the
+> **design-chosen censoring times** objection does, and is the same one §6 already names as the
+> worst problem here.
+
+**Script.** `vault/_scripts/c32_replication.py` now prints all three variants together under
+`ROBUSTNESS ACROSS LIKELIHOOD AND UNIT`, plus the recovered-fraction-vs-elapsed-time table, on
+every run, so the three can no longer be quoted apart. The Dryad file
+`Moreno, Jones database.xlsx` (`doi:10.5061/dryad.t5c97`) is **not in this repository** and
+`datadryad.org` sits behind a proof-of-work bot check, so the script cannot fetch it; the
+`--xlsx` path argument is retained and a missing file now produces an explicit message naming
+the deposit, the file, the byte size and the manual download step, and exits 2 rather than
+raising a bare `FileNotFoundError`. This note's numbers therefore remain **unreproduced in CI**;
+that is a known and stated limitation, not a silent one.

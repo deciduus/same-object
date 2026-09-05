@@ -2299,3 +2299,516 @@ expected outcome, no D-class named), with the five-line brief archived verbatim 
 Also: one pointer line each in [[specification-instruments]] (every instrument in that table
 converts a handed number into a required supply, so all of them inherit the exposure) and in
 C30 §5. `python _lint.py` → 0 errors.
+
+## [2026-09-05] method | intersect.py now drops blank `citing`/`cited` keys, prints the drop count, and self-tests
+
+`vault/_scripts/intersect.py` built its citer sets from `row["citing"]` with only a truthiness
+guard and reported nothing about what it discarded. OpenCitations `/citations/<doi>` returns
+records with an **empty `citing` field**; a set built without filtering carries a phantom `""`
+which, being present in *every* set built the same way, inflates `N_A`, `N_B` **and every
+intersection by exactly 1**. An intersection of 1 is precisely the size at which a gap claim
+becomes a bridge claim, so the artefact is maximally load-bearing where it is hardest to see.
+What is now different: `_key()` normalises and strips both `citing` and `cited`; blank and
+whitespace-only keys are dropped before the set is built; the per-anchor drop count is printed to
+stderr and the run total to stdout; and `--selftest` fetches Scheffer 2009 × Si 2011 and asserts
+no blank key survives in either set or in the intersection. Produced by: live fetch, 2026-09-05
+(`selftest OK: |A| = 3,934, 65 blanks dropped; |B| = 1,783, 12 dropped; |A ∩ B| = 1`; unfiltered
+the same pair reports 2). First diagnosed in `audits/scout-04-conservation-genetics.md`, where an
+uncorrected pass reported five phantom "1-hit" candidates that are clean zeros. Documented in
+`vault/method/citation-sources.md` under the endpoint traps.
+
+## [2026-09-05] verification | every intersection in G29, G30, G31, G33 re-derived on the fixed instrument; no standing moves
+
+Nineteen anchor payloads re-fetched and twenty pairings re-intersected, OpenCitations
+`api.opencitations.net/index/v1/citations/<doi>`, 2026-09-05. **No intersection count in any of
+the four notes changed, and no `standing`, `contact-surface`, `evidence` or tag moved.** Three
+citer-set *sizes* in G31 were one high and are corrected: Catling 2018 188 → **187**,
+Schwieterman 2018 496 → **495**, Kass & Raftery 1995 11,867 → **11,866**. What was wrong there is
+not the intersections but the *base*: G31 published three pre-filter `|A|`/`|B|` figures beside
+post-filter intersections, and asserted that one blank value "appears in every set", when in fact
+all seven of its anchors carry blanks and they carry many (14, 49, 713, 52, 47, 237, 358), not
+one. G29 was already clean, having stripped blanks by hand at first write; G33's two payloads
+contain no blank records at all. Produced by: `_scripts/intersect.py`, blanks dropped, 2026-09-05.
+
+## [2026-09-05] verification | the phantom is real, and would have manufactured ten bridges
+
+Counted directly by rebuilding each set both ways. Unfiltered, these rows would read one higher
+than the truth: G29 Scheffer × Si 2 (true **1**), × Randall 1 (true **0**), × Jardine 2 (true
+**1**), control × Wissel 269 (true **268**); all eight G31 gap pairings and the pooled row 1 (true
+**0**), controls 5 and 3 (true **4** and **2**); G30 Weibull × Bakker 1 (true **0**). Ten of the
+twenty pairings re-run. G33 (Barlow & Hunter, Guide 2000), G30's Weibull × Oguchi, × Murakami I
+and Müller × Oguchi are unaffected because the *partner* payload carries no blank, which is the
+trap's one mercy and also why a clean run on one anchor is no evidence about another.
+
+## [2026-09-05] correction | G29's frontmatter and index said "zero in all three decade bins"; its own body table says 1
+
+`G29:note` now reads "Zero in the 2009-2013 and 2014-2018 decade bins and 1 in 2019-2026". The
+body's `§(a) Year bins` table has said `O = 1` in the 2019–2026 bin since it was written; the
+summary contradicted the table it summarises. Raised as recurrence of the Griebling-2026 class in
+`audits/07-provenance-rounds3-6.md`. **`vault/00-index.md:143` still carries the old wording** and
+is owned by another agent this round — it must be brought into line with the corrected `note:`.
+
+## [2026-09-05] correction | G30's control anchor Müller 2006 now carries a DOI, and the control ratio is restated denominator-invariantly
+
+The load-bearing statistic of G30 was a control ratio whose control anchor was unidentified in the
+note. Resolved by Crossref bibliographic lookup, 2026-09-05: Müller, *Stock dynamics for
+forecasting material flows — case study for housing in the Netherlands*, *Ecological Economics*
+59:142–156 (2006), DOI `10.1016/j.ecolecon.2005.09.025`, `is-referenced-by-count` = 460. The
+OpenAlex W-id is still not fetched. The ratio was written `(0/103)/(15/103)`, dividing both sides
+by the same base — the form `citation-intersection` forbids. Because Oguchi 2015 is held fixed and
+the *mathematics-side* anchor is what varies, the invariant divides by the varying side:
+`(O_ctrl/|A_ctrl|)/(O_gap/|A_gap|)` = `(15/511)/(0/11,512)` on OpenAlex and `(15/439)/(0/9,239)`
+on OpenCitations — unbounded either way, so nothing moves except the basis. Newly stated: the
+22× size asymmetry between the two A-side anchors runs *against* the gap, which strengthens it.
+
+## [2026-09-05] verification | G30's OpenAlex zeros reproduce on OpenCitations with the fixed script
+
+G30's published counts are OpenAlex server-side `meta.count` intersections, so the OpenCitations
+phantom cannot have touched them — OpenAlex never hands this project a set of DOI strings to
+de-duplicate. Cross-checked anyway: Weibull × Oguchi **0**, × Murakami I **1**
+(`10.1016/j.resconrec.2023.107216`), × Bakker **0**, control Müller × Oguchi **15** — all four
+agree with the OpenAlex figures on an independently assembled provider. Citer-set sizes differ by
+provider (Oguchi 96 vs 103, Müller 439 vs 511, Weibull 9,239 vs 11,512) and are not pooled, per
+the two-true-numbers rule.
+
+---
+
+
+## [2026-09-05] correction | C30 row 10: Bains' extremal bound is 1,066 t/yr, not 800 — volcanic A = 10.7, and divergence D1 is withdrawn
+
+The row equated Bains' extremal-aperture bound 1.3e5 molecules cm^-2 s^-1 with 800 t/yr. That
+figure was 8e5 / 1000 — a round tau x10^3, not a conversion. Over Venus' surface area
+4.602e18 cm^2 (r = 6051.8 km): 1.3e5 x 4.602e18 = 5.98e23 molecules/s / 6.022e23 = 0.993 mol/s
+x 33.998 g/mol = 33.8 g/s x 3.1557e7 s/yr = 1.07e9 g/yr = 1,066 t/yr. The implied lifetime
+inflation is 769x, the ratio _scripts/c30_phosphine.py had been printing and the note ignoring.
+Against volcanic 100 t/yr, A = 10.7, not 8.0 — outside reservoir-audit F7's 1 < A < 10 band, so
+the verdict is RULED OUT, not NOT TESTED. C30's only claimed divergence from Bains et al. 2021
+(D1) is struck, and the callout's "One row diverges, against Bains" is gone. What survives is
+weaker and true: the volcanic exclusion is aperture-fragile, and a further 1.07x of lifetime
+inflation would carry it into the NOT TESTED band. Produced by: recomputation from the note's
+own conversion chain; audits/06-math-rounds3-6.md row 10.
+
+## [2026-09-05] correction | C30 row 6: "8-15 orders of magnitude" is an oxygen fugacity, not a flux ratio — A withdrawn
+
+Bains 2021's crust/mantle f(O2) excess "8-15 orders of magnitude too high to support reduction
+of phosphate" had been tabulated as A = 1e8-1e15, with the "max available <= 1e-3 t/yr" column
+back-derived to make it land there. f(O2) and PH3 production flux are related through a redox
+equilibrium, not linearly, so no order-count transfers. No S_max in t/yr is published for this
+route. The row now reads "A: not formable as flux — fugacity margin only", is moved out of the
+A-ranked ledger, and its verdict is restated as RULED OUT (no flux bound published) — on Bains'
+thermodynamics, not on this ledger. C30 section 6's "the largest robust abiotic A is 1e15" is
+corrected: the largest computed A is 1.4e5 (lightning). Produced by: re-reading the bounding
+quote's axis; audits/06-math-rounds3-6.md row 6.
+
+## [2026-09-05] correction | C30 rows 5 and 7 marked RESTATED: three ledger rows re-divided Bains' own margins, so the calibration was tautological there
+
+Rows 5 (photochemistry) and 7 (tribochemistry) had S_max values back-derived from Bains' own
+"at least 5 orders" and "at least two orders", so dividing them by S_req returns Bains' margin
+rather than an independent check. C30 section 3 now states which rows the ledger computes from a
+published physical flux — 1, 1b, 3, 4, 10 — and which two merely echo; section 4 concedes that
+"the ledger excludes exactly that set" is tautological on rows 5 and 7 and carries no A at all
+on row 6. The Pioneer-style calibration claim holds on five rows, not eight. Produced by:
+audits/06-math-rounds3-6.md row 6 note on back-derivation.
+
+## [2026-09-05] correction | 10.1038/s41467-022-30804-8 was recorded "not located"; it resolves, is by Jordan/Shorttle/Rimmer not Bains, and it re-grades C30's biotic row
+
+C30 section 6 recorded "Bains et al. 2022 Nat. Commun. (10.1038/s41467-022-30804-8) — not
+located under that DOI". Crossref (api.crossref.org/works/..., mailto query, fetched 2026-09-05)
+returns it cleanly: Jordan, Shorttle & Rimmer, "Proposed energy-metabolisms cannot explain the
+atmospheric chemistry of Venus", Nature Communications, published 2022-06-14, is-referenced-by
+12. Open-access full text read via Europe PMC PMC9198073. Two errors in one line: a failed
+lookup written down as a bibliographic fact (audit 02's class, second instance), and an
+attribution to Bains that the record does not support.
+
+The paper is adverse to the row C30 graded BIOTIC — SURVIVES. Jordan et al. couple each of the
+three proposed Venusian sulfur energy-metabolisms to a photochemical-kinetics code and find all
+three reproduce the observed SO2 depletion only "by violating other observational constraints on
+Venus's atmospheric chemistry", capping sulfur-metabolising cloud biomass at ~1e-5 to 1e-3
+mg m^-3 against Earth's aerial biosphere at 44 mg m^-3. Added to C30 as ledger row 14. Row 13
+is re-graded SURVIVES -> NARROWED: every named energy source proposed for a Venusian cloud
+biosphere is excluded, and what remains standing is only what Jordan et al. themselves leave —
+"a low mass biosphere ... the only observable effect of which is to release relatively small
+amounts of trace metabolic gases", phosphine named among them. The row clears the availability
+leg only with its metabolism unspecified, which makes it a specification of an unknown rather
+than a surviving candidate. No A is recorded for row 14: a biomass ceiling is not a flux ratio,
+the same discipline the row-6 correction enforces. Lingam & Loeb 2020 publish no numeric biomass
+density, so the row-13 biomass leg stays qualitative and the comparison to Jordan's ceiling
+cannot be closed. Produced by: audits/07-provenance-rounds3-6.md, Crossref + Europe PMC.
+
+## [2026-09-05] method | C30's script and table reconciled on the 769x ratio; three of four errors were one habit
+
+_scripts/c30_phosphine.py gained Venus' surface area and a flux_to_t_yr() conversion; the
+extremal-aperture line now computes 1,066 t/yr and A = 10.7 from the 769x ratio instead of a
+hard-coded 1e3, rows 5 and 7 are tagged [RESTATED], row 6 moved to a FUGACITY_ONLY block with no
+A, and a cross-check prints 1e8 cm^-2 s^-1 -> 8.20e5 t/yr against Bains' independently quoted
+8e5, confirming the conversion chain. Pattern worth recording: three of the four numeric
+corrections above are the same habit — a published margin adopted as if it were a computed one
+(the round tau x10^3, the fugacity order-count, the back-derived shortfalls). The A-ledger's
+whole value is the independent division; wherever C30 restated instead, it manufactured
+agreement it had not earned.
+
+
+## [2026-09-05] correction | C25's residence-time column assumed an arrival state its own model forbids
+
+The t* column of C25 section 5 and Table 1 of papers/charnov-gittins/paper.md were computed from
+an arrival at x = 1, while the note's passive dynamics give a round-robin steady-cycle arrival at
+x_arr = 1 - (1 - GUD)e^{-r*tau}. At r*tau = 0.2 the residence ratio is 0.198, not 0.757 - a factor
+of 3.8 - and the corrected column is non-monotone, peaking at 0.356 near r*tau = 2, where the old
+one fell monotonically. The old column is retained under the honest label t_full (depletion time
+from a full patch). W(x) = lam*x^2 - r(1-x)^2, indexability, GUD(rho) and dGUD/dr are unaffected
+and were re-verified digit for digit; the arrival state enters none of them. Produced by
+vault/_scripts/c25_whittle.py, which now prints both columns and the non-monotonicity.
+
+## [2026-09-05] correction | C25's "independent confirmation" of the Whittle index was circular
+
+Section 3 obtained V'(x) = 1-x by substituting nu = W(x) into the indifference condition at every
+x - which is the definition of the Whittle index, not a check on it - and then called
+re-substituting it a confirmation. Worse, V(x) = x - x^2/2 is not a value function: the active
+branch gives lam*x - lam*x(1-x) = lam*x^2, which varies with x and cannot equal a constant gain.
+Restated as a consistency check; the shadow-price "room left to grow" reading is now marked an
+interpretive gloss.
+
+## [2026-09-05] correction | C29's recovery-debt corollary: 40^(-0.413) is 0.218, not 0.30
+
+Section 5.3 reported h(40)/h(1) = 0.30x and "three times less promising". The correct value is
+0.2179 and its inverse 4.59, so "~4.6 times". beta = 0.587 and eta = 39.4 yr are unchanged - the
+error was a hand evaluation of the power, not the fit. The correction STRENGTHENS the note's
+claim. (20^(-0.413) = 0.290, so 0.30 is what a 20-year horizon would have given; the exponent was
+applied to the wrong base.) vault/_scripts/c29_recovery.py now computes the corollary at 10/20/40/
+100 yr from the fitted beta so it cannot drift again.
+
+## [2026-09-05] correction | C32's pooled beta = 0.733 is not identifiable; the robustness sentence omitted the disagreeing variant
+
+Section 5 certified beta = 0.733 as "not damaged" on the strength of two analysis-unit variants
+agreeing (0.733 and 0.721) - both runs of C29's exact-event-time likelihood, which the note's own
+section 2(b) shows is the wrong likelihood for current-status data. The correct current-status
+likelihood gives 0.051 [0.014, 0.089], eta in the billions of years: a factor of 14. The Weibull
+shape is NOT identifiable from the Moreno-Mateos database. What survives is qualitative - the
+recovered fraction is nearly flat in elapsed time (0.287 at T <= 2 yr, 0.360 at T > 80 yr) - i.e.
+early-or-never as a claim about shape, with no number attached. Also corrected the read-across to
+C29, which was pointed the wrong way: current-status does not transfer (Jones & Schmitz report
+exact return times); design-chosen censoring times do.
+
+## [2026-09-05] correction | C28's callout attributed a specificity range to an enumeration that supports none
+
+The pull-quote read "at the specificities the field's own false-positive enumeration can plausibly
+support (0.90-0.99)" while the body concludes specificity "is not currently estimable from the
+published literature" and the honesty section calls 0.9-0.999 "illustrative, not measured". An
+enumeration of false-positive mechanisms is a list, not a rate over a reference population. No
+arithmetic changed; the callout now carries the disclaimer the body always did. The note's real
+output - the inversion, prev = 1e-3 requires spec >= 0.999 - is untouched.
+
+## [2026-09-05] correction | C27's RAC "natural experiment" is withdrawn; P1 is untested
+
+Section 5 called the LBNL room-air-conditioner pre-2000/post-2000 pair a natural-experiment
+measurement of prediction P1 "and it passes". Withdrawn for three independent reasons: (1) the two
+rows carry theta = 8.0 and theta = 0, and section 6(c) of the same note says a large theta inflates
+beta and makes those rows non-comparable; (2) the quoted mean shift 14.75 -> 11.27 yr uses the
+published post-2000 mean that section 3 flags as internally inconsistent with its own (beta, eta,
+theta), which give 9.97 yr and -32%, not -24%; (3) no intervention occurred - two survey vintages
+fitted separately. No fitted value changed. P1 and P2 remain stated and untested.
+
+## [2026-09-05] method | c32_replication.py fails with an explicit message when the Dryad file is absent
+
+The Moreno-Mateos database (Dryad doi:10.5061/dryad.t5c97, 'Moreno, Jones database.xlsx',
+400,066 bytes) is not in the repository and datadryad.org sits behind a proof-of-work bot check,
+so the script cannot fetch it. Missing --xlsx now exits 2 with the deposit, filename, byte size
+and manual download step named, instead of a bare FileNotFoundError. C32's numbers remain
+unreproduced in CI - stated, not silent. Every run now also prints all three pooled-beta variants
+together and the recovered-fraction-vs-elapsed-time table.
+
+
+## 4. Audit-06 items left open by this pass (out of scope, listed so they are not lost)
+
+- Items 1–4 (C30 row 10 = 1,066 t/yr and `A = 10.7`; rows 5/6/7 `RESTATED`; the callout's
+  "with a published bound") — C30 is another pass's file.
+- Item 9 (C25 §4's `r → 0` revisitable limit restated as a limit of the `r > 0` family, and the
+  `λx²` vs `λx` transform carrying no behavioural content under §5's anchoring) — **not done**;
+  it is a §4 rewrite this pass did not have a mandate for and it does not affect any number.
+- Item 12 (C32 overlap rerun with surname+initial+year keys; reconcile 352/353/356).
+- Items 18–21 (C31), 22–23 (C26), 24 (C29 retitle + `result:`), 25 (vault-wide `RUN:` fields and
+  a SHA-256 for the C32 Dryad file).
+
+
+## [2026-09-05] correction | G32 narrowed: fire ecology has the Weibull shape parameter; recovery ecology does not
+
+G32 claimed "ecology's recovery literature has never imported the shape parameter" and was read
+as the general claim about ecology. Every intersection row anchored side B on Weibull 1951
+(`10.1115/1.4010337`), a *J. Appl. Mech.* methods paper, so the zeros measured who cites that 1951
+paper, not who fits a Weibull — the B-side form of the [[failure-modes]] mode 1 synonym trap.
+
+Re-run with the B side varied (OpenCitations, `api.opencitations.net/index/v1/citations/<doi>`,
+fetched 2026-09-05, blank `citing` keys dropped before intersecting; a purpose-written fetch, not
+`_scripts/intersect.py`, whose current version has the blank-key bug):
+
+- **Fire ecology cites the survival canon.** Johnson & Gutsell 1994 × Cox 1972 = **11**,
+  × Kaplan–Meier 1958 = **3**, × Muenchow 1986 = **2**; Clark 1989 × Cox = **2**,
+  × Kaplan–Meier = **1**. Hits include *Quantifying Fire Cycle from Dendroecological Records Using
+  Survival Analyses* (`10.3390/f7070131`) and *White pine weevil attack on white spruce: a survival
+  time analysis* (`10.1890/1051-0761(2000)010[0225:wpwaow]2.0.co;2`).
+- **Recovery ecology does not.** Jones & Schmitz 2009 and Moreno-Mateos 2017 return **0** against
+  all three B anchors; Pimm 1984 returns 2 / 1 / 0 and Crouzeilles 2016 returns 2 / 1 / 0. All six
+  hits inspected: a corporate-reputation paper, an organism-longevity paper, a kelp-heatwave paper,
+  a narrative restoration review, and three Cox/Kaplan–Meier fits to **individual** seedling,
+  tadpole and planted-tree survival. None fits a hazard to an ecosystem's recovery duration.
+
+`standing: live → narrowed`; `topology: disjoint → mediated` with Johnson & Gutsell 1994 as
+mediator; `contact-surface: 0 → 1` (the single recovery↔fire co-citation
+`10.1016/j.biocon.2013.08.029`, recorded on the gap-unfavourable reading). Claim re-scoped
+everywhere to *recovery* ecology. Produced by the intersection table in the note's
+"The B side, varied" section.
+
+## [2026-09-05] correction | G32's "positive control" was the counter-example
+
+Johnson & Gutsell 1994 is *Fire Frequency Models, Methods and Interpretations* (Adv. Ecol. Res.
+25, `10.1016/S0065-2504(08)60216-0`) — an ecology review **of Weibull hazard fitting** that
+tabulates shape and scale parameters. `audits/scout-02-resilience.md` §3 had already written "fire
+ecology *does* touch Weibull"; G32 demoted that into a control row and kept the general claim. A
+control that does not fire is not a control. It is now a named counter-example and the topology's
+mediator; the four ecology-internal controls carry the pipeline-detects-the-event job unchanged.
+
+## [2026-09-05] correction | Muenchow 1986 DOI: `10.2307/1938954` resolves to the wrong work
+
+`10.2307/1938954` is a 1982 *Ecology* paper on cotton-rat thermoregulation, not *Ecological Use of
+Failure Time Analysis*. The correct DOI is **`10.2307/1938524`** (Crossref bibliographic search,
+2026-09-05). Clark 1989, *Ecological Disturbance as a Renewal Process* (*Oikos* 56), had no DOI on
+file and is **`10.2307/3566083`**. Both were verified before any count was run against them.
+
+## Re-check list for the orchestrator (not done here, by instruction)
+
+- `vault/00-index.md` line for G32 still renders `standing/live` and the inflated control range
+  "controls 7–31"; blanks-stripped values are 6–30 (audit 07 items 8 and 3).
+- G32's Provenance block still omits anchor DOIs for Hillebrand & Kunze 2020 (`10.1111/ele.13457`)
+  and Johnson & Gutsell 1994; both are now recorded in the note's body instead.
+- `vault/method/failure-modes.md` mode 6 should gain the rule that binning the citer window is
+  insufficient when the **B-side** anchor is a proper-noun methods paper. G32 is the specimen.
+- `C29-recovery-beta` and `C32-recovery-beta-replication` are untouched and their numbers stand;
+  neither was edited under this fix.
+
+
+## [2026-09-05] computed | a published blue-tit winter model runs at LOLE 6.6e-7 h/winter, five orders below the grid's 1-in-10
+
+C33-lolp-starvation writes power-system adequacy and small-bird winter energetics in one
+notation and shows the LOLP recursion and the starvation backward equation are the same dynamic
+program: S(x,t) = max_u E[S(min(x_max, x + g_u(xi) − c(eta)), t+1)], 0 absorbing, with value of
+lost load and the marginal fitness value of fat both read off dV/dx. New number: the starvation
+probability of Brodin, Nilsson & Nord 2017's fully parameterised blue-tit SDP (Oecologia
+185:43-54, DOI 10.1007/s00442-017-3923-3, open-access full text fetched from Europe PMC
+PMC5596050 on 2026-09-05), recomputed here by exact forward propagation of the joint (reserve,
+weather) distribution at the model's own 5-min resolution = 8.25e-8 per 100-night winter, i.e.
+LOLE = 6.6e-7 unserved h/winter. The paper publishes trajectories, not this probability. Two-way:
+North America's LOLE <= 0.1 d/yr (1-in-10) reads as P(starve|winter) = 0.100, p/night 1.05e-3,
+and is matched by the bird only after a 43.8% cut in foraging gain; GB/France/Belgium/Poland's
+LOLH <= 3 h/yr reads as P = 0.375 (47.5% cut); Ireland's 8 h/yr saturates the mapping. Grid
+criteria from ESIG 2024, New Resource Adequacy Criteria for the Energy Transition, DOI
+10.2172/2372882, PDF fetched from osti.gov/servlets/purl/2372882 on 2026-09-05. Reserve-margin
+leg: the bird's dusk reserve (33.0 kJ, derived as x_start 12 kJ + the 21.0 kJ good-night draw)
+sits +57.1% above a typical night's draw and +31.0% above a cold night's — two to four times the
+15-20% planning reserve margin convention (ESIG: WECC-CAMX PRM >= 15%, mainland Spain >= 10%).
+Mechanism, and the transferable claim: remove the bird's demand-side lever (nocturnal
+hypothermia, 30% saving) and the margin falls to +10% on a typical night and to a -8.3% deficit
+on a cold one, so the bird buys most of its adequacy on the demand side and only a modest part on
+the supply side. Falsifier stated: if measured dusk fat over overnight expenditure in wild parids
+sits at 0.10-0.20 rather than near 0.5, the quantitative leg fails. Honest limits in the note:
+the bird's daily foraging-gain CV is 0.85% against a grid's one-to-two-orders-larger correlated
+inflow noise, so the five-decade LOLE gap is partly a variance statement not only a sizing one;
+the 8-h "mean remaining night" charge is this note's convention and rescales every absolute LOLE;
+fitness and currency are not commensurable, so the shadow-price identity is exact as a dynamic
+program and analogical as an economics; grid outages are restorable and starvation is terminal.
+Script vault/_scripts/c33_lolp.py (own OpenCitations fetcher; intersect.py not used).
+
+## [2026-09-05] gap | G34 opened: LOLP and starvation risk are one first-passage problem, 0 co-citers on 4 of 4 pairings in every decade bin
+
+Power-system reliability and behavioural ecology both compute the probability that a stored
+reserve hits zero before a horizon under stochastic income and stochastic draw, both solve it by
+backward stochastic dynamic programming on a value function over the reserve state, and both read
+a shadow price off that value function's derivative (value of lost load; marginal fitness value
+of fat). Citer-set intersection over OpenCitations
+(api.opencitations.net/index/v1/citations/<doi>, fetched 2026-09-05 by vault/_scripts/c33_lolp.py,
+which carries its own fetcher because intersect.py's blank-key handling was under repair):
+Billinton & Allan 1996 (10.1007/978-1-4899-1860-4, N=2,058) x McNamara & Houston 1987
+(10.2307/1939235, N=422) = 0; Billinton & Li 1994 (10.1007/978-1-4899-1346-3, N=1,094) x Houston &
+McNamara 1993 (10.2307/3676736, N=196) = 0; the two cross pairings = 0. Same-side controls
+separate: power x power 276 (25.23% of the smaller set), ecology x ecology 25 (12.76%). Six
+records with an empty `citing` key were dropped across the six fetches; without that filter the
+phantom "" joins every set and each zero would have read 1. Failure-modes mode 6 applied: both
+citer sets binned by the OpenCitations `creation` decade and the intersection recomputed per bin
+— zero in every bin on every pairing, while both controls vary across decades. The 1980s bin is
+uninformative rather than a zero (the grid anchors are 1994 and 1996), so the honest window is
+1994 onward. Scope restriction adopted from the scout's own objection: the claim is against
+storage-constrained adequacy, where LOLE depends on a state-of-charge trajectory, not against
+classic LOLP-of-a-thermal-fleet, which convolves an outage table against a load-duration curve
+and has no integrated state. Single-provider: the OpenAlex leg is still outstanding, and no
+concept-scoped N_universe was fetched, so every E is a union floor and flatters the claim.
+
+
+## 2. Add to `vault/00-index.md`
+
+Gaps block (between the `IDX:GAPS` sentinels — regenerate with `python _idx.py`, do not
+hand-edit):
+
+
+- [[G34-lolp-starvation-risk]] — *citation-intersection* — Grid adequacy and small-bird winter energetics compute the same first-passage probability, P(a stored reserve hits 0 before a horizon), by the same backward stochastic dynamic program, and read the same shadow price off dV/dx (value of lost load; marginal fitness value of fat). Four anchor pairings over OpenCitations, 2026-09-05: intersection 0, in every decade bin, against E floors 166-350. Same-side controls 25.23% and 12.76% of the smaller set. Scoped to storage-constrained adequacy, not classic thermal-fleet LOLP. Closed by computation in C33.
+
+
+Computed block:
+
+
+- [[C33-lolp-starvation]] — **LOLE and starvation probability on one axis.** A published blue-tit winter SDP (Brodin et al. 2017) runs at P(starve) = 8.2×10⁻⁸ per 100-night winter — LOLE 6.6×10⁻⁷ h/winter, five orders below the grid's 1-day-in-10-years — and would need a 43.8% cut in foraging gain to reach it. Read the other way, Europe's LOLH ≤ 3 h/yr is a 37.5% per-winter death rate. The bird's dusk reserve is +57% over a typical night's draw and +31% over a cold one, two to four times the 15–20% planning reserve margin; strip its demand-side lever (hypothermia) and the margin falls to +10%
+
+
+## [2026-09-05] computed | alpha for genetic load is ~45, not the wafer's ~3: Haldane-Muller is right to 1.6%
+
+C34-load-yield-clustering fits the negative-binomial clustering parameter alpha to human de novo
+mutation counts, via a method-of-moments mixture fit on Jonsson 2017's published parental-age
+regression (b_f = 1.51/y, b_m = 0.37/y, mu = 70.0; DOI 10.1038/nature24018, Crossref-verified
+2026-09-05). alpha = 45.0 point, 45.4 [25.9, 91.5] by Monte Carlo over the uncertain inputs
+(2x10^5 draws); Kong 2012's slopes give 22.2. Semiconductor yield's fitted alpha for real wafers
+is 0.3-5, so genetic mutation counts sit an order of magnitude deeper in the Poisson limit than
+silicon defects do. Consequence: Stapper's (1+U/alpha)^(-alpha) exceeds Haldane-Muller's e^(-U)
+by only +1.59% at U = 1.2 and +5.35% at U = 2.2, against +21% at the wafer alpha = 3. The excess
+is exp(U^2/2alpha) for U << alpha, so alpha must fall below 7.6 (at U = 1.2) or 25.4 (at U = 2.2)
+before the correction reaches 10%. Load-bearing intermediate result: alpha is exactly invariant
+under Poisson thinning, so the alpha fitted on total DNM counts is the one that belongs in the
+load formula and the unknown deleterious fraction p cancels. Honest limits, all stated in the
+note: the paternal-age SD is ASSUMED (6.0 y) and swept 3-10 y, which is what the interval is made
+of; liveborn ascertainment has already thinned the upper tail and inflates alpha-hat by an
+unknown one-directional amount; and the fitted object is the per-generation mutation *rate*, not
+the segregating *load* that conservation genomics actually simulates. Script
+vault/_scripts/c34_yield.py, seed 20260905.
+
+## [2026-09-05] gap | G35 opened: Haldane-Muller e^(-U) and Poisson die yield e^(-A*D0) are the same law, 0 co-citers on 18 of 18 pairings
+
+Population genetics' mutation load and semiconductor yield engineering's defect-density model
+write the same survival law - exp(-expected number of independently-acting lethal defects), with
+per-defect severity cancelling out - and have never cited each other. Citer-set intersection over
+OpenCitations (api.opencitations.net/index/v1/citations/<doi>, fetched 2026-09-05): six genetics
+anchors spanning 1963-2022 (Kimura, Maruyama & Crow 1963 10.1093/genetics/48.10.1303, N=349;
+Lynch, Conery & Burger 1995 10.1086/285812, N=872; Charlesworth 2009 10.1038/nrg2526, N=1596;
+Agrawal & Whitlock 2012 10.1146/annurev-ecolsys-110411-160257, N=214; Kyriazis 2021
+10.1002/evl3.209, N=251; Bertorelle 2022 10.1038/s41576-022-00448-x, N=250) against three yield
+anchors spanning 1964-1990 (Murphy 1964 10.1109/proc.1964.3442, N=318; Stapper 1983
+10.1147/rd.276.0549, N=238; Cunningham 1990 10.1109/66.53188, N=277). O = 0 on all 18, against E
+floors 113-289. All nine DOIs Crossref-verified 2026-09-05 and each returned the intended work.
+Fifteen in-domain controls fire - genetics side 16-82 co-citers, yield side 14-52 - so both
+literatures are findable and internally joined and the zeros are not an indexing artifact. This
+is failure-modes mode 6 run properly: the zero holds in every decade bin on both sides under that
+decade's own vocabulary, and no anchor is a proper noun, a possessive or a shared homograph (the
+two fields share no word at all, hence crosses: nothing).
+
+Two method points. (a) The blank-`citing` filter is load-bearing: OpenCitations /citations/
+returns records with an empty `citing` field, and an unfiltered set carries a phantom "" that
+belongs to every set and inflates N_A, N_B and every intersection by exactly 1. This run dropped
+25 blank records across nine anchor fetches; without the filter all 18 zeros would have read 1.
+(b) Honest null-model failure: N_universe could not be fetched. OpenAlex
+api.openalex.org/concepts?search=... returned HTTP 429 on all 15 attempts across three probe
+rounds with exponential backoff, 2026-09-05, so only union floors exist and per
+citation-intersection the mandatory sensitivity run has NOT been done. The zero is therefore
+recorded as not yet quotable as a finding, and the gap's evidence rests on the same-object
+argument first and the E floors second. Every control ratio is exactly 0 because every gap
+intersection is 0, so the control ratio carries no ordering information here.
+
+
+## 2. Two lines for `vault/00-index.md`
+
+The gaps block between the `IDX:GAPS` sentinels is **generated** — run `python _idx.py` from
+`vault/` rather than pasting the gap line by hand. It should produce, under `### Live`:
+
+
+- [[G35-genetic-load-die-yield]] — *citation-intersection* — Haldane-Muller mean fitness e^(-U) and Poisson die yield e^(-A*D0) are the same survival law, both independent of per-defect severity. Citer-set intersection 0 on 18 of 18 pairings (6 genetics anchors 1963-2022 x 3 yield anchors 1964-1990), OpenCitations 2026-09-05, against E floors 113-289; 15 in-domain controls fire 14-82. No concept-scoped N could be fetched (OpenAlex 429-locked), so the zero rests on union floors only.
+
+
+The computed line is hand-maintained; add it to the computed-notes list beside `C31`/`C32`:
+
+
+- [[C34-load-yield-clustering]] — **α = 45 [26, 92]** for human de novo mutation counts, against **0.3–5** for defects on a wafer. Stapper's clustered-defect yield exceeds Haldane–Muller's `e^(−U)` by only +1.6% at `U = 1.2` and +5.4% at `U = 2.2`; the correction needs α ≤ 7.6 to reach 10%. α is invariant under Poisson thinning, so the deleterious fraction cancels. Narrows [[G35-genetic-load-die-yield]]; the segregating-load α is a different and untested number
+
+
+## [2026-09-05] computed | Soil on C6's Ha axis: conventional agriculture Ha = 0.011, native vegetation 1.31, and the USDA T-value is a Ha = 1 by construction that overstates measured soil formation 10-51x
+
+C6's soil row was blank. C35 fills it from Montgomery 2007 (PNAS, doi 10.1073/pnas.0611508104,
+Table 1, author-hosted PDF text-extracted 2026-09-05, VERIFIED-PRIMARY): erosion medians 1.537
+(conventional, n=448), 0.082 (conservation, n=47), 0.013 (native vegetation, n=65) mm/yr against
+a soil-production median of 0.017 mm/yr (n=188). Ha = k_r/k_d gives 0.0111 / 0.207 / 1.31, i.e.
+A = 0.011 / 0.172 / 0.567. Conventional agriculture is now the lowest-Ha system in the vault,
+two orders below PSII under cold stress. The USDA tolerable-soil-loss T sets k_d = k_r by
+definition, hence Ha = 1 and A = 0.5 with no measurement in it; against the measured formation
+rate the same erosion sits at Ha = 0.020-0.099, so T overstates soil formation by 10.1x-50.7x
+(1-5 short ton/acre/yr = 0.172-0.862 mm/yr at an ASSUMED bulk density of 1300 kg/m3). Falsifier
+and dataset stated (SSURGO tfact joined to Montgomery's SI 10-Be sites). Borrelli 2017 numbers
+are VERIFIED-SECONDARY only: nature.com 303-redirects to an IdP, DOI Crossref-verified.
+Arithmetic: python _scripts/c35_soil.py.
+
+
+
+## [2026-09-05] gap | G36 opened: wear/fatigue mechanics and soil removal do not meet - 13 pairings, 13 zeros, 5 controls at 60-257
+
+Two legs on one gap. Leg 1, Archard 1953 / Meng & Ludema 1995 against Nearing 1989 (WEPP) /
+Le Bissonnais 1996. Leg 2, Miner 1945 / Paris & Erdogan 1963 against Le Bissonnais 1996 /
+Denef 2001 / Amezketa 1999. Counts re-derived here, not copied from audits/scout-05: citer-set
+intersection over OpenCitations api.opencitations.net/index/v1/citations/<doi>, 2026-09-05, with
+blank `citing` records dropped before set construction (dropped: Archard 21, Paris 15, Miner 13,
+Meng 2, Amezketa 1). All nine anchor DOIs re-verified on Crossref the same day. Thirteen gap
+cells, every one 0, against union-floor E of 338-1,025. Controls on the same instrument: Miner x
+Paris 257, Meng x Archard 242, Amezketa x Le Bissonnais 204 (NEW, not in the scout), Denef x
+Le Bissonnais 38, RUSLE x Nearing 60 - all four control ratios infinite. |A|.|B| = 7.63e6
+(Archard x Nearing) and 5.75e6 (Miner x Le Bissonnais), so E > 1 for any N below ~6-8M; the
+Meng rows are weaker (3.4-9.3e5) and are corroboration only. Nothing inspected because every
+gap cell is 0; the five control intersections were NOT inspected and are counts, not verified
+bridges. Mode 6 only half addressed - mechanics anchors span 1945/1953/1963/1995, the soil
+anchors are all 1989-2001, and a 1930s-1960s soil anchor (Yoder, Emerson, Ellison) has not been
+run. That is the cheapest thing that could overturn the zero, and the note says so.
+
+
+## [2026-09-05] gap | G37 opened: adaptive management ↔ Duane reliability growth, 0 intersection on 15 of 15 pairings
+
+Conservation's adaptive management and reliability engineering's reliability growth both ask how
+fast a programme of deliberate trials drives its failure rate down; engineering fits a growth
+exponent β and conservation has never computed one. OpenCitations citer-set intersection
+(`api.opencitations.net/index/v1/citations/<doi>`, all fetches 2026-09-05, empty `citing` records
+dropped), five A anchors 1990–2013 × three B anchors 1964–1982: **0 in all 15**, E floors 23–358.
+`scout-04`'s two headline rows reproduce exactly on an independent client (996/500/0, E floor
+333; 569/500/0, E floor 266). Four in-domain controls fire — Walters & Holling × Williams = 64,
+Allen × Walters & Holling = 45, Westgate × Williams = 46, Fischer & Lindenmayer × Westgate = 20,
+Crow 1982 × Duane 1964 = 36 — so the zeros are not an indexing artifact.
+
+**Two corrections carried in the note.** (a) Fischer & Lindenmayer 2000 is
+`10.1016/s0006-3207(00)00048-3`; the widely copied `10.1016/S0006-3207(99)00048-3` **404s at
+Crossref** and was replaced by bibliographic title search. (b) Seddon 2007
+(`10.1111/j.1523-1739.2007.00724.x`) returns an OpenCitations citer set of size **1** and its row
+is **void, not a zero**.
+
+**Not done and it matters:** the concept-scoped `N_universe` (OpenAlex, `C200601418` ∪
+`C2775917145`, from 1964) returned **HTTP 429 on all three attempts, 2026-09-05**. Every `E` in
+G37 is a union floor and is labelled as one. The gap is at floor strength until that call lands.
+
+
+
+## [2026-09-05] computed | C36: conservation's first Crow-AMSAA growth exponent — β = 0.67–1.11 against engineering's 0.3–0.6
+
+Balanced 1990–2015 panel of RAM Legacy v4.65 (Zenodo record 11995054, `RAMLDB v4.65.zip`,
+117,140,306 bytes, fetched 2026-09-05); each assessed stock-year is one unit of cumulative
+programme operating time, each stock-year with `U/Umsy > 1` one failure of a repairable system;
+time-truncated Crow-AMSAA MLE with exact χ² bounds. **US West Coast β = 0.672 [0.589, 0.761];
+US East Coast 0.815 [0.730, 0.904]; US Southeast & Gulf 0.861 [0.774, 0.952]; European Union
+0.916 [0.861, 0.973]; Mediterranean–Black Sea 1.105 [0.943, 1.279]; Indian Ocean 1.362
+[0.990, 1.793].** MIL-HDBK-189 plans hardware development at β ≈ 0.3–0.6 — conservation
+programmes learn, and roughly half as fast.
+
+**The estimator sensitivity is the second finding and it is C26's lesson again.** Dropping the
+balanced-panel requirement moves US West Coast from **0.672 to 2.597** on identical data, because
+RAM's assessed-stock count grows through the record and the unbalanced fit measures the growth of
+the *assessment* programme rather than the learning of the *management* programme. No unbalanced
+number is quotable. Two controls run: a homogeneous-Poisson null returns β median 1.004–1.017
+(estimator unbiased), and recovery of a known β on integer exposure slots reads 0.4 as 0.591, so
+the low βs are **upper bounds** and the engineering comparison is conservative.
+
+**The prediction G37 licenses is consistent but not yet tested:** four US Magnuson-Stevens regions
+average β = 0.82 with three CIs excluding 1; four RFMO/weak-governance rows average β = 1.13 with
+none excluding 1 — difference 0.31, in the predicted direction. **The structure coding was
+assigned by me after seeing the βs**, so it is a consistency check, not a test. The named test
+dataset is **DIISE** (per-attempt island-eradication outcomes), which **could not be fetched**:
+the site serves no data endpoint. Fischer & Lindenmayer 2000's relocation table (Elsevier) and the
+IUCN reintroduction databases were also not reached; those rows are **empty, not estimated**.
+MIL-HDBK-189's 0.3–0.6 band is marked **UNVERIFIED** — quoted from the reliability-growth
+literature, not read from the handbook.

@@ -261,6 +261,8 @@ row it would fill is empty in the table below.
 
 ## 5. The table — one axis, biology and engineering
 
+> **Soil row filled 2026-09-05:** [[C35-soil-ha]] computes Ha for soil (erosion k_d vs soil production k_r): native vegetation 1.31, the USDA T-value policy point ≡ 1.00 by construction, conventional agriculture 0.011 — the lowest-Ha system in the vault by two orders. Remanufacturing rows are in [[C31-remanufacturing-ha]].
+
 `Ha = k_r/k_d`. `A = Ha/(1+Ha)`. `τ_relax = 1/(k_r+k_d)`.
 
 | System | k_d (damage) | k_r (repair) | **Ha** | **A** | τ_relax | Status |

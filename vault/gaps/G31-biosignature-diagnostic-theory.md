@@ -20,7 +20,7 @@ exit: computation
 extends-to: [astrobiology]
 next-step-cost: S
 last-checked: 2026-09-05
-note: "Biosignature assessment computes P(life|signal) from P(signal|life), P(signal|no life) and a prior, and never once cites diagnostic-test theory, which has computed the identical object as positive predictive value since 1982. Two independent anchor pairs, two providers, intersection 0; astro-native Bayes control fires at 4."
+note: "Biosignature assessment computes P(life|signal) from P(signal|life), P(signal|no life) and a prior, and never once cites diagnostic-test theory, which has computed the identical object as positive predictive value since 1982. Two independent anchor pairs, two providers, intersection 0; astro-native Bayes control fires at 4. Re-run 2026-09-05 with the blank-key-filtering intersect.py: Catling 188 to 187, Schwieterman 496 to 495, Kass 11,867 to 11,866, every intersection unchanged, standing unchanged."
 ---
 
 # Biosignature assessment × diagnostic-test theory
@@ -107,23 +107,46 @@ A single anchor pair measures one pair of papers, not two literatures. Guard run
 
 **Provider: OpenCitations**, `api.opencitations.net/index/v1/citations/<doi>` (the
 `opencitations.net/index/api/v1/...` path 301-redirects; follow it — see [[citation-sources]]),
-citer lists intersected as lower-cased DOI sets, fetched **2026-09-05**. One malformed
-empty-string `citing` value appears in every set returned and is discarded before intersecting;
-counts below are after that filter.
+citer lists intersected as lower-cased DOI sets, fetched **2026-09-05**.
+
+**The blank-key filter, corrected and re-run 2026-09-05.** OpenCitations returns records with an
+empty `citing` field; a set built without filtering carries a phantom `""` that is shared by every
+set and so inflates `|A|`, `|B|` **and every intersection by exactly 1** (see [[citation-sources]]).
+The note's earlier sentence "one malformed empty-string value appears in every set" was wrong in
+both directions: **every** one of these seven anchors carries blanks, and there are many per
+anchor, not one — and three of the published `|A|`/`|B|` figures were **pre**-filter while the
+intersections were post-filter, so the note was mixing bases. Re-run with the repaired
+`_scripts/intersect.py`, raw records → blanks dropped → unique citers:
+
+| Anchor | raw records | blank `citing` dropped | **unique citers** | as previously published |
+|---|---|---|---|---|
+| Catling 2018 | 201 | 14 | **187** | 188 — one high |
+| Schwieterman 2018 | 544 | 49 | **495** | 496 — one high |
+| Hanley & McNeil 1982 | 19,229 | 713 | **18,516** | 18,516 ✓ |
+| Altman & Bland 1994 | 1,770 | 52 | **1,718** | 1,718 ✓ |
+| Deeks 2001 | 1,023 | 47 | **976** | 976 ✓ |
+| Whiting 2011 (QUADAS-2) | 11,580 | 237 | **11,343** | 11,343 ✓ |
+| Kass & Raftery 1995 | 12,224 | 358 | **11,866** | 11,867 — one high |
+
+**No intersection moves.** All eight gap pairings were 0 and remain 0; the controls were 4 and 2
+and remain 4 and 2, on the same DOIs. Unfiltered, every one of those ten rows would have read one
+higher — eight phantom "bridges" where there are none, which is exactly the failure this gap would
+have been destroyed by. `standing: live`, `contact-surface: 0`, `evidence: citation-intersection`
+and the tags are unchanged.
 
 | Pair | \|A\| | \|B\| | **∩** |
 |---|---|---|---|
-| Catling 2018 × Hanley & McNeil 1982 | 188 | 18,516 | **0** |
-| Catling 2018 × Altman & Bland 1994 | 188 | 1,718 | **0** |
-| **Schwieterman 2018 × Hanley & McNeil 1982** | 496 | 18,516 | **0** |
-| **Schwieterman 2018 × Altman & Bland 1994** | 496 | 1,718 | **0** |
-| Catling 2018 × Deeks 2001 `10.1136/bmj.323.7305.157` | 188 | 976 | **0** |
-| Catling 2018 × Whiting 2011 (QUADAS-2) `10.7326/0003-4819-155-8-201110180-00009` | 188 | 11,343 | **0** |
-| Schwieterman 2018 × Deeks 2001 | 496 | 976 | **0** |
-| Schwieterman 2018 × QUADAS-2 | 496 | 11,343 | **0** |
+| Catling 2018 × Hanley & McNeil 1982 | 187 | 18,516 | **0** |
+| Catling 2018 × Altman & Bland 1994 | 187 | 1,718 | **0** |
+| **Schwieterman 2018 × Hanley & McNeil 1982** | 495 | 18,516 | **0** |
+| **Schwieterman 2018 × Altman & Bland 1994** | 495 | 1,718 | **0** |
+| Catling 2018 × Deeks 2001 `10.1136/bmj.323.7305.157` | 187 | 976 | **0** |
+| Catling 2018 × Whiting 2011 (QUADAS-2) `10.7326/0003-4819-155-8-201110180-00009` | 187 | 11,343 | **0** |
+| Schwieterman 2018 × Deeks 2001 | 495 | 976 | **0** |
+| Schwieterman 2018 × QUADAS-2 | 495 | 11,343 | **0** |
 | **Pooled: (Catling ∪ Schwieterman) × (all four diagnostic anchors)** | **565** | **32,176** | **0** |
-| *Control:* Catling 2018 × Kass & Raftery 1995 | 188 | 11,867 | **4** |
-| *Control:* Schwieterman 2018 × Kass & Raftery 1995 | 496 | 11,867 | **2** |
+| *Control:* Catling 2018 × Kass & Raftery 1995 | 187 | 11,866 | **4** |
+| *Control:* Schwieterman 2018 × Kass & Raftery 1995 | 495 | 11,866 | **2** |
 
 **The control reproduces the audit exactly, on a different provider.** The four Catling ×
 Kass & Raftery hits are the same four DOIs OpenAlex returned: `10.1089/ast.2019.2151`,
@@ -139,9 +162,9 @@ flatters the claim and is never quoted alone), the audit's fetched concept-scope
 
 | Pairing | union floor | `E` @ floor | `E` @ 152,971 | `E` @ 1,529,710 |
 |---|---|---|---|---|
-| Catling × Hanley (OpenCitations) | 18,704 | 186.1 | **22.8** | 2.28 |
+| Catling × Hanley (OpenCitations) | 18,703 | 185.1 | **22.6** | 2.26 |
 | Catling × Hanley (OpenAlex, audit) | 22,139 | 212.9 | **30.8** | 3.08 |
-| Schwieterman × Altman | 2,214 | 384.9 | **5.57** | 0.56 — *uninformative* |
+| Schwieterman × Altman | 2,213 | 384.2 | **5.56** | 0.56 — *uninformative* |
 | **Pooled astro × pooled diagnostics** | 32,741 | 555.3 | **118.8** | **11.9** |
 
 `O = 0` on every row, so `O/E = 0` wherever `E > 1`. The single second-anchor pairing
@@ -151,7 +174,7 @@ carries the claim: `E = 11.9` even at a denominator ten times the audit's, so th
 finding across an order of magnitude of `N`. Report the pooled row or report nothing.
 
 The denominator-invariant statistic, per [[citation-intersection]]:
-`(O/|B|)_control = 4/11,867 = 3.4×10⁻⁴` against `(O/|B|)_gap = 0/32,176 = 0`. The ratio is
+`(O/|B|)_control = 4/11,866 = 3.4×10⁻⁴` against `(O/|B|)_gap = 0/32,176 = 0`. The ratio is
 formally infinite, which is **less** impressive than it looks and is stated here as a weakness:
 an infinite ratio only says the gap side is exactly zero, and it cannot be compared with G28's
 finite 62.5.
